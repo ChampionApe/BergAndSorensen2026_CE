@@ -81,7 +81,7 @@ These fail silently rather than loudly, which is why they are here rather than i
 - **Discuss before building.** On research-style questions, lay out the options first rather than
   implementing the first one. Prefer an established package to a hand-rolled algorithm.
 - **Tests.** `julia --project=. test/runtests.jl` from `model/`. One `@testset` per concern, all
-  registered in that file. Write checks straight into the file that will keep them. 742 pass today; a
+  registered in that file. Write checks straight into the file that will keep them. 825 pass today; a
   red suite is reported as red, with the failing assertion.
 - **Do not compile tex.** Add the file under `writing/` and let the user compile locally.
 - **Data documentation has three homes**, split by one rule: what a reader needs to reproduce or

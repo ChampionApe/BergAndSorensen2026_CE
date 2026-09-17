@@ -7,6 +7,23 @@ full session history to that date is archived in
 reserved with the earlier `2026-08-20_planner_docs_trend_growth/` archive as the basis
 for a later, more purely theoretical paper. New entries below this line.
 
+## 2026-09-17 (overnight) - Theory note: the long run restructured to three states, regime (T) only
+
+- **Branch `docs-restructure`, unmerged, Overleaf untouched.** Sixteen commits, one per task of
+  `notes/plan_longrun_restructure.md`, which carries the decisions: parameter space $\mu\in(0,1]$,
+  $\bar R\ge0$, $\bar a\in(0,1]$; trending technology maintained; three long-run states A, B, C over
+  the four cells floor times ceiling. Stationary technology, the essentiality dichotomy and the
+  closed-form rest point survive as Appendix D, a benchmark outside the classification.
+- **Section 3 rewritten; Appendix B new** (`Appendix_proofs.tex`: one subsection per state, general
+  primitives then workhorse construction). New content: Assumption 2 replaced by explicit conditions
+  (`ass:lr:wellposed`), the soft-ceiling collapse argument, and an extra regularity inequality
+  $e^{g+\nu}<1+r$ that the reserve rent needs on an exhaustion-ending B path.
+- **Two corrections found on the way.** The planner problem's domain $I+\delta K\ge0$ contradicted the
+  cake-eating aftermath; now $K_{t+1}\ge0$ (one line in the marked model file, to confirm). The
+  quantitative note's collapse-ranking condition was mis-transcribed; $(1-\delta)^{1-\eta}<1+\rho$ is right.
+- **$\mu<1$ was never load-bearing**: the timing convention removes the within-period fixed point; every
+  formula evaluates at the buffer corner. Quantitative note and code brought in line (`model/RESEARCH_LOG.md`).
+
 ## 2026-09-17 (evening) - The technical note split in two; data documentation rule
 
 - **`writing/quant/` is now the quantitative note**, its own Overleaf project (`quant` in
