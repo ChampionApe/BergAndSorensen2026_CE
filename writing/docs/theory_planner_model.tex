@@ -67,7 +67,7 @@ M^K_{t+1} &= \left(1-\delta\right)M^K_t+\Omega_t\phi^I G_t,
 \mathcal W_{t+1} &= \left(1-\mu\right)\mathcal W_t+W_t,
 \label{eq:sp:states-motion}
 \end{align}
-with waste bases $\mathcal{N}$ and $\mathcal{D}$ defined in \eqref{eq:sp:setup:base}, $c^W\!\left(\varpi,t\right) \equiv c^c(t)\varpi+ c^T(\varpi,t)$, the definitions in~\eqref{eq:sp:definitions}, the emission flow from \eqref{eq:sp:setup:Xi}, levied on the handled flow $H$, and domains $C,I+\delta K,N,D,K^R,W,\Omega\ge0$, $\varpi\in\left[0,1\right]$.
+with waste bases $\mathcal{N}$ and $\mathcal{D}$ defined in \eqref{eq:sp:setup:base}, $c^W\!\left(\varpi,t\right) \equiv c^c(t)\varpi+ c^T(\varpi,t)$, the definitions in~\eqref{eq:sp:definitions}, the emission flow from \eqref{eq:sp:setup:Xi}, levied on the handled flow $H$, and domains $C,N,D,K^R,W,\Omega\ge0$, $K_{t+1}\ge0$, $\varpi\in\left[0,1\right]$.\footnote{Gross investment $I+\delta K$ may be negative, so that capital can be scrapped for consumption, which the shutdown aftermath of Section~\ref{sec:sp:longrun} uses; on every operating path it is positive.}
 \end{problem}
 
 The two static relations adjoined alongside the goods constraint are the accounting identities of Section~\ref{sec:sp:setup:aggregatematerial}, restated in the variables the planner chooses. Equation~\eqref{eq:sp:ledger} is the ledger~\eqref{eq:sp:setup:ledger}: waste generated equals the material entering production, less the net accumulation of material embodied in the capital stock, plus the mass displaced from nature. Equation~\eqref{eq:sp:intensity} is the balance of embodied materials in the final good, \eqref{eq:sp:setup:ybalance_OmegaPhi}, and is what determines $\Omega$. The two are distinct restrictions rather than two forms of one identity: substituting the second into the first returns
@@ -188,8 +188,10 @@ and recycling capital is bounded below, $K^R\ge0$; both bounds are reachable. Al
 are therefore stated as Kuhn--Tucker systems: each corner is reported together with the inequality
 that makes it optimal, and the interior equality together with the inequality that makes \emph{it}
 optimal, so that the branches partition the possibilities. Finally, the state bound $\mathcal W\ge0$
-never needs a multiplier: with $W\ge0$ and $\mu<1$ the stock obeys $\mathcal W_t\ge\left(1-\mu\right)^t\mathcal W_0>0$,
-so the stockpile cannot empty in finite time and the recycling block never runs out of feedstock.
+never needs a multiplier: with $W\ge0$ the transition in~\eqref{eq:sp:states-motion} delivers
+$\mathcal W_{t+1}\ge0$ directly, and the stock is strictly positive on every path of interest, since
+$W\ge\Omega\omega^YY>0$ while production runs and $W=\delta M^K>0$ after it stops, so the recycling
+block never runs out of feedstock.
 
 \emph{Extraction.} A tonne extracted is worth $\Psi$ on delivery. It must cover the extraction
 effort, grossed up for the embodied material the effort itself carries, the in-situ rent, and the
