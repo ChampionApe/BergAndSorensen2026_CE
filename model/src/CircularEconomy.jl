@@ -63,7 +63,8 @@ export restpoint_stationary, cbgp, survival_ratio, closure_check, invert_aprime,
        classify_longrun
 
 # terminal / shutdown
-export cake_policy, value_stop, legacy_emissions_value, successor_state
+export cake_policy, value_stop, value_stop_gradient, legacy_emissions,
+       legacy_emissions_value, successor_state
 
 # solving
 export initial_guess, simulate_quantities, solve_path, newton!, jacobian,

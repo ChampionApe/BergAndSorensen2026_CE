@@ -144,43 +144,89 @@ Returns the best candidate together with the full table, so that a flat or
 multi-peaked objective is visible rather than silently resolved.  This is the
 discrete comparison of `writing/quant/quant_solution.tex`, Section "Paths that
 hit the floor"; it adds a scalar grid search and no dimension to the problem.
+
+Dates are visited in ascending order.  Each is first attempted *warm*, from the
+previous converged date's solution extended by `extend_horizon`; failing that,
+*cold* by `shutdown_cold_start`.  A date on which both fail, or whose solved
+path falls below the floor, is skipped and the table row carries `ok = false`
+and a `reason`; the row of a converged date records the `route` taken.
 """
 function solve_with_shutdown(p::Params, s0::AbstractVector, dates;
                              guess_kwargs = (; Rtarget = 0.6), floor_steps::Int = 6,
-                             kwargs...)
+                             verbose::Bool = false, kwargs...)
     table = NamedTuple[]
     best = nothing
-    for Td in dates
+    prev = nothing
+    for Td in sort!(collect(Int, dates))
         mo = Model(p; T = Td, s0 = s0, Gam = 1.0, terminal = :shutdown)
-        # The floor makes the residual discontinuous -- output jumps to zero
-        # below it -- and a Newton step that crosses it cannot be recovered by
-        # backtracking.  So solve the floorless problem first and raise the
-        # floor to its target in steps, each from the previous solution.
-        p0 = with(p; Rbar = 0.0)
-        mo0 = Model(p0; T = Td, s0 = s0, Gam = 1.0, terminal = :shutdown)
-        x0 = initial_guess(mo0; guess_kwargs...)
-        x, ok, nrm = solve_path(mo0, x0; kwargs...)
-        if ok && p.Rbar > 0
-            x, ok, nrm = continuate(mo0, mo, x; steps = floor_steps, kwargs...)
+        ok, route, reason, x, nrm = false, :warm, "", Float64[], Inf
+        if prev !== nothing && prev.mo.T < Td
+            _, x0 = extend_horizon(prev.mo, prev.x, Td)
+            x, ok, nrm = solve_path(mo, x0; verbose = verbose, kwargs...)
+            ok || (reason = @sprintf("warm start from T = %d stalled at |F| = %.1e; ",
+                                     prev.mo.T, nrm))
         end
         if !ok
-            push!(table, (; Td, ok = false, value = -Inf, resid = nrm))
+            route = :cold
+            x, ok, nrm, why = shutdown_cold_start(mo; guess_kwargs = guess_kwargs,
+                                                  floor_steps = floor_steps,
+                                                  verbose = verbose, kwargs...)
+            ok || (reason *= why)
+        end
+        if ok
+            sol = unpack(mo, x)
+            if any(b -> !b.feasible, sol.blocks)
+                ok, reason = false, "the solved path falls below the floor"
+            end
+        end
+        verbose && @printf("shutdown date %d: %s%s\n", Td, ok ? "converged, $route" : "skipped: ", reason)
+        if !ok
+            push!(table, (; Td, ok = false, value = -Inf, resid = nrm, route, reason))
             continue
         end
         sol = unpack(mo, x)
-        any(b -> !b.feasible, sol.blocks) &&
-            (push!(table, (; Td, ok = false, value = -Inf, resid = nrm)); continue)
         bet = discount(p)
         U = sum(bet^t * (util(p, sol.blocks[t+1].C) - disutil(p, sol.blocks[t+1].Pst))
                 for t in 0:Td)
         Kn, _, _, Pn, _, Wn = successor_state(p, sol.blocks[end])
         V = U + bet^(Td + 1) * value_stop(p, Kn, Wn, Pn)
-        push!(table, (; Td, ok = true, value = V, resid = nrm))
+        push!(table, (; Td, ok = true, value = V, resid = nrm, route, reason))
+        prev = (; mo, x)
         if best === nothing || V > best.value
             best = (; Td, value = V, x, mo)
         end
     end
     return (; best, table)
+end
+
+"""
+    shutdown_cold_start(mo; guess_kwargs, floor_steps, kwargs...) -> (x, ok, |F|, reason)
+
+A shutdown-terminated path from nothing, in three stages, each from the last:
+the floorless problem under the ordinary terminal closure, which is the
+well-tested solve; the same path handed over to `V_stop`; and the floor raised
+to its target in `floor_steps` steps.  The floor makes the residual
+discontinuous -- output jumps to zero below it -- so a Newton step that crosses
+it cannot be recovered by backtracking, which is why it is walked in.  The cold
+guess of `initial_guess` does not work under the shutdown terminal: its costate
+sweep is built on the closure, and Newton from there runs into a singular
+Jacobian on every date tried.
+"""
+function shutdown_cold_start(mo::Model; guess_kwargs = (; Rtarget = 0.6),
+                             floor_steps::Int = 6, kwargs...)
+    p, Td, s0 = mo.p, mo.T, mo.s0
+    p0 = with(p; Rbar = 0.0)
+    moc = Model(p0; T = Td, s0 = s0)
+    x, ok, nrm = solve_path(moc, initial_guess(moc; guess_kwargs...); kwargs...)
+    ok || return (x, false, nrm, @sprintf("floorless closure solve stalled at |F| = %.1e", nrm))
+    mo0 = Model(p0; T = Td, s0 = s0, Gam = 1.0, terminal = :shutdown)
+    x, ok, nrm = solve_path(mo0, x; kwargs...)
+    ok || return (x, false, nrm, @sprintf("handover to V_stop stalled at |F| = %.1e", nrm))
+    if p.Rbar > 0
+        x, ok, nrm = continuate(mo0, mo, x; steps = floor_steps, kwargs...)
+        ok || return (x, false, nrm, @sprintf("floor homotopy stalled at |F| = %.1e", nrm))
+    end
+    return (x, true, nrm, "")
 end
 
 """

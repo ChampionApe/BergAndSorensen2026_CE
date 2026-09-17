@@ -643,6 +643,7 @@ end
 end
 
 include("test_experiments.jl")   # the calibration interface and the experiment harness
+include("test_shutdown.jl")      # the shutdown-date search and the handover
 
 end # testset
 

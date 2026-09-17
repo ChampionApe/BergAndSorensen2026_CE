@@ -139,12 +139,19 @@ is verification, not proof.
 
 ## Known limitations
 
-- **The shutdown branch is fragile.** `solve_with_shutdown` works — it needs a
-  homotopy in `Rbar` from zero, because the floor makes the residual
-  discontinuous and Newton cannot cross it by backtracking — but it does not
-  converge for every candidate date, and roughly a quarter of the grid points
-  in testing stalled just short of tolerance. It is not covered by the test
-  suite. Treat results from it as provisional.
+- **The shutdown branch converges on every date tried, and skips with a
+  reason where it cannot.** The stall "just short of tolerance" that used to
+  hit most candidate dates was the terminal block: the derivatives of `V_stop`
+  were nested finite differences, whose rounding noise (~1e-8) exceeded the
+  step of the outer finite-difference Jacobian, so the terminal rows were wrong
+  by O(1). They are now exact (`value_stop_gradient`), and the search starts
+  each date from the solved closure model — the cold guess never worked under
+  the shutdown terminal, its Jacobian is singular — before handing over to
+  `V_stop` and walking the floor in. On `baseline_params(Rbar = 0.35)` every
+  date of `10:10:200` converges to |F| ~ 1e-11, about 3 s per date; the warm
+  start from the previous date rarely takes, and the table records the route
+  and, for a skipped date, why. The test suite covers the search
+  (`test/test_shutdown.jl`).
 - `p^M = 0` is imposed at the shutdown handover: `V_stop` ignores the material
   released by the capital stock as it is eaten.
 - The terminal closure assumes a common growth factor `Gam` for every costate

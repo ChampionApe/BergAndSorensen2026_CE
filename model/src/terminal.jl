@@ -63,16 +63,21 @@ Reserves and cumulative discoveries are worthless after a shutdown, `pS = pX = 0
 released by the capital stock as it is eaten, so the embodied-material liability
 is not priced at the handover.  It is small relative to the stockpile term and
 is recorded as a known approximation rather than hidden.
+
+The derivatives of `V_stop` are exact, not finite differences.  This is
+load-bearing: the Jacobian of the stacked system is itself a finite difference
+with step ~1e-8, and a residual that contains an inner central difference with
+step 1e-5 carries rounding noise of order `eps * |V| / 1e-5 ~ 1e-8`, so the
+terminal Jacobian rows were wrong by O(1) and Newton stalled at |F| ~ 1e-3 to
+1e-8 on most shutdown dates -- the "just short of tolerance" of the old
+`model/README.md` entry.
 """
 function terminal_shutdown!(r, mo::Model, b, pr, m::AbstractVector, which::Symbol)
     p = mo.p
     Kn, _, _, Pn, _, Wn = successor_state(p, b)
     Lam = which === :market ? pr.Lam : pr.lam
 
-    fd(f, v) = (h = 1e-5 * max(abs(v), 1.0); (f(v + h) - f(v - h)) / (2h))
-    V_K = fd(k -> value_stop(p, k, Wn, Pn), Kn)
-    V_W = fd(w -> value_stop(p, Kn, w, Pn), Wn)
-    V_P = fd(q -> value_stop(p, Kn, Wn, q), Pn)
+    _, V_K, V_W, V_P = value_stop_gradient(p, Kn, Wn, Pn)
 
     r[IQ]  = m[IQ]  - V_K / Lam
     r[IPS] = m[IPS]
@@ -100,45 +105,74 @@ function cake_policy(p::Params)
 end
 
 """
-    legacy_emissions_value(p, Wst, P0; horizon = 2000) -> Float64
+    legacy_emissions(p, Wst, P0; horizon = 2000) -> (; value, dW, dP)
 
-Discounted disutility of the legacy emission stream after a shutdown: the
-stockpile drains geometrically at factor `1 - mu`, passes to the environment
-untreated, and the pollution stock decays back to zero.  Evaluated by direct
-recursion, which is one dimensional and cheap.
+Discounted disutility of the legacy emission stream after a shutdown, with its
+derivatives in the two initial stocks: the stockpile drains geometrically at
+factor `1 - mu`, passes to the environment untreated, and the pollution stock
+decays back to zero.  Evaluated by direct recursion, which is one dimensional
+and cheap.  The derivatives ride along as the sensitivities of `P_j` to `Wst`
+and `P0`, so they are exact wherever the value is; see `terminal_shutdown!`
+for why a finite difference of the value will not do.
 """
-function legacy_emissions_value(p::Params, Wst, P0; horizon::Int = 2000)
+function legacy_emissions(p::Params, Wst, P0; horizon::Int = 2000)
     bet = discount(p)
-    Pst, Wt, acc, df = P0, Wst, 0.0, 1.0
+    Pst, Wt, df = P0, Wst, 1.0
+    acc, gW, gP = 0.0, 0.0, 0.0
+    dP_dW, dP_dP, dW_dW = 0.0, 1.0, 1.0     # sensitivities of (P_j, W_j)
     for _ in 0:horizon
+        vp = vprime(p, Pst)
         acc += df * disutil(p, Pst)
-        th, _ = decay(p, Pst)
+        gW += df * vp * dP_dW
+        gP += df * vp * dP_dP
+        th, ret = decay(p, Pst)              # ret = d(P - theta(P) P)/dP
         Xi = p.mu_h * Wt
         Pst = Pst + Xi - th * Pst
+        dP_dW = ret * dP_dW + p.mu_h * dW_dW
+        dP_dP = ret * dP_dP
         Wt *= (1 - p.mu_h)
+        dW_dW *= (1 - p.mu_h)
         df *= bet
         df < 1e-16 && break
     end
-    return acc
+    return (; value = acc, dW = gW, dP = gP)
+end
+
+"The value alone of `legacy_emissions`."
+legacy_emissions_value(p::Params, Wst, P0; kwargs...) =
+    legacy_emissions(p, Wst, P0; kwargs...).value
+
+"""
+    value_stop_gradient(p, K, Wst, P) -> (V, V_K, V_W, V_P)
+
+`V_stop` of `writing/docs/Appendix_proofs.tex` eq. (app:wh:Vstop) with its
+exact partial derivatives: the closed-form cake-eating value of the capital
+stock, less the discounted disutility of the legacy emission stream.  Assumes
+`varpi = 0` after the shutdown, which is optimal where the collection charge
+exceeds the diversion gain; where it is not, this is a lower bound on the value
+of stopping.  Returns `-Inf` (and `NaN` derivatives) where the cake-eating
+problem has no interior solution, `check_params`' condition
+`(1-delta)^(1-eta) < 1+rho`.
+"""
+function value_stop_gradient(p::Params, K, Wst, Pst)
+    s_stop, gC = cake_policy(p)
+    bet = discount(p)
+    den = 1 - bet * gC^(1 - p.eta)
+    (s_stop > 0 && K > 0 && den > 0) || return (-Inf, NaN, NaN, NaN)
+    # Eq (eq:app:wh:Vstop), first term.  At eta = 1 the geometric sum of the
+    # log terms is written out; its derivative in K is the same expression
+    # s (sK)^(-eta) / den because den = 1 - bet there.
+    cake = p.eta == 1 ?
+        (log(s_stop * K) + bet * log(gC) / (1 - bet)) / (1 - bet) :
+        (s_stop * K)^(1 - p.eta) / ((1 - p.eta) * den)
+    V_K = s_stop * (s_stop * K)^(-p.eta) / den
+    leg = legacy_emissions(p, Wst, Pst)
+    return (cake - leg.value, V_K, -leg.dW, -leg.dP)
 end
 
 """
     value_stop(p, K, Wst, P) -> Float64
 
-`V_stop` of `writing/docs/Appendix_workhorse.tex` eq. (Vstop): the closed-form
-cake-eating value of the capital stock, less the discounted disutility of the
-legacy emission stream.  Assumes `varpi = 0` after the shutdown, which is
-optimal where the collection charge exceeds the diversion gain; where it is not,
-this is a lower bound on the value of stopping.
+The value alone of `value_stop_gradient`.
 """
-function value_stop(p::Params, K, Wst, Pst)
-    s_stop, gC = cake_policy(p)
-    (s_stop > 0 && K > 0) || return -Inf
-    bet = discount(p)
-    den = 1 - bet * gC^(1 - p.eta)
-    den > 0 || return -Inf
-    cake = p.eta == 1 ?
-        (log(s_stop * K) + bet * log(gC) / (1 - bet)) / (1 - bet) :
-        (s_stop * K)^(1 - p.eta) / ((1 - p.eta) * den)
-    return cake - legacy_emissions_value(p, Wst, Pst)
-end
+value_stop(p::Params, K, Wst, Pst) = value_stop_gradient(p, K, Wst, Pst)[1]
