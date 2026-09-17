@@ -1,0 +1,29 @@
+{
+  "built_by": "data/build/c4_handling_level.jl",
+  "date": "2026-09-17",
+  "method": "cT/cc held at the ratio of the municipal ladder; the level chosen by bisection so that the solved planner path's treated share in 2015 (t = 115, T = 200) matches the B1 reading; the recycled share is reported, not fitted",
+  "level": 1.24185781207,
+  "cc0": 0.0434650234226,
+  "cT0": 0.0869300468451,
+  "cc0_msw_scale": 0.035,
+  "cT0_msw_scale": 0.07,
+  "T": 200,
+  "t_2015": 115,
+  "solves": 8,
+  "tolerance": 0.05,
+  "within_tolerance": true,
+  "targets": {"treated_share_2015": 0.240747495207, "recycled_share_2015": 0.0958814511048},
+  "achieved": {"treated_share_2015": 0.252195739148, "recycled_share_2015": 0.220019830645, "recovered_share_of_handled_2015": 0.173372500412, "x_2015": 0.427257746148, "treated_share_1900": 0, "handling_cost_over_output_2015": 0.00963134931387, "gatefee_sign_change": 138, "resid": 3.63797880709e-12},
+  "horizon_check": {"T_requested": 300, "T_reached": 261, "treated_share_2015": 0.251418601677, "recycled_share_2015": 0.219342083872},
+  "metals_bound": {"treated_share_2015": 1.07237539741e-07, "recycled_share_2015": 5.02044724911e-08, "converged": false, "S_min": -1050.07994934},
+  "solve_table": [
+    {"level": 4, "treated_share_2015": 0, "recycled_share_2015": 0, "converged": true, "resid": 2.0008883439e-11},
+    {"level": 0.25, "treated_share_2015": 1, "recycled_share_2015": 0.598196888196, "converged": true, "resid": 5.45696821064e-12},
+    {"level": 1, "treated_share_2015": 0.382777733188, "recycled_share_2015": 0.312079151428, "converged": true, "resid": 9.09494701773e-12},
+    {"level": 2, "treated_share_2015": 0, "recycled_share_2015": 0, "converged": true, "resid": 3.63797880709e-12},
+    {"level": 1.41421356237, "treated_share_2015": 0.163378081359, "recycled_share_2015": 0.148778118799, "converged": true, "resid": 1.81898940355e-11},
+    {"level": 1.189207115, "treated_share_2015": 0.279501073508, "recycled_share_2015": 0.24047773428, "converged": true, "resid": 5.45696821064e-12},
+    {"level": 1.29683955465, "treated_share_2015": 0.223951982383, "recycled_share_2015": 0.198151590213, "converged": true, "resid": 3.63797880709e-12},
+    {"level": 1.24185781207, "treated_share_2015": 0.252195739148, "recycled_share_2015": 0.220019830645, "converged": true, "resid": 3.63797880709e-12}
+  ]
+}

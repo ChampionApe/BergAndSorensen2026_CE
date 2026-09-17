@@ -203,9 +203,19 @@ def main():
             ("--", "The treated share, a check on the solved path"),
             ("treated_share_recycling_only", "recovery over recovery plus disposal, B1"),
             ("treated_share_msw_unep2020", "municipal treated share, UNEP (2024)"), ("treated_share_msw_kaza2016", "municipal treated share, Kaza et al.\\ (2018)"),
-            ("--", "Costs"),
-            ("cc_usd_low", "collection, low income, low"), ("cc_usd_high", "collection, low income, high"), ("cc0", "$c^c$"),
-            ("cT_usd_low", "sanitary landfill, high income, low"), ("cT_usd_high", "sanitary landfill, high income, high"), ("cT0", "$c_T$"),
+            ("--", "Costs: the shape, from the municipal ladder"),
+            ("cc_usd_low", "collection, low income, low"), ("cc_usd_high", "collection, low income, high"),
+            ("cc0_msw_scale", "$c^c$ at the municipal scale (the alternative)"),
+            ("cT_usd_low", "sanitary landfill, high income, low"), ("cT_usd_high", "sanitary landfill, high income, high"),
+            ("cT0_msw_scale", "$c_T$ at the municipal scale (the alternative)"),
+            ("cT_over_cc", "$c_T/c^c$, held"),
+            ("--", "Costs: the level, fitted to 2015 circularity"),
+            ("handling_level", "factor on the ladder (the level)"), ("handling_level_solves", "solves taken"),
+            ("treated_share_2015_model", "treated share 2015 on the solved path (target: the B1 reading above)"),
+            ("recycled_share_2015_target", "recycled share 2015, $RR/W$, B1 (target)"),
+            ("recycled_share_2015_model", "recycled share 2015 on the solved path (reported, not fitted)"),
+            ("recovered_share_of_handled_2015_model", "$a\\varpi$ in 2015 on the solved path"),
+            ("cc0", "$c^c$ (the point)"), ("cT0", "$c_T$ (the point)"),
             ("CW_2015_at_msw_share", "$C^W$ in 2015 at the municipal treated share"),
             ("--", "The ceiling and the tail"),
             ("abar_metals", "$\\bar a_H$, metals end-of-life recycling rate"), ("abar_metals_low", "\\quad low"), ("abar_metals_high", "\\quad high"),
@@ -216,7 +226,10 @@ def main():
             ("W0", "$\\mathcal W_0$ consistent with the 1900 disposal flow (the point)"), ("W0_own_year_only", "$\\mathcal W_0$, the 1900 residue alone (low)"),
         ], "Stocks and flows from Haas et al.\\ (2020), block B1, without biomass; treatment shares and costs from "
            "Kaza et al.\\ (2018) and UNEP (2024), block B4, US dollars per tonne with the price base not stated and "
-           "converted at 0.001 trillion dollars per gigatonne; the metals recycling rate from UNEP IRP (2011) weighted "
+           "converted at 0.001 trillion dollars per gigatonne; the level of the charges is the factor on the ladder's "
+           "midpoints that makes the planner path solved from 1900 at $T=200$ reproduce the 2015 treated share "
+           "(\\texttt{data/build/c4\\_handling\\_level.jl}), and the ranges of $c^c$ and $c_T$ are the ladder's at that "
+           "factor; the metals recycling rate from UNEP IRP (2011) weighted "
            "by USGS mine production; the capital outlay from US EPA (2024). $\\chi_T=1.75$ in $[0.5,3]$ and "
            "$d^W=0.15$ in $[0.05,0.30]$ are judgements of block B4 and carry no row."))
 

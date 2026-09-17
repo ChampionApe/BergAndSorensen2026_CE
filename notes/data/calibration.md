@@ -112,10 +112,23 @@ rate with the pulse rate as the range (ruling 7; `pollution.md` had recommended 
 - **The handled flow is the disposal outflow** (ruling 3, literally); counting the same year's
   recovered flow as handled gives `mu` a third higher and is the range. `waste_stock.md` has the D3
   tension.
-- **Municipal costs applied to the whole handled flow.** The ruling fixes the mapping; B4's caution
-  stands. The C8 smoke test shows the consequence: at these charges the planner treats nothing,
-  and at a tenth of them the treated share is interior. The level of `cc0` and `cT0` is the first
-  thing phase D has to settle, and this note is where that decision should be recorded when made.
+- **Municipal costs give the shape; the level is fitted to 2015 (task D0b, 2026-09-17).** The
+  ruling fixed the mapping and B4's caution stood: the ladder is a municipal measurement and the
+  handled flow is thirty times municipal waste. The C8 smoke test at `T = 60` found no tonne worth
+  treating at the municipal midpoints, and read that as the level being too high; with 2015 inside
+  the horizon (`T = 200`) it is not, the planner at those midpoints starts treating at t = 59 and
+  treats 38 percent of the handled flow in 2015, above the 24 percent of B1's reading. So the ratio
+  `cT/cc` is held at the ladder's and the common level is bisected until the solved 2015 treated
+  share meets B1's (`data/build/c4_handling_level.jl`, sidecar `c4_handling_level.json`): the
+  factor is 1.24 on the midpoints, inside the ladder's own range of 0.57 to 1.43, eight solves,
+  within five percent of the target. The alternative, fitting the recycled share `RR/W` instead,
+  was not taken because one scalar cannot hit both and the treated share is the object the charges
+  act on directly; the recycled share the path gives is 0.22 against 0.096 observed, and the miss
+  is the tail rate's (the margin picks a yield near 0.7 in 2015 where the observed yield `xi` was
+  set through is 0.39) and the stockpile's (the model's handled flow in 2015 is about 66 Gt against
+  the 18.6 Gt disposal flow `mu` reproduces, because the model's stock carries every outflow and
+  the unused extraction). Neither is a charge, and neither is moved here. The metals bound at the
+  same factor treats nothing in 2015 (`abar = 0.71` lowers the yield) and is not fitted separately.
 - **`xi` through a point on the yield function.** The observed yield uses the municipal treated
   share on the non-biomass handled flow, which is a measurement of three percent of that flow
   applied to all of it; the slope uses the EPA packaging capital outlay. The implied recycling
@@ -164,7 +177,7 @@ four conditions as the illustrative set, with the two cost conditions failing al
 `chi < mu`, which the data put there. The smoke test (`data/processed/c8_smoke.txt`) stalls at
 `|F| = 1.3e-4` on the last smoothing steps with the treated share at its lower corner throughout;
 the rescaled set stalls at the same place, so it is not scale; with handling charges at a tenth it
-converges to `4e-12` with the treated share interior (`c8_smoke_cheap_handling.txt`). On the
+converges to `4e-12` with the treated share interior (`c8_smoke_cheap_handling.txt`); task D0a traced the stall to the solver's choice of unknown at the treatment corner and fixed it (`model/README.md`, *Method*), and D0b to a horizon effect on the charges (C4 above). On the
 guess path the reserve never reaches two percent of `S0` within 2000 periods at a constant
 material target, and reaches it at year 2390 with the target growing at the circular rate, so the
 horizon wall of `model/README.md` is far out on this calibration.

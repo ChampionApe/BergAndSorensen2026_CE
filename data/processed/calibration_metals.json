@@ -180,13 +180,13 @@
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "cc0": {
-      "value": 0.035,
-      "low": 0.02,
-      "high": 0.05,
+      "value": 0.043465023422450004,
+      "low": 0.0248371562414,
+      "high": 0.0620928906035,
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "cc_inf": {
-      "value": 0.035,
+      "value": 0.043465023422450004,
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "gcc": {
@@ -194,13 +194,13 @@
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "cT0": {
-      "value": 0.07,
-      "low": 0.04,
-      "high": 0.1,
+      "value": 0.08693004684490001,
+      "low": 0.0496743124828,
+      "high": 0.124185781207,
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "cT_inf": {
-      "value": 0.07,
+      "value": 0.08693004684490001,
       "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
     },
     "gcT": {

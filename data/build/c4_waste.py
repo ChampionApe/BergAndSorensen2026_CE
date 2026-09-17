@@ -18,12 +18,19 @@ The treated share is not a parameter.  Two readings are recorded as the check on
 the solved path: recycling over recycling plus disposal on B1, and the municipal
 treated share of B4.
 
-Costs (ruling 8).  cc is the collection charge at a low treated share, the
-low-income collection and transfer range of Kaza et al. (2018); cT is the marginal
-treatment cost at full treatment, the high-income controlled-to-sanitary landfill
-range.  Midpoints are the points, the ranges the ranges, US$/t converted at 0.001
-trillion $/Gt; the price base of both sources is not stated and no deflation is
-applied.  chi_T in [0.5, 3] with the midpoint; dW = 0.15 in [0.05, 0.30].
+Costs (ruling 8, and task D0b for the level).  The municipal ladder of Kaza et al.
+(2018) fixes the shape: cc is the collection charge at a low treated share, the
+low-income collection and transfer range, and cT the marginal treatment cost at full
+treatment, the high-income controlled-to-sanitary landfill range; midpoints are the
+points, US$/t converted at 0.001 trillion $/Gt, price base not stated and no deflation
+applied.  Those are municipal-solid-waste charges, three percent of the flow the
+model handles, so their level is not a measurement of the aggregate's.  The level is
+fitted: c4_handling_level.jl holds cT/cc at the ladder's ratio and chooses the common
+factor so that the solved path's treated share in 2015 matches block B1's reading,
+writing data/processed/c4_handling_level.json; this script multiplies the ladder's
+midpoints and ranges by that factor, and records the unscaled midpoints as the
+municipal-scale alternative.  Before the Julia script has run the factor is one and the
+row says so.  chi_T in [0.5, 3] with the midpoint; dW = 0.15 in [0.05, 0.30].
 
 The ceiling and the tail.  abar = 1 is the baseline, with the metals-only
 mass-weighted end-of-life recycling rate of B4 as the hard-ceiling case.  xi is set
@@ -36,15 +43,17 @@ power-tail sensitivity, the largest exponent that keeps the yield concave.
 Run from the repository root with PYTHONUTF8=1.
 """
 
+import json
 import os
 import sys
 from collections import OrderedDict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from c_common import (USD_PER_T_TO_TN_PER_GT, Record, b1_series, entry, load_block,  # noqa: E402
-                      load_calibration, save_calibration, set_params)
+from c_common import (PROCESSED, USD_PER_T_TO_TN_PER_GT, Record, b1_series, entry,  # noqa: E402
+                      load_block, load_calibration, save_calibration, set_params)
 
 SRC = "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+LEVEL_SIDECAR = os.path.join(PROCESSED, "c4_handling_level.json")
 STOCKPILED = ["fossil", "metals", "non_metallic_minerals"]
 CHI_T = (0.5, 1.75, 3.0)
 DW = (0.05, 0.15, 0.30)
@@ -60,6 +69,15 @@ def b4(block, series, region=None, year=None):
     if len(d) != 1:
         raise KeyError(f"b4 {series}/{region}/{year}: {len(d)} rows")
     return float(d["value"].iloc[0])
+
+
+def handling_level():
+    """The fitted level of the charges relative to the municipal ladder, as
+    c4_handling_level.jl wrote it; None before that script has run."""
+    if not os.path.exists(LEVEL_SIDECAR):
+        return None
+    with open(LEVEL_SIDECAR, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def main():
@@ -104,10 +122,37 @@ def main():
     rec.add("cc_usd_high", cc_hi, "US$/t", "")
     rec.add("cT_usd_low", cT_lo, "US$/t", "Kaza et al. (2018) table 5.2, high income, sanitary landfill")
     rec.add("cT_usd_high", cT_hi, "US$/t", "")
-    cc = 0.5 * (cc_lo + cc_hi) * USD_PER_T_TO_TN_PER_GT
-    cT = 0.5 * (cT_lo + cT_hi) * USD_PER_T_TO_TN_PER_GT
-    rec.add("cc0", cc, "trillion $/Gt", "midpoint; price base not stated")
-    rec.add("cT0", cT, "trillion $/Gt", "midpoint; price base not stated")
+    cc_msw = 0.5 * (cc_lo + cc_hi) * USD_PER_T_TO_TN_PER_GT
+    cT_msw = 0.5 * (cT_lo + cT_hi) * USD_PER_T_TO_TN_PER_GT
+    rec.add("cc0_msw_scale", cc_msw, "trillion $/Gt", "midpoint at the municipal scale; price base not stated")
+    rec.add("cT0_msw_scale", cT_msw, "trillion $/Gt", "midpoint at the municipal scale; price base not stated")
+    rec.add("cT_over_cc", cT_msw / cc_msw, "ratio", "the ladder's shape, held")
+    lvl = handling_level()
+    if lvl is None:
+        level = 1.0
+        rec.add("handling_level", level, "ratio to the municipal ladder",
+                "NOT FITTED: c4_handling_level.jl has not run; the municipal level stands")
+    else:
+        level = float(lvl["level"])
+        rec.add("handling_level", level, "ratio to the municipal ladder",
+                "fitted to the 2015 treated share by c4_handling_level.jl")
+        rec.add("handling_level_solves", lvl["solves"], "solves", f"T = {lvl['T']}, bisection on the level")
+        rec.add("treated_share_2015_target", lvl["targets"]["treated_share_2015"], "share",
+                "B1, recovery over recovery plus disposal, non-biomass")
+        rec.add("treated_share_2015_model", lvl["achieved"]["treated_share_2015"], "share",
+                "the solved planner path at the fitted level")
+        rec.add("recycled_share_2015_target", lvl["targets"]["recycled_share_2015"], "share",
+                "B1, secondary input over waste generation, total")
+        rec.add("recycled_share_2015_model", lvl["achieved"]["recycled_share_2015"], "share",
+                "RR over the outflows from use on the solved path; reported, not fitted")
+        rec.add("recovered_share_of_handled_2015_model", lvl["achieved"]["recovered_share_of_handled_2015"],
+                "share", "a varpi on the solved path")
+        rec.add("treated_share_2015_metals_bound", lvl["metals_bound"]["treated_share_2015"], "share",
+                "the metals bound at the same level")
+    cc = level * cc_msw
+    cT = level * cT_msw
+    rec.add("cc0", cc, "trillion $/Gt", "the ladder's collection midpoint at the fitted level")
+    rec.add("cT0", cT, "trillion $/Gt", "the ladder's treatment midpoint at the fitted level")
     H = disp + RR
     vw = b4(w4, "global_treated_share", "World", 2020) / 100
     CW = (cc * vw + cT * vw ** (1 + CHI_T[1]) / (1 + CHI_T[1])) * H
@@ -162,10 +207,12 @@ def main():
     block["tail"] = OrderedDict([("value", "exp"), ("source", SRC)])
     block["psi_a"] = entry(PSI_A, SRC)
     block["mu_h"] = entry(mu, SRC, low=mu, high=mu_hi)
-    block["cc0"] = entry(cc, SRC, low=cc_lo * USD_PER_T_TO_TN_PER_GT, high=cc_hi * USD_PER_T_TO_TN_PER_GT)
+    block["cc0"] = entry(cc, SRC, low=level * cc_lo * USD_PER_T_TO_TN_PER_GT,
+                         high=level * cc_hi * USD_PER_T_TO_TN_PER_GT)
     block["cc_inf"] = entry(cc, SRC)
     block["gcc"] = entry(0.0, SRC)
-    block["cT0"] = entry(cT, SRC, low=cT_lo * USD_PER_T_TO_TN_PER_GT, high=cT_hi * USD_PER_T_TO_TN_PER_GT)
+    block["cT0"] = entry(cT, SRC, low=level * cT_lo * USD_PER_T_TO_TN_PER_GT,
+                         high=level * cT_hi * USD_PER_T_TO_TN_PER_GT)
     block["cT_inf"] = entry(cT, SRC)
     block["gcT"] = entry(0.0, SRC)
     block["chi_T"] = entry(CHI_T[1], SRC, low=CHI_T[0], high=CHI_T[2])
@@ -177,7 +224,8 @@ def main():
     cal["cases"]["abar_H_range"] = [a_lo, a_hi]
     save_calibration(cal)
     path = rec.write()
-    print(f"c4: W_2015 = {W2015:.0f} Gt, mu_h = {mu:.4f} [{mu:.4f}, {mu_hi:.4f}], cc = {cc:.3f}, cT = {cT:.3f}, "
+    print(f"c4: W_2015 = {W2015:.0f} Gt, mu_h = {mu:.4f} [{mu:.4f}, {mu_hi:.4f}], level = {level:.3f}, "
+          f"cc = {cc:.4f}, cT = {cT:.4f}, "
           f"a_obs = {a_obs:.3f}, xi = {xi:.2f} [{xi_lo:.2f}, {xi_hi:.2f}], KR = {KR:.2f}, W0 = {W0:.1f} -> {path}")
 
 

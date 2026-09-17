@@ -14,9 +14,20 @@ cc_usd_low,20.0,US$/t,"Kaza et al. (2018) table 5.2, low income, collection"
 cc_usd_high,50.0,US$/t,
 cT_usd_low,40.0,US$/t,"Kaza et al. (2018) table 5.2, high income, sanitary landfill"
 cT_usd_high,100.0,US$/t,
-cc0,0.035,trillion $/Gt,midpoint; price base not stated
-cT0,0.07,trillion $/Gt,midpoint; price base not stated
-CW_2015_at_msw_share,0.6999408089164074,trillion $,"c^W(varpi) H at the UNEP treated share, chi_T midpoint"
+cc0_msw_scale,0.035,trillion $/Gt,midpoint at the municipal scale; price base not stated
+cT0_msw_scale,0.07,trillion $/Gt,midpoint at the municipal scale; price base not stated
+cT_over_cc,2.0,ratio,"the ladder's shape, held"
+handling_level,1.24185781207,ratio to the municipal ladder,fitted to the 2015 treated share by c4_handling_level.jl
+handling_level_solves,8.0,solves,"T = 200, bisection on the level"
+treated_share_2015_target,0.240747495207,share,"B1, recovery over recovery plus disposal, non-biomass"
+treated_share_2015_model,0.252195739148,share,the solved planner path at the fitted level
+recycled_share_2015_target,0.0958814511048,share,"B1, secondary input over waste generation, total"
+recycled_share_2015_model,0.220019830645,share,"RR over the outflows from use on the solved path; reported, not fitted"
+recovered_share_of_handled_2015_model,0.173372500412,share,a varpi on the solved path
+treated_share_2015_metals_bound,1.07237539741e-07,share,the metals bound at the same level
+cc0,0.043465023422450004,trillion $/Gt,the ladder's collection midpoint at the fitted level
+cT0,0.08693004684490001,trillion $/Gt,the ladder's treatment midpoint at the fitted level
+CW_2015_at_msw_share,0.8692269615394358,trillion $,"c^W(varpi) H at the UNEP treated share, chi_T midpoint"
 abar_metals,0.7080114566856305,share,UNEP IRP (2011) mass-weighted end-of-life recycling rate
 abar_metals_low,0.5268637013738345,share,
 abar_metals_high,0.8891592119974265,share,

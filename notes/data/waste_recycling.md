@@ -235,3 +235,15 @@ yield function as the note recommends, with the EPA capital outlay supplying the
 test (`data/processed/c8_smoke.txt`) finds that at municipal charges applied to the whole handled
 flow the planner treats nothing, and at a tenth of them the treated share is interior. The level
 of the charges is the open item this note hands to phase D.
+
+## Phase D: the level (2026-09-17)
+
+The smoke test's reading was a horizon effect: at `T = 60` the year 2015 is outside the solve, and
+the planner at the municipal midpoints begins treating at t = 59. Task D0b holds the ladder's
+ratio `cT/cc` and fits the common level to the 2015 treated share of the material flow accounts;
+the factor comes out at 1.24 on the midpoints, inside the ladder's own range, so the first
+section's fear that the municipal level is wrong by a large factor for the aggregate is not what
+the model says: the level is of the right order, and what it decides is the date treatment begins.
+The reasoning and the numbers are in `calibration.md` under C4 and in the data appendix; the
+recycled share the fitted path gives is more than twice the observed one, for reasons that belong
+to `xi` and to the stockpile reading of `waste_stock.md`, not to the charges.
