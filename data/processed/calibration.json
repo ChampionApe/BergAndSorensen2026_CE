@@ -87,8 +87,100 @@
       "low": 0.031477128959778,
       "high": 0.0464918296275513,
       "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "cN0": {
+      "value": 0.019336074266301836,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "cN_inf": {
+      "value": 0.014061285478699583,
+      "low": 0.007030642739349792,
+      "high": 0.014061285478699583,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "gcN": {
+      "value": 0.0317,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "mu_N": {
+      "value": 1.8444157389557352,
+      "low": 0.0,
+      "high": 2.2717290107620154,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "kap_N": {
+      "value": 0.7281262027100001,
+      "low": 0.0,
+      "high": 7.2812620271,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "chi_N": {
+      "value": 0.4818217283581927,
+      "low": 0.24091086417909635,
+      "high": 1.0,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "Sref": {
+      "value": 13428.572376856611,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "cD0": {
+      "value": 0.00031845550422053445,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "cD_inf": {
+      "value": 0.00031845550422053445,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "gcD": {
+      "value": 0.0,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "mu_D": {
+      "value": 6.909143918120026,
+      "low": 5.051370229245958,
+      "high": 8.76416971899841,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "kap_D": {
+      "value": 0.7281262027100001,
+      "low": 0.0,
+      "high": 7.2812620271,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "chi_D": {
+      "value": 1.0,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "Xmax": {
+      "value": 89195.38481197173,
+      "low": 17216.75500587155,
+      "high": 107740.52973380608,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "Xref": {
+      "value": 13503.021414121506,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
     }
   },
-  "states": {},
-  "cases": {}
+  "states": {
+    "S0": {
+      "value": 13428.572376856611,
+      "low": 10733.744547251588,
+      "high": 16123.40020646163,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "X0": {
+      "value": 13503.021414121506,
+      "low": 10808.193584516484,
+      "high": 16197.849243726525,
+      "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    }
+  },
+  "cases": {
+    "muN_range": [
+      0.0,
+      2.2717290107620154
+    ]
+  }
 }

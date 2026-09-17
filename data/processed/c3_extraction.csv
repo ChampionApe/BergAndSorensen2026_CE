@@ -1,0 +1,66 @@
+name,value,unit,note
+exhaustible_share_of_cumulative_N_1900_2015,0.23640266064906834,share,fossil plus metal ores
+exhaustible_share_of_N_1900,0.1538599431568862,share,
+exhaustible_share_of_N_2015,0.2359085933805133,share,
+metal_ore_coverage_scale,2.2597637984845287,ratio,"cumulative metal ores 1900-2015, Krausmann et al. (2018) over USGS gross-ore commodities"
+S0_fossil_low,1805.4353242387683,Gt,B3
+S0_fossil_high,3079.5642620583303,Gt,B3
+S0_metal_ores_gross_usgs,323.9499836,Gt,B3
+extraction_before_1900_fossil,17.5999504921827,Gt,B3
+S0_metal_ores_gross_scaled,732.0504454589368,Gt,USGS figure times the coverage scale
+S0_exhaustible_low,2537.485769697705,Gt,fossil plus scaled metal ores
+S0_exhaustible_mid,3174.5502386074863,Gt,fossil plus scaled metal ores
+S0_exhaustible_high,3811.614707517267,Gt,fossil plus scaled metal ores
+S0_low,10733.744547251588,Gt,divided by the exhaustible share: the model's S0
+S0_mid,13428.572376856611,Gt,divided by the exhaustible share: the model's S0
+S0_high,16123.40020646163,Gt,divided by the exhaustible share: the model's S0
+X0_low,10808.193584516484,Gt,S0 plus pre-1900 extraction (fossil only; a lower bound)
+X0_mid,13503.021414121506,Gt,S0 plus pre-1900 extraction (fossil only; a lower bound)
+X0_high,16197.849243726525,Gt,S0 plus pre-1900 extraction (fossil only; a lower bound)
+URR_fossil_low,1880.375570399692,Gt,"Rogner et al. (2012), B3"
+URR_fossil_conventional_plus_coal_low,1358.4912618890537,Gt,the variant
+URR_metal_ores_gross_scaled_low,2189.7111207315083,Gt,"USGS world resources, scaled"
+URR_fossil_central,18873.717528451263,Gt,"Rogner et al. (2012), B3"
+URR_fossil_conventional_plus_coal_central,15843.566375968992,Gt,the variant
+URR_metal_ores_gross_scaled_central,2212.3087587163536,Gt,"USGS world resources, scaled"
+URR_fossil_high,23235.241492110617,Gt,"Rogner et al. (2012), B3"
+URR_fossil_conventional_plus_coal_high,18800.99016232338,Gt,the variant
+URR_metal_ores_gross_scaled_high,2234.906396701199,Gt,"USGS world resources, scaled"
+Xmax_low,17216.75500587155,Gt,the model's discovery ceiling
+Xmax_conventional_plus_coal_low,15009.147413479188,Gt,the variant
+Xmax_central,89195.38481197173,Gt,the model's discovery ceiling
+Xmax_conventional_plus_coal_central,76377.63079785585,Gt,the variant
+Xmax_high,107740.52973380608,Gt,the model's discovery ceiling
+Xmax_conventional_plus_coal_high,88983.33251101454,Gt,the variant
+mu_N_price_channel_S0_low,1.415701070150116,elasticity,mass-weighted aggregate index
+mu_N_price_channel_S0_mid,1.8444157389557352,elasticity,mass-weighted aggregate index
+mu_N_price_channel_S0_high,2.2717290107620154,elasticity,mass-weighted aggregate index
+price_index_mass_weighted_2015,168.57623598577325,1900 = 100,"Jacks (2019), B3"
+price_index_metals_2015,67.50417249478043,1900 = 100,"Jacks (2019), B3"
+mu_N_price_channel_metals_only,-1.5306539528950809,elasticity,metals index against the metal-ore stock; negative means the price fell
+energy_grade_elasticity_gold,-0.2848,elasticity,"Mudd (2010), B3: the physical channel"
+chi_N,0.4818217283581927,exponent,value share over cost share less one
+kap_N,0.7281262027100001,Gt/yr,a tenth of 1900 extraction
+CN_2015,7.308856137530523,trillion $,cost share times Y_2015
+MC_2015,0.11744298212759582,trillion $/Gt,the marginal cost the form implies at N_2015
+MC_2015_usd_per_t,117.44298212759583,US$/t,
+cN_implied_1900,0.02091578746851727,trillion $/Gt^(1+chi_N),
+cN_implied_2015,0.007396871459876919,trillion $/Gt^(1+chi_N),
+cN0,0.019336074266301836,trillion $/Gt^(1+chi_N),mean of the implied series 1900-1909
+cN_inf,0.014061285478699583,trillion $/Gt^(1+chi_N),mean of the implied series 2006-2015
+gcN,0.0317,per year,fitted in logs with both levels given
+cN_fit_rmse_log,0.27493181944050377,log points,
+CN_over_Y_1900_at_fit,0.09983850000269645,share,check
+minex_cost_per_discovery_early,65.0,2023 US$ million,"1975-2005, B3"
+minex_cost_per_discovery_late,218.0,2023 US$ million,"2011-2020, B3"
+cumulative_contained_metal_early,1.21864859308,Gt,"USGS DS140, 1900-1990"
+cumulative_contained_metal_late,2.36254625808,Gt,"USGS DS140, 1900-2015"
+mu_D_URR_low,5.051370229245958,elasticity,contained-metal URR 6.59 Gt
+mu_D_URR_central,6.909143918120026,elasticity,contained-metal URR 8.34 Gt
+mu_D_URR_high,8.76416971899841,elasticity,contained-metal URR 10.09 Gt
+resource_rents_mean_2011_2015,2.457077938340762,trillion current US$,WDI
+rent_per_tonne_of_N,0.028544764935712758,trillion $/Gt,over total extraction
+kap_D,0.7281262027100001,Gt/yr,a tenth of 1900 extraction
+cD0,0.00031845550422053445,trillion $/Gt^(1+chi_D),marginal discovery cost = rent per tonne at D = N_2015
+CD_at_replacement_2015,1.279220845694079,trillion $,the form's total cost at D = N_2015
+minex_world_exploration_spend_2012,0.0421,trillion 2023 US$,metals only; the check on the order of magnitude
