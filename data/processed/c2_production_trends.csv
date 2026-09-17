@@ -1,0 +1,66 @@
+name,value,unit,note
+delta,0.037534306918770695,per year,"PWT cn-weighted world depreciation, mean 1950-2019"
+delta_1950,0.031477128959778,per year,
+delta_2019,0.0464918296275513,per year,
+labour_share,0.5866850180687913,share,"PWT cgdpo-weighted world labour share, mean 1950-2019"
+labour_share_min_decade,0.5422126865427156,share,
+labour_share_max_decade,0.6238624926604025,share,
+mu_F,0.41331498193120875,exponent,1 - labour share
+value_fossil_2011,4.561010643610593,trillion current US$,
+value_non_metallic_minerals_2011,0.35821959501809997,trillion current US$,
+value_metals_2011,0.6021606689105999,trillion current US$,
+value_biomass_agriculture_value_added_2011,2.9799961237778203,trillion current US$,
+value_total_2011,8.501387031317114,trillion current US$,
+value_resource_rents_2011,3.590125108721336,trillion current US$,
+value_nominal_gdp_2011,74.3886444046225,trillion current US$,
+price_coal_2011,121.44833333333,US$/t,"World Bank Pink Sheet, nominal"
+price_oil_2011,762.3888838621349,US$/t,"World Bank Pink Sheet, nominal"
+price_gas_2011,442.35454873421406,US$/t,"World Bank Pink Sheet, nominal"
+unit_value_stone_2011,8.545,US$/t,"USGS DS140, crushed stone and sand-gravel mean"
+unit_value_iron_ore_2011,104.1,US$/t,USGS DS140
+material_value_share_2011,0.1142833976792947,share of GDP,
+extraction_cost_share_2011,0.06602166179937259,share of GDP,value less resource rents
+value_fossil_2015,2.5373759739795494,trillion current US$,
+value_non_metallic_minerals_2015,0.4250502831305301,trillion current US$,
+value_metals_2015,0.5247040447167299,trillion current US$,
+value_biomass_agriculture_value_added_2015,3.1742870948916573,trillion current US$,
+value_total_2015,6.661417396718466,trillion current US$,
+value_resource_rents_2015,1.3240307679601881,trillion current US$,
+value_nominal_gdp_2015,75.8393518286062,trillion current US$,
+price_coal_2015,58.93916666667,US$/t,"World Bank Pink Sheet, nominal"
+price_oil_2015,372.0178611111274,US$/t,"World Bank Pink Sheet, nominal"
+price_gas_2015,308.9049545645555,US$/t,"World Bank Pink Sheet, nominal"
+unit_value_stone_2015,9.393260733091513,US$/t,"USGS DS140, crushed stone and sand-gravel mean"
+unit_value_iron_ore_2015,81.19,US$/t,USGS DS140
+material_value_share_2015,0.08783589569400585,share of GDP,
+extraction_cost_share_2015,0.07037753488216185,share of GDP,value less resource rents
+gamma_R,0.10105964668665027,elasticity,"material value share, mean of the two years"
+extraction_cost_share,0.06819959834076722,share of GDP,mean of the two years; used by C3
+beta_s,0.7554899988999905,share,1 - gamma / mu_F
+beta_K,0.31225533524455845,elasticity,mu_F beta_s
+g_Y_1900_2015,0.02974418681158796,per year,Maddison world GDP
+g_K_1900_2015,0.03253492808914166,per year,B2 capital stock
+g_R_1900_2015,0.022008396465900134,per year,Haas et al. (2020) material input
+g_Omega_observed_1900_2015,-0.007735790345687824,per year,R/Y
+g_Omega_model_1900_2015,-0.008398192714026644,per year,R/(D + phiI G) at the C1 weights
+g_price_mass_weighted_1900_2015,0.00454102522234201,per year,"Jacks (2019) real index, B3 mass weights"
+g_price_metals_1900_2015,-0.0034172241328919257,per year,"Jacks (2019), metals, production weights"
+cd_test_intensity_elasticity_1900_2015,-1.7035338864949379,elasticity,d ln(R/Y) / d ln p; Cobb-Douglas predicts -1
+g_Y_1950_2015,0.03905955008809803,per year,Maddison world GDP
+g_K_1950_2015,0.041345312140906046,per year,B2 capital stock
+g_R_1950_2015,0.027965992315989986,per year,Haas et al. (2020) material input
+g_Omega_observed_1950_2015,-0.01109355777210804,per year,R/Y
+g_Omega_model_1950_2015,-0.012265500423784412,per year,R/(D + phiI G) at the C1 weights
+g_price_mass_weighted_1950_2015,0.0046988645264567,per year,"Jacks (2019) real index, B3 mass weights"
+g_price_metals_1950_2015,-0.0006225162039476716,per year,"Jacks (2019), metals, production weights"
+cd_test_intensity_elasticity_1950_2015,-2.360901811415581,elasticity,d ln(R/Y) / d ln p; Cobb-Douglas predicts -1
+composite_gA_plus_gamma_gB_1900_2015,0.01736082116297184,per year,g_Y - beta_K g_K - gamma g_R
+composite_gA_plus_gamma_gB_1950_2015,0.023323022482052973,per year,g_Y - beta_K g_K - gamma g_R
+gA,0.01736082116297184,per year,the composite; gB = 0 by convention
+gB,0.0,per year,convention: observationally equivalent to any split at sigma_s = 1
+cbgp_growth_implied,0.025243120088972643,per year,"(gA + gamma gB)/(1 - beta_K), the C-cell rate"
+balanced_test_gY_over_minus_gOmega_model_1900_2015,3.541736636015661,ratio,"1 on a circular path, (mu_N - 1)/mu_N on a balanced dematerialization path"
+K_1900,10.629329276886386,trillion 2011 intl $,"B2, reconstructed"
+R_1900,7.562158994,Gt/yr,Haas et al. (2020)
+Y_1900,3.503708232520704,trillion 2011 intl $,Maddison
+A0,1.3652128498323115,level,Y0 / Q^mu_F at B0 = 1; the damage factor at 1900 is neglected

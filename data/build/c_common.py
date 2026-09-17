@@ -96,6 +96,23 @@ def macro_series():
     return pd.DataFrame({"Y": Y, "C": C, "G": G, "K": K, "method": method})
 
 
+def pwt_world():
+    """World averages of PWT 10.01 rates that block B2 did not extract: the internal
+    rate of return `irr` and the depreciation rate `delta`, weighted by the capital
+    stock at current PPPs `cn`, and the labour share `labsh`, weighted by output-side
+    GDP at current PPPs `cgdpo`.  Countries missing a rate in a year are left out of
+    that year's weight.  Year-indexed frame with the country counts."""
+    import numpy as np
+    d = pd.read_excel(os.path.join(RAW, "pwt1001", "pwt1001.xlsx"), sheet_name="Data")
+    out = {}
+    for var, wvar in (("irr", "cn"), ("delta", "cn"), ("labsh", "cgdpo")):
+        x = d.dropna(subset=[var, wvar])
+        g = x.groupby("year")
+        out[var] = g.apply(lambda f: np.average(f[var], weights=f[wvar]), include_groups=False)
+        out["n_" + var] = g.size()
+    return pd.DataFrame(out)
+
+
 def b1_by_category(block, series, source="haas2020"):
     """Year x category frame of one B1 series."""
     d = block[(block["series"] == series) & (block["source"] == source)

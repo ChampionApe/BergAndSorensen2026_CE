@@ -49,6 +49,44 @@
       "low": 0.0,
       "high": 0.09322208770743423,
       "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "A0": {
+      "value": 1.3652128498323115,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "gA": {
+      "value": 0.01736082116297184,
+      "low": 0.01736082116297184,
+      "high": 0.023323022482052973,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "B0": {
+      "value": 1.0,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "gB": {
+      "value": 0.0,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "beta_s": {
+      "value": 0.7554899988999905,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "mu_F": {
+      "value": 0.41331498193120875,
+      "low": 0.3761375073395975,
+      "high": 0.4577873134572844,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "sigma_s": {
+      "value": 1.0,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
+    },
+    "delta": {
+      "value": 0.037534306918770695,
+      "low": 0.031477128959778,
+      "high": 0.0464918296275513,
+      "source": "quant_data.tex, Production and trends; notes/data/calibration.md"
     }
   },
   "states": {},
