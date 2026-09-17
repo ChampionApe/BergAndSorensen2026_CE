@@ -1,0 +1,136 @@
+year,series,region_or_material,value,unit,source,method
+2016,treatment_share_landfill_any,World,37.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_sanitary_landfill_lfg,World,8.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_open_dump,World,33.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_recycling_and_composting,World,19.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_incineration,World,11.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_open_dump,LIC,93.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_open_dump,HIC,2.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_landfill_any,UMC,54.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_landfill_any,HIC,39.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_recycling_and_composting,HIC,35.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2016,treatment_share_incineration,HIC,22.0,percent_of_MSW,"Kaza et al. 2018, What a Waste 2.0, p. 5",transcribed
+2018,unit_cost_collection_and_transfer_low,LIC,20.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_high,LIC,50.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_low,LMC,30.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_high,LMC,75.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_low,UMC,50.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_high,UMC,100.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_low,HIC,90.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_collection_and_transfer_high,HIC,200.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_low,LIC,10.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_high,LIC,20.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_low,LMC,15.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_high,LMC,40.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_low,UMC,20.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_high,UMC,65.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_low,HIC,40.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_controlled_to_sanitary_landfill_high,HIC,100.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_open_dumping_low,LIC,2.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_open_dumping_high,LIC,8.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_open_dumping_low,LMC,3.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_open_dumping_high,LMC,10.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_low,LIC,0.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_high,LIC,25.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_low,LMC,5.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_high,LMC,30.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_low,UMC,5.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_high,UMC,50.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_low,HIC,30.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_recycling_high,HIC,80.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_low,LIC,5.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_high,LIC,30.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_low,LMC,10.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_high,LMC,40.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_low,UMC,20.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_high,UMC,75.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_low,HIC,35.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,unit_cost_composting_high,HIC,90.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.2, p. 104",transcribed
+2018,incineration_capex_per_annual_tonne_low,Europe,600.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_capex_per_annual_tonne_high,Europe,1000.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_capex_per_annual_tonne_low,United States,600.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_capex_per_annual_tonne_high,United States,830.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_capex_per_annual_tonne_low,China,190.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_capex_per_annual_tonne_high,China,400.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_low,Europe,25.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_high,Europe,30.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_low,United States,44.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_high,United States,55.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_low,China,12.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,incineration_opex_per_tonne_high,China,22.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_low,Europe,345.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_high,Europe,600.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_low,United States,220.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_high,United States,660.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_low,China,325.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_capex_per_annual_tonne_high,China,325.0,current_USD_per_annual_tonne_capacity,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_low,Europe,31.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_high,Europe,57.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_low,United States,22.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_high,United States,55.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_low,China,25.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2018,anaerobic_digestion_opex_per_tonne_high,China,25.0,current_USD_per_tonne,"Kaza et al. 2018, What a Waste 2.0, table 5.3, p. 105",transcribed
+2016,msw_generated,World,2.07395588181779,Gt_per_year,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,msw_coverage_of_treatment_weighting,World,76.4769516508157,percent_of_world_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,n_countries_with_complete_treatment_shares,World,167.0,count,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_anaerobic_digestion_mswweighted,World,0.006076231456033064,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_compost_mswweighted,World,5.416024661059564,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_controlled_landfill_mswweighted,World,4.489362559988844,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_incineration_mswweighted,World,9.71508663320855,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_landfill_unspecified_mswweighted,World,22.799209613262665,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_open_dump_mswweighted,World,24.265395173980416,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_other_mswweighted,World,2.313839954318001,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_recycling_mswweighted,World,16.078542482573756,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_sanitary_landfill_landfill_gas_system_mswweighted,World,8.720420693227956,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_unaccounted_for_mswweighted,World,6.18233090816666,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_waterways_marine_mswweighted,World,0.04198996644904807,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_anaerobic_digestion_mswweighted,HIC,0.006009438047834215,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_compost_mswweighted,HIC,6.263453493488632,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_controlled_landfill_mswweighted,HIC,3.7097507236137166,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_incineration_mswweighted,HIC,21.561389510690763,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_landfill_unspecified_mswweighted,HIC,34.70642877957995,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_open_dump_mswweighted,HIC,1.5482993830897005,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_other_mswweighted,HIC,0.8685338191180195,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_recycling_mswweighted,HIC,28.466472107456386,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_sanitary_landfill_landfill_gas_system_mswweighted,HIC,1.7773805810968495,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_unaccounted_for_mswweighted,HIC,1.1122626164895015,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_waterways_marine_mswweighted,HIC,4.302403152926252e-06,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_anaerobic_digestion_mswweighted,LIC,0.0,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_compost_mswweighted,LIC,0.3119993858352199,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_controlled_landfill_mswweighted,LIC,1.439872269342367,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_incineration_mswweighted,LIC,0.0,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_landfill_unspecified_mswweighted,LIC,1.6818173786798627,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_open_dump_mswweighted,LIC,45.12900453770151,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_other_mswweighted,LIC,3.7503882607715813,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_recycling_mswweighted,LIC,3.662367643837658,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_sanitary_landfill_landfill_gas_system_mswweighted,LIC,0.7592998295376582,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_unaccounted_for_mswweighted,LIC,42.69536631232182,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_waterways_marine_mswweighted,LIC,0.5957733950176273,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_anaerobic_digestion_mswweighted,LMC,0.0,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_compost_mswweighted,LMC,8.797376198469623,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_controlled_landfill_mswweighted,LMC,0.7022208894432936,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_incineration_mswweighted,LMC,0.09839803336027723,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_landfill_unspecified_mswweighted,LMC,20.617446970954223,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_open_dump_mswweighted,LMC,44.120970572787755,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_other_mswweighted,LMC,6.5576686016925,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_recycling_mswweighted,LMC,6.070367625096956,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_sanitary_landfill_landfill_gas_system_mswweighted,LMC,1.279042428772159,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_unaccounted_for_mswweighted,LMC,11.727746733893454,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_waterways_marine_mswweighted,LMC,0.034472356919458914,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_anaerobic_digestion_mswweighted,UMC,0.01385051558944864,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_compost_mswweighted,UMC,1.0254850996330003,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_controlled_landfill_mswweighted,UMC,10.56542784466933,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_incineration_mswweighted,UMC,0.10292608827555494,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_landfill_unspecified_mswweighted,UMC,6.870779374147745,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_open_dump_mswweighted,UMC,40.780049074159926,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_other_mswweighted,UMC,0.09255000918662626,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_recycling_mswweighted,UMC,6.352674485222907,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_sanitary_landfill_landfill_gas_system_mswweighted,UMC,30.91936240120651,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_unaccounted_for_mswweighted,UMC,3.3110345078533294,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,treatment_share_waterways_marine_mswweighted,UMC,0.03439683878452244,percent_of_MSW,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,collection_coverage_population_weighted,World,84.31890223459003,percent_of_population,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,n_countries_with_collection_coverage,World,92.0,count,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,collection_coverage_population_weighted,HIC,99.0724623233727,percent_of_population,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,collection_coverage_population_weighted,LIC,29.12803201345612,percent_of_population,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,collection_coverage_population_weighted,LMC,53.12758225159978,percent_of_population,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed
+2016,collection_coverage_population_weighted,UMC,92.21091943328601,percent_of_population,"Kaza et al. 2018, What a Waste Global Database, country_level_data.csv",computed

@@ -1,0 +1,90 @@
+year,series,region_or_material,value,unit,source,method
+2020,msw_generated,World,2.1,Gt_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 19",transcribed
+2020,uncontrolled_share,World,38.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, p. 21",transcribed
+2020,uncontrolled_mass,World,806.0,Mt_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 22",transcribed
+2050,uncontrolled_share,World,41.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, p. 22",transcribed
+2050,uncontrolled_mass,World,1600.0,Mt_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 22",transcribed
+2020,msw_management_direct_cost,World,252.3,bn_USD2020_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 41",transcribed
+2020,msw_uncontrolled_externality_cost,World,243.3,bn_USD2020_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 41",transcribed
+2050,msw_total_cost_business_as_usual,World,640.3,bn_USD2020_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 41",transcribed
+2050,msw_externality_cost_business_as_usual,World,443.0,bn_USD2020_per_year,"UNEP 2024, Global Waste Management Outlook 2024, p. 41",transcribed
+2020,destination_mass_controlled,World,1320327.0,thousand_tonnes_per_year,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_share_controlled,World,62.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_mass_uncontrolled,World,805644.0,thousand_tonnes_per_year,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_share_uncontrolled,World,38.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_mass_landfilling,World,641256.0,thousand_tonnes_per_year,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_share_landfilling,World,30.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_mass_waste_to_energy,World,274800.0,thousand_tonnes_per_year,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_share_waste_to_energy,World,13.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_mass_recycling,World,404271.0,thousand_tonnes_per_year,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,destination_share_recycling,World,19.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, figure 7, p. 21",transcribed_figure
+2020,msw_collection_rate,North America,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,North America,3.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Central America and the Caribbean,71.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Central America and the Caribbean,7.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,South America,95.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,South America,6.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Northern Europe,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Northern Europe,10.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Western Europe,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Western Europe,9.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Southern Europe,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Southern Europe,14.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Eastern Europe,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Eastern Europe,10.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,West Asia and North Africa,86.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,West Asia and North Africa,17.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Sub-Saharan Africa,43.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Sub-Saharan Africa,13.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Central and South Asia,91.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Central and South Asia,9.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,East and South-East Asia,96.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,East and South-East Asia,10.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Oceania,18.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Oceania,4.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,Australia and New Zealand,100.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,Australia and New Zealand,2.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,msw_collection_rate,World,89.0,percent_of_MSW,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2020,n_countries_in_region,World,114.0,count,"UNEP 2024, Global Waste Management Outlook 2024, table 2B.1.1, annex 2",transcribed_table
+2024,unit_cost_collection_reported,LIC,40.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_reported,LMC,16.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_reported,UMC,98.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_reported,HIC,121.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_reported_low,HIC,53.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_reported_high,HIC,99.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_reported,HIC,202.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_waste_to_energy_reported,HIC,134.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_reported,LIC,7.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_reported,LMC,25.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_low,LIC,20.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_high,LIC,50.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_low,LMC,30.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_high,LMC,75.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_low,UMC,50.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_high,UMC,100.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_low,HIC,90.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_collection_expert_high,HIC,200.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_low,LMC,15.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_high,LMC,40.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_low,UMC,25.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_high,UMC,65.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_low,HIC,40.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_landfill_expert_high,HIC,100.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_low,LIC,0.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_high,LIC,25.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_low,LMC,5.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_high,LMC,30.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_low,UMC,5.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_high,UMC,50.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_low,HIC,30.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_recycling_expert_high,HIC,80.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_waste_to_energy_expert_low,UMC,60.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_waste_to_energy_expert_high,UMC,150.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_waste_to_energy_expert_low,HIC,40.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_waste_to_energy_expert_high,HIC,200.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_expert_low,LIC,2.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_expert_high,LIC,8.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_expert_low,LMC,3.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2024,unit_cost_open_dumping_expert_high,LMC,10.0,current_USD_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, table 2C.1, annex 2",transcribed_table
+2020,msw_direct_cost_per_tonne_generated_implied,World,120.14285714285714,USD2020_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, p. 41; UNEP 2024, Global Waste Management Outlook 2024, p. 19",computed
+2020,msw_externality_cost_per_tonne_generated_implied,World,115.85714285714286,USD2020_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, p. 41; UNEP 2024, Global Waste Management Outlook 2024, p. 19",computed

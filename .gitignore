@@ -85,3 +85,16 @@ data/raw/oregrades/
 data/raw/urr/
 data/raw/minex/
 data/raw/ipcc2006/
+
+# B4: the four report PDFs the block transcribes from and the seven-item recovery-cost literature,
+# 48 MB between them. Every number taken from them is a literal in data/build/b4_whatawaste2.py,
+# b4_unep_gwmo2024.py, b4_unep_irp2011.py, b4_circularity_gap.py or b4_xi_literature.py with its
+# table and page; none is read by a script. Three of the seven literature items are
+# all-rights-reserved and are not ours to redistribute. data/sources/B4_waste_recycling.md carries
+# the download command for each. The What a Waste CSVs, the OECD dataflow and the Eurostat bulk
+# files, which ARE read by a script, are committed.
+data/raw/whatawaste2/*.pdf
+data/raw/unep_gwmo2024/
+data/raw/unep_irp2011/
+data/raw/circularity_gap/
+data/raw/xi_literature/

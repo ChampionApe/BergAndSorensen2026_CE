@@ -1,0 +1,277 @@
+year,series,region_or_material,value,unit,source,method
+2011,eolrr,V,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_upper_bound
+2011,osr,Cr,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Johnson et al. (2006)",transcribed_table_point
+2011,osr,Cr,72.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Papp, USGS (2004)",transcribed_table_point
+2011,rc,Cr,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Papp, USGS (2004)",transcribed_table_point
+2011,rc,Cr,18.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Johnson et al. (2006)",transcribed_table_point
+2011,eolrr,Cr,87.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Papp, USGS (2004)",transcribed_table_point
+2011,eolrr,Cr,93.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Johnson et al. (2006)",transcribed_table_point
+2011,osr,Mn,33.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_point
+2011,osr,Mn,67.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Jones, USGS (2004)",transcribed_table_point
+2011,rc,Mn,37.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Jones, USGS (2004)",transcribed_table_point
+2011,eolrr,Mn,53.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Jones, USGS (2004)",transcribed_table_point
+2011,osr,Fe,54.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_point
+2011,osr,Fe,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Worldsteel (2009)",transcribed_table_point
+2011,osr,Fe,66.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Fenton, USGS (2004)",transcribed_table_point
+2011,osr,Fe,65.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Wang et al. (2007)",transcribed_table_point
+2011,rc,Fe,28.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Wang et al. (2007)",transcribed_table_point
+2011,rc,Fe,41.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Fenton, USGS (2004)",transcribed_table_point
+2011,rc,Fe,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Worldsteel (2009)",transcribed_table_point
+2011,eolrr,Fe,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Fenton, USGS (2004)",transcribed_table_point
+2011,eolrr,Fe,67.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Wang et al. (2007)",transcribed_table_point
+2011,eolrr,Fe,78.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Birat (2001)",transcribed_table_point
+2011,eolrr,Fe,90.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Steel Recycling Institute (2007)",transcribed_table_point
+2011,osr,Ni,66.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck et al. (2008a)",transcribed_table_range_low
+2011,osr,Ni,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck et al. (2008a)",transcribed_table_range_high
+2011,osr,Ni,66.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck and Graedel (2010)",transcribed_table_range_low
+2011,osr,Ni,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck and Graedel (2010)",transcribed_table_range_high
+2011,osr,Ni,88.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Goonan, USGS (2009)",transcribed_table_point
+2011,rc,Ni,29.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck et al. (2008a)",transcribed_table_point
+2011,rc,Ni,41.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Goonan, USGS (2009)",transcribed_table_point
+2011,eolrr,Ni,57.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Goonan, USGS (2009)",transcribed_table_point
+2011,eolrr,Ni,58.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck et al. (2008a)",transcribed_table_range_low
+2011,eolrr,Ni,63.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck et al. (2008a)",transcribed_table_range_high
+2011,eolrr,Ni,58.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck and Graedel (2010)",transcribed_table_range_low
+2011,eolrr,Ni,63.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Reck and Graedel (2010)",transcribed_table_range_high
+2011,osr,Nb,44.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_point
+2011,osr,Nb,56.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Cunningham, USGS (2004a)",transcribed_table_point
+2011,rc,Nb,22.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Cunningham, USGS (2004a)",transcribed_table_point
+2011,eolrr,Nb,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Cunningham, USGS (2004a)",transcribed_table_point
+2011,eolrr,Nb,56.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_point
+2011,osr,Mo,33.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from working group consensus",transcribed_table_point
+2011,osr,Mo,67.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Blossom, USGS (2004)",transcribed_table_point
+2011,rc,Mo,33.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Blossom, USGS (2004)",transcribed_table_point
+2011,eolrr,Mo,30.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table C1, p. 30; estimate from Blossom, USGS (2004)",transcribed_table_point
+2011,osr,Mg,42.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Kramer, USGS (2004)",transcribed_table_point
+2011,rc,Mg,33.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Kramer, USGS (2004)",transcribed_table_point
+2011,eolrr,Mg,39.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Kramer, USGS (2004)",transcribed_table_point
+2011,osr,Al,40.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plunkert, USGS (2006)",transcribed_table_point
+2011,osr,Al,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Zheng (2009)",transcribed_table_point
+2011,rc,Al,34.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from IAI (2009)",transcribed_table_point
+2011,rc,Al,36.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plunkert, USGS (2006)",transcribed_table_point
+2011,rc,Al,36.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Zheng (2009)",transcribed_table_point
+2011,eolrr,Al,42.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plunkert, USGS (2006)",transcribed_table_point
+2011,eolrr,Al,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from IAI (2009)",transcribed_table_point
+2011,eolrr,Al,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Zheng (2009)",transcribed_table_point
+2011,osr,Ti,11.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010b)",transcribed_table_point
+2011,rc,Ti,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010b)",transcribed_table_point
+2011,eolrr,Ti,91.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010b)",transcribed_table_point
+2011,osr,Co,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Shedd, USGS (2004)",transcribed_table_point
+2011,rc,Co,32.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Shedd, USGS (2004)",transcribed_table_point
+2011,eolrr,Co,68.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Shedd, USGS (2004)",transcribed_table_point
+2011,osr,Cu,24.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010a)",transcribed_table_point
+2011,osr,Cu,78.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2004)",transcribed_table_point
+2011,rc,Cu,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2004)",transcribed_table_point
+2011,rc,Cu,30.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010a)",transcribed_table_point
+2011,rc,Cu,37.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Risopatron (2009)",transcribed_table_point
+2011,rc,Cu,37.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plachy, USGS (2004)",transcribed_table_point
+2011,eolrr,Cu,43.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Goonan, USGS (2010a)",transcribed_table_point
+2011,eolrr,Cu,53.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2004)",transcribed_table_point
+2011,osr,Zn,19.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plachy, USGS (2004)",transcribed_table_point
+2011,osr,Zn,35.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Sempels (2009)",transcribed_table_range_low
+2011,osr,Zn,40.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Sempels (2009)",transcribed_table_range_high
+2011,osr,Zn,71.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2005)",transcribed_table_point
+2011,rc,Zn,18.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2005)",transcribed_table_point
+2011,rc,Zn,27.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plachy, USGS (2004)",transcribed_table_point
+2011,eolrr,Zn,19.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Plachy, USGS (2004)",transcribed_table_point
+2011,eolrr,Zn,35.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Sempels (2009)",transcribed_table_range_low
+2011,eolrr,Zn,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Sempels (2009)",transcribed_table_range_high
+2011,eolrr,Zn,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Graedel et al. (2005)",transcribed_table_point
+2011,osr,Sn,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Carlin, USGS (2004)",transcribed_table_point
+2011,rc,Sn,22.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Carlin, USGS (2004)",transcribed_table_point
+2011,eolrr,Sn,75.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Carlin, USGS (2004)",transcribed_table_point
+2011,osr,Pb,95.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Smith, USGS (2004)",transcribed_table_point
+2011,osr,Pb,96.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Mao et al. (2008)",transcribed_table_point
+2011,rc,Pb,63.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Smith, USGS (2004)",transcribed_table_point
+2011,rc,Pb,42.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Wilson and White (2009)",transcribed_table_point
+2011,rc,Pb,51.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Mao et al. (2008)",transcribed_table_point
+2011,eolrr,Pb,95.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Smith, USGS (2004)",transcribed_table_point
+2011,eolrr,Pb,52.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Wilson and White (2009)",transcribed_table_point
+2011,eolrr,Pb,68.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table D1, p. 31; estimate from Mao et al. (2008)",transcribed_table_point
+2011,osr,Ru,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Ru,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Ru,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Ru,5.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Ru,15.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Rh,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Rh,40.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_point
+2011,eolrr,Rh,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Rh,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Pd,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Pd,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_point
+2011,eolrr,Pd,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Pd,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Ag,76.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2003)",transcribed_table_point
+2011,osr,Ag,77.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Johnson et al. (2005)",transcribed_table_point
+2011,osr,Ag,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Ag,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Silver Institute (2009) and GFMS (2009b)",transcribed_table_point
+2011,rc,Ag,30.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Johnson et al. (2005)",transcribed_table_point
+2011,rc,Ag,32.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2003)",transcribed_table_point
+2011,eolrr,Ag,58.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Johnson et al. (2005)",transcribed_table_point
+2011,eolrr,Ag,97.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2003)",transcribed_table_point
+2011,eolrr,Ag,30.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Ag,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Os,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from van Oss (2009)",transcribed_table_upper_bound
+2011,rc,Os,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from van Oss (2009)",transcribed_table_upper_bound
+2011,eolrr,Os,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from van Oss (2009)",transcribed_table_upper_bound
+2011,osr,Ir,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Ir,15.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Ir,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Ir,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Ir,30.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Pt,58.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2004)",transcribed_table_point
+2011,osr,Pt,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Pt,16.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2004)",transcribed_table_point
+2011,rc,Pt,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_point
+2011,eolrr,Pt,76.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Hilliard, USGS (2004)",transcribed_table_point
+2011,eolrr,Pt,60.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Pt,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Au,75.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Amey, USGS (2006)",transcribed_table_point
+2011,osr,Au,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,rc,Au,29.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Amey, USGS (2006)",transcribed_table_point
+2011,rc,Au,31.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from GFMS (2009a)",transcribed_table_point
+2011,eolrr,Au,40.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from GFMS (2009a)",transcribed_table_point
+2011,eolrr,Au,96.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from Amey, USGS (2006)",transcribed_table_point
+2011,eolrr,Au,15.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Au,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table E2, p. 33; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Li,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Li,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Li,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Be,14.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004c)",transcribed_table_point
+2011,osr,Be,75.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Civic (2009)",transcribed_table_point
+2011,rc,Be,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004c)",transcribed_table_point
+2011,rc,Be,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Civic (2009)",transcribed_table_point
+2011,eolrr,Be,7.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004c)",transcribed_table_point
+2011,eolrr,Be,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Civic (2009)",transcribed_table_upper_bound
+2011,eolrr,B,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Sc,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Ga,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Ga,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Buchert (2009)",transcribed_table_range_low
+2011,rc,Ga,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Buchert (2009)",transcribed_table_range_high
+2011,eolrr,Ga,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Ge,40.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Jorgenson (2006)",transcribed_table_point
+2011,osr,Ge,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,Ge,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Jorgenson (2006)",transcribed_table_point
+2011,rc,Ge,35.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,Ge,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Jorgenson (2006)",transcribed_table_point
+2011,eolrr,Ge,76.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Jorgenson (2006)",transcribed_table_point
+2011,eolrr,Ge,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,As,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,As,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,As,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Se,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Se,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Se,5.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Sr,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Y,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,Y,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,eolrr,Y,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,Zr,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Zr,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Zr,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Cd,76.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Plachy (2003)",transcribed_table_point
+2011,rc,Cd,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Morrow (2009)",transcribed_table_point
+2011,rc,Cd,32.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Plachy (2003)",transcribed_table_point
+2011,rc,Cd,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Cd,75.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Cd,15.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Plachy (2003)",transcribed_table_point
+2011,osr,In,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,In,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,In,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,In,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Sb,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Carlin (2006)",transcribed_table_point
+2011,osr,Sb,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Sb,20.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Carlin (2006)",transcribed_table_point
+2011,rc,Sb,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Roskill (2007)",transcribed_table_range_low
+2011,rc,Sb,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Roskill (2007)",transcribed_table_range_high
+2011,rc,Sb,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Sb,89.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Carlin (2006)",transcribed_table_point
+2011,eolrr,Sb,5.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Te,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,La,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,La,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,La,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Ce,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Ce,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Ce,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Pr,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Pr,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Pr,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Nd,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Nd,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Nd,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Sm,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Sm,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Eu,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Eu,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Gd,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Gd,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Gd,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Tb,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Tb,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Dy,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Dy,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Dy,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Ho,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Ho,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Er,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Er,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Tm,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Tm,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Yb,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Yb,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,rc,Lu,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Lu,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Hf,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,osr,Ta,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,osr,Ta,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,osr,Ta,43.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004b)",transcribed_table_point
+2011,rc,Ta,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Ta,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,rc,Ta,21.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004b)",transcribed_table_point
+2011,eolrr,Ta,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Ta,35.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Cunningham (2004b)",transcribed_table_point
+2011,osr,W,80.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Shedd (2005)",transcribed_table_point
+2011,rc,W,46.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Shedd (2005)",transcribed_table_point
+2011,eolrr,W,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,W,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,W,66.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Shedd (2005)",transcribed_table_point
+2011,osr,Re,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_approximate
+2011,rc,Re,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Re,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Re,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_lower_bound
+2011,osr,Hg,97.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Brooks and Matos (2005)",transcribed_table_point
+2011,rc,Hg,25.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,rc,Hg,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Hg,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_low
+2011,eolrr,Hg,10.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_range_high
+2011,eolrr,Hg,62.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from Brooks and Matos (2005)",transcribed_table_point
+2011,osr,Tl,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,rc,Tl,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,eolrr,Tl,0.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_point
+2011,osr,Bi,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr,Bi,1.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, table F1, pp. 36-37; estimate from working group expert opinion",transcribed_table_upper_bound
+2011,eolrr_iron_and_steel_low,Fe,70.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, appendix C, p. 30",transcribed
+2011,eolrr_iron_and_steel_high,Fe,90.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, appendix C, p. 30",transcribed
+2011,n_metals_studied,all,60.0,count,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed
+2011,n_metals_eolrr_above_50pc,all,18.0,count,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed
+2011,n_metals_eolrr_25_to_50pc,all,3.0,count,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed
+2011,n_metals_eolrr_10_to_25pc,all,3.0,count,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed
+2011,eolrr_bin_above_50pc,Al,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Co,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Cr,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Cu,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Au,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Fe,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Pb,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Mn,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Nb,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Ni,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Pd,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Pt,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Re,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Rh,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Ag,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Sn,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Ti,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound
+2011,eolrr_bin_above_50pc,Zn,50.0,percent,"UNEP IRP 2011, Recycling Rates of Metals, p. 17",transcribed_lower_bound

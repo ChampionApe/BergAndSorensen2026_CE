@@ -1,0 +1,80 @@
+year,series,region_or_material,value,unit,source,method
+2017.0,recovered_eol_material,steel,298.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,total_material_demand,steel,1500.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_to_recover_material,steel,6.7,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_for_primary_production,steel,21.7,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_alpha_quantity_circularity,steel,0.2,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_beta_quality_circularity,steel,0.69,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_circularity_index,steel,0.14,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,recovered_eol_material,concrete,660.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,total_material_demand,concrete,32800.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_to_recover_material,concrete,3.4,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_for_primary_production,concrete,3.4,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_alpha_quantity_circularity,concrete,0.02,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_beta_quality_circularity,concrete,0.0,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_circularity_index,concrete,0.0,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,recovered_eol_material,plastic,28.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,total_material_demand,plastic,299.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_to_recover_material,plastic,9.6,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_for_primary_production,plastic,38.4,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_alpha_quantity_circularity,plastic,0.09,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_beta_quality_circularity,plastic,0.75,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_circularity_index,plastic,0.07,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,recovered_eol_material,paper,156.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,total_material_demand,paper,408.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_to_recover_material,paper,23.4,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_for_primary_production,paper,26.2,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_alpha_quantity_circularity,paper,0.38,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_beta_quality_circularity,paper,0.11,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_circularity_index,paper,0.04,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,recovered_eol_material,aluminium,11.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,total_material_demand,aluminium,54.0,Mt_per_year,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_to_recover_material,aluminium,7.6,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,energy_for_primary_production,aluminium,174.0,MJ_per_kg,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_alpha_quantity_circularity,aluminium,0.21,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_beta_quality_circularity,aluminium,0.96,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+2017.0,cullen_circularity_index,aluminium,0.2,ratio,"Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",transcribed
+,energy_saving_factor_recycling_vs_mine_low,metals,10.0,ratio,"Reck and Graedel 2012, Science 337:690-695, p. 691",transcribed
+,energy_saving_factor_recycling_vs_mine_high,metals,20.0,ratio,"Reck and Graedel 2012, Science 337:690-695, p. 691",transcribed
+,sorting_electricity_per_tonne_recycled,MSW,39.0,kWh_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, annex 3, p. 61",transcribed
+,sorting_transport_per_tonne_recycled,MSW,50.0,tonne_km_per_tonne,"UNEP 2024, Global Waste Management Outlook 2024, annex 3, p. 61",transcribed
+,epa_packaging_investment_low,US_residential_packaging,22000000000.0,USD,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_investment_high,US_residential_packaging,28000000000.0,USD,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_added_recovery_low,US_residential_packaging,38000000.0,tonnes_per_year,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_added_recovery_high,US_residential_packaging,45000000.0,tonnes_per_year,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_rate_from,US_residential_packaging,32.0,percent,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_rate_to_low,US_residential_packaging,45.0,percent,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_packaging_rate_to_high,US_residential_packaging,47.0,percent,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 2.1",transcribed
+,epa_all_investment_low,US_residential_packaging_and_organics,36000000000.0,USD,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,epa_all_investment_high,US_residential_packaging_and_organics,43000000000.0,USD,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,epa_all_added_recovery_low,US_residential_packaging_and_organics,82000000.0,tonnes_per_year,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,epa_all_added_recovery_high,US_residential_packaging_and_organics,89000000.0,tonnes_per_year,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,epa_all_rate_from,US_residential_packaging_and_organics,32.0,percent,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,epa_all_rate_to,US_residential_packaging_and_organics,61.0,percent,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, executive summary, p. ES-2",transcribed
+,us_average_landfill_tipping_fee,US_MSW,53.72,USD_per_ton,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 5",transcribed
+,us_regional_landfill_tipping_fee_low,US_MSW_South_Central,39.66,USD_per_ton,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 5",transcribed
+,us_regional_landfill_tipping_fee_high,US_MSW_Northeast,72.03,USD_per_ton,"US EPA 2024, An Assessment of the U.S. Recycling System: Financial Estimates to Improve Recycling Infrastructure, section 5",transcribed
+,cost_initial_sorting_low,plastics_flexibles,110.08,EUR_per_tonne_output,"Van Camp et al. 2024, Waste Management 189:300-313, abstract and section 4",transcribed
+,cost_initial_sorting_high,plastics_flexibles,122.53,EUR_per_tonne_output,"Van Camp et al. 2024, Waste Management 189:300-313, abstract and section 4",transcribed
+,cost_additional_sorting_and_improved_recycling_low,plastics_rPE_flex,566.26,EUR_per_tonne_output,"Van Camp et al. 2024, Waste Management 189:300-313, abstract and section 4",transcribed
+,cost_additional_sorting_and_improved_recycling_high,plastics_rPP_film,735.47,EUR_per_tonne_output,"Van Camp et al. 2024, Waste Management 189:300-313, abstract and section 4",transcribed
+,cost_reduction_from_rationalisation_low,plastics_flexibles,15.0,percent,"Van Camp et al. 2024, Waste Management 189:300-313, abstract",transcribed
+,cost_reduction_from_rationalisation_high,plastics_flexibles,26.0,percent,"Van Camp et al. 2024, Waste Management 189:300-313, abstract",transcribed
+,required_recycling_rate_to_break_even_mean,imported_plastic_waste,63.0,percent,"Li, Ward, Lin and Tukker 2024, Nature Communications 15:7527, abstract and results",transcribed
+,observed_domestic_recycling_rate_mean,imported_plastic_waste,23.0,percent,"Li, Ward, Lin and Tukker 2024, Nature Communications 15:7527, abstract and results",transcribed
+,required_recycling_rate_to_break_even_PVC,plastic_PVC,83.0,percent,"Li, Ward, Lin and Tukker 2024, Nature Communications 15:7527, results",transcribed
+,labour_cost_per_kg_germany,plastic_waste,0.26,USD_per_kg,"Li, Ward, Lin and Tukker 2024, Nature Communications 15:7527, results",transcribed
+,labour_cost_per_kg_thailand,plastic_waste,0.052,USD_per_kg,"Li, Ward, Lin and Tukker 2024, Nature Communications 15:7527, results",transcribed
+,times_a_unit_of_metal_is_reused_low,iron_copper_nickel,2.0,count,"Reck and Graedel 2012, Science 337:690-695, p. 692",transcribed
+,times_a_unit_of_metal_is_reused_high,iron_copper_nickel,3.0,count,"Reck and Graedel 2012, Science 337:690-695, p. 692",transcribed
+,eolrr_best_attainable,platinum_group_metals,60.0,percent,"Reck and Graedel 2012, Science 337:690-695, p. 691",transcribed
+,eolrr_nickel_life_cycle_efficiency,nickel,52.0,percent,"Reck and Graedel 2012, Science 337:690-695, p. 692, figure 2B caption",transcribed_figure_caption
+,plateau_of_aggregate_recycling_rates,n/a,,OECD aggregate recycling rates have plateaued in recent decades,"Fullerton and Kinnaman 2024, NBER working paper 32981, abstract",qualitative
+,economies_of_scale_in_sorting,n/a,,"capital-intensive sense-and-sort methods reach a lower cost per additional tonne recycled but require a high fixed outlay, so unit cost falls with scale before it rises with the rate","Fullerton and Kinnaman 2024, NBER working paper 32981, section on heterogeneity",qualitative
+,recovery_grade_trade_off,n/a,,an MRF network-flow model in which profit rises with the recovery rate but not with grade beyond the concentration requirement; the cost-against-recovery results are shown only in figures 5 and 6 and are therefore not transcribed,"Ip, Testa, Raymond, Graves and Gutowski 2018, Resour. Conserv. Recycl. 131:192-205, section 4",qualitative
+,mass_retention_raises_unit_cost,n/a,,"lower mass retention leaves less output to bear the same incurred cost and adds a disposal fee, so the cost per tonne of product rises as yield falls","Van Camp et al. 2024, Waste Management 189:300-313, section 4.1",qualitative
+,quality_ceiling_is_material_specific,n/a,,"trace copper in scrap steel, fibre shortening in paper, silicon in aluminium and the aggregate fraction limit in concrete each cap the share of a stream that can re-enter its original use","Cullen 2017, J. Ind. Ecol. 21(3):483-486, table 1 (accepted version, Cambridge Apollo)",qualitative
+,gap_no_explicit_cost_function_of_recovery_rate,n/a,,"No public study found gives cost or energy per tonne recovered as an explicit function of the recovery rate achieved for a single material stream. The assembled evidence is either a two-point ladder (initial versus deep sorting), a break-even rate, or an aggregate capital outlay for a stated rise in a national rate.","B4 literature search, 2026-09-17",not_found
+,gap_mrf_cost_curve_in_figures_only,n/a,,Ip et al. 2018 models exactly the required object but reports the cost against recovery and the sensitivity to separation efficiency in figures 5 and 6 only; reading a figure is not permitted here.,"B4 literature search, 2026-09-17",not_found
+,manual_kinnaman_shinkuma_yamamoto_2014,n/a,,"MANUAL: Kinnaman, Shinkuma and Yamamoto (2014), The socially optimal recycling rate: evidence from Japan, J. Environ. Econ. Manage. 68(1):54-70, doi 10.1016/j.jeem.2014.01.004. Estimates average social cost of municipal waste management as a function of the recycling rate, which is the single closest published object to the treatment-cost gradient. Paywalled at Elsevier.","B4 literature search, 2026-09-17",not_found
+,manual_graedel_et_al_2011_jie,n/a,,"MANUAL: Graedel et al. (2011), What do we know about metal recycling rates?, J. Ind. Ecol. 15(3):355-366, doi 10.1111/j.1530-9290.2011.00342.x. Paywalled at Wiley; the USGS repository copy returns 403. Its content is the journal version of UNEP IRP (2011), which is downloaded, so nothing is lost but the citation.","B4 literature search, 2026-09-17",not_found

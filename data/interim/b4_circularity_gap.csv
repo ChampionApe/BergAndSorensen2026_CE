@@ -1,0 +1,54 @@
+year,series,region_or_material,value,unit,source,method
+2018,circularity_metric_input_technical_cycling_rate,World,7.2,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,circularity_metric_input_technical_cycling_scale,World,7.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,circularity_metric_input_technical_cycling_rate,World,6.9,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,circularity_metric_input_technical_cycling_scale,World,7.3,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_carbon_neutral_biomass_rate,World,21.6,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_carbon_neutral_biomass_scale,World,21.5,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_carbon_neutral_biomass_rate,World,21.5,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_carbon_neutral_biomass_scale,World,22.8,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_non_carbon_neutral_biomass_rate,World,2.6,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_non_carbon_neutral_biomass_scale,World,2.6,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_non_carbon_neutral_biomass_rate,World,2.2,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_non_carbon_neutral_biomass_scale,World,2.3,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_other_virgin_non_renewable_rate,World,18.0,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_other_virgin_non_renewable_scale,World,17.9,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_other_virgin_non_renewable_rate,World,18.1,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_other_virgin_non_renewable_scale,World,19.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_fossil_fuels_for_energy_rate,World,13.9,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,input_fossil_fuels_for_energy_scale,World,13.9,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_fossil_fuels_for_energy_rate,World,13.3,percent,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2021,input_fossil_fuels_for_energy_scale,World,14.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table one, p. 23",transcribed
+2018,output_waste_destined_for_recycling_rate,World,11.1,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_destined_for_recycling_scale,World,7.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_destined_for_recycling_rate,World,11.2,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_destined_for_recycling_scale,World,7.3,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_and_emissions_carbon_neutral_biomass_rate,World,34.5,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_and_emissions_carbon_neutral_biomass_scale,World,22.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_and_emissions_carbon_neutral_biomass_rate,World,35.3,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_and_emissions_carbon_neutral_biomass_scale,World,23.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_and_emissions_non_carbon_neutral_biomass_rate,World,4.1,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_and_emissions_non_carbon_neutral_biomass_scale,World,2.6,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_and_emissions_non_carbon_neutral_biomass_rate,World,3.4,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_and_emissions_non_carbon_neutral_biomass_scale,World,2.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_disposed_without_recovery_rate,World,28.3,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_waste_disposed_without_recovery_scale,World,18.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_disposed_without_recovery_rate,World,28.6,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_waste_disposed_without_recovery_scale,World,18.8,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_emissions_and_waste_fossil_fuels_rate,World,22.0,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2018,output_emissions_and_waste_fossil_fuels_scale,World,14.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_emissions_and_waste_fossil_fuels_rate,World,21.6,percent,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,output_emissions_and_waste_fossil_fuels_scale,World,14.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, table two, p. 24",transcribed
+2021,total_material_use,World,106.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,material_extraction,World,98.8,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,domestic_material_use,World,67.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,secondary_materials,World,7.3,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,gross_addition_to_stocks,World,62.6,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,net_addition_to_stocks,World,40.4,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,demolition_and_discard,World,22.2,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,short_lived_materials,World,6.9,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,solid_and_liquid_waste,World,19.1,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,emissions_to_air,World,43.5,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,output_to_environment,World,62.6,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,total_processed_output,World,65.7,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
+2021,net_stock_build_up_rate_denominator_check,World,36.6,Gt_per_year,"Circle Economy 2025, Circularity Gap Report 2025, figure three text, p. 24",transcribed
