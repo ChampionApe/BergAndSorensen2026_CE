@@ -43,3 +43,8 @@ __pycache__/
 # OS
 Thumbs.db
 .DS_Store
+
+# B1: the Haas et al. (2020) supplement is committed as the zip it was downloaded as, and
+# data/build/b1_haas2020.py unpacks the single workbook inside it on first run. The unpacked copy is
+# a duplicate of two megabytes, not a second source.
+data/raw/haas2020/Supporting Material Table S1 RCR.xlsx
