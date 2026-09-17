@@ -69,7 +69,8 @@ These fail silently rather than loudly, which is why they are here rather than i
   compiles here and fails there. `overleaf.py` refuses an export that would break this, including a
   reference matching only case-insensitively, because Overleaf runs on Linux and this machine does not.
 - **A file marked `%% ALMOST DONE` is edited minimally**, only where something it states has actually
-  changed. The whole planner part carries the marker today. `docs_style.md` §1.
+  changed. Sections 1 and 2 of the planner part (`theory_planner_setup.tex`, `theory_planner_model.tex`)
+  carry the marker today. `docs_style.md` §1.
 - **Do not hand-edit a file carrying a `%% GENERATED` banner.** Nothing generates one yet; when the
   quantitative results start landing in tex they will, and `overleaf.py` already protects them.
 - **Documentation is part of the work, not a write-up phase.** A change to the model that is not
