@@ -1,0 +1,68 @@
+calibration file: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\data\build\..\processed\calibration.json;  T = 60
+
+== the guess path: where does S reach 2% of S0?
+  not within 2000 periods; S(2000) = 10700.2 = 0.797 of S0 (N on the guess is capped at 7.6 = Rtarget)
+  with the guess's material target growing at the C-cell rate 0.0252: t = 490 (year 2390)
+
+== solve at the calibrated units
+calibrated units: solve_long took 2.2 s
+calibrated units converged = false, |F| = 1.251e-04, T = 60, Gam = 1.02556
+  t =   0: Y = 3.4053, R = 5.7354, N = 5.7354, RR = 0.0000, varpi = 0.0000, gate fee tauW = 1.6214e-04, zeta = 2.2426e-05, pP = 3.6813e-04, S = 13428.6, P = 78.96
+  t =  60: Y = 20.3222, R = 23.2560, N = 23.2557, RR = 0.0003, varpi = 0.0000, gate fee tauW = 8.7147e-04, zeta = 2.6486e-04, pP = 2.0752e-03, S = 13039.4, P = 493.13
+
+== the same solve on the rescaled set (goods and material in units 100 times larger)
+rescaled: solve_long took 0.2 s
+rescaled converged = false, |F| = 1.780e-04, T = 60, Gam = 1.02556
+  t =   0: Y = 0.0347, R = 0.0685, N = 0.0685, RR = 0.0000, varpi = 0.0003, gate fee tauW = 1.6386e-04, zeta = 2.3292e-05, pP = 3.7269e-04, S = 134.3, P = 0.79
+  t =  60: Y = 0.2057, R = 0.2535, N = 0.2534, RR = 0.0000, varpi = 0.0000, gate fee tauW = 8.8197e-04, zeta = 2.6737e-04, pP = 2.1003e-03, S = 129.3, P = 5.57
+
+== solve_path directly from initial_guess at the calibrated units, verbose
+smoothing e = 1.0e-01
+  newton   1  |F| = 3.276e-01  step = 0.25
+  newton   2  |F| = 2.458e-01  step = 0.25
+  newton   3  |F| = 2.076e-01  step = 0.25
+  newton   4  |F| = 1.948e-01  step = 0.25
+  newton   5  |F| = 1.771e-01  step = 0.5
+  newton   6  |F| = 1.116e-01  step = 1
+  newton   7  |F| = 8.404e-03  step = 1
+  newton   8  |F| = 1.362e-04  step = 1
+  newton   9  |F| = 1.181e-07  step = 1
+  newton  10  |F| = 6.366e-12  step = 1
+smoothing e = 1.0e-02
+  newton   1  |F| = 4.111e-02  step = 0.0625
+  newton   2  |F| = 3.838e-02  step = 0.0625
+  newton   3  |F| = 3.339e-02  step = 0.125
+  newton   4  |F| = 2.917e-02  step = 0.125
+  newton   5  |F| = 2.551e-02  step = 0.125
+  newton   6  |F| = 1.269e-02  step = 0.5
+  newton   7  |F| = 4.504e-03  step = 1
+  newton   8  |F| = 1.212e-03  step = 1
+  newton   9  |F| = 5.441e-04  step = 1
+  newton  10  |F| = 1.642e-04  step = 1
+  newton  11  |F| = 1.611e-05  step = 1
+  newton  12  |F| = 1.475e-07  step = 1
+  newton  13  |F| = 7.674e-12  step = 1
+smoothing e = 1.0e-03
+  newton   1  |F| = 1.986e-03  step = 0.5
+  newton   2  |F| = 9.763e-04  step = 0.5
+  newton   3  |F| = 4.859e-04  step = 0.5
+  newton   4  |F| = 6.068e-05  step = 1
+  newton   5  |F| = 3.504e-05  step = 0.5
+  newton   6  |F| = 9.676e-06  step = 1
+  newton   7  |F| = 1.901e-06  step = 1
+  newton   8  |F| = 2.822e-07  step = 1
+  newton   9  |F| = 4.489e-08  step = 1
+  newton  10  |F| = 7.062e-09  step = 1
+  newton  11  |F| = 1.113e-09  step = 1
+  newton  12  |F| = 1.753e-10  step = 1
+smoothing e = 1.0e-04
+  newton   1  |F| = 2.074e-04  step = 0.125
+  newton   2  |F| = 1.684e-04  step = 0.0156
+  newton   3  |F| = 1.598e-04  step = 0.0312
+  newton   4  |F| = 1.308e-04  step = 0.0312
+  newton   5  |F| = 1.251e-04  step = 0.0625
+  newton   6  |F| = 1.251e-04  step = 9.09e-13
+  did not converge at e = 1.0e-04 (|F| = 1.251e-04)
+direct converged = false, |F| = 1.251e-04, T = 60, Gam = 1.02556
+  t =   0: Y = 3.4053, R = 5.7354, N = 5.7354, RR = 0.0000, varpi = 0.0000, gate fee tauW = 1.6214e-04, zeta = 2.2426e-05, pP = 3.6813e-04, S = 13428.6, P = 78.96
+  t =  60: Y = 20.3222, R = 23.2560, N = 23.2557, RR = 0.0003, varpi = 0.0000, gate fee tauW = 8.7147e-04, zeta = 2.6486e-04, pP = 2.0752e-03, S = 13039.4, P = 493.13

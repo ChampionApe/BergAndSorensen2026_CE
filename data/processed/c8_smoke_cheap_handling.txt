@@ -1,0 +1,22 @@
+calibration file: ../data/processed/calibration.json;  T = 60
+handling charges scaled by 0.1 (diagnostic)
+
+== the guess path: where does S reach 2% of S0?
+  not within 2000 periods; S(2000) = 10701.5 = 0.797 of S0 (N on the guess is capped at 7.6 = Rtarget)
+  with the guess's material target growing at the C-cell rate 0.0252: t = 490 (year 2390)
+
+== solve at the calibrated units
+calibrated units: solve_long took 1.6 s
+calibrated units converged = true, |F| = 3.638e-12, T = 60, Gam = 1.02556
+  t =   0: Y = 3.4030, R = 5.7748, N = 5.6744, RR = 0.1004, varpi = 0.4612, gate fee tauW = 8.3088e-05, zeta = 1.8160e-05, pP = 3.6895e-04, S = 13428.6, P = 78.96
+  t =  60: Y = 21.1840, R = 30.3450, N = 17.5658, RR = 12.7792, varpi = 1.0000, gate fee tauW = -3.7234e-03, zeta = -1.1907e-03, pP = 2.1644e-03, S = 13031.7, P = 179.93
+
+== check_path
+ledger relative error      1.338e-14
+cumulative N / bound       0.0074  (655.3 / 8.912e+04)
+cumulative leakage / B     0.0027
+effective survival factor  0.97235  (1 - mu = 0.96511)
+retained endowment M_inf   830.8
+
+== classify_longrun
+(:C, (floor = false, hard_ceiling = false, Rbar = 0.0, abar = 1.0, g = 0.025243120088972643, closes = true, leak_sum = 17.23398599228618, A = 1.169358628091273, closure_reason = "", Minf = 830.8135723389935, sigma = 0.5688251477467263, residence = 43.81392994640384, survival_ratio = Inf))
