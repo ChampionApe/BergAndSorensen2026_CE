@@ -1,0 +1,12 @@
+name,value,unit,note
+K0,10.629329276886386,trillion 2011 intl $,"B2, perpetual inventory anchored at 1950; reconstructed"
+MK0,35.60524415,Gt,"Krausmann et al. (2018), in-use stock of manufactured capital, 1900"
+S0,13428.572376856611,Gt,"written by C3; range [1.073e+04, 1.612e+04]"
+X0,13503.021414121506,Gt,"written by C3; range [1.081e+04, 1.62e+04]"
+P0,78.95603800157946,Gt,"written by C5; range [78.96, 78.96]"
+W0,16.392178305765608,Gt,"written by C4; range [0.572, 16.39]"
+R_2015,95.02331896,Gt/yr,the reference for the Rbar grid
+Rbar_grid_0.0,0.0,Gt/yr,fraction of 2015 material input
+Rbar_grid_0.1,9.502,Gt/yr,fraction of 2015 material input
+Rbar_grid_0.25,23.756,Gt/yr,fraction of 2015 material input
+Rbar_grid_0.5,47.512,Gt/yr,fraction of 2015 material input
