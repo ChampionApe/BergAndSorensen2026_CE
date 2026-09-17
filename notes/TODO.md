@@ -3,15 +3,16 @@
 The one open list. Closed work goes to `RESEARCH_LOG.md` or `model/RESEARCH_LOG.md`, not a tick here.
 An item says what it waits on, so it can be picked up cold.
 
+**Do not renumber.** These numbers are cited from `code_style.md` and `paper_style.md`. A closed item
+leaves a gap; a new one takes the next free number.
+
 ## Writing and Overleaf
 
-1. **First push of `docs` to its Overleaf project**
-   (<https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc>). `notes/overleafSync.md` §1. Needs a
-   terminal of your own, once, so the credential manager can take the Git token.
-2. **Cut the paper over to `overleaf.py`.** `notes/overleafSync.md` §2, which has one step that must be
-   done by hand first: check Overleaf's history for co-author edits made after 2026-08-06, because the
-   local copy is ahead (the $\zeta$ normalisation and $q = 1+\phi^K p^M$) and a `--force` push would
-   discard anything newer online. Then unlink the GitHub integration.
+1. *(closed 2026-09-17 — both Overleaf projects connected and pushed.)*
+2. **Unlink the GitHub integration from the paper's Overleaf project.** The push route is now
+   `overleaf.py`, and running both against one project is what the sync discipline exists to prevent.
+   Overleaf → Menu → GitHub → unlink. Until this is done, a GitHub sync could still overwrite the
+   project from the retired `BergAndSorensen2026_circular` repository, which is 2026-08-06 content.
 3. **Decide what `docs` and `paper` each own.** They are two documents of the same model in two time
    conventions — the technical note is discrete time, the paper continuous. Neither states the relation
    to the other, and the reader of either would want it in one sentence.

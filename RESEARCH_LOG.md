@@ -7,6 +7,23 @@ full session history to that date is archived in
 reserved with the earlier `2026-08-20_planner_docs_trend_growth/` archive as the basis
 for a later, more purely theoretical paper. New entries below this line.
 
+## 2026-09-17 (later) - Both Overleaf projects connected and pushed
+
+- **`docs` and `paper` both pushed**; a dry-run pull each way now reports 23 and 10 files unchanged,
+  nothing pending in either direction. The Git URLs are remembered under `writing/exports/`.
+- **The docs project was not empty.** `abstract.tex` had been edited on Overleaf after the project was
+  created, and that edit existed nowhere here: 4 lines from the local copy against 12-15 from every
+  archived one, so it was an edit of the current text, not an older upload. Pulled and committed on its
+  own (28031e0) before pushing, so the force-push discarded nothing. This is the case the dry-run step
+  exists for, and it appeared on the very first use.
+- **The paper project was behind**, byte-identical to the retired repository at 2026-08-06, so the
+  force-push only carried the zeta/q work up. It also deleted `sandbox.tex`, `.gitignore` and
+  `.github/copilot-instructions.md` from the Overleaf project; none is a paper source and all three
+  survive in `BergAndSorensen2026_circular`.
+- **Open**: the paper's Overleaf project still has the GitHub integration attached. Until it is
+  unlinked, a sync from the retired repository could overwrite the project with 2026-08-06 content.
+  `notes/TODO.md` item 2.
+
 ## 2026-09-17 — Repository setup brought in line with MEE; paper consolidated here
 
 - **The paper moved into this repository** as `writing/paper/` (was `writing/draft/`), with the
