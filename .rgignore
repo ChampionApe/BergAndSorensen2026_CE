@@ -1,0 +1,6 @@
+# Kept out of default searches so a session's first look at the repository sees only live files.
+# Read a path here deliberately, or search with `rg --no-ignore`.
+archive/                    # history, indexed in archive/INDEX.md
+writing/_archive/           # superseded writing, reserved for a later theoretical paper
+writing/paper/localfiles/   # co-authors' Word drafts and conversion scratch, not sources
+writing/exports/            # Overleaf zips and the clones of the two Overleaf projects

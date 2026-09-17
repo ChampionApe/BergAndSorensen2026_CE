@@ -1,0 +1,325 @@
+\section{Implementing the first best}\label{sec:mkt:implementation}
+
+\subsection{The policy}\label{sec:mkt:implementation:policy}
+
+Section~\ref{sec:mkt:setup:equilibrium} ended with a count: three shadow prices of the planned economy
+--- $p^P$ on the pollution stock, $p^W$ on the ledger and $\zeta$ on the intensity condition --- have
+no private counterpart, and the instrument list contains exactly three independent rates. The
+proposition below assigns one to each.
+
+\begin{proposition}[Decentralization of the first best]\label{prop:mkt:implementation}
+Let $\left\{p^P,p^W,\zeta,\Phi^I\right\}_{t\ge0}$ denote the shadow prices and the investment-goods
+material intensity along the solution to Problem~\ref{prob:sp}, and suppose that solution is unique.
+Set
+\begin{align}
+\tau^{\Xi} &= p^P,
+&
+\tau^{\mathcal D} &= \zeta,
+&
+\tau^{\circ} &= p^W,
+\label{eq:mkt:implement-primitives}
+\end{align}
+so that, by~\eqref{eq:mkt:emission-split} and the deposit--refund structure of block~(B),
+\begin{align}
+\tau^U &= p^P,
+&
+\tau^T &= s^R = d^Wp^P,
+&
+\tau^R &= p^W-\zeta,
+&
+s^I &= \Phi^I\left(p^W-\zeta\right),
+\label{eq:mkt:implement-derived}
+\end{align}
+with $s^W$ set by the tender and $\mathcal T$ balancing the budget. Then the competitive equilibrium of
+Definition~\ref{def:mkt:equilibrium} implements the first-best allocation, and the equilibrium prices
+are
+\begin{align}
+P^K &= F_K\left(1-\zeta\Omega^Y\right),
+&
+P^R &= \Psi-p^W,
+&
+P^T &= \alpha V,
+&
+s^W &= p^W,
+\label{eq:mkt:implement-prices}
+\end{align}
+while the private shadow prices coincide with the social ones, $P^S=p^S$, $P^X=p^X$, $p^M$ as
+in~\eqref{eq:sp:sum:M}, and $q=1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)$ as
+in~\eqref{eq:sp:sum:I}.
+\end{proposition}
+
+\begin{proof}
+We verify that the first-best path, together with the prices~\eqref{eq:mkt:implement-prices}, satisfies
+every condition of Definition~\ref{def:mkt:equilibrium}; uniqueness of the planner's solution then
+makes the equilibrium the first best rather than merely one equilibrium among several. Throughout,
+substitute~\eqref{eq:mkt:implement-primitives}--\eqref{eq:mkt:implement-derived} for the policy rates,
+so that $\tau^{\mathcal D}=\zeta$ replaces the gate fee wherever it appears. Two identities do most of
+the work:
+\begin{align}
+\Psi &= P^R+\tau^R+\tau^{\mathcal D} \;=\; P^R+p^W,
+&
+V &= \Psi-p^W+d^Wp^P \;=\; P^R+s^R .
+\label{eq:mkt:price-identities}
+\end{align}
+The first is the definition $\Psi\equiv F_R\left(1-\zeta\Omega^Y\right)+\zeta$
+of~\eqref{eq:sp:shorthand} combined with the second of~\eqref{eq:mkt:final-foc}; the second follows
+from it and $s^R=d^Wp^P$. In words: the market price of a tonne is the planner's gross material value
+net of the waste charge the tonne will eventually attract, and the virgin displacement value is the
+market price of material grossed up by the recovery subsidy.
+
+\emph{Final goods.} The first of~\eqref{eq:mkt:final-foc} is the definition of $P^K$
+in~\eqref{eq:mkt:implement-prices}. The second is the first of~\eqref{eq:mkt:price-identities},
+which is~\eqref{eq:sp:shorthand} rearranged. Both hold identically.
+
+\emph{Extraction and exploration.} Using $\tau^{\circ}=p^W$ and $P^S=p^S$, the first
+of~\eqref{eq:mkt:mining-foc} reads $P^R=C^N_N\left(1+\zeta\Omega^N\right)+p^S+p^W\Omega^{N,S}$, which
+by~\eqref{eq:mkt:price-identities} is $\Psi=C^N_N\left(1+\zeta\Omega^N\right)+p^S+p^W\left(1+\Omega^{N,S}\right)$:
+the planner's~\eqref{eq:sp:sum:N}. The second of~\eqref{eq:mkt:mining-foc} is
+$p^S+p^X=C^D_D\left(1+\zeta\Omega^D\right)+p^W\Omega^{D,S}$, the planner's~\eqref{eq:sp:sum:D},
+with no tax on either margin. The corner branches coincide because the two sides do. Finally,
+the mining costates~\eqref{eq:mkt:mining-costates} are literally the planner's~\eqref{eq:sp:sum:S}
+and~\eqref{eq:sp:sum:X} once $\tau^{\mathcal D}=\zeta$, so $P^S=p^S$ and $P^X=p^X$ follow from the
+common discount rate and the transversality conditions.
+
+\emph{Recycling capital.} By the second of~\eqref{eq:mkt:price-identities}, $P^R+s^R=V$, so the
+branching inequality of~\eqref{eq:mkt:recycler-K-corner}--\eqref{eq:mkt:recycler-K-interior} is
+$a'\!\left(0^+\right)V\lessgtr F_K\left(1-\zeta\Omega^Y\right)$: this is exactly the Kuhn--Tucker
+system~\eqref{eq:sp:sum:recycling-virgin-KR}, branch for branch.
+
+\emph{Treated waste and the treatment share.} The recycler's demand
+condition~\eqref{eq:mkt:recycler-T} gives $P^T=\alpha V$, which is the third
+of~\eqref{eq:mkt:implement-prices}. The waste firm's margin is then
+\begin{align*}
+P^T+\tau^U-\tau^T &= \alpha V+p^P-d^Wp^P \;=\; \alpha V+p^P\left(1-d^W\right),
+\end{align*}
+and the marginal cost in~\eqref{eq:mkt:waste-foc} is
+$c^{T\prime}\!\left(\varpi\right)\left(1+\zeta\Omega^W\right)$. Both sides therefore agree with the
+planner's~\eqref{eq:sp:sum:recycling-virgin-varpi}, again branch for branch, including the two corners.
+
+\emph{The collection subsidy.} Substituting $P^T=\alpha V$, $\tau^U=p^P$ and $\tau^T=d^Wp^P$
+into the zero-profit condition~\eqref{eq:mkt:waste-zero-profit},
+\begin{align*}
+s^W &= c^W\left(1+\zeta\Omega^W\right)+p^P\left(1-\varpi\right)+d^Wp^P\varpi-\alpha\varpi V .
+\end{align*}
+The planner's waste condition~\eqref{eq:sp:sum:W}, with its pollution bracket expanded as
+$p^P\left(1-\varpi\right)+d^Wp^P\varpi-d^Wp^P\alpha\varpi$, reads
+$p^W\left(1-\alpha\varpi\right)=c^W\left(1+\zeta\Omega^W\right)+p^P\left(1-\varpi\right)+d^Wp^P\varpi
+-\alpha\varpi\left(\Psi+d^Wp^P\right)$. Since $V=\Psi-p^W+d^Wp^P$, the two right-hand sides differ by
+$\alpha\varpi p^W$ exactly, so $s^W=p^W\left(1-\alpha\varpi\right)+\alpha\varpi p^W=p^W$.
+
+\emph{The household.} With $\tau^{\mathcal D}=\zeta$ the consumption rule
+in~\eqref{eq:mkt:hh-foc} is the planner's~\eqref{eq:sp:sum:C}. With $\tau^{\circ}=p^W$ the private
+law of motion for $p^M$ is the planner's~\eqref{eq:sp:sum:M}, so the two coincide under the common
+transversality condition. Then, by the definition of $q$ in~\eqref{eq:mkt:hh-costate-def} and
+$s^I=\Phi^I\left(p^W-\zeta\right)$,
+\begin{align*}
+q &= 1-\Phi^I\left(p^W-\zeta\right)+\Phi^Ip^M
+\;=\; 1-\Phi^I\left(p^W-p^M-\zeta\right)
+\;=\; 1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right),
+\end{align*}
+the last step by $\zeta=\sigma\left(p^W-p^M\right)$ from~\eqref{eq:sp:zeta-explicit}. This is the
+planner's~\eqref{eq:sp:sum:I}. The arbitrage condition in~\eqref{eq:mkt:hh-foc} with
+$P^K=F_K\left(1-\zeta\Omega^Y\right)$ is then the planner's~\eqref{eq:sp:costate:K}, and the
+Keynes--Ramsey rule~\eqref{eq:sp:sum:Cgrowth} follows as before.
+
+\emph{Accounting and clearing.} The relations~\eqref{eq:mkt:accounting} are the ledger and the
+intensity condition of Problem~\ref{prob:sp}, which the first-best path satisfies by construction; the
+market-clearing conditions~\eqref{eq:mkt:clearing} are the definitions~\eqref{eq:sp:definitions} and
+the goods constraint~\eqref{eq:sp:goods}. Every condition of Definition~\ref{def:mkt:equilibrium} is
+therefore met.
+\end{proof}
+
+\begin{corollary}[The materials block is self-financing]\label{cor:mkt:budget}
+Under the policy of Proposition~\ref{prop:mkt:implementation}, net government revenue at every date is
+\begin{align}
+\mathcal B &= p^P\,\Xi .
+\label{eq:mkt:budget}
+\end{align}
+The entire materials apparatus --- both gate fees, the materials input tax, the investment rebate and
+the collection subsidy --- balances exactly, and the only net revenue in the economy is the Pigouvian
+emission tax.
+\end{corollary}
+
+\begin{proof}
+Collecting the seven flows and using $W=\Omega\mathcal D+\delta M^K+\mathcal N$ from
+\eqref{eq:sp:ledger-streams} and $\Omega\mathcal D=R-\Phi^IG$ from~\eqref{eq:sp:intensity},
+\begin{align*}
+\mathcal B &= \underbrace{\zeta\,\Omega\mathcal D+p^W\left(\delta M^K+\mathcal N\right)}_{\text{gate fees}}
++\underbrace{\left(p^W-\zeta\right)R-\Phi^I\left(p^W-\zeta\right)G}_{\text{deposit--refund}}
++\underbrace{p^P\Xi}_{\text{emissions}}
+-\underbrace{p^WW}_{\text{collection}}
+\\
+&= \zeta\,\Omega\mathcal D+\left(p^W-\zeta\right)\Omega\mathcal D-p^W\Omega\mathcal D+p^P\Xi
+\;=\;p^P\Xi ,
+\end{align*}
+the primary-waste terms cancelling against the corresponding part of $p^WW$.
+\end{proof}
+
+\subsection{Reading the policy}\label{sec:mkt:implementation:reading}
+
+\smalltitle{Three prices, three instruments.} The assignment
+in~\eqref{eq:mkt:implement-primitives} is one-to-one, and it is worth stating in words because the
+mapping is cleaner than the seven nominal rates suggest. The emission tax $\tau^\Xi=p^P$ prices the
+pollution stock. The primary-waste charge $\tau^{\circ}=p^W$ prices the ledger: a tonne released from
+the capital stock, or displaced from nature, adds a tonne to the flow the economy must handle, and it
+pays the full social cost of that tonne. The use-waste charge $\tau^{\mathcal D}=\zeta$ prices the
+intensity condition: a tonne diffused when a final good is used up does \emph{not} add a tonne to the
+flow, because the total is pinned by $R$ and by what gross investment stores, so it pays only the
+composition price $\zeta=\sigma\left(p^W-p^M\right)$. Everything else in the instrument list is a
+consequence of these three.
+
+\smalltitle{Why the two gate fees differ, and by how much.} The gap $\tau^{\circ}-\tau^{\mathcal D}=p^W-\zeta$
+is precisely the materials input tax $\tau^R$, and this is not a coincidence but an accounting identity.
+A tonne entering production ends up in one of two places: diffused as use waste, where the gate fee
+collects only $\zeta$, or stored in new capital, where it is rebated at $\tau^R$ and later pays
+$\tau^{\circ}=p^W$ on release. Charging $\tau^R$ at the point of entry and rebating it on the stored
+fraction tops the first route up from $\zeta$ to $p^W$ and leaves the second untouched. That is why the
+three rates $\tau^{\mathcal D}$, $\tau^{\circ}$ and $\tau^R$ satisfy one linear restriction and why
+Corollary~\ref{cor:mkt:budget} comes out exactly balanced. A tonne of material pays $p^W$ in total,
+once, however it travels; the instruments only decide where along the route it is collected.
+
+\smalltitle{A materials deposit--refund.} Block~(B) has a familiar name in the policy literature. Every
+tonne drawn into production carries a deposit $\tau^R$, and the deposit is refunded on the material
+that is locked into durable capital rather than diffused. The scheme is what makes the market's
+investment margin agree with the planner's: without the refund the household would face
+$q=1+\Phi^Ip^M$ and would treat embodied material as a pure liability, whereas the planner's
+$q=1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)$ is typically \emph{below} unity, because
+investing holds mass out of today's waste flow. The refund converts the private liability into the
+social premium. The sign of the intervention on this margin follows from the identity
+$\tau^R=p^W-\zeta=\left(1-\sigma\right)p^W+\sigma p^M$: the deposit is a convex combination of the two
+material shadow costs, so it is positive whenever both are, and durable capital formation is then
+subsidised at the margin relative to laissez-faire. Proposition~\ref{prop:sp:phases}(ii) makes this
+unconditional in the semi-linear phase, where $p^W>0$ throughout and hence $p^M>0$
+by~\eqref{eq:sp:sum:M}. It can fail only in the circular phase, and only once waste has turned into a
+resource; whether the deposit ever turns into a levy on investment is one of the sign questions left
+open in Section~\ref{sec:sp:opt:results}.
+
+\smalltitle{What the government has to know.} The rates in~\eqref{eq:mkt:implement-derived} are
+functions of time and of the first-best path, as Pigouvian rates always are. Two of them additionally
+require the government to know the material intensities: $s^I$ needs $\Phi^I$, and the gate fees
+operate on tonnages $\Omega^jx_j$ that have to be measured activity by activity. This is a real
+informational requirement, but it is the one thing in the model that existing statistics are actually
+built to deliver. As noted in Section~\ref{sec:sp:setup:aggregatematerial}, $\Omega$ and the relative
+intensities $\omega^j$ exist in this model precisely as the bridge between physical flows and reported
+material-flow accounts; here that bridge is load-bearing, since the tax base is a tonnage and the
+accounts are what measure it.
+
+\smalltitle{Ad valorem equivalents.} It may be more natural, for comparison with the tax systems
+actually in use, to state the gate fee as a set of taxes on activities rather than on tonnages. Since
+the waste generated per unit of activity $j$ is $\Omega^j=\Omega\omega^j$, the charge
+$\tau^{\mathcal D}=\zeta$ is equivalent to the schedule
+\begin{align}
+\tau^C &= \zeta\Omega^C,
+&
+\tau^Y &= \zeta\Omega^Y,
+&
+\tau^N &= \zeta\Omega^N,
+&
+\tau^D &= \zeta\Omega^D,
+&
+\tau^{c^W} &= \zeta\Omega^W,
+\label{eq:mkt:ad-valorem}
+\end{align}
+namely a consumption tax, an output tax, and ad valorem taxes on extraction effort, exploration effort
+and treatment expenditure, each at a rate equal to the shadow value of embodied material times the
+material intensity of the activity. Five instruments collapse into one because they share a base. The
+reduction is the model's most direct policy statement: what should be taxed is not the activity but
+the material it diffuses, and once the tax is levied on that base the differentiation across
+activities takes care of itself.
+
+\smalltitle{What is \emph{not} required.} Two omissions deserve comment. First, exploration bears no
+tax beyond the gate fee on the mass it displaces, even though it is an environmentally costly activity
+in the ordinary sense. The reason is the one recorded in Section~\ref{sec:sp:opt:foc}: discovery adds
+nothing to $R$, so it draws nothing through the ledger, and it is a complement to extraction rather
+than a substitute for it in the materials accounting. Second, recycling receives no subsidy for
+recycling as such. It receives $s^R=d^Wp^P$, which is a pollution subsidy --- the leakage the recovered
+tonne avoids --- and nothing more. The materials value of recycling is delivered entirely through the
+price $P^R$ that the deposit $\tau^R$ has already raised at the mine. This is the market counterpart of
+\emph{recycling is paid the cost of the virgin tonne it displaces, and nothing else}: in the planned
+economy the statement is about $V$; here it is about the price a recycler actually receives.
+
+\subsection{Phases in the market economy}\label{sec:mkt:implementation:phases}
+
+Because Proposition~\ref{prop:mkt:implementation} matches the two Kuhn--Tucker systems branch by
+branch, the phase structure of Proposition~\ref{prop:sp:phases} carries over intact, and it acquires an
+observable marker that the planned economy does not have.
+
+\begin{corollary}[The market for recyclable waste dates the transition]\label{cor:mkt:phases}
+Under the policy of Proposition~\ref{prop:mkt:implementation}, the regulated market economy passes
+through the same two phases as the planned economy, at the same date $t_R$. In the semi-linear phase
+the price of treated waste is zero, $P^T=0$, and the waste sector treats waste solely because
+treatment converts a tonne from the rate $\tau^U=p^P$ to the rate $\tau^T=d^Wp^P$, so that
+$\varpi$ solves $p^P\left(1-d^W\right)=c^{T\prime}\!\left(\varpi\right)\left(1+\zeta\Omega^W\right)$.
+The price $P^T$ becomes positive exactly at $t_R$ and rises thereafter.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:mkt:implementation} the equilibrium allocation is the first best, so the
+phases and $t_R$ are those of Proposition~\ref{prop:sp:phases}. In the semi-linear phase $K^R=0$, so
+$\alpha=0$ and $P^T=\alpha V=0$ by~\eqref{eq:mkt:recycler-T}; equivalently, recyclers demand no treated
+waste at any positive price, and free disposal clears the market at zero. The treatment
+condition~\eqref{eq:mkt:waste-foc} then reduces to the stated equality, which is
+Proposition~\ref{prop:sp:phases}(iii) written with market instruments. Continuity of $\alpha$ at $t_R$
+--- part~(iv) of that proposition --- gives continuity of $P^T$ at zero.
+\end{proof}
+
+The corollary is worth more than its proof. In the planned economy the onset of the circular phase is
+a statement about shadow prices and is not directly observable. In the market economy it is the date
+at which waste acquires a positive market value, which is a fact about an actual price series. It also
+sharpens what the semi-linear phase means institutionally: a waste sector that sorts and treats without
+any recycling taking place is not a paradox, it is the efficient response to a regulation that
+distinguishes controlled disposal from uncontrolled disposal. That is a recognisable description of
+waste policy in most countries for most of the twentieth century.
+
+\subsection{The unregulated economy}\label{sec:mkt:implementation:unregulated}
+
+Setting every instrument to zero gives the polar case, and it is worth recording what survives, because
+the paper's quantitative question is how far and for how long the unregulated economy departs from the
+optimum. With $\tau^\Xi=\tau^{\mathcal D}=\tau^{\circ}=0$, hence $\tau^R=s^I=s^R=0$, the private
+conditions collapse to
+\begin{align}
+F_R &= P^R,
+&
+F_K &= P^K,
+&
+P^R &= C^N_N+P^S,
+&
+a'\!\left(x\right)P^R &= P^K,
+&
+\alpha P^R &= P^T,
+&
+c^{T\prime}\!\left(\varpi\right) &= P^T,
+\label{eq:mkt:unregulated}
+\end{align}
+with $q=1$ and $s^W=c^W-P^T\varpi$, which the tender can only deliver as a positive subsidy if the
+government funds it; absent a collection obligation altogether, waste is collected only where
+$P^T\varpi\ge c^W$, and is otherwise released.
+
+Three observations follow immediately, and a fourth does not.
+
+First, the materials side of the model disappears entirely. Every wedge $1\pm\zeta\Omega^j$ is gone,
+the ledger is unpriced, and $M^K$ ceases to be an object anyone tracks. The unregulated economy
+behaves, on these margins, exactly like a model with no materials accounting at all --- which is a
+useful check on the framework rather than a defect of it.
+
+Second, extraction is unambiguously too cheap. The optimal condition charges the miner
+$C^N_N\zeta\Omega^N+p^W\Omega^{N,S}$ per tonne over and above the private marginal cost, both terms
+strictly positive whenever $\zeta>0$ and $p^W>0$. At any given $P^R$ and $P^S$ the unregulated firm
+extracts more.
+
+Third, and this is the substantive one, recycling starts \emph{later}. Compare the corner
+branch~\eqref{eq:mkt:recycler-K-corner} in the two economies: the regulated recycler holds
+$a'\!\left(0^+\right)\left(P^R+d^Wp^P\right)$ against $P^K$, the unregulated one holds
+$a'\!\left(0^+\right)P^R$ against $P^K$. At common prices the unregulated threshold is harder to
+clear, by exactly the leakage subsidy, so the semi-linear phase lasts longer. The comparison is a
+partial one --- $P^R$, $P^K$ and the whole path of the reserve differ across the two economies, so it
+bounds nothing on its own --- but it identifies the mechanism, and it identifies which term is
+responsible.
+
+What does \emph{not} follow is the magnitude, or whether the unregulated economy ever reaches the
+circular phase at all. Both sides of the threshold move with development: depletion raises $C^N_N$ and
+$P^S$ and therefore $P^R$, while capital accumulation lowers $P^K$ and productivity growth raises it.
+Section~\ref{sec:sp:opt:results} records the same non-monotonicity for the planner. Whether the
+unregulated transition merely happens late or fails to happen, and what the delay costs in welfare
+terms, is a quantitative question, and it is one of the questions the numerical model in the next part
+is built to answer.

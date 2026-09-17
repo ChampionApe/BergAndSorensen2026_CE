@@ -1,0 +1,67 @@
+\documentclass[a4paper]{article}
+\input{Packages.tex}
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  0: title section                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Technical Note: \\
+\emph{The Environmental Macroeconomics of the Circular Economy}}
+
+\author{Rasmus Kehlet Skjødt Berg
+% \thanks{University of Copenhagen, Oster Farimagsgade 5, 1353 Copenhagen K, Denmark. E-mail: rasmus.kehlet.berg@econ.ku.dk.}
+\and
+Peter Birch Sørensen
+% \thanks{University of Copenhagen, Oster Farimagsgade 5, 1353 Copenhagen K, Denmark. E-mail: peter.birch.sorensen@econ.ku.dk.}
+}
+\maketitle
+
+\begin{abstract}
+\noindent
+This note documents the three models used in the paper \emph{The Environmental Macroeconomics of the Circular Economy}: a planner's problem in continuous time, the corresponding decentralized market economy, and a quantitative implementation in discrete time with explicit functional forms. Its distinguishing feature is how the materials balance principle is imposed. Rather than positing a single aggregate identity relating extraction, capital accumulation and waste, conservation of mass is enforced separately for each economic activity --- production, extraction, exploration, waste collection and treatment, consumption, investment, and recycling --- and the aggregate relations used in all three models are derived from that process-level accounting rather than assumed directly.
+
+Doing so makes clear that the materials balance is an \emph{accounting ledger} rather than a constraint on the allocation: it determines what the mass flows are, it does not restrict what the economy can do. The economy-wide waste-intensity level and the material intensity of the final good are accordingly endogenous objects, determined identically in the planner's problem and in the market. What the ledger leaves behind is the relation $W=R-\dot\Phi+\Omega\mathcal N$ --- waste generated equals material entering production, less the net accumulation of material embodied in the capital stock, plus mass displaced from nature that never entered production at all.
+
+The last term is the model's one substantive fork, and the note is organized around it. The theory carries it throughout. The quantitative model sets it to zero, once and visibly, and that single restriction is what delivers the results the model is built to display: total waste becomes independent of output and consumption at the margin, so no Pigouvian tax on either is part of the optimal policy; the recycling margin prices recycled material at exactly the extraction cost, resource rent and pollution damage it saves, with the ledger price cancelling exactly; capital, because it stores material and releases it only as it depreciates, is a temporary materials sink whose social price is below unity, so that the instrument correcting the capital-formation margin is a \emph{subsidy} to gross investment rather than a tax; and the first-best is implemented with four instruments rather than the seven the general accounting requires. Each of these is a property of the restriction, not of materials-balance models in general, and the note says so at each point.
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%&
+%%% Main sections %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\part{Models}\label{part:models}
+
+
+This part contains a description of a number of related models. Section~\ref{sec:baseline} states which of them is the baseline and catalogues every point at which an alternative is entertained; the remaining sections present the three models in turn.
+
+\input{Part0_baseline}
+\input{Part1_theory_central}
+\input{Part1_theory_decentral}
+\input{Part1_quant}
+
+\clearpage
+\part{Numerical}\label{part:num}
+
+This part contains a description of the numerical approaches used to solve the quantitative model of Part~\ref{part:models}. None of the numerical strategy depends on the process-level accounting as such, only on the closed-form structure of the equilibrium system worked out in Section~\ref{subsec:aq:system}. That structure rests on the baseline restriction \textbf{(B1)} of Section~\ref{subsec:aq:B1} and on nothing else; Remark~\ref{rem:aq:scope} records what would change without it, which is less than one might expect --- the ledger remains closed-form, as the unique positive root of a quadratic.
+
+
+
+% \printbibliography[
+% heading=bibintoc,
+% title={References},
+% category=cited]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                      Appendices                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{appendices}
+% \end{appendices}
+
+
+\end{document}

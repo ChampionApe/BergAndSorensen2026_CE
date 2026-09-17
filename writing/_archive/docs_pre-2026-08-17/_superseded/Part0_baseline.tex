@@ -1,0 +1,130 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Part I, Section 0: The baseline model and its    %%
+%%  switches                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Baseline Model and Its Switches}
+\label{sec:baseline}
+
+This document states a single model three times --- as a planner's problem in continuous time (Section~\ref{sec:ac}), as the corresponding market economy (Section~\ref{sec:ad}), and as a discrete-time quantitative implementation with explicit functional forms (Section~\ref{sec:aq}) --- and along the way it considers a number of alternatives to particular modelling choices. This short section says which version is \emph{the} model, and catalogues every point at which an alternative is entertained. It exists so that no reader has to reconstruct the baseline by reading the remarks.
+
+\subsection{The rule followed throughout}
+\label{subsec:baseline:rule}
+
+The main text always states the \textbf{most general version available}, and departures from it are set off explicitly rather than folded in. Concretely:
+
+\begin{itemize}[leftmargin=1.6em,itemsep=0.25em]
+\item Where a general case and a restricted case both exist and both are tractable, the general case is what the derivations use. The restricted case appears as a labelled special case, displayed alongside, never substituted in silently.
+\item Where the quantitative model departs from the theory, it does so at \emph{one} identified point, Section~\ref{subsec:aq:B1}, and the departure is named and justified there.
+\item Where two specifications are genuinely non-nested --- neither more general --- neither is privileged. Both are carried, and the choice between them is reported as a result rather than buried as an assumption.
+\end{itemize}
+
+Accordingly the switches below fall into three kinds, and it is worth keeping them distinct because they carry different burdens of proof.
+
+\begin{description}[leftmargin=0em,itemsep=0.3em]
+\item[\textnormal{\textbf{Restriction.}}] The main text carries the general case; the restriction is a special case obtained by setting parameters. Adopting it is a matter of convenience and its cost is computable. Every variant V\ref{var:aq:linear}--V\ref{var:aq:constant-phi} of Section~\ref{subsec:aq:variants} is of this kind, as is \textbf{(B1)}.
+\item[\textnormal{\textbf{Fork.}}] Two non-nested specifications. Neither is more general, so the choice cannot be deferred to a robustness check --- it must be made, or both must be reported.
+\item[\textnormal{\textbf{Maintained assumption.}}] A modelling choice whose alternative is described but \emph{not} derived anywhere in this document. These are the honest gaps: adopting the alternative would require work that has not been done, and the remarks say how much.
+\end{description}
+
+\subsection{The catalogue}
+\label{subsec:baseline:catalogue}
+
+\begin{table}[H]
+\centering
+\caption{Every modelling switch in this document, what the baseline sets it to, and where the alternative is discussed.}
+\label{tab:baseline:switches}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.26\textwidth}p{0.09\textwidth}p{0.32\textwidth}p{0.25\textwidth}@{}}
+\toprule
+Switch & Kind & Baseline & Alternative, discussed in \\
+\midrule
+Nature-attributable waste, $\omega^{N,S},\omega^{D,S}$
+& Restr.
+& General in Sections~\ref{sec:ac}--\ref{sec:ad}; set to zero in Section~\ref{sec:aq} as \textbf{(B1)}
+& Rem.~\ref{rem:ac:nature}, \ref{rem:aq:scope}; Sec.~\ref{subsec:aq:B1} \\
+\addlinespace[0.2em]
+Scaling of nature-attributable waste
+& Fork
+& Relative: $\mathcal M=\Omega\mathcal N$, scaled by the derived level $\Omega$
+& Absolute intensities, Rem.~\ref{rem:ac:dilution} \\
+\addlinespace[0.2em]
+Closing rule for $\phi^I_t$
+& Fork
+& \emph{None declared.} Both (a) exogenous and (b) $\phi^I=\varsigma\Omega$ carried throughout
+& Rem.~\ref{rem:ac:phiI}; Sec.~\ref{subsec:aq:phiI} \\
+\addlinespace[0.2em]
+Vintage structure of $\Phi$
+& Restr.
+& $\phi^I_t\neq\phi^K_t$; $\Phi$ a genuine state
+& Constant intensity, V\ref{var:aq:constant-phi} \\
+\addlinespace[0.2em]
+Materials floor $\bar R$
+& Restr.
+& $\bar R>0$
+& $\bar R=0$, V\ref{var:aq:no-floor} \\
+\addlinespace[0.2em]
+Pollution feedback on productivity
+& Restr.
+& $\gamma>0$
+& $\gamma=0$, V\ref{var:aq:no-feedback} \\
+\addlinespace[0.2em]
+Endogenous reserves
+& Restr.
+& $S_t,X_t$ evolve; exploration active
+& Fixed base, V\ref{var:aq:no-resource} \\
+\addlinespace[0.2em]
+Technical progress
+& Restr.
+& All $g^\cdot$ free
+& All zero, V\ref{var:aq:no-progress} \\
+\addlinespace[0.2em]
+Recycling active
+& Restr.
+& Full model
+& Linear economy, V\ref{var:aq:linear} \\
+\addlinespace[0.2em]
+Horizon
+& Restr.
+& Infinite in theory; finite $T$ for all numerical results
+& V\ref{var:aq:finite} \\
+\midrule
+Timing of recycled input
+& Maint.
+& Contemporaneous: $R^R_t=a_t\varpi_tW_t$ within the period
+& One-period lag, Rem.~\ref{rem:ac:recirculation}, \ref{rem:aq:period} \\
+\addlinespace[0.2em]
+Embodied-material pools
+& Maint.
+& One well-mixed stock $\Phi$; $K^Y$ and $K^R$ share $\phi^K$
+& Two pools, Rem.~\ref{rem:ac:Phi-pools} \\
+\addlinespace[0.2em]
+Depreciated capital material
+& Maint.
+& Enters $W$ on the same footing as any other waste
+& Costless re-embodiment, Rem.~\ref{rem:ac:depreciation} \\
+\addlinespace[0.2em]
+Curvature of $C^D$ in $D$
+& Maint.
+& Linear, giving a bang-bang exploration margin
+& Strictly convex, Rem.~\ref{rem:aq:linear-costs} \\
+\addlinespace[0.2em]
+Instrument normalization
+& Maint.
+& $\tau^{W^R}=0$; output-side dilution loaded onto $\tau^Y$
+& Rem.~\ref{rem:ad:normalization} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reading the catalogue}
+\label{subsec:baseline:reading}
+
+Three comments, in decreasing order of importance.
+
+\smalltitle{\textbf{(B1)} is the only restriction that separates the theory from the quantitative model.} Every other entry marked \emph{Restr.} is a variant used for building up, testing or decomposing the numerical implementation, and none of them is imposed in the headline results. \textbf{(B1)} is different: it is imposed throughout Section~\ref{sec:aq} and therefore in every number the model produces. It is singled out with its own label, its own subsection, and its own accounting of costs and benefits for exactly that reason. A reader who wants to know what the quantitative model assumes that the theory does not needs to read one thing, Section~\ref{subsec:aq:B1}.
+
+\smalltitle{The two forks are genuinely open, and are treated as such.} Neither the closing rule for $\phi^I_t$ nor the scaling of nature-attributable waste is settled here. For $\phi^I_t$ this is deliberate and the quantitative section reports both rules; the two disagree about whether the relative intensities $\omega^i$ affect the allocation at all, which is too substantive a question to answer by picking a default. For the scaling, the document adopts the relative form for continuity with the process-level accounting of Section~\ref{subsec:ac:accounting}, but Remark~\ref{rem:ac:dilution} argues the absolute form is better identified and better behaved, and that the choice should be settled before the general accounting is ever taken to data. The relative form is a baseline by inheritance, not by argument.
+
+\smalltitle{The maintained assumptions are where the unfinished work is.} Each of the five would require a derivation this document does not contain --- an extra state for the recycling lag, a second liability for two $\Phi$ pools, a re-derivation of $q$ for the depreciation bypass, the loss of a closed form for convex $C^D$. They are listed together so that the boundary of what has been established is visible in one place rather than distributed across five remarks. The first two are the ones most likely to matter quantitatively; Remark~\ref{rem:aq:period} explains why the recycling lag is not innocuous once the period length is fixed.

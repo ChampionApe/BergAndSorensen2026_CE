@@ -1,0 +1,231 @@
+\section{The market economy in discrete time}\label{sec:qmkt:model}
+
+The simulations are run on the market version rather than on the planner's, because the questions the
+paper asks --- how long imperfect regulation delays the transition, and what the delay costs --- are
+questions about policy instruments rather than about shadow prices. This part restates
+Part~\ref{part:mkt} in discrete time, records the policy rates that implement the first best under the
+timing conventions of Section~\ref{sec:qsp:setup:timing}, and sets out the scenarios and the welfare
+measure.
+
+\subsection{Agents in discrete time}\label{sec:qmkt:model:agents}
+
+The market structure is that of Section~\ref{sec:mkt:setup:agents} unchanged: a household owning capital
+and firms; competitive final-goods, mining and recycling sectors; and a waste-management sector under a
+collection obligation with its subsidy set by tender. Prices are $P^R_t$, $P^T_t$ and $P^K_t$, with the
+final good as numéraire, and the instruments are the seven of
+Section~\ref{sec:mkt:setup:instruments}: $\tau^U_t$, $\tau^T_t$, $s^R_t$, $\tau^R_t$, $s^I_t$,
+$\tau^{\mathcal D}_t$ and $\tau^{\circ}_t$, with $s^W_t$ pinned by the tender and $\mathcal T_t$
+balancing the budget.
+
+\smalltitle{Firms.} The static problems are unchanged, so their conditions carry over date by date:
+\begin{align}
+F_{K,t}\left(1-\tau^{\mathcal D}_t\Omega^Y_t\right) &= P^K_t,
+&
+F_{R,t}\left(1-\tau^{\mathcal D}_t\Omega^Y_t\right) &= P^R_t+\tau^R_t,
+\label{eq:qmkt:final-foc}
+\\
+\alpha_t\left(P^R_t+s^R_t\right) &= P^T_t,
+&
+\frac{a^m_t}{\left(1+x_t\right)^2}\left(P^R_t+s^R_t\right) &= P^K_t
+\quad\text{or}\quad K^R_t=0,
+\label{eq:qmkt:recycler-foc}
+\end{align}
+the recycling corner binding when $a^m_t\left(P^R_t+s^R_t\right)\le P^K_t$, and the waste firm choosing
+$\varpi_t$ from the three-branch condition
+\begin{align}
+P^T_t+\tau^U_t-\tau^T_t &= \frac{\bar c^T}{\left(1+g^T\right)^t}\varpi_t^{\xi^T}
+\left(1+\tau^{\mathcal D}_t\Omega^W_t\right)
+\label{eq:qmkt:waste-foc}
+\end{align}
+on the interior branch, with $\varpi_t=0$ and $\varpi_t=1$ at the two corners of
+Section~\ref{sec:mkt:setup:firms}, and with
+\begin{align}
+s^W_t &= c^W_t\left(1+\tau^{\mathcal D}_t\Omega^W_t\right)+\tau^U_t\left(1-\varpi_t\right)
++\tau^T_t\varpi_t-P^T_t\varpi_t
+\label{eq:qmkt:waste-zero-profit}
+\end{align}
+from the tender. The mining firm now discounts at the market rate, so~\eqref{eq:mkt:mining-costates}
+becomes the pair of recursions
+\begin{align}
+P^S_t &= \left|C^N_{S,t}\right|\left(1+\tau^{\mathcal D}_t\Omega^N_t\right)+\hat P^S_t,
+&
+P^X_t &= -C^D_{X,t}\left(1+\tau^{\mathcal D}_t\Omega^D_t\right)+\hat P^X_t ,
+\label{eq:qmkt:mining-costates}
+\end{align}
+with $\hat P_t\equiv P_{t+1}/\left(1+r_{t+1}\right)$ as in~\eqref{eq:qsp:discount}, and its two flow
+conditions
+\begin{align}
+P^R_t &= C^N_{N,t}\left(1+\tau^{\mathcal D}_t\Omega^N_t\right)+\hat P^S_t+\tau^{\circ}_t\Omega^{N,S}_t,
+&
+\hat P^S_t+\hat P^X_t &= C^D_{D,t}\left(1+\tau^{\mathcal D}_t\Omega^D_t\right)+\tau^{\circ}_t\Omega^{D,S}_t,
+\label{eq:qmkt:mining-foc}
+\end{align}
+each with the corner branch that shuts the activity down.
+
+\smalltitle{Household.} The budget and the two states are
+\begin{align}
+\left(1+\tau^{\mathcal D}_t\Omega^C_t\right)C_t+\left(1-s^I_t\right)G_t+\tau^{\circ}_t\delta M^K_t
+&= P^K_tK_t+\Pi_t+\mathcal T_t,
+\label{eq:qmkt:hh-budget}
+\end{align}
+with $K_{t+1}=\left(1-\delta\right)K_t+G_t$ and $M^K_{t+1}=\left(1-\delta\right)M^K_t+\Phi^I_tG_t$, and
+the conditions are
+\begin{align}
+\frac{C_t^{-\eta}}{\lambda_t} &= 1+\tau^{\mathcal D}_t\Omega^C_t,
+&
+\hat q_t &= 1-s^I_t+\Phi^I_t\hat p^M_t,
+&
+p^M_t &= \delta\tau^{\circ}_t+\left(1-\delta\right)\hat p^M_t,
+\label{eq:qmkt:hh-foc}
+\\
+q_t &= P^K_t+\left(1-\delta\right)\hat q_t,
+\label{eq:qmkt:hh-arbitrage}
+\end{align}
+together with the Euler equation implied by~\eqref{eq:qsp:discount}. The household takes $\Omega^C_t$
+and $\Phi^I_t$ as given, which is where the intensity externality of
+Section~\ref{sec:mkt:setup:externalities} sits, and it takes $P_t$ as given, which is where the
+pollution externality sits.
+
+\subsection{The implementing policy}\label{sec:qmkt:model:policy}
+
+\begin{proposition}[Discrete-time implementation]\label{prop:qmkt:implementation}
+Let $\left\{p^P_t,p^W_t,\zeta_t,\Phi^I_t,r_t\right\}$ solve Problem~\ref{prob:qsp}, and set
+\begin{align}
+\tau^{\Xi}_t &= \hat p^P_t\;=\;\frac{p^P_{t+1}}{1+r_{t+1}},
+&
+\tau^{\mathcal D}_t &= \zeta_t,
+&
+\tau^{\circ}_t &= p^W_t,
+\label{eq:qmkt:implement-primitives}
+\end{align}
+so that $\tau^U_t=\hat p^P_t$, $\tau^T_t=s^R_t=d^W\hat p^P_t$, $\tau^R_t=p^W_t-\zeta_t$ and
+$s^I_t=\Phi^I_t\left(p^W_t-\zeta_t\right)$. Then the competitive equilibrium implements the first best;
+the equilibrium prices are $P^K_t=F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)$, $P^R_t=\Psi_t-p^W_t$,
+$P^T_t=\alpha_tV_t$ and $s^W_t=p^W_t$, with $P^S_t=p^S_t$ and $P^X_t=p^X_t$; and net government revenue
+is $\hat p^P_t\Xi_t$ at every date.
+\end{proposition}
+
+\begin{proof}
+Every step of the proof of Proposition~\ref{prop:mkt:implementation} goes through with $p^P$ replaced
+by $\hat p^P_t$ and with each stock price replaced by its present value, which is precisely the
+correspondence established in Section~\ref{sec:qsp:model:lagrangian}. The two price identities
+$\Psi_t=P^R_t+\tau^R_t+\tau^{\mathcal D}_t=P^R_t+p^W_t$ and $V_t=P^R_t+s^R_t$ are unchanged, the
+recycling and treatment branches match term for term, the zero-profit
+condition~\eqref{eq:qmkt:waste-zero-profit} returns $s^W_t=p^W_t$ by the same cancellation, and the
+household's $\hat q_t$ in~\eqref{eq:qmkt:hh-foc} reproduces~\eqref{eq:qsp:foc:G} once $s^I_t$ is
+substituted. The budget identity is the computation of Corollary~\ref{cor:mkt:budget} with $\hat p^P_t$
+in place of $p^P$.
+\end{proof}
+
+\smalltitle{The one thing discretisation changes.} The Pigouvian rate is $\hat p^P_t$, not $p^P_t$: a
+tonne emitted in period $t$ enters the pollution stock only in $t+1$, so it is charged the
+\emph{discounted next-period} shadow cost. In continuous time the distinction vanishes; in a model
+calibrated at annual frequency with a long horizon it does not, and getting it wrong biases the
+emission tax upward by a factor $1+r$. The materials instruments are unaffected, because waste is
+collected, treated and recycled within the period in which it is generated.
+
+\subsection{Scenarios}\label{sec:qmkt:scenarios}
+
+Because the instrument set separates cleanly into three blocks, the natural experiments are the
+$2^3-1$ ways of switching blocks off, plus the technology experiments. The following are the ones worth
+running first.
+
+\begin{enumerate}[label=\emph{(\arabic*)},leftmargin=2.4em,itemsep=0.2em]
+\item \emph{Benchmark.} Full optimal policy~\eqref{eq:qmkt:implement-primitives} and neutral technical
+progress~\eqref{eq:qsp:neutral-progress}. This reproduces the planner's path and dates $t_R$.
+
+\item \emph{Laissez-faire.} Every instrument zero, as in Section~\ref{sec:mkt:implementation:unregulated}.
+The materials side of the model goes silent, $p^M_t=0$ and $q_t=1$, and the only remaining incentive to
+recycle is the market price of material. This is the upper bound on the delay.
+
+\item \emph{Emission tax only.} $\tau^\Xi_t=\hat p^P_t$ with $\tau^{\mathcal D}_t=\tau^{\circ}_t=0$,
+hence $\tau^R_t=s^I_t=0$. This is the policy the earlier literature would prescribe --- and the
+comparison with~(1) is the paper's cleanest statement of what the materials accounting adds. It is the
+scenario most directly comparable to \textcite{sorensen2018}, where a pollution tax alone is sufficient
+because extraction is the only source of pollution.
+
+\item \emph{Materials block only.} $\tau^{\mathcal D}_t=\zeta_t$ and $\tau^{\circ}_t=p^W_t$ with
+$\tau^\Xi_t=0$. The mirror image of~(3), and the one that isolates how much of the transition is driven
+by the materials ledger rather than by environmental damage.
+
+\item \emph{No recycling instruments.} $\tau^U_t$, $\tau^T_t$ and $s^R_t$ set to zero with the rest at
+their optimal levels. This is the scenario in the paper draft's list, and it isolates the contribution
+of waste treatment and recycling policy specifically.
+
+\item \emph{Shutting the composition channel.} $\phi^I=0$, which by~\eqref{eq:qsp:foc:Omega} sets
+$\zeta_t\equiv0$ and makes $\tau^{\mathcal D}_t=0$ and $\tau^R_t=\tau^{\circ}_t=p^W_t$. This is not a
+policy experiment but a decomposition: it measures how much of the model's behaviour comes from the
+composition of final-good uses as against the ledger alone, and it is the natural robustness check on
+the part of the framework that is hardest to calibrate. The appendix variants of
+Sections~\ref{sec:app:exogenousPhiI} and~\ref{sec:app:constantPhiI} belong in the same family.
+
+\item \emph{Sectoral technical progress.} Departures from~\eqref{eq:qsp:neutral-progress} one rate at a
+time. Remark~\ref{rem:qsp:tail} predicts that $g^R$ dominates, since it is the only rate that relaxes
+the cap on the circularity multiplier; $g^N$ should work in the opposite direction by keeping virgin
+extraction cheap and postponing $t_R$.
+
+\item \emph{The substitution limit.} $\bar R$ raised from zero, per Remark~\ref{rem:qsp:Rbar}. The
+interesting question is whether a binding floor advances the transition, by making material scarcity
+bite earlier, or renders it infeasible, by requiring a circularity multiplier the frontier $a^m_t$
+cannot deliver.
+\end{enumerate}
+
+For each scenario the objects to report are the transition date $t_R$, the paths of $\varpi_t$ and
+$K^R_t/K_t$ --- whose ordering is the substantive conjecture of
+Section~\ref{sec:sp:opt:results} --- the date at which $P^T_t$ turns positive, which by
+Corollary~\ref{cor:mkt:phases} coincides with $t_R$ under optimal policy and need not otherwise, the
+material throughput $R_t$ and the circularity multiplier $\left(1-a_t\varpi_t\right)^{-1}$, the signs
+and crossings of $p^W_t$, $p^M_t$ and $\zeta_t$, and the welfare loss defined next.
+
+\subsection{Welfare}\label{sec:qmkt:welfare}
+
+Split lifetime utility into its two components,
+\begin{align}
+U_0 &= U^C_0-U^P_0,
+&
+U^C_0 &= \sum_{t\ge0}\beta^t\frac{C_t^{1-\eta}}{1-\eta},
+&
+U^P_0 &= \sum_{t\ge0}\beta^t\frac{\psi_t}{1+\nu}P_t^{1+\nu},
+\label{eq:qmkt:welfare-split}
+\end{align}
+and write $U^{C*}_0$ and $U^{P*}_0$ for their values along the first-best path. Define the welfare cost
+of a policy as the permanent proportional increase $\vartheta$ in consumption, applied to every period
+of the scenario path, that would leave the household as well off as under the optimal policy:
+\begin{align}
+\left(1+\vartheta\right)^{1-\eta}U^C_0-U^P_0 &= U^{C*}_0-U^{P*}_0
+\qquad\Longleftrightarrow\qquad
+\vartheta = \left[\frac{U^{C*}_0-U^{P*}_0+U^P_0}{U^C_0}\right]^{\frac{1}{1-\eta}}-1 .
+\label{eq:qmkt:cev}
+\end{align}
+The closed form follows because the felicity function is homogeneous of degree $1-\eta$ in consumption
+while the pollution term is separable, so scaling consumption scales $U^C_0$ and leaves $U^P_0$ alone.
+The numerator makes the decomposition transparent: the compensation has to cover the extra disutility
+from pollution, $U^P_0-U^{P*}_0$, together with any shortfall in the consumption stream itself.
+
+This is a consumption-equivalent measure rather than the wealth-equivalent compensating variation used
+in the paper draft. The two answer the same question and we expect them to be close; the
+consumption-equivalent version is preferred here because it requires nothing but the two simulated
+paths, whereas the wealth-based version requires the household's intertemporal budget constraint,
+present-value profit and a pair of intertemporal price indices to be constructed consistently under
+each policy --- more machinery, and more places for a policy-dependent price index to introduce an
+artefact. \emph{Reporting both on the benchmark comparison is a sensible check, and is worth doing once
+the wealth-based version is available.}
+
+\subsection{Solving the market model}\label{sec:qmkt:solution}
+
+Under the optimal policy, Proposition~\ref{prop:qmkt:implementation} makes the market model redundant:
+solve Problem~\ref{prob:qsp} and read the instruments off the shadow prices. It is the \emph{other}
+scenarios that require a separate algorithm, and they are harder than the planner's problem in one
+specific respect. With instruments off their optimal values there is no planning problem whose solution
+the equilibrium is, so the trajectory has to be found by solving the equilibrium conditions directly
+rather than by optimising --- method~(a) of Section~\ref{sec:qsp:model:solution} is unavailable, and
+the natural formulation is a large nonlinear system in the whole trajectory, or shooting on the four
+private costates $\left(q_t,p^M_t,P^S_t,P^X_t\right)$.
+
+Two practical points follow. First, the within-period block of Section~\ref{sec:qsp:model:block} is
+unchanged by policy --- it is accounting, not optimisation --- so it can be built once and reused across
+all scenarios. Second, the phase switches are now \emph{policy-dependent}: the recycling corner binds
+when $a^m_t\left(P^R_t+s^R_t\right)\le P^K_t$, which under scenario~(5) has no $s^R_t$ in it and under
+scenario~(2) has neither the subsidy nor the deposit that raises $P^R_t$. A robust corner-detection
+routine is therefore not an optional refinement but the part of the implementation that the paper's
+headline number --- how long imperfect regulation delays the transition --- depends on directly.

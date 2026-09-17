@@ -1,0 +1,178 @@
+\section{A Quantitative Version of the Model: The Role of Technical Progress}
+\label{sec:quantitative-analysis}
+
+For the purpose of quantitative analysis we use a discrete-time version of our model with the following technologies of final goods production and recycling:
+\begin{align}
+Y_t &= A_t\left(K_t^Y\right)^{\alpha}\left(R_t-\bar R\right)^{1-\alpha},
+&& 
+0<\alpha<1,
+\quad 
+R_t \ge \bar R,
+\quad 
+\bar R \ge 0,
+\label{eq:quant:production}
+\\
+A_t &= \bar A\left(1+g^A\right)^t P_t^{-\gamma},
+&& 
+\gamma > 0,
+\label{eq:quant:productivity}
+\\
+a_t &= a_t^m \frac{K_t^R/(\varpi W)_t}{1+K_t^R/(\varpi W)_t},
+\label{eq:quant:recycling-rate}
+\\
+a_t^m &= 1 - \frac{b}{(1+g^R)^t},
+&&
+b > 0.
+\label{eq:quant:recycling-frontier}
+\end{align}
+
+The exogenous variable $\bar R$ in~\eqref{eq:quant:production} is a minimum required input of raw materials in production determined by the laws of physics. If $\bar R=0$, the production function~\eqref{eq:quant:production} takes the standard Cobb-Douglas form, but as argued by \textcite{daly1977} and \textcite{stern1997}, among many other ecological economists, there may be limits to the substitutability of man-made and natural capital. The implications of such a constraint can be studied by assuming a positive value of $\bar R$ and varying its size. Equation~\eqref{eq:quant:productivity} assumes that, ceteris paribus, total factor productivity grows at the exogenous rate $g^A$ due to technical progress, but that a higher stock of pollution reduces productivity, as reflected by the positive value of the elasticity $\gamma$. The specification of the recycling technology in~\eqref{eq:quant:recycling-rate}--\eqref{eq:quant:recycling-frontier} satisfies the general assumptions made in~\eqref{eq:ramsey:recycling}, implying that a 100 percent recycling rate is physically impossible. The parameter $g^R$ in~\eqref{eq:quant:recycling-frontier} captures technical progress in recycling technology, which moves the maximum feasible recycling rate $a_t^m$ closer to 100 percent over time while never quite reaching that level. Together, \eqref{eq:quant:recycling-rate} and~\eqref{eq:quant:recycling-frontier} imply that $\partial a_t/\partial K_t^R$ increases over time, i.e., the marginal productivity of capital invested in recycling gradually goes up.
+
+The cost functions~\eqref{eq:ramsey:extraction-cost} and~\eqref{eq:ramsey:discovery-cost} are assumed to take the following forms, satisfying our previous assumptions on the general properties of these functions:
+\begin{align}
+C^N(N,S,t) &= \frac{c_t^N}{1+\varepsilon^S} N_t S_t^{-(1+\varepsilon^S)},
+&
+\varepsilon^S &> 0,
+\label{eq:quant:extraction-cost}
+\\
+C^D(D,X,t) &= \frac{c_t^D}{1+\varepsilon^X} D_t X_t^{1+\varepsilon^X},
+&
+\varepsilon^X &> 0.
+\label{eq:quant:discovery-cost}
+\end{align}
+According to these specifications, a fall in the known reserves of raw materials tends to shift the extraction cost function upwards, and the exploration cost function tends to shift upwards as the stock of accumulated discoveries increases. At the same time, cost-reducing technical progress tends to shift the cost functions downwards, as we assume that
+\begin{align}
+c_t^N &= \frac{c^N}{(1+g^N)^t},
+&
+c_t^D &= \frac{c^D}{(1+g^D)^t},
+&
+g^N &\ge 0,
+&
+g^D &\ge 0.
+\label{eq:quant:extraction-discovery-progress}
+\end{align}
+The cost functions in the waste industry take the general form stated in~\eqref{eq:ramsey:waste-cost}. We adopt the following specific cost functions with the properties assumed there:
+\begin{align}
+c_t^c &= \frac{\bar c^c}{(1+g^c)^t},
+&
+c_t^T &= \frac{\bar c^T}{(\varepsilon^T+1)(1+g^T)^t}\varpi_t^{\varepsilon^T+1},
+&
+\varepsilon^T &> 0,
+&
+g^c &\ge 0,
+&
+g^T &\ge 0,
+\label{eq:quant:waste-cost-progress}
+\end{align}
+where the growth rates $g^c$ and $g^T$ capture technical progress in the waste industry. The parameters $c^N$, $c^D$, $\bar c^c$, and $\bar c^T$ are constants which are calibrated such that the model generates a realistic relative size of the primary industries and the waste industry.
+
+Technical progress and structural change may likewise tend to reduce the various waste coefficients over time, so we assume that
+\begin{align}
+\Omega_t &= \frac{\bar\Omega}{(1+g^\Omega)^t},
+&
+\omega_t^i &= \frac{\omega^i}{(1+g_\omega^i)^t},
+&
+i &\in \{Y,N,D,C\},
+&
+g^\Omega, g_\omega^i &\ge 0.
+\label{eq:quant:waste-coefficients}
+\end{align}
+The rate $\theta(P_t)$ at which the environment absorbs waste declines as the stock of pollution increases, as reflected in our assumption that
+\begin{align}
+\theta(P_t) &= \bar\theta P_t^{-\varepsilon^P},
+&
+0<\varepsilon^P&<1.
+\label{eq:quant:absorption}
+\end{align}
+
+\paragraph{Calibration}
+
+To trace the evolution of the economy over the long run, we assume that it starts out in an early linear stage with no recycling and where the environment is able to absorb and dissipate all waste products generated without increasing the stock of pollution. Specifically, we calibrate the model such that
+\begin{align}
+P_1 &= P_0\bigl(1-\theta(P_0)\bigr) + W_0 = P_0
+\notag \\
+&\Rightarrow \bar\theta P_0^{1-\varepsilon^P} = W_0.
+\label{eq:quant:calibration}
+\end{align}
+We may then study how long it takes for the economy to reach the circular stage as waste generation gradually increases over time due to economic growth. Our simulations will focus on the market economy version of the model, which allows us to analyse the effects of various degrees of government intervention via environmental taxes and subsidies.
+
+\paragraph{Alternative scenarios}
+
+\textit{Benchmark scenario: optimal policy and neutral technical progress}
+\begin{align}
+g^Y = g^R = g^N = g^D = g^c = g^T = g^\Omega = g^\psi > 0,
+&&
+g_\omega^Y = g_\omega^N = g_\omega^D = g_\omega^C = 0.
+\label{eq:quant:benchmark}
+\end{align}
+
+\textbf{Other possible scenarios:}
+\begin{itemize}
+\item Optimal politik, betydningen for tidspunktet for overgang til affaldsbehandling og cirkul\ae r \o konomi af isolerede \ae ndringer i den tekniske fremskridtrate i forskellige sektorer.
+\item Laissez-faire (alle politikinstrumenter s\ae ttes til nul) kombineret med neutrale tekniske fremskridt.
+\item Ufuldst\ae ndig regulering: Instrumenterne $\tau_t^W$, $s_t^R$, $\tau_t^{W^R}$ s\ae ttes til nul; \o vrige instrumenter s\ae ttes til deres optimale Pigou-niveau; neutrale tekniske fremskridt (dette scenarie belyser den isolerede betydning af indsatsen for affaldsbehandling og recycling).
+\end{itemize}
+
+\paragraph{Welfare analysis}
+
+The lifetime utility function of the representative household takes the following form, displaying constant relative risk aversion and positive and increasing marginal disutility of pollution:
+\begin{align}
+U_0 &= \sum_{t=0}^{\infty} \beta^t \left[\frac{C_t^{1-\sigma}}{1-\sigma} - \frac{\psi_t}{1+\phi}P_t^{1+\phi}\right],
+&
+0<\beta&<1,
+&
+\sigma &> 0,
+&
+\phi &> 0,
+&
+\psi &> 0,
+\label{eq:quant:lifetime-utility}
+\\
+\psi_t &= \bar\psi\left(1+g^\psi\right)^t,
+&
+\bar\psi &> 0,
+&
+g^\psi &\ge 0.
+\label{eq:quant:psi-progress}
+\end{align}
+As conventional consumption grows over time due to technical progress, the marginal willingness to pay for environmental quality is likely to increase.\footnote{This claim is attributed to an unpublished note (``Frikks papir'') in the Word draft; the full reference should be added before submission.}
+
+An interesting question is how large the welfare loss due to imperfect environmental regulation may be, given the utility function~\eqref{eq:quant:lifetime-utility}. To answer this question we split the household's total lifetime utility into the lifetime utility from consumption, $U_0^C$, and the lifetime disutility from pollution, $U_0^P$:
+\begin{align}
+U_0 &= U_0^C - U_0^P,
+\label{eq:quant:welfare-split}
+\\
+U_0^C &= \sum_{t=0}^{\infty} \beta^t \frac{C_t^{1-\sigma}}{1-\sigma},
+&
+U_0^P &= \sum_{t=0}^{\infty} \beta^t \frac{\psi}{1+\phi}P_t^{1+\phi}.
+\notag
+\end{align}
+In the online appendix we show that when the household optimizes the intertemporal allocation of consumption subject to its lifetime budget constraint, we have
+\begin{align}
+U_0^C &= \left(\frac{Z_0}{1-\sigma}\right)\left[(1+r_0)\left(\frac{K_0+H_0}{P_0^u}\right)\right]^{1-\sigma},
+\label{eq:quant:consumption-utility}
+\\
+H_0 &= \sum_{t=0}^{\infty} \left[Y_t - (r_t+\delta)K_t - C_t^N - C_t^D - \left(c_t^c+c_t^T\right)W_t\right]\prod_{i=0}^{t}\left(\frac{1}{1+r_i}\right),
+\label{eq:quant:profit-wealth}
+\\
+P_0^u &= 1 + \sum_{t=1}^{\infty} w_t\prod_{i=1}^{t}\left(\frac{1}{1+r_i}\right), \label{eq:quant:price-index}
+\\ 
+Z_0 &= 1 + \sum_{t=1}^{\infty} w_t\prod_{i=1}^{t}\left(\frac{1+\tau_i^C}{(1+r_i)(1+\tau_0^C)}\right),
+\label{eq:quant:tax-index}
+\\
+r_t &= (1-\tau_t^Y)\alpha\left(\frac{Y_t}{K_t^Y}\right) - \delta, \label{eq:quant:rate-of-return}
+\\
+w_t &= \left[\beta^t\prod_{i=1}^{t}\frac{(1+r_i)(1+\tau_0^C)}{1+\tau_i^C}\right]^{\frac{1}{\sigma}},
+\label{eq:quant:interest-weight}
+\end{align}
+where $H_0$ is the present value of the total future pure profits received by the household (including resource rents), $P_0^u$ and $Z_0$ are intertemporal price indices, and the discount rate $r_t$ is the marginal product of capital invested in final goods production, net of tax and depreciation. The weight $w_t$ is the ratio of optimal consumption in period $t$ to optimal consumption in period $0$, i.e., $w_t = C_t/C_0$, so the intertemporal price indices $P_0^u$ and $Z_0$ account for the relative contribution to lifetime welfare of consumption in different periods. The index $Z_0$ captures the full impact of changes in the consumption tax rate $\tau_t^C$ on the time profile of the intertemporal utility flows, while the index $P_0^u$ used to deflate lifetime wealth $K_0+H_0$ accounts for the fact that changes in consumption taxes do not affect the purchasing power of wealth, since the tax revenues are rebated to the household.
+
+Based on~\eqref{eq:quant:consumption-utility}--\eqref{eq:quant:interest-weight}, we may now define the following compensating variation measure, $\Delta W_0$, of the welfare cost of deviating from the economy's optimal time path, where $U_0^{C*}$ and $U_0^{P*}$ are the lifetime utility from consumption and the lifetime disutility from pollution under the optimal intertemporal allocation, respectively, and $U_0^P$, $Z_0$, $K_0$, $H_0$, and $r_0$ are the values of those variables under the actual intertemporal allocation:
+\begin{align}
+\left(\frac{Z_0}{1-\sigma}\right)\left[(1+r_0)\left(\frac{K_0+H_0+\Delta W_0}{P_0^u}\right)\right]^{1-\sigma} &= U_0^{C*} + U_0^P - U_0^{P*}
+\notag \\
+\Rightarrow \quad
+\Delta W_0 &= \left(\frac{P_0^u}{1+r_0}\right)\left[\left(\frac{1-\sigma}{Z_0}\right)\left(U_0^{C*}+U_0^P-U_0^{P*}\right)\right]^{\frac{1}{1-\sigma}} - (K_0+H_0).
+\label{eq:quant:compensating-variation}
+\end{align}
+Thus $\Delta W_0$ measures the increase in initial lifetime wealth that would be needed to ensure the same lifetime welfare under the actual environmental policy as under the optimal policy ensuring an optimal resource allocation. We see that this hypothetical addition to wealth would have to compensate for the additional disutility from pollution, $U_0^P - U_0^{P*}$, under the actual allocation, as well as for any changes to the utility flows from conventional consumption.

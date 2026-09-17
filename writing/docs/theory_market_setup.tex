@@ -1,0 +1,54 @@
+\section{Market structure}\label{sec:mkt:setup}
+
+This part decentralises Problem~\ref{prob:sp}. Technology, preferences and the materials accounting of Section~\ref{sec:sp:setup} are unchanged; what changes is who chooses what, and at which prices. The question the part answers is the standard one --- which margins a competitive economy gets right on its own, which it does not, and what instrument set restores the first best --- but the answer has an unusual shape here, because the materials balance principle puts \emph{three} distinct objects into the economy that a conventional model does not price: a stock of waste that is also a stock of matter, a mass flow displaced from nature that never passes through any market, and an economy-wide material intensity that no single agent chooses.
+
+\subsection{Agents, ownership and the four traded objects}\label{sec:mkt:setup:agents}
+
+\smalltitle{Agents.} Four types, all price-taking and all with perfect foresight.
+\begin{enumerate}
+\item A representative \emph{household} that consumes, owns the capital stock and rents it out, owns the two extractive and waste sectors and the fixed factor behind the decreasing returns in $F$, and receives all profits and all net tax revenue as lump sums.
+\item A \emph{final-goods sector} that rents production capital, buys raw material, and produces the final good.
+\item A \emph{mining sector} that holds the reserve $S$ as private property, extracts from it, and explores.
+\item A \emph{waste-management sector} that holds the stockpile $\mathcal W$ as private property, accepts waste at a gate fee, treats and recycles what it draws from the stock, and sells secondary material.
+\end{enumerate}
+The last is the one to keep in view. In this economy landfills, scrapyards and the accumulated stock of discarded durables are an owned asset with a balance sheet, not a hole in the ground; that assumption is what makes the waste price of the planner's problem into an ordinary market price, and Section~\ref{sec:mkt:impl} records what happens when it is dropped.
+
+\smalltitle{Traded objects and their prices.} The final good is the numeraire. Alongside it three further objects trade, and one further physical quantity is common to all agents without trading at all.
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Object & Unit & Price & Determined by \\
+\midrule
+final good & good & $1$ & numeraire \\
+raw material delivered to production & tonne & $p^R$ & material market \\
+embodied material carried by the final good & tonne & $z$ & policy (Section~\ref{sec:mkt:impl}) \\
+disposal of a tonne of waste & tonne & $\tau^W$ & disposal market \\
+capital services & good & $r^K$ & rental market \\
+\bottomrule
+\end{tabular}
+\end{center}
+Raw material is a single homogeneous commodity: a tonne of secondary material and a tonne of virgin material are perfect substitutes at the gate of the final-goods sector and trade at the same $p^R$. This is not innocuous --- it is the model's one-material assumption, and quality degradation is carried by the yield function $a\left(\cdot\right)$ rather than by a price discount --- but it is the assumption the planner's problem also makes.
+
+\smalltitle{Embodied material, and why it needs a price at all.} Every unit of the final good carries physical mass. When a unit is put to use $j\in\left\{Y,N,D,W,C\right\}$ it releases $\Omega\omega^j$ tonnes as waste in that period; when it is put to capital formation it stores $\Phi^I=\Omega\phi^I$ tonnes, which are released later at the depreciation rate. The buyer of a final good therefore acquires two things at once, a unit of value and a quantity of matter, and we let them be priced separately: the good at $1$ and the matter at $z$ per tonne. The \emph{material-inclusive user prices} are then
+\begin{align}
+P^j &\equiv 1+\left(z+\tau^W\right)\Omega\omega^j
+\quad\text{for }j\in\left\{Y,N,D,W,C\right\},
+&
+P^I &\equiv 1+z\,\Phi^I ,
+\label{eq:mkt:userprices}
+\end{align}
+the difference between the two lines being exactly the storage margin: a good absorbed in current activity carries its matter to the gate immediately and pays the disposal fee now, while a good embodied in capital does not, and the disposal liability travels with the owner of the capital instead.
+
+The intensity $\Omega$ itself is not a price and is not chosen by anyone. It is a physical coefficient, common to the whole economy, determined by the aggregate balance~\eqref{eq:sp:setup:ybalance_OmegaPhi}: given how much raw material the economy draws and how its final good is split across uses, $\Omega=R/\left(\mathcal D+\phi^IG\right)$ is what the mass has to be. Agents take it as given, exactly as they take total factor productivity as given in a model with aggregate learning, and \emph{that is the source of the one market failure in this model with no counterpart in the standard environmental Ramsey problem}. An agent who shifts a unit of the final good towards its own use believes it has claimed $\Omega\omega^j$ tonnes at the going intensity. In the aggregate it has not: the intensity adjusts, every other use becomes marginally less material-intensive, and the economy's waste flow rises by only the fraction $\sigma$ of what the agent perceives. Section~\ref{sec:mkt:impl} shows that the wedge this leaves is exactly the planner's $\zeta$, and that closing it is what $z$ is for.
+
+\subsection{The two stocks that are also assets}\label{sec:mkt:setup:stocks}
+
+\smalltitle{The reserve.} The mining sector owns $S$ and internalises the stock effect $C^N_S<0$: extracting today makes tomorrow's extraction dearer, and a private owner of the whole reserve counts that. The in-situ rent $p^S$ is therefore an ordinary asset price and requires no instrument. Cumulative discovery $X$ is different. The exploration cost $C^D\left(D,X,t\right)$ rises in cumulative discovery because the easy deposits are found first, and easy deposits are found by whoever finds them: unless the entire exploration frontier is held by one owner, $X$ is a common pool and each explorer ignores the cost its own discoveries impose on the rest. We take the common-pool reading as the benchmark --- it is the realistic one for a global resource base --- and record the unified-ownership alternative, under which $p^X$ is internal and the corresponding instrument is redundant, in Section~\ref{sec:mkt:impl}.
+
+\smalltitle{The stockpile.} The waste-management sector owns $\mathcal W$ and operates the disposal market. Generators of waste hand tonnes over at the gate fee $\tau^W$; the sector draws $H=\mu\mathcal W$ from the stock each period, treats the share $\varpi$, recovers $R^R=a\left(x\right)\varpi H$ and sells it at $p^R$, and emits $\Xi$ to the environment. Because the sector is free to accept or refuse a tonne at the going fee, competition drives the fee to the point of indifference, and the indifference condition is worth stating in words before it is derived: \emph{the gate fee equals minus the value of a tonne in the stockpile.} Where the stockpile is a liability the fee is positive and generators pay to dispose; where the stockpile is an asset the fee is negative and the sector pays for waste, which is the market form of urban mining. The planner's identification $p^W=-p^{\mathcal W}$ of~\eqref{eq:sp:sum:W} is thus not an accounting curiosity but a market-clearing condition in the disposal market, and it holds in equilibrium without any instrument --- provided the stockpile is owned. That proviso is the whole content of the property-rights part of the policy discussion.
+
+\smalltitle{Nature-attributable mass.} Extraction and exploration displace $\Omega^{N,S}N$ and $\Omega^{D,S}D$ tonnes of overburden and gangue that never passed through the final good and are never bought by anyone. In the market economy this mass must nonetheless be handed to the waste-management sector at the gate fee, exactly as any other waste flow is; otherwise it is dumped free of charge and the ledger no longer binds any private decision. Whether it is in fact so handled is an institutional question and not a modelling one, and Section~\ref{sec:mkt:impl} treats a per-tonne \emph{overburden charge} at rate $\tau^W$ as one of the instruments rather than as a market outcome.
+
+\subsection{Timing}\label{sec:mkt:setup:timing}
+
+The dating convention is that of Section~\ref{sec:sp:setup:primitives}, and it carries over to the market economy without amendment. Stocks are measured at the beginning of the period; a tonne of waste generated during period $t$ is handed to the waste-management sector during period $t$ and enters its stock at $t+1$; the handled flow $H_t=\mu\mathcal W_t$ is drawn from a stock that is predetermined when period-$t$ prices are quoted. The material block is therefore recursive within the period --- period-$t$ waste can never be recycled into period-$t$ output --- and the disposal market clears on a flow whose future value is already determined by the state. This is what makes the gate fee a forward-looking price of an asset rather than the solution of a within-period fixed point, and it is why no rationing or queueing device is needed anywhere in the equilibrium below.

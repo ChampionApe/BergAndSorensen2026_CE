@@ -1,0 +1,246 @@
+\section{Sufficiency}\label{sec:app:suff}
+
+Every characterisation in Parts~\ref{part:sp} and~\ref{part:mkt} rests on necessary conditions together with a convergence ansatz. This appendix asks what it takes to turn them into statements about optima. The answer is more favourable than the list of non-convexities in Section~\ref{sec:sp:longrun:scope} suggests, and it is favourable for a reason worth stating up front: \emph{mass conservation does most of the work}. The material budget bounds five of the six state variables on every feasible path, which disposes of five of the six transversality conditions; and a change of variables that replaces two ratios by the tonnages they represent turns the recycling and waste-handling blocks --- the two places one would most expect trouble --- into convex ones, because the cost and technology functions then appear as perspective functions.
+
+What survives is a short and precise list. After Section~\ref{sec:app:suff:convexify}, exactly one constraint per period is non-convex, and it is the intensity condition; the remaining difficulties are three conditions on primitives that a calibration can check, and one discrete choice --- the set of periods in which the economy operates --- over which a finite comparison has to be made. We state what follows from that and what does not.
+
+\subsection{What has to be shown}\label{sec:app:suff:what}
+
+Three distinct claims are at stake and they need different amounts of work.
+
+\emph{(i) The accounting results are not at issue.} Lemmas~\ref{lem:lr:stocks}--\ref{lem:lr:throughput} and Proposition~\ref{prop:lr:growth} hold on every feasible path and use no optimality at all. Nothing in this appendix is needed for them, and nothing in it can weaken them.
+
+\emph{(ii) The long-run states need optimality of a candidate path.} States B1, B2, C and the collapse cells are candidate configurations verified against the necessary conditions. To call them optimal we need a sufficiency theorem plus transversality.
+
+\emph{(iii) The decentralisation result is a corollary, not a separate problem.} Proposition~\ref{prop:mkt:impl} matches the market conditions to the planner's condition by condition. It therefore inherits whatever status the planner's conditions have: if the planner's necessary conditions are sufficient, the instrument setting~\eqref{eq:mkt:instruments} implements an optimum; if they are not, it implements a critical point. No additional convexity is needed on the market side, and in particular the competitive equilibrium is not being claimed to be unique.
+
+\subsection{A convexifying change of variables}\label{sec:app:suff:convexify}
+
+Two of the planner's controls are \emph{ratios} --- the treatment share $\varpi$ and, implicitly through $\Omega$, the material intensity --- and both multiply a stock. Ratios times stocks are bilinear, and bilinear is neither concave nor convex. Replacing each ratio by the quantity it describes removes the problem in one case and isolates it in the other.
+
+\smalltitle{Treated tonnage instead of the treated share.} Let the planner choose the tonnage treated,
+\begin{align}
+T &\equiv \varpi\,\mu\mathcal W \;\in\;\left[0,\;\mu\mathcal W\right],
+\label{eq:app:suff:Tdef}
+\end{align}
+rather than the share. The upper bound is linear in the state. Three objects that were awkward in $\varpi$ become standard in $T$.
+
+First, the recycling technology is the \emph{perspective} of the yield function,
+\begin{align}
+\mathcal R\left(T,K^R\right) &= T\,a\!\left(K^R/T\right),
+\label{eq:app:suff:persp-R}
+\end{align}
+and the perspective of a concave function is concave, so $\mathcal R$ is jointly concave in $\left(T,K^R\right)$ \emph{if and only if} $a$ is concave. This is where the curvature assumption $a''<0$ of Section~\ref{sec:sp:setup:primitives} earns its keep, and it is worth noting what it excludes: the power tail~\eqref{eq:app:wh:a-power} with $\psi>1$ is convex near the origin, so for that family $\mathcal R$ is \emph{not} concave and the argument below does not apply. The restriction $\psi\le1$ recorded in Section~\ref{sec:app:workhorse:forms} is thus not only about the corner test on the capital margin; it is what makes the recycling block convex at all.
+
+Second, the handling cost is also a perspective. With $H=\mu\mathcal W$,
+\begin{align}
+C^W &= \left[c^c\varpi+c^T\!\left(\varpi\right)\right]H
+\;=\; c^c\,T \;+\; \underbrace{H\,c^T\!\left(T/H\right)}_{\text{perspective of }c^T},
+\label{eq:app:suff:persp-cW}
+\end{align}
+jointly convex in $\left(T,\mathcal W\right)$ because $c^T$ is convex. \emph{The specification that charges collection per treated tonne and treatment at a rising rate in the share is exactly the specification whose cost function is convex in tonnages.} That is a fortunate coincidence rather than a designed one, but it is what makes the waste-handling block behave.
+
+Third, the emission flow is linear. Writing~\eqref{eq:sp:setup:Xi} in the new variables,
+\begin{align}
+\Xi &= \mu\mathcal W-T+d^WT-d^WR^R,
+\label{eq:app:suff:Xi-linear}
+\end{align}
+affine in $\left(\mathcal W,T,R^R\right)$ with no derivative of $a\left(\cdot\right)$ anywhere, which is the payoff of having written $\Xi$ linearly in $H$ and $R^R$ in the first place.
+
+\smalltitle{Free disposal on two margins.} Two equalities are replaced by inequalities, each legitimate because the objective is monotone in the slack.
+\begin{align}
+&\text{\emph{goods:}} & F\left(K-K^R,R,P,t\right) &\ge C+I+\delta K+C^N+C^D+C^W,
+\label{eq:app:suff:goods}
+\\
+&\text{\emph{recovery:}} & R^R &\le \mathcal R\left(T,K^R,t\right).
+\label{eq:app:suff:recovery}
+\end{align}
+The first binds because $u'>0$. The second treats recovered material as freely disposable: the planner may recover less than the technology permits, the shortfall leaving circulation exactly as unrecovered material does. Both enlarge the feasible set, so the relaxed problem's value is an upper bound; both bind at any candidate satisfying the conditions of Section~\ref{sec:sp:opt:foc}, so a solution of the relaxed problem that satisfies them with equality solves the original. Making the recovery constraint an inequality matters for a reason specific to this model: $R^R$ enters the ledger with the multiplier $-p^W$, whose sign is an outcome, so a term $-p^W\mathcal R\left(T,K^R\right)$ is concave only when $p^W\le0$. With $R^R$ a control and $\mathcal R$ confined to~\eqref{eq:app:suff:recovery}, the ledger becomes affine and the sign of $p^W$ stops mattering.
+
+\smalltitle{Stored material instead of the intensity.} Finally replace $\Omega$ by the tonnage it stores,
+\begin{align}
+m &\equiv \Phi^IG=\Omega\phi^IG .
+\label{eq:app:suff:mdef}
+\end{align}
+The ledger~\eqref{eq:sp:ledger} and the transition for $M^K$ are then both affine,
+\begin{align}
+W &= N+R^R-m+\delta M^K+\mathcal N,
+&
+M^K_{t+1} &= \left(1-\delta\right)M^K_t+m_t,
+\label{eq:app:suff:ledger-affine}
+\end{align}
+and the entire content of the accounting block that is \emph{not} affine collapses into the intensity condition~\eqref{eq:sp:intensity}, which in these variables reads
+\begin{align}
+\boxed{\;m\left(\mathcal D+\phi^IG\right) \;=\; \left(N+R^R\right)\phi^IG\;}
+\label{eq:app:suff:intensity}
+\end{align}
+--- bilinear on both sides, and the one constraint that resists.
+
+\smalltitle{The convexified problem.} Collecting, and taking as given a set $\mathcal O\subseteq\left\{0,1,2,\dots\right\}$ of periods in which the economy operates:
+
+\begin{problem}[the convexified planner problem]\label{prob:suff}
+Choose $\left\{C,I,N,D,T,K^R,R^R,m,W\right\}_{t\ge0}$ to maximise $U_0=\sum_t\beta^t\left[u\left(C_t\right)-v\left(P_t\right)\right]$ subject to, in every period, the goods and recovery constraints~\eqref{eq:app:suff:goods}--\eqref{eq:app:suff:recovery}, the affine ledger and $M^K$ transition~\eqref{eq:app:suff:ledger-affine}, the intensity condition~\eqref{eq:app:suff:intensity}, the linear transitions for $K$, $S$, $X$ and $\mathcal W$, the relaxed pollution transition
+\begin{align}
+P_{t+1} &\ge P_t-\theta\left(P_t\right)P_t+\Xi_t,
+\label{eq:app:suff:P-relaxed}
+\end{align}
+the operating restrictions $N_t+R^R_t\ge\bar R$ for $t\in\mathcal O$ and $N_t+R^R_t=0$ otherwise, and the bounds $0\le T\le\mu\mathcal W$, $0\le K^R\le K$, $C,N,D,m\ge0$.
+\end{problem}
+
+Relaxing the pollution transition to~\eqref{eq:app:suff:P-relaxed} is legitimate because the objective is decreasing in $P_{t+1}$ and the carry-over $g\left(P\right)\equiv\left[1-\theta\left(P\right)\right]P$ is increasing, so more pollution is never chosen and the constraint binds.
+
+\begin{proposition}[the locus of the non-convexity]\label{prop:suff:locus}
+Suppose
+\begin{enumerate}
+\item[(C1)] $\mathcal F$ is concave in $\left(K^Y,R^{e}\right)$ and output damages are additively separable from $\left(K^Y,R\right)$, or absent;
+\item[(C2)] $a$ is concave, and $c^T$ is convex;
+\item[(C3)] $C^N$ is jointly convex in $\left(N,S\right)$ and $C^D$ jointly convex in $\left(D,X\right)$;
+\item[(C4)] $g\left(P\right)=\left[1-\theta\left(P\right)\right]P$ is convex on the relevant range of $P$.
+\end{enumerate}
+Then every constraint of Problem~\ref{prob:suff} defines a convex set and the objective is concave, \emph{with the single exception of the intensity condition}~\eqref{eq:app:suff:intensity}. In particular, if $\phi^I=0$ --- so that no material is stored in durables, $m\equiv0$ and~\eqref{eq:app:suff:intensity} is vacuous --- Problem~\ref{prob:suff} is a concave programme.
+\end{proposition}
+
+The proof is the inspection carried out above, constraint by constraint: $u$ concave and $v$ convex give a concave objective; \eqref{eq:app:suff:goods} is convex by (C1)--(C3) and~\eqref{eq:app:suff:persp-cW}; \eqref{eq:app:suff:recovery} is the hypograph of a concave function by (C2); \eqref{eq:app:suff:ledger-affine} and the transitions for $K,S,X,\mathcal W$ are affine; \eqref{eq:app:suff:P-relaxed} is convex by (C4) and the linearity of~\eqref{eq:app:suff:Xi-linear}; and the bounds, including the floor $N+R^R\ge\bar R$ \emph{given} $\mathcal O$, are linear.
+
+Two features of this result deserve emphasis. The floor, which looks like the model's most violent non-convexity, is not one at all once the operating set is fixed: $\left\{R\ge\bar R\right\}$ is a half-space. All the floor does is make the problem a family of convex programmes rather than one, and Section~\ref{sec:app:suff:regimes} takes up the comparison across the family. And the recycling block, which one might expect to be the difficulty --- a yield that depends on a ratio, a technology with a ceiling, two corner-prone margins --- is convex, because constant returns plus a concave yield is exactly a perspective function.
+
+\subsection{Transversality: mass conservation does the work}\label{sec:app:suff:tvc}
+
+\begin{proposition}[transversality]\label{prop:suff:tvc}
+On every feasible path the five states $S$, $X$, $P$, $M^K$ and $\mathcal W$ are bounded by constants depending only on the initial stocks and the primitives:
+\begin{align}
+S_t &\le S_0+\bar X_{\max}-X_0,
+&
+X_t &\le\bar X_{\max},
+&
+M^K_t+\mathcal W_t &\le\mathcal B,
+&
+P_t &\le P_0+\frac{\mathcal B+\mathcal B/\left(1-\bar a\right)}{\theta_{\min}} .
+\label{eq:app:suff:bounds}
+\end{align}
+Consequently, if $\beta^t\lambda_t\,p_t\to0$ for each of the five corresponding prices, their boundary terms in the sufficiency inequality vanish, and the \emph{only} genuine transversality condition is the one on capital,
+\begin{align}
+\lim_{t\to\infty}\beta^t\lambda_t\,q_t\,K_{t+1} &= 0 .
+\label{eq:app:suff:tvc-K}
+\end{align}
+On every candidate path of Section~\ref{sec:sp:longrun}, both requirements hold under Assumption~\ref{ass:lr:bounded} and under no further condition.
+\end{proposition}
+
+The bounds are Lemma~\ref{lem:lr:stocks} and~\eqref{eq:sp:sum:cumulative-N} together with $\theta\ge\theta_{\min}$ applied to a cumulated emission flow that is itself bounded by the budget. The verification of the limits is a rate count. At a rest point $\lambda_t\to\lambda^*$ and every price converges, so $\beta^t$ alone delivers the limits. On a balanced growth path $\lambda_t\propto e^{-\eta gt}$, every shadow price grows at rate $g$, and $K_{t+1}\propto e^{gt}$, so both~\eqref{eq:app:suff:tvc-K} and the five bounded terms behave like $\left[\beta e^{\left(1-\eta\right)g}\right]^t$, which converges to zero exactly when $\ln\left(1+\rho\right)>\left(1-\eta\right)g$. On a collapse path every stock and price is shrinking. Hence:
+
+\begin{center}
+\emph{Assumption~\ref{ass:lr:bounded} is not an additional restriction for sufficiency --- it \emph{is} the transversality condition.}
+\end{center}
+
+This is worth marking because transversality is usually the awkward step in an infinite-horizon problem with many states, and here five of the six states dispose of it for free. The reason is physical rather than technical: matter is conserved, the economy can never hold more of it than the budget $\mathcal B$, and a stock that cannot run away cannot generate a boundary term.
+
+\subsection{The sufficiency theorem}\label{sec:app:suff:theorem}
+
+\begin{theorem}[sufficiency, given the operating set]\label{thm:suff}
+Fix an operating set $\mathcal O$ and suppose (C1)--(C4) hold and either $\phi^I=0$ or the intensity path $\left\{\Omega_t\right\}$ is held fixed at its candidate values, so that~\eqref{eq:app:suff:intensity} is affine. Let $z^*=\left\{C^*,I^*,N^*,D^*,T^*,K^{R*},R^{R*},m^*,W^*;K^*,S^*,X^*,P^*,M^{K*},\mathcal W^*\right\}$ be feasible for Problem~\ref{prob:suff}, satisfy the first-order conditions of Section~\ref{sec:sp:opt:foc} with multipliers $\lambda_t>0$, non-negative multipliers on the inequality constraints, and costates as in~\eqref{eq:sp:costates-def}, and satisfy the transversality conditions of Proposition~\ref{prop:suff:tvc}. Then $z^*$ solves Problem~\ref{prob:suff}. If in addition $u$ is strictly concave, $z^*$ is the unique solution in $C$.
+\end{theorem}
+
+The argument is the discrete-time Mangasarian one and we set it out because the boundary term is where this model differs. Let $z$ be any feasible path and write $\Delta_t\equiv\left[u\left(C_t\right)-v\left(P_t\right)\right]-\left[u\left(C^*_t\right)-v\left(P^*_t\right)\right]$. Concavity of the objective and of every constraint function, evaluated at $z^*$ with the candidate multipliers, gives for each $t$
+\begin{align}
+\Delta_t &\le \nabla_z\mathcal L_t\left(z^*\right)\cdot\left(z_t-z^*_t\right)+\left[\text{multiplier}\right]_t\cdot\left[\text{state carried forward}\right],
+\label{eq:app:suff:step}
+\end{align}
+where $\mathcal L$ is the Lagrangian~\eqref{eq:sp:lagrangian} in the convexified variables. The first-order conditions make $\nabla_z\mathcal L_t\left(z^*\right)$ vanish on every interior control and, at each corner, give it the sign that makes its inner product with $z_t-z^*_t$ non-positive --- this is where the Kuhn--Tucker branches of~\eqref{eq:sp:sum:Nsys}--\eqref{eq:sp:sum:KR} are used, and it is why the corners are not themselves a source of difficulty. Summing over $t\le T$ with weights $\beta^t$, the costate terms telescope, leaving
+\begin{align}
+\sum_{t=0}^{T}\beta^t\Delta_t &\le -\beta^T\lambda_T\sum_{i}m^i_T\left(x^i_{T+1}-x^{i*}_{T+1}\right).
+\label{eq:app:suff:boundary}
+\end{align}
+For the five bounded states, Proposition~\ref{prop:suff:tvc} sends the corresponding terms to zero as $T\to\infty$ whatever the sign of the price --- which matters here, because $p^{\mathcal W}$, $p^M$ and $p^X$ do not have fixed signs. For capital, $q_T>0$ and $K_{T+1}\ge0$ give $q_T\left(K_{T+1}-K^*_{T+1}\right)\ge-q_TK^*_{T+1}$, so the term is bounded below by $-\beta^T\lambda_Tq_TK^*_{T+1}$, which vanishes by~\eqref{eq:app:suff:tvc-K}. Hence $U_0\left(z\right)\le U_0\left(z^*\right)$.
+
+\subsection{The operating set, and whether shutdown is absorbing}\label{sec:app:suff:regimes}
+
+With $\bar R>0$ the optimum is the best element of a family of convex problems:
+\begin{align}
+U_0^{\ast} &= \sup_{\mathcal O\subseteq\left\{0,1,2,\dots\right\}} U_0^{\ast}\left(\mathcal O\right),
+\label{eq:app:suff:regime-sup}
+\end{align}
+with each $U_0^{\ast}\left(\mathcal O\right)$ delivered by Theorem~\ref{thm:suff}. Two things are needed to make this useful: a reason the supremum is attained over a small family, and a way to compare across it. The second is what the quantitative model does, by evaluating the shutdown comparison~\eqref{eq:app:wh:shutdown} against the closed-form continuation value~\eqref{eq:app:wh:Vstop}. The first requires an argument that the family is essentially indexed by a single date, and that argument is less automatic than it looks.
+
+\smalltitle{Shutdown need not be absorbing.} It is tempting to assume that once production stops it stops for good, so that $\mathcal O=\left\{0,\dots,T^{\dagger}\right\}$ and the family is indexed by one integer. The model does not deliver this. After a shutdown the economy still holds capital, and the goods constraint permits $I<0$: capital can be scrapped to finance extraction or waste handling, up to $\left(1-\delta\right)K_t$ of final good per period. It also still holds material. Scrapped and depreciating capital releases its embodied content into the waste stream --- the term $\delta M^K-\Phi^IG$ in the ledger is positive when $G<0$ --- so $\mathcal W$ \emph{grows} after a shutdown even though nothing is produced. An economy that shuts down with a large capital stock is therefore accumulating recyclable material precisely while it is idle, and may be able to restart.
+
+Whether it should is a real question, and under a hard ceiling the answer cannot be ``indefinitely'': cumulative throughput is bounded by Lemma~\ref{lem:lr:throughput}, so any sequence of operating intervals is finite in total length. But the optimal $\mathcal O$ could in principle be a union of several intervals --- run, idle while the capital stock is digested into the waste stock, run again --- and we have not excluded it. A sufficient condition for a single interval is that the throughput cap can never again clear the floor:
+
+\begin{proposition}[absorbing shutdown]\label{prop:suff:absorbing}
+Suppose production ceases at $T^{\dagger}$ and
+\begin{align}
+\bar a\,\mu\left(M^K_{T^{\dagger}}+\mathcal W_{T^{\dagger}}\right)+N^{\max}_{T^{\dagger}} &< \bar R,
+\qquad
+C^N\!\left(N^{\max}_{T^{\dagger}},S_{T^{\dagger}},t\right)=\left(1-\delta\right)K_{T^{\dagger}} ,
+\label{eq:app:suff:absorbing}
+\end{align}
+where $N^{\max}$ is the largest extraction the remaining capital could finance in a single period. Then $R_t<\bar R$ for all $t>T^{\dagger}$ and the shutdown is permanent.
+\end{proposition}
+
+The bound uses only mass conservation: after $T^{\dagger}$ the total anthropogenic stock $M^K+\mathcal W$ can only fall, since $N=0$ and leakage is positive, so $\mathcal W_t\le M^K_{T^{\dagger}}+\mathcal W_{T^{\dagger}}$ at every later date, and the throughput cap~\eqref{eq:sp:setup:throughput-cap} then applies with that bound. The condition is checkable along a computed path, and the quantitative implementation reports it. Where it fails, the single-date search of Section~\ref{sec:q:sol:collapse} is searching over too small a family and its result is an upper bound on the shutdown date rather than the optimal one.
+
+\subsection{Conditions on the workhorse primitives}\label{sec:app:suff:workhorse}
+
+Conditions (C1)--(C4) are restrictions on primitives and the workhorse forms of Appendix~\ref{sec:app:workhorse:forms} satisfy some and not others. The table is the practical content of this appendix.
+
+\begin{table}[H]
+\centering
+\caption{Convexity conditions for the workhorse specification.}\label{tab:app:suff}
+\begin{tabular}{L{2.4cm}L{5.6cm}L{5.8cm}}
+\toprule
+Condition & Requirement & Status in the workhorse \\
+\midrule
+(C1) technology &
+$\mathcal F$ concave in $\left(K^Y,R^{e}\right)$ &
+\textbf{holds} for every $\varsigma>0$: CES is concave and homogeneous of degree one, and $Q^{\mu_F}$ with $\mu_F\in\left(0,1\right)$ preserves it \\
+(C1) damages &
+output damages additively separable &
+\textbf{fails} for $e^{-\kappa P}$: multiplicative damages are convex in $P$ and the cross-partials break joint concavity. Holds at $\kappa=0$; see below \\
+(C2) recycling &
+$a$ concave &
+\textbf{holds} for the exponential tail~\eqref{eq:app:wh:a}; \textbf{fails} for the power tail~\eqref{eq:app:wh:a-power} with $\psi>1$, which is convex near the origin \\
+(C2) treatment &
+$c^T$ convex &
+\textbf{holds} for $c_T\varpi^{1+\chi_T}/\left(1+\chi_T\right)$, $\chi_T>0$ \\
+(C3) extraction &
+$C^N$ jointly convex in $\left(N,S\right)$ &
+$N^{1+\chi_N}S^{-\mu_N}$ is convex iff $\chi_N\ge\mu_N$; the linear term $\kappa_NNS^{-\mu_N}$ is \textbf{never} jointly convex for $\mu_N>0$ \\
+(C3) exploration &
+$C^D$ jointly convex in $\left(D,X\right)$ &
+as extraction, with $\chi_D\ge\mu_D$ and $\kappa_D=0$ \\
+(C4) decay &
+$\left[1-\theta\left(P\right)\right]P$ convex &
+\textbf{holds} iff $\theta_PP\le2$; automatic when $\theta_P=0$ \\
+(C5) intensity &
+$\phi^I=0$ &
+\textbf{fails} whenever material is stored in durables \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three of these are worth a comment, because in each case the failure is telling us something rather than being an artefact of the functional form.
+
+\smalltitle{The choke and the non-convexity are the same feature.} The extraction cost is jointly convex in $\left(N,S\right)$ only if the linear term vanishes. But $\kappa_N>0$ is precisely what gives extraction a finite marginal cost at $N=0$ and therefore a genuine choke, which is what makes the \emph{stranding} ending of Section~\ref{sec:sp:longrun:restpoints} possible at all. \emph{The parameter that creates the possibility of stranded reserves is the parameter that destroys convexity of the resource block.} That is not a coincidence: a choke value means the marginal tonne can become worthless at a positive reserve, which is exactly the configuration in which two candidate paths --- extract now, or strand --- can both satisfy the necessary conditions. If Skiba points arise anywhere in this model, this is where.
+
+\smalltitle{Multiplicative damages are convex in the pollution stock.} $F=A e^{-\kappa P}Q^{\mu_F}$ is log-concave but not concave: $\partial^2F/\partial P^2=\kappa^2F>0$, and the cross-partial $\partial^2F/\partial K\partial P<0$ breaks joint concavity even against a concave damage factor. This is the familiar non-convexity of multiplicative-damage climate--economy models and it is not special to this paper. Two things limit its bite here. It disappears if damages are put in utility alone ($\kappa=0$), which the model already permits since $v\left(P\right)$ carries a damage channel of its own. And it disappears \emph{asymptotically in every cell of the taxonomy}, because $P\to0$ on every path: the curvature that violates concavity is proportional to $\kappa^2F$ evaluated at a pollution stock that is going to zero. The non-convexity is a transitional phenomenon, which is also to say that any multiplicity it generates concerns the transition and not the long-run classification.
+
+\smalltitle{The intensity condition is the residual difficulty.} Condition (C5) is not a condition one can arrange; $\phi^I=0$ removes material from durables and with it the state $M^K$, the price $\zeta$, and the whole composition channel. What can be said is where the difficulty sits and how large it is. Its multiplier is $\zeta=\sigma\left(p^W-p^M\right)$, so the bilinear term enters the Hessian of the Lagrangian scaled by $\left|\zeta\right|$, and its allocative footprint is entirely the family of wedges $\zeta\Omega^j$ of Section~\ref{sec:sp:opt:foc}. Those wedges are bounded on every candidate path --- this is proved for state C in Section~\ref{sec:app:workhorse:cbgp} and holds trivially at a rest point, where $\Omega=0$ --- and they vanish with $\sigma$. So the honest statement is a conditional one, and it is what Theorem~\ref{thm:suff} says: \emph{the candidate is optimal among all paths that share its material-intensity path, and the only deviations left unverified are those that change the economy's average material intensity.} How much such deviations could be worth is bounded by the wedges, and the numerical test of Section~\ref{sec:app:suff:numerical} searches over them directly.
+
+\subsection{Local sufficiency and numerical verification}\label{sec:app:suff:numerical}
+
+Where the global argument does not reach, two weaker statements are available and both are computable.
+
+\smalltitle{Second-order conditions.} At a point satisfying the first-order conditions, the standard second-order sufficient condition --- that the Hessian of the Lagrangian be negative definite on the critical cone --- delivers a strict \emph{local} maximum without any global concavity. Since the only non-convex constraint contributes a Hessian block proportional to $\left|\zeta\right|$ with a fixed sparsity pattern, while the concave blocks contribute curvature proportional to $\left|u''\right|$, the curvature of $\mathcal F$, and the convexity of the cost functions, the second-order condition holds whenever the latter dominate. We do not attempt a sharp analytical bound; the quantitative implementation evaluates the comparison directly.
+
+\smalltitle{A feasible-direction test.} The construction that is most informative in practice, and the one the code implements, is a direct search over feasible deviations. Given a computed path, perturb the controls $\left(I,N,D,\varpi,K^R\right)$ at arbitrary dates, propagate the transitions, and let consumption absorb the goods constraint; the result is feasible by construction whenever consumption stays positive and the floor is respected. Comparing
+\begin{align}
+\mathcal V\left(z\right) &\equiv \sum_{t=0}^{T}\beta^t\left[u\left(C_t\right)-v\left(P_t\right)\right]
++\beta^T\lambda_T\sum_i m^i_T\,x^i_{T+1}
+\label{eq:app:suff:vtest}
+\end{align}
+across deviations tests exactly the inequality~\eqref{eq:app:suff:boundary} that the sufficiency argument asserts, with the terminal states valued at the candidate's own shadow prices. A deviation with $\mathcal V\left(z\right)>\mathcal V\left(z^*\right)$ is either a numerical error or a genuine failure of concavity, and in the second case it is an explicit alternative path --- which is what one wants when the suspicion is a Skiba point rather than a bug. The test is local in the sense that the terminal valuation is a first-order one, so it is run at several perturbation scales and the horizon is set long enough that terminal differences are heavily discounted.
+
+\subsection{What is and is not established}\label{sec:app:suff:status}
+
+\emph{Established.} Given the operating set and the intensity path, and under (C1)--(C4), the necessary conditions of Section~\ref{sec:sp:opt:foc} together with Assumption~\ref{ass:lr:bounded} are sufficient for a global optimum, and the optimum is unique in consumption. Transversality reduces to the single condition~\eqref{eq:app:suff:tvc-K} on capital, because mass conservation bounds the other five states. The decentralisation of Part~\ref{part:mkt} inherits this status directly. The recycling and waste-handling blocks, in the tonnage variables, are convex.
+
+\emph{Not established, in decreasing order of importance.} (i) Optimality against deviations that change the material intensity path --- the intensity condition is the one irreducibly bilinear constraint, and it is inactive only at $\phi^I=0$. (ii) Optimality across operating sets when shutdown is not absorbing in the sense of Proposition~\ref{prop:suff:absorbing}; the possibility of a shutdown followed by a restart financed by digesting the capital stock is not excluded, and the quantitative implementation currently searches only over single shutdown dates. (iii) Sufficiency where (C3) fails, which is whenever extraction has a finite choke value --- exactly the configuration in which stranding is possible, and the natural place to look for multiplicity. (iv) Sufficiency where multiplicative output damages are retained, though the violation is proportional to $\kappa^2 F$ at a pollution stock that converges to zero. (v) Uniqueness of the long-run state: nothing above excludes several candidate paths converging to different cells from the same initial condition, and Section~\ref{sec:sp:longrun:scope} continues to condition on the limit attained.

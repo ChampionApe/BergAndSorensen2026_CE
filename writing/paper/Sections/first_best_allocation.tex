@@ -1,0 +1,160 @@
+\section{The First-Best Allocation}
+\label{sec:first-best-allocation}
+
+From equations~\eqref{eq:ramsey:output}--\eqref{eq:ramsey:waste-cost} plus~\eqref{eq:ramsey:capital-motion} it follows that the aggregate resource constraint~\eqref{eq:ramsey:resource-constraint} may be written as
+\begin{align}
+\dot{K} &= F\left(K-K^R, N + a\left(\frac{K^R}{\varpi W}\right)\varpi W, P\right) - \delta K - C - C^N(N,S) - C^D(D,X) 
+\notag \\
+&\phantom{{}={}} - \left[c^c + c^T(\varpi)\right] W.
+\label{eq:first-best:capital-constraint}
+\end{align}
+
+A utilitarian social planner will choose the control variables $C$, $K^R$, $W$, $\varpi$, $N$, and $D$ to maximize the lifetime utility function~\eqref{eq:ramsey:utility} subject to the stock-flow constraints~\eqref{eq:ramsey:reserves-motion}--\eqref{eq:ramsey:pollution-motion} and~\eqref{eq:first-best:capital-constraint}, the ``waste budget''~\eqref{eq:ramsey:waste-generation}, and the materials balance constraint~\eqref{eq:model-setup:materials-balance-reduced}, given the predetermined initial values of the stock variables $K$, $S$, $X$, and $P$. The online appendix to this paper derives the conditions below for the solution to this optimal control problem, where $p^i > 0$ is the shadow price or shadow cost of stock variable $i$, $p^W$ is the shadow price of waste associated with the waste constraint~\eqref{eq:ramsey:waste-generation}, $p^M$ is the shadow price associated with the materials balance constraint~\eqref{eq:model-setup:materials-balance-reduced}, and $MSC^W \equiv p^W + p^M$ is the marginal social opportunity cost of waste generation. All of these variables are measured in units of the final good, whereas the shadow value of capital $\lambda^K$ is measured in units of utility.\footnote{Let $\lambda^j$, $j=K,S,X,P$, denote the co-state variable associated with the stock variable $j$ (its marginal value measured in units of utility) in the current-value Lagrangian corresponding to the optimal control problem stated above, and let $\zeta$ denote the multiplier on the static resource constraint~\eqref{eq:first-best:capital-constraint} itself. Because that constraint also embeds the materials balance through $\phi^K\dot K$, the first-order condition for investment gives $\zeta=\lambda^K-\phi^K\kappa=\lambda^K/q$ with $q\equiv1+\phi^Kp^M$, so $\zeta$ and $\lambda^K$ coincide only when capital embodies no materials ($\phi^K=0$) or the materials balance does not bind ($p^M=0$); in general $q$ is the price of a unit of installed capital in terms of the final good, once the materials it embodies are valued at their shadow price $p^M$. All shadow prices are normalized by $\zeta$, not by $\lambda^K$: $p^S \equiv \lambda^S/\zeta > 0$, $p^X \equiv -\lambda^X/\zeta > 0$, $p^P \equiv -\lambda^P/\zeta > 0$, $p^W \equiv \eta/\zeta > 0$, and $p^M \equiv \kappa/\zeta > 0$, where $\eta$ and $\kappa$ are the Lagrange multipliers associated with the waste constraint~\eqref{eq:ramsey:waste-generation} and the materials balance constraint~\eqref{eq:model-setup:materials-balance-reduced}, respectively.} The shadow prices $p^W$ and $p^M$ associated with the generation of waste in some economic activity are opportunity costs in the sense that this output of waste requires a cut in some other waste-generating activity if total waste production is to be kept unchanged, i.e., if the waste budget~\eqref{eq:ramsey:waste-generation} is to be respected, and if materials balance is to be maintained without increasing the extraction of new raw materials. Note that $p^W$ and $p^M$ do not include the environmental costs of waste generation, since these costs are picked up by the shadow price $p^P$ of the stock of pollution. With these observations in mind, we may state the conditions for an optimal resource allocation as follows.
+
+
+\paragraph{Optimal saving:}
+\begin{align}
+\frac{u'(C)}{1 + \Omega\omega^C MSC^W} &= \zeta,
+&
+MSC^W &\equiv p^W + p^M.
+\label{eq:first-best:optimal-saving}
+\end{align}
+
+\paragraph{Optimal investment in recycling:}
+\begin{subequations}
+\begin{align}\label{eq:first-best:recycling-investment-a}
+&K^R = 0 \\
+&\text{if } a'(0)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right] \le F_K\left(1-\Omega\omega^Y MSC^W\right), \notag
+\end{align}
+and
+\begin{align}\label{eq:first-best:recycling-investment-b}
+&a'\left(\frac{K^R}{\varpi W}\right)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right] = F_K\left(1-\Omega\omega^Y MSC^W\right) \\ 
+&\text{if } a'(0)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right] > F_K\left(1-\Omega\omega^Y MSC^W\right). \notag
+\end{align}
+\end{subequations}
+
+\paragraph{Optimal use of waste for recycling:}
+\begin{align}
+\varpi a\left(\frac{K^R}{\varpi W}\right)(1-\varepsilon)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right] + p^W &= c^c + c^T(\varpi) + p^P\left(1-\varpi+d^W\varpi\right).
+\label{eq:first-best:optimal-waste-use}
+\end{align}
+
+\paragraph{Optimal waste treatment:}
+\begin{align}
+a\left(\frac{K^R}{\varpi W}\right)(1-\varepsilon)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right] + p^P\left(1-d^W\right) &= \frac{dc^T}{d\varpi}.
+\label{eq:first-best:optimal-waste-treatment}
+\end{align}
+\textit{Note:} The function $c^T(\varpi)$ should guarantee that $\varpi\in[0,1]$ or we need to impose this as well explicitly. 
+
+
+\paragraph{Optimal extraction of natural resources from existing reserves:}
+\begin{align}
+F_R\left(1-\Omega\omega^Y MSC^W\right) + p^M - C_N^N - \Omega\omega^N p^W &= p^S.
+\label{eq:first-best:optimal-extraction}
+\end{align}
+
+\paragraph{Optimal exploration for new reserves of natural resources:}
+\begin{align}
+C_D^D + \Omega\omega^D p^W + p^X &= p^S.
+\label{eq:first-best:optimal-exploration}
+\end{align}
+
+\paragraph{Marginal value of natural resource reserve:}
+\begin{align}
+p^S(t) &= \int_t^{\infty} \left(-C_S^N(z)\right)
+\exp\left(-\int_t^{z} r(u)\,du\right) dz,
+\label{eq:first-best:reserve-shadow}
+\\
+r &\equiv F_K\left(1-\Omega\omega^Y MSC^W\right) - \delta.
+\notag
+\end{align}
+
+\paragraph{Marginal cost of accumulated discoveries of natural resource reserves:}
+\begin{align}
+p^X(t) &= \int_t^{\infty} C_X^D(z)
+\exp\left(-\int_t^{z} r(u)\,du\right) dz.
+\label{eq:first-best:discovery-shadow}
+\end{align}
+
+\paragraph{Marginal cost of accumulated stock of pollution:}
+\begin{align}
+p^P(t) &= \int_t^{\infty} MSC^P(z)
+\exp\left(-\int_t^{z} \left[r(u)+\widehat\theta(u)\right]\,du\right) dz,
+\label{eq:first-best:pollution-shadow}
+\\
+MSC^P &\equiv \frac{v'(P)}{\zeta} - F_P\left(1-\Omega\omega^Y MSC^W\right),
+\qquad 
+\widehat\theta \equiv \theta\left(1-\varepsilon^P\right),
+\qquad 
+\varepsilon^P \equiv -\theta'(P)\frac{P}{\theta}.
+\notag
+\end{align}
+
+\paragraph{Shadow value of capital (in ``utils''):}
+\begin{align}
+\lambda^K(t) &= \lambda^K(0)
+\exp\left(-\int_0^t \left[\frac{r(u)}{q(u)}-\rho\right]\,du\right),
+&
+q &\equiv 1+\phi^Kp^M.
+\label{eq:first-best:capital-shadow}
+\end{align}
+This is exact for any path of $p^M$: a unit of capital costs $q$ units of the final good once the materials $\phi^K$ it embodies are valued at their shadow price $p^M$, and it earns the return $r$ on that outlay, i.e., the effective return $r/q$. The shadow value of the final good, $\zeta=\lambda^K/q$, therefore also carries a capital-gain term from the changing price $q$; see~\eqref{eq:first-best:keynes-ramsey} below. When capital embodies no materials ($\phi^K=0$) or the materials balance does not bind ($p^M=0$), $q\equiv1$ and~\eqref{eq:first-best:capital-shadow} reduces to the familiar $\lambda^K(t)=\lambda^K(0)\exp\left(-\int_0^t[r(u)-\rho]du\right)$.
+
+\paragraph{Transversality condition:}
+\begin{align}
+\lim_{t\to\infty} \lambda^K(t)K(t) &= 0.
+\label{eq:first-best:transversality}
+\end{align}
+
+Since the derivatives $F_K$, $F_R$, and $F_P$ depend on $K^R$, $N$, $W$, $\Omega$, $\varpi$, and $P$, the system~\eqref{eq:first-best:optimal-saving}--\eqref{eq:first-best:transversality} plus the constraints~\eqref{eq:ramsey:waste-generation} and~\eqref{eq:model-setup:materials-balance-reduced} constitute 13 equations in the 13 variables $C$, $K^R$, $N$, $W$, $\varpi$, $D$, $p^W$, $p^M$, $p^S$, $p^X$, $p^P$, $\lambda^K$, and $\lambda^K(0)$. The transversality condition~\eqref{eq:first-best:transversality} pins down the initial shadow value of capital, $\lambda^K(0)$, which is a ``jump'' variable. The instantaneous rates of change of the stock variables $K$, $S$, $X$, and $P$ are then given by the stock-flow relationships~\eqref{eq:ramsey:reserves-motion}--\eqref{eq:ramsey:pollution-motion} and~\eqref{eq:first-best:capital-constraint}.
+
+Equation~\eqref{eq:first-best:optimal-saving} states the condition for a socially optimal allocation of consumption over time. The left side of~\eqref{eq:first-best:optimal-saving} is the social gain from a unit increase in consumption in the current period, consisting of the marginal private utility of consumption, $u'(C)$, adjusted downwards to account for the marginal social opportunity cost of waste generation, $MSC^W$, as the rise in consumption increases the flow of waste by the amount $\Omega\omega^C$. In the optimum, the marginal social gain from additional consumption must equal the rise in lifetime utility that could be achieved by forgoing consumption to accumulate an extra unit of the final good, $\zeta$, which coincides with the marginal utility value of an extra unit of capital, $\lambda^K$, only when a unit of capital costs exactly one unit of the final good; in general the two differ by the price $q=1+\phi^Kp^M$ of installed capital defined in~\eqref{eq:first-best:capital-shadow}.
+
+Equations~\eqref{eq:first-best:recycling-investment-a}--\eqref{eq:first-best:recycling-investment-b} say that the social planner will undertake no capital investment in recycling until the marginal social return to such investment (the left side) can compete with the marginal social return to investment in final goods production (the right side). Starting from a zero level of investment in recycling, a small increase in $K^R$ will generate an additional amount $a'(0)$ of recycled raw material which will allow an increase in final goods production that depends on the marginal productivity of raw material input, $F_R$. As a further benefit, the additional recycled material will reduce the amount of treated waste dumped in the environment, thereby generating a social gain $a'(0)d^W p^P$ from reduced pollution. On the other hand, the rise in final goods production will generate an additional amount $\Omega\omega^Y a'(0)F_R$ of new waste with a marginal social cost $MSC^W$ per unit. Hence the net marginal social return to investment in recycling, starting from zero, is the left side of~\eqref{eq:first-best:recycling-investment-a}. Alternatively, the additional unit of capital could be invested in final goods production, generating a net social return equal to the marginal product of capital, $F_K$, adjusted for the marginal social cost of the additional waste created in the production process, as stated on the right side of~\eqref{eq:first-best:recycling-investment-a}. When the process of economic development raises the marginal social return to recycling to the level of the marginal social return to investment in final goods production, the social planner will start to invest in recycling and will ensure that the two marginal rates of return are equalized thereafter, as reported in~\eqref{eq:first-best:recycling-investment-b}. We assume throughout that $\Omega\omega^Y MSC^W < 1$ such that producing an extra unit of final goods is in fact worthwhile.
+
+Equation~\eqref{eq:first-best:optimal-waste-use} determines the optimal input of waste in the recycling process. For each unit of waste input, an amount $\varpi a(1-\varepsilon)$ of recycled raw material will be generated, where the diminishing returns in the recycling process are captured by the elasticity $\varepsilon$. When the environmental benefit from recycling is accounted for, an extra unit of waste input in recycling will therefore create a social gain equal to $\varpi a(1-\varepsilon)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right]$. In addition, an extra unit of waste increases the economy's waste budget, allowing more economic activity to take place regardless of whether the additional waste induces more recycling or not, so the left side of~\eqref{eq:first-best:optimal-waste-use} also includes the shadow price $p^W$ representing the marginal social gain from slackening the economy's waste constraint~\eqref{eq:ramsey:waste-generation}. The right side of~\eqref{eq:first-best:optimal-waste-use} is the marginal social cost of waste, consisting of the cost of collecting and treating an extra unit of waste, $c^c + c^T(\varpi)$, plus the marginal environmental cost of waste generation, which is a weighted average of the marginal cost of untreated and treated waste, $(1-\varpi)p^P + d^W\varpi p^P$. In the social optimum, the marginal social benefit and the marginal social cost of waste generation are equalized.
+
+Equation~\eqref{eq:first-best:optimal-waste-treatment} is the condition for optimal waste treatment. Since treatment is a precondition for recycling, treating an extra unit of waste allows an extra amount $a(1-\varepsilon)$ of material to be recycled, generating a social gain of $a(1-\varepsilon)\left[F_R\left(1-\Omega\omega^Y MSC^W\right) + d^W p^P\right]$. But even if no additional recycling takes place ($a=0$), the treatment of an extra unit of waste reduces the environmental damage from waste depositing by the amount $1-d^W$, generating an environmental gain of $p^P(1-d^W)$ as part of the overall marginal social gain on the left side of~\eqref{eq:first-best:optimal-waste-treatment}. At the optimum, the marginal social gain equals the marginal cost of waste treatment on the right side of~\eqref{eq:first-best:optimal-waste-treatment}.
+
+The socially optimal extraction of virgin raw materials determined by~\eqref{eq:first-best:optimal-extraction} may be rewritten as
+\begin{align}
+\underbrace{F_R - C_N^N}_{\substack{\text{conventional} \\ \text{marginal resource rent}}}
+\;-\;
+\underbrace{\left(\Omega\omega^N + F_R\Omega\omega^Y\right)p^W}_{\substack{\text{opportunity cost of} \\ \text{additional waste generated}}}
+\;+\;
+\underbrace{\left(1-F_R\Omega\omega^Y\right)p^M}_{\substack{\text{gain from slackening of} \\ \text{materials balance constraint}}}
+&= p^S.
+\label{eq:first-best:extraction-decomposition}
+\end{align}
+The first term on the left side of~\eqref{eq:first-best:extraction-decomposition} is the conventional measure of the marginal resource rent, given by the excess of the marginal productivity of the resource, $F_R$, over the marginal cost of resource extraction, $C_N^N$. The second term adjusts for the social opportunity cost of the additional waste generated when the new raw materials are extracted and used to produce final goods. The third term reflects that extraction of an extra unit of raw material allows an increase $1-F_R\Omega\omega^Y$ in the amount of waste generated outside the final goods sector by relaxing the materials balance constraint~\eqref{eq:model-setup:materials-balance-reduced}. This constitutes an additional marginal social gain from resource extraction equal to $\left(1-F_R\Omega\omega^Y\right)p^M$, which may be positive or negative depending on the sign of $1-F_R\Omega\omega^Y$. In the social optimum the marginal social resource rent given by the sum of the three terms on the left side of~\eqref{eq:first-best:extraction-decomposition} equals the marginal shadow value of the reserve stock of natural resources, $p^S$, representing the opportunity cost of extracting an extra unit of raw material from the reserve. According to~\eqref{eq:first-best:reserve-shadow}, the marginal shadow value of the reserve stock equals the present value of the future reduction of extraction costs attained when access to an extra unit of reserves facilitates extraction. The discount rate used to calculate this present value is the net marginal social return to capital, $F_K\left(1-\Omega\omega^Y MSC^W\right) - \delta$.
+
+Equation~\eqref{eq:first-best:extraction-decomposition} illustrates the importance of the law of conservation of matter and energy (the materials balance principle and the first law of thermodynamics) for optimal resource extraction. According to that law, the generation of ``waste'' of some form is an unavoidable byproduct of all economic activities, and the input of low-entropy natural resources in the economic process is tightly linked to the output of high-entropy waste products. For any given amount of total waste created, an increase in one economic activity therefore requires a cut in some other activity, and any relaxation of environmental regulation that allows an increase in total waste creation requires an increase in resource extraction.
+
+The shadow value $p^S$ on the right side of~\eqref{eq:first-best:optimal-extraction} and~\eqref{eq:first-best:extraction-decomposition} is also the marginal social gain from discovering an extra unit of reserves appearing on the right side of~\eqref{eq:first-best:optimal-exploration}. The socially optimal intensity of exploration for new reserves is attained when this marginal gain equals the social cost of discovering an extra unit of reserves, as stated in~\eqref{eq:first-best:optimal-exploration}. The marginal social cost of discovery is the sum of the direct marginal exploration cost, $C_D^D$, the marginal social cost of the waste generated during exploration, $\Omega\omega^D MSC^W$, and the present value of the future increases in discovery costs incurred when an additional unit of hitherto unknown reserves is discovered, $p^X$, defined in~\eqref{eq:first-best:discovery-shadow}, since it becomes more difficult to locate new reserves when the accumulated amount of discoveries increases.
+
+Equation~\eqref{eq:first-best:pollution-shadow} states that the marginal social cost caused by the accumulated stock of pollution equals the present value of the increase in the future pollution costs generated when the stock of pollution increases by one unit. The marginal social cost of pollution in each period, $MSC^P$, is the sum of the marginal disutility of pollution, measured in units of the final good, $v'(P)/\zeta$, and the marginal ``waste-adjusted'' output loss occurring as a higher pollution stock reduces productivity, $-F_P\left(1-\Omega\omega^Y MSC^W\right) > 0$. The discount rate used to discount the future pollution costs is the sum of the marginal social return to capital and the adjusted rate of depreciation of the pollution stock, $\widehat\theta$, which accounts for the fact that an increase in the stock of pollution reduces the future capacity of the environment to absorb waste, as captured by the elasticity $\varepsilon^P$.
+
+The evolution of the marginal utility value of capital is given by~\eqref{eq:first-best:capital-shadow}. A higher marginal social return to capital stimulates capital accumulation, thereby tending to drive down the marginal utility value of capital over time, whereas a higher utility discount rate acts as a disincentive for saving and capital accumulation, which works in the opposite direction; the return relevant for this trade-off is the effective return $r/q$, since a unit of capital costs $q$ units of the final good rather than one. The dynamics of consumption and capital accumulation are of course closely linked. Differentiating~\eqref{eq:first-best:optimal-saving} with respect to time and using $\zeta=\lambda^K/q$ together with~\eqref{eq:first-best:capital-shadow}, we obtain the following extended version of the Keynes-Ramsey rule of optimal intertemporal allocation of consumption,
+\begin{align}
+\frac{\dot C}{C} &= \frac{1}{\sigma}\left[\frac{r}{q}+\frac{\dot q}{q} - \left(\rho + \phi g^{MSC}\right)\right],
+\label{eq:first-best:keynes-ramsey}
+\\
+\sigma &\equiv -\frac{u''C}{u'} > 0,
+\qquad
+\phi \equiv \frac{\Omega\omega^C MSC^W}{1+\Omega\omega^C MSC^W},
+\qquad
+g^{MSC} \equiv \frac{\dot{\Omega\omega^C}}{\Omega\omega^C} + \frac{\dot{MSC}^W}{MSC^W},
+\notag
+\end{align}
+where $1/\sigma$ is the intertemporal elasticity of substitution in consumption, and $g^{MSC}$ is the growth rate of the marginal social cost of the waste generated in the consumption process. When the waste cost $\Omega\omega^C MSC^W$ increases over time, a rise in future consumption relative to present consumption becomes less attractive from a social viewpoint, so the social rate of time preference $\rho + \phi g^{MSC}$ includes the term $\phi g^{MSC}$, where the weight $\phi$ measures the share of the marginal waste cost in the total social cost $1+\Omega\omega^C MSC^W$ of a unit of consumption. The term $\dot q/q$ is a capital-gain (or loss) on the materials embodied in capital: since $q\equiv1+\phi^Kp^M$, this term is absent whenever capital embodies no materials ($\phi^K=0$) or the materials balance does not bind ($p^M=0$), in which case~\eqref{eq:first-best:keynes-ramsey} collapses to the standard rule $\dot C/C=\sigma^{-1}\left[r-\left(\rho+\phi g^{MSC}\right)\right]$.
+
+\subsection{Stages of economic development: from the linear to the circular economy}
+\label{subsec:first-best-allocation:stages}
+
+Let us now consider how the planned economy described above is likely to evolve over time, starting from an early stage of development with a low level of economic activity and a large supply of natural resources relative to the stock of man-made capital. With a sufficiently low level of output, the resulting waste flows are within the bounds of the environment's natural capacity to absorb them, so the marginal cost of pollution, $p^P$, will be zero. Moreover, with a low initial capital stock and abundant natural resource reserves allowing cheap extraction of raw materials, the marginal product of capital invested in final goods production will be relatively high, whereas the marginal product of raw material input will be relatively low. As a consequence, even if $p^P=0$, condition~\eqref{eq:first-best:recycling-investment-a} is likely to prevail, i.e., no capital will be invested in recycling.\footnote{As previously mentioned, diminishing returns to recycling imply that $a''<0$, so when~\eqref{eq:first-best:recycling-investment-a} holds for $K^R=0$, we will also have $a'\left(\frac{K^R}{\varpi W}\right)\left[F_R(K,N,P) + p^P\right] < F_K(K,N,P)$ for any positive value of $K^R/(\varpi W)$.} With no recycling ($a=0$) and a zero marginal cost of pollution, it follows from~\eqref{eq:first-best:optimal-waste-treatment} and our assumption in~\eqref{eq:ramsey:waste-cost} that the marginal treatment cost $dc^T/d\varpi = 0$ for $\varpi=0$ that no waste will be treated. In other words, in the early stage of development the economy is likely to be ``linear'', with a throughput of materials undergoing no treatment and recycling. According to~\eqref{eq:first-best:optimal-waste-use}, the marginal social cost of waste, $p^W$, in this stage will be equal to the marginal cost of waste collection, $c^c$ (since $c^T(\varpi)=0$ when $\varpi=0$), which may be interpreted as the cost of depositing the waste in landfills.
+
+Since waste cannot be recycled unless it has undergone some prior treatment (e.g., some form of sorting), recycling in our economy will never start until some amount of waste treatment becomes worthwhile. In general, one would expect waste treatment to start some time before recycling becomes socially optimal, since our plausible assumption $a''\left(K^R/(\varpi W)\right) < 0$ implies that the marginal productivity $a'\left(K^R/(\varpi W)\right)$ of capital invested in recycling will tend to be low when the supply $\varpi W$ of recyclable material is low. Hence the economy is likely to go through an intermediate stage with some treatment of waste but no recycling.
+
+But as the economy develops, the stocks of capital and pollution increase, and discoveries of new reserves of natural resources become harder to make, so the stock of known reserves will tend to fall as the extraction of raw materials from existing reserves proceeds. As a consequence, capital will tend to be substituted for the use of virgin materials in final goods production. With these tendencies, the marginal productivity of natural resource inputs in final goods production and the marginal cost of pollution will increase over time, while the marginal productivity of capital in final goods production will fall. At some point condition~\eqref{eq:first-best:recycling-investment-a} will therefore be superseded by condition~\eqref{eq:first-best:recycling-investment-b}, as the environmentally adjusted return to investment in recycling catches up with the return to investment in final goods production. The rising marginal return to investment in recycling and the rising cost of pollution will also induce more waste treatment, according to~\eqref{eq:first-best:optimal-waste-treatment} and our assumption that $d^2c^T/d\varpi^2 > 0$. The planned economy will then move from the intermediate, semi-linear stage to a ``circular'' stage with increasing degrees of waste treatment and positive and increasing rates of recycling of raw materials as capital continues to accumulate.
+
+While these speculations do not constitute a formal proof of the optimality of transitioning to a circular economy during the process of economic development, they will be confirmed by the simulation experiments presented in Section~\ref{sec:quantitative-analysis}. Before then, it is of interest to compare the resource allocation generated by competitive markets to the socially optimal allocation described above and to study how the government might ensure an optimal transition to a circular economy.

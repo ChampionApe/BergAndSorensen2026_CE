@@ -1,0 +1,105 @@
+\section{Decentralising the first best}\label{sec:mkt:impl}
+
+\subsection{The implementation result}\label{sec:mkt:impl:prop}
+
+\begin{proposition}[decentralisation]\label{prop:mkt:impl}
+Let $\left\{C_t,I_t,N_t,D_t,\varpi_t,K^R_t,W_t,\Omega_t\right\}$ solve Problem~\ref{prob:sp} with shadow prices $\left\{\lambda_t,\zeta_t,p^W_t\right\}$ and costates $\left\{q_t,p^S_t,p^X_t,p^P_t,p^M_t,p^{\mathcal W}_t\right\}$. Suppose the waste stock is privately owned, displaced mass is charged the gate fee, and the instruments are set at
+\begin{align}
+\tau^P_t &= p^P_t,
+&
+\tau^X_t &= -p^X_t\;\ge\;0,
+&
+z_t &= \zeta_t-p^W_t .
+\label{eq:mkt:instruments}
+\end{align}
+Then the planner's allocation is a competitive equilibrium in the sense of Definition~\ref{def:mkt:eq}, supported by
+\begin{align}
+\tau^W_t &= p^W_t=-p^{\mathcal W}_t,
+&
+p^R_t &= \Psi_t-p^W_t,
+&
+r^K_t &= F_K\left(1-\zeta\Omega^Y\right)\Big|_t,
+&
+\Lambda_t &= \lambda_t,
+\label{eq:mkt:eqprices}
+\end{align}
+with the private valuations $\left(q,p^S,p^M,p^{\mathcal W}\right)$ equal to the corresponding planner costates and the same interest rate $r_t$. Under unified ownership of the exploration frontier, $\tau^X\equiv0$ and $p^X$ arises internally instead.
+\end{proposition}
+
+The proof is a verification, condition by condition, and it is worth setting out because the correspondence is exact rather than approximate and because each line identifies which piece of the price system is doing the work.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Market condition & Becomes & Planner condition \\
+\midrule
+household consumption, \eqref{eq:mkt:hhfoc} & $u'\left(C\right)=\lambda\left(1+\zeta\Omega^C\right)$ & \eqref{eq:sp:sum:C} \\
+household capital, \eqref{eq:mkt:hhfoc} & $q=1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)$ & \eqref{eq:sp:sum:I} \\
+capital arbitrage, \eqref{eq:mkt:hhassets} & $\left(1+r\right)q_t=F_K\left(1-\zeta\Omega^Y\right)|_{t+1}+\left(1-\delta\right)q_{t+1}$ & \eqref{eq:sp:sum:K} \\
+material liability, \eqref{eq:mkt:hhassets} & $\left(1+r\right)p^M_t=\delta p^W_{t+1}+\left(1-\delta\right)p^M_{t+1}$ & \eqref{eq:sp:sum:M} \\
+final goods, $R$, \eqref{eq:mkt:focY} & $F_R\left(1-\zeta\Omega^Y\right)=\Psi-\zeta$ & \eqref{eq:sp:shorthand} \\
+final goods, $K^Y$, \eqref{eq:mkt:focY} & $r^K=F_K\left(1-\zeta\Omega^Y\right)$ & \eqref{eq:sp:sum:KR} r.h.s. \\
+extraction, \eqref{eq:mkt:focN} & $\Psi=C^N_N\left(1+\zeta\Omega^N\right)+p^S+p^W\left(1+\Omega^{N,S}\right)$ & \eqref{eq:sp:sum:Nsys} \\
+exploration, \eqref{eq:mkt:focD} & $p^S+p^X=C^D_D\left(1+\zeta\Omega^D\right)+p^W\Omega^{D,S}$ & \eqref{eq:sp:sum:Dsys} \\
+reserve, \eqref{eq:mkt:pS} & $\left(1+r\right)p^S_t=\left|C^N_S\right|\left(1+\zeta\Omega^N\right)|_{t+1}+p^S_{t+1}$ & \eqref{eq:sp:sum:S} \\
+disposal market, \eqref{eq:mkt:gatefee} & $p^W=-p^{\mathcal W}$ & \eqref{eq:sp:sum:W} \\
+treatment, \eqref{eq:mkt:focvarpi} & $\alpha\left(\Psi-p^W\right)+p^P\left[\left(1-d^W\right)+d^W\alpha\right]\lessgtr c^W$-margin & \eqref{eq:sp:sum:varpi} \\
+recycling capital, \eqref{eq:mkt:focKR} & $a'\left(\Psi-p^W+d^Wp^P\right)\le F_K\left(1-\zeta\Omega^Y\right)$ & \eqref{eq:sp:sum:KR} \\
+stockpile value, \eqref{eq:mkt:pWstock} & $h^{\mathrm{mkt}}=h$ and the recursion coincides & \eqref{eq:sp:sum:h}, \eqref{eq:sp:sum:Wstock} \\
+market clearing, \eqref{eq:mkt:clear-goods}--\eqref{eq:mkt:clear-M} & the three constraints of Problem~\ref{prob:sp} & \eqref{eq:sp:goods}--\eqref{eq:sp:intensity} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each line follows from substituting~\eqref{eq:mkt:instruments} and~\eqref{eq:mkt:eqprices} into the market condition and using $z+\tau^W=\zeta$ in the user prices~\eqref{eq:mkt:userprices}, so that $P^j=1+\zeta\Omega^j$ and $P^I=1+\left(\zeta-p^W\right)\Phi^I$. Three of the lines are worth reading rather than checking.
+
+\emph{The material price.} $p^R=\Psi-p^W$: \emph{the price of a tonne delivered to production is its gross value less what it will cost to get rid of it.} The tonne is charged once at entry, in $p^R$, and once at exit, at the gate fee, and the two sum to $\Psi$ --- which is precisely the ledger's statement that every tonne entering production must eventually leave. Neither charge is redundant and neither can be dropped: without the entry price the material market does not clear, without the exit fee the stockpile has no owner.
+
+\emph{Recycling is paid the same price as the mine.} A tonne of secondary material sells at $p^R$, exactly as a virgin tonne does, and the waste sector's recycling margins~\eqref{eq:mkt:focwaste} reduce to the planner's~\eqref{eq:sp:sum:varpi} and~\eqref{eq:sp:sum:KR} with no wedge of any kind. This is the market face of the result of Section~\ref{sec:sp:opt:foc}: recycling is paid the cost of the virgin tonne it displaces and nothing else, and no recycling subsidy appears anywhere in~\eqref{eq:mkt:instruments}. \emph{The efficient circular economy is not subsidised into existence; it is what a competitive waste sector does when waste has an owner, emissions have a price and materials have a market.}
+
+\emph{The gate fee is a price, not a tax.} Condition~\eqref{eq:mkt:gatefee} holds in equilibrium under no instrument at all, provided $\mathcal W$ is owned. It changes sign with the sign of $p^{\mathcal W}$, and that sign is a forward-looking outcome: negative fees --- the waste sector paying for waste --- are the equilibrium expression of a stockpile whose handling dividends outweigh its handling costs, which is the configuration of every squeeze path and of the entire circular growth path of Section~\ref{sec:sp:longrun:floor}.
+
+\subsection{The three market failures}\label{sec:mkt:impl:failures}
+
+Proposition~\ref{prop:mkt:impl} names the instruments; it is worth being explicit about what each corrects and in which direction the uncorrected economy errs.
+
+\smalltitle{(i) Pollution.} Households suffer $v\left(P\right)$ and production suffers $F_P<0$, neither of which the waste-management sector counts. This is the familiar stock externality and $\tau^P=p^P$ the familiar Pigouvian answer. Its incidence in this model is unusual only in being concentrated: the sole emitter is the waste sector, so a single tax on $\Xi$ carries the whole correction. Without it, \eqref{eq:mkt:focwaste} shows the direction: the treatment share is too low, recycling capital is too low, and the untreated share of the handled flow passes to the environment.
+
+\smalltitle{(ii) Common-pool exploration.} Every explorer raises the cost of everyone's future exploration, and none counts it. Without $\tau^X$, exploration is excessive and the ceiling $\bar X_{\max}$ is approached too fast and at too high a cost in real resources and displaced mass. Note what this does \emph{not} do: it cannot change which cell of the taxonomy the economy is in, since $\bar X_{\max}$, $\bar R$ and $\bar a$ are primitives. It changes the timing of the resource era and the resources burnt on the way.
+
+\smalltitle{(iii) Material attribution.} This is the failure with no counterpart in a model without materials accounting, and it is the reason $z$ exists. The gate fee correctly prices the physical act of disposal, but it charges the agent who \emph{disposes}, while the decision that brings matter into the economy is taken elsewhere --- in the final-goods sector's choice of $R$. A household that buys one more unit of the final good is charged $\tau^W\Omega^C$ as though that unit had drawn $\Omega^C$ fresh tonnes into circulation. It has not. Raw material use is chosen separately; what the extra unit of consumption does is shift the economy-wide intensity, and the resulting increase in the waste flow is only the storage-share fraction $\sigma$ of what the private charge assumes. Setting the two against each other,
+\begin{align}
+\underbrace{\tau^W\Omega^j}_{\text{privately perceived}}
+\;-\;
+\underbrace{\zeta\Omega^j}_{\text{social}}
+&= \left(p^W-\zeta\right)\Omega^j
+= \left[\left(1-\sigma\right)p^W+\sigma p^M\right]\Omega^j ,
+\label{eq:mkt:attribution}
+\end{align}
+and the same expression, with $\Phi^I$ in place of $\Omega^j$, measures the error on the investment margin. The over-charge is therefore \emph{uniform per embodied tonne}, whatever the use: an uncorrected economy does not distort the composition of final-good uses against one another, it distorts the whole final-good system against material. The instrument $z=\zeta-p^W$ is the corresponding uniform per-tonne rebate --- a subsidy exactly when waste is a liability, and a tax exactly when waste is an asset.
+
+Two limiting cases confirm the reading. If $\phi^I=0$ there is nowhere to store matter, $\sigma=\zeta=0$, and $z=-p^W$: the instrument refunds the gate fee to downstream users tonne for tonne, so that the entire ledger cost is borne through the material price $p^R=\Psi$ and no final-good use faces a material wedge at all. If instead $\delta\to0$, so that stored matter is never released, $p^M\to0$ and the instrument approaches $z\to-\left(1-\sigma\right)p^W$.
+
+\smalltitle{The precondition: who owns the stockpile.} None of the three instruments does anything unless the disposal market exists. If waste may be dumped free of charge --- $\mathcal W$ unowned, an open-access sink --- then $\tau^W=0$, the ledger binds no private decision, and every margin above unravels at once: material is under-priced by $p^W$ at the mine gate, the recycling sector has no feedstock claim and no revenue from accepting waste, and the value of the anthropogenic reserve accrues to nobody. Assigning property rights over waste stocks is therefore not one instrument among four but the precondition for the other three, and it is the policy content of the statement that the stockpile is an asset. Where its shadow price is positive, this is exactly a property right in urban mining.
+
+\subsection{What the instruments look like along the paths}\label{sec:mkt:impl:paths}
+
+Because the instruments are shadow prices, their sign and trend along an optimal path are read directly off the results of Part~\ref{part:sp}, and they differ sharply between the taxonomy's collapse cells and its circular one.
+
+\smalltitle{On a collapse path (state A) or a squeeze towards a rest point (B1).} The stockpile is a liability early on: handling absorbs resources and the residual stream pollutes, so $p^{\mathcal W}<0$, the gate fee is positive, and $z<0$ rebates part of it. As material values rise the handling dividend turns, the gate fee falls and can cross zero. At the dematerialized rest point of Proposition~\ref{prop:lr:dichotomy}, $\Omega=0$ and every material wedge vanishes: $z\Omega^j\to0$, and what survives is the emission tax alone, levied on a stockpile that is drained for the diversion motive or not at all --- the corner~\eqref{eq:app:wh:corner} of the workhorse.
+
+\smalltitle{On the circular growth path (state C).} Every sign is reversed. By Section~\ref{sec:app:workhorse:cbgp}, $p^W=-\Theta_{\mathcal W}\Psi<0$ and $\zeta<0$, so
+\begin{align}
+\tau^W &<0,
+&
+z &= \zeta-p^W = \left(\Theta_{\mathcal W}-\Upsilon\right)\hat\Psi\cdot\frac{Y}{R^e_\infty}\;>\;0
+\quad\text{whenever }\Theta_{\mathcal W}>\Upsilon,
+\label{eq:mkt:cbgp-instruments}
+\end{align}
+which holds under the maintained regularity conditions, since $\Upsilon=\sigma_\infty\left(1-\Delta_M\right)\Theta_{\mathcal W}$ and $\sigma_\infty\left(1-\Delta_M\right)<1$. The waste sector pays for waste, and the material-content instrument becomes a tax. Combining the two, the net wedge on any use of the final good is $\zeta\Omega^j<0$ while the wedge on capital formation is $z\Phi^I>0$: relative to its goods cost, matter that is about to be released is subsidised and matter that is about to be locked up is taxed. This is the policy face of the sign result of Section~\ref{sec:app:workhorse:cbgp} --- on a closed loop, durability competes with the recovery loop for matter --- and it should be read as narrowly as that result is. It is a statement about the material attribution of a marginal final-good use, not about the desirability of investment: $q>1$ on the same path, and the level of capital formation is governed by the return on capital, not by this wedge.
+
+\subsection{Laissez-faire and the survival margin}\label{sec:mkt:impl:survival}
+
+The sharpest consequence of Proposition~\ref{prop:mkt:impl} is what it implies about the long run when the instruments are \emph{not} set. Because the taxonomy of Section~\ref{sec:sp:longrun:taxonomy} is organised by primitives --- the floor $\bar R$, the ceiling $\bar a$, the technology regime, and the discovery ceiling $\bar X_{\max}$ --- an uncorrected market economy inhabits the same cell as the planner's economy does, and in every cell but one this means the instruments change how much value the material budget yields and how much damage is suffered en route, without changing the destination.
+
+The exception is the bottom-right cell, and it is the paper's policy result. There the destination is not a primitive. By~\eqref{eq:sp:lr:little}, the economy survives if and only if the material it \emph{retains} clears the floor at its own turnover rate, $\mathcal M_\infty>\bar R\mathcal T$, and $\mathcal M_\infty$ is the endogenous residue of every extraction and leakage decision made along the transition. Each of the three failures pushes it the wrong way: without the emission tax the treatment share and the recycling yield are too low, so the leakage term in~\eqref{eq:app:wh:cbgp:retained} is too large in every period; without the discovery tax real resources and displaced mass are burnt on excessive exploration; and without the material-attribution instrument the final-good system is uniformly over-charged for matter, distorting the whole transition path. \emph{A laissez-faire economy can therefore fail to survive in a cell in which the planner's economy grows forever}, not because it faces a different technology but because it leaks its way below the survival margin before the loop closes. Whether real economies are near that margin is not a question the theory can answer, and it is the question Part~\ref{part:quant} is built to ask.

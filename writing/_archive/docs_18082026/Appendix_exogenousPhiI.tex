@@ -1,0 +1,173 @@
+\section{The model with exogenous path of embodied materials intensity in investment goods}\label{sec:app:exogenousPhiI}
+
+The baseline of Section~\ref{sec:sp:setup:aggregatematerial} assumes $\Phi^I=\Omega\phi^I$: the material
+intensity of new capital goods follows that of the final good. This appendix takes the alternative
+reading flagged there, namely that producing durables requires a specific tonnage per unit of
+investment, so that $\Phi^I=\Phi^I\left(t\right)$ is an exogenous path in levels. Nothing else is
+changed: the refactoring $\Omega^j=\Omega\omega^j$ of the use-waste intensities is retained, and
+$\Omega$ remains endogenous. The variant turns out to be a strict simplification, and the reason is
+worth having on record.
+
+\subsection{Constraints}\label{sec:app:exo:constraints}
+
+The ledger~\eqref{eq:sp:setup:ledger} is unaffected, since it was derived without reference to how
+$\Phi^I$ is determined:
+\begin{align}
+W &= R-\Phi^I\!\left(t\right)G+\delta M^K+\mathcal N \;=\; R-\dot M^K+\mathcal N .
+\label{eq:app:exo:ledger}
+\end{align}
+The intensity condition is now~\eqref{eq:sp:setup:ybalance_generic2} rather
+than~\eqref{eq:sp:setup:ybalance_OmegaPhi},
+\begin{align}
+R &= \Omega\mathcal D+\Phi^I\!\left(t\right)G,
+&&\text{so}&
+\Omega &= \frac{R-\Phi^I\!\left(t\right)G}{\mathcal D},
+\label{eq:app:exo:intensity}
+\end{align}
+and the two non-negativity requirements of~\eqref{eq:sp:setup:Omega-phi} no longer have the same
+status. The intensity of the final good is still non-negative by construction, since
+$\Phi^YY=\Omega\left(\mathcal D-\omega^YY\right)+\Phi^IG$ and $\mathcal D\ge\omega^YY$. But
+$\Omega\ge0$ becomes a genuine feasibility restriction,
+\begin{align}
+R &\ge \Phi^I\!\left(t\right)G ,
+\label{eq:app:exo:feasibility}
+\end{align}
+gross investment cannot embody more material than production draws in. This is the price of fixing
+$\Phi^I$ exogenously, and it is the only place where the variant is more restrictive than the
+baseline.
+
+\subsection{The intensity condition carries no shadow value}\label{sec:app:exo:zeta}
+
+\begin{proposition}[$\zeta$ vanishes when $\Phi^I$ is exogenous]\label{prop:app:exo:zeta}
+Let $\lambda\nu^\Omega\ge0$ be the multiplier on $\Omega\ge0$. Then along any optimal path
+\begin{align}
+\zeta &= \frac{\nu^\Omega}{\mathcal D}\;\ge\;0,
+\label{eq:app:exo:zeta}
+\end{align}
+so that $\zeta=0$ at every date at which~\eqref{eq:app:exo:feasibility} is slack.
+\end{proposition}
+
+\begin{proof}
+Once $\Phi^I$ no longer depends on $\Omega$, the control $\Omega$ enters the
+Lagrangian~\eqref{eq:sp:lagrangian} in one place only, the intensity term
+$\lambda\zeta\left[N+R^R-\Omega\mathcal D-\Phi^IG\right]$: it is absent from the goods constraint, from
+the ledger, from $\Xi$ and from $\mathcal N$, whose coefficients $\Omega^{N,S}$ and $\Omega^{D,S}$ are
+separate primitives. Hence $\partial\mathcal L/\partial\Omega=-\lambda\zeta\mathcal D+\lambda\nu^\Omega$,
+which gives~\eqref{eq:app:exo:zeta} with $\mathcal D>0$. Comparison with the baseline
+condition~\eqref{eq:sp:foc:Omega} locates the difference exactly: the left-hand side there,
+$\phi^IG\left(p^W-p^M\right)$, is the physical margin that $\Omega$ moves through $\Phi^I=\Omega\phi^I$,
+and it is precisely this term that disappears.
+\end{proof}
+
+The reading is that $\Omega$ is decoupled from the allocation. It is still defined,
+by~\eqref{eq:app:exo:intensity}, and still does the job Section~\ref{sec:sp:setup:aggregatematerial}
+gives it --- the bridge between the model's mass flows and reported material-flow accounts --- but it
+is now a pure reporting variable. Given $R$, the ledger says that everything entering production
+becomes waste except what gross investment stores, and with $\Phi^I$ exogenous the composition of
+final-good uses can no longer move that split. There is nothing left for a price on the intensity
+condition to do. This is the same mechanism as the baseline limit $\phi^I\to0$ recorded
+after~\eqref{eq:sp:zeta-explicit}, reached from a different direction: there the storage margin is shut
+because nothing can be stored, here because how much is stored does not respond to $\Omega$.
+
+\subsection{The optimality conditions}\label{sec:app:exo:foc}
+
+With $\zeta=0$ every material wedge $1\pm\zeta\Omega^j$ collapses to unity and
+$\Psi=F_R$ by~\eqref{eq:sp:shorthand}. The system of Section~\ref{sec:sp:opt:foc} becomes
+\begin{align}
+\frac{u'\!\left(C\right)}{\lambda} &= 1,
+\label{eq:app:exo:C}
+\\
+q &= 1-\Phi^I\left(p^W-p^M\right),
+\label{eq:app:exo:I}
+\\
+F_R &= C^N_N+p^S+p^W\left(1+\Omega^{N,S}\right),
+\label{eq:app:exo:N}
+\\
+p^S+p^X &= C^D_D+p^W\Omega^{D,S},
+\label{eq:app:exo:D}
+\\
+p^W\left(1-\alpha\varpi\right) &= c^W+p^P\left[1-\varpi\left(1-d^W\right)-d^W\alpha\varpi\right]-\alpha\varpi F_R,
+\label{eq:app:exo:W}
+\\
+V &= C^N_N+p^S+\Omega^{N,S}p^W+d^Wp^P,
+\label{eq:app:exo:V}
+\end{align}
+with the two Kuhn--Tucker systems~\eqref{eq:sp:sum:recycling-virgin} reading
+$\alpha V+p^P\left(1-d^W\right)=c^{T\prime}\!\left(\varpi\right)$ and $a'\!\left(x\right)V=F_K$ on their
+interior branches, and $a'\!\left(0^+\right)V\le F_K$ at the recycling corner. The costate equations
+are~\eqref{eq:sp:sum:K}--\eqref{eq:sp:sum:M} with the wedges removed, the marginal damage now being
+$\mathcal V=v'\!\left(P\right)/\lambda-F_P$:
+\begin{align}
+\dot q &= \left(r+\delta\right)q-F_K,
+\label{eq:app:exo:costate-K}
+\\
+\dot p^S &= rp^S-\left|C^N_S\right|,
+\label{eq:app:exo:costate-S}
+\\
+\dot p^X &= rp^X+C^D_X,
+\label{eq:app:exo:costate-X}
+\\
+\dot p^P &= \left[r+\theta+\theta'P\right]p^P-\mathcal V,
+\label{eq:app:exo:costate-P}
+\\
+\dot p^M &= \left(r+\delta\right)p^M-\delta p^W,
+\label{eq:app:exo:costate-M}
+\end{align}
+and consumption growth is the ordinary Keynes--Ramsey rule $\eta\dot C/C=r-\rho$, the wedge term
+in~\eqref{eq:sp:sum:Cgrowth} having gone with $\zeta$.
+
+Three things survive intact, and they are the substantive ones. The ledger still charges each tonne
+entering $R$ exactly once, so extraction still pays $p^W$ per tonne while exploration pays only for the
+mass it displaces. The embodied stock $M^K$ is still a state, because $\Phi^I\left(t\right)$ varies and
+$M^K$ is therefore still an investment-weighted average of past intensities rather than a multiple of
+$K$; its price $p^M$ is still a forward average of $p^W$. And the storage motive still runs
+through~\eqref{eq:app:exo:I}: $q$ departs from unity by the full value of the material a unit of gross
+investment stores, without the claw-back factor $1-\sigma$ of~\eqref{eq:sp:sum:I}, since embodying
+material no longer raises the material the final-good system must carry. Setting $\sigma=0$ in the
+baseline conditions recovers the whole of this appendix.
+
+Proposition~\ref{prop:sp:phases} goes through unchanged: its regularity assumptions
+$1+\zeta\Omega^j>0$ and $1-\zeta\Omega^Y>0$ hold trivially at $\zeta=0$, and the phase structure, the
+threshold~\eqref{eq:sp:phases:threshold} in the form $a'\!\left(0\right)V\le F_K$, and the continuity of
+the switch are all unaffected.
+
+\subsection{Implementation}\label{sec:app:exo:market}
+
+The market economy of Part~\ref{part:mkt} is unchanged in structure, but one of its three failures
+disappears. With $\zeta=0$ the intensity externality of
+Section~\ref{sec:mkt:setup:externalities} has nothing to price: $\Omega$ is still an economy-wide
+object that every agent takes as given, but it no longer affects anyone's marginal conditions. Setting
+$\tau^{\mathcal D}=\zeta=0$ in Proposition~\ref{prop:mkt:implementation} leaves
+\begin{align}
+\tau^{\Xi} &= p^P,
+&
+\tau^{\mathcal D} &= 0,
+&
+\tau^{\circ} &= \tau^R = p^W,
+&
+s^I &= \Phi^I\!\left(t\right)p^W,
+\label{eq:app:exo:policy}
+\end{align}
+with $\tau^U=p^P$, $\tau^T=s^R=d^Wp^P$ and $s^W=p^W$ as before. Seven nominal instruments collapse to
+two independent rates: a Pigouvian emission tax, and a uniform charge $p^W$ per tonne of material,
+levied on materials entering production and on waste released from capital or displaced from nature,
+with the stored fraction rebated. The use-waste gate fee and the ad valorem schedule
+of~\eqref{eq:mkt:ad-valorem} are not needed at all --- which is worth noting, because they are the part
+of the baseline policy that is hardest to administer. Corollary~\ref{cor:mkt:budget} survives: net
+revenue is
+\begin{align}
+\mathcal B &= p^W\left(R-\Phi^IG\right)+p^W\left(\delta M^K+\mathcal N\right)-p^WW+p^P\Xi \;=\; p^P\Xi
+\label{eq:app:exo:budget}
+\end{align}
+by~\eqref{eq:app:exo:ledger}, so the materials block is exactly self-financing here too.
+
+\begin{remark}[Use as a numerical benchmark]\label{rem:app:exo:numerics}
+This variant removes one static price, one family of wedges and one instrument while leaving the
+states, the ledger and the whole recycling block intact. The within-period block of
+Section~\ref{sec:qsp:model:block} simplifies accordingly: with $\Phi^I$ exogenous, $\sigma_t$ is no
+longer needed and the second of~\eqref{eq:qsp:block-system} reads
+$W_t=R_t-\Phi^I_tG_t+\delta M^K_t+\mathcal N_t$ directly. It is therefore a natural first target for
+the numerical work and a useful cross-check on the full model: the two should agree once
+$\phi^I\to0$ closes the composition channel in the baseline. Scenario~(6) of
+Section~\ref{sec:qmkt:scenarios} is the same experiment run from the other side.
+\end{remark}

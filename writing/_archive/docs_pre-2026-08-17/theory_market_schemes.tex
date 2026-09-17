@@ -1,0 +1,185 @@
+﻿\section{Simplified waste-generation schemes, and open items}\label{sec:mkt:schemes}
+
+Section~\ref{sec:sp:schemes} listed eight simplifications of the waste-generation scheme and classified
+them by whether they change the allocation or only the reported mass flows. The useful question here is
+a different one: whether each changes the \emph{instrument set}. The two questions have different
+answers, and the difference is worth having in one place, because a switch that changes the allocation
+need not change what the government has to do, and a switch that leaves the allocation alone can still
+remove an instrument.
+
+Throughout, references to the switches are to Section~\ref{sec:sp:schemes}, and the instrument names
+are those of Table~\ref{tab:mkt:instruments}.
+
+\begin{enumerate}[label=\textbf{(W\arabic*)},ref=W\arabic*,leftmargin=3.2em,itemsep=0.35em]
+
+\item \textbf{No nature-attributable waste} (\ref{sw:sp:nature}), $\Omega^{N,S}=\Omega^{D,S}=0$. The
+two displacement charges $\tau^{N,S}$ and $\tau^{D,S}$ vanish, under both closures. This is the single
+largest simplification of the menu: with it, \emph{no instrument at all is levied on the mine}, and the
+extraction path is corrected entirely through the deposit that the material bears once it reaches
+production. The mine's problem becomes the textbook Hotelling problem with an unaltered cost function,
+and the whole of the materials correction sits on $R$, on $W$ and on $G$. Under Version~B the menu
+reduces to three instruments plus the residual $s^W$.
+
+\item \textbf{Waste from output only} (\ref{sw:sp:omegaY}), $\omega^Y=1$ and the rest zero. Under
+Version~B nothing changes: the composition block is already empty. Under Version~A the block collapses
+to a single ad valorem tax on output, $\tau^Y=\Delta$, and the gate fee of
+Proposition~\ref{prop:mkt:A:gate} has base $\Omega Y$ --- a fee paid entirely by the final-good
+producer.
+
+\item \textbf{Waste from output and consumption only} (\ref{sw:sp:omegaYC}). Under Version~B, again
+nothing. Under Version~A this is the smallest scheme in which the household faces any environmental
+instrument at all: the consumption tax $\tau^C=\Delta\omega^C$ appears here and in no smaller scheme.
+
+\item \textbf{Uniform intensities} (\ref{sw:sp:uniform}), $\omega^j=1$ for every $j$. Under Version~B,
+nothing. Under Version~A the five composition instruments become one uniform rate $\Delta$, levied with
+a plus sign on every use of the final good and on output; equivalently, a gate fee $\zeta$ on total
+waste attributable to final-good spending, which is the cleanest form the composition block ever takes
+and the one a quantitative implementation should use first.
+
+\item \textbf{Capital embodies nothing} (\ref{sw:sp:phiI}), $\Phi^I=0$ or $\phi^I=0$. The capital
+instrument $\tau^K$ vanishes, $Q=1$, and the price $p^M$ disappears with the state $M^K$. Under
+Version~A, $\chi=0$ kills $\zeta$ and $\Delta$, so the entire composition block vanishes as well and
+the two closures require the \emph{identical} instrument set:
+\begin{align}
+\tau^R &= p^W,
+&
+s^W &= p^W,
+&
+\tau^E &= p^P,
+\notag\\
+\tau^{N,S} &= \Omega^{N,S}p^W,
+&
+\tau^{D,S} &= \Omega^{D,S}p^W,
+&
+s^R &= d^Wp^P .
+\label{eq:mkt:schemes:minimal}
+\end{align}
+This is the minimal menu of the model --- a source-neutral materials deposit--refund, an emission tax
+with a recovery credit, and two displacement charges --- and, combined with~\ref{sw:sp:nature}, it
+reduces to a deposit--refund and an emission tax alone. It is the natural first target for the
+numerical implementation, for the same reason it was in Section~\ref{sec:sp:schemes}.
+
+\item \textbf{No exploration} (\ref{sw:sp:explore}), $D\equiv0$. The instruments $\tau^{D,S}$ and
+$\tau^D$ go with it, and the mine holds one stock rather than two.
+
+\item \textbf{Exploration costs independent of past discovery} (\ref{sw:sp:CDX}), $C^D_X=0$. The mine
+stops holding $X$ and $P^X\equiv0$, but the instrument set is unchanged. What changes is the behaviour
+of the instruments over time: with a genuine steady state restored, every instrument in
+Table~\ref{tab:mkt:instruments} converges to a constant, computable from the quasi-stationary
+block~\eqref{eq:sp:B:quasistationary}. This is the switch to use when the object of interest is the
+long-run level of the optimal policy rather than its transition path.
+
+\item \textbf{No pollution channel in production} (\ref{sw:sp:nopoll}), $F_P=0$. The instrument set is
+unchanged in form and only the level of $p^P$ moves. One thing does change qualitatively: with $F_P=0$
+the firms suffer no private loss from pollution, so the emission tax carries the entire correction,
+whereas with $F_P<0$ part of the damage is already borne privately through lower output --- though not
+internalised, since $P$ is taken as given.
+
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{What each simplification does to the optimal instrument set.}
+\label{tab:mkt:switches}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.30\textwidth}p{0.30\textwidth}p{0.32\textwidth}@{}}
+\toprule
+Switch & Version B & Version A \\
+\midrule
+\ref{sw:sp:nature}\ \ no $\mathcal N$        & removes $\tau^{N,S},\tau^{D,S}$ & removes $\tau^{N,S},\tau^{D,S}$ \\
+\ref{sw:sp:omegaY}\ \ waste from $Y$ only    & no change (block empty) & block collapses to $\tau^Y$ \\
+\ref{sw:sp:omegaYC}\ \ waste from $Y,C$ only & no change & block collapses to $\tau^Y,\tau^C$ \\
+\ref{sw:sp:uniform}\ \ uniform $\omega^j$    & no change & block becomes one uniform rate $\Delta$ \\
+\ref{sw:sp:phiI}\ \ $\Phi^I=0$               & removes $\tau^K$ & removes $\tau^K$ and the whole block; menus coincide \\
+\ref{sw:sp:explore}\ \ no exploration        & removes $\tau^{D,S}$ & removes $\tau^{D,S},\tau^D$ \\
+\ref{sw:sp:CDX}\ \ $C^D_X=0$                 & unchanged; instruments converge & unchanged; instruments converge \\
+\ref{sw:sp:nopoll}\ \ $F_P=0$                & unchanged in form & unchanged in form \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two readings of the table matter. First, the simplifications that are free under Version~B --- the
+composition switches~\ref{sw:sp:omegaY}--\ref{sw:sp:uniform}, inert for the allocation by
+Proposition~\ref{prop:sp:inert} --- are equally free for the policy, and for the same reason. Under
+Version~A they are neither: they change both the allocation and the number of instruments needed to
+support it. Second, no switch removes the deposit--refund pair. Mass conservation is not a modelling
+option, and no setting of the parameters produces a version of the model in which the charge on
+materials can be dispensed with or replaced by a charge on disposal.
+
+\begin{remark}[The materials block does not balance]\label{rem:mkt:revenue}
+The deposit--refund scheme is not revenue-neutral, and the imbalance is informative. Under Version~B
+with $\eta=0$, the net revenue of the materials block is
+\begin{align}
+\underbrace{p^W\left(R+\mathcal N\right)}_{\text{deposits}}
+-\underbrace{p^WW}_{\text{refunds}}
+-\underbrace{\Phi^I\left(p^W-p^M\right)G}_{\text{capital rebate}}
+&= \Phi^Ip^MG-p^W\delta M^K,
+\label{eq:mkt:schemes:revenue}
+\end{align}
+using the ledger $W=R-\dot M^K+\mathcal N$ and $\dot M^K=\Phi^IG-\delta M^K$. The government accrues
+$p^M$ per tonne of mass placed in the durable stock and pays out $p^W$ per tonne released from it: the
+materials block is a liability account for deposits not yet refunded. In a materially stationary
+economy, $\Phi^IG=\delta M^K$, and~\eqref{eq:mkt:schemes:revenue} is $\delta M^K\left(p^M-p^W\right)<0$
+whenever $p^W>p^M$ --- the block runs a permanent deficit, financed lump-sum, equal to the interest on
+the deposits embodied in the capital stock. Emission tax revenue $p^P\Xi\ge0$ is separate and does not
+offset it systematically.
+\end{remark}
+
+
+\subsection{Open items specific to the market economy}\label{sec:mkt:open}
+
+These are additional to the six items of Section~\ref{sec:sp:ext:open}, all of which carry over: in
+particular the implementation propositions above invoke uniqueness of the planner's
+optimum~(\ref{op:sp:soc}), and the corner behaviour of~\ref{op:sp:corner} is inherited.
+
+\begin{enumerate}[label=\textbf{M\arabic*.},ref=M\arabic*,leftmargin=2.6em,itemsep=0.35em]
+
+\item\label{op:mkt:dumping} \textbf{Enforcement of the collection obligation.} The waste-management
+sector is assumed to collect all waste, and generators are assumed to hand it over. Neither is free.
+If generators can evade collection, the equilibrium changes qualitatively, and in a direction that
+strengthens the case for the entry-side charge: a deposit levied on material entering production
+cannot be evaded by disposing of the waste elsewhere, whereas a gate fee can, and a gate fee is
+precisely the instrument that creates the incentive to evade. This is a standard argument for
+deposit--refund schemes and it is orthogonal to the one made in
+Sections~\ref{sec:mkt:B:nogate} and~\ref{sec:mkt:A:gate}, which holds with perfect enforcement. It is
+not modelled here.
+
+\item\label{op:mkt:corner} \textbf{The mass constraint has no market
+(Remark~\ref{rem:mkt:B:eta}).} Under Version~B the restriction $\Phi^IG\le R$ binds on no private
+agent. The multiplier $\eta$ has a market representation --- a uniform reduction of the deposit and an
+offset to the capital rebate --- but whether a decentralised equilibrium exists at the corner, and what
+happens to it under a policy that does not include $\eta$, is not established. Under Version~A the
+question does not arise.
+
+\item\label{op:mkt:secondbest} \textbf{Welfare under an arbitrary policy.} The equilibrium system of
+Sections~\ref{sec:mkt:A:system} and~\ref{sec:mkt:B:information} determines the allocation for any
+instrument path, which is what a status-quo or partial-policy counterfactual needs and which
+Part~\ref{part:sp} does not provide. What is still missing is the evaluation of $U_0$ along such a
+path and therefore the welfare ranking of two policies; this is~\ref{op:sp:nonopt}, and this part
+resolves only its positive half. The natural second-best exercises --- what to do when $\tau^K$ is
+unavailable, or when the deposit must be levied on virgin material only --- follow immediately from
+the same system and have not been carried out.
+
+\item\label{op:mkt:existence} \textbf{Existence and uniqueness of equilibrium.} Nothing here
+establishes that the equilibrium of Definition~\ref{def:mkt:equilibrium} exists or is unique for given
+instrument paths, and under Version~A the accounting block is solved by the positive root of a
+quadratic whose coefficients depend on the allocation, so the fixed point is not obviously well
+behaved. The transfer $T$ is also assumed lump-sum and unrestricted in sign, which
+Remark~\ref{rem:mkt:revenue} shows is not innocuous: the materials block runs a persistent deficit in a
+materially stationary economy.
+
+\item\label{op:mkt:tender} \textbf{The collection tender.} The result $s^W=p^W$ rests on the
+collection sector being competitive and earning exactly zero profit. With market power, or with a
+tender that leaves rents, the break-even payment and the shadow price of waste part company, and the
+identification of the two --- the cleanest result in this part --- is lost. Since waste collection is
+close to a natural monopoly in practice, this is a substantive limitation rather than a technical one.
+
+\item\label{op:mkt:instrumentsign} \textbf{Instruments of ambiguous sign.} By~\eqref{eq:sp:B:pW-sign}
+and~\eqref{eq:sp:A:pW-sign}, $p^W$ turns negative in the late transition, at which point the deposit
+becomes a payment for drawing material in, the refund a charge for handing waste over, and the capital
+rebate a tax. Whether such a scheme is implementable in the sense the model assumes --- in particular
+whether a negative refund is enforceable, which is the same enforcement question as~\ref{op:mkt:dumping}
+with the sign reversed --- is not addressed.
+
+\end{enumerate}

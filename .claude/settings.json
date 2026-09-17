@@ -1,0 +1,22 @@
+{
+  "$comment": [
+    "Project settings, committed and shared with co-authors. Machine- or user-specific permissions",
+    "belong in .claude/settings.local.json, which is gitignored.",
+    "PYTHONUTF8 applies to writing/overleaf.py, the only Python here: without it a redirected run dies",
+    "on the first non-ASCII character it prints, and the tex it handles is full of them."
+  ],
+  "env": {
+    "PYTHONUTF8": "1"
+  },
+  "permissions": {
+    "allow": [
+      "PowerShell(git status:*)",
+      "PowerShell(git diff:*)",
+      "PowerShell(git log:*)",
+      "PowerShell(git show:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ]
+  }
+}

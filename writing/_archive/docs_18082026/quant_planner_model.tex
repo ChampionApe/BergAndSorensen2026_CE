@@ -1,0 +1,306 @@
+\section{The discrete-time optimality conditions}\label{sec:qsp:model}
+
+\subsection{The Lagrangian and the discount convention}\label{sec:qsp:model:lagrangian}
+
+Adjoin the three static constraints of Problem~\ref{prob:qsp} with multipliers $\beta^t\lambda_t$,
+$\beta^t\lambda_tp^W_t$ and $\beta^t\lambda_t\zeta_t$, exactly as in~\eqref{eq:sp:lagrangian}, and the
+five laws of motion with multipliers dated at the period in which the stock arrives. Writing the
+costate on a stock $Z_{t+1}$ as $\beta^{t+1}\lambda_{t+1}$ times its price in period-$\left(t+1\right)$
+goods, the Lagrangian is
+\begin{align}
+\mathcal L
+={}&\sum_{t=0}^\infty\beta^t\Big\{u\!\left(C_t\right)-v_t\!\left(P_t\right)
+\notag\\
+&+\lambda_t\Big[F_t-C_t-G_t-C^N_t-C^D_t-c^W_tW_t\Big]
++\lambda_tp^W_t\Big[W_t-R_t+\Phi^I_tG_t-\delta M^K_t-\mathcal N_t\Big]
+\notag\\
+&+\lambda_t\zeta_t\Big[R_t-\Omega_t\left(\mathcal D_t+\phi^I_tG_t\right)\Big]
++\beta\lambda_{t+1}q_{t+1}\Big[\left(1-\delta\right)K_t+G_t-K_{t+1}\Big]
+\notag\\
+&+\beta\lambda_{t+1}p^S_{t+1}\Big[S_t+D_t-N_t-S_{t+1}\Big]
++\beta\lambda_{t+1}p^X_{t+1}\Big[X_t+D_t-X_{t+1}\Big]
+\notag\\
+&-\beta\lambda_{t+1}p^M_{t+1}\Big[\left(1-\delta\right)M^K_t+\Phi^I_tG_t-M^K_{t+1}\Big]
+-\beta\lambda_{t+1}p^P_{t+1}\Big[\left(1-\theta_t\right)P_t+\Xi_t-P_{t+1}\Big]\Big\}.
+\label{eq:qsp:lagrangian}
+\end{align}
+
+\smalltitle{One discount convention does all the work.} Define the gross social return between $t$ and
+$t+1$ and the corresponding present-value operator
+\begin{align}
+1+r_{t+1} &\equiv \frac{\lambda_t}{\beta\lambda_{t+1}},
+&
+\hat p_t &\equiv \frac{p_{t+1}}{1+r_{t+1}}
+\quad\text{for}\quad p\in\left\{q,p^S,p^X,p^P,p^M\right\}.
+\label{eq:qsp:discount}
+\end{align}
+So $\hat p_t$ is the value, in period-$t$ goods, of one unit of the stock delivered at $t+1$. With this
+single piece of notation the entire discrete-time system is the continuous-time system of
+Section~\ref{sec:sp:opt:foc} with each \emph{stock} price replaced by its present value $\hat p_t$, and
+with each costate differential equation replaced by a one-period recursion. The two prices that carry
+no stock of their own, $p^W_t$ and $\zeta_t$, and the composite $\Psi_t$ built from them, stay
+contemporaneous. That correspondence is worth stating before the conditions rather than after, because
+it is the only thing one needs to hold in mind while reading them.
+
+Accordingly, redefine the three shorthands of~\eqref{eq:sp:shorthand} and the virgin displacement value
+of~\eqref{eq:sp:sum:V} at their discrete-time values,
+\begin{align}
+\Psi_t &\equiv F_{R,t}\left(1-\zeta_t\Omega^Y_t\right)+\zeta_t,
+&
+\sigma_t &\equiv \frac{\Phi^I_tG_t}{R_t},
+&
+V_t &\equiv \Psi_t-p^W_t+d^W\hat p^P_t .
+\label{eq:qsp:shorthand}
+\end{align}
+
+\subsection{Conditions for the controls}\label{sec:qsp:model:controls}
+
+Differentiating~\eqref{eq:qsp:lagrangian} and dividing through by $\beta^t\lambda_t$ gives the
+following, each stated beside the continuous-time condition it discretises.
+
+\emph{Material intensity}, from~\eqref{eq:sp:sum:Omega}:
+\begin{align}
+\zeta_t &= \sigma_t\left(p^W_t-\hat p^M_t\right).
+\label{eq:qsp:foc:Omega}
+\end{align}
+The discounting is the only change, and it has a reading: storing a tonne in the capital stock saves
+today's waste charge $p^W_t$ in full but incurs the embodied-material liability only from $t+1$, so the
+liability enters at its present value.
+
+\emph{Consumption}, from~\eqref{eq:sp:sum:C}:
+\begin{align}
+\frac{u'\!\left(C_t\right)}{\lambda_t} &= 1+\zeta_t\Omega^C_t ,
+\qquad\text{with CRRA}\qquad
+\lambda_t = \frac{C_t^{-\eta}}{1+\zeta_t\Omega^C_t}.
+\label{eq:qsp:foc:C}
+\end{align}
+
+\emph{Gross investment}, from~\eqref{eq:sp:sum:I}:
+\begin{align}
+\hat q_t &= 1-\Phi^I_t\left(1-\sigma_t\right)\left(p^W_t-\hat p^M_t\right).
+\label{eq:qsp:foc:G}
+\end{align}
+It is $\hat q_t$, the period-$t$ price of a unit of capital delivered at $t+1$, that departs from unity
+by the net storage value --- which is the right object, since that is what a unit of gross investment
+buys.
+
+\emph{Extraction}, from~\eqref{eq:sp:sum:N}, with the corner branch of~\eqref{eq:sp:sum:N-corner}:
+\begin{align}
+\Psi_t &= C^N_{N\!,t}\left(1+\zeta_t\Omega^N_t\right)+\hat p^S_t+p^W_t\left(1+\Omega^{N,S}_t\right).
+\label{eq:qsp:foc:N}
+\end{align}
+
+\emph{Exploration}, from~\eqref{eq:sp:sum:D}, with the corner branch of~\eqref{eq:sp:sum:D-corner}:
+\begin{align}
+\hat p^S_t+\hat p^X_t &= C^D_{D,t}\left(1+\zeta_t\Omega^D_t\right)+p^W_t\Omega^{D,S}_t .
+\label{eq:qsp:foc:D}
+\end{align}
+
+\emph{Waste}, from~\eqref{eq:sp:sum:W}, the condition that determines $p^W_t$:
+\begin{align}
+p^W_t\left(1-\alpha_t\varpi_t\right) &= c^W_t\left(1+\zeta_t\Omega^W_t\right)
++\hat p^P_t\left[1-\varpi_t\left(1-d^W\right)-d^W\alpha_t\varpi_t\right]-\alpha_t\varpi_t\Psi_t .
+\label{eq:qsp:foc:W}
+\end{align}
+
+\emph{Treatment share}, from~\eqref{eq:sp:sum:varpi}, with
+$\mathcal G^\varpi_t\equiv\alpha_t\left(\Psi_t-p^W_t\right)+\hat p^P_t\left[\left(1-d^W\right)+d^W\alpha_t\right]$:
+\begin{subequations}
+\label{eq:qsp:foc:varpi}
+\begin{align}
+\varpi_t &= 0
+&&\text{if}\quad \mathcal G^\varpi_t\le0,
+\\
+\mathcal G^\varpi_t &= \frac{\bar c^T}{\left(1+g^T\right)^t}\varpi_t^{\xi^T}\left(1+\zeta_t\Omega^W_t\right)
+&&\text{if}\quad 0<\mathcal G^\varpi_t<\frac{\bar c^T}{\left(1+g^T\right)^t}\left(1+\zeta_t\Omega^W_t\right),
+\\
+\varpi_t &= 1
+&&\text{if}\quad \mathcal G^\varpi_t\ge\frac{\bar c^T}{\left(1+g^T\right)^t}\left(1+\zeta_t\Omega^W_t\right).
+\end{align}
+\end{subequations}
+
+\emph{Recycling capital}, from~\eqref{eq:sp:sum:KR}, using $a'_t\!\left(0^+\right)=a^m_t$
+and $\mathcal G^K_t\equiv\Psi_t-p^W_t+d^W\hat p^P_t=V_t$:
+\begin{subequations}
+\label{eq:qsp:foc:KR}
+\begin{align}
+K^R_t &= 0
+&&\text{if}\quad a^m_tV_t\le F_{K,t}\left(1-\zeta_t\Omega^Y_t\right),
+\\
+\frac{a^m_t}{\left(1+x_t\right)^2}\,V_t &= F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)
+&&\text{if}\quad a^m_tV_t> F_{K,t}\left(1-\zeta_t\Omega^Y_t\right),
+\end{align}
+\end{subequations}
+the interior branch of which can be solved for $x_t$ in closed form under this parameterisation,
+\begin{align}
+x_t &= \sqrt{\frac{a^m_tV_t}{F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)}}-1 ,
+\label{eq:qsp:x-closed-form}
+\end{align}
+which is a genuine convenience: the capital margin never has to be solved numerically, and the corner
+test is just the requirement that the square root exceed one.
+
+\subsection{Costate recursions}\label{sec:qsp:model:costates}
+
+Each differential equation of Section~\ref{sec:sp:opt:foc} becomes a one-period recursion of the form
+\emph{price today $=$ dividend today $+$ discounted price tomorrow}, with the appropriate survival
+factor.
+
+\emph{Capital}, from~\eqref{eq:sp:sum:K}:
+\begin{align}
+q_t &= F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)+\left(1-\delta\right)\hat q_t,
+&&\text{hence}&
+1+r_t &= \frac{F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)+\left(1-\delta\right)\hat q_t}{\hat q_{t-1}} .
+\label{eq:qsp:costate:K}
+\end{align}
+The second form is the arbitrage condition: a unit of capital bought at $t-1$ for $\hat q_{t-1}$ pays a
+marginal product net of embodied material at $t$ and can be resold, depreciated, for $\left(1-\delta\right)\hat q_t$.
+
+\emph{Reserves and discoveries}, from~\eqref{eq:sp:sum:S} and~\eqref{eq:sp:sum:X}:
+\begin{align}
+p^S_t &= \left|C^N_{S,t}\right|\left(1+\zeta_t\Omega^N_t\right)+\hat p^S_t,
+&
+p^X_t &= -C^D_{X,t}\left(1+\zeta_t\Omega^D_t\right)+\hat p^X_t\;<\;0 .
+\label{eq:qsp:costate:SX}
+\end{align}
+
+\emph{Embodied materials}, from~\eqref{eq:sp:sum:M}:
+\begin{align}
+p^M_t &= \delta p^W_t+\left(1-\delta\right)\hat p^M_t
+\qquad\Longrightarrow\qquad
+p^M_t = \sum_{s\ge t}\delta\left(1-\delta\right)^{s-t}p^W_s\prod_{i=t+1}^{s}\frac{1}{1+r_i},
+\label{eq:qsp:costate:M}
+\end{align}
+so $p^M_t$ remains a forward-weighted average of the waste price, with the surviving fraction
+$\left(1-\delta\right)^{s-t}$ of the vintage doing the weighting.
+
+\emph{Pollution}, from~\eqref{eq:sp:sum:P}, with
+$\mathcal V_t\equiv v'_t\!\left(P_t\right)/\lambda_t-F_{P,t}\left(1-\zeta_t\Omega^Y_t\right)>0$ and
+$\hat\theta_t=\left(1-\xi^P\right)\theta_t$ from~\eqref{eq:qsp:absorption}:
+\begin{align}
+p^P_t &= \mathcal V_t+\left(1-\hat\theta_t\right)\hat p^P_t,
+&
+\mathcal V_t &= \frac{\psi_tP_t^{\nu}}{\lambda_t}+\gamma\frac{Y_t}{P_t}\left(1-\zeta_t\Omega^Y_t\right),
+\label{eq:qsp:costate:P}
+\end{align}
+the second expression substituting the functional forms of Section~\ref{sec:qsp:setup:forms}. Since
+$0<\hat\theta_t<1$ under~\eqref{eq:qsp:absorption} and $r_t>0$, the recursion is a contraction and
+$p^P_t>0$ converges, which is the discrete-time counterpart of the remark that this parameterisation
+rules out the tipping point.
+
+\emph{Consumption}, from~\eqref{eq:sp:sum:Cgrowth}, combining~\eqref{eq:qsp:foc:C}
+with~\eqref{eq:qsp:discount}:
+\begin{align}
+\frac{C_t^{-\eta}}{1+\zeta_t\Omega^C_t} &= \beta\left(1+r_{t+1}\right)\frac{C_{t+1}^{-\eta}}{1+\zeta_{t+1}\Omega^C_{t+1}} .
+\label{eq:qsp:euler}
+\end{align}
+This is the Euler equation the solver will actually iterate on. A material wedge that is constant
+across periods cancels; only a \emph{changing} wedge tilts the consumption path, as in continuous time.
+
+\subsection{The within-period block}\label{sec:qsp:model:block}
+
+Discretisation introduces one object with no continuous-time counterpart, and it is worth isolating
+because it is where an implementation is most likely to go wrong. In continuous time the accounting
+identities relate flows at an instant and there is nothing to solve. In discrete time, recycled
+material re-enters production in the same period in which the waste was generated, so
+\eqref{eq:qsp:goods}--\eqref{eq:qsp:intensity} form a simultaneous system inside the period.
+
+Take the states $\left(K_t,S_t,X_t,P_t,M^K_t\right)$ and the five substantive controls
+$\left(C_t,N_t,D_t,\varpi_t,K^R_t\right)$ as given. Then $C^N_t$, $C^D_t$, $c^W_t$, $\mathcal N_t$ and
+$\phi^I_t$ are known numbers, and the remaining objects are pinned by
+\begin{align}
+R_t &= N_t+a^m_t\,\frac{\varpi_tW_tK^R_t}{\varpi_tW_t+K^R_t},
+&
+Y_t &= A_t\left(K_t-K^R_t\right)^{\chi}\left(R_t-\bar R\right)^{1-\chi},
+\label{eq:qsp:block-defs}
+\\
+\mathcal D_t &= \omega^Y_tY_t+\omega^N_tC^N_t+\omega^D_tC^D_t+\omega^W_tc^W_tW_t+\omega^C_tC_t,
+&
+\sigma_t &= \frac{\phi^I_tG_t}{\mathcal D_t+\phi^I_tG_t},
+\label{eq:qsp:block-D}
+\end{align}
+together with the two equations
+\begin{align}
+G_t &= Y_t-C_t-C^N_t-C^D_t-c^W_tW_t,
+&
+W_t &= \left(1-\sigma_t\right)R_t+\delta M^K_t+\mathcal N_t .
+\label{eq:qsp:block-system}
+\end{align}
+The second of~\eqref{eq:qsp:block-system} is the ledger with the intensity condition substituted, using
+$\Phi^I_tG_t=\sigma_tR_t$ from~\eqref{eq:qsp:intensity}; $\Omega_t=R_t/\left(\mathcal D_t+\phi^I_tG_t\right)$
+is then read off residually.
+
+\begin{lemma}[The within-period block is a well-posed scalar problem]\label{lem:qsp:block}
+Given the states and the five controls, \eqref{eq:qsp:block-defs}--\eqref{eq:qsp:block-system} reduce to
+a single equation in $W_t$, and any solution satisfies $\Omega_t\ge0$ and $\Phi^Y_t\ge0$
+automatically.
+\end{lemma}
+
+\begin{proof}
+Substituting the first of~\eqref{eq:qsp:block-system} for $G_t$ into the second leaves one equation in
+$W_t$, since $R_t$, $Y_t$, $\mathcal D_t$ and $\sigma_t$ are all functions of $W_t$ alone once $G_t$ is
+eliminated. The non-negativity claims are~\eqref{eq:sp:setup:Omega-phi}: with $\Phi^I=\Omega\phi^I$ both
+hold by construction.
+\end{proof}
+
+We stop short of claiming existence and uniqueness, because they are not free. The map has the right
+local behaviour: $\partial R_t/\partial W_t=\alpha_t\varpi_t<1$, since
+$\alpha_t<a_t\le a^m_t<1$ and $\varpi_t\le1$, so the material feedback from waste back into production
+is a contraction --- this is the circularity multiplier $\left(1-\alpha\varpi\right)^{-1}$ seen as a
+convergence rate. But $Y_t$ also rises with $W_t$ through $R_t$, and $\mathcal D_t$ with it, so
+monotonicity of the whole system is not guaranteed without further restrictions. In practice a scalar
+bracketing method on $W_t$ is the natural approach, initialised at
+$W_t=N_t+\delta M^K_t+\mathcal N_t$, the value the ledger returns with neither recycling nor material
+storage, which bounds the solution from above in the relevant range. \emph{The behaviour of this block,
+and whether it stays well conditioned when $\bar R>0$ and $R_t$ approaches the floor, is the first
+thing the numerical work should establish.}
+
+\subsection{Solving the model}\label{sec:qsp:model:solution}
+
+Three features of the model determine what solution methods are available, and they rule out the
+obvious first choice.
+
+\smalltitle{There is no stationary balanced growth path.} Output and consumption grow with $g^A$, but
+the material variables do not: $N_t$ is bounded by the reserve, $W_t$ and $R_t$ are tonnages, and the
+whole point of the model is that the reserve is exhausted while the recycling frontier advances. The
+economy therefore has no steady state to linearise around and no growth transformation that makes every
+variable stationary at once. The usual toolkit of perturbation around a balanced path is unavailable.
+
+\smalltitle{The path has kinks, not smooth transitions.} Proposition~\ref{prop:sp:phases} says the
+optimal path switches from $K^R_t=0$ to $K^R_t>0$ at an endogenous date $t_R$, with $\dot K^R$ and
+$\dot\varpi$ discontinuous there, and~\eqref{eq:qsp:foc:varpi} adds a second possible switch at
+$\varpi_t=1$. Any method that assumes differentiability of the policy function across the whole state
+space will handle the transition badly, and the transition is the object of interest.
+
+\smalltitle{The problem is deterministic with a known initial condition.} This is the redeeming
+feature. There is no expectation operator anywhere in Problem~\ref{prob:qsp}, so the solution is a
+single trajectory rather than a policy function, and the natural formulation is a finite-horizon
+boundary-value problem: choose $\left\{C_t,N_t,D_t,\varpi_t,K^R_t\right\}_{t=0}^{T}$ to maximise the
+truncated objective subject to the constraints and to terminal conditions at $T$, with $T$ chosen large
+enough that the terminal treatment does not contaminate the transition. Two implementations suggest
+themselves and should be compared:
+\begin{enumerate}[label=\emph{(\alph*)},leftmargin=2.2em,itemsep=0.15em]
+\item \emph{Direct nonlinear programming.} Treat the whole trajectory as one large constrained
+optimisation, with the within-period block of Section~\ref{sec:qsp:model:block} imposed as equality
+constraints rather than solved inside a loop, and the bounds $\varpi_t\in\left[0,1\right]$ and
+$K^R_t\ge0$ handled by the solver's own complementarity machinery. This has the advantage of never
+requiring the corner branches to be tested by hand, which given two bounded controls and a third corner
+at $D_t=0$ is a real advantage.
+\item \emph{Shooting on the costates.} Guess the four free initial costates, integrate the FOCs and the
+laws of motion forward, and adjust the guess to hit the terminal conditions. Cheaper per iteration and
+gives the shadow prices directly --- which matters here, since Part~\ref{part:qmkt} needs
+$\left(p^P_t,p^W_t,\zeta_t\right)$ as the policy rates --- but the phase switches make the shooting map
+non-smooth.
+\end{enumerate}
+Method~(a) is the safer starting point and method~(b) is the one that will scale to the policy
+experiments, so the sensible plan is to build~(a) first and use it to validate~(b). The comparison is
+the first task of the numerical phase.
+
+\smalltitle{Terminal conditions.} The transversality conditions of Section~\ref{sec:sp:opt:foc} have to
+be replaced by something implementable at $T$. The natural choices are $q_T$, $p^S_T$, $p^X_T$, $p^M_T$
+and $p^P_T$ set to the values implied by treating period $T$ as permanent, that is by solving the
+recursions of Section~\ref{sec:qsp:model:costates} at their fixed points with $r_{T+1}=r_T$; and the
+horizon should be extended until the transition date $t_R$ and the welfare measure of
+Section~\ref{sec:qmkt:welfare} are insensitive to $T$. Given that the reserve is exhausted in finite
+time under exploration ceasing --- which~\eqref{eq:sp:sum:D-corner} guarantees --- a horizon of several
+centuries at annual frequency is likely to be needed, and the period length is itself a modelling
+choice worth testing.

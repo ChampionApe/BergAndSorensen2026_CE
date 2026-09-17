@@ -1,0 +1,170 @@
+\section{Implementing the First-Best Allocation in the Market Economy}
+\label{sec:market-implementation}
+
+\subsection{The waste treatment sector}
+\label{subsec:market-implementation:waste-sector}
+
+We assume that the government in the market economy delegates the collection and treatment of waste to specialized firms in a competitive public tender for the right to carry out this activity. Firms in the waste treatment sector use the constant-returns technology underlying the cost function~\eqref{eq:ramsey:waste-cost}. They are obliged to collect all waste, but are allowed to deposit the waste in the environment (e.g., in landfills) even if it is not treated, provided they pay a tax $\tau^W$ per unit of untreated waste. At the same time, firms in the waste sector are granted a subsidy $s^W$ per unit of waste collected, enabling them to break even. After the economy has entered the circular stage of development, waste collection firms are able to sell the waste for recycling to final goods producers at the price $P^W>0$ per unit. The profit $\Pi^W$ of the representative firm in the waste sector is therefore given by
+\begin{align}
+\Pi^W &= \left[P^W\varpi + s^W - c^c - c^T(\varpi) - \tau^W(1-\varpi)\right]W,
+\label{eq:market:waste-profit}
+\end{align}
+where $P^W=0$ if there is no demand for recyclable waste. The firm takes the total amount of waste as given and chooses the fraction of waste treated so as to maximize its profit. The first-order condition for the solution to this problem is
+\begin{align}
+\frac{dc^T}{d\varpi} &= P^W + \tau^W.
+\label{eq:market:waste-treatment-foc}
+\end{align}
+In equilibrium the net profit in the waste sector is driven to zero via the competitive public tender, so the subsidy needed to allow firms to break even is
+\begin{align}
+s^W &= c^c + c^T(\varpi) + \tau^W(1-\varpi) - P^W\varpi,
+\label{eq:market:waste-subsidy-zero-profit}
+\end{align}
+where $\varpi$ satisfies~\eqref{eq:market:waste-treatment-foc}. If the market price for recycled waste rises to a sufficiently high level, $s^W$ may be turned into a license fee, i.e., a payment for the right to collect waste, in which case $s^W<0$.
+
+\subsection{Mining, final goods production, and household behaviour}
+\label{subsec:market-implementation:household}
+
+The representative household with lifetime utility~\eqref{eq:ramsey:utility} owns and runs the representative competitive mining firm extracting raw materials and exploring for new reserves. The household also owns and manages the representative competitive firm producing final goods using the virgin raw materials delivered from the mining firm and waste for recycling, if profitable, delivered from the waste industry. The mining firm uses extraction and exploration technologies generating the cost functions~\eqref{eq:ramsey:extraction-cost} and~\eqref{eq:ramsey:discovery-cost}, and the final goods firm uses the production technology~\eqref{eq:ramsey:output} and the recycling technology described by~\eqref{eq:ramsey:recycling}. The government may levy an environmentally motivated tax at the rate $\tau^Y$ per unit of output of final goods, a tax $\tau^N$ per unit of natural resources extracted from existing mines, and a tax $\tau^D$ per unit of new natural resource reserves discovered via exploration activity. The government may also impose a tax $\tau^{W^R}$ per unit of waste material input $W^R$ in final goods production and grant a subsidy $s^R$ per unit of waste that is recycled. Since the profit of the waste industry is driven to zero, the household receives no dividend from that sector. In each period, the household therefore receives a total net dividend
+\begin{align}
+\Pi^H &= (1-\tau^Y)F\left(K-K^R, N + a\left(\frac{K^R}{W^R}\right)W^R, P\right) - C^N(N,S) - C^D(D,X)
+\notag \\
+&\phantom{{}={}} + s^R a\left(\frac{K^R}{W^R}\right)W^R - \tau^N N - \tau^D D - \left(P^W + \tau^{W^R}\right)W^R.
+\label{eq:market:dividend}
+\end{align}
+
+In addition to the dividend, the household receives a lump-sum government transfer $T$ and pays a consumption tax $\tau^C$ per unit of consumption of the final good. In each period the household is therefore able to augment its total capital stock by the amount
+\begin{align}
+\dot{K} &= \Pi^H + T - \delta K - C(1+\tau^C).
+\label{eq:market:capital-dynamics}
+\end{align}
+
+The household owner-manager chooses $C$, $K^R$, $N$, $D$, and $W^R$ to maximize lifetime utility~\eqref{eq:ramsey:utility} subject to the capital stock dynamics~\eqref{eq:market:capital-dynamics} and the dynamics of natural resource reserves~\eqref{eq:ramsey:reserves-motion} and accumulated discoveries~\eqref{eq:ramsey:discoveries-motion}, taking current and future tax and subsidy rates, transfers,\footnote{The government transfer $T$ in each period equals the total tax revenue minus government expenses on subsidies. This ensures that the economy's total resource constraint is respected when the household obeys its budget constraint.} and pollution stocks as given. The online appendix shows that the conditions for the solution to this optimal control problem are as follows.
+
+\paragraph{Optimal saving:}
+\begin{align}
+\frac{u'(C)}{1+\tau^C} &= \mu^K.
+\label{eq:market:optimal-saving}
+\end{align}
+
+\paragraph{Optimal investment in recycling and final goods production:}
+\begin{subequations}
+\begin{align}
+K^R &= 0, \quad 
+\text{for } a'(0)\left[F_R\left(1-\tau^Y\right) + s^R\right] \le F_K\left(1-\tau^Y\right), \qquad \text{(linear stage)}
+\label{eq:market:recycling-linear}
+\end{align}
+\begin{align}
+a'\left(\frac{K^R}{W^R}\right)\left[F_R\left(1-\tau^Y\right) + s^R\right] &= F_K\left(1-\tau^Y\right), \qquad \text{(circular stage)}
+\label{eq:market:recycling-circular}
+\end{align}
+\end{subequations}
+
+\paragraph{Optimal use of waste for recycling:}
+\begin{align}
+a\left(\frac{K^R}{W^R}\right)(1-\varepsilon)\left[F_R\left(1-\tau^Y\right) + s^R\right] &= P^W + \tau^{W^R}.
+\label{eq:market:waste-recycling}
+\end{align}
+
+\paragraph{Optimal extraction of raw material:}
+\begin{align}
+F_R\left(1-\tau^Y\right) - C_N^N - \tau^N &= P^S.
+\label{eq:market:optimal-extraction}
+\end{align}
+
+\paragraph{Optimal exploration activity:}
+\begin{align}
+C_D^D + \tau^D + P^X &= P^S.
+\label{eq:market:optimal-exploration}
+\end{align}
+
+\paragraph{Shadow price of natural resource reserves:}
+\begin{align}
+P^S(t) &= \int_t^{\infty} \left(-C_S^N(z)\right)
+\exp\left(-\int_t^{z} r^m(u)\,du\right) dz,
+\label{eq:market:reserve-shadow}
+\\
+r^m &\equiv F_K\left(1-\tau^Y\right) - \delta.
+\notag
+\end{align}
+
+\paragraph{Shadow price of accumulated discoveries:}
+\begin{align}
+P^X(t) &= \int_t^{\infty} C_X^D(z)
+\exp\left(-\int_t^{z} r^m(u)\,du\right) dz.
+\label{eq:market:discovery-shadow}
+\end{align}
+
+\paragraph{Shadow value of capital (utils):}
+\begin{align}
+\mu^K(t) &= \mu^K(0)
+\exp\left(-\int_0^t \left[r^m(u)-\rho\right]\,du\right).
+\label{eq:market:capital-shadow}
+\end{align}
+
+\paragraph{Transversality condition:}
+\begin{align}
+\lim_{t\to\infty} \mu^K(0)\exp\left(-\int_0^t r^m(u)\,du\right)K(t) &= 0.
+\label{eq:market:transversality}
+\end{align}
+
+The interpretation of these conditions is analogous to the interpretation of the corresponding optimum conditions in the planned economy, namely~\eqref{eq:first-best:optimal-saving}--\eqref{eq:first-best:optimal-exploration} plus~\eqref{eq:first-best:capital-shadow} and~\eqref{eq:first-best:transversality}. A short-run equilibrium in the market economy satisfies conditions~\eqref{eq:market:waste-treatment-foc}, \eqref{eq:market:waste-subsidy-zero-profit}, and~\eqref{eq:market:optimal-saving}--\eqref{eq:market:transversality}, and the condition that the supply of recyclable waste must equal the demand for it:
+\begin{align}
+\varpi W &= W^R.
+\label{eq:market:market-clearing}
+\end{align}
+If condition~\eqref{eq:market:recycling-linear} prevails, the demand for recyclable waste is zero. The market value of waste will then be zero, and all waste collected will be deposited in the environment, whether it is treated or not. In addition to~\eqref{eq:market:waste-treatment-foc}, \eqref{eq:market:waste-subsidy-zero-profit}, and~\eqref{eq:market:optimal-saving}--\eqref{eq:market:transversality}, the economy is also subject to the waste constraint~\eqref{eq:ramsey:waste-generation} and the materials balance constraint~\eqref{eq:model-setup:materials-balance-reduced}. Together, these conditions constitute a system of 14 equations determining the 14 variables $C$, $K^R$, $N$, $W$, $W^R$, $\varpi$, $D$, $P^W$, $P^S$, $P^X$, $p^P$, $\mu^K$, $\mu^K(0)$, and $s^W$.\footnote{We assume that firms wishing to enter the waste industry must submit a bid for the lowest subsidy $s^W$ they are willing to accept as compensation for the obligation to collect waste. In a competitive public tender the lowest bid will satisfy the zero-profit constraint~\eqref{eq:market:waste-subsidy-zero-profit}.} The instantaneous rates of change of the stock variables $K$, $S$, and $X$ are then given by the stock-flow relationships~\eqref{eq:ramsey:reserves-motion}, \eqref{eq:ramsey:discoveries-motion}, and~\eqref{eq:market:capital-dynamics}, and the evolution of the stock of pollution is determined by~\eqref{eq:ramsey:pollution-motion}.
+
+\subsection{Implementing the first-best allocation}
+\label{subsec:market-implementation:implementation}
+
+Now suppose the government chooses tax and subsidy rates that satisfy the following conditions, where $p^W$, $p^S$, $p^X$, and $p^P$ are the shadow prices prevailing on the economy's first-best optimal time path:
+\begin{align}
+\tau^W &= p^P,
+\label{eq:market:implement-untreated-tax}
+\\
+s^W &= p^W,
+\label{eq:market:implement-waste-subsidy}
+\\
+s^R &= d^W p^P,
+\label{eq:market:implement-recycling-subsidy}
+\\
+\tau^{W^R} &= d^W p^P,
+\label{eq:market:implement-recycling-input-tax}
+\\
+\tau^Y &= \Omega\omega^Y MSC^W,
+\label{eq:market:implement-output-tax}
+\\
+\tau^N &= \Omega\omega^N p^W,
+\label{eq:market:implement-extraction-tax}
+\\
+\tau^D &= \Omega\omega^D p^W,
+\label{eq:market:implement-discovery-tax}
+\\
+\tau^C &= \Omega\omega^C MSC^W.
+\label{eq:market:implement-consumption-tax}
+\end{align}
+
+We will now show that this set of Pigouvian taxes and subsidies will implement the first-best allocation of resources in the market economy. We start by inserting~\eqref{eq:first-best:optimal-waste-use} in~\eqref{eq:first-best:optimal-waste-treatment} to rewrite the condition for optimal waste treatment in the planned economy as
+\begin{align}
+\varpi\frac{dc^T}{d\varpi} &= c^c + c^T + p^P - p^W.
+\label{eq:market:planned-treatment-condition}
+\end{align}
+From the zero-profit condition~\eqref{eq:market:waste-subsidy-zero-profit} in the market economy it follows that
+\begin{align}
+\varpi P^W &= c^c + c^T + \tau^W(1-\varpi) - s^W.
+\label{eq:market:market-zero-profit-implied}
+\end{align}
+Inserting~\eqref{eq:market:market-zero-profit-implied} in~\eqref{eq:market:waste-treatment-foc}, we may write the condition for a privately optimal degree of waste treatment in the market economy as
+\begin{align}
+\varpi\frac{dc^T}{d\varpi} &= c^c + c^T + \tau^W - s^W.
+\label{eq:market:market-treatment-condition}
+\end{align}
+Comparing the right sides of~\eqref{eq:market:planned-treatment-condition} and~\eqref{eq:market:market-treatment-condition}, we see that when~\eqref{eq:market:implement-untreated-tax} and~\eqref{eq:market:implement-waste-subsidy} hold, i.e., when the tax on untreated waste corresponds to the marginal environmental damage caused by such waste, and when the subsidy to waste collection equals the marginal shadow value of waste, the market economy will undertake the socially optimal degree of waste treatment.
+
+To see that the tax and subsidy rates~\eqref{eq:market:implement-untreated-tax}--\eqref{eq:market:implement-output-tax} will also ensure a socially optimal use of waste for recycling in the market economy, one may insert these values of the policy instruments along with~\eqref{eq:market:market-zero-profit-implied} into~\eqref{eq:market:waste-recycling}. One will then find that the condition~\eqref{eq:market:waste-recycling} for the privately optimal degree of recycling in the market economy coincides with the condition~\eqref{eq:first-best:optimal-waste-use} for optimal use of waste for recycling in the planned economy. Further, by inserting~\eqref{eq:market:implement-recycling-subsidy} and~\eqref{eq:market:implement-output-tax} in~\eqref{eq:market:recycling-linear}--\eqref{eq:market:recycling-circular} and comparing the result to~\eqref{eq:first-best:recycling-investment-a}--\eqref{eq:first-best:recycling-investment-b}, one finds that the market economy will also generate the first-best level of capital investment in the recycling process. Note that the combination of the tax rate $\tau^{W^R} = d^W p^P$ on all waste input $W^R$ in the recycling process with the subsidy $s^R = d^W p^P$ per unit of the waste $aW^R$ that is actually recycled implies that the final goods firm pays a net tax of $\left[1-a(1-\varepsilon)\right]d^W p^P$ on the \emph{marginal} unit of recyclable waste purchased, corresponding to the marginal damage to the environment caused by the non-recyclable part of the treated waste input which is not taxed in the waste industry.\footnote{As an alternative, the government might choose to drop the subsidy $s^R$ and replace the tax $\tau^{W^R}$ on all waste input by a tax $\widetilde\tau^{W^R}$ levied only on the waste input $(1-a)W^R$ that is not recycled. One can show that first-best optimality would then require a waste input tax at the rate $\widetilde\tau^{W^R} = \left[\frac{1-a(1-\varepsilon)}{1-a-a(1-\varepsilon)}\right] d^W p^P$. The impact on resource allocation of such a tax would thus be equivalent to the combination of the policy instruments $\tau^{W^R} = s^R = d^W p^P$.}
+
+Using~\eqref{eq:market:implement-output-tax}--\eqref{eq:market:implement-consumption-tax} in~\eqref{eq:market:optimal-saving}, \eqref{eq:market:optimal-extraction}, and~\eqref{eq:market:optimal-exploration}, it is also easy to see that with these tax rates the conditions for privately optimal saving and privately optimal exploration and resource extraction will be equivalent to the corresponding conditions~\eqref{eq:first-best:optimal-saving}, \eqref{eq:first-best:optimal-exploration}, and~\eqref{eq:first-best:reserve-shadow} in the planned economy, provided the shadow prices in the market economy, $P^S$, $P^X$, $\mu^K$, given by~\eqref{eq:market:reserve-shadow}--\eqref{eq:market:capital-shadow}, coincide with the corresponding shadow prices $p^S$, $p^X$, $\zeta$ in the planned economy specified in~\eqref{eq:first-best:reserve-shadow}, \eqref{eq:first-best:discovery-shadow}, and~\eqref{eq:first-best:capital-shadow}. Since households in the market economy buy and sell capital at a price of one unit of the final good, $\mu^K$ carries no counterpart to the wedge $q=1+\phi^Kp^M$ between $\zeta$ and $\lambda^K$ in the planned economy; the two coincide exactly whenever $q\equiv1$, i.e., when capital embodies no materials or the materials balance does not bind. Assuming that the optimal allocation is unique, the shadow prices will indeed be identical in the two economies under this condition, as their determinants are seen to be identical. With identical levels of economic activity and waste flows, the two economies will also generate the same flows and stocks of pollution.
+
+Hence the tax and subsidy rates~\eqref{eq:market:implement-untreated-tax}--\eqref{eq:market:implement-consumption-tax} enable the government to implement the socially optimal path of economic development, including the optimal transition to a circular economy. The Pigouvian tax rates~\eqref{eq:market:implement-untreated-tax} plus~\eqref{eq:market:implement-recycling-input-tax}--\eqref{eq:market:implement-consumption-tax} ensure that the marginal external costs generated in raw material extraction, exploration activity, final goods production, and consumption are fully internalized by private agents. However, to ensure full optimality, these Pigouvian taxes must be supplemented by a subsidy to waste collection and a subsidy to recycling, to ensure that the private market generates the ``right'' price of waste inducing the efficient levels of waste treatment and recycling.\footnote{By contrast, in the much simpler model set up by \textcite{sorensen2018}, a Pigouvian pollution tax is sufficient to ensure an optimal degree of recycling, since that model assumes that extraction and use of virgin raw materials is the only source of pollution.}
+
+An interesting question is how technical progress in various sectors of the economy will influence the transition from a linear to a circular economy. Another question is whether an unregulated or imperfectly regulated market economy will at some point move from the linear to the circular stage due to growing scarcity of natural resources, and how long lacking or imperfect environmental regulation will delay the transition and at what welfare cost. To investigate these issues we now set up and simulate a numerical version of our model.

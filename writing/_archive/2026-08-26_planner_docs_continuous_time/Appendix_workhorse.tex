@@ -1,0 +1,222 @@
+\section{A workhorse specification}\label{sec:app:workhorse}
+
+This appendix fixes explicit functional forms for every primitive of Section~\ref{sec:sp:setup:primitives}. The purpose is threefold: to serve as the running example behind the long-run classification of Section~\ref{sec:sp:longrun}, with each case of the taxonomy reachable by moving a single parameter; to make the recycling margins available in closed form; and to be the natural starting point for the quantitative implementation. Throughout, time arguments are suppressed except where trends are the point. Since $H$ and $\mu$ name the handled flow and the handling rate, the CES composite below is written $Q$ and the returns exponent $\mu_F$.
+
+\subsection{Functional forms}\label{sec:app:workhorse:forms}
+
+\smalltitle{Preferences.}
+\begin{align}
+u\left(C\right) &= \frac{C^{1-\eta}}{1-\eta},\quad \eta>0,
+&
+v\left(P\right) &= \psi\,\frac{P^{1+\varphi}}{1+\varphi},\quad \psi>0,\ \varphi>0.
+\label{eq:app:wh:preferences}
+\end{align}
+CRRA consumption utility with $\eta$ the elasticity of marginal utility of~\eqref{eq:sp:sum:Cgrowth}, and power disutility of pollution with $v'>0$, $v''>0$; note $v'\left(0\right)=0$, so marginal pollution damage at a clean rest point comes entirely through output.
+
+\smalltitle{Final goods.} A CES aggregate of capital and effective materials, subject to decreasing returns and exponential pollution damage:
+\begin{align}
+F\left(K^Y,R,P,t\right) &= A(t)\,e^{-\kappa P}\,Q^{\mu_F}\ \text{for }R\ge\bar R,\quad 0\text{ otherwise},
+&
+Q &= \left[\beta\left(K^Y\right)^{1-1/\varsigma}+\left(1-\beta\right)Z^{1-1/\varsigma}\right]^{\frac{\varsigma}{\varsigma-1}},
+&
+Z &\equiv B(t)\,R^{e},
+\label{eq:app:wh:F}
+\end{align}
+with $R^e=R-\bar R$, $\kappa>0$, $\beta\in\left(0,1\right)$, $\mu_F\in\left(0,1\right)$ and elasticity of substitution $\varsigma>0$ ($\varsigma=1$ is Cobb--Douglas, $Q=\left(K^Y\right)^{\beta}Z^{1-\beta}$; $\varsigma\to\infty$ is linear, $Q=\beta K^Y+\left(1-\beta\right)Z$). The returns parameter $\mu_F<1$ stands in for a fixed factor and is what makes the technology concave in $K$ alone. The substitution parameter spans the essentiality cases of Definition~\ref{def:lr:essentiality}:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Case & Level & Margin \\
+\midrule
+$\varsigma\le1$ & essential: $F\left(K,0,\cdot\right)=0$ & essential: $F_R\to\infty$ \\
+$1<\varsigma<\infty$ & inessential: $F^\infty\left(K,0,0\right)=A_\infty\beta^{\frac{\mu_F\varsigma}{\varsigma-1}}K^{\mu_F}$ & essential: $F_R\to\infty$ \\
+$\varsigma=\infty$ & inessential: $F^\infty\left(K,0,0\right)=A_\infty\left(\beta K\right)^{\mu_F}$ & inessential: finite choke value \\
+\bottomrule
+\end{tabular}
+\end{center}
+The three rows are, respectively, the collapse case, the exhaustion-squeeze case, and the choke case of Section~\ref{sec:sp:longrun:restpoints}. The table is written for $\bar R=0$, and only there does it classify anything. With $\bar R>0$ the hard floor makes materials essential in level whatever $\varsigma$ --- $F=0$ below the floor by construction, and the ``level'' column above then merely describes output \emph{at} the floor --- while the margin column, read at $R\to\bar R^{+}$ rather than $R\to0$, loses its decisiveness: in all three rows the material era ends by the discrete shutdown of Section~\ref{sec:sp:opt:foc}, with material use stopping at a strictly positive flow, so an infinite marginal value at the threshold is never reached along an optimal path. The role of $\varsigma$ under $\bar R>0$ is therefore confined to output above the floor, exactly as the taxonomy of Section~\ref{sec:sp:longrun:taxonomy} says: with a floor, essentiality is not a parameter.
+
+\smalltitle{Recycling.} An exponential approach to the yield ceiling,
+\begin{align}
+a\left(x\right) &= \bar a\left(1-e^{-\xi x}\right),
+&
+a'\left(x\right) &= \bar a\,\xi\,e^{-\xi x},
+&
+\alpha\left(x\right) &= \bar a\left[1-\left(1+\xi x\right)e^{-\xi x}\right],
+\label{eq:app:wh:a}
+\end{align}
+with $\bar a\in\left(0,1\right]$ and $\xi>0$ constant --- recycling technology is held asymptotically stationary in both regimes, per Assumption~\ref{ass:lr:tech}. All Section~\ref{sec:sp:setup:primitives} properties hold: $a\left(0\right)=0$, $a'>0$, $a''<0$, $a\to\bar a$, and $\alpha\in\left[0,\bar a\right)$ with $\alpha\left(0\right)=0$. The form has an exponential tail with rate $\xi$ in the sense of~\eqref{eq:sp:setup:tail-exp}, exactly: $1-a/\bar a=e^{-\xi x}$. This is not innocuous under the soft ceiling $\bar a=1$, where the tail rather than the ceiling carries the long run, and the power-tail alternative
+\begin{align}
+a\left(x\right) &= \bar a\,\frac{\left(\xi x\right)^{\psi}}{1+\left(\xi x\right)^{\psi}},
+&
+1-\frac{a}{\bar a} &= \frac{1}{1+\left(\xi x\right)^{\psi}}\sim\left(\xi x\right)^{-\psi},
+\label{eq:app:wh:a-power}
+\end{align}
+should be carried alongside it whenever $\bar a=1$ is the case of interest; it satisfies the same
+Section~\ref{sec:sp:setup:primitives} properties for $\psi\ge1$ and yields a slower approach to full
+recovery. Under the hard ceiling the two are interchangeable and we use~\eqref{eq:app:wh:a}.
+
+\smalltitle{Extraction and exploration.} Power costs with a linear term, so that marginal cost at zero activity is positive (a well-defined choke) and diverges as the relevant stock runs out:
+\begin{align}
+C^N &= c_N(t)\left(\frac{S_{\mathrm{ref}}}{S}\right)^{\mu_N}\left[\kappa_N N+\frac{N^{1+\chi_N}}{1+\chi_N}\right],
+&
+C^D &= c_D(t)\left(\frac{\bar X_{\max}-X_0}{\bar X_{\max}-X}\right)^{\mu_D}\left[\kappa_D D+\frac{D^{1+\chi_D}}{1+\chi_D}\right],
+\label{eq:app:wh:costs}
+\end{align}
+with all parameters strictly positive and $S_{\mathrm{ref}}$ a normalising constant. Marginal costs are
+\begin{align}
+C^N_N &= c_N\left(\frac{S_{\mathrm{ref}}}{S}\right)^{\mu_N}\left(\kappa_N+N^{\chi_N}\right),
+&
+C^D_D &= c_D\left(\frac{\bar X_{\max}-X_0}{\bar X_{\max}-X}\right)^{\mu_D}\left(\kappa_D+D^{\chi_D}\right),
+\label{eq:app:wh:mc}
+\end{align}
+so $C^D_D\left(0,X,t\right)\to\infty$ as $X\to\bar X_{\max}$, delivering the exhaustible-discovery property~\eqref{eq:sp:setup:exhaustible-discovery}, and $C^N_N\left(0,S,t\right)\to\infty$ as $S\to0$, which is what sustains interior extraction on squeeze paths. All other Section~\ref{sec:sp:setup:primitives} sign conditions are immediate.
+
+\smalltitle{Waste handling and decay.}
+\begin{align}
+c^T\left(\varpi,t\right) &= c_T(t)\,\frac{\varpi^{1+\chi_T}}{1+\chi_T},\quad\chi_T>0,
+&
+\theta\left(P\right) &= \theta_{\min}+\left(\theta_0-\theta_{\min}\right)e^{-\theta_P P},
+\label{eq:app:wh:waste-decay}
+\end{align}
+plus a collection charge $c^c(t)$ per treated tonne, so that $c^W\left(\varpi\right)=c^c\varpi+c_T\varpi^{1+\chi_T}/\left(1+\chi_T\right)$. The treatment cost satisfies $c^T\left(0\right)=c^{T\prime}\left(0\right)=0$ with $c^c+c^{T\prime}\left(1\right)=c^c+c_T$ finite, so the upper corner $\varpi=1$ is reachable, as~\eqref{eq:sp:setup:cT-finite} requires throughout. A form diverging at $\varpi=1$ would violate that assumption and, as noted in Section~\ref{sec:sp:opt:foc}, would act as a hard circularity ceiling in disguise; it is not an admissible variant here. Decay has $\theta\left(0\right)=\theta_0>\theta_{\min}>0$ and $\theta'<0$, respecting the regeneration floor of Assumption~\ref{ass:lr:theta}; a sufficient no-tipping condition is
+\begin{align}
+\rho+\theta_{\min} &\ge \frac{\theta_0-\theta_{\min}}{e},
+\label{eq:app:wh:notipping}
+\end{align}
+since $\theta+\theta'P\ge\theta_{\min}-\left(\theta_0-\theta_{\min}\right)\theta_P\max_P Pe^{-\theta_P P}$ and $\max_P Pe^{-\theta_P P}=1/\left(e\theta_P\right)$.
+
+\smalltitle{Trends and constants.} In regime (S) every trending coefficient converges exponentially, $z(t)=z_\infty+\left(z_0-z_\infty\right)e^{-g_z t}$ for $z\in\left\{A,B,c_N,c_D,c^c,c_T\right\}$, with $A,B$ rising and the costs falling. In regime (T), $A(t)=A_0e^{g_At}$ and $B(t)=B_0e^{g_Bt}$ with the remaining coefficients convergent. The accounting parameters $\omega^Y,\omega^N,\omega^D,\omega^W,\omega^C,\phi^I,d^W,\Omega^{N,S},\Omega^{D,S}$ are constants.
+
+\subsection{The recycling margins in closed form}\label{sec:app:workhorse:margins}
+
+Write $\tilde F_K\equiv F_K\left(1-\zeta\Omega^Y\right)$ for the material-adjusted marginal product of capital and recall the marginal gains $\mathcal G^K$ and $\mathcal G^\varpi$ from~\eqref{eq:sp:sum:gains}. The exponential yield function makes both recycling conditions invertible.
+
+\smalltitle{Recycling capital.} The interior condition $a'\left(x\right)\mathcal G^K=\tilde F_K$ reads $\bar a\xi e^{-\xi x}\mathcal G^K=\tilde F_K$, so
+\begin{align}
+x^* &= \frac{1}{\xi}\ln\frac{\bar a\xi\,\mathcal G^K}{\tilde F_K},
+&
+a^* &= \bar a-\frac{\tilde F_K}{\xi\,\mathcal G^K},
+&
+\alpha^* &= \bar a-\frac{\tilde F_K}{\xi\,\mathcal G^K}\left[1+\ln\frac{\bar a\xi\,\mathcal G^K}{\tilde F_K}\right],
+\label{eq:app:wh:xstar}
+\end{align}
+whenever $\bar a\xi\,\mathcal G^K>\tilde F_K$, and $x^*=0$ otherwise. The middle expression is worth displaying on its own: \emph{the optimal yield is the ceiling minus the ratio of the capital cost to the (scaled) value of displaced virgin material.} Circularity approaches its technological maximum exactly as $\mathcal G^K\to\infty$, and recycling shuts down exactly when the first unit of recycling capital cannot pay for itself, $\bar a\xi\,\mathcal G^K\le\tilde F_K$.
+
+\smalltitle{Treatment share.} The interior condition $\mathcal G^\varpi=\left[c^c+c_T\varpi^{\chi_T}\right]\left(1+\zeta\Omega^W\right)$ inverts to
+\begin{align}
+\varpi^* &= \min\left\{1,\;\left[\frac{\mathcal G^\varpi/\left(1+\zeta\Omega^W\right)-c^c}{c_T}\right]^{1/\chi_T}\right\}
+\qquad\text{when }\mathcal G^\varpi>c^c\left(1+\zeta\Omega^W\right),
+\label{eq:app:wh:varpistar}
+\end{align}
+and $\varpi^*=0$ otherwise: treatment shuts down when the gain cannot cover the collection charge on the first tonne.
+
+\smalltitle{Extraction and exploration.} Writing $\Psi^{\mathrm{net}}\equiv\Psi-p^S-p^W\left(1+\Omega^{N,S}\right)$ for the value of a virgin tonne net of its rent and waste charges, the interior extraction condition inverts to
+\begin{align}
+N^* &= \left[\frac{\Psi^{\mathrm{net}}}{c_N\left(S_{\mathrm{ref}}/S\right)^{\mu_N}\left(1+\zeta\Omega^N\right)}-\kappa_N\right]^{1/\chi_N},
+\label{eq:app:wh:Nstar}
+\end{align}
+when the bracket is positive and $N^*=0$ otherwise; exploration is symmetric with net value $p^S+p^X-p^W\Omega^{D,S}$ and parameters $\left(c_D,\mu_D,\kappa_D,\chi_D\right)$.
+
+\subsection{The dematerialized rest point: the choke case $\varsigma=\infty$}\label{sec:app:workhorse:restpoint}
+
+In regime (S) with the linear aggregate, the rest point of Section~\ref{sec:sp:longrun:restpoints} is available in closed form; this is the cleanest concrete instance of Proposition~\ref{prop:lr:dichotomy}(i).
+
+\smalltitle{Goods block.} The modified golden rule $F^\infty_K\left(K^*,0,0\right)=\rho+\delta$ with $F^\infty\left(K,0,0\right)=A_\infty\left(\beta K\right)^{\mu_F}$ gives
+\begin{align}
+K^* &= \left[\frac{\mu_F A_\infty\beta^{\mu_F}}{\rho+\delta}\right]^{\frac{1}{1-\mu_F}},
+&
+Y^* &= \frac{\left(\rho+\delta\right)K^*}{\mu_F},
+&
+C^* &= \frac{\rho+\delta\left(1-\mu_F\right)}{\mu_F}\,K^*,
+&
+\lambda^* &= \left(C^*\right)^{-\eta},
+\label{eq:app:wh:mgr}
+\end{align}
+with $C^*>0$ automatic. The marginal value of a tonne at the rest point is finite,
+\begin{align}
+F^\infty_R\left(K^*,0,0\right) &= \frac{\left(\rho+\delta\right)\left(1-\beta\right)B_\infty}{\beta},
+&
+\Psi^* &= F^\infty_R\left(K^*,0,0\right)+\zeta^*,
+\label{eq:app:wh:FRstar}
+\end{align}
+which is what makes the choke ending possible.
+
+\smalltitle{Pollution and storage prices.} With $v'\left(0\right)=0$ and $F_P=-\kappa F$,
+\begin{align}
+p^{P*} &= \frac{\kappa Y^*}{\rho+\theta_0},
+&
+p^{M*} &= \frac{\delta}{\rho+\delta}\,p^{W*},
+&
+\zeta^* &= \sigma^*\frac{\rho}{\rho+\delta}\,p^{W*},
+&
+\sigma^* &= \frac{\phi^I\delta K^*}{\omega^YY^*+\omega^CC^*+\phi^I\delta K^*},
+\label{eq:app:wh:restprices}
+\end{align}
+and $p^{S*}=p^{X*}=0$ as in the main text.
+
+\smalltitle{The recycling block at rest.} The remaining unknowns $\left(p^{W*},x^*,\varpi^*\right)$ solve~\eqref{eq:app:wh:xstar}, \eqref{eq:app:wh:varpistar} and the rest-point form of the waste margin~\eqref{eq:sp:sum:W-limit} (where $\Omega^j=0$, $\tilde F_K=\rho+\delta$):
+\begin{align}
+p^{W*}\left(1-\alpha^*\varpi^*\right) &= c^{c}_\infty\varpi^*+c_{T\infty}\frac{\left(\varpi^*\right)^{1+\chi_T}}{1+\chi_T}+p^{P*}\left[1-\varpi^*\left(1-d^W\right)-d^W\alpha^*\varpi^*\right]-\alpha^*\varpi^*\Psi^* ,
+\label{eq:app:wh:pWstar}
+\end{align}
+a three-equation system that is scalar enough to solve numerically without ceremony. Two corners deserve display because they are fully closed form. If recycling capital is at its corner, $\bar a\xi\,\mathcal G^{K*}\le\rho+\delta$, then $\alpha^*=0$ and the block collapses to
+\begin{align}
+\varpi^* &= \min\left\{1,\left[\frac{p^{P*}\left(1-d^W\right)-c^c_\infty}{c_{T\infty}}\right]^{1/\chi_T}\right\},
+&
+p^{W*} &= c^c_\infty\varpi^*+c_{T\infty}\frac{\left(\varpi^*\right)^{1+\chi_T}}{1+\chi_T}+p^{P*}\left[1-\varpi^*\left(1-d^W\right)\right]>0,
+\label{eq:app:wh:corner}
+\end{align}
+provided $p^{P*}\left(1-d^W\right)>c^c_\infty$: \emph{treatment without recycling}, sustained by the diversion motive alone. This is the configuration the economy retires into when materials have become worthless at the margin but waste still pollutes. If instead $p^{P*}\left(1-d^W\right)\le c^c_\infty$, then $\varpi^*=0$ as well and $p^{W*}=p^{P*}$: nothing is processed, the residual waste stream passes to the environment in full, and the waste price is the pollution price.
+
+\smalltitle{Stranded reserves.} Extraction ends when the choke condition first binds; with $p^{S}\to0$ the terminal reserve satisfies
+\begin{align}
+c_{N\infty}\kappa_N\left(\frac{S_{\mathrm{ref}}}{S_\infty}\right)^{\mu_N} &= \Psi^*-p^{W*}\left(1+\Omega^{N,S}\right),
+&&\text{i.e.}
+&
+S_\infty &= S_{\mathrm{ref}}\left[\frac{c_{N\infty}\kappa_N}{\Psi^*-p^{W*}\left(1+\Omega^{N,S}\right)}\right]^{1/\mu_N},
+\label{eq:app:wh:stranded}
+\end{align}
+provided $\Psi^*>p^{W*}\left(1+\Omega^{N,S}\right)$ and $S_0>S_\infty$; a larger choke value strands less. Exploration ceases strictly earlier: its terminal net value is $-p^{W*}\Omega^{D,S}<0$ when $p^{W*}>0$, so the corner~\eqref{eq:sp:sum:D-corner} binds while extraction is still running, and $X_\infty<\bar X_{\max}$ is determined along the transition rather than by any rest-point condition.
+
+\smalltitle{The squeeze case $1<\varsigma<\infty$.} With marginal essentiality the rest point is approached but never attained: $F_R\sim\left(1-\beta\right)$-terms of order $Z^{-1/\varsigma}$ diverge as $R\to0$, extraction remains interior with $S\to0$ tracking $\Psi$ through~\eqref{eq:app:wh:mc}, and by~\eqref{eq:app:wh:xstar} the yield climbs to $\bar a$ as $\mathcal G^K\to\infty$. The goods block still converges to~\eqref{eq:app:wh:mgr} with $\beta^{\mu_F}$ replaced by $\beta^{\mu_F\varsigma/\left(\varsigma-1\right)}$. The decay rates of $\left(R,N,S\right)$ in this case are governed by the same rate-matching logic as the trending regime below, with $g=0$; we have not completed that algebra.
+
+\subsection{Balanced dematerialization: rate matching}\label{sec:app:workhorse:bdp}
+
+\emph{This subsection is written for $\bar R=0$ throughout.} A balanced dematerialization path requires the material flow to decay exponentially while effective materials hold up, and with $\bar R>0$ that is not available: $Z=BR^e$ vanishes at the floor whatever $B$ does, so no amount of material-augmenting progress sustains a decaying material flow. The rate matching below is therefore the $\bar R=0$ analysis; what replaces it when $\bar R>0$ --- the perpetual circular growth state --- is characterised in Section~\ref{sec:sp:longrun:floor}, and its construction is open item (v) below.
+
+In regime (T) with the Cobb--Douglas aggregate ($\varsigma=1$), write $\beta_K\equiv\mu_F\beta$ and $\gamma\equiv\mu_F\left(1-\beta\right)$ for the output elasticities, so $Y=Ae^{-\kappa P}K^{\beta_K}\left(BR\right)^{\gamma}$. Posit the BDP ansatz of Definition~\ref{def:lr:bdp}: goods block at rate $g$, material flows at rate $\nu$ ($R,N,W,T,M^K\propto e^{-\nu t}$), stocks $S$ and $\bar X_{\max}-X$ decaying at rates $\nu_S,\nu_X$. Collecting growth-rate equations from the structure of Sections~\ref{sec:sp:setup:primitives}--\ref{sec:sp:opt}:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Margin & Rate equation & Source \\
+\midrule
+Production & $g=g_A+\beta_Kg+\gamma\left(g_B-\nu\right)$ & $Y=AK^{\beta_K}\left(BR\right)^{\gamma}$, $P\to0$ \\
+Interest & $r\to\rho+\eta g$ & Keynes--Ramsey~\eqref{eq:sp:sum:Cgrowth}, bounded wedge \\
+Material value & $\Psi\sim\gamma Y/R$: rate $g+\nu$ & $F_R=\gamma Y/R$ \\
+Waste price & $p^W\to-\dfrac{\bar a\varpi\,\Psi}{1-\bar a\varpi}$: rate $g+\nu$ & rest-point waste margin~\eqref{eq:sp:sum:W-limit}, $a\to\bar a$, $\varpi\to1$ \\
+Wedges & $\zeta\Omega^j=O\left(1\right)$ & $\zeta\sim p^W$ up, $\Omega\sim R/Y$ down \\
+Stockpile & $\mathcal W=\dfrac{W}{\mu-\nu}\left(1+o\left(1\right)\right)$: rate $\nu$ (for $\mu>\nu$) & $\dot{\mathcal W}=W-\mu\mathcal W$ \\
+Ledger & $\nu_W=\nu_N=\nu$ & $\left(1-a\varpi\right)H=N+\mathcal N-\dot M^K-\dot{\mathcal W}$ \\
+Extraction & $\mu_N\nu_S=g+\nu$ & $C^N_N\sim c_N\kappa_N\left(S_{\mathrm{ref}}/S\right)^{\mu_N}$ tracks $\Psi$ \\
+Reserve & $\nu_S=\nu$ & $S(t)=\int_t^\infty N\,ds$ \\
+Exploration & $\mu_D\nu_X=g+\nu$, $\nu_X=\nu$ & symmetric to extraction \\
+\bottomrule
+\end{tabular}
+\end{center}
+The production row alone gives the growth rate reported in the main text,
+\begin{align}
+g &= \frac{g_A+\gamma\left(g_B-\nu\right)}{1-\beta_K},
+\label{eq:app:wh:g}
+\end{align}
+and utility convergence (Assumption~\ref{ass:lr:bounded}) requires $\rho>\left(1-\eta\right)g$; the $p^M$ integral converges provided $g+\nu<\rho+\eta g+\delta$, and the stockpile costate's provided $g+\nu<r+\mu$, its balanced-growth form being $p^{\mathcal W}=\mu h/\left(r+\mu-g-\nu\right)$ rather than the instantaneous-handling limit $h$ --- a correction factor the waste-price row above absorbs into its constant. If $\mu\le\nu$ the stockpile decays at rate $\mu$ rather than $\nu$ and becomes the slowest material reservoir; the table assumes $\mu>\nu$.
+
+Combining the extraction and reserve rows gives $\mu_N\nu=g+\nu$, hence $\nu=g/\left(\mu_N-1\right)$, which is well defined for $\mu_N>1$ and $g>0$ and, substituted into~\eqref{eq:app:wh:g}, determines $\left(g,\nu\right)$ jointly from parameters. Outside that region --- in particular in the pure material-augmenting case $g_A=0$, $g=0$, where the same two rows demand the knife-edge $\mu_N=1$ --- the pure exponential ansatz is too rigid, and the ansatz must be widened with subexponential (polynomial-prefactor) corrections, or extraction ends in finite time and the path continues on recycled material alone. \emph{Completing this rate-matching algebra, including the corrections and the exploration block, is the main open task of this appendix}; the table above fixes the system any such solution must satisfy.
+
+One economic implication of the table is worth recording even at this stage. Since $p^W<0$ grows in magnitude at rate $g+\nu$, the displaced-mass term $-p^W\Omega^{D,S}$ eventually \emph{subsidises} exploration in~\eqref{eq:sp:sum:D}: on a deep squeeze path, even overburden is future feedstock. The quantitative model will tell us whether this margin is a curiosity or a driver.
+
+\subsection{Verification status}\label{sec:app:workhorse:status}
+
+Checked against Section~\ref{sec:sp:setup:primitives}: all sign and boundary conditions of the forms above, including~\eqref{eq:sp:setup:exhaustible-discovery}, the yield ceiling in both cases (H) and (S), and the finite marginal treatment cost~\eqref{eq:sp:setup:cT-finite}. Derived: the closed-form margins~\eqref{eq:app:wh:xstar}--\eqref{eq:app:wh:Nstar}, the rest point~\eqref{eq:app:wh:mgr}--\eqref{eq:app:wh:stranded}, and the growth relation~\eqref{eq:app:wh:g}.
+
+Pending, in rough order of importance. \emph{(i)}~The consequences of $\bar R>0$: the timing of the discrete shutdown for this $\mathcal F$, the resulting material-era duration, and the terminal reserve, which replace~\eqref{eq:app:wh:stranded} whenever $\bar R>0$. \emph{(ii)}~The soft-ceiling case $\bar a=1$: the closed-form margins~\eqref{eq:app:wh:xstar} were derived assuming a finite $\mathcal G^K$ and need re-deriving where $\mathcal G^K$ diverges, and the power-tail form~\eqref{eq:app:wh:a-power} has not been carried through any of them. \emph{(iii)}~The rest-point system~\eqref{eq:app:wh:pWstar} should be solved numerically for a reference calibration. \emph{(iv)}~The squeeze-case decay rates (regime (S), $1<\varsigma<\infty$) and the full BDP rate matching as flagged in Section~\ref{sec:app:workhorse:bdp}, both of which are $\bar R=0$ objects. \emph{(v)}~The perpetual-circular-growth construction behind the bottom-right cell of the taxonomy (Section~\ref{sec:sp:longrun:taxonomy}): the asymptotics of the recycling margins along a closing loop ($x\to\infty$, $\bar a=1$), where the exponential form is exactly degenerate --- $a'$ and $\left|p^W\right|$ scale as $e^{-\xi x}$ and $e^{+\xi x}$, so their product is independent of $x$ at leading order --- together with the fast/slow tail threshold that the taxonomy currently carries as a working classification. Settling (v) is what promotes that cell from characterisation to theorem.

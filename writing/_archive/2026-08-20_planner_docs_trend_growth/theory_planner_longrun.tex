@@ -1,0 +1,1352 @@
+\section{The long run}\label{sec:sp:longrun}
+
+This section characterises the long-run configurations of Problem~\ref{prob:sp}, beginning
+with those in which consumption remains bounded away from zero,
+$\liminf_{t\to\infty}C>0$. The organising object is
+the fate of material input: within the regular class of paths fixed below, $R$ either settles at
+a positive level, vanishes, or grows without bound, and where it settles, extraction $N$ either
+dies or survives. That yields exactly four configurations --- the \emph{stationary state}, the
+\emph{balanced circular path}, \emph{materially expanding growth}, and \emph{dematerialised
+consumption} --- and the section is built around that fact. The technology
+trends~\eqref{eq:sp:setup:tfp} run through the whole section: results are stated for general
+$\left(g_A,g_B\right)\ge0$, organised so that the stationary-technology case $g_A=g_B=0$ ---
+where the full proofs live --- is the backbone, and the trending economy is handled by a
+growth-structure lemma, a cell-by-cell classification at the rate level, and a parametric
+closure under the workhorse family.
+Section~\ref{sec:sp:longrun:setup} defines the four paths and fixes the assumptions and growth
+notation maintained throughout. Section~\ref{sec:sp:longrun:classification} states the growth
+structure (Lemma~\ref{lem:sp:lr:branches}), the classification theorem at stationary
+technology, and its trending counterpart (Proposition~\ref{prop:sp:lr:trend}): the four
+configurations are the only sustained-consumption limits, and each one forces the rest of its
+configuration's structure.
+Section~\ref{sec:sp:longrun:selection} gives the selection map: at stationary technology three
+primitives --- a growth threshold, the tail of the discovery cost, and the essentiality of
+materials --- decide which configuration the economy is on; under trend growth the map is
+rebuilt around the trend vector. Section~\ref{sec:sp:longrun:paths} then works through the four
+paths in turn: two are fully characterised at stationary technology (the stationary state and
+the balanced circular path), two are placed and constrained but left open in profile at this
+level of generality (materially expanding growth and dematerialised consumption); the
+workhorse family closes MEG's profile in parametric form (Proposition~\ref{prop:sp:wh:meg})
+and carries the trending rate systems (Proposition~\ref{prop:sp:wh:trend}).
+Section~\ref{sec:sp:longrun:collapse} then completes the map with the collapse paths,
+$C\to0$: the fate of the cells that the four sustained configurations leave empty. Results
+are stated with a sketch of the mechanism; all derivations and proofs are in
+Appendices~\ref{sec:app:longrun} and~\ref{sec:app:collapse}, with the trending derivations
+in~\ref{sec:app:longrun:trend} and~\ref{sec:app:workhorse:trend}.
+
+\subsection{Configurations, maintained assumptions, and notation}
+\label{sec:sp:longrun:setup}
+
+\smalltitle{Technology trends and effective magnitudes.} The trends of~\eqref{eq:sp:setup:tfp}
+are carried throughout: $A=e^{g_At}$ Hicks-neutral, $B=e^{g_Bt}$ material-augmenting,
+$g_A,g_B\ge0$. Write
+\begin{align}
+m\equiv BR
+\label{eq:sp:lr:services}
+\end{align}
+for \emph{material services}, the effective quantity the kernel sees; $R$ remains the physical
+tonnage, and every mass balance, every configuration definition, and every material margin
+below is a statement about tonnes. Kernel partials are written $F_1,F_2,F_3$ as
+in~\eqref{eq:sp:setup:mpconvention}, so $F_K=AF_1$ and $F_R=ABF_2$. Two levels of rigour
+coexist in this section and are flagged throughout: at stationary technology, $g_A=g_B=0$,
+the results carry the full arguments of Appendices~\ref{sec:app:longrun}
+and~\ref{sec:app:collapse}; under trend growth the results are established at the level of
+rates and the count of level conditions (the standard this documentation applied to MEG
+before the workhorse closed it), with derivations in~\ref{sec:app:longrun:trend}
+and~\ref{sec:app:workhorse:trend} and the remaining holes collected as
+gaps~(xvi)--(xix) in~\ref{sec:app:longrun:gaps}.
+
+\smalltitle{Growth notation.} For any variable or price $Z$ of eventually constant sign, write
+\begin{align}
+g_Z\equiv\lim_{t\to\infty}\frac{\dot Z}{Z}
+\label{eq:sp:lr:gZ}
+\end{align}
+for its asymptotic (exponential) growth rate, whenever the limit exists. Rates are signed ---
+decline is $g_Z<0$ --- and the definition covers negative prices unchanged, since
+$\dot Z/Z=d\ln\left|Z\right|/dt$ for $Z$ of constant sign. One convention matters throughout:
+$g_Z=0$ does \emph{not} mean that $Z$ settles, only that it moves subexponentially, and a
+variable can still diverge that way --- cumulative discovery grows linearly in the stationary
+state, and recycling capital grows linearly on the balanced circular path under an exponential
+yield tail, both with $g_Z=0$. Where the distinction matters, the text flags it.
+
+\smalltitle{The four configurations.} Each definition is deliberately minimal: it records only
+the fate of $\left(R,N\right)$. The familiar structure of each path --- exact exhaustion, deep
+circularity, constancy of prices, the discovery regime --- is not written into the definitions
+but \emph{forced} onto them by Theorem~\ref{thm:sp:lr:classification} below.
+
+\begin{definition}[Stationary state]\label{def:sp:sss}
+A sustained-consumption solution follows a \emph{stationary state} (SS) if $R$ is bounded away
+from zero and infinity and $N\to\bar N>0$.
+\end{definition}
+
+\begin{definition}[Balanced circular path]\label{def:sp:bcp}
+A sustained-consumption solution follows a \emph{balanced circular path} (BCP) if $R$ is
+bounded away from zero and infinity and $N\to0$.
+\end{definition}
+
+\begin{definition}[Materially expanding growth]\label{def:sp:meg}
+A sustained-consumption solution follows \emph{materially expanding growth} (MEG) if
+$R\to\infty$.
+\end{definition}
+
+\begin{definition}[Dematerialised consumption]\label{def:sp:dc}
+A sustained-consumption solution follows \emph{dematerialised consumption} (DC) if $R\to0$.
+\end{definition}
+
+In economic terms: on the SS, extraction and partial circularity continue forever and a
+positive pollution stock is part of the long run; on the BCP the economy asymptotically
+extracts nothing, treats everything, recycles everything, and pollution vanishes; on MEG the
+material side expands with the economy and scarcity never binds --- the cornucopian
+configuration; on DC the economy outgrows its material side entirely and lives on capital
+alone.
+
+\smalltitle{Materials in production.} The role of materials enters through two properties of
+very different strength, plus a saturation condition and, for the trending analysis, a
+regularity condition on the kernel's tails. All four are stated on the kernel $F$ --- the
+time-invariant object --- so that the trends never contaminate the primitives.
+
+\begin{assumption}[Materials in production]\label{ass:sp:lr:F}
+\begin{enumerate}
+    \item[(i)] \emph{Marginal indispensability:} $F_2\to\infty$ along any path with $K\to\infty$
+    and $m$ bounded (in particular whenever $K/m\to\infty$).
+    \item[(ii)] The asymptotic kernel return
+    \begin{align}
+    A_\infty\equiv\lim_{K\to\infty}F_1\left(K,m,0\right)
+    \label{eq:sp:lr:Ainfty}
+    \end{align}
+    exists for each fixed $m>0$; the asymptotic return of the \emph{technology} is
+    $A\left(t\right)A_\infty$, and the two coincide at stationary
+    technology.\footnote{When the limit depends on $m$ or on the pollution
+    stock, $A_\infty$ is understood at the limiting $\left(m,P\right)$ of the path in
+    question; for CES kernels it is independent of $m$. The $P$-dependence matters only
+    on MEG: the BCP and DC have $P\to0$, and the SS never evaluates $F_1$ at unbounded $K$.}
+    \item[(iii)] \emph{Saturation:} $F_2\left(K,m,P\right)\to0$ as $m\to\infty$ for fixed $K$.
+    \item[(iv)] \emph{Trend-regular kernel} (invoked only when
+    $\left(g_A,g_B\right)\ne\left(0,0\right)$): the kernel is constant returns in
+    $\left(K^Y,m\right)$, with intensive form $f\left(k\right)\equiv F\left(k,1,P\right)$ at
+    the path's limiting pollution stock, $k\equiv K^Y/m$ the \emph{effective} capital
+    intensity, and the tail objects
+    \begin{align}
+    \beta_\infty\equiv\lim_{k\to\infty}\frac{f'\left(k\right)k}{f\left(k\right)}\in\left[0,1\right),
+    \qquad
+    \epsilon_\infty\equiv-\lim_{k\to\infty}\frac{d\ln f'\left(k\right)}{d\ln k}\in\left(0,\infty\right],
+    \qquad
+    \gamma_A\equiv1+\frac{\beta_\infty}{\epsilon_\infty}\ge1,
+    \label{eq:sp:lr:kernel-tails}
+    \end{align}
+    exist, with the consistency condition $\epsilon_\infty\ge1-\beta_\infty$ (which is what
+    keeps investment from outrunning output on the trend-paced branch below;
+    Appendix~\ref{sec:app:longrun:trend}). We call $\gamma_A$ the \emph{trend multiplier}.
+\end{enumerate}
+\end{assumption}
+
+\begin{definition}[Asymptotic essentiality]\label{def:sp:lr:essential}
+Materials are \emph{asymptotically essential} if no feasible path of Problem~\ref{prob:sp}
+sustains $\liminf Y>0$ with $R\to0$.
+\end{definition}
+
+Five clarifications, because the distinctions carry the results. First, (i) holds for every CES
+kernel with substitution elasticity at or above one --- \emph{including} above one, where
+materials are inessential: unbounded capital drives output up, and the material margin is
+pulled up with it --- and for Cobb--Douglas. It fails for (asymptotically) linear kernels
+in which capital is a perfect substitute for materials, and it also fails \emph{below} unit
+elasticity, where output is capped by the material leg and $F_2$ tends to the finite constant
+$b_R^{\varsigma/\left(\varsigma-1\right)}$ (in the CES notation of
+Section~\ref{sec:sp:longrun:workhorse}). The failure below one is harmless: there $A_\infty=0$
+confines the economy to the bounded or trend-paced branch, and (i) is invoked only on the
+endogenous growth branch.
+Every result below on the resource side uses only (i). Second, asymptotic essentiality is
+strictly stronger than the pointwise condition $F\left(K,0,P\right)=0$, and it depends on
+depreciation: Cobb--Douglas satisfies it when $\delta>0$ (holding output up while $R\to0$
+requires $K\to\infty$ with an unaffordable maintenance bill $\delta K$) but not when $\delta=0$
+--- the classic constant-consumption results with vanishing resource use live at zero
+depreciation. A CES technology is asymptotically essential below unit elasticity ($F$ is
+eventually bounded by a multiple of $R$, and $A_\infty=0$) and not above it (where
+$F\left(K,0,\cdot\right)$ is linear in $K$ and $A_\infty>0$). Third, the two properties do
+different work in what follows: (i) drives all results on the resource side, while essentiality
+is interrogated only when the material side winds down, where it separates collapse from
+dematerialised consumption. The balanced circular path sits in between: it requires growth, and
+under essentiality that combination ($A_\infty>0$ \emph{and} essential materials) is delivered
+by no unmodified textbook form --- families such as $F=\Lambda\left(R\right)K+\text{lower-order terms}$ with
+$\Lambda(0)=0$ do, materials capping the productivity of capital rather than entering as a
+substitutable factor, and so does a CES above unit elasticity with a \emph{material floor},
+$F$ depending on $R-\underline R$ and vanishing below it
+(Section~\ref{sec:sp:longrun:workhorse}). Essentiality itself is \emph{not} assumed in what follows; where it
+matters, the statements say so. Fourth, saturation (iii) also has a CES boundary: it holds
+below unit elasticity but fails above it, where $F_2\to b_R^{\varsigma/\left(\varsigma-1\right)}$
+as $m\to\infty$ --- in bulk, materials become a linear stand-alone technology. Where (iii) is
+invoked (the bounded-branch exclusion of MEG), Appendix~\ref{sec:app:workhorse} supplies the
+substitute condition: bulk materials must not out-earn their own collection cost,
+$b_R^{\varsigma/\left(\varsigma-1\right)}<c^c$. Fifth, essentiality is trend-sensitive in a
+way the other properties are not. Definition~\ref{def:sp:lr:essential} quantifies over the
+feasible paths of the actual problem, trends included, so it generalises without rewording ---
+but its verdict moves: with $g_B>0$ a kernel that is essential in the stationary sense
+($\varsigma<1$, say) no longer makes materials essential \emph{as a path property}, because
+material services $m=BR$ can grow while tonnage $R$ dies --- the classic resource-augmenting
+escape of the exhaustible-resource literature (Dasgupta--Heal, Stiglitz), here in
+material-services form. Distinguish therefore \emph{kernel essentiality} (the stationary
+notion, read off $F$) from \emph{path essentiality} (the definition); they coincide at
+$g_B=0$, and the only kernel feature that implies path essentiality at every trend vector is
+the \emph{hard} floor, $F=0$ below $\underline R$ tonnes: a floor in tonnage cannot be
+augmented away, which is precisely why the workhorse's floor is specified on $R$, not on $m$
+(Section~\ref{sec:sp:longrun:workhorse}).
+
+\smalltitle{Discovery-cost regimes.} The second primitive of the selection map below is the
+tail of the discovery cost.
+
+\begin{assumption}[Discovery-cost regimes]\label{ass:sp:lr:discovery}
+Exactly one of the following holds:
+\begin{enumerate}
+    \item[(E)] \emph{Exhaustible discovery:} $C^D_D\left(0,X\right)\to\infty$ as
+    $X\to\bar X_{\max}<\infty$;
+    \item[(I)] \emph{Inexhaustible discovery:} $C^D\left(D,X\right)\to\bar C^D\left(D\right)$
+    with $C^D_X\to0$ as $X\to\infty$.
+\end{enumerate}
+Costs rise with cumulative discovery in both regimes ($C^D_X>0$ throughout); the regimes differ
+in whether the rise saturates at a finite replacement-cost schedule $\bar C^D\left(D\right)$ ---
+a backstop, as when ever-lower grades are available in unbounded quantity --- or diverges at a
+finite endowment $\bar X_{\max}$.
+\end{assumption}
+
+\smalltitle{Scoping.} Finally, the class of paths we classify, and three side conditions that
+remove degenerate corners.
+
+\begin{assumption}[Regular limits and maintained side conditions]\label{ass:sp:lr:regular}
+We classify within the class of solutions in which every state, control and normalised price
+converges in the extended sense, to a point of $\left[-\infty,\infty\right]$; this excludes
+persistent cycles by assumption, not by proof. In addition we maintain:
+\begin{enumerate}
+    \item[(i)] \emph{Knife-edges aside:} the branch comparisons of
+    Lemma~\ref{lem:sp:lr:branches} are strict --- at stationary technology
+    $A_\infty-\delta\ne\rho$, and in general
+    $A_\infty-\delta\ne\rho+\eta\left(g_B+g_R\right)$ at the relevant configuration rates. See
+    Remark~\ref{rem:sp:lr:exponential} for exactly what this excludes.
+    \item[(ii)] \emph{Reserve depletion:} $C^N_N\left(0,S\right)\to\infty$ as $S\to0$, with the
+    domain restriction $S\ge0$. Absent this, a zero-stock flow-through configuration --- $S=0$
+    reached in finite time with extraction running on just-in-time discovery, $D=N>0$ ---
+    reappears as a corner variant of the stationary state. In addition, the reserve is
+    \emph{cumulatively} protected: $\int_0^\varepsilon C^N_N\left(0,s\right)ds=\infty$, so
+    exhaustion cannot complete in finite time (workhorse: $\chi\ge1$; the matched BCP
+    satisfies this automatically, since $\chi=\left(\psi+1\right)/\psi>1$). Absent the second
+    clause, a finite-time-exhaustion variant --- extraction locked at its corner behind the
+    depletion barrier, the loop financed by storage release --- evades the per-date
+    interiority of Theorem~\ref{thm:sp:lr:classification}(ii); see
+    gap~(xv) of Appendix~\ref{sec:app:longrun:gaps}.
+    \item[(iii)] \emph{Damage dominance:} along any path with $C\to\infty$ and $P\to\infty$,
+    flow utility $u\left(C\right)-v\left(P\right)\to-\infty$. Automatic when $\eta>1$, since
+    $u$ is then bounded above (at $\eta=1$, $u=\ln C$ is not, and the condition becomes a joint
+    restriction on the speeds of $C$ and $P$).
+    \item[(iv)] \emph{Viable material margin:} at any bounded candidate limit with $R\to0$, a
+    virgin tonne available at bounded cost is worth its cost, so the material side reopens.
+    Concretely: the extraction corner~\eqref{eq:sp:sum:N-corner} fails at the candidate limit
+    whenever $S$ is bounded away from zero; and under regime (I) the corner
+    conditions~\eqref{eq:sp:sum:N-corner} and~\eqref{eq:sp:sum:D-corner} cannot hold jointly
+    at the limit, since a tonne can first be discovered at bounded cost and then extracted.
+    This is a restriction on endogenous limits rather than on primitives; it scopes out the
+    economies in which materials are never worth their supply cost even from the first tonne
+    --- internally consistent, but with no material side to study.
+\end{enumerate}
+\end{assumption}
+
+\subsection{The classification theorem}\label{sec:sp:longrun:classification}
+
+The workhorse lemma collects what every sustained-consumption limit must satisfy, with the
+scope of each item stated explicitly --- the third item belongs to the bounded-material paths
+only, and its failure mode on MEG is itself informative.
+
+\begin{lemma}[Common necessary conditions]\label{lem:sp:lr:common}
+Any solution with $\liminf C>0$ satisfies, as $t\to\infty$:
+\begin{enumerate}
+    \item \emph{The growth dichotomy (stationary technology).} At $g_A=g_B=0$ the threshold
+    decides the branch (Lemma~\ref{lem:sp:lr:branches} is the general statement). If
+    $A_\infty-\delta>\rho$, the capital stock is unbounded and the economy is asymptotically an
+    $AK$ economy:
+    \begin{align}
+    r\to A_\infty-\delta,
+    \qquad
+    g_C=g_K=g_Y=\frac{A_\infty-\delta-\rho}{\eta}>0
+    \label{eq:sp:lr:gC}
+    \end{align}
+    whenever $R$ is bounded; on MEG the same holds with $A_\infty$ replaced by the limit of
+    $F_K$ along the path, no smaller than $A_\infty$ when $F_{KR}\ge0$. If $A_\infty-\delta<\rho$, the economy is bounded: $K$, $C$,
+    $Y$ converge to positive constants and $r\to\rho$.
+    \item \emph{A stable pollution sink.} $\Xi\to\bar\Xi<\infty$ with
+    $\theta\left(\bar P\right)\bar P=\bar\Xi$, $\rho+\theta+\theta'\bar P>0$, and
+    $\theta\left(P\right)P$ increasing at $\bar P$ (no terminal tipping).
+    \item \emph{The bounded material side (SS and BCP only).} If $R$ is bounded away from zero
+    and infinity: $W$ is bounded away from zero, net absorption of material into the capital
+    stock dies, $\dot M^K\to0$, and the ledger~\eqref{eq:sp:setup:ledger-collected} locks the
+    circularity gap to the virgin inflow:
+    \begin{align}
+    W\left(1-a\varpi\right)\;\sim\;\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D .
+    \label{eq:sp:lr:ratelock}
+    \end{align}
+    \emph{Full circularity ($a\varpi\to1$) and vanishing extraction are the same event}, and
+    they require both margins at their boundaries: $\varpi\to1$, $a\to1$, hence $x\to\infty$
+    and $K^R\to\infty$.
+\end{enumerate}
+\end{lemma}
+
+Item (i) is the master split: every sustained-consumption limit lives on one side of a single
+technological threshold, and the side is not chosen but determined. Item (iii) is the
+structural heart of the two bounded-material paths: an economy that keeps its material side
+alive cannot let throughput die, so whatever happens to extraction must be mirrored, tonne for
+tonne, by the circularity gap. Note what item (iii) does \emph{not} cover: on MEG, $\dot M^K$
+need not die --- storage in the capital stock is exactly how that path absorbs any unbounded
+virgin inflow while keeping its sink stable (Proposition~\ref{prop:sp:lr:meg}).
+
+Under trend growth the dichotomy of item (i) is replaced by a four-way structure. The lemma
+is stated at the rate level; Appendix~\ref{sec:app:longrun:trend} carries the derivation and
+the level conditions.
+
+\begin{lemma}[Growth structure under technology trends]\label{lem:sp:lr:branches}
+Consider a regular solution with $\liminf C>0$ whose physical material input has asymptotic
+rate $g_R$, so material services grow at $g_B+g_R$. Assume the wedges $\zeta\Omega^j$
+converge and $q\to1$ (part of regularity on these paths;
+Appendix~\ref{sec:app:longrun:trend}). Then exactly one of the following describes the
+asymptotics:
+\begin{enumerate}
+    \item \emph{Explosive (excluded):} $g_A>0$ and $A_\infty>0$. Since $F_{11}<0$ gives
+    $F_1>A_\infty$ at every finite $K$, the return $r\to\infty$ and the consumption
+    rule~\eqref{eq:sp:sum:Cgrowth} forces $\dot C/C\to\infty$: growth is
+    super-exponential, and \emph{no regular exponential path exists in the cell at all} ---
+    sustained or collapsing. These economies leave the classified class the way cycles do,
+    by scope; see gap~(xvii) for the caveats (damage-choked and wedge-choked variants).
+    \item \emph{Endogenous growth:} $A_\infty>0$, $g_A=0$, and
+    \begin{align}
+    A_\infty-\delta>\rho+\eta\left(g_B+g_R\right).
+    \label{eq:sp:lr:effthreshold}
+    \end{align}
+    The effective intensity $k=K^Y/m$ diverges, capital outruns material services, and the
+    stationary-technology asymptotics of Lemma~\ref{lem:sp:lr:common}(i) apply unchanged:
+    $r\to A_\infty-\delta$, $g_C=g_K=g_Y=\left(A_\infty-\delta-\rho\right)/\eta>g_B+g_R$.
+    The trend $g_B$ never reaches the growth rate; it enters only the material-side rates.
+    \item \emph{Trend-paced growth:} $A_\infty=0$ (any $g_A,g_B$), or $A_\infty>0$ with
+    $g_A=0$ and the inequality in~\eqref{eq:sp:lr:effthreshold} reversed. Under the
+    trend-regular kernel (Assumption~\ref{ass:sp:lr:F}(iv)), the capital margin settles at
+    $Af'\left(k\right)\to\rho+\delta+\eta g_C$ --- $k$ converging when $g_A=0$, deepening at
+    $g_k=g_A/\epsilon_\infty$ when $g_A>0$ --- and consumption is paced by the technology:
+    \begin{align}
+    g_C=g_Y=\gamma_Ag_A+g_B+g_R,
+    \qquad
+    g_K=\frac{g_A}{\epsilon_\infty}+g_B+g_R\;\le\;g_Y,
+    \qquad
+    r\to\rho+\eta g_C,
+    \label{eq:sp:lr:pace}
+    \end{align}
+    the inequality by the consistency condition $\epsilon_\infty\ge1-\beta_\infty$ (strict
+    when $\beta_\infty=0$, where the capital-output ratio and the investment share vanish;
+    equality in the Cobb--Douglas case, where they settle).
+    \item \emph{Stationary:} $g_A=g_B=0$, $A_\infty-\delta<\rho$, $g_R=0$: the bounded branch
+    of Lemma~\ref{lem:sp:lr:common}(i), $r\to\rho$, all quantities settling.
+\end{enumerate}
+In compact form, away from the explosive cell and the knife-edges,
+\begin{align}
+g_C=\max\left\{\frac{A_\infty-\delta-\rho}{\eta},\;\gamma_Ag_A+g_B+g_R\right\},
+\label{eq:sp:lr:gCmax}
+\end{align}
+with the first entry read as $-\infty$ when $A_\infty=0$: consumption grows at the faster of
+the endogenous rate and the trend pace.
+\end{lemma}
+
+Two readings. First, \emph{the growth threshold becomes an effective
+threshold}~\eqref{eq:sp:lr:effthreshold}: the trend $g_B+g_R$ raises the return the Euler
+equation demands of a trend-paced path, so self-sustaining accumulation must now beat not
+$\rho$ but $\rho$ plus the utility cost of the growth the trends already deliver. Second, on
+the trend-paced branch \emph{the return is no longer a technological datum}:
+$r=\rho+\eta g_C$ is set by preferences and the pace, and the technology adjusts through $k$
+--- the mirror image of the endogenous branch, where the technology sets $r$ and consumption
+adjusts.
+
+A second general lemma carries the environmental side of the trending economy. At stationary
+technology, only the growth cells had to keep their damages tame; under trends every
+sustained cell grows, and the discipline becomes global.
+
+\begin{lemma}[Affluence prices pollution]\label{lem:sp:lr:affluence}
+On any regular sustained-consumption path with $g_C>0$, under $\eta>1$, $c^T\left(1\right)<\infty$
+and $d^W>0$: no positive limiting pollution stock exists, $P\to0$. Mechanism: with
+$P\to\bar P>0$, marginal damage in goods units,
+$\mathcal V\ge v'\left(\bar P\right)/\lambda$, diverges at rate $\eta g_C$, and $p^P$ and the
+emission component of $p^W$ with it, while every delivered-material value grows at most at
+the material-price pace $\pi\le g_C$ (the growth rate of $F_R$ along the path, made explicit
+in~\eqref{eq:sp:lr:pace-price} and Appendix~\ref{sec:app:longrun:trend}); the treatment
+margin~\eqref{eq:sp:sum:varpi} then reaches $\varpi=1$ and the extraction and exploration
+margins~\eqref{eq:sp:sum:N-corner}--\eqref{eq:sp:sum:D-corner} their corners in finite time,
+all inflows die, the loop runs down on a bounded storage release, cumulative emissions are
+finite, and the sink drains $P$ to zero --- a contradiction. Consequently the damage-rate
+conditions ($\beta_v$, $\beta_F$ analogues) that at stationary technology discipline only
+the BCP and MEG become conditions on \emph{every} trending configuration, with the
+configuration's own rates inserted (Proposition~\ref{prop:sp:wh:trend}).
+\end{lemma}
+
+The economics is a wealth effect with a sharp rate: marginal utility of consumption collapses
+at rate $\eta g_C$ while material values track at most $g_C$, so the relative price of a clean
+environment rises at the gap $\left(\eta-1\right)g_C>0$. A growing economy always ends clean;
+a \emph{polluted} long run ($\bar P>0$) is possible only where nothing grows --- it is a
+stationary-technology artefact, and the stationary state of
+Proposition~\ref{prop:sp:lr:sss} is exactly that case.
+
+\begin{theorem}[Classification of sustained-consumption limits]
+\label{thm:sp:lr:classification}
+At stationary technology ($g_A=g_B=0$), under
+Assumptions~\ref{ass:sp:lr:F}--\ref{ass:sp:lr:regular}, every solution of
+Problem~\ref{prob:sp} with $\liminf_{t\to\infty}C>0$ follows exactly one of the four
+configurations of Definitions~\ref{def:sp:sss}--\ref{def:sp:dc}, and each configuration carries
+the following forced structure:
+\begin{enumerate}
+    \item \emph{SS} requires a bounded economy and inexhaustible discovery:
+    $A_\infty-\delta<\rho$ and regime (I). All controls, states and prices other than $X$
+    converge to constants, with
+    \begin{align*}
+    \bar D=\bar N>0,\qquad\bar S>0,\qquad\bar a\bar\varpi<1,\qquad\bar P>0,
+    \end{align*}
+    while $X\to\infty$ linearly at rate $\bar N$ ($g_X=0$).
+    \item \emph{BCP} requires growth and exhaustible discovery: $A_\infty-\delta>\rho$ and
+    regime (E). Extraction, discovery and the reserve vanish with $N,D,S>0$ at every date,
+    exhaustion is exact,
+    $\int_0^\infty N\,dt=S_0+\int_0^\infty D\,dt$ with $S\to0$ and $X\to\bar X_{\max}<\infty$,
+    and circularity is deep: $\varpi\to1$, $a\to1$, $K^R\to\infty$, with the pollution stock
+    vanishing.
+    \item \emph{MEG} requires growth and inexhaustible discovery: $A_\infty-\delta>\rho$ and
+    regime (I).
+    \item \emph{DC} requires materials that are not asymptotically essential and exhaustible
+    discovery: regime (E), with dematerialisation possible only \emph{after} asymptotic
+    exhaustion --- $S\to0$ with exact exhaustion, reserves never stranded. Under asymptotic
+    essentiality the configuration is empty.
+\end{enumerate}
+\end{theorem}
+
+The proof (Appendix~\ref{sec:app:longrun:classification}) runs on three levers, worth seeing in
+the open. First, the growth threshold determines the branch (Lemma~\ref{lem:sp:lr:common}(i));
+there is no choice involved. Second, regime (E) makes cumulative virgin input finite,
+$\int_0^\infty N\,dt\le S_0+\bar X_{\max}$, so in the regular class extraction must die:
+\emph{permanent extraction requires the backstop}. Third, regime (I) keeps the virgin tonne
+available forever at bounded replacement cost, which cuts the other way: an economy facing the
+backstop never abandons materials (a diverging $F_R$ against a bounded supply cost revives
+extraction), and under growth it cannot hold the material side fixed either --- so growth with
+the backstop is MEG, and DC can live only under regime (E). What remains in each cell is then
+settled by the configurations the optimality conditions rule out along the way: reserves are
+never stranded (deep circularity drives $p^W\to-\infty$ while a bounded reserve keeps
+extraction costs bounded, so the virgin margin revives and optimality selects exact
+exhaustion); extraction and exploration never hit terminal corners on circular paths (the
+corner inequalities fail in finite time against diverging prices); and circularity without
+growth is impossible (maintenance of the unbounded $K^R$ is unaffordable in a bounded economy,
+and the diverging $\zeta$ breaks the consumption condition~\eqref{eq:sp:sum:C}) --- which is
+why the BCP must grow and the SS must remain partially circular forever.
+
+\begin{remark}[Exponential growth is derived, not assumed]\label{rem:sp:lr:exponential}
+The exponential benchmark is not a restriction smuggled in through
+Assumption~\ref{ass:sp:lr:regular}. On the unbounded branch, existence of $A_\infty$
+(Assumption~\ref{ass:sp:lr:F}(ii)) delivers $r\to A_\infty-\delta$, and the consumption
+rule~\eqref{eq:sp:sum:Cgrowth} then forces $\dot C/C\to\left(A_\infty-\delta-\rho\right)/\eta$
+--- a \emph{positive constant} whenever the threshold is strict, so asymptotically exponential
+growth is a conclusion. Sustained but subexponential growth ($C\to\infty$ with $\dot C/C\to0$)
+requires $r\to\rho$, which is exactly the knife-edge $A_\infty-\delta=\rho$; the polynomial and
+quasi-arithmetic growth paths of the classic exhaustible-resource literature all live there,
+and only there. The same confinement holds on the material side: hyperbolic extraction profiles
+are FOC-consistent only at the knife-edge (Appendix~\ref{sec:app:longrun:matching}). Setting
+the knife-edge aside therefore \emph{is} the exponentiality assumption, and it excludes a
+single point of the parameter space. Under trend growth, exponentiality acquires a second,
+more prosaic source: the trends are exponential by specification, and the trend-paced
+rates~\eqref{eq:sp:lr:pace} are inherited from them; the knife-edge generalises to the
+effective threshold~\eqref{eq:sp:lr:effthreshold} holding with equality, and the explosive
+cell of Lemma~\ref{lem:sp:lr:branches}(i) is the new exit from the exponential class ---
+from above rather than below. What genuinely remains open is subtler: slowly varying
+corrections ($t^\beta e^{gt}$) to the exponential rates, and paths on which $F_1$ has no limit
+at all (failure of Assumption~\ref{ass:sp:lr:F}(ii)); see
+Appendix~\ref{sec:app:longrun:gaps}.
+\end{remark}
+
+The trending counterpart of the classification theorem can now be assembled from the two
+lemmas. It is stated at the rate level: exhaustiveness is inherited from regularity, the
+per-cell structure from the price races, and what is \emph{not} yet established --- level
+systems, existence beyond rate-and-count --- is flagged in gaps~(xvi)--(xix).
+
+\begin{proposition}[Classification under trend growth]\label{prop:sp:lr:trend}
+Let $\left(g_A,g_B\right)\ne\left(0,0\right)$, $\eta>1$, and exclude the explosive cell
+(Lemma~\ref{lem:sp:lr:branches}(i)). Within the regular class, every sustained-consumption
+solution of Problem~\ref{prob:sp} follows one of the four configurations of
+Definitions~\ref{def:sp:sss}--\ref{def:sp:dc}, with consumption growing at the
+rate~\eqref{eq:sp:lr:gCmax} evaluated at the configuration's $g_R$, and:
+\begin{enumerate}
+    \item \emph{The stationary state is empty.} No trending path sustains $N\to\bar N>0$:
+    under regime (E) cumulative virgin input is finite, and under regime (I) the delivered
+    value of a tonne grows at the material-price pace $\pi>0$ against a virgin supply cost
+    bounded by the backstop, so a stationary extraction margin cannot stay balanced --- the
+    material side must expand. Trend growth does to the SS cell exactly what endogenous
+    growth did to its own: \emph{growth with the backstop is MEG}.
+    \item \emph{Regime (I): materially expanding growth.} $R\to\infty$, deep circularity in
+    relative terms, storage absorption, $P\to0$; admissible only under congestion and
+    damage-rate conditions, which the workhorse makes parametric
+    (Proposition~\ref{prop:sp:wh:trend}). When they fail the cell admits no regular
+    exponential limit (the trending twin of gap~(xii)).
+    \item \emph{Regime (E): the winding-down column.} $N\to0$ with exact exhaustion, and the
+    cell partitions as before --- BCP if the loop is worth maintaining ($R$ settles, with
+    the matching structure of Proposition~\ref{prop:sp:lr:bcp} at the pace $\pi$; the
+    exponent matching $\chi=\left(\psi+1\right)/\psi$ is \emph{invariant} to the trends),
+    DC if it is not and the kernel permits ($R\to0$, sustained precisely when the trends
+    cover the decline, $\gamma_Ag_A+g_B+g_R\ge0$ --- open in profile), and collapse only
+    when the material decline outruns the trends. Under the hard floor DC is closed and the
+    BCP is anchored at $\underline R$; moreover the floor cell is no longer uniformly
+    doomed: a trending closed-loop path at the floor is a rate-consistent candidate even
+    where the stationary matching fails, because trend growth pays the loop's diverging
+    bills (gap~(xviii)).
+    \item \emph{Every cell ends clean:} $P\to0$ throughout
+    (Lemma~\ref{lem:sp:lr:affluence}), subject to the configuration's damage-rate
+    conditions.
+\end{enumerate}
+\end{proposition}
+
+The map in one sentence: \emph{trend growth erases the stationary state and hands its cell to
+materially expanding growth, keeps the winding-down column's exits but moves their boundaries
+from matching knife-edges toward rate races against the trends, and forces every surviving
+configuration to end clean.} The next subsection records both maps side by side.
+
+\subsection{The selection map}\label{sec:sp:longrun:selection}
+
+Theorem~\ref{thm:sp:lr:classification} and Proposition~\ref{prop:sp:lr:trend} already contain
+the selection logic; collecting it gives two maps. At stationary technology three primitives
+place the economy: the growth threshold $A_\infty-\delta\gtrless\rho$, the
+discovery regime (E)/(I), and --- in the (E) column only --- asymptotic essentiality.
+
+\begin{center}
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{l|cc}
+$g_A=g_B=0$ & (E) exhaustible discovery & (I) inexhaustible discovery \\
+\hline
+$A_\infty-\delta>\rho$ & \textbf{BCP}$^{\dagger}$ or DC$^{\ddagger}$ & \textbf{MEG} \\
+$A_\infty-\delta<\rho$ & collapse or \textbf{DC}$^{\ddagger}$ & \textbf{SS} \\
+\end{tabular}}
+\end{center}
+
+\noindent{\footnotesize $^{\dagger}$Under the matching conditions of
+Proposition~\ref{prop:sp:lr:bcp}; when the matching fails, the exits partition by essentiality
+--- DC (inessential) or, with essential materials, no damped regular path at all
+(Section~\ref{sec:sp:longrun:collapse}). $^{\ddagger}$DC requires materials that are not
+asymptotically essential; with essential materials the cell's exit is collapse, i.e.\ no
+sustained-consumption limit --- damped and characterised when essentiality is soft,
+catastrophic when it is hard (Section~\ref{sec:sp:longrun:collapse}).\par}
+
+\medskip
+Why essentiality is interrogated only in the (E) column: under the backstop the virgin tonne
+never becomes unaffordable, so the economy never faces the question of living without materials
+--- bounded economies settle into the SS and growing ones expand materially, essential or not.
+Under regime (E) the material side must wind down (cumulative virgin input is finite), and
+essentiality then decides the fate of consumption when it does: collapse if materials are
+essential --- unless the economy can afford the balanced circular path, which is what the
+matching conditions decide --- and dematerialised consumption if they are not.
+Section~\ref{sec:sp:longrun:collapse} characterises the collapse exits.
+
+\smalltitle{The trending map.} Under trend growth the map compresses: the growth-threshold row
+disappears as a \emph{configuration} primitive (it survives inside the cells, deciding only
+whether the rates are endogenous or trend-paced, Lemma~\ref{lem:sp:lr:branches}), the SS cell
+is handed to MEG, and essentiality is read as \emph{path} essentiality --- the floor, or a
+kernel-essential technology whose decline the trends fail to cover.
+
+\begin{center}
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{l|cc}
+$\left(g_A,g_B\right)\ne\left(0,0\right)$ & (E) exhaustible discovery & (I) inexhaustible discovery \\
+\hline
+$g_A>0$ and $A_\infty>0$ & \multicolumn{2}{c}{explosive --- no regular exponential path (Lemma~\ref{lem:sp:lr:branches}(i))} \\
+otherwise & \textbf{BCP}$^{\dagger}$ or \textbf{DC}$^{\ddagger}$ or collapse$^{\P}$ & \textbf{MEG}$^{\S}$ \\
+\end{tabular}}
+\end{center}
+
+\noindent{\footnotesize $^{\dagger}$Under the matching structure of
+Proposition~\ref{prop:sp:lr:bcp} at the material-price pace $\pi$
+(Proposition~\ref{prop:sp:wh:trend}); the exponent matching
+$\chi=\left(\psi+1\right)/\psi$ is trend-invariant. Under the floor the BCP is anchored at
+$\underline R$ and remains a candidate even where the matching fails (gap~(xviii)).
+$^{\ddagger}$Requires no floor and trends that cover the decline,
+$\gamma_Ag_A+g_B+g_R\ge0$; available under kernel essentiality whenever $g_B>0$ makes the
+decline affordable --- the Stiglitz escape. $^{\P}$Only when the material decline outruns
+the trends, $\gamma_Ag_A+g_B+g_R<0$; damped iff
+$\left(\eta-1\right)\left|g_C\right|<\rho$, catastrophic under the floor when no
+floor-anchored BCP exists (Section~\ref{sec:sp:longrun:collapse}).
+$^{\S}$Under the congestion and damage-rate conditions of
+Proposition~\ref{prop:sp:wh:trend}; when they fail the cell admits no regular exponential
+limit (trending twin of gap~(xii)).\par}
+
+\medskip
+Note what moved and what did not. The (E)/(I) column logic is untouched --- it is mass
+accounting and backstop logic, blind to trends. The essentiality primitive weakened from a
+kernel property to a rate race, and the growth threshold demoted from selecting
+configurations to selecting rate regimes within them. The new primitive is the trend vector
+itself: $\gamma_Ag_A+g_B$ is the pace the economy can grow \emph{on a settled material
+base}, and every boundary in the trending map is some margin's race against it.
+
+\begin{remark}[Functional forms select the limit]\label{rem:sp:lr:knife}
+The BCP conditions (iv)--(vi) of Proposition~\ref{prop:sp:lr:bcp} tie the tails of
+$a\left(\cdot\right)$, $C^N$, $C^D$ and $v$ to one another exactly; a calibration will not
+satisfy them by accident. Choosing functional forms for the quantitative model therefore
+\emph{is} choosing a cell of the selection map --- most naturally the stationary state, which
+requires no matching --- and the choice should be made deliberately.
+Section~\ref{sec:sp:longrun:workhorse} makes the dial explicit. Under trend growth the
+no-matching option moves with the map: the SS is unavailable, and the cell reachable without
+exact matching is trending MEG (regime (I)), whose admissibility is the open congestion
+region $\mu>\left(\psi+1\right)/\psi$ plus damage-rate checks
+(Proposition~\ref{prop:sp:wh:trend}).
+\end{remark}
+
+\subsection{The four paths}\label{sec:sp:longrun:paths}
+
+\subsubsection{The stationary state}\label{sec:sp:longrun:path:sss}
+
+The bottom-right cell is the neoclassical case. All prices are bounded, so none of the
+fragilities of the BCP arise: the $\Phi^I$ treatment, the damage function at zero, and the cost
+tails are all innocuous here.
+
+\begin{proposition}[The stationary state]\label{prop:sp:lr:sss}
+Under $A_\infty-\delta<\rho$, regime (I), and a stable sink
+(Lemma~\ref{lem:sp:lr:common}(ii)), a stationary state satisfies $r=\rho$ and:
+\begin{enumerate}
+    \item \emph{Modified golden rule:} $F_Kw_Y=\rho+\delta-\Phi^I\left(1-\sigma\right)\rho\,p^W$,
+    where $w_Y\equiv1-\zeta\Omega^Y$: the storage value of embodied material tilts the standard
+    rule, towards more capital when waste is costly ($p^W>0$) and less when waste is an asset
+    ($p^W<0$).
+    \item \emph{Reserve-inventory condition:} combining the stationary rent with the exploration
+    margin,
+    \begin{align}
+    \frac{\left|C^N_S\left(\bar N,\bar S\right)\right|w_N}{\rho}
+    \;=\;\bar C^D_D\left(\bar N\right)w_D+p^W\Omega^{D,S}:
+    \label{eq:sp:lr:inventory}
+    \end{align}
+    reserves are a produced inventory, held to the point where the annuitised extraction-cost
+    saving of a marginal tonne in the ground equals its replacement cost through discovery.
+    Hotelling's rent is pinned by replacement cost, not by dynamics.
+    \item \emph{Treatment is always positive:} $\bar\varpi>0$, for the pollution motive alone if
+    necessary.
+    \item \emph{Recycling is active}, $\bar K^R>0$, if and only if $a'(0)V>F_Kw_Y$ at the
+    candidate steady state; in particular always if $a'(0)=\infty$. When inactive, the treatment
+    margin reduces to $p^P\left(1-d^W\right)=c^{T\prime}\left(\bar\varpi\right)w_W$.
+\end{enumerate}
+The stationary system closes (Appendix~\ref{sec:app:longrun:sss}); existence beyond the equation
+count requires the stationary economy to afford its extraction, exploration and treatment bills
+with $\bar C>0$, and uniqueness is not established.
+\end{proposition}
+
+\smalltitle{The SS under trends: dissolution.} The stationary state is the one configuration
+with no trending counterpart (Proposition~\ref{prop:sp:lr:trend}(i)): any trend makes the
+delivered value of a tonne grow against a supply cost the backstop keeps bounded, and the
+constant extraction margin that defines the SS cannot survive the imbalance --- the cell's
+occupant becomes MEG. The point is worth stating in welfare terms: the SS is also the one
+configuration whose long run is \emph{polluted}, $\bar P>0$, and by
+Lemma~\ref{lem:sp:lr:affluence} that outcome is possible only because nothing grows. A
+polluted steady state is not a robust prediction of the model; it is the signature of an
+economy whose technology has stopped.
+
+\subsubsection{The balanced circular path}\label{sec:sp:longrun:path:bcp}
+
+Beyond its cell --- growth and regime (E), already forced by
+Theorem~\ref{thm:sp:lr:classification} --- the BCP requires a set of structural and tail
+conditions; the tails are parametrised by
+\begin{align}
+1-a(x)\sim\gamma_ax^{-\psi},\quad\psi\in\left(0,\infty\right],
+\qquad
+C^N_N\left(0,S\right)\sim\kappa S^{-\chi},\quad\chi\ge0,
+\label{eq:sp:lr:tails}
+\end{align}
+with $\psi=\infty$ denoting the exponential tail $1-a\sim e^{-x}$, and by the asymptotic growth
+elasticity $e_R$ of $F_R$ along the growth path, $F_R\sim e^{e_Rg_Ct}$ (CES: $e_R=1/\varsigma$
+for substitution elasticity $\varsigma$).
+
+\begin{proposition}[The balanced circular path]\label{prop:sp:lr:bcp}
+A solution converging to the BCP with asymptotically exponential rates exists only if all of the
+following hold, and they jointly determine the path:
+\begin{enumerate}
+    \item \emph{Dematerialising capital:} $\Phi^I=\Omega\phi^I$ with $\delta>0$. Under exogenous
+    or constant $\Phi^I$ (Appendices~\ref{sec:app:exogenousPhiI}--\ref{sec:app:constantPhiI}),
+    and likewise if $\delta=0$, the BCP is infeasible.
+    \item \emph{Affordable full treatment:} $c^T(1)<\infty$.
+    \item \emph{Pinned rates:} extraction and the reserve decline together at
+    \begin{align}
+    g_N=g_S=-\frac{\psi}{\psi+1}\,e_Rg_C,
+    \label{eq:sp:lr:gN}
+    \end{align}
+    and all material prices --- $-p^W$, $-\zeta$, $p^S$, $C^N_N\left(0,S_t\right)$ --- diverge
+    at the common rate
+    \begin{align}
+    g_{p^S}=e_Rg_C,
+    \qquad\text{with}\qquad
+    r\to A_\infty-\delta>g_{p^S}.
+    \label{eq:sp:lr:gp}
+    \end{align}
+    \item \emph{Extraction-cost matching:} $\chi=\left(\psi+1\right)/\psi$.
+    \item \emph{Discovery-cost matching:} the blow-up of $C^D_D\left(0,X\right)$ as
+    $X\to\bar X_{\max}$ rate-matched to $p^S$.
+    \item \emph{Tame damages:} $v'(0)=0$, with
+    $\eta g_C-\min\left(\left|g_N\right|,\theta(0)\right)\le g_{p^S}$ and $\left|F_P\right|$
+    growing slower than $e^{g_{p^S}t}$.
+\end{enumerate}
+\end{proposition}
+
+One requirement is implicit in (iii) and worth surfacing: $e_R\le1$, so that
+$g_{p^S}\le g_C$ and the material wedges $\zeta\Omega^j$ stay bounded (vanishing when strict);
+CES satisfies it whenever the growth condition does, since $A_\infty>0$ requires
+$\varsigma>1$ and hence $e_R=1/\varsigma<1$. The economics compresses into one sentence: on the
+BCP \emph{the waste price carries the system} --- $p^W\to-\infty$, with $-p^W$ equal to the
+marginal circularity multiplier $\left(1-\alpha\right)^{-1}$ times the per-pass surplus of a
+tonne of waste, so waste becomes the economy's material asset (the mine above ground) --- and
+every other condition in the list makes some margin's diverging cost keep pace with it.
+Conditions (iv)--(vi) are knife-edges across independently specified primitives; see
+Remark~\ref{rem:sp:lr:knife}.
+
+\smalltitle{The BCP under trends.} All of the structure of
+Proposition~\ref{prop:sp:lr:bcp} survives trend growth with one substitution: the rate that
+drives the price block is no longer $e_Rg_C$ but the \emph{material-price pace}
+\begin{align}
+\pi\;\equiv\;g_{F_R}\Big|_{\text{along the path}}
+=\begin{cases}
+\dfrac{g_C}{\varsigma}+\left(1-\dfrac{1}{\varsigma}\right)g_B
+& \text{endogenous branch (CES, $R$ settled),}\\[0.8em]
+g_C=\gamma_Ag_A+g_B
+& \text{trend-paced branch ($R$ settled),}
+\end{cases}
+\label{eq:sp:lr:pace-price}
+\end{align}
+so that $g_N=g_S=-\frac{\psi}{\psi+1}\pi$, the material prices $-p^W$, $-\zeta$, $p^S$,
+$C^N_N\left(0,S_t\right)$ diverge at $\pi$, and $K^R$ grows at $\pi/\left(\psi+1\right)$
+(Appendix~\ref{sec:app:workhorse:trend}). Three consequences. First, the exponent matching
+$\chi=\left(\psi+1\right)/\psi$ is \emph{invariant}: it relates the decay of $S$ to the
+divergence of $C^N_N$, and both are paced by the same $\pi$, which cancels --- the BCP's
+central knife-edge is a statement about tails, not about growth rates, and the trends cannot
+soften it. Second, the trend-paced case opens the BCP to kernels the stationary theory
+excluded: below unit elasticity, $A_\infty=0$, the stationary economy could not grow and
+hence could not afford the loop; under trends it grows at
+$\gamma_Ag_A+g_B$ and the loop's diverging bills are paid by the trend --- deep circularity
+no longer requires capital to be self-sufficient. Third, the damage condition tightens: the
+analogue of (vi) reads $\eta g_C-\min\left(\left|g_N\right|,\theta_0\right)\le\pi$, and
+under trends $g_C$ rises with $\gamma_Ag_A+g_B$ while $\pi\le g_C$ --- faster growth makes
+the clean limit harder to price, not easier, so a trending BCP demands strong damage tails
+exactly where a stationary one demanded matched cost tails.
+
+\begin{remark}\label{rem:sp:lr:neoclassical}
+At stationary technology, under standard neoclassical assumptions ---
+$\lim_{K\to\infty}F_1=0$, or $A_\infty-\delta<\rho$,
+or a fixed material intensity of investment --- the balanced circular path does not exist. A
+fully circular economy is not a stationary destination: it must be perpetually outgrown, and is
+affordable only where capital accumulation is self-sustaining and capital itself
+dematerialises. Trend growth removes the first two disqualifiers --- any positive trend
+supplies the perpetual outgrowing --- but not the third: the dematerialising-capital
+requirement ($\Phi^I=\Omega\phi^I$ with $\delta>0$) survives at every trend vector, because
+it is a mass-balance requirement, not a growth requirement.
+\end{remark}
+
+\subsubsection{Materially expanding growth}\label{sec:sp:longrun:path:meg}
+
+The top-right cell is the cornucopian configuration: capital accumulation is self-sustaining
+and the crustal backstop keeps the replacement cost of the virgin tonne bounded forever, so the
+diverging value of materials along the growth path is met not by diverging costs, as on the
+BCP, but by expansion --- the economy mines and grows without end. The configuration is not
+characterised in this paper, but it is constrained: its pollution problem admits only one
+solution.
+
+\begin{proposition}[Necessary conditions on MEG]\label{prop:sp:lr:meg}
+On any MEG path (with $d^W>0$ and $\delta>0$):
+\begin{enumerate}
+    \item \emph{Deep circularity in the limit:} $\varpi\to1$ and $a\to1$, with
+    $\left(1-\varpi\right)W$ and $\left(1-a\right)W$ bounded, hence
+    $W\left(1-a\varpi\right)$ bounded while $W\to\infty$.
+    \item \emph{Storage absorption:} the ledger then forces
+    $\dot M^K=\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D-W\left(1-a\varpi\right)$ with the last
+    term bounded: any unbounded virgin inflow is absorbed, tonne for tonne, into the growing
+    capital stock.
+    \item \emph{Growth:} $K\ge K^R\to\infty$, and (for $F_{KR}\ge0$)
+    $g_C\ge\left(A_\infty-\delta-\rho\right)/\eta>0$.\footnote{The bound reads the Euler
+    equation~\eqref{eq:sp:sum:Cgrowth} with the wedge term gone: it presumes $\zeta\Omega^C$
+    converges and $w_Y\to1$ (or $\zeta\le0$ in the limit, which gives $w_Y\ge1$ and preserves
+    the inequality), and it reads $A_\infty$ at the path's limiting pollution stock. Both are
+    parts of MEG's open price system (Appendix~\ref{sec:app:longrun:gaps}).}
+\end{enumerate}
+\end{proposition}
+
+The economics of (i)--(ii): with growing throughput, a stable pollution sink
+(Lemma~\ref{lem:sp:lr:common}(ii)) requires both the untreated share and the recycling losses
+to vanish in absolute, not just relative, terms --- and what cannot be recycled must be
+\emph{built}. The capital stock is the landfill: extraction on MEG is not a flow of materials
+through the economy but a flow of materials into the economy's permanent structures, the mine
+moving into the building stock. At this level of generality that is where matters rest: the
+joint rates of $\left(N,D,S,W,K^R\right)$, the supporting price system, and whether the
+optimality conditions admit the configuration at all are open
+(Appendix~\ref{sec:app:longrun:gaps}). Under the workhorse family all three close --- one
+common material rate, a waste price that diverges here too, and a congestion threshold that
+decides admissibility --- in Proposition~\ref{prop:sp:wh:meg} below.
+
+Under trend growth MEG is promoted from one cell to the whole (I) column
+(Proposition~\ref{prop:sp:lr:trend}): every kernel expands materially against the backstop,
+including those the stationary theory confined to the SS. The trending rate systems --- one
+material rate on each branch, a looser sink threshold, the congestion brake balancing the
+trend rather than the credit --- are parametric and collected in
+Proposition~\ref{prop:sp:wh:trend}.
+
+\subsubsection{Dematerialised consumption}\label{sec:sp:longrun:path:dc}
+
+The DC path is the exit that opens when materials are not asymptotically essential: consumption
+sustained on capital alone while material input dies. Dropping essentiality does not weaken any
+of the resource results --- what it changes is only the fate of consumption after the material
+side winds down.
+
+\begin{proposition}[Placement of DC]\label{prop:sp:lr:dc}
+Any DC path satisfies:
+\begin{enumerate}
+    \item \emph{Only without essentiality:} under asymptotic essentiality no DC path exists.
+    \item \emph{Only after exhaustion:} dematerialisation before exhaustion is ruled out by the
+    same self-reviving logic as stranding --- while $S$ is bounded away from zero the value of
+    the marginal tonne beats its bounded extraction cost (divergently so on the growth branch,
+    where $F_R\to\infty$; by the viability condition on the bounded branch), the corner
+    condition~\eqref{eq:sp:sum:N-corner} fails, and extraction revives to feed $R$. Hence
+    exhaustion is exact, reserves are never stranded, and the discovery margin dies against the
+    diverging cost exactly as on the BCP, $X\to\bar X_{\max}$.
+    \item \emph{Only under regime (E):} under the backstop the revival argument applies at every
+    date --- reserves are replenishable at bounded cost forever --- so materials are never
+    abandoned.
+\end{enumerate}
+Two variants exist, split by the growth threshold: bounded DC ($A_\infty-\delta<\rho$), with
+$C\to\bar C=F\left(\bar K,0,\bar P\right)-\delta\bar K>0$ and $r\to\rho$; and growing DC
+($A_\infty-\delta>\rho$), asymptotically an $AK$ economy on capital alone with
+$g_C=\left(A_\infty-\delta-\rho\right)/\eta$.
+\end{proposition}
+
+When does the economy take this exit rather than the BCP, when both are on the table? When the
+matching conditions of Proposition~\ref{prop:sp:lr:bcp} hold, the BCP is the FOC-consistent
+limit and discarding materials while $F_R$ exceeds their recycled supply cost is not; when they
+fail, maintaining the loop is not FOC-consistent, and the exits partition by essentiality:
+collapse (essential) or DC (inessential, e.g.\ CES above unit elasticity). The profile of the
+phase-out path --- the decay rates of $R$, $W$, $K^R$ and the associated price asymptotics ---
+is left open (Appendix~\ref{sec:app:longrun:gaps}).
+
+\smalltitle{DC under trends: the Stiglitz escape.} Trend growth transforms this
+configuration more than any other except the SS. Consumption on a dematerialising path is
+paced by~\eqref{eq:sp:lr:gCmax}: on the trend-paced branch
+$g_C=\gamma_Ag_A+g_B+g_R$ with $g_R<0$, so the decline in tonnage is a direct deduction from
+growth, and DC is a sustained-consumption configuration precisely when the trends cover the
+decline, $\gamma_Ag_A+g_B+g_R\ge0$. Two consequences. First, DC opens to kernel-essential
+technologies: with $g_B>0$, material services $m=BR$ can hold up or grow while tonnes die
+--- the classic resource-augmenting escape, unavailable at any stationary technology, which
+is why Proposition~\ref{prop:sp:lr:dc}(i) reads ``essentiality'' as \emph{path}
+essentiality: under trends only the floor closes the exit. Second, the boundary between DC
+and collapse becomes a rate race rather than a property of the kernel: the same phase-out
+profile is sustained consumption under strong trends and collapse under weak ones, with the
+damped/catastrophic split of Section~\ref{sec:sp:longrun:collapse} applying on the collapse
+side. What pins $g_R$ --- the phase-out profile itself --- remains the configuration's open
+question, now under trends too (gap~(xix)).
+
+\smalltitle{Asymptotic rates at a glance.} Table~\ref{tab:sp:lr:rates} collects the asymptotic
+growth rates of the four paths in the notation of~\eqref{eq:sp:lr:gZ}, with
+$g_C=\left(A_\infty-\delta-\rho\right)/\eta$ on the growth branch.
+
+\begin{table}[ht]
+\centering
+{\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{l|cccc}
+ & SS & BCP & MEG & DC \\
+\hline
+$C,\,K,\,Y$ & $0$ & $g_C$ & $\ge g_C$ (open) & $0$ or $g_C$\,$^{a}$ \\
+$R,\,W$ & $0$ & $0$ & $>0$ (open) & $<0$ (open) \\
+$N$ & $0$ & $-\frac{\psi}{\psi+1}\,e_Rg_C$ & open & $<0$ (open) \\
+$D$ & $0$ & $\le g_N$ & open & open \\
+$S$ & $0$ & $g_N$ & open & open \\
+$X$ & $0$\,$^{*}$ & $0$ ($X\to\bar X_{\max}$) & open & $0$ ($X\to\bar X_{\max}$) \\
+$K^R$ & $0$ & $\frac{e_Rg_C}{\psi+1}$\,$^{b}$ & open & open \\
+$-p^W,\,-\zeta,\,p^S,\,C^N_N$ & $0$ & $e_Rg_C$ & open & open \\
+$r$ & $\rho$ & $A_\infty-\delta$ & $\ge A_\infty-\delta$ (open) & $\rho$ or $A_\infty-\delta$\,$^{a}$ \\
+\end{tabular}}
+\caption{Asymptotic growth rates $g_Z$ by configuration. In the SS column every entry is a
+genuine constant except $X$. $^{*}$Subexponentially divergent ($X$ grows linearly at rate
+$\bar N$). $^{a}$Bounded and growing variant, respectively. $^{b}$Power tail
+$\psi<\infty$; under the exponential tail ($\psi=\infty$) $g_N=-e_Rg_C$ and $K^R$ diverges
+linearly ($g_{K^R}=0$). The MEG entries are open in the general family only: under the
+workhorse the column closes (Proposition~\ref{prop:sp:wh:meg}). All entries are at
+stationary technology: under trends the SS column empties
+(Proposition~\ref{prop:sp:lr:trend}(i)) and the others shift --- consumption
+to~\eqref{eq:sp:lr:gCmax}, the price block to the pace $\pi$
+of~\eqref{eq:sp:lr:pace-price}, the material rates per
+Proposition~\ref{prop:sp:wh:trend}.}
+\label{tab:sp:lr:rates}
+\end{table}
+
+\begin{remark}[The overburden channel]\label{rem:sp:lr:overburden}
+The displaced-mass flows $\Omega^{N,S}N$ and $\Omega^{D,S}D$ enter the ledger as inflows that
+never draw on $R$ (the ``manna'' caveat of Section~\ref{sec:sp:setup:materialaccounting}). Once
+waste is an asset ($p^W<0$), these flows are \emph{credits} on the extraction and exploration
+margins: in deep circularity the economy would value exploration partly as direct mass
+harvesting. On the BCP this channel is priced and disciplined by the diverging discovery cost
+(Proposition~\ref{prop:sp:lr:bcp}(v)); in variants with bounded discovery costs it can become
+the dominant motive, which signals a modelling artefact rather than economics. The stock-flow
+caveat flagged in the setup is therefore substantive in the deep-circularity limit.
+\end{remark}
+
+\subsection{A workhorse family}\label{sec:sp:longrun:workhorse}
+
+Remark~\ref{rem:sp:lr:knife} said that choosing functional forms is choosing a cell of the
+selection map; this subsection makes the dial explicit. One parametric family covers every
+primitive, built so that each object the theory runs on --- the growth threshold, the
+discovery regime, essentiality, and the tail exponents $\psi$, $\chi$, $\mu$, $e_R$ --- is a
+named parameter. Appendix~\ref{sec:app:workhorse} verifies the maintained assumptions region by
+region (two require care), derives the tail mapping, works out what the material floor
+$\underline R$ changes, and closes the MEG rate system;
+Appendix~\ref{sec:app:workhorse:trend} derives the trending rate systems. The family is
+written to double, later, as the specification of the quantitative model. The trend rates
+$g_A,g_B\ge0$ of~\eqref{eq:sp:setup:tfp} are themselves parameters of the family: output is
+$A\,F$ with the kernel below evaluated at material services $B\tilde R$, and --- deliberately
+--- the floor is in \emph{tonnes}: $F=0$ whenever $R<\underline R$, so hard essentiality
+cannot be augmented away (the fifth clarification of Section~\ref{sec:sp:longrun:setup}).
+
+\smalltitle{The family.} With $\tilde R\equiv R-\underline R$, and $F=0$ whenever
+$R<\underline R$:
+\begin{align}
+u\!\left(C\right)&=\frac{C^{1-\eta}}{1-\eta},
+&
+v\!\left(P\right)&=\frac{v_0}{1+\beta_v}\,P^{1+\beta_v},
+&&
+\eta>1,\ \beta_v>0,
+\label{eq:sp:wh:uv}
+\\
+F&=\left[1-\Gamma\!\left(P\right)\right]
+\Big[b_K\big(K^Y\big)^{\frac{\varsigma-1}{\varsigma}}
++b_R\,\tilde R^{\frac{\varsigma-1}{\varsigma}}\Big]^{\frac{\varsigma}{\varsigma-1}},
+&
+\Gamma\!\left(P\right)&=1-e^{-\frac{\gamma_P}{1+\beta_F}P^{1+\beta_F}},
+&&
+\varsigma>0,\ \underline R\ge0,\ \beta_F\ge0,
+\label{eq:sp:wh:F}
+\\
+a\!\left(x\right)&=1-\left(1+x/x_a\right)^{-\psi}
+\ \ \text{or}\ \ 1-e^{-x/x_a},
+&
+c^T\!\left(\varpi\right)&=c_T\,\varpi^2,
+&&
+\psi\in\left(0,\infty\right],
+\label{eq:sp:wh:aT}
+\\
+C^N&=c_N\,N\,S^{-\chi}+\frac{c_\mu}{1+\mu}\,N^{1+\mu},
+&
+C^D&=\kappa\!\left(X\right)D,
+&&
+\chi>0,\ c_\mu,\mu\ge0,
+\label{eq:sp:wh:costs}
+\\
+\kappa_{\mathrm E}\!\left(X\right)&=c_D\left(\bar X_{\max}-X\right)^{-\chi_D},
+&
+\kappa_{\mathrm I}\!\left(X\right)&=\bar\kappa-\left(\bar\kappa-\kappa_0\right)e^{-X/X_\kappa},
+&&
+\chi_D>0,
+\label{eq:sp:wh:kappa}
+\\
+\theta\!\left(P\right)&=\theta_0\left(1+P/P_\theta\right)^{-\vartheta},
+&&&&
+\vartheta>0 .
+\label{eq:sp:wh:theta}
+\end{align}
+The extraction cost has a stock-sensitive part, linear in the rate --- which is what carries
+the tail $C^N_N\left(0,S\right)=c_NS^{-\chi}$ the BCP needs --- and a stock-insensitive
+congestion part $c_\mu N^{1+\mu}$ that is inert wherever $N$ is bounded and matters only where
+extraction expands without bound, i.e.\ on MEG, where it is the configuration's entire brake
+(Proposition~\ref{prop:sp:wh:meg}). Table~\ref{tab:sp:wh:dictionary} is the
+dictionary.
+
+\begin{table}[ht]
+\centering
+{\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{l|l}
+Theory object & In the workhorse family \\
+\hline
+Asymptotic return $A_\infty$~\eqref{eq:sp:lr:Ainfty} & $b_K^{\varsigma/\left(\varsigma-1\right)}$ if $\varsigma>1$ (times $1-\Gamma\left(\bar P\right)$); $0$ if $\varsigma\le1$ \\
+Growth threshold (Lemma~\ref{lem:sp:lr:common}(i)) & $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta\gtrless\rho$ \ (stationary technology) \\
+Effective threshold~\eqref{eq:sp:lr:effthreshold} & $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta\gtrless\rho+\eta\left(g_B+g_R\right)$ \ ($\varsigma>1$, $g_A=0$) \\
+Explosive cell (Lemma~\ref{lem:sp:lr:branches}(i)) & $\varsigma>1$ and $g_A>0$ \\
+Kernel tails $\beta_\infty,\epsilon_\infty,\gamma_A$~\eqref{eq:sp:lr:kernel-tails} & $\varsigma<1$: $\left(0,\,1/\varsigma,\,1\right)$; \ $\varsigma=1$, material share $\beta$: $\left(1-\beta,\,\beta,\,1/\beta\right)$ \\
+Trend pace~\eqref{eq:sp:lr:pace} & $g_C=\gamma_Ag_A+g_B+g_R$ on the trend-paced branch \\
+Essentiality (Def.~\ref{def:sp:lr:essential}) & $\varsigma<1$: always; $\varsigma=1$: iff $\delta>0$; $\varsigma>1$: iff $\underline R>0$ \\
+Discovery regime (Assumption~\ref{ass:sp:lr:discovery}) & $\kappa_{\mathrm E}$ / $\kappa_{\mathrm I}$ \\
+Recycling tail $\psi$~\eqref{eq:sp:lr:tails} & $\psi$, with $\gamma_a=x_a^{\psi}$; \ $a'\!\left(0\right)=\psi/x_a<\infty$ \\
+Extraction tail $\chi$~\eqref{eq:sp:lr:tails} & $\chi$, with $C^N_N\left(0,S\right)=c_NS^{-\chi}$ \\
+MEG congestion brake, Prop.~\ref{prop:sp:wh:meg} & $\mu$, with threshold $\mu>\left(\psi+1\right)/\psi$; material rate $g_C/\left(1+\mu\varsigma\right)$ \\
+Growth elasticity $e_R$ of $F_R$ & $1/\varsigma$ if $\underline R=0$; endogenous in $\left[1/\varsigma,1\right]$ if $\underline R>0$ \\
+BCP matching, Prop.~\ref{prop:sp:lr:bcp}(iv) & $\chi=\left(\psi+1\right)/\psi$, one literal parameter restriction \\
+Tame damages, Prop.~\ref{prop:sp:lr:bcp}(vi) & $\beta_v>0$ \emph{and} $\beta_F>0$, plus rate conditions (App.~\ref{sec:app:workhorse}) \\
+SS recycling active, Prop.~\ref{prop:sp:lr:sss}(iv) & $\left(\psi/x_a\right)V>F_Kw_Y$ at the candidate steady state \\
+Tipping (Section~\ref{sec:sp:opt:foc}) & possible iff $\vartheta>1$, absorption peaks at $P^{*}=P_\theta/\left(\vartheta-1\right)$ \\
+\end{tabular}}
+\caption{The workhorse dictionary: each object the long-run analysis runs on, as a named
+parameter (or explicit parameter restriction) of the family.}
+\label{tab:sp:wh:dictionary}
+\end{table}
+
+\smalltitle{The selection map in parameters.} Restating the stationary-technology map of
+Section~\ref{sec:sp:longrun:selection} ($g_A=g_B=0$; the trending cells are made parametric
+in Proposition~\ref{prop:sp:wh:trend} below):
+
+\begin{center}
+{\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{l|cc}
+ & (E): $\kappa_{\mathrm E}$ & (I): $\kappa_{\mathrm I}$ \\
+\hline
+$\varsigma>1$, \ $b_K^{\frac{\varsigma}{\varsigma-1}}-\delta>\rho$ &
+\textbf{BCP}$^{\dagger}$; else DC ($\underline R=0$) or collapse ($\underline R>0$)$^{\P}$ &
+\textbf{MEG}$^{\S}$ \\
+$\varsigma>1$, \ $b_K^{\frac{\varsigma}{\varsigma-1}}-\delta<\rho$ &
+DC ($\underline R=0$) or collapse ($\underline R>0$)$^{\P}$ &
+\textbf{SS} \\
+$\varsigma\le1$ \ ($A_\infty=0$) &
+collapse$^{\P}$ &
+\textbf{SS} \\
+\end{tabular}}
+\end{center}
+
+\noindent{\footnotesize $^{\dagger}$Requires the matching restrictions:
+$\chi=\left(\psi+1\right)/\psi$, the discovery matching of
+Proposition~\ref{prop:sp:lr:bcp}(v), and the damage rate conditions with $\beta_v,\beta_F>0$
+(Appendix~\ref{sec:app:workhorse}). $^{\S}$Requires the congestion threshold
+$\mu>\left(\psi+1\right)/\psi$ and the damage rate conditions of
+Proposition~\ref{prop:sp:wh:meg}; when they fail the cell admits no regular exponential limit
+at all (gap~(xii) of Appendix~\ref{sec:app:longrun:gaps}). $^{\P}$Collapse is damped and
+characterised (Proposition~\ref{prop:sp:wh:collapse}) when essentiality is soft
+($\varsigma\le1$, $\underline R=0$); it is catastrophic --- production halts in finite time,
+lifetime utility $-\infty$ --- when it comes from the floor ($\underline R>0$,
+Lemma~\ref{lem:app:col:shutdown}), which in the growth row leaves the cell with no damped
+regular path at all (gap~(xiv)).\par}
+
+\medskip
+
+\smalltitle{What the floor buys.} The Stone--Geary term $\underline R>0$ speaks to the
+limited-substitutability literature --- a minimum material throughput below which production
+is impossible --- and it earns its place four times over
+(derivations in Appendix~\ref{sec:app:workhorse:floor}):
+\begin{enumerate}
+    \item \emph{Essentiality with growth capacity, from a standard form.} With $\varsigma>1$
+    and $\underline R>0$, $F_R\to\infty$ as $R\downarrow\underline R$ and output dies below the
+    floor, so materials are asymptotically essential --- while
+    $A_\infty=b_K^{\varsigma/\left(\varsigma-1\right)}>0$ is untouched. This is precisely the
+    pairing that the clarifications of Section~\ref{sec:sp:longrun:setup} said requires
+    nonstandard families. The floor acts as an Inada barrier: it never binds along an optimal
+    path with active production.
+    \item \emph{The DC exit closes.} $R\to0$ crosses the floor, so dematerialised consumption
+    is unavailable and $\underline R$ becomes a fourth primitive of the selection map: with a
+    floor, the (E) column exits are BCP or collapse only.
+    \item \emph{The BCP's throughput is anchored by technology.} Diverging material prices
+    push $R$ down to the floor, so $\bar R=\underline R$ and, with $N\to0$ and
+    $a\varpi\to1$, $\bar W=\underline R$: the size of the eternal loop is a technological
+    datum, replacing the delicate level-matching argument of
+    Appendix~\ref{sec:app:longrun:matching}.
+    \item \emph{One knife-edge softens --- but only one.} The rate-pinning of
+    Proposition~\ref{prop:sp:lr:bcp}(iii) relaxes to an interval,
+    $g_{p^S}\in\left[g_C/\varsigma,\,g_C\right]$, with the gap $\tilde R\to0$ absorbing the
+    difference between the growth of $F_R$ and the growth of prices. The extraction matching
+    $\chi=\left(\psi+1\right)/\psi$, however, \emph{persists}: it relates the scarcity block to
+    the waste price and never involves $F_R$. Which point of the interval the optimum selects
+    is open (Appendix~\ref{sec:app:longrun:gaps}).
+\end{enumerate}
+The floor also exacts a price. In every cell whose exit is collapse, hard essentiality turns
+the collapse catastrophic: the loop cannot hold $R\ge\underline R$ on dying inflows,
+production halts at a finite date, and lifetime utility is $-\infty$
+(Lemma~\ref{lem:app:col:shutdown}). The damped collapse profiles of
+Section~\ref{sec:sp:longrun:collapse} therefore require $\underline R=0$. Trend growth
+mitigates the price without waiving it: a trending economy can hold the floor with a closed
+loop whose bills the trend pays --- the floor-anchored BCP candidate of
+Proposition~\ref{prop:sp:lr:trend}(iii) --- so the catastrophic verdict applies only where
+that candidate's conditions fail too (gap~(xviii)).
+
+\smalltitle{Materially expanding growth: the congestion dial.} The workhorse also closes the
+one configuration the general theory leaves open. On MEG the reserve never dies and the
+scarcity tail $\chi$ goes quiet; what disciplines the virgin margin instead is the congestion
+exponent $\mu$, and the whole configuration turns on it. Derivations are in
+Appendix~\ref{sec:app:workhorse:meg}; the analysis maintains the baseline $\phi^I>0$ and sets
+$\Omega^{D,S}=0$, since with a bounded discovery cost and a diverging waste asset any positive
+exploration overburden makes exploration a direct mass-harvesting technology --- the artefact
+of Remark~\ref{rem:sp:lr:overburden}, binding on this path.
+
+\begin{proposition}[MEG under the workhorse]\label{prop:sp:wh:meg}
+In the MEG cell ($\varsigma>1$, $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta>\rho$,
+discovery $\kappa_{\mathrm I}$), with $c_\mu>0$ and $\mu>0$, a MEG solution with
+asymptotically exponential rates exists only if
+\begin{align}
+\mu>\frac{\psi+1}{\psi},
+\qquad
+\eta g_C-\beta_vm\;\le\;\mu g_m,
+\qquad
+g_C-\beta_Fm\;\le\;\mu g_m,
+\label{eq:sp:wh:meg-conditions}
+\end{align}
+with $g_m$ and $m$ as below ($\mu>1$ under the exponential tail), and any such path
+satisfies:
+\begin{enumerate}
+    \item \emph{Exact growth at the undamaged return:} $P\to0$, all wedges vanish, and
+    $g_C=\left(A_\infty-\delta-\rho\right)/\eta$ with
+    $A_\infty=b_K^{\varsigma/\left(\varsigma-1\right)}$: the hedges of
+    Proposition~\ref{prop:sp:lr:meg}(iii) resolve and its growth bound holds with equality.
+    \item \emph{One material rate:} $g_N=g_D=g_R=g_W=g_{M^K}=g_X=g_m$ with
+    \begin{align}
+    g_m=\frac{g_C}{1+\mu\varsigma}\;\in\;\left(0,g_C\right),
+    \label{eq:sp:wh:gm}
+    \end{align}
+    absolute expansion with relative decoupling ($\Omega\to0$ at rate $g_C-g_m$), and a
+    pinned virgin share,
+    $N/R\to\bar\sigma g_m/\left[\left(g_m+\delta\right)\left(1+\Omega^{N,S}\right)\right]
+    \in\left(0,1\right)$.
+    \item \emph{Scarcity is inventory:} $p^S\to\bar\kappa$ and $p^X\to0$ --- the rent pinned
+    by replacement cost, as in the stationary state --- while reserves grow as a produced
+    inventory, $S\sim\left(\chi c_NN/\left(r\bar\kappa\right)\right)^{1/\left(1+\chi\right)}$,
+    so $g_S=g_m/\left(1+\chi\right)$ and the reserve-to-extraction ratio falls.
+    \item \emph{The waste asset carries MEG too:} $\varpi=1$ from a finite date, $-p^W$ and
+    $-\zeta$ diverge at rate $\mu g_m$, and extraction is priced congestion against credit,
+    $c_\mu N^\mu\sim\left(1+\Omega^{N,S}\right)\left(-p^W\right)$; the delivered-tonne value
+    $\Psi$ diverges only at rate $\mu g_m/\left(\psi+1\right)$ (subexponentially under the
+    exponential tail), and $K^R$ grows at $g_m\left(\psi+1+\mu\right)/\left(\psi+1\right)$,
+    strictly between $g_m$ and $g_C$: the loop deepens against its own throughput while
+    vanishing relative to the economy.
+    \item \emph{Pollution dies:} $\Xi\sim e^{-g_\Xi t}$ with
+    $g_\Xi=\frac{\mu\psi-\left(\psi+1\right)}{\psi+1}\,g_m>0$, and $P\to0$ at rate
+    $m=\min\left(g_\Xi,\theta_0\right)$.
+\end{enumerate}
+When~\eqref{eq:sp:wh:meg-conditions} fails, the cell admits no regular exponential
+sustained-consumption limit at all; what the optimum then does is open (gap~(xii)).
+\end{proposition}
+
+Three readings. First, the cornucopian path is not business as usual: it exists only where
+extraction is congested steeply enough, and on it pollution vanishes, recycling is complete,
+and the economy dematerialises in relative terms even as throughput explodes --- with every
+net tonne extracted going into the built environment, now priced: the dominant motive for the
+marginal tonne is its value as feedstock and structure, not its marginal product, which is why
+extraction survives congestion at all. Second, waste is the economy's material asset on
+\emph{both} growth configurations: $p^W\to-\infty$ on the BCP because throughput is scarce,
+and on MEG because the virgin alternative is congested --- the mine above ground is not a
+special feature of the circular path. Third, the threshold
+$\mu>\left(\psi+1\right)/\psi$ is the BCP matching condition $\chi=\left(\psi+1\right)/\psi$
+turned from a knife-edge into an open region: in both, the tail of the virgin brake is set
+against the tail of the recycling yield, but depletion must match it exactly where congestion
+need only beat it. The quantitative model inherits a clean menu: under regime (I) the economy
+ends in the stationary state or, past the growth threshold, on a MEG path whose admissibility
+is one parameter inequality.
+
+\smalltitle{Two warnings from the verification.} First, the CES kernel fails one maintained
+assumption on each side of unit elasticity: marginal indispensability
+(Assumption~\ref{ass:sp:lr:F}(i)) below one --- harmless, as that region lives on the bounded
+branch --- and saturation (Assumption~\ref{ass:sp:lr:F}(iii)) above one, where the
+classification instead needs the bulk-materials condition
+$b_R^{\varsigma/\left(\varsigma-1\right)}<c^c$: a tonne of materials, used essentially alone,
+must not out-earn its own collection cost. Second, the common multiplicative-exponential
+damage specification ($\beta_F=0$, i.e.\ $\Gamma'\!\left(0\right)>0$) kills both growth
+configurations: marginal output damage is then proportional to output itself, the pollution
+price outruns every material price, and extraction is forced to its corner --- on the BCP
+directly, and on MEG through the damage conditions
+of~\eqref{eq:sp:wh:meg-conditions}. For either circular growth path to exist, \emph{output}
+damages, like utility damages, must have vanishing marginal at zero pollution. Under trend
+growth this second warning sharpens from a growth-cell condition into a global one: every
+trending cell grows (Lemma~\ref{lem:sp:lr:branches}), so at $\beta_F=0$ \emph{no} regular
+sustained configuration exists at any trend vector --- multiplicative-exponential damages and
+technological progress are jointly incompatible with a regular long run in this family.
+
+\smalltitle{The trending rate systems.} The trending map of
+Section~\ref{sec:sp:longrun:selection} becomes parametric in the workhorse. Derivations are
+in Appendix~\ref{sec:app:workhorse:trend}; existence is by rate-and-count throughout, the
+same standard as Proposition~\ref{prop:sp:wh:meg}.
+
+\begin{proposition}[Trending rate systems under the workhorse]\label{prop:sp:wh:trend}
+Let $\left(g_A,g_B\right)\ne\left(0,0\right)$, $\eta>1$. In the workhorse family:
+\begin{enumerate}
+    \item \emph{Branch placement.} $\varsigma>1$ with $g_A>0$ is explosive (no regular
+    exponential path). $\varsigma>1$ with $g_A=0$ is endogenous iff
+    $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta>\rho+\eta\left(g_B+g_R\right)$ at the
+    configuration's $g_R$, with $g_C=\left(A_\infty-\delta-\rho\right)/\eta$; otherwise, and
+    for all $\varsigma\le1$, the economy is trend-paced with
+    $g_C=\gamma_Ag_A+g_B+g_R$, where $\gamma_A=1$ for $\varsigma<1$ and $\gamma_A=1/\beta$
+    for Cobb--Douglas with material share $\beta$.
+    \item \emph{The BCP (regime (E), loop maintained).} The rate system of
+    Proposition~\ref{prop:sp:lr:bcp} holds with $e_Rg_C$ replaced by the pace $\pi$
+    of~\eqref{eq:sp:lr:pace-price}: $g_N=g_S=-\frac{\psi}{\psi+1}\pi$, the material price
+    block diverging at $\pi$, $g_{K^R}=\pi/\left(\psi+1\right)$. The matchings are
+    trend-invariant --- $\chi=\left(\psi+1\right)/\psi$ and the discovery matching
+    unchanged --- and the damage condition reads
+    $\eta g_C-\min\left(\left|g_N\right|,\theta_0\right)\le\pi$ with $\beta_v,\beta_F>0$.
+    On the trend-paced branch ($\varsigma\le1$: new territory) $\pi=g_C$; with the floor,
+    $\bar R=\underline R$ anchors the loop and the interval logic of the floor subsection
+    applies at the pace $\pi$.
+    \item \emph{MEG (regime (I): the whole column).} Requires $c_\mu>0$, $\mu>0$, and the
+    \emph{trend-invariant} congestion threshold $\mu>\left(\psi+1\right)/\psi$. One common
+    material rate $g_N=g_D=g_R=g_W=g_{M^K}=g_m$:
+    \begin{align}
+    g_m=\frac{g_C+\left(\varsigma-1\right)g_B}{1+\mu\varsigma}
+    \ \ \text{(endogenous branch)},
+    \qquad
+    g_m=\frac{\gamma_Ag_A+g_B}{\mu},
+    \quad
+    g_C=\left(1+\tfrac{1}{\mu}\right)\left(\gamma_Ag_A+g_B\right)
+    \ \ \text{(trend-paced)},
+    \label{eq:sp:wh:trend-gm}
+    \end{align}
+    with $-p^W$ and $-\zeta$ diverging at $\mu g_m$, $g_{K^R}=g_m\left(\mu+\psi+1\right)/\left(\psi+1\right)$,
+    emissions dying at $g_\Xi=\left[\mu\psi-\left(\psi+1\right)\right]g_m/\left(\psi+1\right)$,
+    $P\to0$ at $m_P=\min\left(g_\Xi,\theta_0\right)$, and the damage conditions
+    $\eta g_C-\beta_vm_P\le\mu g_m$ and $g_C-\beta_Fm_P\le\mu g_m$. On the trend-paced
+    branch this is the fate of the former SS cell: material throughput grows at
+    $\left(\gamma_Ag_A+g_B\right)/\mu$ --- absolute decoupling exactly in the limit
+    $\mu\to\infty$, relative decoupling (rate gap $g_C-g_m>0$) for every finite $\mu$.
+    \item \emph{DC (regime (E), loop abandoned, $\underline R=0$).} Sustained iff the trends
+    cover the decline: $g_C=\gamma_Ag_A+g_B+g_R\ge0$ on the trend-paced branch --- for
+    $\varsigma\le1$ this is the Stiglitz escape, open only through $g_A,g_B>0$ --- and
+    $g_C=\left(A_\infty-\delta-\rho\right)/\eta$ on the endogenous branch
+    ($\varsigma>1$). The profile ($g_R$ itself) remains open (gap~(xix)).
+\end{enumerate}
+When the cell's conditions fail --- the congestion threshold, the matchings, or the damage
+rates --- the cell admits no regular exponential sustained-consumption limit, and its fate is
+open: the trending twins of gaps~(xii) and~(xiv).
+\end{proposition}
+
+Two features deserve emphasis, because they are the rebuild's substantive findings. First,
+\emph{the structural knife-edges are trend-invariant}: the BCP's extraction matching
+$\chi=\left(\psi+1\right)/\psi$ and MEG's congestion threshold $\mu>\left(\psi+1\right)/\psi$
+survive every trend vector unchanged, because both are races between the loop's yield tail
+and the virgin margin's tail, run at a common pace that cancels. Technology trends change how
+fast the system moves, never which tails must beat which. Second, \emph{the damage-rate
+conditions are not trend-invariant}: they tighten with $g_C$ on their left side while the
+absorbing rates scale with the material block, so faster trends demand steeper damage tails
+($\beta_v$, $\beta_F$) --- growth makes the clean limit obligatory
+(Lemma~\ref{lem:sp:lr:affluence}) and simultaneously harder to support. The quantitative
+model inherits the sharpened menu: under regime (I) with any technological progress, the
+long run is trending MEG or nothing regular, and its admissibility is still one parameter
+inequality plus damage-rate checks.
+
+\subsection{Collapse}\label{sec:sp:longrun:collapse}
+
+The four configurations exhaust the sustained-consumption limits, but not the selection map:
+some cells offer no sustained exit at all. Within the regular class consumption converges,
+so in those cells $C\to0$ --- \emph{collapse}. This subsection completes the classification
+by characterising it: a scope distinction that organises everything, a lemma of common
+necessary conditions, and the agreed lead case, Cobb--Douglas technology under exhaustible
+discovery --- the cell of the classic exhaustible-resource literature, now with a recycling
+loop attached. Derivations and proofs are in Appendix~\ref{sec:app:collapse}.
+
+\begin{definition}[Collapse path]\label{def:sp:lr:collapse}
+A regular solution of Problem~\ref{prob:sp} follows a \emph{collapse path} if $C\to0$.
+\end{definition}
+
+\smalltitle{Damped and catastrophic collapse.} With $\eta>1$, $u\to-\infty$ as $C\to0$, and
+along an exponential decline $C\sim e^{g_Ct}$ lifetime utility is finite if and only if
+\begin{align}
+\left(\eta-1\right)\left|g_C\right|<\rho .
+\label{eq:sp:lr:damping}
+\end{align}
+Call a collapse \emph{damped} when $U_0>-\infty$ and \emph{catastrophic} otherwise. The
+condition~\eqref{eq:sp:lr:damping} carries far more than the value: it is simultaneously the
+convergence condition of every forward price integral and the transversality condition on a
+collapse path (Appendix~\ref{sec:app:collapse:scope}) --- finite value, well-defined prices
+and transversality are one and the same restriction on the speed of decline. When some
+feasible path is damped, no catastrophic path is optimal and the analysis below applies;
+when every feasible path is catastrophic the discounted criterion assigns $-\infty$ across
+the board and loses its selection power (gap~(xiv)). A second distinction decides which case
+obtains: call essentiality \emph{hard} if production is impossible below a positive material
+floor ($\underline R>0$) and \emph{soft} if output is positive at every $R>0$ yet cannot be
+sustained as $R\to0$ (the workhorse at $\varsigma\le1$ with $\delta>0$). Under hard
+essentiality every collapse is catastrophic --- the loop cannot hold $R\ge\underline R$ on
+dying inflows, so production halts at a finite date
+(Lemma~\ref{lem:app:col:shutdown}) --- and the damped profiles below therefore live under
+soft essentiality.
+
+\smalltitle{Collapse under trends.} Trend growth shrinks the collapse region to a rate race:
+consumption dies only where the material decline outruns the trends,
+$g_C=\gamma_Ag_A+g_B+g_R<0$ (Proposition~\ref{prop:sp:lr:trend}(iii)), so every collapse
+cell of the stationary map is either rescued --- by the trending BCP, by trend-paced DC, or
+at the floor by the floor-anchored candidate --- or survives only with a steeper decline
+behind it. The damping condition~\eqref{eq:sp:lr:damping} is untouched: it restricts the
+speed of decline of $C$, whatever paces it. The profiles below (the lemma and the lead case)
+are derived at stationary technology, where Appendix~\ref{sec:app:collapse} carries them in
+full; their trending counterparts --- and the prior question of whether any cell optimally
+collapses at a positive trend vector --- are gap~(xix). One inheritance does transfer
+immediately: the shutdown lemma is mass-balance logic, so hard essentiality still turns any
+collapse that does occur catastrophic, trends or not.
+
+\begin{lemma}[Common necessary conditions on damped collapse]\label{lem:sp:lr:collapse}
+Any regular damped collapse (with $\delta>0$) satisfies, as $t\to\infty$:
+\begin{enumerate}
+    \item \emph{The depreciation floor:} $I+\delta K\ge0$ caps the speed of decline of the
+    capital stock, $g_K\ge-\delta$: an economy cannot dismantle itself faster than its
+    capital depreciates. Equality is the zero-gross-investment corner, on which nothing is
+    replaced and consumption is net output.
+    \item \emph{A below-discount interest rate:} $r\to\rho+\eta g_C<\rho$, with the capital
+    margin settling at $F_Kw_Y\to\left(\rho+\eta g_C+\delta\right)\bar q>0$.
+    \item \emph{The economy dies whole:} in the collapse cells, $Y,K,R,N,D,W,M^K\to0$.
+    Recycling cannot avert this: the loop is a return flow, not a source --- storage gives
+    back at most what investment put in, net of depreciation and loop losses --- so a
+    material side without virgin inflow is strictly losing mass
+    (Appendix~\ref{sec:app:collapse:lemma}, the mass-balance step).
+    \item \emph{The environment recovers and is priced away:} $\Xi\to0$, $P\to0$, and the
+    marginal damage in goods units dies, $p^P\to0$ for the workhorse: as consumption dies,
+    marginal utility explodes and pollution becomes cheap in the only units the margins use.
+    Collapse is the one configuration class that never interrogates the damage tails ---
+    no analogue of the $\beta_v,\beta_F$ conditions appears.
+    \item \emph{Scarcity dies in value:} $p^S\to0$ and $p^X\to0$, even where the stocks they
+    price are stranded.
+\end{enumerate}
+\end{lemma}
+
+\begin{proposition}[Collapse under the workhorse: the Cobb--Douglas lead case]
+\label{prop:sp:wh:collapse}
+Take the workhorse at $\varsigma=1$
+($F=\left[1-\Gamma\right]b_0\big(K^Y\big)^{1-\beta}R^\beta$, $\underline R=0$, scale
+$b_0>0$), $\delta>0$, $g_A=g_B=0$,
+regime (E). Any regular damped collapse with exponential rates and $g_C=g_K$ satisfies:
+\begin{enumerate}
+    \item \emph{Self-similar descent:} one common rate
+    $g\equiv g_C=g_K=g_Y=g_R=g_W=g_{M^K}\in\left[-\delta,0\right)$, every ratio and every
+    normalised price converging: a stationary-state price system on an exponentially dying
+    path.
+    \item \emph{The speed:} the interior $g$ solves the level system of
+    Appendix~\ref{sec:app:collapse:cd}; when that system returns $g<-\delta$ the collapse
+    runs at the corner instead, $g=-\delta$ with zero gross investment, which is consistent
+    with the capital margin exactly when $\left(\eta-1\right)\delta<\rho$ --- the fastest
+    feasible collapse is damped precisely when it is priceable. In the wedge-light benchmark
+    the speed falls with the quality of what remains: a richer stranded reserve, or cheaper
+    recycling, slows the descent.
+    \item \emph{Stranding, not exhaustion:} $S\to\bar S>0$, pinned (in the interior variant)
+    by the terminal extraction margin
+    $\bar\Psi=c_N\bar S^{-\chi}\bar w_N+\bar p^W\!\left(1+\Omega^{N,S}\right)$; the Hotelling
+    rent dies with the economy, $p^S\sim e^{gt}$; exploration stops at a finite date with
+    $X\to\bar X<\bar X_{\max}$. The economy leaves ore in the ground and blanks on the map:
+    reserves and deposits are both stranded.
+    \item \emph{Circular descent:} treatment and recycling settle at interior
+    stationary-like levels, and the loop is fed from two dying sources --- extraction, and
+    the release of embodied material from the shrinking capital stock,
+    $\bar W\left(1-\bar a\bar\varpi\right)
+    =\left(1+\Omega^{N,S}\right)\bar N+\left|g\right|\bar M^K$. In the corner variant of the
+    extraction margin the first source is shut and the loop runs on the release alone: the
+    economy lives on its own carcass, with the circularity gap pinned by the decay rate
+    (Appendix~\ref{sec:app:collapse:cd}).
+    \item \emph{Pollution dies:} $P\to0$ at rate $\min\left(\left|g\right|,\theta_0\right)$
+    with $p^P\to0$.
+\end{enumerate}
+\end{proposition}
+
+Four readings. First, \emph{stranding is the signature of collapse}: every sustained
+configuration under regime (E) exhausts exactly --- reserves are never stranded, because a
+live economy always revives the margin --- while a dying economy abandons tonnes whose
+per-tonne cost outlasts their worth. ``Reserves are never stranded'' is a
+sustained-consumption theorem, not a general one. Second, the capital stock changes sides:
+on MEG the built environment is the landfill, absorbing every net tonne; on collapse the flow
+reverses and \emph{the building stock becomes the mine}, its depreciation feeding the loop
+that keeps the last production running. Third, the classic benchmark sits at the boundary:
+at $\delta=0$ the lead case reproduces the declining-consumption optimum of the
+exhaustible-resource literature, $g_C=-\rho/\eta$ on a run-down resource with $K$ intact;
+positive depreciation changes the endgame --- capital dies too, the decline is floored at
+$-\delta$, and the descent is priced off the stranded margin rather than off exhaustion.
+Fourth, the environmental problem solves itself on the way down: pollution vanishes in
+quantity and in price, so none of the damage-tail conditions that discipline the growth
+paths has a counterpart here --- the planner's last concern is materials, not pollution.
+
+\begin{remark}[The growth-(E)-essential cell]\label{rem:sp:lr:growthcollapse}
+Past the growth threshold, collapse is not available as a regular damped limit: the CES
+kernel keeps $F_K$ above its $AK$ backbone at \emph{every} point of the domain, so with
+vanishing wedges $r>\rho$ and consumption cannot die (with $\phi^I=0$ this is exact;
+with $\phi^I>0$ a bounded ``wedge-choked'' exception survives as a level condition,
+Lemma~\ref{lem:app:col:nogrowthcollapse}). In the growth-(E) cell with essential materials
+and failed matching, sustained consumption and damped collapse are therefore \emph{both}
+unavailable: the cell holds no damped regular path at all --- the (E)-column twin of
+gap~(xii). An economy in that cell grows into a wall: hard essentiality makes every collapse
+catastrophic, and what the optimum does --- a non-regular descent, or a ranking of
+catastrophic paths by an overtaking criterion --- is open (gap~(xiv)). Trend growth offers
+this cell its one exit: the floor-anchored closed-loop BCP of
+Proposition~\ref{prop:sp:lr:trend}(iii), a rate-consistent candidate whenever
+$\left(g_A,g_B\right)\ne\left(0,0\right)$; whether it exists as an optimum is part of
+gap~(xviii).
+\end{remark}

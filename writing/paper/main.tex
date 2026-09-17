@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+\input{Packages.tex}
+
+
+
+\title{The Environmental Macroeconomics of the Circular Economy}
+
+\author{Rasmus Kehlet Skjødt Berg
+% \thanks{University of Copenhagen, Oster Farimagsgade 5, 1353 Copenhagen K, Denmark. E-mail: rasmus.kehlet.berg@econ.ku.dk.} 
+\and 
+Peter Birch Sørensen
+% \thanks{University of Copenhagen, Oster Farimagsgade 5, 1353 Copenhagen K, Denmark. E-mail: peter.birch.sorensen@econ.ku.dk.}
+}
+
+\begin{document}
+\maketitle
+
+\input{abstract.tex}
+
+%%%% Correspondence to:
+\vfill
+\begin{center}
+\textbf{Correspondence to:} \\
+Rasmus Kehlet Skjødt Berg \\
+Department of Economics, University of Copenhagen \\
+Øster Farimagsgade 5, Building 26, 1353 Copenhagen K, Denmark \\
+Email: \texttt{rasmus.kehlet.berg@econ.ku.dk}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  Main sections                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{Sections/introduction}
+\input{Sections/model_setup}
+\input{Sections/first_best_allocation}
+\input{Sections/market_implementation}
+\input{Sections/quantitative_analysis}
+\input{Sections/conclusion}
+
+
+
+\clearpage
+\printbibliography[
+heading=bibintoc,
+title={References},
+category=cited]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                      Appendices                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\begin{appendices}
+\setcounter{page}{1}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+% The derivations referenced in the main text as the "online appendix" are not reproduced here.
+\end{appendices}
+
+\end{document}

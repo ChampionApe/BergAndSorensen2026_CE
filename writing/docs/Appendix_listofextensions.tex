@@ -1,0 +1,46 @@
+\section{Extensions and open items}\label{sec:app:extensions}
+
+The yield-ceiling variant that previously headed this list --- the soft ceiling
+$\lim_{x\to\infty}a\left(x,t\right)=1$ --- is no longer an extension: it is carried in the model as
+case~(S) of Section~\ref{sec:sp:setup:primitives}, alongside the minimum material requirement
+$\bar R\ge0$. What remains here are variants we have not built.
+
+\smalltitle{Residence time beyond the waste stock.} The waste stock $\mathcal W$ of
+Section~\ref{sec:sp:setup:primitives} gives the recovery pipeline its residence time and ties
+circular throughput to the stock of matter actually in the economy. Three refinements remain
+unbuilt. First, residence time in \emph{use}: the embodied content of consumption, of extraction and
+exploration effort, and of treatment is still released as waste in the same period the final good is
+absorbed; giving every use $j$ a stock $M^j$ with release rate $\delta^j$ would replace the pair
+$\left(\Phi^j,\Omega^j\right)$ by a single intensity plus a release rate, with the current
+specification recovered in the limit of immediate release, and the ledger survives unchanged in form
+with $M^K$ replaced by total material in use. Second, the handling share $\mu$ as a control --- an
+explicit landfill-mining margin, faster recovery of the stockpile at rising marginal cost --- which
+makes $\mathcal W$ a reserve depleted at a chosen rate rather than a passive buffer. Third, a
+leaking stockpile: a term $\ell\mathcal W_t$ in the pollution transition that gives landfills a flow
+cost alongside their asset value. The theory keeps $\mu$ constant and the stockpile inert; the
+quantitative model is the natural place for the last two margins.
+
+\smalltitle{A scale-dependent material requirement.} The minimum material requirement $\bar R$ is a
+constant flow, which is the strong form of the assumption: it says the floor is independent of how
+large the economy is. The natural alternative is a maintenance reading, $\bar R=\bar r K$, under which
+the floor is the material needed to hold the capital stock intact --- a close relative of the
+$\Phi^K\delta K$ term the accounting already carries. This is endogenous and shrinks as capital
+shrinks, so it softens the finite-duration result of Section~\ref{sec:sp:longrun} into a trade-off
+between the size of the capital stock and the length of the material era, and it is the version a
+reader is most likely to ask about.
+
+\smalltitle{Irreversible pollution.} Assumption~\ref{ass:lr:theta} imposes a regeneration floor,
+$\theta\left(P\right)\ge\theta_{\min}>0$, making pollution fully reversible: once emissions cease the
+stock regenerates completely. Permanent legacies --- $\theta\to0$ at finite $P$ --- would add a
+hysteresis dimension to every entry of the long-run classification, and interact with the
+non-convexity the decay function already introduces.
+
+\smalltitle{Alternative embodied-materials assumptions.} The two variants of $\Phi^I$ set aside in
+Section~\ref{sec:sp:setup:aggregatematerial} --- exogenous in levels, and constant over time --- are
+recorded in Appendices~\ref{sec:app:exogenousPhiI} and~\ref{sec:app:constantPhiI}.
+
+\smalltitle{One resource stock.} Collapsing extraction and exploration into a single activity is the
+special case $C^D_{DD}=0$ (just-in-time discovery). It is not the model we want --- the wedge between
+the reserve rent and the discovery margin is the economics of the resource side, and the
+stranding-versus-exhaustion distinction is unstatable with one stock --- but it is a streamlined
+presentation worth having available.

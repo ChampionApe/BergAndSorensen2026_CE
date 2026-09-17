@@ -1,0 +1,132 @@
+\section{Notation}\label{sec:app:notation}
+
+A reference table, to be consulted rather than read. Each symbol is defined where it is introduced, and
+this appendix collects the definitions in one place with the conventions that generated them.
+Section~\ref{sec:app:sp:units} classifies the same symbols by units instead, and is the place to look
+when a condition mixes the two.
+
+The model carries two accounts at once: a value account in units of the final good, and a material
+account in tonnes. Most of the notation exists to keep them apart, and the rules below are what make a
+symbol readable without the sentence that introduced it.
+
+\subsection{Rules}\label{sec:app:notation:rules}
+
+\begin{enumerate}
+\item \textbf{A superscript names a use or a process; a subscript names time.} $K^Y$ is capital in
+production, $K^R$ capital in recycling, $C^N$ the cost of extraction, $W^Y$ the waste from production.
+The period subscript is suppressed wherever timing carries no content and written wherever it does,
+which in practice means the transition equations. The exogenous time argument of a primitive
+($F$, $a$, $C^N$, $C^D$, $c^c$, $c^T$) is suppressed on the same terms.
+
+\item \textbf{A stock is dated at the beginning of its period; a flow occurs during it.} A transition
+equation therefore states what the period-$t$ flows leave behind for $t+1$. This is capital-style
+dating and it fixes, once, which period a costate attaches to: the period in which the transition it
+prices is chosen.
+
+\item \textbf{A calligraphic capital is a function, a base or an aggregate}, never a quantity of the
+same kind as its Roman counterpart. $\mathcal F$ is the technology whose value is $Y$; $\mathcal R$ is
+the recycling technology whose value is $R^R$; $\mathcal W$ is the waste stock whose per-period outflow
+is $H$; $\mathcal D$ and $\mathcal N$ are the two waste bases; $\mathcal G^{\varpi}$ and
+$\mathcal G^{K}$ are the two recycling margins.
+
+\item \textbf{$\lambda$ is the multiplier on the goods constraint, in utils per final good, and every
+shadow price is stated net of it.} Dividing by $\lambda$ is what puts $p^S$, $p^X$, $p^P$,
+$p^{\mathcal W}$, $p^M$, $p^W$, $\zeta$ and $\Psi$ into final goods per tonne; see
+\eqref{eq:sp:costates-def}. Sign conventions are carried in the definitions, not in the symbols.
+
+\item \textbf{$\Omega$ is the material intensity of the final good and $\omega^j$ the relative
+intensity of use $j$}, so that $\Omega^j=\Omega\omega^j$ carries units and $\omega^j$ is a pure number.
+The same split applies to the durables coefficient: $\Phi^I=\Omega\phi^I$. The nature-attributable
+intensities $\Omega^{N,S}$ and $\Omega^{D,S}$ convert tonnage to tonnage and are pure numbers despite
+the capital letter, because the mass they carry never passes through $Y$. The two families are not
+comparable, and that is the distinction of Section~\ref{sec:sp:setup:materialaccounting}.
+
+\item \textbf{A bar is a bound, and it is the same kind of object in every case.} $\bar R$ the material
+floor, $\bar a$ the yield ceiling, $\bar X_{\max}$ the exhaustion point of discovery.
+
+\item \textbf{A per-period rate lies in $(0,1)$}: $\delta$, $\mu$, $\theta$, $d^W$. A growth rate, an
+elasticity and a discount rate do not, and never take those letters.
+
+\item \textbf{One symbol, one meaning --- \emph{in this document}.} The paper states the same model in
+continuous time and does not make all the same choices. Two symbols differ outright and must not be
+carried across: $\zeta$ is the multiplier on the intensity condition here and the marginal value of the
+final good there, and $q$ is the shadow price of installed capital in both but with different content,
+$1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)$ here against $1+\Phi^Kp^M$ there. Where the two
+documents correspond, the correspondence is stated rather than assumed.
+\end{enumerate}
+
+\subsection{The symbols}\label{sec:app:notation:table}
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Symbol & Meaning & Units & Defined in \\
+\hline
+\multicolumn{4}{l}{\textit{States}}\\
+$K$ & capital, split $K=K^Y+K^R$ & final goods & \eqref{eq:sp:setup:capital-allocation}\\
+$S$ & known reserves & tonnes & \eqref{eq:sp:setup:reserves-motion}\\
+$X$ & cumulative discovery, ceiling $\bar X_{\max}$ & tonnes & \eqref{eq:sp:setup:reserves-motion}\\
+$P$ & stock of pollution & tonnes & \eqref{eq:sp:setup:pollution-motion}\\
+$M^K$ & material embodied in the capital stock & tonnes & \eqref{eq:sp:states-motion}\\
+$\mathcal W$ & anthropogenic waste stock & tonnes & \eqref{eq:sp:setup:wastestock}\\
+\multicolumn{4}{l}{\textit{Controls and flows}}\\
+$C$ & consumption & final goods & \eqref{eq:sp:setup:utility}\\
+$I$, $G$ & net and gross capital formation, $G=I+\delta K$ & final goods & \eqref{eq:sp:setup:reserves-motion}\\
+$Y$ & output of the final good & final goods & \eqref{eq:sp:setup:output}\\
+$N$, $D$ & extraction and discovery & tonnes & \eqref{eq:sp:setup:reserves-motion}\\
+$R$ & raw material input, $R=N+R^R$ & tonnes & \eqref{eq:sp:setup:materials}\\
+$R^e$ & effective material input, $R-\bar R$ & tonnes & \eqref{eq:sp:setup:output}\\
+$R^R$ & recycled material & tonnes & \eqref{eq:sp:setup:recycling}\\
+$W$ & waste generated & tonnes & \eqref{eq:sp:ledger-streams}\\
+$H$ & handled flow, $\mu\mathcal W$ & tonnes & \eqref{eq:sp:setup:wastestock}\\
+$T$ & treated waste, $\varpi H$ & tonnes & \eqref{eq:sp:setup:recycling-crs}\\
+$\varpi$ & treated share of the handled flow & dimensionless & \eqref{eq:sp:setup:waste-cost}\\
+$\Xi$ & waste reaching the environment & tonnes & \eqref{eq:sp:setup:Xi}\\
+$\Omega$ & material intensity of the final good & tonnes/final good & \eqref{eq:sp:intensity}\\
+\multicolumn{4}{l}{\textit{Technology and costs}}\\
+$\mathcal F$ & final-goods technology & --- & \eqref{eq:sp:setup:output}\\
+$a(x)$ & recycling yield, $x=K^R/T$ & dimensionless & \eqref{eq:sp:setup:recycling}\\
+$\bar a$ & yield ceiling; $\bar a<1$ hard (H), $\bar a=1$ soft (S) & dimensionless & \eqref{eq:sp:setup:recycling}\\
+$\varepsilon$ & elasticity of the yield function, $a'x/a$ & dimensionless & \eqref{eq:sp:setup:recycling-crs}\\
+$\alpha$ & marginal recycling yield, $a-a'x=a(1-\varepsilon)$ & dimensionless & \eqref{eq:sp:setup:recycling-derivatives}\\
+$\bar R$ & material floor & tonnes & \eqref{eq:sp:setup:output}\\
+$C^N$, $C^D$ & extraction and exploration cost & final goods & \eqref{eq:sp:setup:extraction-cost}\\
+$C^W$, $c^W$ & waste cost, total and per handled tonne & final goods & \eqref{eq:sp:setup:waste-cost}\\
+$c^c$, $c^T$ & collection charge, treatment cost & final goods/tonne & \eqref{eq:sp:setup:waste-cost}\\
+\multicolumn{4}{l}{\textit{Materials accounting}}\\
+$\Phi^x$ & material embodied per unit of $x$ & tonnes/final good & \S\ref{sec:sp:setup:materialaccounting}\\
+$\Omega^x$, $\omega^x$ & waste per unit of $x$, absolute and relative & see rule 5 & \S\ref{sec:sp:setup:materialaccounting}\\
+$\phi^I$, $\Phi^I$ & durables coefficient, $\Phi^I=\Omega\phi^I$ & see rule 5 & \eqref{eq:sp:setup:ybalance_OmegaPhi}\\
+$M^x$, $W^x$ & embodied material and waste from $x$ & tonnes & \S\ref{sec:sp:setup:materialaccounting}\\
+$\mathcal D$, $\mathcal N$ & waste bases: drawn through $R$, displaced from nature & see rule 5 & \eqref{eq:sp:setup:base}\\
+$\sigma$ & storage share, $\Phi^IG/R$ & dimensionless & \eqref{eq:sp:zeta-explicit}\\
+\multicolumn{4}{l}{\textit{Prices and multipliers}}\\
+$\lambda$ & multiplier on the goods constraint & utils/final good & \eqref{eq:sp:costates-def}\\
+$p^S$, $p^X$, $p^P$ & shadow prices of reserves, discovery, pollution & final goods/tonne & \eqref{eq:sp:costates-def}\\
+$p^{\mathcal W}$ & shadow price of the waste stock & final goods/tonne & \eqref{eq:sp:costates-def}\\
+$p^W$ & shadow price of waste generation, $p^W=-p^{\mathcal W}$ & final goods/tonne & \eqref{eq:sp:sum:W}\\
+$p^M$ & shadow price of embodied material & final goods/tonne & \eqref{eq:sp:costates-def}\\
+$q$ & shadow price of installed capital & dimensionless & \eqref{eq:sp:sum:I}\\
+$\zeta$ & multiplier on the intensity condition & final goods/tonne & \eqref{eq:sp:zeta-explicit}\\
+$\Psi$ & value of a tonne entering production & final goods/tonne & \eqref{eq:sp:Psi}\\
+$h$ & handling dividend of a stockpiled tonne & final goods/tonne & \S\ref{sec:app:sp}\\
+$\mathcal G^{\varpi}$, $\mathcal G^{K}$ & gains from treatment and from recycling capital & final goods/tonne & \eqref{eq:sp:sum:gains}\\
+\multicolumn{4}{l}{\textit{Preferences and rates}}\\
+$\rho$, $\beta$ & time preference, discount factor $1/(1+\rho)$ & rate & \eqref{eq:sp:setup:utility}\\
+$\delta$ & depreciation & rate & \eqref{eq:sp:setup:resource-constraint}\\
+$\mu$ & handling share of the waste stock & rate & \eqref{eq:sp:setup:wastestock}\\
+$\theta(P)$ & decay of the pollution stock & rate & \eqref{eq:sp:setup:pollution-motion}\\
+$d^W$ & leakage of the treated stream & rate & \eqref{eq:sp:setup:Xi}\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{The source}\label{sec:app:notation:source}
+
+The Julia implementation uses ASCII identifiers rather than these symbols, deliberately: a stray
+re-encoding on Windows silently corrupts Unicode operators in Julia source, and the corruption survives
+a passing test suite. The correspondence is therefore a lookup, and the table in
+\texttt{model/SYMBOLS.md} is the one place it is written down. \texttt{code\_style.md} fixes the
+transliteration rules and records the two clashes the source has to break that this document does not:
+$\mu$ (the handling share, against the returns exponent of the quantitative technology) and $\beta$
+(the discount factor, against the CES capital share).

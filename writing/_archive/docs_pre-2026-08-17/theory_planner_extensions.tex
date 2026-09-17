@@ -1,0 +1,133 @@
+﻿\section{Extensions and open items}\label{sec:sp:extensions}
+
+This appendix records two different kinds of unfinished business. Section~\ref{sec:sp:ext:open} lists
+gaps in the derivation as it stands --- things that ought to be established for the present model and
+have not been. Section~\ref{sec:sp:ext:later} lists extensions to the model itself: modelling choices
+whose alternatives are described but not derived anywhere in this note, and which are candidates for a
+separate project rather than for this paper. The two lists are kept apart deliberately, because they
+carry different burdens: the first is work owed, the second is work optional.
+
+
+\subsection{Open items in the present derivation}\label{sec:sp:ext:open}
+
+\begin{enumerate}[label=\textbf{O\arabic*.},ref=O\arabic*,leftmargin=2.6em,itemsep=0.35em]
+
+\item\label{op:sp:soc} \textbf{Sufficiency and uniqueness.} The conditions of
+Sections~\ref{sec:sp:A} and~\ref{sec:sp:B} are necessary only. Concavity of the maximised Hamiltonian
+in the states is not established: $F$, $u$ and $-v$ are concave, but the ledger is bilinear in $\varpi$
+and $W$, the recycling technology enters through a constant-returns function of two controls, and under
+Version A the intensity definition is bilinear in $\Omega$ and the flows in $\mathcal D$. Uniqueness is
+not established either, and it is invoked when the market economy is said to implement \emph{the}
+planner's allocation. See Remarks~\ref{rem:sp:A:soc} and~\ref{rem:sp:B:soc}.
+
+\item\label{op:sp:corner} \textbf{Behaviour at the corners.} The treatment margin was shown never to
+sit at $\varpi=0$ (Sections~\ref{sec:sp:A:foc} and~\ref{sec:sp:B:foc}), but the $\varpi=1$ corner, the
+$D=0$ corner, and the corner $\eta>0$ where the Version-B mass constraint~\eqref{eq:sp:B:mass} binds
+have not been characterised. The last of these matters for the numerical solution, which must handle a
+complementarity condition rather than a smooth system --- and it is a reason to prefer Version A for a
+first numerical pass, since the constraint is vacuous there.
+
+\item\label{op:sp:exist} \textbf{Existence of an optimum, and of the asymptotic path.}
+Propositions~\ref{prop:sp:A:nosteadystate} and~\ref{prop:sp:B:nosteadystate} rule out an interior rest
+point, and Sections~\ref{sec:sp:A:longrun} and~\ref{sec:sp:B:longrun} argue informally that the economy
+approaches a materially closed limit. That the limit is attained, that the transversality
+conditions~\eqref{eq:sp:B:tvc} hold along it, and that lifetime utility is finite, are all unverified.
+Switch~\ref{sw:sp:CDX} sidesteps the issue by restoring a steady state; it is not a proof that the
+general case is well posed.
+
+\item\label{op:sp:period} \textbf{Sensitivity to the recirculation assumption.} Recycled material
+re-enters production contemporaneously, $R^R=a\varpi W$ at the same instant. In continuous time this
+is innocuous; in a discrete-time implementation it makes the circularity multiplier
+$\left(1-a\varpi\right)^{-1}$ a function of the period length, and the multiplier diverges in exactly
+the region the paper is about. The ratios $R/N$ and $W/N$ should be reported alongside every headline
+result, and their sensitivity to the period length checked.
+
+\item\label{op:sp:nonopt} \textbf{Welfare under non-optimal policy.} Nothing here characterises the
+allocation, or $U_0$, under an arbitrary policy that is not the first best. Any counterfactual
+exercise that compares the optimum to a status-quo or partial-policy scenario needs this, and it does
+not follow from the conditions above.
+
+\item\label{op:sp:identify} \textbf{What the calibration can identify.} Under Version B the relative
+intensities $\omega^j$ do not affect the allocation
+(Propositions~\ref{prop:sp:B:irrelevance} and~\ref{prop:sp:inert}), so no feature of the optimal path
+carries information about them; under Version A they do. The calibration strategy therefore has to be
+settled jointly with the choice of closure, and it is not settled here. See
+Section~\ref{sec:sp:B:compare}.
+
+\end{enumerate}
+
+
+\subsection{Extensions for later work}\label{sec:sp:ext:later}
+
+\begin{enumerate}[label=\textbf{E\arabic*.},ref=E\arabic*,leftmargin=2.6em,itemsep=0.35em]
+
+\item\label{ext:sp:manna} \textbf{A stock for nature-attributable mass.} The flows
+$\Omega^{N,S}N$ and $\Omega^{D,S}D$ enter the waste ledger without being drawn from any stock ---
+overburden arrives from nowhere. Section~\ref{sec:sp:setup:materialaccounting} flags this and assumes
+it is not the binding constraint. Closing it would require a second natural stock with its own law of
+motion, and would make the mass balance of the \emph{whole} system, not just of the economy, hold
+exactly.
+
+\item\label{ext:sp:lag} \textbf{A recycling lag.} Replacing $R^R_t=a\varpi W_t$ by a distributed lag
+over past waste generation adds at least one state (the pool of waste awaiting treatment) and removes
+the closed-form solution of the ledger. This is the single maintained assumption most likely to matter
+quantitatively; see~\ref{op:sp:period}.
+
+\item\label{ext:sp:pools} \textbf{Two embodied-material pools.} The note carries one well-mixed
+stock $M^K$, so $K^Y$ and $K^R$ share the average intensity $\Phi^K$. Distinguishing them requires a
+second state and a second liability price, and would matter whenever the two sectors' investment
+histories differ --- which they do exactly during the transition, when $K^R$ is growing fastest.
+
+\item\label{ext:sp:reuse} \textbf{Direct reuse of depreciated capital material.} Depreciation
+currently returns embodied material to the undifferentiated waste flow, where it must be collected and
+treated like anything else. An alternative is costless, or cheaper, re-embodiment of a share of it ---
+remanufacturing rather than recycling. This changes the ledger and requires $q$ to be re-derived, since
+capital would then be a partially permanent rather than purely temporary sink.
+
+\item\label{ext:sp:residual} \textbf{Residual waste from recycling as a separate flow.} The recycling
+function is interpreted as net of the treatment of its own residuals
+(Section~\ref{sec:sp:setup:materialaccounting}). Making the residual explicit requires a second waste
+stream with its own $d^W$, and only earns its keep in a model with more than one material.
+
+\item\label{ext:sp:multi} \textbf{Multiple materials.} A single homogeneous tonne is the strongest
+simplification in the note. Distinct materials differ in recyclability $a(\cdot)$, in the emission
+share $d^W$, in extraction cost curvature, and in substitutability inside $F$; and the composition of
+the material bundle is itself an endogenous margin that the present model cannot speak to. This is the
+most substantial of the extensions listed here and is properly a separate paper.
+
+\item\label{ext:sp:landfill} \textbf{Landfill as a stock.} Untreated waste currently emits a fraction
+$1$ and treated waste a fraction $d^W$, both instantaneously. Storing waste in a stock that leaks
+slowly, and that can be mined later, would connect the model to the literature on legacy waste and
+would give a second, non-natural reserve from which material can be drawn once $p^S$ is high enough.
+
+\item\label{ext:sp:Aackstop} \textbf{A bounded resource base or a backstop.} Exploration is
+unbounded, so the resource is never exhausted, only ever more expensive
+(Section~\ref{sec:sp:setup:primitives}); this is what
+Propositions~\ref{prop:sp:A:nosteadystate} and~\ref{prop:sp:B:nosteadystate} turn on. Imposing an upper bound on cumulative discovery, or
+a backstop technology that caps $C^N_N$, would change the long-run character of the model
+substantially and should be compared against switch~\ref{sw:sp:CDX}.
+
+\item\label{ext:sp:tech} \textbf{Endogenous recycling technology.} $a(\cdot)$, $c^T(\cdot)$ and
+$\Phi^I$ are exogenous functions. Making any of them respond to R\&D or to learning-by-doing would add
+a state and would give the transition a second driver alongside scarcity --- and, unlike scarcity, one
+that policy can act on directly.
+
+\item\label{ext:sp:design} \textbf{Product design: endogenous $\delta$ and $\Phi^I$.} Durability and
+material content per unit of capital are choices, not parameters. Endogenising them is the natural
+formalisation of ``design for circularity'' and would make $q$ a genuine two-margin object. Under
+Version A, $\Phi^I$ is already partly endogenous, but through the accounting rather than through a
+design decision.
+
+\item\label{ext:sp:open} \textbf{Open economy.} Imported virgin material, exported waste, and a world
+price for both. This changes what the resource rent means for a single country and is the margin most
+of the applied circular-economy policy debate is actually about.
+
+\item\label{ext:sp:hetero} \textbf{Heterogeneity and distribution.} A representative dynasty rules out
+any question about who bears the cost of the transition and who receives the instrument revenues,
+which is where most of the political economy of these policies sits.
+
+\item\label{ext:sp:uncertainty} \textbf{Uncertainty.} Reserves, damages and recycling technology are
+all deterministic. Reserve uncertainty in particular interacts with exploration in a way the current
+specification cannot represent, since exploration here reduces cost rather than resolving risk.
+
+\end{enumerate}

@@ -1,0 +1,591 @@
+\section{The workhorse family: verification and mapping}\label{sec:app:workhorse}
+
+This appendix verifies the workhorse family of Section~\ref{sec:sp:longrun:workhorse} against
+the maintained assumptions, derives the mapping to the tail objects of the long-run analysis,
+works out the consequences of the material floor, and closes the MEG rate system
+(\ref{sec:app:workhorse:meg}). Throughout,
+$\tilde R\equiv R-\underline R$, $\nu\equiv\left(\varsigma-1\right)/\varsigma$, and
+\begin{align}
+\mathcal F\equiv\left[b_K\big(K^Y\big)^{\nu}+b_R\,\tilde R^{\nu}\right]^{1/\nu}
+\label{eq:app:wh:kernel}
+\end{align}
+denotes the CES kernel, so that $F=\left[1-\Gamma\!\left(P\right)\right]\mathcal F$ and, at
+the stationary technology maintained everywhere in this appendix
+except~\ref{sec:app:workhorse:trend} ($g_A=g_B=0$
+in~\eqref{eq:sp:setup:tfp}, so $A=B=1$ and~\eqref{eq:sp:setup:mpconvention} is vacuous),
+\begin{align}
+F_K=\left[1-\Gamma\right]b_K\left(\frac{\mathcal F}{K^Y}\right)^{1/\varsigma},
+\qquad
+F_R=\left[1-\Gamma\right]b_R\left(\frac{\mathcal F}{\tilde R}\right)^{1/\varsigma},
+\qquad
+F_P=-\Gamma'\!\left(P\right)\mathcal F .
+\label{eq:app:wh:marginals}
+\end{align}
+Two limits recur, both immediate from $\nu\gtrless0$ as $\varsigma\gtrless1$. At fixed
+$\tilde R>0$ with $K^Y\to\infty$: for $\varsigma>1$, $\mathcal F\sim b_K^{1/\nu}K^Y$; for
+$\varsigma<1$, $\mathcal F\to b_R^{1/\nu}\tilde R$ (the material leg caps output:
+$\mathcal F\le b_R^{1/\nu}\tilde R$ at \emph{every} $K^Y$, since the map $z\mapsto z^{1/\nu}$
+is decreasing for $\nu<0$). The mirrored limit at fixed $K^Y$ with $\tilde R\to\infty$ swaps
+the roles. Note $b_K^{1/\nu}=b_K^{\varsigma/\left(\varsigma-1\right)}$ and likewise for $b_R$.
+
+\subsection{Setup assumptions}\label{sec:app:workhorse:setup}
+
+Routine checks, collected for the record. \emph{Preferences:} $u'>0$, $u''<0$ for $\eta>1$;
+$v'=v_0P^{\beta_v}>0$ and $v''=\beta_vv_0P^{\beta_v-1}>0$ for $P>0$.
+\emph{Production:} the signs in~\eqref{eq:sp:setup:output} follow
+from~\eqref{eq:app:wh:marginals} with $\Gamma'>0$, on the domain $R>\underline R$.
+\emph{Recycling:} $a\!\left(0\right)=0$, $a'=\left(\psi/x_a\right)\left(1+x/x_a\right)^{-\psi-1}>0$,
+$a''<0$, $a\to1$; the exponential variant likewise with $a'=\left(1/x_a\right)e^{-x/x_a}$.
+\emph{Extraction:} $C^N_N=c_NS^{-\chi}+c_\mu N^{\mu}>0$,
+$C^N_{NN}=\mu c_\mu N^{\mu-1}\ge0$, $C^N_S=-\chi c_NNS^{-\chi-1}<0$ for $N>0$.
+\emph{Discovery:} $C^D_D=\kappa\!\left(X\right)>0$, $C^D_{DD}=0$,
+$C^D_X=\kappa'\!\left(X\right)D>0$ in both regimes.
+\emph{Treatment:} $c^T\!\left(0\right)=c^{T\prime}\!\left(0\right)=0$,
+$c^{T\prime}=2c_T\varpi>0$, $c^{T\prime\prime}=2c_T>0$.
+\emph{Sink:} $\theta'<0$ for $\vartheta>0$.
+
+\subsection{Assumption F, region by region}\label{sec:app:workhorse:F}
+
+\smalltitle{(i) Marginal indispensability.} Take $K\to\infty$ with $R$ bounded (and, for the
+statement to bite, $R$ bounded away from the floor). For $\varsigma\ge1$:
+$\mathcal F\to\infty$ while $\tilde R$ stays bounded,
+so $F_R=\left[1-\Gamma\right]b_R\left(\mathcal F/\tilde R\right)^{1/\varsigma}\to\infty$
+(Cobb--Douglas, $\varsigma=1$: $F_R\propto Y/\tilde R\to\infty$). \emph{(i) holds.} For
+$\varsigma<1$: $\mathcal F\to b_R^{1/\nu}\tilde R$, hence
+\begin{align}
+F_R\;\to\;\left[1-\Gamma\right]b_R\left(b_R^{1/\nu}\right)^{1/\varsigma}
+=\left[1-\Gamma\right]b_R^{\frac{\varsigma}{\varsigma-1}}\;<\;\infty:
+\label{eq:app:wh:FRlimit}
+\end{align}
+\emph{(i) fails below unit elasticity.} The failure is innocuous for the classification:
+$A_\infty=0$ there, so the economy lives on the bounded branch, and (i) is invoked only on the
+growth branch (Steps~3--4 of~\ref{sec:app:longrun:classification} and the DC placement
+proof~\ref{sec:app:longrun:dc}, growth variant).
+
+\smalltitle{(ii) Asymptotic return.} From~\eqref{eq:app:wh:marginals}, at fixed $\tilde R>0$:
+for $\varsigma>1$, $\mathcal F/K^Y\to b_K^{1/\nu}$ and
+$A_\infty=\left[1-\Gamma\!\left(\bar P\right)\right]b_K^{\frac{\varsigma}{\varsigma-1}}$,
+independent of $R$ and of the floor, evaluated at the path's limiting pollution stock per the
+convention of Assumption~\ref{ass:sp:lr:F}(ii); for $\varsigma\le1$, $F_K\to0$ and
+$A_\infty=0$.
+
+\smalltitle{(iii) Saturation.} At fixed $K^Y$ with $R\to\infty$: for $\varsigma<1$,
+$\mathcal F\to b_K^{1/\nu}K^Y$ bounded and $F_R\sim\tilde R^{-1/\varsigma}\to0$ ---
+\emph{(iii) holds}; at $\varsigma=1$, $F_R\propto Y/\tilde R\to0$ as well. For $\varsigma>1$,
+$\mathcal F\sim b_R^{1/\nu}\tilde R$ and $F_R\to\left[1-\Gamma\right]b_R^{\frac{\varsigma}{\varsigma-1}}>0$
+--- \emph{(iii) fails}: in bulk, materials are a linear stand-alone technology with slope
+$b_R^{\varsigma/\left(\varsigma-1\right)}$. Where (iii) is invoked --- the bounded-branch
+exclusion of MEG, Step~3 of~\ref{sec:app:longrun:classification} --- the following condition
+substitutes for it.
+
+\begin{lemma}[Bulk-materials condition]\label{lem:app:wh:bulk}
+Let $\varsigma>1$ and $b_R^{\varsigma/\left(\varsigma-1\right)}<c^c$. Then no path on the
+bounded branch has $R\to\infty$, and Step~3 of the classification proof goes through with this
+condition in place of Assumption~\ref{ass:sp:lr:F}(iii).
+\end{lemma}
+
+\emph{Proof sketch.} With $K$ bounded, recycled output is capped by concavity of the yield:
+$\mathcal R=a\!\left(x\right)T\le a'\!\left(0\right)K^R\le\left(\psi/x_a\right)\bar K$. So
+$R\to\infty$ requires $N\sim R\to\infty$. On the bounded branch $M^K$ is bounded
+($\Omega\phi^IG$ is bounded because $\mathcal D$ grows at least linearly in $N$ through
+$C^N$), so the ledger~\eqref{eq:sp:setup:ledger} gives $W\ge R\left(1-o\left(1\right)\right)$:
+every tonne entering production returns as waste and pays at least the collection cost $c^c$.
+Meanwhile output is capped linearly,
+$Y\le\mathcal F=b_R^{1/\nu}R\left(1+o\left(1\right)\right)$ at bounded $K$. The goods
+constraint~\eqref{eq:sp:goods} then requires
+$c^cR\left(1+o\left(1\right)\right)\le b_R^{\varsigma/\left(\varsigma-1\right)}R\left(1+o\left(1\right)\right)$,
+contradicting the hypothesis; extraction and exploration bills only tighten the argument.
+\hfill$\qed$
+
+Note the lemma also closes, for the workhorse, the ``asymptotically free tonnes'' loophole
+that Step~3 sets aside in the general treatment: collection alone is expensive enough.
+
+\subsection{Essentiality}\label{sec:app:workhorse:essentiality}
+
+For $\varsigma<1$: $Y\le\left[1-\Gamma\right]b_R^{\frac{\varsigma}{\varsigma-1}}\tilde R$ at
+every $K$, so $R\to0$ forces $Y\to0$ --- essential, floor or not. At $\varsigma=1$
+(Cobb--Douglas limit): essential iff $\delta>0$, by the maintenance-bill argument in the
+clarifications of Section~\ref{sec:sp:longrun:setup}. For $\varsigma>1$ with
+$\underline R=0$: $\mathcal F\ge b_K^{1/\nu}K^Y$ at every $R$, with equality at $R=0$ --- an
+$AK$ backbone, so materials are inessential and the DC configuration is available. For
+$\varsigma>1$ with $\underline R>0$: any path with $R\to0$ eventually has $R<\underline R$ and
+$Y=0$ --- essential, despite $A_\infty>0$ (see~\ref{sec:app:workhorse:floor}).
+
+\subsection{Side conditions of Assumption~\ref{ass:sp:lr:regular}}
+\label{sec:app:workhorse:side}
+
+\emph{Knife-edge aside:} one parameter equality,
+$b_K^{\varsigma/\left(\varsigma-1\right)}-\delta=\rho$, excluded.
+\emph{Reserve depletion:} $C^N_N\left(0,S\right)=c_NS^{-\chi}\to\infty$ as $S\to0$; this is
+carried entirely by the stock-sensitive part, so $c_N>0$ must be maintained even when the
+congestion term is active. The cumulative clause,
+$\int_0^\varepsilon C^N_N\left(0,s\right)ds=\infty$, requires $\chi\ge1$; it is substantive
+only under regime (E), it holds automatically on the matched BCP
+($\chi=\left(\psi+1\right)/\psi>1$), and it is irrelevant under regime (I), where the
+reserve never dies (see gap~(xv) for what its failure opens). \emph{Damage dominance:} automatic for $\eta>1$ ($u$ bounded above
+by zero while $v\to\infty$). \emph{Viability:} automatic for $\varsigma\ge1$ --- at any
+bounded candidate limit with $R\to0$ (available only if $\underline R=0$), $F_R\to\infty$
+(for $\varsigma>1$, $Y\to\left[1-\Gamma\right]b_K^{1/\nu}\bar K>0$ while
+$\tilde R\to0$ in~\eqref{eq:app:wh:marginals}; for $\varsigma=1$, directly), so the corner
+condition~\eqref{eq:sp:sum:N-corner} fails against bounded costs. For $\varsigma<1$ it is a
+genuine level restriction: using~\eqref{eq:app:wh:FRlimit}, viability reads, roughly,
+\begin{align}
+\left[1-\Gamma\!\left(\bar P\right)\right]b_R^{\frac{\varsigma}{\varsigma-1}}w_Y+\zeta
+\;>\;
+c_N\bar S^{-\chi}w_N+p^S+p^W\left(1+\Omega^{N,S}\right)
+\label{eq:app:wh:viability}
+\end{align}
+at the candidate limit --- the ``worth its supply cost from the first tonne'' reading of
+Assumption~\ref{ass:sp:lr:regular}(iv), now an inequality among bounded objects that a
+calibration can check.
+
+\subsection{Tails and the BCP conditions}\label{sec:app:workhorse:tails}
+
+\smalltitle{Recycling tail.} $1-a=\left(1+x/x_a\right)^{-\psi}\sim x_a^{\psi}x^{-\psi}$, so
+the tail constant of~\eqref{eq:sp:lr:tails} is $\gamma_a=x_a^{\psi}$; the exponential variant
+is the $\psi=\infty$ case with scale $x_a$. Since $a'\!\left(0\right)=\psi/x_a<\infty$, the
+stationary-state recycling margin (Proposition~\ref{prop:sp:lr:sss}(iv)) is a live
+calibration margin: active iff $\left(\psi/x_a\right)V>F_Kw_Y$.
+
+\smalltitle{Extraction tail.} $C^N_N\left(0,S\right)=c_NS^{-\chi}$ exactly, so the matching
+condition of Proposition~\ref{prop:sp:lr:bcp}(iv) is the literal restriction
+$\chi=\left(\psi+1\right)/\psi$. The congestion term contributes $c_\mu N^{\mu}\to0$ as
+$N\to0$ (for $\mu>0$) and is inert on the BCP and the SS.
+
+\smalltitle{Treatment.} $c^T\!\left(1\right)=c_T<\infty$ satisfies
+Proposition~\ref{prop:sp:lr:bcp}(ii); with $c^{T\prime}\!\left(1\right)=2c_T<\infty$, full
+treatment arrives in finite time on the BCP (\ref{sec:app:longrun:treatment}).
+
+\smalltitle{Damages.} On the BCP, $P_t\sim e^{-mt}$ with
+$m\equiv\min\left(\left|g_N\right|,\theta_0\right)$
+(\ref{sec:app:longrun:pollution}). The two components of the marginal damage
+$\mathcal V=v'/\lambda-F_Pw_Y$ then grow at the rates
+\begin{align}
+\frac{v'\!\left(P_t\right)}{\lambda_t}\sim e^{\left(\eta g_C-\beta_vm\right)t},
+\qquad
+\left|F_P\right|\sim\gamma_PP_t^{\beta_F}\,\mathcal F_t\sim e^{\left(g_C-\beta_Fm\right)t},
+\label{eq:app:wh:damagerates}
+\end{align}
+and the tame-damage requirement that $p^P$ not outrun $e^{g_{p^S}t}$ becomes
+\begin{align}
+\eta g_C-\beta_vm\;\le\;g_{p^S},
+\qquad
+g_C-\beta_Fm\;\le\;g_{p^S},
+\label{eq:app:wh:damageconds}
+\end{align}
+generalising Proposition~\ref{prop:sp:lr:bcp}(vi), which is the case $\beta_v=1$. At
+$\beta_F=0$ --- the common multiplicative-exponential damage --- the second condition reads
+$g_C\le g_{p^S}$, which contradicts $g_{p^S}=g_C/\varsigma<g_C$ for $\underline R=0$: the
+specification kills the BCP, as flagged in the main text. (With the floor, the boundary point
+$g_{p^S}=g_C$ of~\ref{sec:app:workhorse:floor} is the only escape, and it sits exactly at the
+edge of the wedge-boundedness requirement.)
+
+\smalltitle{Discovery.} $\kappa_{\mathrm E}$ delivers regime (E)
+($C^D_D\left(0,X\right)\to\infty$ at $\bar X_{\max}$) and $\kappa_{\mathrm I}$ regime (I)
+($C^D\to\bar\kappa D$ with $C^D_X\to0$). On the matching exponent left open in
+gap~(ii) of~\ref{sec:app:longrun:gaps}: if the discovery flow decays at the extraction rate,
+$g_D=g_N$, then $\bar X_{\max}-X_t=\int_t^\infty D\,ds\sim D_t/\left|g_N\right|$ and
+$C^D_D=\kappa_{\mathrm E}\sim e^{\chi_D\left|g_N\right|t}$, so balancing the exploration
+margin against $p^S\sim e^{g_{p^S}t}$ gives the candidate
+$\chi_D=\left(\psi+1\right)/\psi=\chi$ --- but $g_D=g_N$ is itself underived, so this is a
+conjecture, not a resolution of the gap.
+
+\smalltitle{Sink.} Absorption $\theta\!\left(P\right)P$ is globally increasing iff
+$\vartheta\le1$; for $\vartheta>1$ it peaks at $P^{*}=P_\theta/\left(\vartheta-1\right)$ and
+declines beyond it --- the tipping configuration, in which the stationarity and
+no-terminal-tipping requirements of Lemma~\ref{lem:sp:lr:common}(ii), and the convergence
+condition $\rho+\theta+\theta'\bar P>0$, become substantive parameter restrictions. On the
+BCP, decay at zero is $\theta\!\left(0\right)=\theta_0$, as used
+in~\eqref{eq:app:wh:damagerates}.
+
+\subsection{The material floor}\label{sec:app:workhorse:floor}
+
+Throughout this subsection $\varsigma>1$ and $\underline R>0$.
+
+\smalltitle{(a) Essentiality with growth capacity.} Essentiality is
+in~\ref{sec:app:workhorse:essentiality}; $A_\infty$ is unchanged
+by~\ref{sec:app:workhorse:F}(ii). From~\eqref{eq:app:wh:marginals},
+$F_R\sim\tilde R^{-1/\varsigma}\to\infty$ as $R\downarrow\underline R$ at any $K^Y>0$: the
+floor is an Inada barrier, never binding while production is active, so no corner condition
+for it needs to be carried.
+
+\smalltitle{(b) The DC exit closes.} Definition~\ref{def:sp:dc} requires $R\to0$; by (a)
+and Proposition~\ref{prop:sp:lr:dc}(i) the configuration is empty. In the selection map the
+(E) cells exit to the BCP (when matched) or to collapse --- with the floor, a
+\emph{catastrophic} collapse: the essentiality delivered here is hard in the sense of
+Section~\ref{sec:sp:longrun:collapse}, so production halts in finite time
+(Lemma~\ref{lem:app:col:shutdown}).
+
+\smalltitle{(c) The throughput anchor.} On a BCP with the floor, the growth path has
+$Y\sim e^{g_Ct}$ and
+$F_R\sim\left[1-\Gamma\right]b_R\left(Y/\tilde R\right)^{1/\varsigma}$, so the growth rate of
+$F_R$ is $\left(g_C+\left|g_{\tilde R}\right|\right)/\varsigma$ --- endogenous through the
+decay of the gap $\tilde R$. The rate-pinning argument of~\ref{sec:app:longrun:prices}
+(the leading exponentials of $F_Rw_Y$ and $\zeta$ must cancel inside $\Psi$) becomes
+\begin{align}
+\frac{g_C+\left|g_{\tilde R}\right|}{\varsigma}=g_{p^S}
+\qquad\Longleftrightarrow\qquad
+\left|g_{\tilde R}\right|=\varsigma g_{p^S}-g_C\;\ge\;0 .
+\label{eq:app:wh:gapfloor}
+\end{align}
+When the inequality is strict, $\tilde R\to0$ exponentially: $\bar R=\underline R$, and with
+$N\to0$ and $a\varpi\to1$, $\bar W=\underline R$. The size of the eternal loop is a
+technological datum, and the level-matching of~\ref{sec:app:longrun:matching} is no longer
+what pins the stationary throughput.
+
+\smalltitle{(d) An interval of rates; one knife-edge survives.} The constraints
+on~\eqref{eq:app:wh:gapfloor} are $\left|g_{\tilde R}\right|\ge0$ (so
+$g_{p^S}\ge g_C/\varsigma$) and bounded wedges,
+$\zeta\Omega^j\sim e^{\left(g_{p^S}-g_C\right)t}$ bounded (so $g_{p^S}\le g_C$). Hence
+\begin{align}
+g_{p^S}\in\left[\frac{g_C}{\varsigma},\,g_C\right],
+\qquad
+\left|g_N\right|=\frac{\psi}{\psi+1}\,g_{p^S}
+\in\left[\frac{\psi}{\psi+1}\frac{g_C}{\varsigma},\,\frac{\psi}{\psi+1}g_C\right],
+\label{eq:app:wh:interval}
+\end{align}
+with Proposition~\ref{prop:sp:lr:bcp}(iii) recovered at the left endpoint
+($\underline R=0$ forces it). What does \emph{not} relax: the waste-margin identity and the
+rate lock still deliver $g_{p^S}=\frac{\psi+1}{\psi}\left|g_N\right|$, and the extraction
+margin still requires the scarcity block $C^N_Nw_N+p^S$, with
+$C^N_N\left(0,S_t\right)=c_NS_t^{-\chi}$, to diverge at exactly $g_{p^S}$ --- which is
+$\chi\left|g_N\right|=g_{p^S}$, i.e.\ $\chi=\left(\psi+1\right)/\psi$, the same knife-edge as
+without the floor, because the argument never involves $F_R$. The two relations are one and
+the same equation, so nothing at the level of rates selects the point
+of~\eqref{eq:app:wh:interval}: the selection --- by level conditions, transversality, or the
+transition path --- is open (gap~(xi) of~\ref{sec:app:longrun:gaps}).
+
+\subsection{Materially expanding growth under the workhorse}\label{sec:app:workhorse:meg}
+
+This subsection closes, for the workhorse family, what Proposition~\ref{prop:sp:lr:meg} and
+gap~(vii) of~\ref{sec:app:longrun:gaps} leave open in general --- the joint rates of the
+material block, the supporting price system, and FOC-consistency of the configuration --- and
+proves Proposition~\ref{prop:sp:wh:meg}. Setting: the MEG cell of the parametrised selection
+map ($\varsigma>1$, $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta>\rho$, discovery
+$\kappa_{\mathrm I}$), the baseline $\Phi^I=\Omega\phi^I$ with $\phi^I>0$, $d^W>0$,
+$\delta>0$, congestion $c_\mu>0$ with $\mu>0$, and the scoping condition $\Omega^{D,S}=0$
+justified below. We work in the regular class with asymptotically exponential rates and use
+freely the structure Proposition~\ref{prop:sp:lr:meg} already forces: $W\to\infty$,
+$\varpi\to1$, $a\to1$, hence $x\to\infty$ and $K^R\to\infty$, bounded loop losses, and
+storage absorption. The material floor is invisible here ($\tilde R\sim R\to\infty$), so
+nothing below depends on $\underline R$. Write $g_m$ for the common growth rate of the
+material block established in the second step.
+
+\smalltitle{Full treatment in finite time.} As on the BCP (\ref{sec:app:longrun:treatment}):
+$\alpha\to1$ and $V\to\infty$ (established below), so the gain
+$\alpha V+p^P\left(1-d^W\right)$ exceeds
+$c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right)=2c_Tw_W$ at a finite date and the upper
+branch~\eqref{eq:sp:sum:varpi-upper} binds: $\varpi=1$ from a finite date on. All asymptotics
+below are on that corner, where $c^W=c^c+c_T$ is a constant.
+
+\smalltitle{Quantities: one common rate and a pinned virgin share.} Along the growth path
+$Y,C,K,G\sim e^{g_Ct}$, and the share
+$\sigma=\Phi^IG/R=\phi^IG/\left(\mathcal D+\phi^IG\right)$ --- $\Omega$ cancels --- converges
+to $\bar\sigma\in\left(0,1\right)$, since every term of $\mathcal D$ tied to the material side
+($\omega^NC^N$, $\omega^DC^D$, $\omega^WC^W$) is of smaller order than
+$\omega^YY+\omega^CC+\phi^IG$ once $g_m<g_C$ (confirmed below, and self-consistent). Then
+$\dot M^K=\sigma R-\delta M^K$ gives $M^K\sim\frac{\bar\sigma}{g_m+\delta}R$ and
+$\dot M^K\sim\frac{\bar\sigma g_m}{g_m+\delta}R$. The
+ledger~\eqref{eq:sp:setup:ledger-collected} with bounded loop losses
+(Proposition~\ref{prop:sp:lr:meg}(i)--(ii)) and $\Omega^{D,S}=0$ reads
+$\left(1+\Omega^{N,S}\right)N-\dot M^K=W\left(1-a\varpi\right)=O\left(1\right)$, so the two
+diverging sides share rate and leading coefficient:
+\begin{align}
+g_N=g_R\equiv g_m,
+\qquad
+\frac{N}{R}\;\to\;\bar s_N=\frac{\bar\sigma g_m}{\left(g_m+\delta\right)\left(1+\Omega^{N,S}\right)}
+\;\in\;\left(0,1\right):
+\label{eq:app:wh:meg:share}
+\end{align}
+the virgin share of material input converges to a positive constant --- MEG is asymptotically
+lossless in the loop yet permanently extractive, every net tonne landing in the capital stock.
+From $W=R-\dot M^K+\Omega^{N,S}N$, $W/R\to1-\bar s_N$ and $g_W=g_{M^K}=g_m$. The reserve is of
+smaller order (next step), so $D=N+\dot S\sim N$ and $X=\int_0^tD\,ds\sim N/g_m$:
+$g_D=g_X=g_m$.
+
+\smalltitle{Reserves: a produced inventory with a bounded rent.} Under $\kappa_{\mathrm I}$,
+$C^D_D=\kappa_{\mathrm I}\left(X\right)\to\bar\kappa$ and
+$C^D_X=\kappa_{\mathrm I}'\left(X\right)D\to0$ (double-exponentially, since $X$ grows
+exponentially), so $p^X\to0$ by~\eqref{eq:sp:sum:X}, and the interior exploration
+margin~\eqref{eq:sp:sum:D} pins the rent at replacement cost, $p^S\to\bar\kappa$ (wedges
+vanish below) --- bounded, exactly as in the stationary state's inventory
+condition~\eqref{eq:sp:lr:inventory}. The reserve costate~\eqref{eq:sp:sum:S} then requires
+its dividend to converge,
+$\left|C^N_S\right|w_N=\chi c_NNS^{-\left(1+\chi\right)}w_N\to r\bar\kappa$, i.e.
+\begin{align}
+S_t\sim\left(\frac{\chi c_N N_t}{r\bar\kappa}\right)^{\frac{1}{1+\chi}},
+\qquad
+g_S=\frac{g_m}{1+\chi},
+\qquad
+\frac{S}{N}\to0 :
+\label{eq:app:wh:meg:inventory}
+\end{align}
+reserves grow as a produced inventory that deepens sublinearly with extraction. In
+particular the stock part of the extraction cost vanishes,
+$C^N_N\left(N,S\right)=c_NS^{-\chi}+c_\mu N^\mu\sim c_\mu N^\mu$: congestion is the only
+diverging cost on the extraction margin. This step is also where the scoping condition earns
+its keep: with $\Omega^{D,S}>0$ the margin~\eqref{eq:sp:sum:D} would read
+$p^S=\bar\kappa w_D+p^W\Omega^{D,S}-p^X\to-\infty$ (since $p^W\to-\infty$ below) against a
+rent whose forward solution~\eqref{eq:sp:sum:S} is positive: no interior exploration path
+exists and exploration diverges as direct mass harvesting --- the overburden artefact of
+Remark~\ref{rem:sp:lr:overburden}, binding here because regime (I) keeps the discovery cost
+bounded forever. Hence $\Omega^{D,S}=0$ on MEG ($\Omega^{N,S}\ge0$ is harmless: the extraction
+credit it scales is disciplined by congestion).
+
+\smalltitle{Prices: the waste asset carries MEG too.} At $\varpi=1$ the waste-margin
+identity~\eqref{eq:app:lr:Videntity} and the interior capital
+margin~\eqref{eq:sp:sum:recycling-virgin-KR} apply verbatim, with $F_Kw_Y\to A_\infty$
+($R/K^Y\to0$ and $P\to0$ below, so $A_\infty=b_K^{\varsigma/\left(\varsigma-1\right)}$,
+undamaged):
+\begin{align}
+V=\frac{F_Kw_Y}{a'}\sim\frac{A_\infty}{\psi\gamma_a}\,x^{\psi+1},
+\qquad
+\Psi=c^Ww_W+\frac{1-\alpha}{a'}F_Kw_Y\sim\frac{\psi+1}{\psi}A_\infty\,x
+\label{eq:app:wh:meg:VPsi}
+\end{align}
+(exponential tail: $V\sim A_\infty x_ae^{x/x_a}$, $\Psi\sim A_\infty x$). From
+$V=\Psi-p^W+d^Wp^P$ with $p^P$ subdominant (the damage conditions below),
+\begin{align}
+p^W\sim-V\sim-P_0e^{g_{p^W}t},
+\qquad
+g_{p^W}=\left(\psi+1\right)g_x,
+\label{eq:app:wh:meg:pW}
+\end{align}
+with $g_x$ the rate of $x$: the waste price diverges to $-\infty$ on MEG exactly as on the
+BCP. Superabundance notwithstanding, the marginal tonne of waste feeds an asymptotically
+lossless loop whose virgin alternative carries a diverging congestion cost, so waste is the
+economy's material asset here too. $\zeta$ follows from~\eqref{eq:app:lr:pM} unchanged:
+$\zeta\sim\bar\sigma\frac{r-g_{p^W}}{r+\delta-g_{p^W}}\,p^W$, diverging at $g_{p^W}$
+(convergence needs $r+\delta>g_{p^W}$, automatic below). Wedges:
+$\Omega\sim e^{\left(g_m-g_C\right)t}$, so
+$\zeta\Omega^j\sim e^{\left(g_{p^W}+g_m-g_C\right)t}\to0$
+by~\eqref{eq:app:wh:meg:pin} below ($g_{p^W}+g_m-g_C=\mu\left(1-\varsigma\right)g_m<0$).
+Hence $w_j\to1$, $u'/\lambda\to1$, $q\to1$, and the Euler
+equation~\eqref{eq:sp:sum:Cgrowth} delivers
+$g_C=\left(A_\infty-\delta-\rho\right)/\eta$ exactly: every hedge in
+Proposition~\ref{prop:sp:lr:meg}(iii) --- $w_Y\to1$, the sign of $\zeta$, the $F_{KR}$
+reading, $A_\infty$ at the limiting pollution stock --- resolves, and the growth bound holds
+with equality at the undamaged return.
+
+\smalltitle{Two pinning equations.} First, the extraction margin~\eqref{eq:sp:sum:N}: with
+the stock part of $C^N_N$ and $p^S$ bounded and $\Psi$ of order $x$, its two diverging sides
+are the congestion cost and the waste credit,
+\begin{align}
+c_\mu N^\mu w_N\;\sim\;\left(1+\Omega^{N,S}\right)\left(-p^W\right)
+\qquad\Longrightarrow\qquad
+\mu g_m=g_{p^W}=\left(\psi+1\right)g_x
+\label{eq:app:wh:meg:extbal}
+\end{align}
+(exponential tail: $x\sim x_a\mu g_mt$, linear, and $\Psi$ subexponentially divergent). The
+economy extracts until the marginal congestion cost of a tonne equals its value as future
+feedstock: on MEG extraction is disciplined by \emph{congestion} against the waste asset,
+exactly as on the BCP it is disciplined by \emph{depletion} against the same asset. Second,
+the decomposition $\Psi=F_Rw_Y+\zeta$: the left side grows at $g_x<g_{p^W}$ while
+$F_R\sim b_Rb_K^{\frac{1}{\nu\varsigma}}\left(K^Y/R\right)^{1/\varsigma}$ grows at
+$\left(g_C-g_m\right)/\varsigma$ and $-\zeta$ at $g_{p^W}$, so the two leading exponentials
+on the right must cancel --- equal rates and equal leading coefficients, one level condition,
+exactly as in~\ref{sec:app:longrun:prices}:
+\begin{align}
+\frac{g_C-g_m}{\varsigma}=g_{p^W}=\mu g_m
+\qquad\Longrightarrow\qquad
+g_m=\frac{g_C}{1+\mu\varsigma} .
+\label{eq:app:wh:meg:pin}
+\end{align}
+This confirms $g_m<g_C$ iff $\mu>0$, hence $R/K^Y\to0$ and the relative decoupling used
+above; it also orders every rate used so far:
+$\mu g_m<g_C<\eta g_C=r-\rho<r$, so $r+\delta>g_{p^W}$ and every forward integral converges,
+and $\left(1+\mu\right)g_m<\left(1+\mu\varsigma\right)g_m=g_C$, so the extraction bill
+$C^N\sim\frac{c_\mu}{1+\mu}N^{1+\mu}$, like the collection and discovery bills, is an
+asymptotically vanishing share of output. With $c_\mu=0$ or $\mu=0$ no balance exists: every
+cost on the extraction margin is bounded while the credit diverges, the margin fails towards
+more extraction at any candidate limit, and no regular exponential MEG is available.
+Recycling capital follows from $K^R=xW$:
+$g_{K^R}=g_m\frac{\psi+1+\mu}{\psi+1}$, strictly between $g_m$ and $g_C$ --- the loop deepens
+against its own throughput while vanishing relative to the economy, so $K^Y/K\to1$ as used
+above. Matching levels closes the count as on the BCP: the storage
+share~\eqref{eq:app:wh:meg:share}, the inventory level~\eqref{eq:app:wh:meg:inventory}, the
+capital-margin coefficient in~\eqref{eq:app:wh:meg:VPsi}, the extraction
+balance~\eqref{eq:app:wh:meg:extbal} and the $F_R$--$\zeta$ cancellation are five level
+conditions in the five undetermined constants of the path
+($\bar N,\bar x,\bar S,P_0$ and the $K$--$R$ ratio), with the overall scale tied to initial
+conditions; we again take the closed count as evidence of existence without proving it.
+
+\smalltitle{The sink: a threshold, not a knife-edge.} With $\varpi=1$,
+$\Xi=d^W\left(1-a\right)W$, and the power tail gives
+$1-a\sim\gamma_ax^{-\psi}\sim e^{-\psi g_xt}$, so
+\begin{align}
+\Xi\sim e^{-g_\Xi t},
+\qquad
+g_\Xi=\psi g_x-g_m=\frac{\mu\psi-\left(\psi+1\right)}{\psi+1}\,g_m
+\qquad
+\left(\text{exponential tail: }g_\Xi=\left(\mu-1\right)g_m\right).
+\label{eq:app:wh:meg:sink}
+\end{align}
+A stable sink (Lemma~\ref{lem:sp:lr:common}(ii)) requires $g_\Xi\ge0$. The boundary case
+$\mu=\left(\psi+1\right)/\psi$ fails on its own: there $\Xi\to\bar\Xi>0$ and $\bar P>0$, so
+$v'\left(\bar P\right)>0$ and $p^P\sim e^{\eta g_Ct}$, which outruns $V\sim e^{\mu g_mt}$
+always ($\eta g_C>g_C>\mu g_m$); the $d^Wp^P$ term then flips $p^W$ to $+\infty$, the
+extraction margin fails towards its corner, and the configuration collapses --- the same
+failure mode as $v'\left(0\right)>0$ on the BCP (\ref{sec:app:longrun:pollution}). Hence
+strictly
+\begin{align}
+\mu>\frac{\psi+1}{\psi}
+\qquad\left(\text{exponential tail: }\mu>1\right),
+\label{eq:app:wh:meg:threshold}
+\end{align}
+with $\Xi\to0$ and $P\to0$ at rate $m=\min\left(g_\Xi,\theta_0\right)$. Unlike the BCP's
+extraction matching $\chi=\left(\psi+1\right)/\psi$, a knife-edge equality across
+independently specified primitives, \eqref{eq:app:wh:meg:threshold} is an open region of the
+parameter space. The same object appears in both: the tail of the virgin brake set against
+the tail of the recycling yield --- an equality where the brake is depletion ($\chi$, on a
+dying material side), an inequality where it is congestion ($\mu$, on an expanding one).
+
+\smalltitle{Tame damages at the MEG rates.} With $P_t\sim e^{-mt}$, as
+in~\eqref{eq:app:wh:damagerates},
+$v'/\lambda\sim e^{\left(\eta g_C-\beta_vm\right)t}$ and
+$\left|F_P\right|\sim e^{\left(g_C-\beta_Fm\right)t}$, and the requirement that $d^Wp^P$ not
+disturb $p^W\sim-V$ at rate $\mu g_m$ reads
+\begin{align}
+\eta g_C-\beta_vm\;\le\;\mu g_m,
+\qquad
+g_C-\beta_Fm\;\le\;\mu g_m .
+\label{eq:app:wh:meg:damageconds}
+\end{align}
+(The $p^P$ integral itself converges: its discount tends to $r+\theta_0$ and its dividend
+grows no faster than $\mu g_m<r$.) Both conditions are substantive: since
+$\eta g_C>g_C>\mu g_m$, each requires its damage exponent to do real work, so $\beta_v>0$
+\emph{and} $\beta_F>0$ are necessary here too --- the multiplicative-exponential output
+damage ($\beta_F=0$) kills MEG for the same reason it kills the BCP. And a slow sink can kill
+it independently of the congestion brake: $m$ is capped by $\theta_0$,
+so~\eqref{eq:app:wh:meg:damageconds} fails for $\theta_0$ small enough however large $\mu$.
+Transversality survives throughout:
+$e^{-\rho t}\lambda\sim e^{-\left(\rho+\eta g_C\right)t}$ against state-price products
+growing at most at $g_{p^W}+g_m=\left(1+\mu\right)g_m<g_C<\rho+\eta g_C$ (for $M^K$; the
+checks for $K,S,X,P$ are immediate).
+
+\smalltitle{When the threshold fails.} For $\mu\le\left(\psi+1\right)/\psi$, or
+when~\eqref{eq:app:wh:meg:damageconds} fails, the workhorse admits no regular exponential MEG:
+a bounded $x$ leaves $\left(1-a\right)W\to\infty$ and the sink unstable; the waste-asset
+regime violates~\eqref{eq:app:wh:meg:sink}; and the remaining candidate, recycling depth
+driven by $p^P$ itself, sends $p^W\to+\infty$ and extraction to its corner --- after which the
+loop would have to run on the run-down of $M^K$ alone, impossible with
+$W\le\delta M^K/\bar\sigma$ and $M^K$ non-increasing. By
+Theorem~\ref{thm:sp:lr:classification} the growth-(I) cell admits no other configuration
+(bounded or vanishing $R$ revives extraction, congestion being bounded at bounded $N$), so
+below the threshold the cell has \emph{no} regular exponential sustained-consumption limit at
+all. What the optimum then does --- non-regular paths, slowly varying rates, or no sustained
+consumption --- is open (gap~(xii) of~\ref{sec:app:longrun:gaps}). Two side remarks close the
+subsection. First, the storage condition mirrors the BCP's dematerialising-capital condition
+with the sign reversed: under $\phi^I=0$ storage absorption is impossible (the ledger then
+bounds $N$, and the diverging credit revives extraction --- a contradiction), while under
+constant or exogenous $\Phi^I$ the material requirement of investment forces $g_m=g_C$ and an
+extraction bill $\sim N^{1+\mu}$ that outruns output: both variants kill MEG, just as they
+kill the BCP (\ref{sec:app:longrun:feas}), and the baseline $\Phi^I=\Omega\phi^I$ is what
+delivers both configurations --- dilution lets the BCP's storage die, a positive share
+$\bar\sigma$ lets MEG's storage absorb. Second, the boundary structure of the two pinning
+equations is exactly the BCP's with the scarcity block re-cast: replace
+$C^N_N\left(0,S\right)=c_NS^{-\chi}$ diverging on a dying reserve by $c_\mu N^\mu$ diverging
+on an expanding extraction flow, and~\eqref{eq:app:lr:scarcity}--\eqref{eq:app:lr:gpin} map
+term for term onto~\eqref{eq:app:wh:meg:extbal}--\eqref{eq:app:wh:meg:pin}.
+\hfill$\qed$
+
+\subsection{Trend growth under the workhorse}\label{sec:app:workhorse:trend}
+
+This subsection derives the rate systems behind Proposition~\ref{prop:sp:wh:trend}. The
+standard is rate-and-count; every level condition is named, none is closed (gap~(xvi)).
+Throughout, $m=B\tilde R$ is the kernel's material argument and the intensive form of the
+kernel is
+\begin{align}
+f\left(k\right)=\left[1-\Gamma\!\left(P\right)\right]\left[b_Kk^{\nu}+b_R\right]^{1/\nu},
+\qquad
+k=\frac{K^Y}{m},
+\qquad
+f'\left(k\right)=\left[1-\Gamma\right]b_K\left[b_K+b_Rk^{-\nu}\right]^{\frac{1-\nu}{\nu}} .
+\label{eq:app:wh:trend-intensive}
+\end{align}
+
+\smalltitle{Kernel tail objects.} For $\varsigma<1$ ($\nu<0$): as $k\to\infty$,
+$f\to\left[1-\Gamma\right]b_R^{1/\nu}$ (bounded) and
+$f'\sim\left[1-\Gamma\right]b_Kb_R^{\left(1-\nu\right)/\nu}k^{-\left(1-\nu\right)}$, so
+$\beta_\infty=0$, $\epsilon_\infty=1-\nu=1/\varsigma$, $\gamma_A=1$, and the consistency
+condition $\epsilon_\infty\ge1-\beta_\infty$ holds strictly. At $\varsigma=1$ (Cobb--Douglas,
+material share $\beta$): $\beta_\infty=1-\beta$, $\epsilon_\infty=\beta$,
+$\gamma_A=1/\beta$, consistency with equality. For $\varsigma>1$:
+$f'\downarrow\left[1-\Gamma\right]b_K^{1/\nu}=A_\infty>0$, so with $g_A>0$ the return
+$Af'\ge AA_\infty\to\infty$: the \emph{explosive cell}, out of the regular class
+(Lemma~\ref{lem:sp:lr:branches}(i)). Branch placement for $g_A=0$, $\varsigma>1$: the
+demanded return $\rho+\delta+\eta\left(g_B+g_R\right)$ lies in the range
+$\left(A_\infty+\delta,\infty\right)$ of $f'$ iff
+$A_\infty-\delta<\rho+\eta\left(g_B+g_R\right)$ --- the effective
+threshold~\eqref{eq:sp:lr:effthreshold}; otherwise $k\to\infty$ and the endogenous
+asymptotics of the stationary appendix apply with material services in place of tonnage.
+For $\varsigma<1$ the range is $\left(0,\left[1-\Gamma\right]b_K^{\varsigma/\left(\varsigma-1\right)}\right)$
+and solvability is the capital-viability level condition
+$\left[1-\Gamma\right]b_K^{\varsigma/\left(\varsigma-1\right)}>\rho+\delta+\eta g_C$
+(read at $P\to0$, so $\Gamma\to0$).
+
+\smalltitle{The material-price pace.} $F_R=AB\left(f-kf'\right)$. Trend-paced branch: the
+material share $F_RR/Y\to1-\beta_\infty>0$, so $\pi=g_C-g_R$ ($=\gamma_Ag_A+g_B$ with $R$
+settled). Endogenous branch ($\varsigma>1$, $g_A=0$):
+$F_R=\left[1-\Gamma\right]b_RB^{1-1/\varsigma}\left(\mathcal F/\tilde R\right)^{1/\varsigma}$
+with $\mathcal F\sim b_K^{1/\nu}K$, so
+$\pi=\left(g_C-g_{\tilde R}\right)/\varsigma+\left(1-1/\varsigma\right)g_B$, reducing to
+$e_Rg_C$ at $g_B=0$.
+
+\smalltitle{The trending BCP.} Run the stationary BCP chain
+(\ref{sec:app:longrun:feas}--\ref{sec:app:longrun:pollution}) with the price block paced by
+$\pi$ instead of $e_Rg_C$; every step is rate-homogeneous in the pace, so the chain goes
+through unchanged: the waste credit $-p^W$, $-\zeta$, the rent $p^S$ and
+$C^N_N\left(0,S_t\right)$ diverge at $\pi$; the yield-tail argument gives
+$x^{\psi+1}\sim V/F_Kw_Y$ with $F_K$ settling (endogenous: at $A_\infty$; trend-paced: at
+$\rho+\delta+\eta g_C$), so $g_x=\pi/\left(\psi+1\right)$ and, with treated throughput
+settled, $g_{K^R}=\pi/\left(\psi+1\right)$; the ledger lock gives
+$g_N=g_S=-\frac{\psi}{\psi+1}\pi$. The extraction matching equates the divergence of
+$C^N_N\left(0,S\right)=c_NS^{-\chi}$, namely $\chi\left|g_S\right|=\chi\frac{\psi}{\psi+1}\pi$,
+with $\pi$: the pace cancels and $\chi=\left(\psi+1\right)/\psi$ survives every trend
+vector. Likewise the discovery matching, run at $\pi$. The damage chain
+(\ref{sec:app:workhorse:tails}, Damages) goes through with $g_C$ and $\pi$ in place of
+$g_C$ and $e_Rg_C$: $\eta g_C-\min\left(\left|g_N\right|,\theta_0\right)\le\pi$ and the
+$\beta_F$ analogue. New relative to the stationary case: on the trend-paced branch
+($\varsigma\le1$) the growth that pays the loop's diverging bills is supplied by the trend,
+so the BCP's feasibility step (\ref{sec:app:longrun:feas}) no longer needs
+$A_\infty-\delta>\rho$ --- the bills $F_Kw_YK^R$ and $c_TW$ grow at
+$\pi/\left(\psi+1\right)<g_C$ and $0$ respectively, subdominant in output. Level
+conditions (loop size, boundary constants) are counted, not closed.
+
+\smalltitle{The trending MEG.} The two pinning equations of~\ref{sec:app:workhorse:meg}
+generalise. Extraction balance: $c_\mu N^{\mu}$ against the credit $-p^W$ diverging with the
+delivered value, both at the pace of $F_R$ along the path, so
+$\mu g_m=\pi$ evaluated on the expanding material side. Endogenous branch:
+$\pi=\left(g_C-g_m\right)/\varsigma+\left(1-1/\varsigma\right)g_B$ gives
+\begin{align}
+\mu g_m=\frac{g_C-g_m}{\varsigma}+\left(1-\frac{1}{\varsigma}\right)g_B
+\quad\Longleftrightarrow\quad
+g_m=\frac{g_C+\left(\varsigma-1\right)g_B}{1+\mu\varsigma},
+\label{eq:app:wh:trend-meg-endog}
+\end{align}
+reducing to $g_C/\left(1+\mu\varsigma\right)$ at $g_B=0$. Trend-paced branch:
+$\pi=g_C-g_m$ and the pace equation $g_C=\gamma_Ag_A+g_B+g_m$ give
+$\mu g_m=\gamma_Ag_A+g_B$, hence $g_C=\left(1+1/\mu\right)\left(\gamma_Ag_A+g_B\right)$
+and the extraction bill $c_\mu N^{1+\mu}$ grows at exactly $g_C$: it claims an
+asymptotically constant share of output, and the share falling below one is a named level
+condition (on the endogenous branch the bill is strictly subdominant for $\varsigma>1$).
+The loop block is unchanged in form on both branches: $a'V=F_Kw_Y$ with $F_K$ settling and
+$V$ at $\mu g_m$ gives $g_x=\mu g_m/\left(\psi+1\right)$,
+$g_{K^R}=g_m\left(\mu+\psi+1\right)/\left(\psi+1\right)$ (subdominant in output iff
+$\mu\psi>0$: always), and sink stability requires the losses $x^{-\psi}W$ to die,
+$\psi g_x>g_m$, i.e.\ $\mu\psi>\psi+1$: \emph{the congestion threshold
+$\mu>\left(\psi+1\right)/\psi$ is trend-invariant}, for the same reason as the
+$\chi$-matching --- both sides of the race run at the common pace, which cancels. Emissions
+then die at $g_\Xi=\left[\mu\psi-\left(\psi+1\right)\right]g_m/\left(\psi+1\right)$,
+$P\to0$ at $m_P=\min\left(g_\Xi,\theta_0\right)$, and the damage chain gives
+$\eta g_C-\beta_vm_P\le\mu g_m$ and $g_C-\beta_Fm_P\le\mu g_m$. The reserve-inventory
+block of~\ref{sec:app:workhorse:meg} (rent pinned at $\bar\kappa$,
+$S\sim N^{1/\left(1+\chi\right)}$, pinned virgin share) carries over with the adjusted
+rates.
+
+\smalltitle{Trending DC and the bills check.} On a trend-paced phase-out
+($\varsigma\le1$, $g_R<0$), $g_C=\gamma_Ag_A+g_B+g_R$; the material bills die ($C^N$ with
+$N\to0$, $c^WW$ with $W\sim R$), so the pace formula stands, and sustained consumption
+requires exactly $\gamma_Ag_A+g_B\ge\left|g_R\right|$. What pins $g_R$ is not derived
+(gap~(xix)).

@@ -1,0 +1,323 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Alternative Part I, Section 2: Decentralized theory %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Decentralized Model in Continuous Time}
+\label{sec:ad}
+
+This section states the market economy that corresponds to the planner model of Section~\ref{sec:ac}. Tastes and technologies are unchanged --- equations~\eqref{eq:ac:utility}--\eqref{eq:ac:waste-cost} carry over verbatim --- so this section describes only the institutional structure, the agents' problems, the resulting optimality conditions, and the policy instruments that implement the first best. The embodied-material stock $\Phi$ and its law of motion~\eqref{eq:ac:Phi-motion} also carry over unchanged: $\Phi$ is a real physical stock, not a planner construct, and the materials ledger~\eqref{eq:ac:ledger} determines actual total waste $W$ regardless of how policy is set.
+
+One point of method is worth stating at the outset, because it differs from the usual treatment. The materials ledger closes \emph{identically} in the two economies: $\Omega$ and $\phi^Y$ are determined by~\eqref{eq:ac:Omega} in the market exactly as in the planner's problem, and $W$ by~\eqref{eq:ac:ledger-quadratic}. This is as it should be. Conservation of mass is physics, not an institution, and there is no sense in which a planner and a market face different versions of it. What differs between the two economies is only what the agents \emph{internalize}, and that is the entire subject of this section.
+
+Like Section~\ref{sec:ac}, this section is stated under the general accounting; the restriction $\omega^{N,S}=\omega^{D,S}=0$ is displayed as \textbf{(B1)} wherever it simplifies a statement. It has a sharp consequence here: \textbf{(B1)} needs four instruments, and the general case needs seven. The three extra ones --- on output, on consumption and on exploration --- are all exactly zero under \textbf{(B1)}, which is why the baseline instrument set looks as parsimonious as it does. Throughout, $\kappa=\mathcal N/\mathcal D$ and $\pi=p^W\Omega\kappa$ as in Section~\ref{sec:ac}.
+
+\subsection{Agents, markets and policy instruments}
+\label{subsec:ad:setup}
+
+The economy contains three decision units: a competitive waste industry, a representative household that owns and runs both the mining firm and the final goods firm, and a government. There is one market price in the model, the price $P^W\ge 0$ per unit of \emph{treated} waste sold by the waste industry to the final goods firm.
+
+\smalltitle{The externalities to be corrected.} Private agents fail to internalize exactly two things: the pollution stock $P$, which the household takes parametrically, and the materials ledger~\eqref{eq:ac:ledger}, which no agent faces and which therefore has no private counterpart to $p^W$ or to the embodied-material liability $p^\Phi$. The reserve and discovery margins are already internalized, since the household owns the mine. Seven instruments suffice in general and four under \textbf{(B1)}, listed in Table~\ref{tab:ad:instruments}; all are allowed to be functions of time and are taken as given by private agents.
+
+\begin{table}[H]
+\centering
+\caption{Policy instruments in the decentralized economy. The last column gives the instrument's value under \textbf{(B1)}; three of the seven vanish.}
+\label{tab:ad:instruments}
+\renewcommand{\arraystretch}{0.85}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Instrument & Base & Levied on & Corrects & \textbf{(B1)} \\
+\midrule
+$\tau^N$        & $N$              & virgin materials extracted                & ledger, $p^W$ & $p^W$ \\
+$s^R$           & $aW^R$           & waste actually recycled (subsidy)         & ledger and pollution & $d^Wp^P-p^W$ \\
+$\tau^W$        & $(1-\varpi)W$    & untreated waste deposited in the environment & pollution, $p^P$ & $p^P(1-d^W)$ \\
+$\tau^K$        & $I+\delta K$     & \emph{gross} capital formation            & ledger, $p^W$ and $p^\Phi$ & $-\phi^I\left(p^W-p^\Phi\right)$ \\
+\midrule
+$\tau^Y$        & $Y$              & output of final goods                     & dilution, $\pi$ & $0$ \\
+$\tau^C$        & $C$              & consumption                               & dilution, $\pi$ & $0$ \\
+$\tau^D$        & $D$              & new reserves discovered                   & displacement and dilution & $0$ \\
+\midrule
+$s^W$           & $W$              & waste collected (residual, from zero profit) & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$s^W$ is not a free instrument: it is whatever the competitive tender requires for the waste sector to break even, given the others and the market price $P^W$. Four features of the set are worth flagging now and are justified below.
+
+First, the three instruments in the middle block exist \emph{only} because of the nature-attributable terms, and every one of them is proportional to $\pi$ or to $\Omega\omega^{i,S}$. Under \textbf{(B1)} they are identically zero, and the familiar four-instrument menu is what remains. It is worth being clear about which of the two readings is the surprising one: the absence of output and consumption taxes is a \emph{result} of \textbf{(B1)}, not a general property of materials-balance models.
+
+Second, under \textbf{(B1)} there is no instrument levied on $Y$ or on $C$. Under a coarser accounting one expects ad valorem Pigouvian taxes on output and consumption, on the grounds that both generate waste. They do not, at the margin: by the ledger~\eqref{eq:ac:ledger}, $W$ then depends on $N$, $R^R$ and $\dot\Phi$ and on nothing else. The mass embodied in consumption goods was counted when it entered the economy as $R$; consuming it does not create it. In general $\tau^Y$ and $\tau^C$ reappear, but --- and this is the point --- \emph{not} as Pigouvian taxes on waste generation. They are dilution corrections, they carry the opposite sign, and Remark~\ref{rem:ad:no-tauY} argues they are an artifact of how $\mathcal M$ is scaled rather than a substantive result.
+
+Third, there is no instrument levied on $C^N$, $C^D$ or $C^W$, and under \textbf{(B1)} $\tau^N$ carries no markup proportional to marginal extraction cost. Again this is the ledger at work: the final good spent on extraction effort carries embodied material, but that material was already drawn through $R$ and is already priced. In general $\tau^N$ does acquire a term in $C^N_N$, through dilution.
+
+Fourth, $\tau^K$ is of a different character from all the others. It is not a Pigouvian tax correcting a waste- or pollution-generating externality; it is a price correction on the household's own saving decision, needed because capital is otherwise traded at a price that ignores the materials it embodies. It is levied on \emph{gross} capital formation $I+\delta K$, not on net investment, because that is the flow that draws material in the ledger and in~\eqref{eq:ac:Phi-motion}. And it turns out to be a \emph{subsidy}. Section~\ref{subsec:ad:foc} explains where it comes from, Section~\ref{subsec:ad:implementation} gives its Pigouvian level, and Remark~\ref{rem:ad:q} explains why no other instrument can substitute for it.
+
+\subsubsection{The waste industry}
+\label{subsubsec:ad:waste}
+
+Collection and treatment of waste is delegated to specialized firms through a competitive public tender. Firms operate the constant-returns technology behind~\eqref{eq:ac:waste-cost}, are obliged to collect \emph{all} waste, may deposit untreated waste in the environment against the tax $\tau^W$ per unit, and receive the subsidy $s^W$ per unit collected. They take $W$ and $P^W$ as given and choose $\varpi$. Profit is
+\begin{align}
+\Pi^W &= \left[P^W\varpi+s^W-c^c-c^T(\varpi)-\tau^W(1-\varpi)\right]W,
+\label{eq:ad:waste-profit}
+\end{align}
+with first-order condition
+\begin{align}
+\frac{dc^T}{d\varpi} &= P^W+\tau^W.
+\label{eq:ad:foc-treatment}
+\end{align}
+The tender drives $\Pi^W$ to zero, which determines the subsidy required for the sector to break even:
+\begin{align}
+s^W &= c^c+c^T(\varpi)+\tau^W(1-\varpi)-P^W\varpi.
+\label{eq:ad:zero-profit}
+\end{align}
+If $P^W$ becomes large enough, $s^W<0$ and the ``subsidy'' turns into a licence fee for the right to collect waste. Note that~\eqref{eq:ad:foc-treatment} and~\eqref{eq:ad:zero-profit} jointly imply the reduced form
+\begin{align}
+\varpi\frac{dc^T}{d\varpi} &= c^c+c^T(\varpi)+\tau^W-s^W.
+\label{eq:ad:treatment-reduced}
+\end{align}
+Neither $\Omega$ nor any waste-intensity parameter enters the waste industry's problem: the firm sees only the physical technology $c^c+c^T(\varpi)$, exactly as in Section~\ref{sec:ac}'s primitives. The materials ledger is entirely an externality from the firm's point of view, internalized only through the instruments the government sets.
+
+\subsubsection{The household, the mine and the final goods firm}
+\label{subsubsec:ad:household}
+
+The household has preferences~\eqref{eq:ac:utility}, owns the mine operating the cost functions~\eqref{eq:ac:extraction-cost}--\eqref{eq:ac:discovery-cost}, and owns the final goods firm operating~\eqref{eq:ac:output} and the recycling technology~\eqref{eq:ac:recycling}. The final goods firm buys the quantity $W^R$ of treated waste at price $P^W$ and recycles the fraction $a\!\left(K^R/W^R\right)$ of it; the firm's argument in the recycling function is $W^R$, whereas the planner's argument is $\varpi W$, and the two coincide in equilibrium by market clearing~\eqref{eq:ad:clearing} below. Since the waste industry earns zero profit, the household's net dividend is
+\begin{align}
+\Pi^H &= \left(1-\tau^Y\right)F\!\left(K-K^R,\ N+a\!\left(\tfrac{K^R}{W^R}\right)W^R,\ P\right)-C^N(N,S)-C^D(D,X)
+\notag \\
+&\phantom{{}={}}
++s^R a\!\left(\tfrac{K^R}{W^R}\right)W^R-\tau^NN-\tau^DD-P^WW^R.
+\label{eq:ad:dividend}
+\end{align}
+Adding the lump-sum transfer $T$ and subtracting consumption at its tax-inclusive price, the household's budget constraint is
+\begin{align}
+Q\left(\dot K+\delta K\right) &= \Pi^H+T-\left(1+\tau^C\right)C,
+&
+Q &\equiv 1+\tau^K.
+\label{eq:ad:budget}
+\end{align}
+Under \textbf{(B1)} the three instruments $\tau^Y$, $\tau^C$ and $\tau^D$ are zero and~\eqref{eq:ad:dividend}--\eqref{eq:ad:budget} reduce to their familiar forms.
+$Q$ is the price at which the household acquires capital, in units of the final good. Because $\tau^K$ is levied on gross capital formation, replacement of depreciated capital is priced at $Q$ exactly as net accumulation is --- which is what the ledger requires, since the two draw material on identical terms.
+
+\begin{problem}[Household]\label{prob:ad:household}
+The household chooses $\left\{C,K^R,N,D,W^R\right\}$ to maximize~\eqref{eq:ac:utility} subject to~\eqref{eq:ad:budget}, $\dot S=D-N$ and $\dot X=D$, taking as given the paths of $P^W$, all policy instruments, the transfer $T$, and --- crucially --- the stock of pollution $P$. Initial stocks $K(0),S(0),X(0)$ are predetermined.
+\end{problem}
+
+The household internalizes neither the pollution externality nor the materials ledger. This is the entire source of the wedge between Problem~\ref{prob:ad:household} and Problem~\ref{prob:ac:planner}.
+
+\smalltitle{Government budget.} The transfer is set to balance the budget period by period,
+\begin{align}
+T &= \tau^NN+\tau^DD+\tau^YY+\tau^CC+\tau^K\left(I+\delta K\right)+\tau^W(1-\varpi)W-s^WW-s^R aW^R.
+\label{eq:ad:government-budget}
+\end{align}
+Substituting~\eqref{eq:ad:dividend} and~\eqref{eq:ad:government-budget} into~\eqref{eq:ad:budget}, every tax and subsidy term cancels. For $\tau^K$ this is immediate: the left side is $\left(1+\tau^K\right)\left(I+\delta K\right)$ and the transfer returns $\tau^K\left(I+\delta K\right)$, leaving $I+\delta K$. The same holds term by term for $\tau^Y$, $\tau^C$ and $\tau^D$, whose bases appear once in~\eqref{eq:ad:dividend} or~\eqref{eq:ad:budget} and once in~\eqref{eq:ad:government-budget} with the opposite sign. For the waste block, using~\eqref{eq:ad:zero-profit} and market clearing $W^R=\varpi W$,
+\begin{align}
+-P^W\varpi W+\tau^W(1-\varpi)W-s^WW &= -\left[c^c+c^T(\varpi)\right]W,
+\label{eq:ad:waste-cancellation}
+\end{align}
+so the household budget collapses to the economy's resource constraint,
+\begin{align}
+\dot K &= F\!\left(K-K^R,R,P\right)-C-\delta K-C^N(N,S)-C^D(D,X)-\left[c^c+c^T(\varpi)\right]W,
+\label{eq:ad:resource-constraint}
+\end{align}
+which is~\eqref{eq:ac:capital-constraint}. This is the check that the instrument set and the transfer rule are mutually consistent, and it holds with $\tau^K$ on the gross base exactly as it would with no capital instrument at all.
+
+\subsection{Optimality conditions}
+\label{subsec:ad:foc}
+
+Because $\tau^K$ drives a wedge between the price of capital and the price of the final good, the household's problem carries two shadow prices where a market economy without $\tau^K$ needs only one. Let $\mu^K$ denote the true co-state on $K$ --- the household's marginal utility value of a unit of \emph{capital} --- and define
+\begin{align}
+\zeta^m &\equiv \frac{\mu^K}{Q},
+\label{eq:ad:zetam}
+\end{align}
+the household's marginal utility value of a unit of the \emph{final good}, exactly mirroring the planner's $\zeta=\lambda^K/q$ from~\eqref{eq:ac:foc-investment}. Let $P^S>0$ and $P^X>0$ denote the private shadow prices of reserves and of accumulated discoveries, defined relative to $\zeta^m$ and measured in units of the final good. There is no private counterpart to $p^W$, to $p^\Phi$, or to $p^P$.
+
+\smalltitle{The final goods firm.} Differentiating the recycling block of~\eqref{eq:ad:dividend} with respect to $K^R$ and $W^R$, and using $\partial\left[aW^R\right]/\partial W^R=a(1-\varepsilon)$. Writing $\widetilde F\equiv\left(1-\tau^Y\right)F$ for the after-tax marginal products,
+\begin{subequations}\label{eq:ad:foc-recycling}
+\begin{align}
+K^R&=0
+&&\text{if}\quad a'(0)\left[\widetilde F_R+s^R\right]\le \widetilde F_K,
+&&\text{(linear stage)}
+\label{eq:ad:foc-recycling-a}
+\\
+a'\!\left(\frac{K^R}{W^R}\right)\left[\widetilde F_R+s^R\right]&=\widetilde F_K
+&&\text{if}\quad a'(0)\left[\widetilde F_R+s^R\right]> \widetilde F_K,
+&&\text{(circular stage)}
+\label{eq:ad:foc-recycling-b}
+\end{align}
+\end{subequations}
+\begin{align}
+a\!\left(\frac{K^R}{W^R}\right)(1-\varepsilon)\left[\widetilde F_R+s^R\right] &= P^W.
+\label{eq:ad:foc-waste-use}
+\end{align}
+
+\smalltitle{Saving, extraction and exploration.}
+\begin{align}
+u'(C) &= \zeta^m\left(1+\tau^C\right),
+&
+\widetilde F_R-C^N_N-\tau^N &= P^S,
+&
+C^D_D+\tau^D+P^X &= P^S.
+\label{eq:ad:foc-saving}
+\end{align}
+Under \textbf{(B1)}, $\tau^Y=\tau^C=\tau^D=0$, so $\widetilde F=F$ and these are the conditions of a market economy with no output, consumption or exploration instrument.
+
+\smalltitle{Co-state conditions.} Differentiating~\eqref{eq:ad:budget} with respect to $K$, the household gives up $Q$ units of the final good per unit of capital and receives the after-tax marginal product $\widetilde F_K$ net of depreciation valued at $Q$, so
+\begin{align}
+\frac{\dot\mu^K}{\mu^K} &= \rho-r^m,
+&
+r^m &\equiv \frac{\widetilde F_K}{Q}-\delta,
+&
+\lim_{t\to\infty}\mu^K(t)K(t)&=0,
+\label{eq:ad:muK}
+\end{align}
+which is~\eqref{eq:ac:r} with $Q$ in place of $q$. The goods rate of interest facing the household follows from $\zeta^m=\mu^K/Q$:
+\begin{align}
+\frac{\dot\zeta^m}{\zeta^m} &= \rho-\iota^m,
+&
+\iota^m &\equiv r^m+\frac{\dot Q}{Q},
+\label{eq:ad:iotam}
+\end{align}
+mirroring~\eqref{eq:ac:iota}. $P^S$ and $P^X$, defined relative to $\zeta^m$ rather than $\mu^K$, therefore retain exactly their earlier form, discounted at $\iota^m$:
+\begin{align}
+P^S(t) &= \int_t^{\infty}\left(-C^N_S(z)\right)\exp\left(-\int_t^{z}\iota^m(u)\,du\right)dz,
+&
+P^X(t) &= \int_t^{\infty}C^D_X(z)\exp\left(-\int_t^{z}\iota^m(u)\,du\right)dz.
+\label{eq:ad:PS-PX}
+\end{align}
+There is no private analogue of~\eqref{eq:ac:pP}: the household treats $P$ parametrically, so the pollution stock enters~\eqref{eq:ad:foc-recycling}--\eqref{eq:ad:foc-saving} only through the levels of $F_R$ and $F_K$ and never through a shadow price.
+
+Every one of these conditions is the corresponding planner condition of Section~\ref{subsec:ac:foc} with the shadow prices $p^W$, $p^\Phi$ and $p^P$ deleted and the instruments put in their place. That is the whole content of the decentralization, and it is what makes the term-by-term matching in Section~\ref{subsec:ad:implementation} straightforward.
+
+\subsection{Equilibrium}
+\label{subsec:ad:equilibrium}
+
+\begin{definition}[Competitive equilibrium]\label{def:ad:equilibrium}
+Given initial stocks $K(0),\Phi(0),S(0),X(0),P(0)$ and paths of the four policy instruments, a competitive equilibrium is a path of quantities $\left\{C,K^R,N,D,W,W^R,\varpi\right\}$, a price $P^W\ge 0$, a subsidy $s^W$, and shadow prices $\left\{P^S,P^X,\mu^K\right\}$ (with $\zeta^m\equiv\mu^K/Q$ read off directly) such that
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item the waste industry optimizes and breaks even: \eqref{eq:ad:foc-treatment} and~\eqref{eq:ad:zero-profit};
+\item the household and its firms optimize: \eqref{eq:ad:foc-recycling}--\eqref{eq:ad:PS-PX};
+\item the market for treated waste clears, with the price non-negative and~\eqref{eq:ad:foc-waste-use} holding as an equality whenever the quantity traded is positive:
+\begin{align}
+\varpi W &= W^R\ge 0,
+&
+P^W &\ge 0,
+&
+P^W W^R &> 0 \ \Longrightarrow\ \eqref{eq:ad:foc-waste-use}\ \text{holds with equality};
+\label{eq:ad:clearing}
+\end{align}
+\item total waste and the waste-intensity level satisfy the materials ledger and its definition, \eqref{eq:ac:ledger-quadratic} and~\eqref{eq:ac:Omega}, reducing under \textbf{(B1)} to $W=\left(N-\dot\Phi\right)/\left(1-a\varpi\right)$ from~\eqref{eq:ac:ledger-solved} with $\Omega$ dropping out;
+\item the stocks evolve according to~\eqref{eq:ac:Phi-motion}, \eqref{eq:ac:reserves-motion}, \eqref{eq:ac:pollution-motion} and~\eqref{eq:ad:resource-constraint}, with $R^R=a\!\left(K^R/W^R\right)W^R$ in~\eqref{eq:ac:Xi}.
+\end{enumerate}
+The accounting object $\phi^Y$ is recovered from~\eqref{eq:ac:Omega} after the fact and enters no equilibrium condition; so does $\Omega$ under \textbf{(B1)}.
+\end{definition}
+
+\smalltitle{Counting.} Conditions~(i)--(iv) are nine equations in the nine unknowns
+\begin{align*}
+C,\quad K^R,\quad N,\quad D,\quad W,\quad W^R,\quad \varpi,\quad P^W,\quad \Omega,
+\end{align*}
+with $s^W$ read off~\eqref{eq:ad:zero-profit}, $P^S,P^X,\mu^K$ given by their own forward-looking relations~\eqref{eq:ad:muK}--\eqref{eq:ad:PS-PX}, and the transversality condition pinning down $\mu^K(0)$. $\Phi$ is predetermined at each instant and enters only through $\dot\Phi$ in~(iv); $\phi^K\equiv\Phi/K$ appears nowhere. Under \textbf{(B1)} the count falls to eight and eight: $\Omega$ leaves the system, exactly as in Section~\ref{subsec:ac:system}.
+
+This is a genuinely square system under any policy configuration, not only the optimal one, and --- unlike a formulation in which the level $\Omega$ is a free calibrated parameter and the materials balance is imposed as an additional restriction --- nothing needs to be endogenized to make it so. Note the distinction: here $\Omega$ is an unknown \emph{determined by} an accounting identity, not a parameter whose value the modeller sets and against which the balance is then imposed as a restriction. The ledger supplies exactly one equation and determines exactly one quantity, $W$. Remark~\ref{rem:ad:cancellation} records why the cancellation that produces it is so clean.
+
+\smalltitle{Regimes.} In the linear stage~\eqref{eq:ad:foc-recycling-a}, the demand for recyclable waste is zero. Then $W^R=0$, $P^W=0$, and all collected waste is deposited in the environment whether treated or not; treatment is positive only to the extent that $\tau^W>0$ makes it worthwhile through~\eqref{eq:ad:foc-treatment}. In the circular stage, \eqref{eq:ad:foc-recycling-b}, \eqref{eq:ad:foc-waste-use} and~\eqref{eq:ad:clearing} jointly determine $K^R$, $W^R$ and $P^W$. Under laissez-faire ($\tau^W=0$) the linear stage therefore has $\varpi=0$ exactly, so the model has a well-defined ``date of first waste treatment'' and a later ``date of first recycling.''
+
+\subsection{Implementing the first best}
+\label{subsec:ad:implementation}
+
+\begin{proposition}[Pigouvian implementation]\label{prop:ad:implementation}
+Let $p^W$, $p^S$, $p^X$, $p^P$, $p^\Phi$, $\kappa$, $\pi$ and $B$ from~\eqref{eq:ac:B-reduced} denote the shadow prices and accounting objects along the first-best path of Section~\ref{sec:ac}. Set
+\begin{align}
+\tau^Y &= -\pi\,\omega^Y,
+&
+\tau^C &= -\pi\,\omega^C,
+&
+\tau^D &= p^W\Omega\,\omega^{D,S}-\pi\,\omega^{D,Y}C^D_D,
+\label{eq:ad:implement-general}
+\\
+\tau^N &= p^W\left(1+\kappa\right)+p^W\Omega\,\omega^{N,S}-\pi\,\omega^{N,Y}C^N_N,
+&
+s^R &= d^Wp^P-p^W\left(1+\kappa\right),
+\notag
+\\
+\tau^W &= \frac{p^P\left(1-d^W\right)+\pi\,\omega^Wa\left(1-\varepsilon\right)B}{1-\pi\,\omega^W},
+&
+\tau^K &= -\phi^I\left[p^W\left(1+\kappa\right)-p^\Phi\right].
+\notag
+\end{align}
+Then the competitive equilibrium of Definition~\ref{def:ad:equilibrium} coincides with the first-best allocation, and $Q=q$, $\mu^K=\lambda^K$, $\zeta^m=\zeta$, $P^S=p^S$, $P^X=p^X$, $r^m=r$, $\iota^m=\iota$ at every date. Under \textbf{(B1)}, where $\kappa=\pi=\Omega\omega^{N,S}=\Omega\omega^{D,S}=0$, this reduces to the four-instrument menu
+\begin{align}
+\tau^N &= p^W,
+&
+s^R &= d^Wp^P-p^W,
+&
+\tau^W &= p^P\left(1-d^W\right),
+&
+\tau^K &= -\phi^I\left(p^W-p^\Phi\right),
+\label{eq:ad:implement}
+\end{align}
+with $\tau^Y=\tau^C=\tau^D=0$.
+\end{proposition}
+
+\smalltitle{Argument.} A term-by-term comparison; we record the six steps because each is a useful numerical consistency check.
+\begin{enumerate}[label=\arabic*.,leftmargin=2.4em]
+\item \emph{Output.} With $\tau^Y=-\pi\omega^Y$ we have $1-\tau^Y=1+\pi\omega^Y$, so $\widetilde F_K=F_K\left[1+\pi\omega^Y\right]=\widehat F_K$ and $\widetilde F_R=F_R\left[1+\pi\omega^Y\right]$, matching the factor that~\eqref{eq:ac:B} attaches to both marginal products. This step is what makes the remaining five work at all. It also explains the argument's structure under \textbf{(B1)}: there, a factor $\left(1-\tau^Y\right)$ would multiply $F_R$ and $F_K$ in~\eqref{eq:ad:foc-recycling} but only $F_R$ in the extraction condition, and the two cannot both be matched unless $\tau^Y=0$. In general the planner's own conditions carry exactly that asymmetric factor, which is why a nonzero $\tau^Y$ is now not merely admissible but required.
+\item \emph{Recycling capital.} With $s^R=d^Wp^P-p^W\left(1+\kappa\right)$, the bracket in~\eqref{eq:ad:foc-recycling} becomes $\widetilde F_R+s^R=F_R\left[1+\pi\omega^Y\right]-p^W\left(1+\kappa\right)+d^Wp^P=B$, which is exactly~\eqref{eq:ac:B}, and the right-hand side is $\widetilde F_K=\widehat F_K$. Condition~\eqref{eq:ad:foc-recycling} therefore reproduces~\eqref{eq:ac:foc-recycling} including the switch point, so the market economy enters the circular stage on the same date as the planner.
+\item \emph{The price of treated waste.} Substituting $s^R$ into~\eqref{eq:ad:foc-waste-use} gives $P^W=a(1-\varepsilon)B$, which by~\eqref{eq:ac:B-reduced} equals $a(1-\varepsilon)\left[\bar B+p^W\Upsilon\right]$, and under \textbf{(B1)} equals $a(1-\varepsilon)\left[p^S+C^N_N+d^Wp^P\right]>0$. Under \textbf{(B1)} the price of treated waste is therefore automatically strictly positive in the circular stage and no non-negativity restriction on it can bind; in general positivity requires $\bar B+p^W\Upsilon>0$, which should be checked rather than assumed.
+\item \emph{Waste treatment.} Substituting $P^W$ from step~3 and $\tau^W$ into the waste industry's condition~\eqref{eq:ad:foc-treatment} gives $dc^T/d\varpi=\left[a(1-\varepsilon)B+p^P(1-d^W)\right]/\left(1-\pi\omega^W\right)$, which is the planner's~\eqref{eq:ac:foc-treatment} rearranged. Under \textbf{(B1)} the reading of $\tau^W$ is exact: it is the \emph{extra} pollution damage caused by depositing a tonne untreated rather than treated, $p^P$ against $d^Wp^P$. In general it also absorbs the dilution credit that treatment expenditure earns. The subsidy $s^W$ follows from~\eqref{eq:ad:zero-profit} and requires no separate matching, since it is pinned by zero profit rather than chosen.
+\item \emph{Extraction and exploration.} With $\tau^N$ as given, the extraction condition in~\eqref{eq:ad:foc-saving} becomes $F_R\left[1+\pi\omega^Y\right]-C^N_N-\tau^N=P^S$, which is~\eqref{eq:ac:foc-extraction} given $P^S=p^S$ from step~6. Under \textbf{(B1)} exploration needs no instrument --- $C^D_D+P^X=P^S$ is already~\eqref{eq:ac:foc-exploration}, because a marginal discovery draws no material and generates no waste. In general it displaces mass ($\omega^{D,S}$) and dilutes the base ($\omega^{D,Y}$), and $\tau^D$ prices both.
+\item \emph{Saving.} With $\tau^K=-\phi^I\left[p^W\left(1+\kappa\right)-p^\Phi\right]$ we have $Q=1+\tau^K=q$ exactly, hence $r^m=\widetilde F_K/Q=\widehat F_K/q=r$ and $\iota^m=\iota$ from~\eqref{eq:ad:muK}--\eqref{eq:ad:iotam} against~\eqref{eq:ac:r} and~\eqref{eq:ac:iota}. Note that this works only because step~1 put the dilution factor into $\widetilde F_K$ rather than into $Q$: had $\tau^Y$ been unavailable, matching $r^m$ to $r$ would have required $Q=qF_K/\widehat F_K$, whose time derivative then fails to match $\dot q/q$ in $\iota$, and no algebraic choice of $\tau^K$ would implement the optimum. Matching the transversality conditions and initial stocks gives $\mu^K\equiv\lambda^K$, hence $\zeta^m=\mu^K/Q=\lambda^K/q=\zeta$, hence $P^S=p^S$ and $P^X=p^X$ from~\eqref{eq:ad:PS-PX} against~\eqref{eq:ac:pS}--\eqref{eq:ac:pX}. Finally $u'(C)=\zeta^m\left(1+\tau^C\right)=\zeta\left[1-\pi\omega^C\right]$ is~\eqref{eq:ac:foc-saving}, and under \textbf{(B1)} reduces to $u'(C)=\zeta$ with no consumption tax required. Consistency with the government budget was verified in Section~\ref{subsubsec:ad:household}, and the identical allocations imply identical $\dot\Phi$, identical $W$ through the ledger, and identical pollution stocks. \hfill$\square$
+\end{enumerate}
+
+\smalltitle{Reading of the instrument set.} Take \textbf{(B1)} first, where the menu admits a one-line reading of each item.
+\begin{itemize}[leftmargin=1.6em,itemsep=0.2em]
+\item $\tau^N=p^W$ and $s^R=d^Wp^P-p^W$ are the \emph{same} instrument seen twice: a tax $p^W$ on every tonne of material entering production, $R=N+R^R$, with recycled material additionally credited $d^Wp^P$ for the pollution it avoids by not being deposited. Both bases carry the same materials charge because, by the ledger, a tonne is a tonne regardless of where it came from.
+\item $\tau^W=p^P\left(1-d^W\right)$ is a pure pollution tax on the deposit margin.
+\item $\tau^K=-\phi^I\left(p^W-p^\Phi\right)<0$ is a \emph{subsidy} to gross capital formation, equal to the social value of deferring waste by embodying it in a stock that decays at $\delta$ rather than releasing it now. By~\eqref{eq:ac:q-explicit} it is $-\phi^Ip^W\iota/(\iota+\delta)$ when $p^W$ is constant. It corrects no waste- or pollution-generating externality but a pure asset-pricing gap: capital would otherwise trade at one unit of the final good regardless of the material it embodies, \emph{over}stating its social cost.
+\item $s^W$ is not Pigouvian at all. It exists because the waste sector is a regulated monopoly under tender, and it is pinned by zero profit rather than chosen.
+\end{itemize}
+A Pigouvian pollution tax alone is therefore not sufficient here, in contrast to models in which extraction of virgin material is the only source of pollution. But the reason is sharper than materials scarcity: it is that \emph{capital is a materials sink whose social value no market prices}.
+
+The general menu preserves all four readings and modifies each in the same way. Every occurrence of the ledger price becomes $p^W\left(1+\kappa\right)$ --- a tonne drawn through production now drags $\kappa$ tonnes of overburden with it, so the materials charge rises proportionally, and it rises identically on $\tau^N$, $s^R$ and $\tau^K$, preserving the relations between them. On top of that, $\tau^N$ and $\tau^D$ acquire displacement terms in $\omega^{N,S}$ and $\omega^{D,S}$, which are genuinely Pigouvian: they price mass pulled out of the ground that no other instrument sees. Finally, $\tau^Y$, $\tau^C$ and the dilution parts of $\tau^N$, $\tau^D$ and $\tau^W$ are all proportional to $\pi$ and are of the opposite sign; these are the artifact discussed in Remark~\ref{rem:ad:no-tauY} and Remark~\ref{rem:ac:dilution}, and they would vanish identically under the absolute-intensity specification proposed there, leaving a general menu of five: the four of \textbf{(B1)}, with $p^W\left(1+\kappa\right)$ in place of $p^W$ and displacement terms added, plus $\tau^D$.
+
+\subsection{Technical remarks}
+\label{subsec:ad:remarks}
+
+\begin{remark}[Why there is no output or consumption tax under \textbf{(B1)}]\label{rem:ad:no-tauY}
+The absence of $\tau^Y$ and $\tau^C$ under \textbf{(B1)} is the most visibly counterintuitive feature of Proposition~\ref{prop:ad:implementation} and deserves a direct statement. It is not an assumption that consumption is clean. It is the ledger: by~\eqref{eq:ac:ledger}, total waste is then $R-\dot\Phi$, so the derivative of $W$ with respect to $C$, holding $N$, $R^R$ and $\dot\Phi$ fixed, is zero. Mass is conserved, and consuming a good does not bring new mass into existence --- the mass was priced when it was extracted or recycled, through $\tau^N$ and $s^R$.
+
+What consumption \emph{does} affect is the composition of $Y$ between consumption and investment, and that margin is priced, by $\tau^K$: shifting the bundle toward investment stores mass, and shifting it toward consumption releases mass. Taxing $C$ and subsidising $I+\delta K$ would be double counting the same margin. The empirical content of the $\omega^i$'s is not lost either; they are what determine $\Omega$ and $\phi^Y$ in~\eqref{eq:ac:Omega}, and hence what the model says about material intensities in the data. They simply do not enter the allocation, unless the nature-attributable terms are retained or $\phi^I$ is closed by rule~(b) of Remark~\ref{rem:ac:phiI}.
+
+That the general case restores $\tau^Y$ and $\tau^C$ does not overturn any of this, and it would be a mistake to read~\eqref{eq:ad:implement-general} as vindicating the intuition that output and consumption should be taxed because they generate waste. The restored instruments are \emph{subsidies}, not taxes, whenever $p^W>0$; they are proportional to $\pi$, hence to the dilution channel and to nothing else; and they are zero when extraction and exploration displace no mass, however waste-intensive output and consumption may be. Their content is that enlarging the denominator of a ratio lowers the ratio --- Remark~\ref{rem:ac:dilution} --- and under the absolute-intensity specification proposed there they vanish identically while the displacement terms in $\tau^N$ and $\tau^D$ survive. The correct summary is therefore unchanged: \emph{no instrument on output or consumption corrects a waste-generation externality in this model, under either accounting.}
+\end{remark}
+
+\begin{remark}[Why the ledger collapses so cleanly]\label{rem:ad:cancellation}
+The collapse of~\eqref{eq:ac:waste-generation} and~\eqref{eq:ac:materials-balance} to the ledger~\eqref{eq:ac:ledger} happens because the two share the \emph{same} weighted sum $\mathcal D$ on their right-hand sides, differing only in how capital is treated: the materials balance charges gross investment $G=I+\delta K$ at the current intensity $\phi^I$, while the waste-generation identity credits depreciation $\delta\Phi$ at whatever intensity the stock carries. Substituting the first into the second cancels $\Omega\mathcal D$ and with it every $\omega^i$ appearing in $\mathcal D$, and what is left of the capital terms, $-\phi^IG+\delta\Phi$, is exactly $-\dot\Phi$ by~\eqref{eq:ac:Phi-motion}. The apparent complexity of the vintage structure --- $\phi^I$ versus $\phi^K$ --- disappears entirely into a single state variable's rate of change.
+
+What does \emph{not} cancel is the second, independent residual $\Omega\mathcal N$, because $\mathcal N$ appears in the waste-generation identity and not in the materials balance --- that mass was never backed by material drawn through $R$, so there is nothing on the other side for it to cancel against. Under \textbf{(B1)} it is absent and the ledger is a division; in general it survives and the ledger is a quadratic, \eqref{eq:ac:ledger-quadratic}. Everything that distinguishes the two settings, in all three sections of this document, traces back to this one term.
+\end{remark}
+
+\begin{remark}[Why the capital-pricing gap needed a price, not a quantity, instrument]\label{rem:ad:q}
+The household's budget constraint prices capital at one unit of the final good regardless of $\phi^I$, $p^W$ or $p^\Phi$, so $\mu^K$ never acquires the wedge $q=1-\phi^I\left(p^W-p^\Phi\right)$ that separates $\zeta$ from $\lambda^K$ in~\eqref{eq:ac:foc-investment}. $\tau^K$ closes this by construction: it is levied on the margin where the wedge lives --- gross capital formation, the flow that actually draws material --- at exactly the rate the planner's own first-order condition for $I$ implies, so it reproduces $q$ exactly rather than approximately or on average.
+
+Two features are worth separating. First, the \emph{base} matters. Levying $\tau^K$ on net investment $I$ alone would leave replacement of depreciated capital priced at one, whereas the ledger charges it at $\phi^I$ like any other capital formation; the resulting mismatch is exactly the term $\delta\left(q-1\right)$ that distinguishes a correct return $r=F_K/q-\delta$ from the naive $F_K-\delta$. Second, no quantity restriction could substitute. Forcing $K^R$, $N$, or any other control to a particular path cannot correct a distortion that lives in a \emph{price} the household faces, because the household would simply re-optimize every other margin against the same wrong relative price of capital and goods.
+\end{remark}
+
+\begin{remark}[Which shadow prices the market model needs]\label{rem:ad:pP}
+None of $p^P$, $p^W$ or $p^\Phi$ appears anywhere in conditions~(i)--(v) of Definition~\ref{def:ad:equilibrium}. All three are purely planner-side objects with no private counterpart, and they enter the market economy \emph{only} through the policy rules~\eqref{eq:ad:implement-general}. Consequently: under exogenous policy the market model can be solved without ever computing any of them; under optimal policy all three must be computed alongside the market allocation. Section~\ref{subsec:aq:optimal-policy} writes this out in discrete time.
+
+$\Omega$ is different, and the difference is exactly \textbf{(B1)}. Under \textbf{(B1)} it is like the three planner prices --- absent from the equilibrium conditions, needed only to report the instruments in interpretable units. In general it is an equilibrium unknown in its own right, present in condition~(iv) under \emph{any} policy including laissez-faire, and therefore not something the exogenous-policy solver can defer.
+\end{remark}
+
+\begin{remark}[Two arguments of the recycling function]\label{rem:ad:argument}
+The planner writes the recycling rate as $a\!\left(K^R/(\varpi W)\right)$, the firm as $a\!\left(K^R/W^R\right)$. These agree in equilibrium by~\eqref{eq:ad:clearing}, but the derivatives do not agree \emph{off} equilibrium, which is exactly why the planner's~\eqref{eq:ac:foc-treatment} contains a term the firm's condition~\eqref{eq:ad:foc-treatment} does not: the planner internalizes that treating more waste raises the supply of recyclable material, while the firm sees only $P^W+\tau^W$. The market price $P^W$ is what transmits this margin, and $\tau^W$ is what corrects the residual pollution wedge. For the numerical implementation the practical implication is that the recycling block should be written in terms of the capital intensity
+\begin{align}
+x &\equiv \frac{K^R}{W^R} = \frac{K^R}{\varpi W}
+\label{eq:ad:x}
+\end{align}
+as a single unknown, rather than as a ratio of two quantities that are both zero in the linear stage.
+\end{remark}
+
+\begin{remark}[Instrument non-uniqueness]\label{rem:ad:normalization}
+Proposition~\ref{prop:ad:implementation} states one member of a family. Adding a tax $\tau^{W^R}$ on purchases of treated waste $W^R$ changes~\eqref{eq:ad:foc-waste-use} to $a(1-\varepsilon)\left[F_R+s^R\right]=P^W+\tau^{W^R}$ and lowers the equilibrium $P^W$ one for one, so only the difference $\tau^W-\tau^{W^R}=p^P\left(1-d^W\right)$ is pinned down, not the two separately. Setting $\tau^{W^R}=0$, as above, is the normalization that makes $\tau^W$ readable as a pure pollution tax and keeps $P^W$ at its shadow value $a(1-\varepsilon)B$; any other split implements the same allocation with a different, and less interpretable, decomposition between the price and the tax. The same is true of transfers between $s^W$ and $\tau^W$, which~\eqref{eq:ad:zero-profit} absorbs. Only the instruments' \emph{net} effect on each margin is an economic object.
+
+The general case adds a second, larger instance of the same non-uniqueness, and it is worth naming because it affects how the results should be reported. The dilution corrections enter every margin through the common factor $\pi$, and they can be levied on the activity or subtracted from its counterpart --- $\tau^Y$ against a uniform scaling of $\tau^N$, $s^R$ and $\tau^K$, for instance --- with no change in the allocation. The normalization chosen in Proposition~\ref{prop:ad:implementation} puts the whole of the output-side dilution into $\tau^Y$, which keeps $Q=q$ and hence keeps every shadow-price identity of Section~\ref{sec:ac} intact in the market economy. That is the right choice for verification, since it maximizes the number of quantities that must agree across the two solutions; it is not necessarily the right choice for presenting tax rates to a reader.
+\end{remark}

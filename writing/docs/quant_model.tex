@@ -1,0 +1,166 @@
+\section{The computable model}\label{sec:q:model}
+
+The quantitative model is the workhorse specification of Appendix~\ref{sec:app:workhorse} taken literally, solved as a deterministic perfect-foresight path from a historical initial condition. This section states it in the form the code implements: a single vector of residuals per period, parameterised so that the social planner of Part~\ref{part:sp} and the market economy of Part~\ref{part:mkt} are the same system evaluated at different points in a four-dimensional policy space.
+
+\subsection{Scope, timing and units}\label{sec:q:model:scope}
+
+\smalltitle{What is kept and what is dropped.} Everything in Sections~\ref{sec:sp:setup}--\ref{sec:sp:opt} is kept: six states, the full materials accounting, both corner-prone recycling margins, the extraction and exploration corners, the material floor and the yield ceiling in either case. Nothing is linearised and no margin is assumed interior. Three simplifications are made, all recorded so they can be relaxed.
+\begin{itemize}
+\item \emph{Deterministic.} There is no uncertainty about technology, damages or reserves. The model answers ``what does an economy with these primitives do'' and not ``how should it hedge''.
+\item \emph{One material.} Quality degradation, substitution between materials, and the very different circularity of steel, aluminium, plastics and construction minerals are all carried by the single yield function $a\left(\cdot\right)$ and the single floor $\bar R$. This is the model's principal aggregation cost and it is discussed in Section~\ref{sec:q:cal:aggregation}.
+\item \emph{One region.} There is no trade in materials or in waste. Since the calibration target is the global economy, this is a matter of aggregation rather than of assumption.
+\end{itemize}
+
+\smalltitle{Period length and units.} A period is $\Delta$ years, with $\Delta=1$ the default; every rate parameter ($\rho,\delta,\mu,\theta,g_A,g_B$) is a per-period rate and is converted from an annual rate as $1-\left(1-\text{annual}\right)^{\Delta}$ for decay shares and $\Delta\times$ for log growth rates. Goods are measured in constant international dollars, material in gigatonnes, and pollution in gigatonnes of the accumulated stock; the two Kuhn--Tucker margins are unit-free, and every shadow price is in dollars per tonne, exactly as in Appendix~\ref{sec:app:sp:units}. The baseline runs from $t=0$ at 1850 to a terminal date far beyond the horizon of interest, for reasons Section~\ref{sec:q:sol:horizon} explains.
+
+\subsection{Within-period definitions}\label{sec:q:model:within}
+
+Given the six states $\left(K,S,X,P,M^K,\mathcal W\right)_t$ and the six controls $\left(C,I,N,D,\varpi,K^R\right)_t$, every remaining period-$t$ object is computed rather than solved for, in this order:
+\begin{align}
+H &= \mu\mathcal W, &
+T^{\mathrm{tr}} &= \varpi H, &
+x &= K^R/T^{\mathrm{tr}}, &
+a &= a\left(x\right), &
+\alpha &= a-a'\left(x\right)x,
+\notag\\
+R^R &= a\,T^{\mathrm{tr}}, &
+R &= N+R^R, &
+R^{e} &= R-\bar R, &
+K^Y &= K-K^R, &
+Y &= F\left(K^Y,R,P,t\right),
+\notag\\
+G &= I+\delta K, &
+C^N &= C^N\left(N,S,t\right), &
+C^D &= C^D\left(D,X,t\right), &
+c^W &= c^W\left(\varpi,t\right), &
+C^W &= c^WH,
+\label{eq:q:within}
+\end{align}
+followed by the three accounting objects, in the order in which the identities determine them:
+\begin{align}
+\mathcal D &= \omega^YY+\omega^NC^N+\omega^DC^D+\omega^WC^W+\omega^CC,
+&
+\Omega &= \frac{R}{\mathcal D+\phi^IG},
+&
+\sigma &= \frac{\Omega\phi^IG}{R},
+\notag\\
+\mathcal N &= \Omega^{N,S}N+\Omega^{D,S}D,
+&
+W &= R-\Omega\phi^IG+\delta M^K+\mathcal N,
+&
+\Xi &= H\left(1-\varpi+d^W\varpi\right)-d^WR^R .
+\label{eq:q:accounting}
+\end{align}
+Two features of this ordering matter for the implementation. First, the intensity condition~\eqref{eq:sp:intensity} and the ledger~\eqref{eq:sp:ledger} are \emph{solved} for $\Omega$ and $W$ rather than adjoined as residuals, which removes two unknowns and two equations per period at no cost, since both are linear in the object they determine. Second, the ordering is acyclic: nothing in~\eqref{eq:q:within}--\eqref{eq:q:accounting} depends on a period-$t$ object defined later in the list, and in particular the handled flow is drawn from the predetermined stock. \emph{The within-period block contains no fixed point}, which is the computational payoff of the timing convention of Section~\ref{sec:sp:setup:primitives} and is what keeps the Jacobian of Section~\ref{sec:q:sol} block-tridiagonal.
+
+Two guards are needed at corners. Where $T^{\mathrm{tr}}=0$ the ratio $x$ is undefined; the code sets $a=\alpha=R^R=0$ there and tests entry into treatment jointly with entry into recycling capital, as Appendix~\ref{sec:app:sp:foc} requires. Where $R<\bar R$ the technology is not defined; the code returns $Y=0$ and flags the period, and Section~\ref{sec:q:sol:collapse} describes how a path that reaches this region is handled.
+
+\subsection{Prices and the policy dials}\label{sec:q:model:policy}
+
+The model is written once, for the market economy of Part~\ref{part:mkt}, with four policy parameters. Let $\left(\phi^W,\phi^z,\phi^P,\phi^X\right)$ be the \emph{policy dials}: $\phi^W\in\left\{0,1\right\}$ switches property rights over the waste stock on and off, and $\phi^z,\phi^P,\phi^X\in\left[0,1\right]$ scale the three corrective instruments as fractions of their Pigouvian levels. Given the six costates $\left(q,p^S,p^X,p^P,p^M,p^{\mathcal W}\right)_t$, the period-$t$ price system is
+\begin{align}
+\tau^W &= -\phi^W\,p^{\mathcal W},
+&
+\zeta^{\ast} &= \sigma\left(\tau^W-p^M\right),
+&
+z &= \phi^z\left(\zeta^{\ast}-\tau^W\right),
+&
+\mathfrak z &\equiv z+\tau^W,
+\notag\\
+\tau^P &= \phi^P\,p^P,
+&
+\tau^X &= -\phi^X\,p^X,
+&
+r^K &= F_K\left(1-\mathfrak z\,\Omega^Y\right),
+&
+p^R &= F_R\left(1-\mathfrak z\,\Omega^Y\right)+z,
+\label{eq:q:prices}
+\end{align}
+with $\Omega^j=\Omega\omega^j$ and $\Phi^I=\Omega\phi^I$ throughout, and the household's marginal value of income
+\begin{align}
+\Lambda &= \frac{u'\left(C\right)}{1+\mathfrak z\,\Omega^C},
+&
+1+r_{t+1} &= \frac{\Lambda_t}{\beta\Lambda_{t+1}} .
+\label{eq:q:lambda}
+\end{align}
+The single object doing the work is $\mathfrak z$, the total charge a final-good user faces per tonne of embodied material. At $\phi^W=\phi^z=1$ it equals the planner's $\zeta$ of~\eqref{eq:sp:zeta-explicit}; at $\phi^z=0$ it equals the gate fee alone, which is the material-attribution failure of Section~\ref{sec:mkt:impl:failures}; at $\phi^W=0$ it is zero and the ledger binds no private decision at all.
+
+\begin{remark}[the planner is a corner of the policy space]\label{rem:q:nesting}
+At $\left(\phi^W,\phi^z,\phi^P,\phi^X\right)=\left(1,1,1,1\right)$ the system below reduces term by term to the planner's conditions~\eqref{eq:sp:sum:Omega}--\eqref{eq:sp:sum:Wstock}, with $\tau^W=p^W$, $\mathfrak z=\zeta$, $p^R=\Psi-p^W$, $r^K=F_K\left(1-\zeta\Omega^Y\right)$ and $\Lambda=\lambda$. This is Proposition~\ref{prop:mkt:impl} restated as a property of the code, and it is checked numerically rather than assumed: the two residual vectors are required to agree to machine precision at an arbitrary point of the state and control space, which is a far stronger test than agreement of the solved paths.
+\end{remark}
+
+Along paths with $\phi^P<1$ or $\phi^X<1$ the costates $p^P$ and $p^X$ no longer price anything a private agent chooses. They are retained, and their recursions solved alongside the rest, for two reasons: they define the Pigouvian benchmark that the dials are fractions of, and they are needed to evaluate welfare on paths where behaviour is inefficient. This makes the instrument setting a fixed point --- the tax is a fraction of a shadow price evaluated along the very path the tax generates --- which is the standard formulation of a ``fraction of the optimal tax'' experiment and adds no equations to the system.
+
+\subsection{The residual system}\label{sec:q:model:residuals}
+
+\smalltitle{Complementarity.} Four margins are Kuhn--Tucker systems. For a control $y$ confined to $\left[l,u\right]$ with marginal net gain $f$ --- so that $f\le0$ at $y=l$, $f=0$ in the interior, $f\ge0$ at $y=u$ --- the branches are collapsed into the single equation
+\begin{align}
+\mathrm{mcp}\left(y,f;l,u\right) &\equiv \mathrm{clamp}\left(y+f,\,l,\,u\right)-y \;=\;0 ,
+\label{eq:q:mcp}
+\end{align}
+the min-map of the complementarity problem, which is exact and reduces to $f=0$ wherever the control is interior. It is piecewise smooth; Section~\ref{sec:q:sol:method} describes the smoothing used to keep Newton's method well behaved across a switch.
+
+\smalltitle{The equations.} With the definitions above, the period-$t$ residual vector has eighteen elements, in four blocks.
+
+\emph{The goods constraint} (one equation),
+\begin{align}
+Y &= C+I+\delta K+C^N+C^D+C^W .
+\label{eq:q:goods}
+\end{align}
+
+\emph{Five control margins.} Investment is an equality; the other four are complementarity conditions in the form~\eqref{eq:q:mcp}, with the marginal net gain in each case the excess of gain over cost:
+\begin{align}
+0 &= q-1-\Phi^I\left(z+p^M\right),
+\label{eq:q:focI}
+\\
+0 &= \mathrm{mcp}\Big(N,\; p^R-\left[C^N_N\left(1+\mathfrak z\Omega^N\right)+\tau^W\Omega^{N,S}+p^S\right];\;0,\infty\Big),
+\label{eq:q:focN}
+\\
+0 &= \mathrm{mcp}\Big(D,\; p^S-\left[C^D_D\left(1+\mathfrak z\Omega^D\right)+\tau^W\Omega^{D,S}+\tau^X\right];\;0,\infty\Big),
+\label{eq:q:focD}
+\\
+0 &= \mathrm{mcp}\Big(\varpi,\; \alpha p^R+\tau^P\left[\left(1-d^W\right)+d^W\alpha\right]-\left(1+\mathfrak z\Omega^W\right)\left[c^c+c^{T\prime}\left(\varpi\right)\right];\;0,1\Big),
+\label{eq:q:focvarpi}
+\\
+0 &= \mathrm{mcp}\Big(K^R,\; a'\!\left(x\right)\left[p^R+d^W\tau^P\right]-r^K;\;0,\infty\Big).
+\label{eq:q:focKR}
+\end{align}
+
+\emph{Six costate recursions}, all of the common form $\left(1+r_{t+1}\right)m_t=\mathrm{div}_{t+1}+s_{t+1}m_{t+1}$ with the dividend and survival factor of Table~\ref{tab:q:costates}.
+
+\begin{table}[H]
+\centering
+\caption{Dividends and survival factors in the costate block.}\label{tab:q:costates}
+\begin{tabular}{lll}
+\toprule
+Costate $m$ & Dividend $\mathrm{div}$ & Survival factor $s$ \\
+\midrule
+$q$ & $r^K$ & $1-\delta$ \\
+$p^S$ & $\left|C^N_S\right|\left(1+\mathfrak z\Omega^N\right)$ & $1$ \\
+$p^X$ & $-C^D_X\left(1+\mathfrak z\Omega^D\right)$ & $1$ \\
+$p^P$ & $v'\left(P\right)/\Lambda-F_P\left(1-\mathfrak z\Omega^Y\right)$ & $1-\theta\left(P\right)-\theta'\left(P\right)P$ \\
+$p^M$ & $\delta\,\tau^W$ & $1-\delta$ \\
+$p^{\mathcal W}$ & $\mu\left[\alpha\varpi\,p^R-\left(1+\mathfrak z\Omega^W\right)c^W-\tau^P\left(1-\varpi\left(1-d^W\right)-d^W\alpha\varpi\right)\right]$ & $1-\mu$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Six transitions}, exactly~\eqref{eq:sp:states-motion}:
+\begin{align}
+K_{t+1} &= K_t+I_t,
+&
+S_{t+1} &= S_t+D_t-N_t,
+&
+X_{t+1} &= X_t+D_t,
+\notag\\
+P_{t+1} &= P_t+\Xi_t-\theta\left(P_t\right)P_t,
+&
+M^K_{t+1} &= \left(1-\delta\right)M^K_t+\Omega_t\phi^IG_t,
+&
+\mathcal W_{t+1} &= \left(1-\mu\right)\mathcal W_t+W_t .
+\label{eq:q:transitions}
+\end{align}
+
+\smalltitle{Counting.} The unknowns are the six controls and six costates in every period $t=0,\dots,T$, and the six states in every period $t=1,\dots,T$: $12\left(T+1\right)+6T$ in all. The residuals are the eighteen equations above for $t=0,\dots,T-1$, plus, in the terminal period, the goods constraint, the five control margins and six terminal conditions on the costates: $18T+12$. The counts agree, and the initial states are data rather than unknowns.
+
+\smalltitle{What the stockpile costate does at a corner.} One reading of Table~\ref{tab:q:costates} is worth keeping in view while looking at output. Substituting $\tau^W=-p^{\mathcal W}$ into the last row collects the $p^{\mathcal W}_{t+1}$ terms and turns the survival factor from $1-\mu$ into $1-\mu\left(1-\alpha\varpi\right)$, as in~\eqref{eq:sp:costate:Wstock-net}. The code carries the row in the form printed above, which is the primitive one, but reports the effective survival factor as a diagnostic: it is the single number that says how close the simulated economy is to a closed loop, and it is what tends to one along the circular growth path of Section~\ref{sec:app:workhorse:cbgp} and stays near $1-\mu$ on a collapse path.

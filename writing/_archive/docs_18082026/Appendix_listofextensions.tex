@@ -1,0 +1,135 @@
+\section{Extensions and open items}\label{sec:app:extensions}
+
+This appendix collects, in one place, what the note leaves open. Section~\ref{sec:app:ext:open} lists
+items that are already flagged in the text and that belong to \emph{this} paper: they have to be
+settled before the quantitative results can be reported. Sections~\ref{sec:app:ext:accounting}
+and~\ref{sec:app:ext:scope} list extensions that do not, in ascending order of distance from the
+current framework. Cross-references point to where each item arises.
+
+\subsection{Open items in the model as it stands}\label{sec:app:ext:open}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.25em]
+\item \emph{The within-period block.} Lemma~\ref{lem:qsp:block} reduces the block to a scalar equation
+in $W_t$ and establishes that the material feedback is a contraction, but existence and uniqueness are
+not proved and the conditioning as $R_t\downarrow\bar R$ is unknown. Section~\ref{sec:qsp:model:block}
+calls this the first thing the numerical work should establish, and it is a prerequisite for
+everything else.
+
+\item \emph{The three conjectures of Section~\ref{sec:sp:opt:results}.} The order in which $p^M$,
+$p^W$ and $\zeta$ change sign along the transition; whether the treatment margin strictly precedes the
+capital margin \emph{after} $t_R$ as well as before it; and whether the
+threshold~\eqref{eq:sp:phases:threshold} can be crossed more than once, given that productivity growth
+raises $F_K$ alongside $V$. Existence and uniqueness of a steady state are open in the same place.
+
+\item \emph{Curvature on the extraction and exploration margins.} The cost functions
+of~\eqref{eq:qsp:mining-costs} are linear in the flow, so $C^N_{NN}=C^D_{DD}=0$ and the flow margins
+have no curvature of their own. The convex generalisation with $\xi^N>0$ is noted in a footnote to
+Section~\ref{sec:qsp:setup:forms}, and we expect to need it.
+
+\item \emph{Solution method.} Direct nonlinear programming against shooting on the costates,
+per Section~\ref{sec:qsp:model:solution}. The comparison is the next task, and the constraint that
+shapes it is recorded in Section~\ref{sec:qmkt:solution}: off-optimal policy scenarios have no
+planning problem behind them, so the NLP route is unavailable exactly where the paper's headline
+number lives.
+
+\item \emph{Truncation.} Terminal conditions at $T$, the horizon needed for $t_R$ and the welfare
+measure to be insensitive to it, and the period length itself, all per
+Section~\ref{sec:qsp:model:solution}.
+
+\item \emph{Corner handling.} Three corners have to be detected rather than assumed: $K^R_t=0$,
+$D_t=0$, and $\varpi_t=1$ --- the last of which, under the parameterisation
+of~\eqref{eq:qsp:waste-costs}, becomes progressively \emph{easier} to reach as $c^{T\prime}_t(1)$ falls
+with technical progress.
+
+\item \emph{Welfare.} Report the wealth-based compensating variation of the paper draft alongside the
+consumption-equivalent measure of Section~\ref{sec:qmkt:welfare} on the benchmark comparison, as a
+check that the two agree.
+
+\item \emph{Calibration.} Not started; the targets and the mapping from targets to parameters are
+recorded in Section~\ref{sec:qsp:setup:calibration}, and the normalisation issue in
+Remark~\ref{rem:qsp:scale} has to be respected by whatever the data deliver.
+\end{enumerate}
+
+\subsection{Accounting and technology extensions}\label{sec:app:ext:accounting}
+
+These are refinements of the present framework, and each is a place where the model currently makes an
+assumption for tractability that it could be asked to justify.
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.25em]
+\item \emph{A stock behind the displaced mass.} The nature-attributable flows
+$\mathcal N=\Omega^{N,S}N+\Omega^{D,S}D$ enter the ledger without being drawn from anything, which
+Section~\ref{sec:sp:setup:materialaccounting} flags as materials arriving ``like manna from heaven''.
+Giving overburden and gangue their own stock would close the accounting; the working assumption is
+that it is not the binding constraint even in the long run.
+
+\item \emph{Bounds on exploration.} As specified, nothing prevents $S$ from growing without bound,
+since exploration is unbounded (Section~\ref{sec:sp:setup:primitives}). A ceiling on cumulative
+discoveries, or $C^D_X\to\infty$ at a finite $\bar X$, would make the reserve genuinely finite. In
+practice the corner~\eqref{eq:sp:sum:D-corner} does the work instead, which is a weaker statement than
+one would like.
+
+\item \emph{Residual waste from recycling.} The recycling function is interpreted as a \emph{net}
+efficiency, with the treatment of residual waste subsumed into $a\left(\cdot\right)$
+(Section~\ref{sec:sp:setup:materialaccounting}). Making the residual an explicit flow would matter as
+soon as it is treated differently from ordinary waste, or leaks at a rate other than $d^W$.
+
+\item \emph{More than one material.} The model has a single homogeneous material with a single
+leakage rate. Recycling yields, treatment costs and leakage all differ sharply across streams in the
+data, and the aggregate recycling rate is a composition of them. This is the extension most likely to
+change the calibration rather than the mechanism.
+
+\item \emph{The recycling frontier.} The assumption $\lim_{x\to\infty}a=1$
+in~\eqref{eq:sp:setup:recycling} carries the entire long-run result of
+Section~\ref{sec:sp:opt:results}: an asymptote $\bar a<1$ caps the circularity multiplier and forces
+$R\to0$ with $N$. The quantitative form already imposes $a^m_t<1$ at every date, so the cap binds and
+is relaxed only by $g^R$ (Remark~\ref{rem:qsp:tail}). What a permanent $\bar a<1$ implies for
+feasibility, especially against the floor $\bar R$ of Remark~\ref{rem:qsp:Rbar}, is not worked out.
+
+\item \emph{Endogenous material intensity of durables.} Both
+Appendices~\ref{sec:app:exogenousPhiI} and~\ref{sec:app:constantPhiI} close the composition channel by
+making $\Phi^I$ exogenous. The opposite move --- letting $\phi^I$ be chosen, as design for durability
+or for recyclability --- would reopen it and give $\zeta$ a second margin to price. This is the natural
+way to bring product design into the framework.
+
+\item \emph{Depreciation and release.} Capital is assumed to return its embodied material entirely as
+waste at the moment it depreciates,~\eqref{eq:sp:setup:production}. A lag between retirement and
+release, or partial retention in long-lived structures, would put a second stock behind
+$M^K$ and slow the ledger's response to investment.
+
+\item \emph{Absorption and tipping.} The specification~\eqref{eq:qsp:absorption} imposes $\xi^P<1$ and
+so rules out by construction the case $r+\theta+\theta'P\le0$ noted after~\eqref{eq:sp:sum:P}, in
+which the pollution price fails to converge. That is a modelling choice, and the model is capable of
+the alternative.
+
+\item \emph{Ore grade.} The declining-grade channel $\xi^G$ in~\eqref{eq:qsp:nature-intensities} is
+switched off in the baseline for want of evidence to calibrate it against. It is the one place where
+depletion raises waste generation directly rather than through cost.
+\end{enumerate}
+
+\subsection{Beyond the current scope}\label{sec:app:ext:scope}
+
+These change the object of study and belong in separate work.
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=0.25em]
+\item \emph{Labour.} Production is $F\left(K^Y,R,P\right)$, with no labour input and hence no wage.
+Adding labour would give the calibration a factor-share target it currently lacks, and would separate
+the scale of activity from the capital stock.
+
+\item \emph{Open economy.} Materials, waste and secondary material are all traded in practice, and the
+export of waste for treatment is a policy question in its own right. A closed economy is the right
+starting point but it forecloses that question.
+
+\item \emph{Uncertainty.} The problem is deterministic, and Section~\ref{sec:qsp:model:solution} leans
+on it: the solution is a single trajectory rather than a policy function. Uncertainty over the
+recycling frontier or over the reserve would change the solution method as much as the economics.
+
+\item \emph{Second-best policy.} All revenue is returned lump sum. With distortionary taxation the
+self-financing property of Corollary~\ref{cor:mkt:budget} becomes a substantive result about the
+revenue requirement rather than an accounting one.
+
+\item \emph{Market structure.} The waste sector's profit is driven to zero by tender and recycling
+earns zero profit by constant returns. Market power in either sector, or an
+extended-producer-responsibility scheme in place of the gate fees of
+Section~\ref{sec:mkt:setup:instruments}, would give
+the instrument set something to be second-best against.
+\end{enumerate}

@@ -1,0 +1,330 @@
+﻿\section{Version A: implementation when capital inherits the intensity of the final good}\label{sec:mkt:A}
+
+This section sets the instruments of Table~\ref{tab:mkt:instruments} under Version~A,
+$\Phi^I=\Omega\phi^I$, and shows that the competitive equilibrium of
+Section~\ref{sec:mkt:setup:problems} then reproduces the allocation of Problem~\ref{prob:sp:A}.
+Section~\ref{sec:mkt:B} does the same under Version~B. The setup of Section~\ref{sec:mkt:setup} is
+presupposed throughout; nothing in Section~\ref{sec:sp:B} is.
+
+
+\subsection{What has to be corrected}\label{sec:mkt:A:what}
+
+Under Version~A the accounting closes through
+\begin{align}
+\Phi^I &= \Omega\phi^I,
+&
+\Omega &= \frac{R}{\mathcal D+\phi^IG}\;\ge\;0
+\quad\text{automatically},
+&
+\mathcal D &= \omega^YY+\omega^{N}C^N+\omega^{D}C^D+\omega^WC^W+\omega^CC,
+\label{eq:mkt:A:closure}
+\end{align}
+which is~\eqref{eq:sp:A:Omega} and~\eqref{eq:sp:setup:Omega-phi}. Recall from
+Section~\ref{sec:sp:A:foc} the two objects the planner's conditions are written in terms of,
+\begin{align}
+\chi &\equiv \frac{\Phi^IG}{R}\in\left[0,1\right),
+&
+\zeta &= \chi\left(p^W-p^M\right),
+&
+\Delta &= \zeta\Omega,
+\label{eq:mkt:A:zeta}
+\end{align}
+the share of material input embodied in new capital, the multiplier on the intensity
+definition~\eqref{eq:sp:A:intensity}, and the composition wedge it generates.
+
+Three margins are unpriced in the equilibrium of Definition~\ref{def:mkt:equilibrium} when the
+instruments are zero, and each corresponds to a block of Table~\ref{tab:mkt:instruments}.
+
+\smalltitle{(i) Mass drawn into production.} By the ledger, a tonne entering production leaves as waste
+exactly once, and collecting, treating and releasing it is costly. The final-good firm pays $P^R$ for
+that tonne and nothing else; the mine pays nothing for the overburden its extraction displaces. The
+correction is a charge at the point of entry.
+
+\smalltitle{(ii) Emissions.} The waste-management sector releases $\left(1-\varpi+d^W\varpi\right)W$
+tonnes to the environment and recyclers withdraw $d^WR^R$ of it, and neither is priced. The correction
+is an emission tax with a credit for recovery.
+
+\smalltitle{(iii) The composition of final-good spending.} This is the margin specific to Version~A.
+Spending one more unit of the final good on activity $j$ raises $\mathcal D$ by $\omega^j$, dilutes
+$\Omega$ by~\eqref{eq:mkt:A:closure}, lowers $\Phi^I$, and so diverts mass out of the durable stock and
+into today's waste flow. Total mass is unaffected; its \emph{timing} is not. No private agent sees this
+effect, since $\Omega$ appears in nobody's problem, and the social value of the shift is $\Delta$ per
+unit of the base, as~\eqref{eq:sp:A:foc:Omega} established.
+
+
+\subsection{The instruments}\label{sec:mkt:A:instruments}
+
+\begin{proposition}[Implementation, Version~A]\label{prop:mkt:A:implementation}
+Let $\left\{C,I,N,D,\varpi,K^R,W,\Omega\right\}$ solve Problem~\ref{prob:sp:A} with associated shadow
+prices $\left\{\lambda,q,p^S,p^X,p^P,p^M,p^W,\zeta\right\}$, and set
+\begin{align}
+\tau^R &= p^W-\zeta,
+&
+\tau^{N,S} &= \Omega^{N,S}p^W,
+&
+\tau^{D,S} &= \Omega^{D,S}p^W,
+\label{eq:mkt:A:mass}
+\\
+\tau^E &= p^P,
+&
+s^R &= d^Wp^P,
+&
+\tau^j &= \Delta\omega^j,\quad j\in\left\{Y,C,N,D,W\right\},
+\label{eq:mkt:A:emission}
+\\
+\tau^K &= -\Phi^I\left(1-\chi\right)\left(p^W-p^M\right),
+&&&&
+\label{eq:mkt:A:tauK}
+\end{align}
+with $s^W$ from the zero-profit condition~\eqref{eq:mkt:setup:zeroprofit} and $T$
+from~\eqref{eq:mkt:setup:govbudget}. Then the competitive equilibrium of
+Definition~\ref{def:mkt:equilibrium} reproduces that allocation, and the equilibrium prices are
+\begin{align}
+P^R &= p^N,
+&
+B &= B,
+&
+P^T &= \alpha B,
+&
+P^K &= \left(1-\Delta\omega^Y\right)F_K,
+\notag\\
+Q &= q,
+&
+P^S &= p^S,
+&
+P^X &= p^X,
+&
+s^W &= p^W,
+\label{eq:mkt:A:prices}
+\end{align}
+with $B$ and $p^N$ as in~\eqref{eq:sp:A:Bvalue}, and the market interest rate
+equals the planner's, $r=\rho-\dot\lambda/\lambda$.
+\end{proposition}
+
+\begin{proof}
+Term by term against Section~\ref{sec:sp:A:foc}. We record the six steps because each is a usable
+consistency check on a numerical solution.
+
+\emph{(1) Materials.} The final-good firm's condition~\eqref{eq:mkt:setup:foc:goodsfirm} with
+$\tau^Y=\Delta\omega^Y$ and $\tau^R=p^W-\zeta$ gives
+$P^R=\left(1-\Delta\omega^Y\right)F_R-p^W+\zeta$, which by the planner's production
+margin~\eqref{eq:sp:A:FR} is $P^R=p^N$. Hence, by~\eqref{eq:mkt:setup:Bvalue} and
+$s^R=d^Wp^P$, $B=p^N+d^Wp^P$, which is the materials
+arbitrage~\eqref{eq:sp:A:arbitrage}, so $B=B$.
+
+\emph{(2) Recycling.} Given $B=B$, the recycler's
+conditions~\eqref{eq:mkt:setup:foc:recycler} read $P^T=\alpha B$ and
+$P^K=a'\!\left(x\right)B$. The latter coincides with the final-good firm's rental
+condition $P^K=\left(1-\Delta\omega^Y\right)F_K$ exactly when the planner's capital-allocation
+condition~\eqref{eq:sp:A:foc:KR} holds, so the capital market clears at the planner's $x$ and $K^R$.
+
+\emph{(3) Treatment.} Substituting $P^T=\alpha B$, $\tau^E=p^P$ and
+$\tau^W=\Delta\omega^W$ into the collector's condition~\eqref{eq:mkt:setup:foc:varpi} gives
+$\alpha B+\left(1-d^W\right)p^P=\left(1+\Delta\omega^W\right)dc^T/d\varpi$, which
+is~\eqref{eq:sp:A:foc:varpi}. Substituting the same into the zero-profit
+condition~\eqref{eq:mkt:setup:zeroprofit} gives
+$s^W=\left(1+\Delta\omega^W\right)c^W+\left(1-\varpi+d^W\varpi\right)p^P-\varpi\alpha B$,
+which is the planner's waste condition~\eqref{eq:sp:A:foc:W}: $s^W=p^W$.
+
+\emph{(4) Extraction and exploration.} With $\tau^N=\Delta\omega^N$ and
+$\tau^{N,S}=\Omega^{N,S}p^W$, the mine's condition~\eqref{eq:mkt:setup:foc:mine} reads
+$P^R=\left(1+\Delta\omega^N\right)C^N_N+P^S+\Omega^{N,S}p^W$, and comparison with
+$P^R=p^N$ from step~(1) and the definition of $p^N$
+in~\eqref{eq:sp:A:Bvalue} gives $P^S=p^S$. The exploration condition then gives
+$P^X=p^X$ against~\eqref{eq:sp:A:foc:D}. The mine's costate
+equations~\eqref{eq:mkt:setup:costate:mine} coincide with~\eqref{eq:sp:A:costate:S}
+and~\eqref{eq:sp:A:costate:X} once $r$ is shown to equal the planner's rate, which is step~(6).
+
+\emph{(5) Consumption and capital.} With $\tau^C=\Delta\omega^C$ the household's
+condition~\eqref{eq:mkt:setup:household-euler} is~\eqref{eq:sp:A:foc:C}, which identifies the
+household's $\lambda$ with the planner's. With $\tau^K$ as in~\eqref{eq:mkt:A:tauK},
+$Q=1+\tau^K=1-\Phi^I\left(1-\chi\right)\left(p^W-p^M\right)=q$ by~\eqref{eq:sp:A:foc:I}.
+
+\emph{(6) The interest rate.} Substituting $P^K$ from step~(2) and $Q=q$
+into~\eqref{eq:mkt:setup:household-euler} gives
+$r=\left[\left(1-\Delta\omega^Y\right)F_K+\dot q\right]/q-\delta$, which is the planner's capital
+costate~\eqref{eq:sp:A:costate:K}. Since both $r$'s are defined as $\rho-\dot\lambda/\lambda$ and the
+two $\lambda$'s were identified in step~(5), the discount rates coincide and step~(4) is complete.
+
+\emph{(7) Pollution and the remaining relations.} The household and the firms take $P$ as given, so
+$p^P$ has no private counterpart; it enters only through $\tau^E$. Its
+law of motion~\eqref{eq:sp:A:costate:P} is the government's, not an equilibrium condition, and the
+private output loss from pollution is $\left(1-\tau^Y\right)F_P=\left(1-\Delta\omega^Y\right)F_P$,
+which is the term appearing in the planner's damage $d$
+in~\eqref{eq:sp:A:damage}. The goods constraint holds by Proposition~\ref{prop:mkt:walras}, the
+ledger and the intensity definition hold by Definition~\ref{def:mkt:equilibrium}, and the state
+equations are common to the two economies. The transversality
+conditions~\eqref{eq:sp:A:tvc} are imposed as the household's and the mine's no-Ponzi conditions.
+\end{proof}
+
+The proposition asserts that this instrument set implements \emph{an} optimal allocation. That it
+implements \emph{the} optimal allocation requires uniqueness, which Remark~\ref{rem:sp:A:soc} does not
+establish; see~\ref{op:sp:soc}.
+
+
+\subsection{Reading the instrument set}\label{sec:mkt:A:reading}
+
+\smalltitle{The materials block is a deposit--refund scheme.} The two instruments that carry $p^W$ are
+a charge of $\tau^R=p^W-\zeta$ per tonne of material entering production and a payment of $s^W=p^W$ per
+tonne of waste handed to the collection system. Ignore the wedge $\zeta$ for a moment --- it is zero
+under Version~B and small whenever $\chi$ is --- and the pair is a deposit--refund scheme at rate
+$p^W$: mass pays on the way in and is refunded on the way out. That the refund equals the deposit is
+not an assumption. It is the content of the planner's waste condition~\eqref{eq:sp:A:foc:W}, which
+step~(3) of the proof shows is nothing other than the zero-profit condition of a competitive collection
+sector facing an emission tax and selling treated waste at $\alpha B$. The shadow price of
+waste, in other words, \emph{is} the break-even collection payment.
+
+Two things follow. First, the collection sector is financed, not taxed: $s^W>0$ whenever $p^W>0$, and
+the payment is exactly what the sector needs to discharge its obligation given the emission tax it
+faces and the revenue it earns from selling treated waste. Second, the deposit is source-neutral. Since
+$R=N+R^R$, it can equivalently be collected at the mine and at the recycler rather than at the
+final-good firm's gate, and levying it at a different rate on the two sources would break the materials
+arbitrage~\eqref{eq:sp:A:arbitrage} directly. Recycled material must bear the same charge per tonne as
+virgin material, because recycling does not remove a tonne of waste from the economy --- it defers it
+by one circuit, as Section~\ref{sec:sp:A:reading} established. The often-proposed alternative --- a
+recycling subsidy financed by a tax on virgin material only --- corresponds to a source-differentiated
+deposit and is not optimal here at any rate.
+
+\smalltitle{Why recycling is nonetheless favoured.} The recycler receives $s^R=d^Wp^P$ and the mine
+pays $\tau^{N,S}=\Omega^{N,S}p^W$, so the two sources are treated asymmetrically after all --- but for
+reasons that have nothing to do with the deposit. Recovery avoids the emission $d^W$ that the tonne
+would have caused had it been treated and not recycled, and extraction drags up overburden that
+recovery does not. Both are physical asymmetries between the two sources, and both are priced
+separately from the mass itself. This is the instrument-level statement of the arbitrage: the
+comparison of sources is settled by extraction cost, rent, overburden and avoided emission, and the
+waste price cancels from it.
+
+\smalltitle{The capital instrument is the interest on the deposit.} Under
+Version~A, \eqref{eq:mkt:A:tauK} makes $\tau^K$ negative whenever $p^W>p^M$, so gross capital formation
+is \emph{subsidised}. The reason is now transparent. The deposit is levied at entry, on the
+presumption that the tonne is shed at once. A tonne embodied in new capital is not shed at once: it is
+shed as the asset depreciates, at a present value of $p^M$ rather than $p^W$ per tonne. The deposit
+therefore overcharges stored mass by $p^W-p^M$ per tonne, and $\tau^K$ rebates exactly that, on the
+$\Phi^I$ tonnes per unit of gross formation, damped by $\left(1-\chi\right)$ because raising $G$ also
+dilutes $\Omega$ and hence lowers $\Phi^I$ itself. It is levied on gross formation because replacement
+investment embodies mass on exactly the same terms as net accumulation.
+
+Two consequences are worth recording. The instrument is not Pigouvian in the usual sense: it corrects
+no externality of its own, but the timing of a charge levied elsewhere. And its sign is tied to two
+others: by~\eqref{eq:sp:A:costate:M} the sign of $p^M$ follows that of $p^W$, so when $p^W$ turns
+negative --- the late-transition case of~\eqref{eq:sp:A:pW-sign}, in which waste becomes an asset ---
+the deposit becomes a subsidy on material entering production, the refund becomes a charge for handing
+waste over, and $\tau^K$ becomes a tax. All three flip together, and a numerical solution in which they
+do not is wrong.
+
+\smalltitle{The composition block.} The five instruments $\tau^j=\Delta\omega^j$ have no counterpart
+in Version~B and are the market face of the wedge derived in Section~\ref{sec:sp:A:foc}. Their reading
+is~(iii) of Section~\ref{sec:mkt:A:what}: an activity that uses the final good dilutes the intensity at
+which capital goods embody mass, and so shifts mass from the durable stock into the current waste flow.
+The rate is the same for all five up to the relative intensity $\omega^j$, they carry a plus sign on
+spending and a plus sign on \emph{output} --- output adds $\omega^YY$ to the waste base, so producing a
+unit is worth less than its marginal product --- and all five vanish with $\chi$ or with $p^W-p^M$.
+
+It is worth being explicit that $\tau^C>0$ here is a consumption tax levied on environmental grounds,
+which Section~\ref{sec:sp:B:nowedge} argues is generally an artefact. It is not one here, and the test
+is the rate: an artefactual wedge would be proportional to $p^W$, this one is proportional to
+$\chi\left(p^W-p^M\right)$. The distinction is not academic --- it is the difference between a
+consumption tax that survives when postponing waste is worthless and one that does not.
+
+
+\subsection{The composition block as a single fee on waste}\label{sec:mkt:A:gate}
+
+The five composition instruments look unwieldy: ad valorem taxes on output, on consumption, on
+extraction effort, on exploration effort, and on the waste sector's own expenditure, each at its own
+rate. They are in fact one instrument, and the natural one.
+
+\begin{proposition}[The composition block is a gate fee on waste generation]\label{prop:mkt:A:gate}
+Suppose the collection sector charges a fee $g$ per tonne to whoever hands waste over, on the base
+$\Omega\mathcal D$ --- the waste attributable to final-good spending --- and $s^W$ adjusts through
+zero profit. Then setting
+\begin{align}
+g &= \zeta = \chi\left(p^W-p^M\right),
+&
+\tau^j &= 0\ \ \text{for all } j\in\left\{Y,C,N,D,W\right\},
+&
+s^W &= p^W-\zeta\,\frac{\Omega\mathcal D}{W},
+\label{eq:mkt:A:gate}
+\end{align}
+and leaving the remaining instruments at their values in
+Proposition~\ref{prop:mkt:A:implementation}, implements the same allocation.
+\end{proposition}
+
+\begin{proof}
+Spending one unit of the final good on activity $j$ generates $\Omega\omega^j$ tonnes of the fee base,
+so the effective cost of that unit becomes $1+g\Omega\omega^j$, and producing one unit of output
+generates $\Omega\omega^Y$ tonnes, so its effective value becomes $1-g\Omega\omega^Y$. With $g=\zeta$
+these are $1+\Delta\omega^j$ and $1-\Delta\omega^Y$, by $\Delta=\zeta\Omega$
+in~\eqref{eq:mkt:A:zeta}, which are the factors the ad valorem instruments produced. Every first-order
+condition in the proof of Proposition~\ref{prop:mkt:A:implementation} is therefore unchanged. The
+collection sector's zero-profit condition~\eqref{eq:mkt:setup:zeroprofit} acquires the fee revenue
+$g\Omega\mathcal D$ on the left and the fee it pays on its own expenditure on the right, which is the
+$\left(1+\Delta\omega^W\right)$ factor already there; solving for $s^W$ gives the stated value.
+\end{proof}
+
+The proposition matters for three reasons.
+
+First, it says that the instrument the coarse intuition recommends --- make each activity pay for the
+waste it generates --- is correct \emph{in form} under Version~A. What the coarse intuition gets wrong
+is the rate. The fee is not $p^W$, the social cost of a tonne of waste; it is $\zeta$, the value of the
+storage margin, which is smaller by the factor $\chi$ and smaller again by the difference between
+shedding a tonne now and shedding it later. A fee set at $p^W$ would overcharge every activity in the
+economy by $\Omega\omega^j\left(p^W-\zeta\right)$ per unit, which is precisely the spurious wedge
+of~\eqref{eq:sp:B:spurious-C}.
+
+Second, it makes the deposit--refund structure exact. Under~\eqref{eq:mkt:A:gate} every tonne pays
+$\zeta$ at the gate and $p^W-\zeta$ at entry, and is refunded $p^W-\zeta$ on collection --- so the
+deposit and the refund are equal, at the rate $p^W-\zeta$, and the only genuine \emph{disposal} charge
+in the optimal system is $\zeta$. The wedge between deposit and refund noted in
+Section~\ref{sec:mkt:A:reading} was the composition block in disguise.
+
+Third, the base matters and is not the obvious one. The fee must fall on the waste generated by
+final-good spending and \emph{not} on the mass released by depreciation, $\delta M^K$, nor on the
+displaced mass $\mathcal N$. The reason is that the fee is a dilution charge, not a waste charge: only
+final-good spending enters $\mathcal D$ and moves $\Omega$. Demolition debris pays no fee because
+scrapping a building dilutes nothing; it merely discharges a liability whose deposit was paid when the
+mass entered, and which $\tau^K$ has already priced. This is the market counterpart of the observation
+after~\eqref{eq:sp:A:costate:M} that the embodied-material costate is the one equation in the system
+carrying no wedge. Extending the fee to demolition debris would require the household to hold $M^K$ as
+a private state with its own liability price, and would have to be undone in $\tau^K$.
+
+
+\subsection{The complete system, and what the government must know}\label{sec:mkt:A:system}
+
+\smalltitle{The system.} A competitive equilibrium under Version~A consists of: the five state
+equations~\eqref{eq:sp:A:states-motion}; the household's two
+conditions~\eqref{eq:mkt:setup:household-euler}; the final-good firm's
+two~\eqref{eq:mkt:setup:foc:goodsfirm}; the recycler's two~\eqref{eq:mkt:setup:foc:recycler}; the
+mine's two static and two dynamic conditions~\eqref{eq:mkt:setup:foc:mine}--\eqref{eq:mkt:setup:costate:mine};
+the collector's~\eqref{eq:mkt:setup:foc:varpi} and~\eqref{eq:mkt:setup:zeroprofit}; market
+clearing~\eqref{eq:mkt:setup:clearing}; the goods constraint; the ledger and the intensity definition,
+solved jointly for $W$ and $\Omega$ as in Section~\ref{sec:sp:A:system}; and the government
+budget~\eqref{eq:mkt:setup:govbudget}. Given instrument paths this system determines the equilibrium
+for \emph{any} policy, optimal or not, which is worth stating separately: it is the object a
+counterfactual exercise needs, and Part~\ref{part:sp} does not contain it. What it does not deliver is
+the welfare ranking of two such policies, which still requires evaluating $U_0$; see~\ref{op:sp:nonopt}.
+
+\smalltitle{Informational requirements.} To set the instruments of
+Proposition~\ref{prop:mkt:A:implementation} the government must know $p^W$, $p^P$, $p^M$, $\Omega$,
+$\chi$ and every relative intensity $\omega^j$. The last two are the demanding ones. $\Omega$ and the
+$\omega^j$ are objects of the material-flow accounts, measured with considerable error, and under
+Version~A they enter every instrument in the lower block of Table~\ref{tab:mkt:instruments} and, through
+$\Delta$, the implicit determination~\eqref{eq:sp:A:foc:W-solved} of $p^W$ itself. There is no part of
+the optimal policy that can be computed without them. Section~\ref{sec:mkt:B:compare} contrasts this
+with Version~B, where the entire instrument set is free of them.
+
+\begin{remark}[Integrating the recycler]\label{rem:mkt:A:integration}
+Because the recycling sector earns exactly zero profit at every date, it can be merged into the
+final-good firm --- which then buys treated waste at $P^T$, allocates capital between production and
+recovery, and uses $N+\mathcal R\left(T,K^R\right)$ as its material input --- without changing any
+equilibrium condition or any instrument. The merged firm's internal shadow price of secondary material
+is $B$. The separation is kept because it makes $P^T$ and $B$ observable objects rather than internal
+ones, and because the deposit $\tau^R$ then has a visible base.
+\end{remark}
+
+\begin{remark}[Where $\zeta$ acts]\label{rem:mkt:A:zeta}
+The multiplier $\zeta$ enters the instrument set at exactly two points: it reduces the deposit
+$\tau^R$ below $p^W$, and it scales the composition block through $\Delta=\zeta\Omega$. Under Version~B
+the mass-constraint multiplier $\eta$ takes over the first role and there is no second one; this is the
+sense in which Section~\ref{sec:sp:B:compare}'s statement that ``$\eta$ is replaced by $\zeta$''
+operates in the market economy as well.
+\end{remark}

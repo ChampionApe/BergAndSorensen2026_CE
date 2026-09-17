@@ -1,0 +1,345 @@
+﻿\section{Reading the optimality conditions}\label{sec:sp:solution}
+
+The system in Section~\ref{sec:sp:problem:foc} is short, but almost none of its content is on the
+surface. This section works through what it says, in four steps: the pricing of materials
+(Section~\ref{sec:sp:solution:materials}), what the accounting does \emph{not} price
+(Section~\ref{sec:sp:solution:nowedge}), capital as a materials sink and the signs of the shadow
+prices (Section~\ref{sec:sp:solution:signs}), and the recycling block, which contains the model's
+central mechanism (Section~\ref{sec:sp:solution:recycling}). Section~\ref{sec:sp:solution:longrun}
+then asks what the system does in the long run, and gets a more definite --- and more awkward ---
+answer than one might expect.
+
+
+\subsection{The pricing of materials}\label{sec:sp:solution:materials}
+
+Everything in the materials block follows from one equation. Rearranging the extraction
+condition~\eqref{eq:sp:foc:N},
+\begin{align}
+\boxed{\;B\;=\;p^N+d^Wp^P\;}
+\qquad\text{that is}\qquad
+\underbrace{F_R-p^W+d^Wp^P+\eta}_{\text{value of a secondary tonne}}
+\;=\;
+\underbrace{C^N_N+p^S+\Omega^{N,S}p^W}_{\text{cost of a virgin tonne}}
+\;+\;d^Wp^P .
+\label{eq:sp:solution:arbitrage}
+\end{align}
+Read from the left, this is a definition of $B$ that has been shown to equal something; read from
+the right, it is the materials arbitrage condition. A tonne of material can be obtained in two ways.
+Extracting it costs $C^N_N$ in resources, $p^S$ in foregone reserve value, and $\Omega^{N,S}p^W$ in
+the waste cost of the overburden it drags up. Recovering it from waste instead avoids all three,
+and additionally avoids the emission $d^W$ that the tonne would have caused had it stayed
+untreated --- which is why $d^Wp^P$ appears on both sides and cancels out of the comparison of
+\emph{sources} while remaining in the valuation of the recovered tonne.
+
+The cancellation is the sharpest check available on the accounting. Note what has dropped out:
+$p^W$, the shadow price of waste, appears on both sides of the arbitrage and is not what determines
+whether recycling is worthwhile. It is worth being precise about why. A tonne of secondary material
+does not \emph{remove} a tonne of waste from the economy; it postpones it. The tonne is recovered,
+used in production, and returns as waste on the next pass. What recycling saves is not the waste
+cost but the \emph{extraction} cost --- the resources, the rent, and the displaced overburden. This
+is the substantive content of treating the materials balance as a ledger: a reduced-form model in
+which recycling is credited with avoiding waste double-counts, because the waste is not avoided,
+only deferred by one circuit.
+
+Substituting~\eqref{eq:sp:solution:arbitrage} back into the definition of $B$ gives the companion
+statement for the production margin,
+\begin{align}
+F_R &= p^N+p^W-\eta .
+\label{eq:sp:solution:FR}
+\end{align}
+The marginal product of materials in production covers the full cost of delivering a virgin tonne
+\emph{plus} the waste that tonne will eventually become. Here $p^W$ does appear, and it must: a
+tonne drawn into the economy leaves as waste exactly once, whatever route it takes on the way, and
+that is the point at which the waste cost is charged.
+
+
+\subsection{What the accounting does not price}\label{sec:sp:solution:nowedge}
+
+Two absences in Section~\ref{sec:sp:problem:foc} carry as much information as any of the equations.
+
+\begin{proposition}[No wedge on output or consumption]\label{prop:sp:nowedge}
+Under Version B the consumption condition is $u'(C)=\lambda$, with $\lambda$ the multiplier on the
+goods constraint, and the marginal social value of a unit of output is $\lambda$. Neither carries a
+correction for the waste that consumption or production generates.
+\end{proposition}
+
+This is not the statement that consumption and output generate no waste --- by
+\eqref{eq:sp:setup:wc} they generate $\Omega^CC$ and $\Omega^YY$ tonnes of it. It is the statement
+that at the margin the planner should not act on that fact. The reason is~\eqref{eq:sp:solution:FR}:
+the mass that becomes $\Omega^CC$ was drawn into the economy as part of $R$ and was charged $p^W$ at
+that point. Charging it again when it is spent on consumption would price the same tonne twice.
+
+The contrast with a reduced-form specification is worth making explicit, because it is the main
+methodological payoff of Section~\ref{sec:sp:setup:materialaccounting}. Suppose the ledger
+\eqref{eq:sp:problem:ledger} were replaced by a posited waste function with \emph{fixed} intensities,
+\begin{align}
+W &= \Omega\left(\omega^YY+\omega^CC+\omega^{N}C^N+\omega^{D}C^D+\omega^WC^W\right)+\Phi^K\delta K,
+&&\Omega \text{ a parameter},
+\label{eq:sp:solution:reducedform}
+\end{align}
+which is~\eqref{eq:sp:setup:totalwaste_generic} with the substitution
+\eqref{eq:sp:setup:ybalance_generic2} \emph{not} carried out. Redoing
+Section~\ref{sec:sp:problem:foc} with \eqref{eq:sp:solution:reducedform} in place of the ledger
+gives, in place of~\eqref{eq:sp:foc:C},
+\begin{align}
+u'\!\left(C\right) &= \lambda\left(1+\Omega^Cp^W\right),
+&
+\Omega^C&\equiv\Omega\omega^C,
+\label{eq:sp:solution:spurious-C}
+\end{align}
+and a parallel wedge $\left(1-\Omega^Yp^W\right)$ on the marginal value of output --- a consumption
+tax and an output tax, each proportional to the assumed intensity. These wedges are artefacts. They
+appear because \eqref{eq:sp:solution:reducedform} lets the planner reduce economy-wide waste by
+consuming less \emph{without reducing the mass drawn in}, which conservation of mass does not
+permit. Once the accounting is done process by process, $\Omega$ is endogenous, the substitution
+that produces the ledger cancels every $\omega^j$, and the wedges vanish. The difference is visible
+in the optimal policy, not merely in the derivation: it is the difference between a model that
+recommends taxing consumption on environmental grounds and one that does not.
+
+\begin{proposition}[Irrelevance of the relative intensities]\label{prop:sp:irrelevance}
+Under Version B, no $\omega^j$ and no $\Omega$ appears in any first-order
+condition~\eqref{eq:sp:foc:C}--\eqref{eq:sp:foc:cs}, in any costate
+equation~\eqref{eq:sp:costate:K}--\eqref{eq:sp:costate:M}, or in the constraint set of
+Problem~\ref{prob:sp:planner}. The optimal allocation is therefore invariant to the relative
+intensities, and $\Omega$ and $\Phi^Y$ are recovered afterwards
+from~\eqref{eq:sp:setup:Omega} as reported quantities.
+\end{proposition}
+
+The proof is inspection, and the mechanism is the cancellation described after
+\eqref{eq:sp:setup:ledger}: conservation of mass pins total waste down exactly, because every gram
+of the accounted flow passed through $R$ on its way in, and how that gram was distributed across
+activities on the way through does not change the total. The absolute intensities $\Omega^{N,S}$ and
+$\Omega^{D,S}$ are a different matter --- they multiply flows that never passed through $R$, they
+appear in~\eqref{eq:sp:foc:N} and~\eqref{eq:sp:foc:D}, and they do affect the allocation.
+
+Proposition~\ref{prop:sp:irrelevance} has an uncomfortable corollary for the empirical side of the
+project. Material-flow accounts report intensities, and it is natural to want to discipline the
+$\omega^j$ against them; but under Version B no observation of the \emph{allocation} --- no
+transition date, no recycling rate, no extraction path --- carries information about them. They are
+identified only from the reported mass flows themselves, and they inform nothing else. Version A
+reverses this.
+
+
+\subsection{Capital as a materials sink, and the signs of the prices}\label{sec:sp:solution:signs}
+
+The investment condition~\eqref{eq:sp:foc:I} is the one place where the stock-flow structure of
+embodied material shows up in a price. Setting $\eta=0$ (the generic case, see below),
+\begin{align}
+q &= 1-\Phi^I\left(p^W-p^M\right).
+\label{eq:sp:solution:q}
+\end{align}
+Building a unit of capital costs one unit of the final good and takes $\Phi^I$ tonnes out of the
+current waste stream, worth $\Phi^Ip^W$; those tonnes return as waste over the life of the asset,
+at a present value of $\Phi^Ip^M$. Capital is a materials sink, but a temporary one, and $q$ prices
+the difference. Since~\eqref{eq:sp:costate:M} makes $p^M$ a discounted average of future $p^W$, the
+bracket is positive whenever $p^W$ is positive and not falling fast, so $q<1$: the social cost of
+installed capital is \emph{below} its goods cost. Along a path on which $p^W$ is constant,
+\eqref{eq:sp:costate:M} gives $p^M=\delta p^W/\left(r+\delta\right)$ and
+\begin{align}
+q &= 1-\Phi^Ip^W\frac{r}{r+\delta},
+\label{eq:sp:solution:q-stationary}
+\end{align}
+so the wedge is largest for durable capital ($\delta$ small) and vanishes as $\delta\to\infty$, when
+capital stores nothing. It also vanishes as $r\to0$, when postponement is worthless.
+
+\smalltitle{The sign of $p^W$.} Nothing guarantees $p^W>0$. From~\eqref{eq:sp:foc:W-solved},
+\begin{align}
+p^W<0
+\qquad\Longleftrightarrow\qquad
+\varpi\alpha\left(C^N_N+p^S+d^Wp^P\right)
+\;>\;
+c^W\!\left(\varpi\right)+\left(1-\varpi+d^W\varpi\right)p^P,
+\label{eq:sp:solution:pW-sign}
+\end{align}
+that is, whenever the extraction a marginal tonne of waste displaces through recycling is worth more
+than collecting, treating and emitting it costs. Since $p^S$ rises as reserves deplete
+(Section~\ref{sec:sp:solution:longrun}) while $c^W$ and $p^P$ need not, this is not a pathological
+case but a natural late-transition one: waste becomes an asset. Two consequences follow, and they
+are worth recording because they are a useful internal check on any numerical solution.
+
+First, by~\eqref{eq:sp:costate:M} the sign of $p^M$ follows the sign of $p^W$, so
+by~\eqref{eq:sp:solution:q} the wedge on capital \emph{flips together with} the shadow price of
+waste: when waste becomes an asset, embodying material in capital becomes a cost rather than a
+saving, and $q>1$. The two flips are simultaneous and share a single cause, so a solution in which
+they do not coincide is wrong. Second, any numerical implementation must therefore leave $p^W$, and
+every instrument built from it, unbounded in sign.
+
+\smalltitle{The multiplier $\eta$.} By~\eqref{eq:sp:foc:cs}, $\eta>0$ only where $\Phi^IG=R$: every
+tonne entering production is embodied in new capital, and $\Omega=0$. This is a corner of the
+accounting, not of the technology, and it is generic only in an economy investing at close to its
+entire material throughput. Where it binds, $\eta$ enters $B$ and hence raises the value of both
+virgin and secondary material by the same amount, as it must --- the constraint is on mass, and mass
+is mass whatever its source. Under Version A the constraint disappears
+(Section~\ref{sec:sp:versions:A}).
+
+\smalltitle{The remaining signs.} Collecting~\eqref{eq:sp:costate:S}--\eqref{eq:sp:costate:M}: $p^S>0$
+(reserves are an asset), $p^X<0$ (cumulative discovery is a liability), $p^P>0$ (pollution is a
+liability, so the costate $-\lambda p^P$ is negative as posited), $p^M$ has the sign of $p^W$, and
+$q$ has the opposite sign of the wedge. Only $p^W$ and $p^M$ are of ambiguous sign, and they are of
+the same one.
+
+
+\subsection{The recycling block}\label{sec:sp:solution:recycling}
+
+The two conditions~\eqref{eq:sp:foc:varpi} and~\eqref{eq:sp:foc:KR} determine how circular the
+economy is, and they respond to a single sufficient statistic, $B$.
+
+\smalltitle{Recycling capital.} \eqref{eq:sp:foc:KR} reads $F_K=a'(x)B$: capital is allocated so
+that its marginal product in production equals its marginal product in recycling, the latter being
+$a'(x)$ tonnes of secondary material each worth $B$. This is a standard equalisation, but the
+right-hand side is not standard: $B$ is a shadow price that depends on the scarcity of the resource,
+so the recycling sector's demand for capital inherits the entire dynamics of the reserve.
+
+\smalltitle{The treatment margin.} \eqref{eq:sp:foc:varpi} reads
+$\alpha B+\left(1-d^W\right)p^P=dc^T/d\varpi$: treatment is pushed to where its marginal cost equals
+the value of the material it yields plus the emission it prevents. The two terms are the two
+distinct reasons to treat waste, and they are separately identified --- an economy with $d^W=1$
+(treatment that does not immobilise anything) still treats waste, purely to recycle it; an economy
+with $\alpha=0$ still treats waste, purely to avoid emissions.
+
+\smalltitle{Circularity rises with scarcity.} The comparative statics of the block are unambiguous,
+which is not obvious given that $\alpha$ and $a'$ move in opposite directions.
+
+\begin{proposition}[Scarcity raises circularity]\label{prop:sp:circularity}
+Hold $F_K$ and $p^P$ fixed and let $B$ rise. Then $x$ rises, $a(x)$ rises, the marginal yield
+$\alpha$ rises, $\varpi$ rises, and the recirculated share $a\varpi$ rises.
+\end{proposition}
+
+\begin{proof}
+From~\eqref{eq:sp:foc:KR}, $a'(x)=F_K/B$ falls, and $a''<0$ gives $dx/dB>0$; $a'>0$ then gives
+$da/dB>0$. For the marginal yield, $\alpha=a(x)-a'(x)x$ has
+$d\alpha/dx=a'-a''x-a'=-a''x>0$, so $\alpha$ rises with $x$ and hence with $B$. Therefore $\alpha B$
+rises, so the left-hand side of~\eqref{eq:sp:foc:varpi} rises; $d^2c^T/d\varpi^2>0$
+by~\eqref{eq:sp:setup:waste-cost} then gives $d\varpi/dB>0$. Both factors of $a\varpi$ rise.
+\end{proof}
+
+The mechanism of the paper is this proposition combined
+with~\eqref{eq:sp:solution:arbitrage} and~\eqref{eq:sp:costate:S}. Depletion raises the in-situ rent
+$p^S$; \eqref{eq:sp:solution:arbitrage} passes the rise one-for-one into $B$; and
+Proposition~\ref{prop:sp:circularity} converts it into a higher recirculated share. By
+\eqref{eq:sp:setup:ledger-solved} the circularity multiplier $\left(1-a\varpi\right)^{-1}$ rises with
+it, so a given material throughput $R$ is supported by ever less virgin extraction. The transition
+to a circular economy is, in this model, a scarcity-driven reallocation of capital, not a
+pollution-driven one --- the pollution channel enters $B$ only through $d^Wp^P$, which is bounded by
+the damage function, whereas $p^S$ is not bounded at all.
+
+Note also what does \emph{not} appear in the transition mechanism: no $\omega^j$, no $\Omega$, no
+$\Phi^Y$, and, by~\eqref{eq:sp:solution:arbitrage}, no $p^W$ either. The date at which the economy
+turns circular is a function of extraction costs, resource rents, damages and the recycling
+technology only. This is a strong prediction and a useful one, since it means the transition is not
+sensitive to the least well identified part of the accounting.
+
+
+\subsection{Stationarity and the long run}\label{sec:sp:solution:longrun}
+
+It is natural to look for a steady state. The model as specified does not have one, and the reason
+is instructive.
+
+\begin{proposition}[No interior stationary point]\label{prop:sp:nosteadystate}
+At any point where all five states of Problem~\ref{prob:sp:planner} are stationary, $D=N=0$ and
+$W\left(1-a\varpi\right)=0$. Since $a(x)<1$ for all finite $x$, it follows that $W=R=R^R=0$: the
+economy uses no materials.
+\end{proposition}
+
+\begin{proof}
+$\dot X=D=0$ forces $D=0$, and then $\dot S=D-N=0$ forces $N=0$, and hence $\mathcal N=0$.
+$\dot K=0$ gives $I=0$ and $G=\delta K$; $\dot M^K=0$ then gives $\Phi^IG=\delta M^K$, so the two
+capital terms cancel in the ledger~\eqref{eq:sp:problem:ledger}, leaving $W=R$. But
+$R=N+a\varpi W=a\varpi W$, so $W\left(1-a\varpi\right)=0$. With $\varpi\le1$ and $a<1$ the factor is
+strictly positive.
+\end{proof}
+
+The culprit can be identified exactly. A stationary reserve with positive extraction requires
+$D=N>0$, since $\dot S=D-N$; extraction must be replenished by discovery. But $\dot X=D$ makes
+cumulative discovery a monotone state, so $D>0$ is itself incompatible with stationarity. The only
+route to an interior rest point is therefore closed off by the single assumption that exploration
+costs depend on cumulative past discovery. Drop it --- set $C^D_X=0$, so that $X$ ceases to be a
+state --- and a genuine steady state with $D=N>0$ exists; this is switch~\ref{sw:sp:CDX} in
+Section~\ref{sec:sp:versions:simple}, and it is the cheapest available repair. Note that removing
+exploration altogether does \emph{not} repair it: with $\dot S=-N$, stationarity forces $N=0$
+directly. The setup already flagged the corresponding structural feature --- there is no upper bound
+on $S$, so the resource is never exhausted, only ever more costly --- and
+Proposition~\ref{prop:sp:nosteadystate} is its dynamic counterpart: with $C^D_X>0$ the economy has no
+resting point, it merely becomes asymptotically circular.
+
+That is in fact the substantive content. Read the proposition in the limit rather than at a point.
+As $t\to\infty$ the rent $p^S$ grows, $B$ grows with it by~\eqref{eq:sp:solution:arbitrage}, and
+Proposition~\ref{prop:sp:circularity} sends $x\to\infty$, $a\to1$ and $\varpi\to1$. Along such a
+path $N\to0$ while $R$ need not: from~\eqref{eq:sp:setup:ledger-solved} with $\dot M^K\to0$ and
+$\mathcal N\to0$,
+\begin{align}
+R &= \frac{N-a\varpi\dot M^K+a\varpi\mathcal N}{1-a\varpi}\;\longrightarrow\;\frac{0}{0},
+\label{eq:sp:solution:limit}
+\end{align}
+an indeterminate form whose value is whatever material throughput the recycling sector can sustain.
+The emission flow~\eqref{eq:sp:problem:Xi} tends to $\left(1-\varpi+d^W\varpi\right)W-d^Wa\varpi W\to0$,
+so the limiting economy is materially closed and emission-free, and it operates at positive scale.
+This is the sense in which a fully circular economy is the model's long run: not a steady state that
+is reached, but a boundary that is approached, and approached only because extraction becomes
+infinitely expensive.
+
+\smalltitle{The quasi-stationary block.} Even though the system has no rest point, the price block is
+worth recording at $\dot{}=0$, both because it is what a slowly-moving path looks like locally and
+because it is the natural initialisation for the numerical solution. Setting all price derivatives
+to zero in~\eqref{eq:sp:costate:K}--\eqref{eq:sp:costate:M} and using $r=\rho$ from
+$\dot\lambda=0$:
+\begin{align}
+F_K &= q\left(\rho+\delta\right),
+&
+p^S &= -\frac{C^N_S}{\rho},
+&
+p^X &= -\frac{C^D_X}{\rho},
+\notag\\
+p^P &= \frac{d}{\rho+\theta\!\left(P\right)+\theta'\!\left(P\right)P},
+&
+p^M &= \frac{\delta p^W}{\rho+\delta},
+&
+q &= 1-\Phi^Ip^W\frac{\rho}{\rho+\delta},
+\label{eq:sp:solution:quasistationary}
+\end{align}
+with $p^W$ from~\eqref{eq:sp:foc:W-solved}, and the materially stationary ledger
+\begin{align}
+N+\mathcal N &= W\left(1-a\varpi\right)
+\qquad\text{whenever }\dot M^K=0,
+\label{eq:sp:solution:material-stationary}
+\end{align}
+which is~\eqref{eq:sp:setup:ledger-solved} at $\dot M^K=0$, and which requires $\Phi^K=\Phi^I$ by
+\eqref{eq:sp:setup:phiK-motion}. Virgin extraction plus displaced mass equals waste not recirculated;
+$N\to0$ as $a\varpi\to1$.
+
+\smalltitle{A caveat on the multiplier.} \eqref{eq:sp:solution:material-stationary} makes the
+quantitative stakes of the circularity multiplier visible. As $a\varpi\to1$ a given $N$ supports an
+unbounded $W$, so the model's mass flows become arbitrarily sensitive to the recirculation
+assumption in exactly the region the paper is about. The assumption in question is that recycled
+material re-enters production contemporaneously --- $R^R=a\varpi W$ at the same instant --- which in
+continuous time is innocuous but in a discrete-time implementation ties the number of circuits per
+period to the period length. Section~\ref{sec:sp:versions} does not resolve this; it is flagged here
+because $R/N$ and $W/N$ should be reported alongside any headline result, and their sensitivity to
+the period length checked.
+
+
+\subsection{The complete system}\label{sec:sp:solution:system}
+
+For reference, and as the specification the quantitative implementation must reproduce, the
+optimality system of Version B consists of:
+\begin{itemize}[leftmargin=1.6em,itemsep=0.15em]
+\item five state equations~\eqref{eq:sp:problem:states-motion} in $K,S,X,P,M^K$;
+\item six price equations: \eqref{eq:sp:costate:K} for $q$, \eqref{eq:sp:costate:S} for $p^S$,
+\eqref{eq:sp:costate:X} for $p^X$, \eqref{eq:sp:costate:P} for $p^P$, \eqref{eq:sp:costate:M} for
+$p^M$, and \eqref{eq:sp:costate:euler} for $C$ (equivalently for $\lambda$);
+\item five static conditions determining $I,N,D,\varpi,K^R$:
+\eqref{eq:sp:foc:I}, \eqref{eq:sp:foc:N}, \eqref{eq:sp:foc:D}, \eqref{eq:sp:foc:varpi},
+\eqref{eq:sp:foc:KR};
+\item two definitions of prices: \eqref{eq:sp:foc:W} for $p^W$ and~\eqref{eq:sp:problem:damage} for
+$d$;
+\item the goods constraint~\eqref{eq:sp:problem:goods}, the ledger~\eqref{eq:sp:problem:ledger}, and
+the complementary-slackness block~\eqref{eq:sp:foc:cs};
+\item the definitions~\eqref{eq:sp:problem:definitions} for $R^R,R,Y,G$ and~\eqref{eq:sp:problem:Xi}
+for $\Xi$;
+\item initial conditions on the five states and the transversality
+conditions~\eqref{eq:sp:problem:tvc}.
+\end{itemize}
+The accounting objects $\Omega$, $\Phi^Y$ and $\Phi^K$ are computed \emph{after} the fact,
+from~\eqref{eq:sp:setup:Omega} and~\eqref{eq:sp:setup:phiK-motion}; by
+Proposition~\ref{prop:sp:irrelevance} they do not feed back. This is the structural difference from
+Version A, where they do, and where $\Omega$ has to be solved jointly with everything else.

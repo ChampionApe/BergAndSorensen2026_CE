@@ -1,0 +1,336 @@
+﻿\section{Setup}\label{sec:sp:setup}
+
+
+\subsection{Tastes and technologies}
+\label{sec:sp:setup:primitives}
+
+
+\smalltitle{Preferences.} A representative family dynasty with an infinite horizon derives utility from consumption and disutility from the stock of pollution. Lifetime utility at time zero is
+\begin{align}
+U_0 &= \int_0^{\infty}\left[u(C)-v(P)\right]e^{-\rho t}\,dt,
+&&
+u'>0,\quad u''<0,\quad v'>0,\quad v''>0,\quad \rho>0.
+\label{eq:sp:setup:utility}
+\end{align}
+
+\smalltitle{Final goods.} Output is produced from capital and raw materials, and is reduced by pollution:
+\begin{align}
+Y &= F\left(K^Y,R,P\right),
+&&
+F_K>0,\ F_{KK}<0,\ F_R>0,\ F_{RR}<0,\ F_P<0.
+\label{eq:sp:setup:output}
+\end{align}
+
+\smalltitle{Materials and recycling.} Raw material input is the sum of virgin and recycled materials,
+\begin{align}
+R &= N + R^R,
+\label{eq:sp:setup:materials}
+\end{align}
+and recycled materials are produced from the treated share $\varpi W$ of waste using capital $K^R$:
+\begin{align}
+R^R &= a\!\left(x\right)\varpi W,
+\qquad
+x\equiv\frac{K^R}{\varpi W},
+&&
+a(0)=0,\quad a'>0,\quad a''<0,\quad
+\varepsilon\equiv \frac{a'x}{a}<1,\quad
+\lim_{x\to\infty}a=1.
+\label{eq:sp:setup:recycling}
+\end{align}
+
+It is convenient to have this technology available in constant-returns form, since both model
+versions below use it in that form. Let $T\equiv\varpi W$ denote treated waste and write
+\begin{align}
+R^R &= \mathcal R\left(T,K^R\right)\;\equiv\;a\!\left(\frac{K^R}{T}\right)T,
+&
+x&=\frac{K^R}{T},
+\label{eq:sp:setup:recycling-crs}
+\end{align}
+which is~\eqref{eq:sp:setup:recycling} rewritten. Because $a$ depends on $K^R$ and $T$ only through
+their ratio, $\mathcal R$ is homogeneous of degree one, and its two partial derivatives are
+\begin{align}
+\mathcal R_T &= a\left(x\right)-a'\!\left(x\right)x \;\equiv\;\alpha,
+&
+\mathcal R_{K^R} &= a'\!\left(x\right),
+&
+\mathcal R &= \alpha T+a'K^R .
+\label{eq:sp:setup:recycling-derivatives}
+\end{align}
+We refer to $\alpha=a\left(1-\varepsilon\right)$ as the \emph{marginal recycling yield}: the extra
+tonne of secondary material obtained from one extra tonne of treated waste, holding recycling
+capital fixed. It is strictly below the average yield $a$ whenever $\varepsilon>0$, and the
+assumption $\varepsilon<1$ in~\eqref{eq:sp:setup:recycling} is exactly the requirement $\alpha>0$.
+
+\smalltitle{Allocation of capital.} The total capital stock is split between the two uses,
+\begin{align}
+K &= K^Y + K^R.
+\label{eq:sp:setup:capital-allocation}
+\end{align}
+
+\smalltitle{Extraction and exploration.} Virgin materials are extracted from a stock $S$ of known reserves, which is augmented by exploration:
+\begin{align}
+C^N &= C^N(N,S),
+&&
+C^N_N>0,\quad C^N_{NN}\ge 0,\quad C^N_S<0,
+\label{eq:sp:setup:extraction-cost}
+\\
+C^D &= C^D(D,X),
+&&
+C^D_D>0,\quad C^D_{DD}\ge 0,\quad C^D_X>0.
+\label{eq:sp:setup:discovery-cost}
+\end{align}
+
+\smalltitle{Waste collection and treatment.} All generated waste must be collected; the treated share $\varpi$ carries an increasing marginal treatment cost:
+\begin{align}
+C^W &= \left[c^c+c^T(\varpi)\right]W,
+&&
+c^T(0)=\left.\frac{dc^T}{d\varpi}\right|_{\varpi=0}=0,\quad
+\frac{dc^T}{d\varpi}>0,\quad \frac{d^2c^T}{d\varpi^2}>0 \ \ \text{for }\varpi>0.
+\label{eq:sp:setup:waste-cost}
+\end{align}
+
+\smalltitle{Accumulation.} The aggregate resource constraint, the definition of investment, and the laws of motion of the three remaining stocks are
+\begin{align}
+Y &= C+I+\delta K+C^N+C^D+C^W,
+&&
+\dot K = I,
+\label{eq:sp:setup:resource-constraint}
+\\
+\dot S &= D-N,
+&&
+\dot X = D,
+\label{eq:sp:setup:reserves-motion}
+\\
+\dot P &= \Xi-\theta(P)P,
+&&
+\theta'(P)<0,
+\label{eq:sp:setup:pollution-motion}
+\end{align}
+where the flow of waste that actually reaches the environment is
+\begin{align}
+\Xi &\equiv \left[1-\varpi+d^W\varpi\left(1-a\right)\right]W
+\;=\; W\left(1-\varpi+d^W\varpi\right)-d^WR^R,
+&&
+0<d^W<1,
+\label{eq:sp:setup:Xi}
+\end{align}
+the second equality using $a\varpi W=R^R$ from~\eqref{eq:sp:setup:recycling}. Writing $\Xi$ this way is not cosmetic: it is linear in $W$ and $R^R$ separately, so every derivative of the pollution flow below is immediate, and no derivative of $a(\cdot)$ with respect to $\varpi$ or $W$ ever needs to be taken. $W$ here is the total physical waste flow.
+
+
+\textit{Note:} This way of modelling natural resource extraction and exploration potentially allows $S$ to be unbounded/infinite, as there are no bounds on exploration. 
+
+
+\subsection{Materials accounting, process by process}
+\label{sec:sp:setup:materialaccounting}
+Every process below is described by a mass balance: what enters equals what leaves, distributed across waste and embodied material. The final good $Y$ is abstract in the sense that it is a composite of many different physical activities, but it is produced from physical raw material and is itself spent on physical or quasi-physical activities (consumption, capital formation, extraction effort, and so on). Tracking the materials balance principle correctly requires following the mass embodied in $Y$ through each of those uses.
+
+Building the aggregate relations up in this way, rather than positing a reduced-form relation such as $W=\Omega Y$ directly, is not a matter of presentation. A posited aggregate can mix units --- a final-good-denominated intensity applied to a physical tonnage --- or silently assume that some activities generate no waste at all. More importantly, it makes waste proportional to output at the margin, and a planner facing that relation will tax output and consumption on account of the waste they appear to generate. The process-level version shows that the mass in question was drawn, and therefore already priced, when it entered production as $R$, so the marginal waste content of output is not what the reduced form says it is. The difference is visible directly in the optimal policy, not merely in the derivation.
+
+Notationally, let $M^x$ and $W^x$ denote embodied materials and waste, respectively, from good/activity $x$. We let $\Phi^x$ and $\Omega^x$ denote embodied material and waste generation \emph{intensities}.
+
+\smalltitle{Production.} 
+Production uses raw material $R=N+R^R$ and capital $K^Y$, which depreciates at rate $\delta$. We assume that depreciation of capital returns embodied materials in $K^Y$ entirely as waste such that:
+\begin{align}
+    R+\Phi^K\delta K^Y &= W^Y+M^Y, &
+W^Y &= \Omega^YY+\Phi^K\delta K^Y, &
+M^Y &= \Phi^YY,
+\label{eq:sp:setup:production}
+\end{align}
+where $\Phi^Y$ is the material intensity of the final good. The $\Phi^K\delta K^Y$ terms cancel on both sides, leaving
+\begin{align}
+R &= \Omega^YY+\Phi^YY.
+\label{eq:sp:setup:production-reduced}
+\end{align}
+
+
+\smalltitle{Extraction and exploration.} Extraction uses the final good, through the cost function $C^N(N,S)$, to pull $N$ tonnes from the reserve $S$. Two physically distinct sources of waste are at play: the embodied material of the final good spent on extraction effort itself (machinery, energy, and so on, all ultimately final-good expenditure), and displaced material from the earth --- overburden and gangue brought up alongside the ore --- proportional to the tonnage extracted rather than to the effort expended, and never part of $Y$ to begin with:
+\begin{align}
+W^N &= \Omega^{N,Y}C^N(N,S)+\Omega^{N,S}N.
+\label{eq:sp:setup:extraction}
+\end{align}
+The same logic applies to exploration, which spends $C^D(D,X)$ of the final good to add $D$ to the stock of discoveries:
+\begin{align}
+W^D &= \Omega^{D,Y}C^D(D,X)+\Omega^{D,S}D.
+\label{eq:sp:setup:exploration}
+\end{align}
+
+Here, the $\Omega^{N,Y}C^N+\Omega^{D,Y}C^D$ represent embodied materials from $Y$ that are diffused as waste materials after being used in exploration and extraction processes, while $\Omega^{N,S} N $ and $\Omega^{D,S} D$ are nature-attributable components that represent additional mass that never passes through $Y$ and thus never draws on $R$. 
+
+\textit{Note:} The waste generation that comes directly from exploration and extraction should ideally also be extracted from some nature stock so the materials are not coming "like manna from heaven". For now, however, we ignore this stock-flow accounting assuming that this will not be the limiting factor for the economy even in the long run.
+
+
+
+
+\smalltitle{Waste collection and treatment, and consumption.} Both activities draw the final good and return its entire embodied content as waste, since neither stores materials durably: consumption goods are used up, and treating waste is itself an activity that consumes final good and leaves nothing durable behind. Consumption is already measured in final-good units, so $\Omega^C$ needs no further translation. Waste collection and treatment is not: the physical quantity it processes is $W$, a tonnage, while the final-good resources it uses are $C^W=\left[c^c+c^T(\varpi)\right]W$ from~\eqref{eq:sp:setup:waste-cost}. 
+
+
+Waste generation is proportional to the economic activity, representing the diffusion of embodied materials in $Y$ as waste materials. Thus, we simply define waste generation streams:\footnote{We could in principle also assume that there are additional waste generation from collection and treatment of $W$, but the only story I can think of here is that there may be residual waste generated from the recycling process and this story is easier to simply subsume in the recycling function instead of creating a new waste flow.}
+\begin{align}
+    W^W = \Omega^{W} C^W \qquad W^C= \Omega^C C, \label{eq:sp:setup:wc}
+\end{align}
+
+
+\smalltitle{Investment.} Gross resources devoted to capital formation are
+\begin{align}
+G &\equiv I+\delta K,
+\label{eq:sp:setup:gross-formation}
+\end{align}
+net accumulation plus replacement of depreciated capital, matching the $I$ and $\delta K$ terms in~\eqref{eq:sp:setup:resource-constraint}. We assume that embodied materials from final goods used in accumulating durables are entirely embodied in the capital, and the waste generation is then associated with the depreciation. This implies
+\begin{align}
+    W^I &= 0, & M^I &= \Phi^IG.
+\label{eq:sp:setup:investment}
+\end{align}
+
+
+\smalltitle{Recycling.} Recycling uses capital $K^R$ and waste materials only, drawing no final good directly; its own depreciation releases waste in the same way as $K^Y$'s:
+\begin{align}
+W^R &= \Phi^K\delta K^R, & R^R &= a\!\left(x\right)\varpi W.
+\label{eq:sp:setup:recycling-mass}
+\end{align}
+We note that recycling in itself may produce residual waste. However, in our model with a single waste material type, we interpret the recycling function as including the subsequent treatment of the residual waste, i.e. measuring a net recycling efficiency taking residual waste generation into account. 
+
+\subsection{The embodied-material stock}
+\label{sec:sp:setup:embodied-stock}
+Because gross investment is embodied at the current intensity $\Phi^I(t)$ while depreciation releases material at the stock's average intensity $\Phi^K(t)$, the total mass of material currently embodied in the capital stock, $M^K\equiv\Phi^KK$, is itself a state variable:
+\begin{align}
+\dot M^K &= \Phi^I(t)\left(I+\delta K\right)-\delta M^K,
+&
+M^K(0) \text{ given},
+\label{eq:sp:setup:Phi-motion}
+\end{align}
+structurally identical to $K$'s own law of motion $\dot K=I$, with gross investment $I+\delta K$ replacing $I$ and the flow intensity $\Phi^I(t)$ replacing the constant $1$. Equivalently, in ratio form,
+\begin{align}
+\dot\Phi^K &= \left[\Phi^I(t)-\Phi^K\right]\frac{I+\delta K}{K},
+\label{eq:sp:setup:phiK-motion}
+\end{align}
+so $\Phi^K(t)$ is an investment-weighted moving average of past values of $\Phi^I$: it drifts toward the current vintage's intensity at a rate set by the gross investment rate, and is stationary exactly when $\Phi^I(t)=\Phi^K(t)$.
+
+
+
+\subsection{Aggregate material balances}
+\label{sec:sp:setup:aggregatematerial}
+Tracking the embodied materials in the final goods, the material balance principle requires that
+\begin{align}
+    \Phi^Y Y = R - \Omega^Y Y = \Omega^{N,Y}C^N + \Omega^{D,Y}C^D + \Omega^C C + \Omega^W C^W +\Phi^I G, \label{eq:sp:setup:ybalance_generic}
+\end{align}
+where the first equality comes from \eqref{eq:sp:setup:production-reduced} and the second comes from summing over all the processes that the final goods are eventually used (extraction, exploration, consumption, investments, and treatment). We can also rearrange the last equality and instead write
+\begin{align}
+    R =  \Omega^Y Y + \Omega^{N,Y}C^N + \Omega^{D,Y}C^D + \Omega^C C + \Omega^W C^W + \Phi^I G \label{eq:sp:setup:ybalance_generic2},
+\end{align}
+showing that the new materials that goes into production either ends up as waste or embodied in new investment goods. Furthermore, total waste generation $W$ is given by summing over all the relevant sources:
+\begin{align}
+    W =& \Omega^Y Y + \Omega^{N,Y}C^N + \Omega^{D,Y}C^D + \Omega^C C + \Omega^W C^W + \Omega^{N,S}N + \Omega^{D,S}D + \Phi^K \delta K \notag \\
+    =& R - \Phi^I G + \Omega^{N,S}N + \Omega^{D,S}D + \Phi^K\delta K,
+    \label{eq:sp:setup:totalwaste_generic}
+\end{align}
+where the second line uses \eqref{eq:sp:setup:ybalance_generic2}. 
+
+
+
+\bigskip
+How we treat parameters $\Omega, \Phi$ from here on out, however, is essential for the interpretation of the model and how the material balance principles constraint the model. The first condition \eqref{eq:sp:setup:ybalance_generic} essentially identifies $\Phi^Y\geq0$, but depending on if other intensities are fixed or endogenous, this can either be a simple definition of $\Phi^Y$ or a real technological constraint: If all other $\Phi, \Omega$ parameters are exogenous, for instance, this severely limits what $Y$ are actually feasible (as $\Phi^Y \geq 0$ has to hold). If however, all coefficients on the right hand side are endogenous, this is just a way to compute $\Phi^Y$ without restricting $Y$. 
+
+
+
+
+In the following, we generally do not think that there are any good reason for having exogenous levels of waste generating intensities from using final goods. Thus, we refactor using $\Omega^j = \Omega \omega^j$ for all the streams tied to embodied materials in $Y$. In this case, we can rewrite \eqref{eq:sp:setup:ybalance_generic2} as
+\begin{align}
+    R =  \Omega \left(\omega^Y Y + \omega^{N}C^N + \omega^{D}C^D + \omega^C C + \omega^W C^W\right) + \Phi^I G \label{eq:sp:setup:ybalance_Omega},
+\end{align}
+using this to define $\Omega$ (that adjusts endogenously), and the only real constraint is then that $\Omega\geq0$.
+
+It is worth being explicit about what this layer of the accounting is for. The allocation is driven by a small set of physical objects (extraction, recycled material, the material intensity of new capital, depreciation, the treatment share and the recycling function) whereas material-flow statistics are reported as \emph{intensities}: waste or material input per unit of economic activity. $\Omega$ and the relative intensities $\omega^j$ are the bridge between the two. They are how the model's mass flows are mapped into, and calibrated against, published accounts, and that remains their role even at points where they turn out not to affect the allocation at all.
+
+
+This leaves one modelling choice open, and it is the choice around which the rest of Part~\ref{part:sp} is organised: how the material intensity of new capital goods, $\Phi^I$, is determined. Taking the material intensity of investment goods to follow that of the final good $Y$, so that $\Phi^I = \Omega \phi^I$, is what we call \textbf{Version A}, and the material balance principle simply reduces to $\Omega \geq0$ being determined from
+\begin{align}
+    R =  \Omega \left(\omega^Y Y + \omega^{N}C^N + \omega^{D}C^D + \omega^C C + \omega^W C^W+\phi^I G\right) \label{eq:sp:setup:ybalance_OmegaPhi},
+\end{align}
+where the condition $\Omega\geq0$ now holds per construction. The alternative interpretation is to take $\Phi^I$ exogenous, as just written in~\eqref{eq:sp:setup:ybalance_Omega} --- this is \textbf{Version B}.
+
+
+
+
+\smalltitle{Aggregate balances and the circularity multiplier.}
+Before we turn to discussing how the two versions of the material balance constrain the planner, we start by highlighting a couple of results common to the two. First, define waste bases 
+\begin{align}
+\mathcal D &\equiv \omega^YY+\omega^{N}C^N(N,S)+\omega^{D}C^D(D,X)+\omega^WC^W+\omega^CC,
+&
+\mathcal N &\equiv \Omega^{N,S}N+\Omega^{D,S}D,
+\label{eq:sp:setup:base}
+\end{align}
+with $\mathcal D$ collecting flows measured in final-good units, carrying embodied material drawn through $R$, while $\mathcal N$ gathers the two physical flows that do not. Secondly, split waste bases into the parts related to $W$ itself and the rest, i.e.
+\begin{align}
+\mathcal D &= \mathcal D^0+\omega^Wc^WW,
+&
+\mathcal D^0 &\equiv \omega^YY+\omega^{N}C^N+\omega^{D}C^D+\omega^CC,
+&
+c^W &\equiv c^c+c^T(\varpi),
+\label{eq:sp:setup:base-split}
+\end{align}
+Given this additional notation, our first "result" comes from substituting~\eqref{eq:sp:setup:ybalance_generic2} into the waste sum~\eqref{eq:sp:setup:totalwaste_generic} to get:\footnote{The substitution and sums cancels $\Omega$ and every $\omega^j$ from the accounted part, and~\eqref{eq:sp:setup:Phi-motion} collects the two remaining capital terms into $\dot M^K$.}
+\begin{align}
+\boxed{\;W \;=\; R-\Phi^IG+\delta M^K+\mathcal N \;=\; R-\dot M^K+\mathcal N\;}
+\label{eq:sp:setup:ledger}
+\end{align}
+\emph{Waste generated equals the material entering production, less the net accumulation of material embodied in the capital stock, plus the mass displaced from nature that never entered production at all.} That is the entire physical content of the materials balance principle for this economy, and it is what the planner's problem below is constrained by. Two features are worth marking. The average intensity $\Phi^K$ appears nowhere in it, so it is needed only to report the composition of the capital stock, never to state the balance. And the relative intensities $\omega^j$ have dropped out of it entirely: for the accounted flow, conservation of mass pins waste down exactly, because every gram of it passed through $R$ on its way in, and how that gram was distributed across activities on the way through does not change the total. Whether they stay out depends on the closure --- under Version A they re-enter through $\dot M^K$, since $\Phi^I=\Omega\phi^I$ and $\Omega$ is computed from a base that the $\omega^j$ weight --- but they are absent from the statement of the balance either way.
+
+
+Next, substituting $R=N+a\varpi W$ into~\eqref{eq:sp:setup:ledger} and collecting therefore gives, under either closure,
+\begin{align}
+W\left(1-a\varpi\right) &= N-\dot M^K+\mathcal N,
+&
+a\varpi&<1 .
+\label{eq:sp:setup:ledger-collected}
+\end{align}
+The factor $\left(1-a\varpi\right)^{-1}$ is the \emph{circularity multiplier}: the number of times a tonne of material passes through production before it finally leaves the economy. With a materially stationary capital stock ($\dot M^K=0$) and no displaced mass ($\mathcal N=0$), \eqref{eq:sp:setup:ledger-collected} reads $N=W\left(1-a\varpi\right)$ virgin extraction equals waste not recycled, and $N\to0$ as $a\varpi\to1$. A fully circular economy is one that extracts nothing. Whether~\eqref{eq:sp:setup:ledger-collected} \emph{solves} for $W$ is where the two closures part company, because $\dot M^K=\Phi^IG-\delta M^K$ contains $\Phi^I$.
+
+
+
+\bigskip
+The remainder of this subsection works out how the material balance constrains the planner's problem in the two model versions. Throughout, the streams tied to embodied materials in $Y$ carry the relative intensities $\omega^j$ scaled by the endogenous level $\Omega$, and the nature-attributable streams carry absolute intensities $\Omega^{N,S}$ and $\Omega^{D,S}$.
+
+
+
+\smalltitle{Version A: $\Phi^I$ tied to the final good.} 
+With $\Phi^I = \Omega \phi^I$, material and waste intensities of final goods $(\Omega, \Phi^Y)$ are both non-negative per construction. Rearranging the balance condition in \eqref{eq:sp:setup:ybalance_OmegaPhi} and \eqref{eq:sp:setup:ybalance_generic} gives
+\begin{align}
+\Omega &= \frac{R}{\mathcal D+\phi^IG}\geq0, \qquad \Phi^Y = \frac{\Omega\left(\mathcal D + \phi^I G\right) - \Omega^Y Y}{Y}\geq0, 
+\label{eq:sp:setup:Omega-phi}
+\end{align}
+where $\Omega\geq0$ comes from all parts being non-negative and $\Phi^Y\geq0$ comes from $\Omega \mathcal{D}\geq \Omega^Y Y$.
+
+
+In \textbf{version A} waste generation follows from substituting~\eqref{eq:sp:setup:Omega-phi} into~\eqref{eq:sp:setup:ledger} gives $W=R\,\mathcal D/\left(\mathcal D+\phi^IG\right)+\delta M^K+\mathcal N$, and substituting the base split~\eqref{eq:sp:setup:base-split} and clearing the denominator turns it into a quadratic in $W$:
+\begin{align}
+&\left(1-a\varpi\right)\omega^Wc^W\,W^2
++\Big[\left(1-a\varpi\right)\mathcal D^0+\phi^IG-\left(N+H\right)\omega^Wc^W\Big]W
+-\Big[\left(N+H\right)\mathcal D^0+H\phi^IG\Big] = \label{eq:sp:setup:ledger-quadratic}
+\end{align}
+where $H\equiv\delta M^K+\mathcal N$. The leading coefficient is positive whenever $a\varpi<1$, and the constant term is negative unconditionally. A quadratic with a positive leading coefficient and a negative constant term has exactly one positive root, so $W$ is determined uniquely and in closed form. 
+
+
+\smalltitle{Version B: $\Phi^I$ exogenous.} With exogenous $\Phi^I$, we replace \eqref{eq:sp:setup:Omega-phi} with 
+\begin{align}
+\Omega &= \frac{R-\Phi^IG}{\mathcal D},
+&
+\Phi^Y &= \frac{R}{Y}-\Omega\,\omega^Y
+\;=\;\Omega\,\frac{\mathcal D-\omega^YY}{Y}+\Phi^I\frac{G}{Y}.
+\label{eq:sp:setup:Omega}
+\end{align}
+The two equalities do not restrict the feasible set of allocations, they simply compute $\Omega$ and $\Phi^Y$ after the fact. However, the inequality $\Omega\ge0$ may be a real constraint stating that the economy cannot embody more mass in new capital than entered it.\footnote{We note that as long as $\Omega\geq0$ we also have $\Phi^Y\geq0$, so we can drop the second inequality.} The restriction $\Omega\geq0$ must be carried as a restriction in the form $\Phi^IG\leq R$ or equivalently $W\geq \delta M^K+\mathcal{N}$. 
+
+Second, as $\dot M^K$ does not involve $W$, the waste generation already follows from ~\eqref{eq:sp:setup:ledger-collected} or rewritten as
+\begin{align}
+W &= \frac{N-\dot M^K+\mathcal N}{1-a\varpi},
+&
+R &= \frac{N-a\varpi\dot M^K+a\varpi\,\mathcal N}{1-a\varpi}.
+\label{eq:sp:setup:ledger-solved}
+\end{align}
+
+
+\subsection{Plan of Part~\ref{part:sp}}
+\label{sec:sp:setup:plan}
+The two closures are developed separately and in full. Section~\ref{sec:sp:A} states and solves the planner's problem under Version A, $\Phi^I=\Omega\phi^I$; Section~\ref{sec:sp:B} does the same under Version B, $\Phi^I$ exogenous; Section~\ref{sec:sp:schemes} then catalogues the simplifications of the waste-generation scheme that the quantitative implementation makes use of, and classifies them by whether they touch the allocation or only the reported mass flows --- a classification that differs between the two versions, and is the sharpest reason to carry both.
+
+Section~\ref{sec:sp:B:compare} collects the differences between them in one place. Appendix~\ref{sec:sp:extensions} records what is not established here, and what is left for later work.

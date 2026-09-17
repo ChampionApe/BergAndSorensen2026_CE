@@ -1,0 +1,155 @@
+\section{Agents, and the definition of equilibrium}\label{sec:mkt:eq}
+
+Instruments are carried from the outset, so that Section~\ref{sec:mkt:impl} can set them rather than introduce them: an emission tax $\tau^P_t$ per tonne of $\Xi$, a discovery tax $\tau^X_t$ per tonne of $D$, an overburden charge levied at the gate fee $\tau^W_t$ per tonne of displaced mass, and the material-content price $z_t$ of~\eqref{eq:mkt:userprices}. All revenue is returned to the household as a lump sum $T_t$. Setting $\tau^P=\tau^X=z=0$ and exempting displaced mass from the gate fee gives the laissez-faire economy.
+
+Throughout, agents discount with the market interest rate, $\Lambda^{\mathrm{mkt}}_{t,s}\equiv\prod_{j=t+1}^{s}\left(1+r_j\right)^{-1}$, and take as given the paths of $\left\{p^R,z,\tau^W,r^K,\tau^P,\tau^X,r\right\}$, the pollution stock $P$, and the aggregate material intensity $\Omega$.
+
+\subsection{The final-goods sector}\label{sec:mkt:eq:goods}
+
+The sector rents $K^Y$, buys $R$ tonnes of raw material, and produces $Y=F\left(K^Y,R,P,t\right)$, taking the pollution stock as given. Of the material it draws, $\Omega^YY$ tonnes diffuse in production and are handed to the waste sector at the gate fee; the remainder, $\Phi^YY=R-\Omega^YY$, leaves embodied in the good and is sold at $z$ alongside it. Period profit is
+\begin{align}
+\Pi^Y &= Y+z\left(R-\Omega^YY\right)-p^RR-\tau^W\Omega^YY-r^KK^Y
+\;=\; Y-\left(p^R-z\right)R-P^{Y,\mathrm{w}}\Omega^YY-r^KK^Y,
+\label{eq:mkt:profitY}
+\end{align}
+writing $P^{Y,\mathrm{w}}\equiv z+\tau^W$ for the combined charge per diffused tonne. Since the problem is static, the two first-order conditions are
+\begin{align}
+F_R\left[1-\left(z+\tau^W\right)\Omega^Y\right] &= p^R-z,
+&
+F_K\left[1-\left(z+\tau^W\right)\Omega^Y\right] &= r^K .
+\label{eq:mkt:focY}
+\end{align}
+Both have the same dimensionless factor in front, for the same reason as in the planner's problem: an extra unit of output requires $\Omega^Y$ further tonnes of embodied material, and the sector pays for them.
+
+\subsection{The mining sector}\label{sec:mkt:eq:mine}
+
+The sector owns the reserve, extracts $N$, explores $D$, and buys the final good it needs for both activities at the material-inclusive prices $P^N$ and $P^D$ of~\eqref{eq:mkt:userprices}. It hands the displaced mass to the waste sector and pays the discovery tax. Its value satisfies
+\begin{align}
+J^N_t\left(S_t,X_t\right) &= \max_{N_t,D_t\ge0}\Big\{p^R_tN_t-P^N_tC^N\left(N_t,S_t,t\right)-P^D_tC^D\left(D_t,X_t,t\right)
+\notag\\
+&\qquad\qquad
+-\tau^W_t\left(\Omega^{N,S}N_t+\Omega^{D,S}D_t\right)-\tau^X_tD_t
++\frac{J^N_{t+1}\left(S_{t+1},X_{t+1}\right)}{1+r_{t+1}}\Big\},
+\label{eq:mkt:mineJ}
+\end{align}
+subject to $S_{t+1}=S_t+D_t-N_t$ and $X_{t+1}=X_t+D_t$. Write $p^S_t\equiv\left(1+r_{t+1}\right)^{-1}\partial J^N_{t+1}/\partial S_{t+1}$ and, in the unified-ownership reading, $p^X_t\equiv\left(1+r_{t+1}\right)^{-1}\partial J^N_{t+1}/\partial X_{t+1}$; under the common-pool reading the sector treats $X$ as beyond its control and $p^X$ does not appear in its conditions. The Kuhn--Tucker conditions are
+\begin{subequations}
+\label{eq:mkt:focmine}
+\begin{align}
+p^R &\le P^NC^N_N\left(0,S,t\right)+\tau^W\Omega^{N,S}+p^S,\quad N=0;
+\qquad
+p^R = P^NC^N_N+\tau^W\Omega^{N,S}+p^S \ \text{otherwise},
+\label{eq:mkt:focN}
+\\
+p^S &\le P^DC^D_D\left(0,X,t\right)+\tau^W\Omega^{D,S}+\tau^X,\quad D=0;
+\qquad
+p^S = P^DC^D_D+\tau^W\Omega^{D,S}+\tau^X \ \text{otherwise},
+\label{eq:mkt:focD}
+\end{align}
+\end{subequations}
+together with the asset equation for the reserve,
+\begin{align}
+\left(1+r_{t+1}\right)p^S_t &= \left|C^N_S\right|P^N\Big|_{t+1}+p^S_{t+1}.
+\label{eq:mkt:pS}
+\end{align}
+The comparison with~\eqref{eq:sp:sum:Nsys}--\eqref{eq:sp:sum:Dsys} is deferred, but one feature can be read at once. The extraction condition~\eqref{eq:mkt:focN} charges the displaced mass at the gate fee and \emph{not} the extracted tonne itself, whereas the planner's~\eqref{eq:sp:sum:N} charges $p^W\left(1+\Omega^{N,S}\right)$. There is no discrepancy: in the market the extracted tonne is sold, and the disposal liability it carries is already deducted from what the buyer will pay for it.
+
+\subsection{The waste-management sector}\label{sec:mkt:eq:waste}
+
+The sector accepts a flow $W_t$ of waste at the gate fee, holds the stock, draws $H_t=\mu\mathcal W_t$, chooses the treatment share and the recycling capital it rents, sells secondary material, and pays the emission tax:
+\begin{align}
+J^W_t\left(\mathcal W_t\right) &= \max_{W_t\ge0,\;\varpi_t\in\left[0,1\right],\;K^R_t\ge0}
+\Big\{\tau^W_tW_t+p^R_tR^R_t-P^W_tc^W\!\left(\varpi_t,t\right)H_t-r^K_tK^R_t-\tau^P_t\Xi_t
++\frac{J^W_{t+1}\left(\mathcal W_{t+1}\right)}{1+r_{t+1}}\Big\},
+\label{eq:mkt:wasteJ}
+\end{align}
+subject to $\mathcal W_{t+1}=\left(1-\mu\right)\mathcal W_t+W_t$, $H_t=\mu\mathcal W_t$, $R^R_t=\mathcal R\left(\varpi_tH_t,K^R_t,t\right)$ and the emission flow $\Xi_t=H_t\left(1-\varpi_t+d^W\varpi_t\right)-d^WR^R_t$ of~\eqref{eq:sp:setup:Xi}. Write $p^{\mathcal W}_t\equiv\left(1+r_{t+1}\right)^{-1}\partial J^W_{t+1}/\partial\mathcal W_{t+1}$ for the sector's valuation of a tonne it takes in today.
+
+\smalltitle{The disposal market.} Because $W_t$ enters~\eqref{eq:mkt:wasteJ} linearly, through the fee it earns and the stock it joins, the sector's supply of disposal services is perfectly elastic at one fee and zero at any other. Interior acceptance therefore requires
+\begin{align}
+\boxed{\;\tau^W_t = -p^{\mathcal W}_t\;}
+\label{eq:mkt:gatefee}
+\end{align}
+--- the gate fee is minus the asset value of a stockpiled tonne --- which is the market counterpart of the planner's identification~\eqref{eq:sp:sum:W}. No instrument produces it; ownership of the stock does. When $p^{\mathcal W}<0$ the sector must be paid to take waste and $\tau^W>0$; when $p^{\mathcal W}>0$ it competes for waste and the fee is negative, which is the equilibrium form of paying for scrap.
+
+\smalltitle{Treatment and recycling capital.} Differentiating~\eqref{eq:mkt:wasteJ} in $\varpi$ and $K^R$, using $\partial\Xi/\partial\varpi=-H\left[\left(1-d^W\right)+d^W\alpha\right]$ and $\partial\Xi/\partial K^R=-d^Wa'$ at fixed $H$, gives the two Kuhn--Tucker systems
+\begin{subequations}
+\label{eq:mkt:focwaste}
+\begin{align}
+\alpha p^R+\tau^P\left[\left(1-d^W\right)+d^W\alpha\right] &\lessgtr P^W\left[c^c+c^{T\prime}\left(\varpi\right)\right]
+\qquad\text{at }\varpi=0,\ \text{interior},\ \varpi=1,
+\label{eq:mkt:focvarpi}
+\\
+a'\!\left(x\right)\left[p^R+d^W\tau^P\right] &\le r^K,\ \text{with equality if }K^R>0 ,
+\label{eq:mkt:focKR}
+\end{align}
+\end{subequations}
+with the branches ordered as in~\eqref{eq:sp:sum:varpi}. Finally, the envelope condition in $\mathcal W$ prices the stock:
+\begin{align}
+\left(1+r_{t+1}\right)p^{\mathcal W}_t &= \mu\,h^{\mathrm{mkt}}_{t+1}+\left(1-\mu\right)p^{\mathcal W}_{t+1},
+&
+h^{\mathrm{mkt}} &\equiv \alpha\varpi\,p^R-P^Wc^W-\tau^P\left[1-\varpi\left(1-d^W\right)-d^W\alpha\varpi\right],
+\label{eq:mkt:pWstock}
+\end{align}
+the private handling dividend: material recovered valued at the market price of raw material, less the resources handling absorbs and the emission tax it incurs.
+
+\subsection{The household}\label{sec:mkt:eq:hh}
+
+The household consumes, accumulates capital, holds the material embodied in it, and takes the pollution stock as given:
+\begin{align}
+\max\ \sum_{t=0}^\infty\beta^t\left[u\left(C_t\right)-v\left(P_t\right)\right]
+\quad\text{s.t.}\quad
+P^C_tC_t+P^I_tG_t+\tau^W_t\delta M^K_t &= r^K_tK_t+\Pi_t+T_t,
+\label{eq:mkt:hhbudget}
+\end{align}
+with $G_t=I_t+\delta K_t$, $K_{t+1}=K_t+I_t$, $M^K_{t+1}=\left(1-\delta\right)M^K_t+\Phi^I_tG_t$, and $\Pi_t$ the sum of profits from the three sectors. The third term on the left is the disposal liability the household discharges as its capital depreciates: it owns the matter locked in the capital stock and pays the gate fee when the stock releases it. Letting $\Lambda_t$ be the multiplier on the budget constraint, $q_t$ the shadow value of a unit of $K_{t+1}$ in goods, and $p^M_t$ the shadow cost of a tonne of $M^K_{t+1}$,
+\begin{align}
+u'\left(C_t\right) &= \Lambda_tP^C_t,
+&
+q_t &= P^I_t+\Phi^I_tp^M_t,
+&
+1+r_{t+1} &\equiv \frac{\Lambda_t}{\beta\Lambda_{t+1}},
+\label{eq:mkt:hhfoc}
+\end{align}
+with the two asset equations
+\begin{align}
+\left(1+r_{t+1}\right)q_t &= r^K_{t+1}+\left(1-\delta\right)q_{t+1},
+&
+\left(1+r_{t+1}\right)p^M_t &= \delta\,\tau^W_{t+1}+\left(1-\delta\right)p^M_{t+1},
+\label{eq:mkt:hhassets}
+\end{align}
+and the usual transversality conditions. The second of~\eqref{eq:mkt:hhfoc} is worth reading slowly: \emph{the market price of installed capital is its goods cost plus the value of the matter it carries}, the matter valued at what it costs to acquire, $z\Phi^I$, plus what it will cost to dispose of, $\Phi^Ip^M$. In an economy where waste is a liability both terms are positive and $q>1$; in one where waste is an asset the disposal liability is negative and the two terms pull against each other.
+
+\subsection{Equilibrium}\label{sec:mkt:eq:def}
+
+\begin{definition}[competitive equilibrium with instruments]\label{def:mkt:eq}
+Given initial stocks $\left(K_0,S_0,X_0,P_0,M^K_0,\mathcal W_0\right)$ and instrument paths $\left\{z_t,\tau^P_t,\tau^X_t\right\}$ together with the rule that displaced mass is charged the gate fee, a \emph{competitive equilibrium} is a set of quantity paths $\left\{C,I,N,D,\varpi,K^R,K^Y,W,R,R^R,Y,\Omega\right\}$, price paths $\left\{p^R,\tau^W,r^K,r\right\}$ and valuations $\left\{q,p^S,p^X,p^M,p^{\mathcal W}\right\}$ such that: each agent solves its problem taking prices, $P$ and $\Omega$ as given; the government budget balances period by period through $T_t$; the stocks evolve as in~\eqref{eq:sp:states-motion}; and the following markets clear in every period,
+\begin{align}
+&\text{goods:}
+&
+Y &= C+I+\delta K+C^N+C^D+C^W,
+\label{eq:mkt:clear-goods}
+\\
+&\text{capital:}
+&
+K^Y+K^R &= K,
+\label{eq:mkt:clear-K}
+\\
+&\text{material:}
+&
+R &= N+R^R,
+\label{eq:mkt:clear-R}
+\\
+&\text{disposal:}
+&
+W &= \Omega\mathcal D+\delta M^K+\mathcal N,
+\label{eq:mkt:clear-W}
+\\
+&\text{embodied material:}
+&
+R-\Omega\omega^YY &= \Omega\left(\omega^NC^N+\omega^DC^D+\omega^WC^W+\omega^CC\right)+\Phi^IG .
+\label{eq:mkt:clear-M}
+\end{align}
+\end{definition}
+
+Two of the five clearing conditions carry the materials accounting and deserve comment. Condition~\eqref{eq:mkt:clear-W} is the disposal market: what the waste sector takes in equals what the economy's activities release, stream by stream, and it reproduces the ledger in the form~\eqref{eq:sp:ledger-streams}. Condition~\eqref{eq:mkt:clear-M} is the embodied-material market: the mass leaving the final-goods sector inside the good equals the mass its downstream users take on. It is~\eqref{eq:sp:setup:ybalance_OmegaPhi} rearranged, and since every term other than $R$ is proportional to $\Omega$, it determines $\Omega$ residually --- \emph{the quantity clears this market, not the price}. That is the formal statement of the point made in Section~\ref{sec:mkt:setup:agents}: $z$ has no market-clearing job to do and is therefore free to be an instrument, which is fortunate, because the next section shows that the equilibrium needs it to be one.

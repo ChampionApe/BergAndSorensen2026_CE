@@ -1,0 +1,434 @@
+﻿\section{Setup: agents, markets and instruments}\label{sec:mkt:setup}
+
+Part~\ref{part:sp} solved the planner's problem under two closures for the material intensity of new
+capital goods. This part states the market economy that corresponds to it, and asks what a government
+must do to make a competitive equilibrium reproduce the planner's allocation. Tastes and technologies
+are unchanged: everything in Section~\ref{sec:sp:setup:primitives}, the process-level accounting of
+Section~\ref{sec:sp:setup:materialaccounting}, the embodied-material
+stock~\eqref{eq:sp:setup:Phi-motion} and the ledger~\eqref{eq:sp:setup:ledger} carry over verbatim.
+What is new here is institutional: who owns what, what is traded at what price, and which of the
+model's shadow prices has no private counterpart.
+
+
+\subsection{What is decentralised and what is not}\label{sec:mkt:setup:what}
+
+One point of method is worth stating before anything else, because it governs the whole part. The
+materials accounting closes \emph{identically} in the two economies. The
+ledger~\eqref{eq:sp:setup:ledger} determines the waste flow $W$, and~\eqref{eq:sp:setup:Omega}
+or~\eqref{eq:sp:setup:Omega-phi} determines the intensity $\Omega$, in the market exactly as in the
+planner's problem, whatever policy is in force and whether or not the allocation is optimal.
+Conservation of mass is physics, not an institution, and there is no sense in which a planner and a
+market face different versions of it. What differs between the two economies is only what private
+agents \emph{internalise}, and that difference is the entire subject of this part.
+
+A second structural fact organises the presentation, and it is worth stating equally early because it
+is what makes this part shorter than Part~\ref{part:sp}.
+
+\begin{proposition}[The market structure does not depend on the closure]\label{prop:mkt:common}
+The agents, markets, prices and optimality conditions of the decentralised economy are the same under
+Version~B and Version~A. The two closures differ only in (i) how the accounting
+determines $W$ and $\Omega$ given the allocation, which no agent chooses, and (ii) the values at which
+the policy instruments must be set for the equilibrium to be optimal.
+\end{proposition}
+
+The reason is that neither $\Omega$ nor any relative intensity $\omega^j$ appears in any private
+agent's problem below. Firms see physical technologies and market prices; the accounting layer is
+invisible to them. It enters their decisions only through the instruments the government chooses, and
+that is where the closure matters. Accordingly the agents' problems and the equilibrium concept are
+stated once, here; Sections~\ref{sec:mkt:A} and~\ref{sec:mkt:B} then set the instruments under each
+closure and verify implementation.
+
+
+\subsection{Agents and markets}\label{sec:mkt:setup:agents}
+
+The economy contains five private decision units and a government. The final good is the numéraire.
+
+\smalltitle{The final-good firm.} A competitive firm operates the technology~\eqref{eq:sp:setup:output},
+renting capital $K^Y$ and buying raw material $R$. It takes the pollution stock $P$ parametrically.
+
+\smalltitle{The mine.} A competitive firm owns the reserve $S$ and the record of cumulative discovery
+$X$, operates the cost functions~\eqref{eq:sp:setup:extraction-cost}--\eqref{eq:sp:setup:discovery-cost},
+extracts $N$ and explores $D$, and sells virgin material. It is a dynamic agent: it holds two stocks
+and therefore carries two private shadow prices.
+
+\smalltitle{The recycling sector.} Competitive firms buy treated waste $T$ from the waste-management
+sector, rent capital $K^R$, and operate the constant-returns
+technology~\eqref{eq:sp:setup:recycling-crs}, selling secondary material into the same market as the
+mine. Virgin and secondary material are physically identical, so there is one material price.
+
+\smalltitle{The waste-management sector.} Competitive firms operate the collection and treatment
+technology~\eqref{eq:sp:setup:waste-cost} under a public service obligation: \emph{all} waste generated
+must be collected. They choose the treated share $\varpi$, sell treated waste to recyclers, and release
+the remainder to the environment. That the obligation is enforced --- that there is no unrecorded
+disposal --- is an institutional assumption, and a substantive one; see~\ref{op:mkt:dumping}.
+
+\smalltitle{The household.} A representative dynasty with preferences~\eqref{eq:sp:setup:utility} owns
+the capital stock, rents it to the two capital-using sectors, receives the profits of the firms it
+owns, pays taxes, receives a transfer, and consumes. It takes $P$ parametrically.
+
+\smalltitle{The government.} Sets the instruments of Section~\ref{sec:mkt:setup:instruments} and
+balances its budget period by period with a lump-sum transfer $T$, which is unrestricted in sign.
+
+Four prices are determined in markets, and are listed with the two private shadow prices in
+Table~\ref{tab:mkt:prices}. All are measured in units of the final good.
+
+\begin{table}[H]
+\centering
+\caption{Prices in the decentralised economy.}
+\label{tab:mkt:prices}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.10\textwidth}p{0.42\textwidth}p{0.40\textwidth}@{}}
+\toprule
+Price & Market & Paid by / to \\
+\midrule
+$P^R$ & raw material, virgin and secondary  & final-good firm to mine and recyclers \\
+$P^T$ & treated waste                       & recyclers to waste-management sector \\
+$P^K$ & rental of capital services          & final-good firm and recyclers to household \\
+$Q$   & purchase price of new capital goods & household, per unit of gross formation \\
+\midrule
+$P^S$ & shadow price of the reserve         & internal to the mine \\
+$P^X$ & shadow price of cumulative discovery & internal to the mine \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+There is no market for waste \emph{generation}: nobody buys the right to create a tonne of waste, and
+the collection sector does not levy a gate fee on those who hand waste over. Whether it should is not a
+detail of presentation --- it is the substantive policy question of this part, taken up in
+Sections~\ref{sec:mkt:A:gate} and~\ref{sec:mkt:B:nogate}.
+
+
+\subsection{Policy instruments}\label{sec:mkt:setup:instruments}
+
+Table~\ref{tab:mkt:instruments} lists the instruments. All may be functions of time, all are
+unrestricted in sign, and all are taken as given by private agents. Two are not free: the recycling
+credit $s^R$ is tied to the emission tax by construction, and the collection payment $s^W$ is whatever
+the competitive tender requires for the waste sector to break even.
+
+\begin{table}[H]
+\centering
+\caption{Policy instruments. The last column anticipates the Pigouvian values derived in
+Sections~\ref{sec:mkt:A} and~\ref{sec:mkt:B}, stated for Version~A: $\zeta$ is the intensity
+multiplier of~\eqref{eq:sp:A:zeta} and $\Delta=\zeta\Omega$ the composition wedge. Under Version~B the
+deposit takes the same form with the mass-constraint multiplier $\eta$ of~\eqref{eq:sp:B:foc:cs} in
+place of $\zeta$, and $\Delta\equiv0$, so the entire lower block vanishes.}
+\label{tab:mkt:instruments}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.09\textwidth}p{0.20\textwidth}p{0.38\textwidth}p{0.25\textwidth}@{}}
+\toprule
+& Base & Levied on & Optimal value \\
+\midrule
+$\tau^R$      & $R$                  & material entering production, either source & $p^W-\zeta$ \\
+$s^W$         & $W$                  & waste collected (residual, from zero profit) & $p^W$ \\
+$\tau^{N,S}$  & $N$                  & tonnage extracted (displaced overburden) & $\Omega^{N,S}p^W$ \\
+$\tau^{D,S}$  & $D$                  & tonnage discovered (displaced overburden) & $\Omega^{D,S}p^W$ \\
+$\tau^E$      & $\left(1-\varpi+d^W\varpi\right)W$ & waste released to the environment & $p^P$ \\
+$s^R$         & $R^R$                & secondary material recovered (credit against $\tau^E$) & $d^W\tau^E$ \\
+$\tau^K$      & $G=I+\delta K$       & \emph{gross} capital formation & see~\eqref{eq:mkt:A:tauK}, \eqref{eq:mkt:B:tauK} \\
+\midrule
+$\tau^Y$      & $Y$                  & output of the final good & $\Delta\omega^Y$ \\
+$\tau^C$      & $C$                  & consumption & $\Delta\omega^C$ \\
+$\tau^N$      & $C^N$                & extraction expenditure & $\Delta\omega^N$ \\
+$\tau^D$      & $C^D$                & exploration expenditure & $\Delta\omega^D$ \\
+$\tau^W$      & $C^W$                & collection and treatment expenditure & $\Delta\omega^W$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The division of the table is the division of the part. The upper block prices \emph{mass and
+emissions}: it is present under both closures and its members are the instruments a materials-balance
+model must have. The lower block prices the \emph{composition of final-good spending}: every member of
+it is proportional to $\Delta$, and by Proposition~\ref{prop:sp:B:irrelevance} $\Delta\equiv0$ under
+Version~B, so the entire block vanishes there. An economy of Version~B type needs no tax on output and
+no tax on consumption; an economy of Version~A type needs one on every use of the final good. This is
+the market counterpart of the comparison in Section~\ref{sec:sp:B:compare} and, unlike most such
+comparisons, it is directly observable in the policy menu.
+
+Notation deserves one warning. The five instruments in the lower block are indexed by the activity
+whose \emph{expenditure} they fall on, so $\tau^N$ is an ad valorem tax on extraction \emph{effort}
+$C^N(N,S)$, whereas $\tau^{N,S}$ is a specific tax on the \emph{tonnage} $N$; the superscript $S$
+marks the nature-attributable base, as in $\Omega^{N,S}$. The two are different instruments with
+different bases and, as it turns out, different fates across the two closures.
+
+
+\subsection{The agents' problems}\label{sec:mkt:setup:problems}
+
+Throughout, $r$ denotes the market rate of interest, defined in~\eqref{eq:mkt:setup:household-euler}
+below, and firms with dynamic problems discount at it.
+
+\smalltitle{The final-good firm.} The firm solves
+\begin{align}
+\max_{K^Y,R}\;\left(1-\tau^Y\right)F\left(K^Y,R,P\right)-P^KK^Y-\left(P^R+\tau^R\right)R,
+\label{eq:mkt:setup:goodsfirm}
+\end{align}
+giving
+\begin{align}
+\left(1-\tau^Y\right)F_K &= P^K,
+&
+\left(1-\tau^Y\right)F_R &= P^R+\tau^R .
+\label{eq:mkt:setup:foc:goodsfirm}
+\end{align}
+The firm buys mass and pays $\tau^R$ on it; it does not pay for the waste that mass will become,
+because it never handles that waste. Whether the two are the same charge in disguise is the question
+Sections~\ref{sec:mkt:A:reading} and~\ref{sec:mkt:B:reading} answer.
+
+\smalltitle{The recycling sector.} A recycler buys treated waste and rents capital,
+\begin{align}
+\max_{T,K^R}\;\left(P^R+s^R\right)\mathcal R\left(T,K^R\right)-P^TT-P^KK^R,
+\label{eq:mkt:setup:recycler}
+\end{align}
+and, using the derivatives~\eqref{eq:sp:setup:recycling-derivatives} of the constant-returns
+technology,
+\begin{align}
+\alpha\left(P^R+s^R\right) &= P^T,
+&
+a'\!\left(x\right)\left(P^R+s^R\right) &= P^K,
+&
+x&=\frac{K^R}{T}.
+\label{eq:mkt:setup:foc:recycler}
+\end{align}
+Because $\mathcal R$ is homogeneous of degree one, $\mathcal R=\alpha T+a'K^R$
+by~\eqref{eq:sp:setup:recycling-derivatives}, and the two conditions
+in~\eqref{eq:mkt:setup:foc:recycler} imply that the sector's revenue is exhausted by its factor
+payments: recycling earns exactly zero profit at every date, on and off the optimal path. The object
+\begin{align}
+B &\equiv P^R+s^R
+\label{eq:mkt:setup:Bvalue}
+\end{align}
+--- the price a recycler receives per tonne of secondary material, inclusive of the credit --- is the
+sector's sufficient statistic, and~\eqref{eq:mkt:setup:foc:recycler} says that treated waste is worth
+the marginal recycling yield times that price. The notation is deliberate: $B$ is the market
+counterpart of the planner's~\eqref{eq:sp:B:Bvalue} and~\eqref{eq:sp:A:Bvalue}, and the implementation
+propositions below show that the two coincide.
+
+\smalltitle{The mine.} The mine maximises the present value of its dividends,
+\begin{align}
+\max_{N,D}\;\int_0^\infty\Big[P^RN-\left(1+\tau^N\right)C^N\!\left(N,S\right)
+-\left(1+\tau^D\right)C^D\!\left(D,X\right)-\tau^{N,S}N-\tau^{D,S}D\Big]
+e^{-\int_0^tr\,ds}dt,
+\label{eq:mkt:setup:mine}
+\end{align}
+subject to $\dot S=D-N$ and $\dot X=D$, with $S_0,X_0$ given. Writing $P^S$ and $P^X$ for the
+current-value costates on the two stocks,
+\begin{align}
+P^R &= \left(1+\tau^N\right)C^N_N+P^S+\tau^{N,S},
+&
+P^S+P^X &= \left(1+\tau^D\right)C^D_D+\tau^{D,S},
+\label{eq:mkt:setup:foc:mine}
+\\
+\dot P^S &= r\,P^S+\left(1+\tau^N\right)C^N_S,
+&
+\dot P^X &= r\,P^X+\left(1+\tau^D\right)C^D_X .
+\label{eq:mkt:setup:costate:mine}
+\end{align}
+Both stock effects are internalised, because the mine owns both stocks: the depletion effect $C^N_S$
+because it will pay the higher extraction cost itself, and the discovery-depletion effect $C^D_X$
+because it will pay the higher exploration cost itself. There is accordingly no instrument in
+Table~\ref{tab:mkt:instruments} attached to either. This is worth marking, since the resource-economics
+literature often supplies one: here the reserve and the exploration margin are private, and the only
+reason the mine's decisions are distorted at all is the mass its activity moves.
+
+\smalltitle{The waste-management sector.} A collector takes the waste flow $W$ as given --- it is
+obliged to collect it --- and chooses the treated share:
+\begin{align}
+\Pi^W &= \Big[P^T\varpi+s^W-\left(1+\tau^W\right)c^W\!\left(\varpi\right)
+-\tau^E\left(1-\varpi+d^W\varpi\right)\Big]W,
+&
+c^W\!\left(\varpi\right)&=c^c+c^T\!\left(\varpi\right),
+\label{eq:mkt:setup:wastefirm}
+\end{align}
+with first-order condition and zero-profit condition
+\begin{align}
+P^T+\left(1-d^W\right)\tau^E &= \left(1+\tau^W\right)\frac{dc^T}{d\varpi},
+\label{eq:mkt:setup:foc:varpi}
+\\
+s^W &= \left(1+\tau^W\right)c^W\!\left(\varpi\right)
++\tau^E\left(1-\varpi+d^W\varpi\right)-P^T\varpi .
+\label{eq:mkt:setup:zeroprofit}
+\end{align}
+The tender drives profit to zero, so~\eqref{eq:mkt:setup:zeroprofit} determines the collection payment
+rather than the government choosing it. If treated waste is valuable enough, $s^W$ turns negative and
+the ``payment'' becomes a licence fee for the right to collect. Note that no waste-intensity parameter
+appears in~\eqref{eq:mkt:setup:wastefirm}: the collector sees the physical technology and nothing else.
+
+\smalltitle{The household.} The household holds the capital stock, buys gross formation $G=I+\delta K$
+at the price $Q\equiv1+\tau^K$, and consumes at the tax-inclusive price $1+\tau^C$:
+\begin{align}
+\max_{C}\;\int_0^\infty\left[u(C)-v(P)\right]e^{-\rho t}dt
+\qquad\text{s.t.}\qquad
+Q\left(\dot K+\delta K\right) &= P^KK+\Pi+T-\left(1+\tau^C\right)C,
+\label{eq:mkt:setup:household}
+\end{align}
+where $\Pi$ collects the dividends of the firms it owns, $P$ is taken as given, $K_0$ is given, and a
+no-Ponzi condition holds. Writing $\lambda$ for the household's marginal utility of a unit of the final
+good and $\mu=\lambda Q$ for the costate on $K$,
+\begin{align}
+u'\!\left(C\right) &= \lambda\left(1+\tau^C\right),
+&
+r &\equiv \rho-\frac{\dot\lambda}{\lambda} \;=\; \frac{P^K+\dot Q}{Q}-\delta .
+\label{eq:mkt:setup:household-euler}
+\end{align}
+The second relation defines the market interest rate and simultaneously states the household's
+portfolio condition: the return on holding capital, which is the rental net of depreciation charged at
+the price of capital, plus the capital gain, must equal the rate at which the household discounts.
+Since $\tau^K$ is levied on gross formation, replacement of depreciated capital is priced at $Q$
+exactly as net accumulation is. That is what the accounting requires --- both flows draw material on
+identical terms, by~\eqref{eq:sp:setup:Phi-motion} --- and it is the reason the base is gross rather
+than net.
+
+\smalltitle{The government.} The transfer balances the budget at every date,
+\begin{align}
+T &= \tau^YY+\tau^CC+\tau^NC^N+\tau^DC^D+\tau^WC^W
++\tau^RR+\tau^{N,S}N+\tau^{D,S}D+\tau^KG
+\notag\\
+&\phantom{{}={}}
++\tau^E\left(1-\varpi+d^W\varpi\right)W-s^RR^R-s^WW .
+\label{eq:mkt:setup:govbudget}
+\end{align}
+
+
+\subsection{Equilibrium}\label{sec:mkt:setup:equilibrium}
+
+\begin{definition}[Competitive equilibrium]\label{def:mkt:equilibrium}
+Given instrument paths and initial stocks $K_0,S_0,X_0,P_0,M^K_0$, a competitive equilibrium is a path
+of quantities $\left\{C,I,N,D,\varpi,K^Y,K^R,T,R,R^R,W,Y\right\}$, prices
+$\left\{P^R,P^T,P^K,Q,r\right\}$, private shadow prices $\left\{P^S,P^X\right\}$ and transfers $T$ such
+that each agent solves its problem in Section~\ref{sec:mkt:setup:problems}; the markets for material,
+treated waste and capital services clear,
+\begin{align}
+R &= N+R^R,
+&
+T &= \varpi W,
+&
+K &= K^Y+K^R;
+\label{eq:mkt:setup:clearing}
+\end{align}
+the government budget~\eqref{eq:mkt:setup:govbudget} holds; the stocks evolve
+by~\eqref{eq:sp:setup:reserves-motion}, \eqref{eq:sp:setup:pollution-motion}
+and~\eqref{eq:sp:setup:Phi-motion} with the emission flow~\eqref{eq:sp:setup:Xi}; and the materials
+accounting holds, that is $W$ satisfies the ledger~\eqref{eq:sp:setup:ledger} and $\Omega$ is given by
+the closure in force.
+\end{definition}
+
+Two features of the definition are worth marking. First, $W$ is not chosen by anybody. It is
+determined by the ledger given the allocation, exactly as in Part~\ref{part:sp}, where it was carried
+as a control only to keep its multiplier visible. Second, the last clause is the only place the two
+closures enter, and it does not touch any agent's problem --- which is
+Proposition~\ref{prop:mkt:common}.
+
+\smalltitle{Walras' law.} The instrument set and the transfer rule are mutually consistent, in the
+following sense.
+
+\begin{proposition}[The household's budget is the economy's resource constraint]
+\label{prop:mkt:walras}
+In any competitive equilibrium, the household's budget
+constraint~\eqref{eq:mkt:setup:household} together with firm profits, the zero-profit conditions of the
+recycling and waste-management sectors, market clearing~\eqref{eq:mkt:setup:clearing} and the
+government budget~\eqref{eq:mkt:setup:govbudget} implies the goods
+constraint~\eqref{eq:sp:setup:resource-constraint},
+\begin{align}
+Y &= C+I+\delta K+C^N+C^D+C^W .
+\label{eq:mkt:setup:resource}
+\end{align}
+This holds for arbitrary instrument values, not only at the optimum.
+\end{proposition}
+
+\begin{proof}
+Substitute the dividends of the final-good firm and the mine, and the zero-profit conditions of the
+recycling and waste-management sectors, into~\eqref{eq:mkt:setup:household}. Capital rentals cancel by
+$K=K^Y+K^R$. Material payments cancel by $R=N+R^R$, leaving $-\tau^RR+s^RR^R$. Payments for treated
+waste cancel by $T=\varpi W$, leaving, through~\eqref{eq:mkt:setup:zeroprofit},
+$-\left(1+\tau^W\right)C^W-\tau^E\left(1-\varpi+d^W\varpi\right)W+s^WW$. Every remaining tax and
+subsidy term then appears once with each sign, once in the household's budget and once
+in~\eqref{eq:mkt:setup:govbudget}, and cancels; for $\tau^K$ this is the statement that the household
+pays $\left(1+\tau^K\right)G$ and is returned $\tau^KG$. What is left is
+$Y-C-I-\delta K-C^N-C^D-C^W=0$.
+\end{proof}
+
+The proposition is the check that the instrument bases are the right ones. It is not automatic: a
+$\tau^K$ levied on net investment, or an emission tax whose base did not coincide with the physical
+release, would fail it.
+
+
+\subsection{The externalities, and the unregulated equilibrium}\label{sec:mkt:setup:laissezfaire}
+
+Private agents fail to internalise exactly two things, and it is worth naming them precisely because
+the instrument menu is long enough to obscure how few underlying distortions there are.
+
+\begin{enumerate}[label=\textbf{X\arabic*.},ref=X\arabic*,leftmargin=2.6em,itemsep=0.3em]
+\item\label{ext:mkt:pollution} \textbf{The pollution stock.} Household and firms take $P$ as given,
+so neither the disutility $v'(P)$ nor the output loss $F_P$ is priced. There is no private counterpart
+to $p^P$.
+\item\label{ext:mkt:ledger} \textbf{The materials ledger.} No agent faces~\eqref{eq:sp:setup:ledger}.
+The final-good firm draws mass without paying for the waste it becomes; the household stores mass in
+durables without being credited for the deferral; the mine displaces overburden without paying for it.
+There is no private counterpart to $p^W$ or to the embodied liability $p^M$.
+\end{enumerate}
+
+Everything else is internal. The reserve rent and the exploration externality are the mine's own
+problem; the recycling technology is priced by $P^T$ and $P^K$; the collection technology is priced by
+the tender. Under Version~A a third margin --- the effect of the composition of spending on how much
+mass is stored rather than shed --- is likewise unpriced, but it is a facet of~\ref{ext:mkt:ledger}
+rather than a separate failure, and it is why the lower block of Table~\ref{tab:mkt:instruments}
+exists.
+
+\smalltitle{The unregulated equilibrium.} Setting every instrument to zero
+in~\eqref{eq:mkt:setup:foc:goodsfirm}--\eqref{eq:mkt:setup:household-euler} gives a benchmark worth
+recording, since it is the natural status quo for a counterfactual exercise. It is not a no-recycling
+economy. With $\tau^E=0$ and $s^W=0$ the collection sector must cover its costs from the sale of
+treated waste alone, so~\eqref{eq:mkt:setup:foc:varpi} and~\eqref{eq:mkt:setup:zeroprofit} become
+\begin{align}
+\frac{dc^T}{d\varpi} &= P^T=\alpha P^R,
+&
+\varpi\frac{dc^T}{d\varpi}-c^T\!\left(\varpi\right) &= c^c,
+\label{eq:mkt:setup:lf-waste}
+\end{align}
+the second obtained by eliminating $P^T$ between the first-order condition and zero profit. The
+unregulated economy is therefore not a no-recycling economy --- secondary material is worth something,
+and recyclers bid for treated waste --- but the way it recycles is peculiar.
+
+\begin{proposition}[The unregulated treatment share is a technological constant]
+\label{prop:mkt:lf-varpi}
+With every instrument set to zero, the treated share $\varpi$ and the price of treated waste $P^T$ are
+determined by the collection technology alone, from~\eqref{eq:mkt:setup:lf-waste}, independently of
+resource scarcity, damages and every price in the economy. The left-hand side of the second condition
+is zero at $\varpi=0$ and strictly increasing, with derivative $\varpi\,d^2c^T/d\varpi^2>0$, so the
+solution is unique; it is increasing in the pure collection cost $c^c$.
+\end{proposition}
+
+The economics is that the collector's only revenue is the sale of treated waste, so it treats up to the
+point where that revenue covers the whole of collection and treatment --- a condition on costs, not on
+values. The consequence matters for the mechanism of the paper. Under the optimal policy, scarcity
+raises circularity through \emph{both} margins of the recycling block, the capital ratio $x$ and the
+treated share $\varpi$, by Propositions~\ref{prop:sp:B:circularity}
+and~\ref{prop:sp:A:circularity}. Without policy, only the first margin responds: a rising material
+price raises $P^T$ and hence $x$ and $a(x)$, but $\varpi$ does not move. Half of the transition
+mechanism is switched off, and the half that survives is the one that operates through capital
+deepening rather than through how much of the waste stream is captured.
+
+Two other distortions are visible in~\eqref{eq:mkt:setup:lf-waste}. Waste is not treated for the sake
+of the emissions treatment prevents --- the term $\left(1-d^W\right)\tau^E$ is missing --- and the mass
+drawn into production is not priced at all, since $\tau^R=0$ makes $P^R=F_R$ rather than the full
+social cost of a tonne. Both push the same way as the first, against circularity and towards
+extraction. The gap between~\eqref{eq:mkt:setup:lf-waste} and its optimal counterpart is what the
+instruments below close, and the second condition is exactly where the collection payment $s^W$ enters:
+once the collector is paid per tonne collected, cost recovery no longer dictates how much it treats.
+
+
+\subsection{Plan of Part~\ref{part:mkt}}\label{sec:mkt:setup:plan}
+
+The two closures are developed separately and in the same order as in Part~\ref{part:sp}.
+Section~\ref{sec:mkt:A} sets the instruments under Version~A, $\Phi^I=\Omega\phi^I$, and proves
+implementation; Section~\ref{sec:mkt:B} does the same under Version~B, $\Phi^I$ exogenous, and
+Section~\ref{sec:mkt:B:compare} collects the differences. Section~\ref{sec:mkt:schemes} then works
+through the simplified waste-generation schemes of Section~\ref{sec:sp:schemes}, asking of each not
+whether it changes the allocation --- Part~\ref{part:sp} settled that --- but whether it changes the
+instrument set, and records the open items specific to the market economy.
+
+Because the agents' problems have been stated once, the version sections are shorter than their
+counterparts in Part~\ref{part:sp} and are not fully self-contained: each presupposes this section.
+Each does, however, contain a complete statement of the equilibrium price system and of the instrument
+values under its closure, so a reader who wants only one version needs Section~\ref{sec:mkt:setup} and
+the section concerned.

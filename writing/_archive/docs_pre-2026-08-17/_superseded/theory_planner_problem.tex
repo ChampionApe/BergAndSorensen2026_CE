@@ -1,0 +1,400 @@
+﻿\section{The planner's problem}\label{sec:sp:problem}
+
+Section~\ref{sec:sp:setup} reduced the process-level accounting to a single physical relation, the
+ledger~\eqref{eq:sp:setup:ledger}, together with one inequality, $\Omega\ge0$. This section states
+the planner's problem those relations imply, and derives its first-order conditions in full. The
+baseline throughout is the closure in which $\Phi^I(t)$ is exogenous
+(Section~\ref{sec:sp:setup:aggregatematerial}); we call it \textbf{Version B}. The alternative
+closure $\Phi^I=\Omega\phi^I$, \textbf{Version A}, is taken up in Section~\ref{sec:sp:versions},
+where it turns out to change the optimality conditions in one systematic and interpretable way
+rather than to require a separate derivation.
+
+
+\subsection{Statement}\label{sec:sp:problem:statement}
+
+\smalltitle{Variables.} It is convenient to write the recycling technology as a constant-returns
+function of treated waste and recycling capital. Let
+\begin{align}
+T &\equiv \varpi W,
+&
+R^R &= \mathcal R\left(T,K^R\right)\;\equiv\;a\!\left(\frac{K^R}{T}\right)T,
+\label{eq:sp:problem:recycling-crs}
+\end{align}
+which is~\eqref{eq:sp:setup:recycling} rewritten. Because $a$ depends on $K^R$ and $T$ only through
+their ratio, $\mathcal R$ is homogeneous of degree one, and its two partial derivatives are
+\begin{align}
+\mathcal R_T &= a\left(x\right)-a'\!\left(x\right)x \;\equiv\;\alpha,
+&
+\mathcal R_{K^R} &= a'\!\left(x\right),
+&
+\mathcal R &= \alpha T+a'K^R .
+\label{eq:sp:problem:recycling-derivatives}
+\end{align}
+We refer to $\alpha=a\left(1-\varepsilon\right)$ as the \emph{marginal recycling yield}: the extra
+tonne of secondary material obtained from one extra tonne of treated waste, holding recycling
+capital fixed. It is strictly below the average yield $a$ whenever $\varepsilon>0$, and the
+assumption $\varepsilon<1$ in~\eqref{eq:sp:setup:recycling} is exactly the requirement
+$\alpha>0$.
+
+The planner chooses paths for the seven controls
+\begin{align}
+\left\{C,\;I,\;N,\;D,\;\varpi,\;K^R,\;W\right\},
+\label{eq:sp:problem:controls}
+\end{align}
+which determine the remaining flows through the definitions
+\begin{align}
+R^R &= \mathcal R\left(\varpi W,K^R\right),
+&
+R &= N+R^R,
+&
+Y &= F\left(K-K^R,\,R,\,P\right),
+&
+G &= I+\delta K,
+\label{eq:sp:problem:definitions}
+\end{align}
+and it carries the five states
+\begin{align}
+\left\{K,\;S,\;X,\;P,\;M^K\right\},
+\label{eq:sp:problem:states}
+\end{align}
+with $K_0,S_0,X_0,P_0,M^K_0$ given.
+
+\smalltitle{Why $W$ is listed as a control.} The ledger determines $W$ residually, so it is not an
+independent object; listing it among the controls and imposing the ledger as an equality constraint
+is the equivalent formulation that keeps the shadow price of waste visible. Substituting the solved
+ledger~\eqref{eq:sp:setup:ledger-solved} and dropping $W$ from~\eqref{eq:sp:problem:controls} yields
+the same allocation, but the multiplier $p^W$ --- the object every environmental instrument in
+Section~\ref{sec:sp:versions} and in the market economy is built from --- would then have to be
+recovered afterwards. Remark~\ref{rem:sp:reduced} states the equivalence.
+
+\begin{problem}[Planner, Version B]\label{prob:sp:planner}
+Choose $\left\{C,I,N,D,\varpi,K^R,W\right\}_{t\ge0}$ to maximise
+$U_0=\int_0^\infty\left[u(C)-v(P)\right]e^{-\rho t}dt$ subject to, at every $t$,
+\begin{align}
+&\text{\emph{goods:}}
+&
+F\left(K-K^R,R,P\right) &= C+I+\delta K+C^N(N,S)+C^D(D,X)+c^W\!\left(\varpi\right)W,
+\label{eq:sp:problem:goods}
+\\[0.2em]
+&\text{\emph{ledger:}}
+&
+W &= R-\Phi^I G+\delta M^K+\mathcal N,
+\label{eq:sp:problem:ledger}
+\\[0.2em]
+&\text{\emph{mass:}}
+&
+\Phi^I G &\le R,
+\label{eq:sp:problem:mass}
+\end{align}
+and to the laws of motion
+\begin{align}
+\dot K &= I,
+&
+\dot S &= D-N,
+&
+\dot X &= D,
+&
+\dot P &= \Xi-\theta(P)P,
+&
+\dot M^K &= \Phi^I G-\delta M^K,
+\label{eq:sp:problem:states-motion}
+\end{align}
+with $\mathcal N=\Omega^{N,S}N+\Omega^{D,S}D$, $c^W(\varpi)=c^c+c^T(\varpi)$, the definitions
+in~\eqref{eq:sp:problem:definitions}, the emission flow
+\begin{align}
+\Xi &= \left(1-\varpi+d^W\varpi\right)W-d^WR^R,
+\label{eq:sp:problem:Xi}
+\end{align}
+and $C,I+\delta K,N,D,K^R,W\ge0$, $\varpi\in\left[0,1\right]$.
+\end{problem}
+
+Three features of this statement deserve marking before any algebra.
+
+First, \eqref{eq:sp:problem:ledger} is an \emph{identity}, not a technology. It says where the mass
+went, and it holds along every conceivable path; what makes it bite is that it ties the waste flow
+$W$ --- which is costly to collect, costly to treat and damaging when released --- to the material
+flow $R$ that production requires. Nothing in it can be relaxed by choosing differently; it can only
+be made less costly by choosing a path on which less mass has to be moved.
+
+Second, \eqref{eq:sp:problem:mass} is the only part of the materials accounting that restricts the
+feasible set, and it does so as an inequality. This is the point on which the present formulation
+departs most sharply from the reduced-form treatment: imposing the materials balance as an
+\emph{equality} constraint with a freely signed multiplier would attach a nonzero shadow price to
+mass conservation by construction, and that price would show up as a wedge on output and on
+consumption. Here the multiplier on~\eqref{eq:sp:problem:mass} is zero except at the corner where
+every tonne entering production is embodied in new capital.
+
+Third, $\Xi$ is written in the form~\eqref{eq:sp:problem:Xi}, linear in $W$ and $R^R$ separately, so
+that no derivative of $a(\cdot)$ ever appears inside a pollution term. All the curvature of the
+recycling technology enters through $\mathcal R$ and through $\alpha$ and $a'$ alone.
+
+
+\subsection{The Hamiltonian}\label{sec:sp:problem:hamiltonian}
+
+Write the current-value Hamiltonian with the static constraints adjoined. It is convenient to
+normalise every multiplier by $\lambda$, the multiplier on the goods
+constraint~\eqref{eq:sp:problem:goods}, so that all shadow prices below are measured in units of the
+final good rather than in utils. Accordingly, let the current-value costates be
+\begin{align}
+\underbrace{\lambda q}_{K},
+&&
+\underbrace{\lambda p^S}_{S},
+&&
+\underbrace{\lambda p^X}_{X},
+&&
+\underbrace{-\lambda p^P}_{P},
+&&
+\underbrace{-\lambda p^M}_{M^K},
+\label{eq:sp:problem:costates}
+\end{align}
+the two minus signs anticipating that both $P$ and $M^K$ are liabilities, so that $p^P$ and $p^M$
+read as shadow \emph{costs}; the signs are verified in
+Section~\ref{sec:sp:solution:signs}, not assumed. Let $\lambda p^W$ be the multiplier on the
+ledger~\eqref{eq:sp:problem:ledger} written with $W$ on the left, and $\lambda\eta\ge0$ the
+multiplier on~\eqref{eq:sp:problem:mass}. Then
+\begin{align}
+\mathcal L
+={}& u(C)-v(P)
+\notag\\
+&+\lambda\Big[F\left(K-K^R,R,P\right)-C-I-\delta K-C^N(N,S)-C^D(D,X)-c^W\!\left(\varpi\right)W\Big]
+\notag\\
+&+\lambda q\,I
+\;+\;\lambda p^S\left(D-N\right)
+\;+\;\lambda p^X D
+\;-\;\lambda p^P\left[\Xi-\theta(P)P\right]
+\;-\;\lambda p^M\left[\Phi^IG-\delta M^K\right]
+\notag\\
+&+\lambda p^W\Big[W-N-R^R+\Phi^IG-\delta M^K-\mathcal N\Big]
+\;+\;\lambda\eta\Big[N+R^R-\Phi^IG\Big],
+\label{eq:sp:problem:lagrangian}
+\end{align}
+with $R=N+R^R$, $R^R=\mathcal R\left(\varpi W,K^R\right)$ and $G=I+\delta K$ substituted throughout.
+
+The sign convention on $p^W$ is worth stating explicitly, because it is the price everything else
+is written in terms of. Perturb the ledger to $W=R-\Phi^IG+\delta M^K+\mathcal N-\kappa$, that is,
+suppose $\kappa$ tonnes of waste could be made to disappear at no cost. Then
+$\partial\mathcal L^*/\partial\kappa=\lambda p^W$, so $p^W>0$ says exactly that waste is socially
+costly, and $p^W$ measures how costly, per tonne, in final-good units.
+
+
+\subsection{First-order conditions}\label{sec:sp:problem:foc}
+
+Differentiating~\eqref{eq:sp:problem:lagrangian} with respect to each of the seven controls, and
+dividing throughout by $\lambda$, gives the following system. Two composite objects recur often
+enough to be named at the outset:
+\begin{align}
+B &\equiv F_R-p^W+d^Wp^P+\eta,
+&
+p^N &\equiv C^N_N+p^S+\Omega^{N,S}p^W .
+\label{eq:sp:problem:B}
+\end{align}
+$B$ is the net social value of one tonne of \emph{secondary} material: what it produces, less the
+waste it will itself become, plus the emission its recovery avoids, plus the mass constraint it
+relaxes. $p^N$ is the full marginal social cost of one tonne of \emph{virgin} material delivered to
+production: the resources spent extracting it, the rent on the reserve it depletes, and the waste
+cost of the overburden its extraction displaces. Section~\ref{sec:sp:solution} argues that the
+relation between these two objects is the single most informative equation in the model.
+
+\smalltitle{Consumption.}
+\begin{align}
+u'\!\left(C\right) &= \lambda .
+\label{eq:sp:foc:C}
+\end{align}
+No wedge: at the optimum the marginal utility of consumption equals the shadow value of a unit of
+the final good, exactly as in an economy with no materials at all.
+
+\smalltitle{Investment.}
+\begin{align}
+q &= 1+\Phi^I\left(p^M-p^W+\eta\right).
+\label{eq:sp:foc:I}
+\end{align}
+The shadow price of installed capital is the goods it costs, \emph{less} the waste that embodying
+$\Phi^I$ tonnes in it removes from today's waste stream, \emph{plus} the discounted waste those same
+tonnes will become when the capital depreciates. Capital is a temporary materials sink, and $q$
+prices the net value of that service.
+
+\smalltitle{Extraction.}
+\begin{align}
+F_R+\eta-p^W &= C^N_N+p^S+\Omega^{N,S}p^W,
+\qquad\text{equivalently}\qquad
+B &= p^N+d^Wp^P .
+\label{eq:sp:foc:N}
+\end{align}
+
+\smalltitle{Exploration.}
+\begin{align}
+p^S+p^X &= C^D_D+\Omega^{D,S}p^W .
+\label{eq:sp:foc:D}
+\end{align}
+
+\smalltitle{Treatment share.}
+\begin{align}
+\alpha B+\left(1-d^W\right)p^P &= \frac{dc^T}{d\varpi},
+\label{eq:sp:foc:varpi}
+\end{align}
+for interior $\varpi\in\left(0,1\right)$, with the usual inequalities at the corners.
+
+\smalltitle{Recycling capital.}
+\begin{align}
+F_K &= a'\!\left(x\right)B .
+\label{eq:sp:foc:KR}
+\end{align}
+
+\smalltitle{Waste.}
+\begin{align}
+p^W &= c^W\!\left(\varpi\right)+\left(1-\varpi+d^W\varpi\right)p^P-\varpi\alpha B .
+\label{eq:sp:foc:W}
+\end{align}
+
+\smalltitle{Complementary slackness.}
+\begin{align}
+\eta &\ge0,
+&
+\Phi^IG &\le R,
+&
+\eta\left[R-\Phi^IG\right] &= 0 .
+\label{eq:sp:foc:cs}
+\end{align}
+
+Two of these are worth expanding on immediately, because their form is not obvious.
+
+\eqref{eq:sp:foc:W} defines $p^W$ implicitly, since $B$ contains $p^W$. Solving out, the shadow
+cost of a tonne of gross waste satisfies
+\begin{align}
+p^W\left(1+\Omega^{N,S}\varpi\alpha\right)
+&= c^W\!\left(\varpi\right)+\left(1-\varpi+d^W\varpi\right)p^P
+-\varpi\alpha\left(C^N_N+p^S+d^Wp^P\right),
+\label{eq:sp:foc:W-solved}
+\end{align}
+where~\eqref{eq:sp:foc:N} was used to replace $B$. A tonne of waste costs what it costs to collect
+and treat, plus the damage from the part of it that reaches the environment, minus the virgin
+extraction it displaces at the margin. \emph{Nothing in~\eqref{eq:sp:foc:W-solved} involves any
+$\omega^j$ or $\Omega$}: the shadow price of waste is a function of extraction costs, resource
+rents, damages and the recycling technology alone.
+
+\eqref{eq:sp:foc:varpi} is the treatment margin. Raising $\varpi$ by one point costs
+$dc^T/d\varpi$ per tonne of waste and buys two things: $\alpha$ tonnes of secondary material worth
+$B$ each, and a reduction of the emitted fraction from $1$ to $d^W$ on the tonne now treated. Since
+$c^T(0)=\left.dc^T/d\varpi\right|_{0}=0$ by~\eqref{eq:sp:setup:waste-cost}, the right-hand side
+vanishes at $\varpi=0$ while the left-hand side is strictly positive whenever $p^P>0$; so
+\emph{some} treatment is always optimal, and the $\varpi=0$ corner is never reached. The upper
+corner $\varpi=1$ is reached iff $\alpha B+\left(1-d^W\right)p^P\ge\left.dc^T/d\varpi\right|_{1}$.
+
+
+\subsection{Costate equations}\label{sec:sp:problem:costates}
+
+Each costate obeys $\dot\nu=\rho\nu-\partial\mathcal L/\partial(\text{state})$ with $\nu$ the
+current-value costate in~\eqref{eq:sp:problem:costates}. Because the costates carry the factor
+$\lambda$, each such equation produces a term $\dot\lambda/\lambda$, and it is worth defining the
+resulting discount rate once:
+\begin{align}
+r &\equiv \rho-\frac{\dot\lambda}{\lambda}.
+\label{eq:sp:problem:r}
+\end{align}
+Since $\lambda=u'(C)$ by~\eqref{eq:sp:foc:C}, $r$ is the familiar consumption rate of interest,
+$r=\rho+\sigma(C)\dot C/C$ with $\sigma\equiv-Cu''/u'$; and because every shadow price has been
+normalised by $\lambda$, \emph{every} price below discounts at this same $r$. That uniformity is not
+automatic --- it is a consequence of the normalisation, and it fails in Version A, where
+$\lambda\neq u'(C)$.
+
+\smalltitle{Capital.} Using $\partial\mathcal L/\partial K=\lambda\left[F_K-\delta-\delta\Phi^I
+\left(p^M-p^W+\eta\right)\right]$ and~\eqref{eq:sp:foc:I} to collapse the bracket to
+$F_K-\delta q$,
+\begin{align}
+r &= \frac{F_K+\dot q}{q}-\delta .
+\label{eq:sp:costate:K}
+\end{align}
+Depreciation is charged at $q$, not at $1$: what wears out is a unit of installed capital, whose
+social value is $q$, not a unit of the final good. Together with~\eqref{eq:sp:problem:r} this is the
+consumption Euler equation,
+\begin{align}
+\sigma\left(C\right)\frac{\dot C}{C} &= \frac{F_K+\dot q}{q}-\delta-\rho .
+\label{eq:sp:costate:euler}
+\end{align}
+
+\smalltitle{Reserves.} With $\partial\mathcal L/\partial S=-\lambda C^N_S$,
+\begin{align}
+\dot p^S &= r\,p^S+C^N_S,
+\qquad\text{so}\qquad
+\frac{\dot p^S}{p^S} = r+\frac{C^N_S}{p^S}<r .
+\label{eq:sp:costate:S}
+\end{align}
+This is the modified Hotelling rule: the in-situ rent grows more slowly than the interest rate,
+by exactly the marginal cost saving $-C^N_S>0$ that a larger known reserve confers on extraction.
+
+\smalltitle{Discoveries.} With $\partial\mathcal L/\partial X=-\lambda C^D_X$,
+\begin{align}
+\dot p^X &= r\,p^X+C^D_X,
+\qquad\text{so}\qquad
+p^X\left(t\right) = -\int_t^\infty C^D_X\!\left(s\right)e^{-\int_t^s r\,du}\,ds<0 .
+\label{eq:sp:costate:X}
+\end{align}
+Cumulative discovery is a bad: each unit found today raises the cost of finding the next one
+forever after, and $-p^X$ is the present value of that penalty.
+
+\smalltitle{Pollution.} Write the marginal damage of the stock, in final-good units, as
+\begin{align}
+d &\equiv \frac{v'\!\left(P\right)}{u'\!\left(C\right)}-F_P\;>\;0,
+\label{eq:sp:problem:damage}
+\end{align}
+the sum of the direct disutility and the output loss. Then
+\begin{align}
+\dot p^P &= \Big[r+\theta\!\left(P\right)+\theta'\!\left(P\right)P\Big]p^P-d,
+\qquad\text{so}\qquad
+p^P\left(t\right)=\int_t^\infty d\left(s\right)e^{-\int_t^s\left[r+\theta+\theta'P\right]du}\,ds .
+\label{eq:sp:costate:P}
+\end{align}
+The effective discount rate on damages is the interest rate plus the marginal decay rate
+$\partial\left[\theta(P)P\right]/\partial P=\theta+\theta'P$. Because $\theta'<0$
+by~\eqref{eq:sp:setup:pollution-motion}, sink saturation lowers that rate below the average decay
+rate $\theta$, and $p^P$ is correspondingly larger than a naive $d/\left(r+\theta\right)$ calculation
+would suggest. Stability of the pollution block requires $\theta+\theta'P>0$; this is an assumption
+on $\theta$, and it is maintained throughout.
+
+\smalltitle{Embodied material.} With
+$\partial\mathcal L/\partial M^K=\lambda\delta\left(p^M-p^W\right)$,
+\begin{align}
+\dot p^M &= \left(r+\delta\right)p^M-\delta p^W,
+\qquad\text{so}\qquad
+p^M\left(t\right)=\int_t^\infty \delta p^W\!\left(s\right)e^{-\left(\int_t^s r\,du\right)-\delta\left(s-t\right)}ds .
+\label{eq:sp:costate:M}
+\end{align}
+$p^M$ is the present value of the waste that the currently embodied stock will release as it
+depreciates, discounted at $r+\delta$ because a fraction $\delta$ of the liability is discharged
+each instant. It is positive whenever $p^W$ is, confirming the sign anticipated
+in~\eqref{eq:sp:problem:costates}, and it is strictly below the contemporaneous $p^W$ whenever
+$r>0$ --- postponing a tonne of waste is worth something.
+
+\smalltitle{Transversality.} The problem is closed by
+\begin{align}
+\lim_{t\to\infty}e^{-\rho t}\lambda q K &= 0,
+&
+\lim_{t\to\infty}e^{-\rho t}\lambda p^S S &= 0,
+&
+\lim_{t\to\infty}e^{-\rho t}\lambda p^X X &= 0,
+\notag\\
+\lim_{t\to\infty}e^{-\rho t}\lambda p^P P &= 0,
+&
+\lim_{t\to\infty}e^{-\rho t}\lambda p^M M^K &= 0 .
+&&
+\label{eq:sp:problem:tvc}
+\end{align}
+
+\begin{remark}[The reduced formulation]\label{rem:sp:reduced}
+Substituting the solved ledger~\eqref{eq:sp:setup:ledger-solved} into the goods constraint and
+dropping $W$ from the control set gives a problem in six controls and the same five states, whose
+first-order conditions are~\eqref{eq:sp:foc:C}--\eqref{eq:sp:foc:KR} with $p^W$ replaced everywhere
+by the right-hand side of~\eqref{eq:sp:foc:W}. The two formulations are equivalent because
+\eqref{eq:sp:foc:W} is precisely the condition that makes the substitution valid; what is lost is
+the price itself. Since $p^W$ is the object the market economy implements through a waste tax, and
+since the sign of $p^W$ turns out to determine the sign of two separate instruments simultaneously
+(Section~\ref{sec:sp:solution:signs}), it is worth keeping.
+\end{remark}
+
+\begin{remark}[What is not verified]\label{rem:sp:soc}
+The conditions above are necessary. Sufficiency requires concavity of the maximised Hamiltonian in
+the states, which is not established here: $F$ is concave and $u,-v$ are, but $\mathcal R$ enters
+through a constant-returns function of two controls, and the ledger is bilinear in $\varpi$ and $W$.
+Uniqueness of the optimum is likewise not established, and it is invoked later when the market
+implementation is claimed to reproduce \emph{the} planner's allocation. Both are open.
+\end{remark}

@@ -1,0 +1,293 @@
+﻿\section{The two model versions, and simplified waste schemes}\label{sec:sp:versions}
+
+Sections~\ref{sec:sp:problem} and~\ref{sec:sp:solution} derived and read the planner's problem under
+Version B, the closure in which the material intensity of new capital goods, $\Phi^I(t)$, is
+exogenous. This section does two things. Section~\ref{sec:sp:versions:A} re-derives the problem under
+Version A, $\Phi^I=\Omega\phi^I$, and shows that the entire difference between the two closures can be
+written as a single scalar wedge applied at every point where the final good is used. Section
+\ref{sec:sp:versions:simple} then catalogues the simplifications of the waste-generation scheme that
+the rest of the note and the quantitative implementation make use of, and --- the point of the
+exercise --- classifies them by whether they touch the allocation or only the reported mass flows.
+The classification is different under the two versions, and that difference is the sharpest reason
+to carry both.
+
+
+\subsection{Version A: the material intensity of capital tied to the final good}
+\label{sec:sp:versions:A}
+
+\smalltitle{The closure.} Under Version A the material content of capital goods per unit of
+expenditure is not pinned down independently of the material content of final-good activity in
+general. Capital goods are made from the same composite good as everything else, so
+$\Phi^I=\Omega\phi^I$ with $\phi^I$ exogenous: capital-goods production is $\phi^I$ times as
+material-intensive as final-good activity on average, $\phi^I=1$ being the parsimonious case. The
+level $\Omega$ is then determined by~\eqref{eq:sp:setup:ybalance_OmegaPhi},
+\begin{align}
+R &= \Omega\left(\mathcal D+\phi^IG\right),
+&
+\mathcal D &= \omega^YY+\omega^{N}C^N+\omega^{D}C^D+\omega^WC^W+\omega^CC,
+\label{eq:sp:versions:Omega-B}
+\end{align}
+which by~\eqref{eq:sp:setup:Omega-phi} delivers $\Omega\ge0$ automatically. Problem
+\ref{prob:sp:planner} is modified in three ways: $\Omega$ joins the control
+set,~\eqref{eq:sp:versions:Omega-B} joins the constraints with multiplier $\lambda\zeta$, $\Phi^I$ is
+replaced by $\Omega\phi^I$ in the ledger~\eqref{eq:sp:problem:ledger} and in the law of motion for
+$M^K$, and the mass constraint~\eqref{eq:sp:problem:mass} is deleted along with its multiplier
+$\eta$. The ledger is no longer linear in $W$; it is the quadratic
+\eqref{eq:sp:setup:ledger-quadratic}, with a unique positive root.
+
+\smalltitle{The wedge.} Differentiating the modified Lagrangian with respect to $\Omega$ and using
+$\mathcal D+\phi^IG=R/\Omega$ gives the multiplier in closed form. Define the share of material
+input that is embodied in new capital,
+\begin{align}
+\chi &\equiv \frac{\Phi^IG}{R}\;\in\;\left[0,1\right),
+\qquad\text{then}\qquad
+\zeta = \chi\left(p^W-p^M\right),
+\qquad
+\Delta \equiv \zeta\Omega = \Omega\chi\left(p^W-p^M\right).
+\label{eq:sp:versions:zeta}
+\end{align}
+$\Delta$ is the object that does all the work. Its interpretation is direct: spending one more unit
+of the final good on any activity $j$ raises $\mathcal D$ by $\omega^j$, which
+by~\eqref{eq:sp:versions:Omega-B} \emph{dilutes} $\Omega$ for given $R$, which lowers $\Phi^I$, which
+means less of the incoming mass is embodied in new capital and more of it is diffused as waste
+today. Under Version A the composition of final-good spending is therefore a genuine externality,
+and $\Delta\omega^j$ is its size. Note that $\Delta$ carries the sign of $p^W-p^M$ --- the same
+bracket that determines whether $q\lessgtr1$ in~\eqref{eq:sp:solution:q} --- so the wedge and the
+capital-price wedge flip together, exactly as the two instruments in
+Section~\ref{sec:sp:solution:signs} do.
+
+\smalltitle{The conditions.} With $\Delta$ in hand the entire system can be written by substitution.
+A unit of the final good \emph{spent} on activity $j$ has effective social cost
+$\left(1+\Delta\omega^j\right)$, and a unit \emph{produced} has effective social value
+$\left(1-\Delta\omega^Y\right)$ --- the asymmetry is not an error, since producing output itself adds
+$\omega^YY$ to the waste base. Writing
+\begin{align}
+B^{\mathrm B} &\equiv \left(1-\Delta\omega^Y\right)F_R-p^W+d^Wp^P+\zeta,
+\label{eq:sp:versions:B-value}
+\end{align}
+for the Version-B counterpart of $B$, the first-order conditions are
+\begin{align}
+\text{\emph{consumption:}}
+&&
+u'\!\left(C\right) &= \lambda\left(1+\Delta\omega^C\right),
+\label{eq:sp:versions:foc:C}
+\\
+\text{\emph{investment:}}
+&&
+q &= 1-\Phi^I\left(1-\chi\right)\left(p^W-p^M\right),
+\label{eq:sp:versions:foc:I}
+\\
+\text{\emph{extraction:}}
+&&
+B^{\mathrm B} &= \left(1+\Delta\omega^N\right)C^N_N+p^S+\Omega^{N,S}p^W+d^Wp^P,
+\label{eq:sp:versions:foc:N}
+\\
+\text{\emph{exploration:}}
+&&
+p^S+p^X &= \left(1+\Delta\omega^D\right)C^D_D+\Omega^{D,S}p^W,
+\label{eq:sp:versions:foc:D}
+\\
+\text{\emph{treatment:}}
+&&
+\alpha B^{\mathrm B}+\left(1-d^W\right)p^P &= \left(1+\Delta\omega^W\right)\frac{dc^T}{d\varpi},
+\label{eq:sp:versions:foc:varpi}
+\\
+\text{\emph{recycling capital:}}
+&&
+\left(1-\Delta\omega^Y\right)F_K &= a'\!\left(x\right)B^{\mathrm B},
+\label{eq:sp:versions:foc:KR}
+\\
+\text{\emph{waste:}}
+&&
+p^W &= \left(1+\Delta\omega^W\right)c^W\!\left(\varpi\right)
++\left(1-\varpi+d^W\varpi\right)p^P-\varpi\alpha B^{\mathrm B},
+\label{eq:sp:versions:foc:W}
+\end{align}
+and the costate equations become
+\begin{align}
+r &= \frac{\left(1-\Delta\omega^Y\right)F_K+\dot q}{q}-\delta,
+&
+\dot p^S &= r\,p^S+\left(1+\Delta\omega^N\right)C^N_S,
+&
+\dot p^X &= r\,p^X+\left(1+\Delta\omega^D\right)C^D_X,
+\notag\\
+\dot p^P &= \Big[r+\theta+\theta'P\Big]p^P-d^{\mathrm B},
+&
+\dot p^M &= \left(r+\delta\right)p^M-\delta p^W,
+&
+d^{\mathrm B}&\equiv\frac{v'\!\left(P\right)}{\lambda}-\left(1-\Delta\omega^Y\right)F_P,
+\label{eq:sp:versions:costates}
+\end{align}
+with $r\equiv\rho-\dot\lambda/\lambda$ as before. Setting $\Delta=\zeta=0$ and reinstating $\eta$
+recovers Section~\ref{sec:sp:problem} exactly.
+
+Five features of this system are worth drawing out.
+
+\smalltitle{(i) The materials arbitrage survives intact.} \eqref{eq:sp:versions:foc:N} has the same
+form as~\eqref{eq:sp:solution:arbitrage}: the value of a secondary tonne equals the full cost of a
+virgin tonne plus the emission its recovery avoids. All that changes is that extraction resources
+are charged at $\left(1+\Delta\omega^N\right)$ rather than at par. The central mechanism of
+Section~\ref{sec:sp:solution:recycling} --- scarcity raises $B$, which raises $x$, $\alpha$ and
+$\varpi$ --- is unaffected in form, since Proposition~\ref{prop:sp:circularity} used only the
+curvature of $a$ and the convexity of $c^T$. The transition is still scarcity-driven; it is now
+also, second-order, composition-driven.
+
+\smalltitle{(ii) The wedges are real, not artefacts.} Proposition~\ref{prop:sp:nowedge} said that a
+posited reduced form generates spurious taxes on consumption and output. Version A generates wedges
+of formally the same shape --- compare~\eqref{eq:sp:versions:foc:C}
+with~\eqref{eq:sp:solution:spurious-C} --- but for a different and legitimate reason. In the
+reduced form the wedge came from letting the planner reduce economy-wide waste without reducing the
+mass drawn in. Here total mass is still conserved; what consumption does is change the \emph{split}
+of that mass between the durable stock and the waste flow. That is a real margin, and it should be
+priced. The two cases are distinguished by the multiplier: the spurious wedge is proportional to
+$p^W$, the genuine one to $\chi\left(p^W-p^M\right)$, and it vanishes when capital is not a sink
+($\chi=0$ or $\phi^I=0$) or when postponement is worthless ($p^W=p^M$).
+
+\smalltitle{(iii) The capital wedge is damped.} Comparing~\eqref{eq:sp:versions:foc:I}
+with~\eqref{eq:sp:solution:q}, the materials wedge on $q$ is scaled by $\left(1-\chi\right)$. Raising
+gross formation embodies more mass in capital, but it also raises $\phi^IG$ in the denominator
+of~\eqref{eq:sp:versions:Omega-B}, diluting $\Omega$ and hence $\Phi^I$ itself; $\chi$ is exactly the
+fraction of the direct effect that this feedback offsets. The intensity of capital goods
+accommodates the planner rather than constraining it, which is the same fact as the disappearance
+of~\eqref{eq:sp:problem:mass}.
+
+\smalltitle{(iv) $\lambda$ is no longer marginal utility.} By~\eqref{eq:sp:versions:foc:C},
+$u'(C)=\lambda\left(1+\Delta\omega^C\right)$, so the uniform discounting of
+Section~\ref{sec:sp:problem:costates} is lost: $r\equiv\rho-\dot\lambda/\lambda$ is still the rate at
+which all goods-denominated shadow prices discount, but the consumption Euler equation acquires a
+term in the growth of the wedge,
+\begin{align}
+\sigma\left(C\right)\frac{\dot C}{C}
+&= \frac{\left(1-\Delta\omega^Y\right)F_K+\dot q}{q}-\delta-\rho
+-\frac{d}{dt}\ln\!\left(1+\Delta\omega^C\right).
+\label{eq:sp:versions:euler}
+\end{align}
+A wedge that is expected to grow --- which is what a rising $p^W$ does --- tilts consumption toward
+the present, an effect with no counterpart in Version B.
+
+\smalltitle{(v) The relative intensities now matter.} Every $\omega^j$ appears
+in~\eqref{eq:sp:versions:foc:C}--\eqref{eq:sp:versions:costates}, so
+Proposition~\ref{prop:sp:irrelevance} fails. This is the substantive difference between the two
+closures, and it is a difference about what the calibration exercise \emph{is}. Under Version B the
+$\omega^j$ are a measurement bridge: they translate the model's mass flows into published
+material-flow accounts and do nothing else. Under Version A they are technology, identified in
+principle from the allocation itself. The choice between the closures is therefore not a robustness
+check to be run at the end; it determines what the data are being asked to discipline. Neither is
+adopted as \emph{the} baseline here.
+
+\begin{remark}[When the two versions coincide]\label{rem:sp:coincide}
+$\Delta=0$ iff $\chi\left(p^W-p^M\right)=0$. The two closures therefore deliver identical
+allocations in exactly three circumstances: $\phi^I=0$ (capital embodies no material, so $\chi=0$);
+$G=0$ (no gross formation, so nothing is embodied); or $p^W=p^M$ (postponing waste is worth nothing,
+which by~\eqref{eq:sp:costate:M} requires $r=0$ or $p^W=0$). Otherwise they differ at first order,
+and the difference is $O\!\left(\Omega\chi p^W\right)$ --- small when the economy embodies little of
+its throughput in durables, large when it embodies much. It is worth reporting $\chi$ alongside
+$a\varpi$ for this reason: it is the statistic that says how much the choice of closure can matter.
+\end{remark}
+
+
+\subsection{Simplified waste-generation schemes}\label{sec:sp:versions:simple}
+
+The general scheme of Section~\ref{sec:sp:setup:materialaccounting} lets waste arise from every use
+of the final good and, separately, from two physical flows measured in tonnes. Much of it can be
+switched off by setting parameters to zero. The switches below are used to build up, test and
+decompose the model; the useful question about each is not whether it is realistic but whether it
+changes the allocation or only the reported mass flows.
+
+\begin{enumerate}[label=\textbf{(W\arabic*)},ref=W\arabic*,leftmargin=3.2em,itemsep=0.35em]
+
+\item\label{sw:sp:nature} \textbf{No nature-attributable waste:}
+$\Omega^{N,S}=\Omega^{D,S}=0$, so $\mathcal N\equiv0$. Overburden and gangue are ignored, and every
+tonne of waste has passed through production. The ledger~\eqref{eq:sp:setup:ledger-solved} collapses
+to $W=\left(N-\dot M^K\right)/\left(1-a\varpi\right)$; the extraction and exploration
+conditions~\eqref{eq:sp:foc:N} and~\eqref{eq:sp:foc:D} lose their $p^W$ terms, giving
+$B=C^N_N+p^S+d^Wp^P$ and $p^S+p^X=C^D_D$; and~\eqref{eq:sp:foc:W-solved} becomes explicit rather
+than implicit,
+\begin{align}
+p^W &= c^W\!\left(\varpi\right)+\left(1-\varpi+d^W\varpi\right)p^P
+-\varpi\alpha\left(C^N_N+p^S+d^Wp^P\right).
+\label{eq:sp:versions:pW-simple}
+\end{align}
+\emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:omegaY} \textbf{Waste from output only:}
+$\omega^Y=1$ and $\omega^C=\omega^{N}=\omega^{D}=\omega^W=0$, the textbook $W\propto Y$ scheme.
+
+\item\label{sw:sp:omegaYC} \textbf{Waste from output and consumption only:}
+$\omega^{N}=\omega^{D}=\omega^W=0$, leaving $\omega^Y,\omega^C$ free.
+
+\item\label{sw:sp:uniform} \textbf{Uniform intensities:} $\omega^j=1$ for every $j$, so that
+$\mathcal D$ is total final-good use and $\Omega$ is a single economy-wide intensity.
+
+\item\label{sw:sp:phiI} \textbf{Capital embodies nothing:} $\Phi^I=0$ (Version B) or $\phi^I=0$
+(Version A). Then $M^K\equiv0$, the state and its price $p^M$ drop out, $q=1$, the mass
+constraint~\eqref{eq:sp:problem:mass} is vacuous, and by Remark~\ref{rem:sp:coincide} the two
+versions coincide. The ledger reduces to $W=\left(N+\mathcal N\right)/\left(1-a\varpi\right)$
+throughout, not only at $\dot M^K=0$. This is the cleanest available stripped model and the natural
+first target for the numerical solver. \emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:explore} \textbf{No exploration:} $D\equiv0$ and $C^D\equiv0$. The states $X$ and
+$S$ reduce to a single depleting reserve, $\dot S=-N$, and $p^X$ drops out; $p^S$ becomes the pure
+modified-Hotelling rent~\eqref{eq:sp:costate:S}. \emph{Affects the allocation under both versions},
+and note that it does \emph{not} restore a steady state --- see~\ref{sw:sp:CDX}.
+
+\item\label{sw:sp:CDX} \textbf{Exploration costs independent of past discovery:} $C^D_X=0$, so $X$
+ceases to be a state and $p^X\equiv0$. The exploration condition becomes
+$p^S=C^D_D+\Omega^{D,S}p^W$. This is the switch that repairs
+Proposition~\ref{prop:sp:nosteadystate}: with $X$ gone, $\dot S=D-N=0$ is compatible with $D=N>0$,
+and a genuine interior steady state exists, characterised by the quasi-stationary
+block~\eqref{eq:sp:solution:quasistationary} together with
+$N\left(1+\Omega^{N,S}+\Omega^{D,S}\right)=W\left(1-a\varpi\right)$ and $\Phi^K=\Phi^I$.
+\emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:nopoll} \textbf{No pollution channel in production:} $F_P=0$, so damages enter
+only through $v(P)$ and $d=v'(P)/u'(C)$. \emph{Affects the allocation under both versions}, though
+only through the level of $p^P$.
+
+\end{enumerate}
+
+\smalltitle{The classification.} Switches~\ref{sw:sp:omegaY}--\ref{sw:sp:uniform} are of a different
+kind from the rest, and the difference is exactly Proposition~\ref{prop:sp:irrelevance}.
+
+\begin{proposition}[Waste-composition switches are allocationally inert under Version B]
+\label{prop:sp:inert}
+Under Version B, any restriction on the relative intensities $\left\{\omega^Y,\omega^C,\omega^{N},
+\omega^{D},\omega^W\right\}$ --- including~\ref{sw:sp:omegaY}, \ref{sw:sp:omegaYC}
+and~\ref{sw:sp:uniform} --- leaves the optimal paths of every state, every control and every shadow
+price unchanged. It changes only the derived quantities $\Omega$ and $\Phi^Y$
+in~\eqref{eq:sp:setup:Omega}. Under Version A the same restrictions change every condition
+in~\eqref{eq:sp:versions:foc:C}--\eqref{eq:sp:versions:costates}.
+\end{proposition}
+
+The first part is immediate from Proposition~\ref{prop:sp:irrelevance}; the second from inspection of
+$\Delta\omega^j$. Table~\ref{tab:sp:switches} collects the classification.
+
+\begin{table}[H]
+\centering
+\caption{Simplifications of the waste-generation scheme, and what each affects.}
+\label{tab:sp:switches}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.30\textwidth}p{0.20\textwidth}p{0.20\textwidth}p{0.22\textwidth}@{}}
+\toprule
+Switch & Version B & Version A & States removed \\
+\midrule
+\ref{sw:sp:nature}\ \ no $\mathcal N$          & allocation & allocation & --- \\
+\ref{sw:sp:omegaY}\ \ waste from $Y$ only      & reporting only & allocation & --- \\
+\ref{sw:sp:omegaYC}\ \ waste from $Y,C$ only   & reporting only & allocation & --- \\
+\ref{sw:sp:uniform}\ \ uniform $\omega^j$      & reporting only & allocation & --- \\
+\ref{sw:sp:phiI}\ \ $\Phi^I=0$                 & allocation & allocation (collapses to A) & $M^K$ \\
+\ref{sw:sp:explore}\ \ no exploration          & allocation & allocation & $X$ \\
+\ref{sw:sp:CDX}\ \ $C^D_X=0$                   & allocation & allocation & $X$ \\
+\ref{sw:sp:nopoll}\ \ $F_P=0$                  & allocation & allocation & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two readings of the table matter for what follows. First, the only simplifications that are free
+under Version B are precisely the ones about the \emph{composition} of waste across final-good uses
+--- the part of the accounting that is hardest to discipline empirically and that occupies most of
+Section~\ref{sec:sp:setup:materialaccounting}. Under Version B that section can be read as
+bookkeeping; under Version A it cannot. Second, none of the switches removes the ledger itself.
+Mass conservation is not a modelling option in this framework, and no setting of the parameters
+recovers a specification in which recycling avoids waste rather than deferring it.

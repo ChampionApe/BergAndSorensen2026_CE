@@ -1,0 +1,379 @@
+﻿\section{Optimization problem}\label{sec:sp:opt}
+
+\subsection{The planner's problem}\label{sec:sp:opt:problem}
+
+\smalltitle{Controls and states.} The planner chooses paths for the eight controls
+\begin{align}
+    \left\{C,\;I,\;N,\;D,\;\varpi,\;K^R,\;W,\;\Omega\right\},
+\label{eq:sp:controls}
+\end{align}
+which determine the remaining flows through the definitions
+\begin{align}
+R^R &= \mathcal R\left(\varpi W,K^R\right),
+&
+R &= N+R^R,
+&
+Y &= A\,F\left(K-K^R,\,BR,\,P\right),
+&
+G &= I+\delta K,
+\label{eq:sp:definitions}
+\end{align}
+and it carries the five states
+\begin{align}
+\left\{K,\;S,\;X,\;P,\;M^K\right\},
+\label{eq:sp:states}
+\end{align}
+with $K_0,S_0,X_0,P_0,M^K_0$ given.
+
+Two of the eight controls are not free. Given the remaining six, the ledger~\eqref{eq:sp:ledger} and the intensity condition~\eqref{eq:sp:intensity} are two equations in $W$ and $\Omega$, and the goods constraint~\eqref{eq:sp:goods} removes one more degree of freedom, leaving five independent instruments against the five states. We nonetheless carry $W$ and $\Omega$ as controls with the two relations adjoined, so that their multipliers $p^W$ and $\zeta$ appear explicitly and can be read as shadow prices.
+
+
+\begin{problem}[The planner's problem]\label{prob:sp}
+Choose $\left\{C,I,N,D,\varpi,K^R,W,\Omega\right\}_{t\ge0}$ to maximise
+
+\noindent $U_0=\int_0^\infty\left[u(C)-v(P)\right]e^{-\rho t}dt$ subject to, at every $t$,
+\begin{align}
+&\text{\emph{goods:}}
+&
+A\,F\left(K-K^R,BR,P\right) &= C+I+\delta K+C^N(N,S)+C^D(D,X)+c^W\!\left(\varpi\right)W,
+\label{eq:sp:goods}
+\\[0.2em]
+&\text{\emph{ledger:}}
+&
+W &= R-\Omega\phi^I G+\delta M^K+\mathcal N,
+\label{eq:sp:ledger}
+\\[0.2em]
+&\text{\emph{intensity:}}
+&
+R &= \Omega\left(\mathcal D+\phi^IG\right),
+\label{eq:sp:intensity}
+\end{align}
+and to the laws of motion
+\begin{align}
+\dot K &= I,
+&
+\dot S &= D-N,
+&
+\dot X &= D,
+&
+\dot P &= \Xi-\theta(P)P,
+&
+\dot M^K &= \Omega\phi^I G-\delta M^K,
+\label{eq:sp:states-motion}
+\end{align}
+with waste bases $\mathcal{N}$ and $\mathcal{D}$ defined in \eqref{eq:sp:setup:base}, $c^W \equiv c^c+ c^T(\varpi)$, the definitions in~\eqref{eq:sp:definitions}, the emission flow from \eqref{eq:sp:setup:Xi} and domains $C,I+\delta K,N,D,K^R,W,\Omega\ge0$, $\varpi\in\left[0,1\right]$.
+\end{problem}
+
+The two static relations adjoined alongside the goods constraint are the accounting identities of Section~\ref{sec:sp:setup:aggregatematerial}, restated in the variables the planner chooses. Equation~\eqref{eq:sp:ledger} is the ledger~\eqref{eq:sp:setup:ledger}: waste generated equals the material entering production, less the net accumulation of material embodied in the capital stock, plus the mass displaced from nature. Equation~\eqref{eq:sp:intensity} is the balance of embodied materials in the final good, \eqref{eq:sp:setup:ybalance_OmegaPhi}, and is what determines $\Omega$. The two are distinct restrictions rather than two forms of one identity: substituting the second into the first returns
+\begin{align}
+W &= \Omega\mathcal D+\delta M^K+\mathcal N,
+\label{eq:sp:ledger-streams}
+\end{align}
+which is the sum of the individual waste streams~\eqref{eq:sp:setup:totalwaste_generic}. The pair thus carries no content beyond the process-level accounting, but together they pin down $W$ and $\Omega$, as noted above.
+
+$\Omega$ itself has a somewhat complicated interpretation, as it captures the level of the average material intensity of production while also adjusting to reflect whether final goods are put to more or less material-intensive purposes. From~\eqref{eq:sp:intensity}, $\Omega=R/\left(\mathcal D+\phi^IG\right)$ scales with $R$ for a fixed structure of uses, but for a given $R$ it falls whenever $Y$ is shifted towards a use carrying a larger coefficient ($\omega^j$ or $\phi^I$). We refer to the relative sizes of the different uses of the final good as the \textit{composition of activities/uses} of the good.
+
+The channel through which that composition reaches the allocation is narrow, and worth marking before the optimality conditions. Given $R$, the ledger says that everything entering production becomes waste except what gross investment stores in $M^K$. The composition therefore matters only by moving $\Omega$ through $\Phi^I=\Omega\phi^I$ i.e. the quantity of material held back from today's waste flow. This is precisely what the multiplier $\zeta$ on~\eqref{eq:sp:intensity} prices, and Section~\ref{sec:sp:opt:foc} shows that the channel closes entirely when $\phi^I=0$.
+
+
+Next, we note that $\Xi$ is written as linear in $W$ and $R^R$ separately, so that no derivative of $a(\cdot)$ ever appears inside a pollution term. All the curvature of the recycling
+technology enters through $\mathcal R$ and through $\alpha$ and $a'$ alone.\footnote{Recall
+from~\eqref{eq:sp:setup:recycling-derivatives} that $\mathcal R_T=\alpha\equiv a-a'x$ is the marginal
+recycling yield and $\mathcal R_{K^R}=a'$.}
+
+
+
+\smalltitle{Technology drift.} The trends $A=e^{g_At}$ and $B=e^{g_Bt}$
+of~\eqref{eq:sp:setup:tfp} make the problem non-autonomous, but only through exogenous
+time-dependence: they are data, not states, so they carry no costate and add no condition.
+Under the marginal-product convention~\eqref{eq:sp:setup:mpconvention} --- $F_K$, $F_R$, $F_P$
+the derivatives of output with respect to the physical inputs, trend factors absorbed ---
+every optimality condition in this section is \emph{identical in form} to the
+stationary-technology case $g_A=g_B=0$. Progress enters the system exclusively through the
+drift it puts into the marginal products: holding the kernel's arguments
+$\left(K^Y,BR,P\right)$ fixed, $F_K$ and $F_P$ trend at rate $g_A$ and $F_R$ at rate
+$g_A+g_B$ (at fixed \emph{physical} inputs the kernel's material argument itself grows, so
+the drift of $F_R$ is partly eaten by the kernel's curvature). Where the trends bite is the asymptotics --- what
+returns, wedges and prices converge to --- which is the business of
+Section~\ref{sec:sp:longrun}.
+
+\smalltitle{The Lagrangian.} Write the current-value Hamiltonian with the static constraints
+adjoined. It is convenient to normalise every multiplier by $\lambda$, the multiplier on the goods
+constraint~\eqref{eq:sp:goods}, so that all shadow prices below are measured in units of the final
+good rather than in utils. Accordingly, let the current-value costates be
+\begin{align}
+\underbrace{\lambda q}_{K},
+&&
+\underbrace{\lambda p^S}_{S},
+&&
+\underbrace{\lambda p^X}_{X},
+&&
+\underbrace{-\lambda p^P}_{P},
+&&
+\underbrace{-\lambda p^M}_{M^K},
+\label{eq:sp:costates-def}
+\end{align}
+the two minus signs anticipating that both $P$ and $M^K$ are likely liabilities, so that $p^P$ and $p^M$ read as shadow \emph{costs}. Let $\lambda p^W$ be the multiplier on the ledger~\eqref{eq:sp:ledger} written with $W$ on the left, and $\lambda\zeta$ the multiplier on the intensity definition~\eqref{eq:sp:intensity} written with
+$R$ on the left. Then
+\begin{align}
+\mathcal L
+={}& u(C)-v(P)
+\notag\\
+&+\lambda\Big[A\,F\left(K-K^R,BR,P\right)-C-I-\delta K-C^N(N,S)-C^D(D,X)-c^W\!\left(\varpi\right)W\Big]
+\notag\\
+&+\lambda q\,I
+\;+\;\lambda p^S\left(D-N\right)
+\;+\;\lambda p^X D
+\;-\;\lambda p^P\left[\Xi-\theta(P)P\right]
+\;-\;\lambda p^M\left[\Omega\phi^IG-\delta M^K\right]
+\notag\\
+&+\lambda p^W\Big[W-N-R^R+\Omega\phi^IG-\delta M^K-\mathcal N\Big]
+\;+\;\lambda \zeta\Big[N+R^R-\Omega\left(\mathcal D+\phi^IG\right)\Big],
+\label{eq:sp:lagrangian}
+\end{align}
+with relevant definitions substituted throughout.\footnote{This includes $R=N+R^R$, $R^R=\mathcal R\left(\varpi W,K^R\right)$, $G=I+\delta K$, $Y=A\,F\left(K-K^R,BR,P\right)$
+and $C^W=c^W\!\left(\varpi\right)W$ substituted throughout.} Here, the multiplier $p^W$ measures the \textit{social cost} of waste in units of final goods and $\zeta$ measures the social value of embodied materials in units of final goods.\footnote{To see this, assume that we could increase waste from nature $\mathcal{N}$ marginally without changing any other controls, i.e. if more waste was generated out of the blue; we would have $\partial \mathcal L^*/\partial \mathcal N = - \lambda p^W$ which would be negative (i.e. a cost) exactly if $p^W>0$. Similarly, perturb the condition $R + \kappa = \Omega \left(\mathcal{D}+\phi^IG\right)$ such that we could increase embodied materials (right hand side) marginally without increasing the amount of materials $R$ that goes into the production process; we would then have $\partial \mathcal L^*/\partial \kappa = \lambda \zeta$ which would be positive if $\zeta>0$.} 
+
+
+
+\subsection{Optimality conditions}\label{sec:sp:opt:foc}
+
+The conditions are collected here; Appendix~\ref{sec:app:sp} derives each of them, decomposes it into the separate margins it balances, and checks the units. Define
+\begin{align}
+\Psi &\equiv F_R\left(1-\zeta\Omega^Y\right)+\zeta,
+&
+\sigma &\equiv \frac{\Phi^IG}{R}\;\in\left[0,1\right],
+&
+r &\equiv \rho-\frac{\dot\lambda}{\lambda},
+\label{eq:sp:shorthand}
+\end{align}
+where $\Psi$ is the value of a tonne of raw material delivered to production and $\sigma$ is the share of material embodied in new capital. $\Psi$ captures output net of embodied material output requires plus relaxation of the intensity condition, but excludes the ledger: the tonne must eventually leave as waste, and that is priced separately by $p^W$.
+
+\smalltitle{Controls.} Each condition is stated below with the margin it balances. Appendix~\ref{sec:app:sp} derives each one, decomposes it term by term, and checks the units.
+
+\emph{Material intensity.} Raising $\Omega$ stores material in the capital stock rather than releasing it now. The gain is the price gap $p^W-p^M$, scaled by the share $\sigma$ of material that storage actually captures, and the shadow price of embodied material must equal it:
+\begin{align}
+\zeta &= \sigma\left(p^W-p^M\right).
+\label{eq:sp:sum:Omega}
+\end{align}
+
+\emph{Consumption.} A unit consumed absorbs one final good and carries $\Omega^C$ tonnes of embodied material away from the storage margin. Marginal utility therefore exceeds $\lambda$ by that wedge, so $\lambda$ is not the marginal utility of consumption in this model:
+\begin{align}
+u'\left(C\right)/\lambda &= 1+\zeta\Omega^C .
+\label{eq:sp:sum:C}
+\end{align}
+
+\emph{Investment.} A unit invested buys a unit of capital and stores $\Phi^I$ tonnes, of which the fraction $\sigma$ is clawed back because embodying material also consumes material drawn through $R$. The shadow price of installed capital departs from unity by exactly the net storage value:
+\begin{align}
+q &= 1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right).
+\label{eq:sp:sum:I}
+\end{align}
+
+\emph{Extraction.} A tonne extracted is worth $\Psi$ on delivery. It must cover the extraction effort, grossed up for the embodied material the effort itself carries, the in-situ rent, and the waste it becomes (both the tonne and the overburden displaced alongside it):
+\begin{align}
+\Psi &= C^N_N\left(1+\zeta\Omega^N\right)+p^S+p^W\left(1+\Omega^{N,S}\right).
+\label{eq:sp:sum:N}
+\end{align}
+
+\emph{Exploration.} A tonne discovered creates the rent $p^S$ and uses up a deposit, $p^X<0$. Marginal costs cover exploration grossed up by the embodied material itself carries and from waste generation:  
+\begin{align}
+p^S+p^X &= C^D_D\left(1+\zeta\Omega^D\right)+p^W\Omega^{D,S} .
+\label{eq:sp:sum:D}
+\end{align}
+
+\emph{Waste.} A tonne of waste absorbs collection and treatment, adds to the emission flow, and returns $\alpha\varpi$ tonnes; the factor $1-\alpha\varpi>0$ on the left is the net tonnage the ledger attributes to it once the recycled part is returned to $R$:
+\begin{align}
+p^W\left(1-\alpha\varpi\right) &= c^W\left(1+\zeta\Omega^W\right)+p^P\left[1-\varpi\left(1-d^W\right)-d^W\alpha\varpi\right]-\alpha\varpi\,\Psi .
+\label{eq:sp:sum:W}
+\end{align}
+
+\smalltitle{The two bounded controls.} The six conditions above are equalities because the controls
+they price are interior at any candidate optimum: consumption and extraction by the Inada conditions,
+investment and the two accounting controls because their bounds are never approached. The remaining
+two controls are the recycling block, and they are different in kind. Treatment is bounded on both
+sides, $\varpi\in\left[0,1\right]$, and recycling capital is bounded below, $K^R\ge0$; both bounds are
+reachable. Their conditions are therefore stated as Kuhn--Tucker systems:
+each corner is reported together with the inequality that makes it optimal, and the interior equality
+together with the inequality that makes \emph{it} optimal, so that the three branches partition the
+possibilities. To keep the branches readable, write the marginal gain on each of the two margins as
+\begin{align}
+\mathcal G^{\varpi} &\equiv \alpha\left(\Psi-p^W\right)+p^P\left[\left(1-d^W\right)+d^W\alpha\right],
+&
+\mathcal G^{K} &\equiv \Psi-p^W+d^Wp^P,
+\label{eq:sp:sum:gains}
+\end{align}
+both in final goods per tonne: $\mathcal G^\varpi$ is the value of routing one more tonne of waste to
+treatment, and $\mathcal G^{K}$ the value of one more tonne of secondary material recovered by
+capital, so that the gain from a unit of recycling capital is $a'\!\left(x\right)\mathcal G^K$.
+
+\emph{Treatment share.} Treating one more tonne yields $\alpha$ tonnes of secondary material, each
+worth $\Psi-p^W$ rather than $\Psi$ because the recovered material must itself leave as waste later,
+and it diverts the tonne from the environment. The gain $\mathcal G^\varpi$ is set against a rising
+marginal treatment cost, and since $c^{T\prime}\left(0\right)=0$ by~\eqref{eq:sp:setup:waste-cost} the
+lower corner requires the gain itself to be non-positive:
+\begin{subequations}
+\label{eq:sp:sum:varpi}
+\begin{align}
+\varpi &= 0,
+&&\text{if}\quad \mathcal G^{\varpi} \;\le\; 0,
+\label{eq:sp:sum:varpi-lower}
+\\
+\mathcal G^{\varpi} &= c^{T\prime}\left(\varpi\right)\left(1+\zeta\Omega^W\right),
+&&\text{if}\quad 0 \;<\; \mathcal G^{\varpi} \;<\; c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right),
+\label{eq:sp:sum:varpi-interior}
+\\
+\varpi &= 1,
+&&\text{if}\quad \mathcal G^{\varpi} \;\ge\; c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right).
+\label{eq:sp:sum:varpi-upper}
+\end{align}
+\end{subequations}
+Convexity of $c^T$ makes the marginal cost strictly increasing, so the three branches are exhaustive
+and mutually exclusive, and the interior root is unique when it exists. The upper corner is a genuine possibility and is not ruled out by any
+assumption made so far; whether it is ever reached depends on how steeply $c^T$ rises as
+$\varpi\to1$.\footnote{If one wants full treatment to be excluded by technology rather than by
+parameter values, it is enough to impose $\lim_{\varpi\to1}c^{T\prime}\left(\varpi\right)=\infty$.}
+
+\emph{Recycling capital.} A final good moved into recycling yields $a'$ tonnes, valued at $\mathcal G^K$. It costs the marginal product forgone in production, net
+of the material that output would have required. The Kuhn-Tucker conditions then read:
+\begin{subequations}
+\label{eq:sp:sum:KR}
+\begin{align}
+K^R &= 0,
+&&\text{if}\quad a'\!\left(0\right)\mathcal G^{K} \;\le\; F_K\left(1-\zeta\Omega^Y\right),
+\label{eq:sp:sum:KR-corner}
+\\
+a'\!\left(x\right)\mathcal G^{K} &= F_K\left(1-\zeta\Omega^Y\right),
+&&\text{if}\quad a'\!\left(0\right)\mathcal G^{K} \;>\; F_K\left(1-\zeta\Omega^Y\right).
+\label{eq:sp:sum:KR-interior}
+\end{align}
+\end{subequations}
+The upper bound $K^R\le K$ is
+never stated because it never binds: $K^Y\to0$ sends $F_K\to\infty$ and
+violates~\eqref{eq:sp:sum:KR-interior} long before it is reached.
+
+\emph{The two recycling conditions restated.} Whenever extraction is interior, the combination
+$\Psi-p^W$ inside $\mathcal G^\varpi$ and $\mathcal G^K$ can be eliminated using the extraction
+condition~\eqref{eq:sp:sum:N}, and the unit waste charge cancels (see appendix \ref{sec:app:sp}). Define the \emph{virgin displacement value}
+\begin{align}
+V &\equiv \Psi-p^W+d^Wp^P \;=\; C^N_N\left(1+\zeta\Omega^N\right)+p^S+\Omega^{N,S}p^W+d^Wp^P,
+\label{eq:sp:sum:V}
+\end{align}
+we have $\mathcal G^K=V$ and $\mathcal G^\varpi=\alpha V+p^P\left(1-d^W\right)$, so that the two
+Kuhn--Tucker systems read
+\begin{subequations}
+\label{eq:sp:sum:recycling-virgin}
+\begin{align}
+\varpi &= 0
+&&\text{if}\quad \alpha V+p^P\left(1-d^W\right)\le 0,
+\notag
+\\
+\alpha V+p^P\left(1-d^W\right) &= c^{T\prime}\left(\varpi\right)\left(1+\zeta\Omega^W\right)
+&&\text{if}\quad 0<\alpha V+p^P\left(1-d^W\right)<c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right),
+\notag
+\\
+\varpi &= 1
+&&\text{if}\quad \alpha V+p^P\left(1-d^W\right)\ge c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right),
+\label{eq:sp:sum:recycling-virgin-varpi}
+\end{align}
+and
+\begin{align}
+K^R &= 0
+&&\text{if}\quad a'\!\left(0\right)V\le F_K\left(1-\zeta\Omega^Y\right),
+\notag
+\\
+a'\!\left(x\right)V &= F_K\left(1-\zeta\Omega^Y\right)
+&&\text{if}\quad a'\!\left(0\right)V> F_K\left(1-\zeta\Omega^Y\right).
+\label{eq:sp:sum:recycling-virgin-KR}
+\end{align}
+\end{subequations}
+\emph{Recycling is paid the cost of the virgin tonne it displaces, and nothing else}: extraction
+effort with the material it carries, the in-situ rent, the overburden that tonne would have brought
+up, and the leakage it would have suffered. The charge $p^W$ is absent because the recovered tonne and
+the virgin tonne it replaces face the same charge on the way out; recycling changes the route a
+tonne takes into production, never the fact that it must eventually leave. The one motive $V$ cannot
+price is the diversion of the untreated tonne from the environment, $p^P\left(1-d^W\right)$, which is
+why that term survives separately on the treatment margin and has no counterpart on the capital
+margin.
+
+\smalltitle{Costates.} Each state carries the costate named in~\eqref{eq:sp:costates-def}, with the transversality condition $\lim_{t\to\infty}e^{-\rho t}\mu Z=0$. That condition is what selects the forward solution reported alongside each law of motion below, and it gives every price the same asset-pricing form: the discounted stream of the dividend the stock pays while it is held.
+
+\emph{Capital.} A unit of capital pays its marginal product, net of the embodied material the extra output requires, and runs off at rate $\delta$:
+\begin{align}
+\dot q &= \left(r+\delta\right)q-F_K\left(1-\zeta\Omega^Y\right),
+\qquad
+q\left(t\right)=\int_t^\infty F_K\left(1-\zeta\Omega^Y\right)e^{-\int_t^s\left(r+\delta\right)d\tau}ds .
+\label{eq:sp:sum:K}
+\end{align}
+Dividing the first expression by $q$ returns the familiar arbitrage form $r=F_K\left(1-\zeta\Omega^Y\right)/q-\delta+\dot q/q$.\footnote{The storage motive of~\eqref{eq:sp:sum:I} appears nowhere in it: depreciation destroys capital and releases its embodied material at the same rate, so the two cancel in the return.}
+
+\emph{Reserves.} A tonne left in the ground pays a dividend by making the extraction still to come cheaper, since $C^N_S<0$:
+\begin{align}
+\dot p^S &= rp^S-\left|C^N_S\right|\left(1+\zeta\Omega^N\right),
+\qquad
+p^S\left(t\right)=\int_t^\infty\left|C^N_S\right|\left(1+\zeta\Omega^N\right)e^{-\int_t^s r\,d\tau}ds .
+\label{eq:sp:sum:S}
+\end{align}
+This is Hotelling's rule with a stock effect: the rent is positive and need not grow at the rate of interest, because the reserve yields a flow benefit as well as a capital gain.
+
+\emph{Discoveries.} Cumulative discovery is a pure liability, raising the cost of all future exploration:
+\begin{align}
+\dot p^X &= rp^X+C^D_X\left(1+\zeta\Omega^D\right),
+\qquad
+p^X\left(t\right)=-\int_t^\infty C^D_X\left(1+\zeta\Omega^D\right)e^{-\int_t^s r\,d\tau}ds .
+\label{eq:sp:sum:X}
+\end{align}
+Its negative sign is what stops exploration from being a costless substitute for extraction in~\eqref{eq:sp:sum:D}.
+
+\emph{Pollution.} The stock damages utility and output, the two together giving a marginal damage $\mathcal V\equiv v'\left(P\right)/\lambda-F_P\left(1-\zeta\Omega^Y\right)>0$ in final goods per tonne, and it decays at the \emph{marginal} rate $\theta+\theta'P$ rather than the average rate $\theta$:
+\begin{align}
+\dot p^P &= \left[r+\theta+\theta'P\right]p^P-\mathcal V,
+\qquad
+p^P\left(t\right)=\int_t^\infty\mathcal V\,e^{-\int_t^s\left[r+\theta+\theta'P\right]d\tau}ds .
+\label{eq:sp:sum:P}
+\end{align}
+Both damages are costs, so $p^P>0$ unconditionally. Since $\theta'<0$ the marginal decay rate is below the average, and if it falls far enough that $r+\theta+\theta'P\le0$ the integral need not converge (this model's version of a tipping point).
+
+\emph{Embodied materials.} A tonne held in the capital stock is released at rate $\delta$, becoming waste when it is:
+\begin{align}
+\dot p^M &= \left(r+\delta\right)p^M-\delta p^W,
+\qquad
+p^M\left(t\right)=\int_t^\infty\delta\,p^W\!\left(s\right)e^{-\int_t^s\left(r+\delta\right)d\tau}ds .
+\label{eq:sp:sum:M}
+\end{align}
+The integrated form is the one to keep in view: $p^M$ is a \emph{forward} average of $p^W$, not a function of its current value.
+
+\emph{Consumption.} Combining~\eqref{eq:sp:sum:C} with the definition of $r$ gives the Keynes--Ramsey rule with one extra term, where $\eta\equiv-u''C/u'$:
+\begin{align}
+\eta\,\frac{\dot C}{C} &= r-\rho-\frac{d}{dt}\ln\left(1+\zeta\Omega^C\right).
+\label{eq:sp:sum:Cgrowth}
+\end{align}
+A consumption wedge that is constant over time affects only the level of consumption; it is a wedge that is \emph{changing} that tilts the path.
+
+
+
+\smalltitle{Reading the system.} Three prices carry the materials side of the problem, and every condition above is built from them together with the standard terms. $\Psi$ is what a tonne is worth entering production; $p^W$ is what it costs on the way out; and $\zeta$ is what it is worth to have a tonne stored in the capital stock rather than diffused. The separation is deliberate. A tonne is valued once when it arrives, charged once when it leaves, and the difference between the two dates is priced by $\zeta$.
+
+Relative to the same model without materials accounting, two patterns recur. First, every flow measured in final goods is grossed up by a dimensionless factor $1\pm\zeta\Omega^j$, because the activity carries embodied material along with the resources it absorbs: consumption in~\eqref{eq:sp:sum:C}, extraction and exploration effort in~\eqref{eq:sp:sum:N}--\eqref{eq:sp:sum:D}, treatment in~\eqref{eq:sp:sum:varpi}, and output itself wherever $F_K$ or $F_R$ appears. These wedges are what the composition of activities/uses does to the allocation, and they vanish with $\zeta$. Second, the ledger charges each tonne entering $R$ exactly once, whatever route it took: this is why extraction pays $p^W$ per tonne in~\eqref{eq:sp:sum:N} while exploration pays only for the mass it displaces in~\eqref{eq:sp:sum:D}, and why the recovered tonne in~\eqref{eq:sp:sum:varpi} is worth $\Psi-p^W$ rather than $\Psi$.
+
+The system closes in the usual way. Given the five states and the five costates $\left(q,p^S,p^X,p^P,p^M\right)$, the eight first-order conditions~\eqref{eq:sp:sum:Omega}--\eqref{eq:sp:sum:KR} together with the three static constraints of Problem~\ref{prob:sp} form eleven equations in eleven unknowns: the eight controls and the three prices $\lambda$, $p^W$ and $\zeta$ that have no state of their own. Two of the eleven are equations only branch by branch: on the treatment and recycling-capital margins the system selects between a corner and an interior root according to~\eqref{eq:sp:sum:varpi} and~\eqref{eq:sp:sum:KR}, which is one equation either way and is what makes the count work in both phases. The costate equations~\eqref{eq:sp:sum:K}--\eqref{eq:sp:sum:M} and the laws of motion~\eqref{eq:sp:states-motion} then propagate the ten remaining objects, with the consumption rule~\eqref{eq:sp:sum:Cgrowth} following from~\eqref{eq:sp:sum:C} and the definition of $r$ rather than adding a restriction of its own.
+
+\smalltitle{Corners outside the recycling block.} Two further non-negativity constraints deserve a word. First, $F_R = \infty$ does not necessarily rule out $N=0$, because $R^R>0$ may avoid this limit. We hit this limit when:
+\begin{align}
+N &= 0
+\quad\text{if}\quad
+\Psi \;\le\; C^N_N\left(0,S\right)\left(1+\zeta\Omega^N\right)+p^S+p^W\left(1+\Omega^{N,S}\right),
+\label{eq:sp:sum:N-corner}
+\end{align}
+and~\eqref{eq:sp:sum:N} holding with equality otherwise.
+
+
+Additionally, exploration may be zero if:
+\begin{align}
+D &= 0
+\quad\text{if}\quad
+p^S+p^X \;\le\; C^D_D\left(0,X\right)\left(1+\zeta\Omega^D\right)+p^W\Omega^{D,S},
+\label{eq:sp:sum:D-corner}
+\end{align}
+
+
+\textbf{Note:} if any of these hold, other conditions may have to rewritten as well. First, we need to explore if these are only limits (i.e. never reached), or if we need to carry them as potential runs.

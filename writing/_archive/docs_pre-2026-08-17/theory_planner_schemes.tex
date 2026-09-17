@@ -1,0 +1,134 @@
+﻿\section{Simplified waste-generation schemes}\label{sec:sp:schemes}
+
+The general scheme of Section~\ref{sec:sp:setup:materialaccounting} lets waste arise from every use of
+the final good and, separately, from two physical flows measured in tonnes. Much of it can be switched
+off by setting parameters to zero. The switches below are used to build up, test and decompose the
+model; the useful question about each is not whether it is realistic but whether it changes the
+allocation or only the reported mass flows. That question has different answers under the two versions,
+and the difference is the sharpest practical reason to carry both.
+
+Throughout, references to Version B are to Section~\ref{sec:sp:B} and references to Version A to
+Section~\ref{sec:sp:A}. Recall the two objects the classification turns on: the relative intensities
+$\omega^j$ scaling the streams tied to embodied material in $Y$, and the composition wedge
+$\Delta=\Omega\chi\left(p^W-p^M\right)$ of~\eqref{eq:sp:A:zeta}, which is identically zero under
+Version B.
+
+\begin{enumerate}[label=\textbf{(W\arabic*)},ref=W\arabic*,leftmargin=3.2em,itemsep=0.35em]
+
+\item\label{sw:sp:nature} \textbf{No nature-attributable waste:} $\Omega^{N,S}=\Omega^{D,S}=0$, so
+$\mathcal N\equiv0$. Overburden and gangue are ignored, and every tonne of waste has passed through
+production. The collected ledger~\eqref{eq:sp:setup:ledger-collected} becomes
+$W\left(1-a\varpi\right)=N-\dot M^K$; the extraction and exploration conditions lose their $p^W$ terms,
+giving $B^{\mathrm B}=C^N_N+p^S+d^Wp^P$ and $p^S+p^X=C^D_D$ under Version B, and the corresponding wedged versions
+under Version A; and the waste price becomes explicit rather than implicit. Under Version B,
+\begin{align}
+p^W &= c^W\!\left(\varpi\right)+\left(1-\varpi+d^W\varpi\right)p^P
+-\varpi\alpha\left(C^N_N+p^S+d^Wp^P\right),
+\label{eq:sp:schemes:pW-simple}
+\end{align}
+which is~\eqref{eq:sp:B:foc:W-solved} with the $\Omega^{N,S}\varpi\alpha$ term gone. Under Version A the
+same simplification removes the same term from~\eqref{eq:sp:A:foc:W-solved}, but $p^W$ remains implicit
+there through $\Delta$. \emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:omegaY} \textbf{Waste from output only:} $\omega^Y=1$ and
+$\omega^C=\omega^{N}=\omega^{D}=\omega^W=0$, the textbook $W\propto Y$ scheme. Under Version A this
+leaves a single wedge, on output and on the value of materials, and removes it from consumption,
+extraction, exploration and treatment.
+
+\item\label{sw:sp:omegaYC} \textbf{Waste from output and consumption only:}
+$\omega^{N}=\omega^{D}=\omega^W=0$, leaving $\omega^Y,\omega^C$ free. Under Version A this is the
+smallest scheme that retains a consumption wedge, and therefore the smallest one in which the
+version choice has any bearing on the consumption--saving margin.
+
+\item\label{sw:sp:uniform} \textbf{Uniform intensities:} $\omega^j=1$ for every $j$, so that
+$\mathcal D$ is total final-good use and $\Omega$ is a single economy-wide intensity. Under Version A
+every wedge is then the same scalar $\Delta$, applied with a plus sign to spending and a minus sign to
+output.
+
+\item\label{sw:sp:phiI} \textbf{Capital embodies nothing:} $\Phi^I=0$ (Version B) or $\phi^I=0$
+(Version A). Then $M^K\equiv0$, the state and its price $p^M$ drop out, $q=1$, the mass
+constraint~\eqref{eq:sp:B:mass} is vacuous, and by Remark~\ref{rem:sp:coincide} the two versions
+coincide --- $\chi=0$ kills $\Delta$, so Version A's entire apparatus collapses. The ledger reduces to
+$W=\left(N+\mathcal N\right)/\left(1-a\varpi\right)$ throughout, not only at $\dot M^K=0$. This is the
+cleanest available stripped model and the natural first target for the numerical solver.
+\emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:explore} \textbf{No exploration:} $D\equiv0$ and $C^D\equiv0$. The states $X$ and $S$
+reduce to a single depleting reserve, $\dot S=-N$, and $p^X$ drops out; $p^S$ becomes the pure
+modified-Hotelling rent~\eqref{eq:sp:B:costate:S}. \emph{Affects the allocation under both versions},
+and note that it does \emph{not} restore a steady state --- see~\ref{sw:sp:CDX}.
+
+\item\label{sw:sp:CDX} \textbf{Exploration costs independent of past discovery:} $C^D_X=0$, so $X$
+ceases to be a state and $p^X\equiv0$. The exploration condition becomes $p^S=C^D_D+\Omega^{D,S}p^W$
+under Version B, and $p^S=\left(1+\Delta\omega^D\right)C^D_D+\Omega^{D,S}p^W$ under Version A. This is
+the switch that repairs Propositions~\ref{prop:sp:B:nosteadystate}
+and~\ref{prop:sp:A:nosteadystate}: with $X$ gone, $\dot S=D-N=0$ is compatible with $D=N>0$, and a
+genuine interior steady state exists, characterised under Version B by the quasi-stationary
+block~\eqref{eq:sp:B:quasistationary} together with
+$N\left(1+\Omega^{N,S}+\Omega^{D,S}\right)=W\left(1-a\varpi\right)$ and $\Phi^K=\Phi^I$.
+\emph{Affects the allocation under both versions.}
+
+\item\label{sw:sp:nopoll} \textbf{No pollution channel in production:} $F_P=0$, so damages enter only
+through $v(P)$, with $d^{\mathrm B}=v'(P)/u'(C)$ under Version B and $d=v'(P)/\lambda$ under Version A.
+\emph{Affects the allocation under both versions}, though only through the level of $p^P$.
+
+\end{enumerate}
+
+\smalltitle{The classification.} Switches~\ref{sw:sp:omegaY}--\ref{sw:sp:uniform} are of a different
+kind from the rest, and the difference is exactly
+Proposition~\ref{prop:sp:B:irrelevance}.
+
+\begin{proposition}[Waste-composition switches are allocationally inert under Version B]
+\label{prop:sp:inert}
+Under Version B, any restriction on the relative intensities $\left\{\omega^Y,\omega^C,\omega^{N},
+\omega^{D},\omega^W\right\}$ --- including~\ref{sw:sp:omegaY}, \ref{sw:sp:omegaYC}
+and~\ref{sw:sp:uniform} --- leaves the optimal paths of every state, every control and every shadow
+price unchanged. It changes only the derived quantities $\Omega$ and $\Phi^Y$
+in~\eqref{eq:sp:B:Omega}. Under Version A the same restrictions change every condition
+in~\eqref{eq:sp:A:foc:C}--\eqref{eq:sp:A:costate:M}.
+\end{proposition}
+
+The first part is immediate from Proposition~\ref{prop:sp:B:irrelevance}: no $\omega^j$ appears anywhere
+in Problem~\ref{prob:sp:B} or in its optimality conditions, so no restriction on them can move the
+solution. The second is immediate from inspection of the factors $\left(1\pm\Delta\omega^j\right)$ in
+Section~\ref{sec:sp:A:foc}, which are the only place the intensities enter and which are not identically
+one. Table~\ref{tab:sp:switches} collects the classification.
+
+\begin{table}[H]
+\centering
+\caption{Simplifications of the waste-generation scheme, and what each affects.}
+\label{tab:sp:switches}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}p{0.30\textwidth}p{0.20\textwidth}p{0.20\textwidth}p{0.22\textwidth}@{}}
+\toprule
+Switch & Version B & Version A & States removed \\
+\midrule
+\ref{sw:sp:nature}\ \ no $\mathcal N$          & allocation & allocation & --- \\
+\ref{sw:sp:omegaY}\ \ waste from $Y$ only      & reporting only & allocation & --- \\
+\ref{sw:sp:omegaYC}\ \ waste from $Y,C$ only   & reporting only & allocation & --- \\
+\ref{sw:sp:uniform}\ \ uniform $\omega^j$      & reporting only & allocation & --- \\
+\ref{sw:sp:phiI}\ \ $\Phi^I=0$                 & allocation & allocation (collapses to A) & $M^K$ \\
+\ref{sw:sp:explore}\ \ no exploration          & allocation & allocation & $X$ \\
+\ref{sw:sp:CDX}\ \ $C^D_X=0$                   & allocation & allocation & $X$ \\
+\ref{sw:sp:nopoll}\ \ $F_P=0$                  & allocation & allocation & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two readings of the table matter for what follows. First, the only simplifications that are free under
+Version B are precisely the ones about the \emph{composition} of waste across final-good uses --- the
+part of the accounting that is hardest to discipline empirically and that occupies most of
+Section~\ref{sec:sp:setup:materialaccounting}. Under Version B that section can be read as bookkeeping;
+under Version A it cannot. Second, none of the switches removes the ledger itself. Mass conservation is
+not a modelling option in this framework, and no setting of the parameters recovers a specification in
+which recycling avoids waste rather than deferring it.
+
+\smalltitle{A note for the numerical implementation.} Switch~\ref{sw:sp:phiI} is the natural entry
+point, since it collapses the two versions into one and removes a state; switch~\ref{sw:sp:CDX} is the
+natural second step, since it restores a steady state to converge to. Together they give a model with
+three states, a single interest rate, no complementary-slackness block, and no dependence on the
+relative intensities at all --- which is to say, a model in which every one of the open items of
+Appendix~\ref{sec:sp:extensions} except~\ref{op:sp:period} is either resolved or vacuous. Everything
+beyond that point is added back one switch at a time, and the classification above says which
+additions require the solver to change and which only change what is reported afterwards.

@@ -1,0 +1,357 @@
+\section{Timing, functional forms and calibration}\label{sec:qsp:setup}
+
+Parts~\ref{part:sp} and~\ref{part:mkt} are stated in continuous time with general functional forms,
+which is the right level of abstraction for the results that can be proved. This part restates the
+planner's problem in discrete time with explicit functional forms, so that it can be solved
+numerically; Part~\ref{part:qmkt} does the same for the market economy and adds the policy
+experiments. Nothing in the economics changes. What changes is that every shadow price acquires a date
+and that the accounting identities, which in continuous time are relations between flows at an instant,
+become a simultaneous system inside the period. Section~\ref{sec:qsp:model:block} is about the latter,
+which is the one genuinely new object in this part.
+
+\subsection{Notation carried over and notation renamed}\label{sec:qsp:setup:notation}
+
+Two symbols used in the earlier literature clash with symbols already spoken for here, and we rename
+rather than overload. The capital share in the production function is written $\chi$, because $\alpha$
+is the marginal recycling yield of~\eqref{eq:sp:setup:recycling-derivatives}. The curvature of the
+felicity function is written $\eta$, matching $\eta\equiv-u''C/u'$ in~\eqref{eq:sp:sum:Cgrowth},
+because $\sigma$ is the storage share of~\eqref{eq:sp:shorthand}. The exponents in the cost functions
+are written $\xi^j$ rather than $\varepsilon^j$, because $\varepsilon\equiv a'x/a$ is the elasticity of
+the recycling yield.
+
+\subsection{Timing}\label{sec:qsp:setup:timing}
+
+Each period $t=0,1,2,\dots$ runs as follows. The economy enters with the five stocks
+$\left(K_t,S_t,X_t,P_t,M^K_t\right)$. Production, extraction, exploration, consumption, waste
+collection, treatment and recycling all take place within the period, so that material recovered in
+$t$ is available as input in $t$: this is what the continuous-time model says, and departing from it
+would change the circularity multiplier rather than merely discretise it. The stocks are then updated
+and the economy enters $t+1$.
+
+Writing $G_t\equiv I_t+\delta K_t$ for gross capital formation, the laws of motion are
+\begin{align}
+K_{t+1} &= \left(1-\delta\right)K_t+G_t,
+&
+S_{t+1} &= S_t+D_t-N_t,
+&
+X_{t+1} &= X_t+D_t,
+\label{eq:qsp:states-1}
+\\
+M^K_{t+1} &= \left(1-\delta\right)M^K_t+\Phi^I_tG_t,
+&
+P_{t+1} &= \left[1-\theta\!\left(P_t\right)\right]P_t+\Xi_t,
+&&
+\label{eq:qsp:states-2}
+\end{align}
+which are~\eqref{eq:sp:states-motion} discretised. Two timing conventions in~\eqref{eq:qsp:states-2}
+deserve to be flagged because they show up later as discount factors on shadow prices. The material
+released as waste in period $t$ is $\delta M^K_t$, the depreciation of the stock the economy
+\emph{entered} the period with; the material embodied by this period's gross investment, $\Phi^I_tG_t$,
+is not available for release until $t+1$. And emissions $\Xi_t$ add to the pollution stock only from
+$t+1$ onwards, so a tonne emitted today does its damage from tomorrow.
+
+\subsection{The discrete-time planner's problem}\label{sec:qsp:setup:problem}
+
+\begin{problem}[The planner's problem in discrete time]\label{prob:qsp}
+Choose $\left\{C_t,G_t,N_t,D_t,\varpi_t,K^R_t,W_t,\Omega_t\right\}_{t\ge0}$ to maximise
+\begin{align}
+U_0 &= \sum_{t=0}^{\infty}\beta^t\left[u\!\left(C_t\right)-v_t\!\left(P_t\right)\right],
+&
+0<\beta<1,
+\label{eq:qsp:objective}
+\end{align}
+subject to, at every $t$, the goods constraint, the ledger and the intensity condition
+\begin{align}
+F_t\!\left(K_t-K^R_t,R_t,P_t\right) &= C_t+G_t+C^N_t+C^D_t+c^W_t\!\left(\varpi_t\right)W_t,
+\label{eq:qsp:goods}
+\\
+W_t &= R_t-\Phi^I_tG_t+\delta M^K_t+\mathcal N_t,
+\label{eq:qsp:ledger}
+\\
+R_t &= \Omega_t\left(\mathcal D_t+\phi^I_tG_t\right),
+\qquad \Phi^I_t\equiv\Omega_t\phi^I_t,
+\label{eq:qsp:intensity}
+\end{align}
+to the laws of motion~\eqref{eq:qsp:states-1}--\eqref{eq:qsp:states-2}, to the definitions
+\begin{align}
+R^R_t &= \mathcal R_t\!\left(\varpi_tW_t,K^R_t\right),
+&
+R_t &= N_t+R^R_t,
+&
+\Xi_t &= W_t\left(1-\varpi_t+d^W\varpi_t\right)-d^WR^R_t,
+\label{eq:qsp:definitions}
+\end{align}
+with the waste bases $\mathcal D_t$ and $\mathcal N_t$ of~\eqref{eq:sp:setup:base}, and to the domain
+restrictions $C_t,G_t,N_t,D_t,K^R_t,W_t,\Omega_t\ge0$ and $\varpi_t\in\left[0,1\right]$, given
+$\left(K_0,S_0,X_0,P_0,M^K_0\right)$.
+\end{problem}
+
+The subscript $t$ on $F$, $\mathcal R$, $C^N$, $C^D$, $c^W$, $v$ and the intensity coefficients carries
+the technical progress that the continuous-time statement suppressed. Everything else is
+Problem~\ref{prob:sp} verbatim.
+
+\subsection{Functional forms}\label{sec:qsp:setup:forms}
+
+\smalltitle{Preferences.} Constant relative risk aversion in consumption, with a convex and
+increasingly weighted disutility of pollution:
+\begin{align}
+u\!\left(C_t\right) &= \frac{C_t^{1-\eta}}{1-\eta},
+&
+v_t\!\left(P_t\right) &= \frac{\psi_t}{1+\nu}P_t^{1+\nu},
+&
+\psi_t &= \bar\psi\left(1+g^{\psi}\right)^t,
+&
+\eta,\nu,\bar\psi &>0,\ g^\psi\ge0 .
+\label{eq:qsp:preferences}
+\end{align}
+The growth term $g^\psi>0$ says that the marginal willingness to pay for environmental quality rises
+as conventional consumption grows. It is not innocuous: with $g^\psi=0$ the pollution term becomes
+negligible relative to consumption along a growing path, and the model's environmental margins go
+quiet in the long run for a reason that has nothing to do with the circular economy.
+
+\smalltitle{Final goods.} Cobb--Douglas in capital and in materials above a physical floor, with
+pollution as a productivity shifter:
+\begin{align}
+F_t &= A_t\left(K^Y_t\right)^{\chi}\left(R_t-\bar R\right)^{1-\chi},
+&
+A_t &= \bar A\left(1+g^A\right)^tP_t^{-\gamma},
+&
+0<\chi<1,\quad \gamma>0,\quad R_t>\bar R\ge0 .
+\label{eq:qsp:production}
+\end{align}
+The floor $\bar R$ is the minimum material throughput the laws of physics impose on a given scale of
+activity, the standard reply of \textcite{daly1977} and \textcite{stern1997} to unbounded
+substitution between produced capital and natural inputs. Setting $\bar R=0$ recovers the ordinary
+Cobb--Douglas case. The derivatives are $F_K=\chi Y/K^Y$, $F_R=\left(1-\chi\right)Y/\left(R-\bar R\right)$
+and $F_P=-\gamma Y/P$.
+
+\begin{remark}[What $\bar R$ does to the essentiality assumption]\label{rem:qsp:Rbar}
+Proposition~\ref{prop:sp:phases} assumes $\lim_{R\to0}F_R=\infty$. With $\bar R>0$ the Inada point
+moves: $F_R\to\infty$ as $R\downarrow\bar R$, so the proposition goes through with ``materials are
+essential'' reading $R_t>\bar R$ at every date. The consequences are not cosmetic. First, the corner
+$N=0$ of~\eqref{eq:sp:sum:N-corner} now requires the loop alone to deliver more than the floor,
+$R^R_t>\bar R$, which is a much stronger requirement than $R^R_t>0$. Second, the long-run discussion of
+Section~\ref{sec:sp:opt:results} acquires a hard constraint rather than an asymptotic one: extraction
+cannot go to zero unless the circularity multiplier can hold $R$ above $\bar R$ against a vanishing
+virgin flow. This is exactly the substitution limit the ecological-economics literature has in mind,
+and in this model it bites through the materials loop rather than through the production function.
+\end{remark}
+
+\smalltitle{Recycling.} We use the yield function
+\begin{align}
+a_t\!\left(x\right) &= a^m_t\,\frac{x}{1+x},
+&
+a^m_t &= 1-\frac{b}{\left(1+g^R\right)^t},
+&
+b&>0,\quad g^R\ge0,
+\label{eq:qsp:recycling}
+\end{align}
+so that $a^m_t$ is the recycling frontier at date $t$ and $g^R$ is the rate of technical progress that
+moves it towards, but never to, complete recovery. The implied objects of
+Section~\ref{sec:sp:setup:primitives} are all available in closed form:
+\begin{align}
+\varepsilon_t &= \frac{1}{1+x},
+&
+a'_t\!\left(x\right) &= \frac{a^m_t}{\left(1+x\right)^2},
+&
+\alpha_t &= a^m_t\left(\frac{x}{1+x}\right)^2 = \frac{a_t^2}{a^m_t},
+&
+a'_t\!\left(0^+\right) &= a^m_t .
+\label{eq:qsp:recycling-derivatives}
+\end{align}
+Three properties are worth recording. First, the constant-returns form of the technology is a familiar
+one: substituting $x=K^R/T$ into~\eqref{eq:qsp:recycling} gives
+\begin{align}
+\mathcal R_t\!\left(T,K^R\right) &= a^m_t\,\frac{TK^R}{T+K^R}
+\;=\;a^m_t\left[T^{-1}+\left(K^R\right)^{-1}\right]^{-1},
+\label{eq:qsp:recycling-crs}
+\end{align}
+a CES aggregator of treated waste and recycling capital with elasticity of substitution one half,
+scaled by the frontier. Both inputs are essential, as Section~\ref{sec:sp:opt:phases} requires.
+Second, $a'_t\!\left(0^+\right)=a^m_t<\infty$, which is the finiteness that
+Proposition~\ref{prop:sp:phases}(iii) needs; the threshold~\eqref{eq:sp:phases:threshold} therefore
+reads
+\begin{align}
+a^m_t\,V_t &\le F_{K,t}\left(1-\zeta_t\Omega^Y_t\right)
+\qquad\Longleftrightarrow\qquad
+K^R_t=0 ,
+\label{eq:qsp:threshold}
+\end{align}
+as concrete a statement of the transition condition as one could want: the recycling frontier times the
+virgin displacement value, against the marginal product of capital. Since $a^m_t$ rises with $g^R$
+while $F_K$ falls with capital accumulation and $V_t$ rises with depletion, the inequality is
+self-terminating on three counts at once. Third, the assumption $\lim_{x\to\infty}a=1$
+of~\eqref{eq:sp:setup:recycling} holds only in the limit $t\to\infty$: at any date the frontier is
+$a^m_t<1$, so the circularity multiplier is capped, exactly as flagged at the end of
+Section~\ref{sec:sp:opt:results}. Remark~\ref{rem:qsp:tail} below draws out what that cap implies.
+
+\begin{remark}[The recycling frontier bounds sustainable depletion]\label{rem:qsp:tail}
+In a materially stationary economy with no displaced mass, \eqref{eq:sp:multiplier-identity} gives
+$R_t=N_t/\left(1-a_t\varpi_t\right)$. Since $a_t\le a^m_t$ and $\varpi_t\le1$,
+\begin{align}
+R_t &\le \frac{N_t}{1-a^m_t}\;=\;\frac{N_t\left(1+g^R\right)^t}{b},
+\label{eq:qsp:tail-bound}
+\end{align}
+so holding material throughput above the floor $\bar R$ requires
+$N_t\ge b\bar R\left(1+g^R\right)^{-t}$: \emph{the virgin flow may decline at most at the rate of
+technical progress in recycling}. The bound is an accounting consequence, not an optimality result, and
+it is independent of the production function, of the elasticity of substitution between capital and
+materials, and of how much capital is thrown at recycling. Under this parameterisation the long run is
+therefore governed by $g^R$ rather than by capital deepening --- capital deepening runs into the
+frontier $a^m_t$ and stops there --- which is a sharper version of the conjecture recorded in
+Section~\ref{sec:sp:opt:results}, and one that the simulations can check directly.
+\end{remark}
+
+\smalltitle{Extraction and exploration.} Following the cost specifications carried in the paper draft,
+\begin{align}
+C^N_t &= \frac{c^N_t}{1+\xi^S}\,N_tS_t^{-\left(1+\xi^S\right)},
+&
+C^D_t &= \frac{c^D_t}{1+\xi^X}\,D_tX_t^{1+\xi^X},
+&
+\xi^S,\xi^X&>0,
+\label{eq:qsp:mining-costs}
+\\
+c^N_t &= \frac{c^N}{\left(1+g^N\right)^t},
+&
+c^D_t &= \frac{c^D}{\left(1+g^D\right)^t},
+&
+g^N,g^D&\ge0 .
+\label{eq:qsp:mining-progress}
+\end{align}
+Extraction gets harder as the reserve is drawn down, $C^N_S<0$; exploration gets harder as cumulative
+discoveries accumulate, $C^D_X>0$; and cost-reducing technical progress shifts both schedules down.
+Both are linear in the flow, so $C^N_{NN}=C^D_{DD}=0$, which satisfies the weak convexity assumed
+in~\eqref{eq:sp:setup:extraction-cost}--\eqref{eq:sp:setup:discovery-cost} but leaves the flow margin
+without curvature of its own.\footnote{This matters more for the numerics than for the economics. With
+$C^N_{NN}=0$ the extraction condition~\eqref{eq:sp:sum:N} pins $N_t$ only through the dependence of
+$\Psi_t$ on $R_t$, which can make the within-period solve of Section~\ref{sec:qsp:model:block}
+ill-conditioned when the material demand schedule is flat. The obvious generalisation,
+$C^N_t=\frac{c^N_t}{1+\xi^N}N_t^{1+\xi^N}S_t^{-\left(1+\xi^S\right)}$ with $\xi^N>0$, restores strict
+convexity at the cost of one parameter, and we expect to need it.}
+
+\smalltitle{Waste collection and treatment.} With $c^W_t\left(\varpi\right)=c^c_t+c^T_t\left(\varpi\right)$,
+\begin{align}
+c^c_t &= \frac{\bar c^c}{\left(1+g^c\right)^t},
+&
+c^T_t\!\left(\varpi\right) &= \frac{\bar c^T}{\left(1+\xi^T\right)\left(1+g^T\right)^t}\,\varpi^{1+\xi^T},
+&
+\xi^T&>0,\quad g^c,g^T\ge0 .
+\label{eq:qsp:waste-costs}
+\end{align}
+This satisfies~\eqref{eq:sp:setup:waste-cost}: $c^T_t\left(0\right)=0$ and
+$c^{T\prime}_t\left(\varpi\right)=\bar c^T\left(1+g^T\right)^{-t}\varpi^{\xi^T}$, which vanishes at
+$\varpi=0$ and is increasing and convex. Note that
+$c^{T\prime}_t\left(1\right)=\bar c^T\left(1+g^T\right)^{-t}$ is finite and \emph{falling} over time, so
+the upper corner $\varpi_t=1$ flagged in~\eqref{eq:sp:sum:varpi-upper} is not only admissible under
+this parameterisation but becomes progressively easier to reach. Full treatment is a case the solution
+algorithm must handle, not an edge case to be assumed away.
+
+\smalltitle{Material intensities.} The relative intensities and the durables coefficient decline with
+technical and structural change,
+\begin{align}
+\omega^j_t &= \frac{\omega^j}{\left(1+g^j_\omega\right)^t},
+\quad j\in\left\{Y,N,D,W,C\right\},
+&
+\phi^I_t &= \frac{\phi^I}{\left(1+g^\phi\right)^t},
+&
+g^j_\omega,g^\phi&\ge0 ,
+\label{eq:qsp:intensities}
+\end{align}
+while the nature-attributable coefficients are tied to the state of the deposit,
+\begin{align}
+\Omega^{N,S}_t &= \bar\Omega^{N,S}\left(\frac{S_0}{S_t}\right)^{\xi^{G}},
+&
+\Omega^{D,S}_t &= \bar\Omega^{D,S},
+&
+\xi^{G}&\ge0 .
+\label{eq:qsp:nature-intensities}
+\end{align}
+The exponent $\xi^G$ is the declining-ore-grade channel: as the reserve is drawn down, more overburden
+and gangue must be moved per tonne of usable material. Setting $\xi^G=0$ switches it off, and the
+baseline should probably do so until there is evidence to calibrate it against.
+
+\begin{remark}[$\Omega$ is an outcome, and the intensities are identified only up to scale]\label{rem:qsp:scale}
+Two points about~\eqref{eq:qsp:intensities}, both of which depart from how the paper draft treats these
+coefficients. First, the average intensity $\Omega_t$ is \emph{not} specified here, because it is not a
+parameter: it is determined residually by the intensity condition~\eqref{eq:qsp:intensity}, as
+Section~\ref{sec:sp:setup:aggregatematerial} establishes. Only the relative intensities $\omega^j_t$ and
+$\phi^I_t$ are primitives. Second, those primitives are identified only up to a common scale. Replacing
+$\left(\omega^j_t,\phi^I_t\right)$ by $\left(\kappa\omega^j_t,\kappa\phi^I_t\right)$ for any $\kappa>0$
+leaves $\Omega_t\mapsto\Omega_t/\kappa$ and leaves every object that enters an optimality condition ---
+the absolute intensities $\Omega^j_t=\Omega_t\omega^j_t$, the durables intensity
+$\Phi^I_t=\Omega_t\phi^I_t$, the storage share $\sigma_t$ and the waste flow $\Omega_t\mathcal D_t$ ---
+exactly unchanged. The allocation is therefore invariant to the normalisation, and one coefficient must
+be fixed: we set $\omega^C=1$, so that all relative intensities are read as waste per unit of final good
+relative to consumption. What the data have to identify is the \emph{ratios} $\omega^j/\omega^C$ and
+$\phi^I/\omega^C$, together with the growth rates.
+\end{remark}
+
+\smalltitle{Environmental absorption.} Finally,
+\begin{align}
+\theta\!\left(P_t\right) &= \bar\theta P_t^{-\xi^P},
+&
+0<\xi^P<1,
+&&\text{so}&&
+\hat\theta_t &\equiv \theta_t+\theta'_tP_t = \left(1-\xi^P\right)\theta_t ,
+\label{eq:qsp:absorption}
+\end{align}
+where $\hat\theta_t$ is the marginal decay rate that Section~\ref{sec:sp:opt:foc} shows is the relevant
+one. Since $\xi^P<1$ we have $0<\hat\theta_t<\theta_t$: absorption saturates, but never so far that the
+effective discount rate on damages turns negative. This specification therefore rules out the tipping
+point noted after~\eqref{eq:sp:costate:P} by construction, which is a modelling choice and should be
+stated as one.
+
+\subsection{Calibration}\label{sec:qsp:setup:calibration}
+
+The calibration is not yet done and the data folder is empty; what follows records the targets and the
+mapping from targets to parameters, so that the work can be organised against it.
+
+\smalltitle{Initial condition.} Following the paper draft, the economy starts in an early linear stage
+in which the environment absorbs the entire waste flow, so that the pollution stock is initially
+stationary:
+\begin{align}
+P_1 = \left[1-\theta\!\left(P_0\right)\right]P_0+\Xi_0 = P_0
+\qquad\Longleftrightarrow\qquad
+\bar\theta P_0^{1-\xi^P} &= \Xi_0 .
+\label{eq:qsp:calibration-P}
+\end{align}
+This is one equation linking $\bar\theta$, $P_0$ and $\xi^P$ to the initial emission flow, and it fixes
+$\bar\theta$ given the other two. The point of starting here is that the transition to the circular
+economy is then entirely an outcome: at $t=0$ the pollution price is small, the reserve is large,
+capital is scarce, and~\eqref{eq:qsp:threshold} holds comfortably.
+
+\smalltitle{Targets.} Grouped by the block they identify:
+\begin{itemize}[leftmargin=1.6em,itemsep=0.15em]
+\item \emph{Preferences and capital.} $\beta$, $\eta$, $\delta$, $\chi$ from the usual macro targets:
+a real interest rate, an intertemporal elasticity of substitution, a depreciation rate and a capital
+share. $\bar A$ normalises units.
+\item \emph{Materials.} The ratios $\omega^j/\omega^C$ and $\phi^I/\omega^C$ from material-flow
+accounts: waste generated per unit of final expenditure in each use, and the material content of gross
+fixed capital formation. Given the ratios, $\Omega_0$ is an outcome, and its value is the model's
+prediction for economy-wide domestic material consumption per unit of output --- a check, not a target.
+\item \emph{Recycling and treatment.} $b$ and $g^R$ from an observed recycling rate together with a view
+on the technical frontier; $\bar c^T$ and $\xi^T$ from the observed treatment share $\varpi_0$ and the
+cost of raising it; $\bar c^c$ from the waste sector's share of value added.
+\item \emph{Mining.} $c^N$, $\xi^S$ from extraction cost shares and the reserve-to-production ratio;
+$c^D$, $\xi^X$ from exploration expenditure and the historical elasticity of discoveries to cumulative
+discovery. $\bar\Omega^{N,S}$ from ore-grade data.
+\item \emph{Environment.} $\bar\psi$, $\nu$ from a marginal damage estimate at $P_0$;
+$g^\psi$ from an income elasticity of environmental willingness to pay; $\gamma$ from the output damage
+of pollution; $\bar\theta$ from~\eqref{eq:qsp:calibration-P} and $\xi^P$ from evidence on absorption
+saturation.
+\item \emph{Substitution limit.} $\bar R$ has no obvious empirical counterpart and should be treated as
+a scenario parameter rather than calibrated, varied from $\bar R=0$ upwards as
+Remark~\ref{rem:qsp:Rbar} suggests.
+\end{itemize}
+
+\smalltitle{Growth rates.} The benchmark takes technical progress to be neutral across sectors,
+\begin{align}
+g^A=g^R=g^N=g^D=g^c=g^T=g^\phi=g^\psi=g>0,
+&&
+g^j_\omega=0 \ \ \text{for all }j,
+\label{eq:qsp:neutral-progress}
+\end{align}
+so that no sector is favoured by assumption and the transition is driven by depletion and accumulation
+alone. Departures from~\eqref{eq:qsp:neutral-progress}, one sector at a time, are the natural
+comparative-dynamics exercise, and Remark~\ref{rem:qsp:tail} already says that $g^R$ should be expected
+to matter more than the others.

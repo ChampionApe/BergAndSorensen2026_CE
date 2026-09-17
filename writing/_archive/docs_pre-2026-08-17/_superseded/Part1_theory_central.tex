@@ -1,0 +1,711 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Alternative Part I, Section 1: Centralized theory %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Planner Model in Continuous Time}
+\label{sec:ac}
+
+This section states the continuous-time Ramsey model with exhaustible natural resources, waste generation, waste treatment and recycling, and characterizes the first-best allocation chosen by a utilitarian social planner. The section is self-contained: it states the primitives, states the planner's problem as an optimal control problem, lists the first-order and co-state conditions, and closes with a count of equations and unknowns and a set of technical remarks.
+
+The distinguishing feature of the treatment below is how the materials balance principle is imposed. Conservation of mass is enforced separately for each economic activity --- production, extraction, exploration, waste collection and treatment, consumption, investment, and recycling --- and the aggregate waste-generation and materials-balance relations are then \emph{derived} by summing across activities, rather than posited directly as a single aggregate identity. This matters because an aggregate identity written down directly can look consistent while quietly mixing units (a final-good-denominated intensity applied to a physical tonnage, for instance) or silently assuming that some activities generate no waste at all; building the balance up from process-level mass conservation makes every such choice explicit and forces it to be stated as a modeling assumption rather than left implicit in a reduced-form equation.
+
+A second feature follows from the first and shapes everything downstream. Conservation of mass is an \emph{accounting ledger}, not a technology: it does not restrict what the economy can do, it records what the mass flows are given what the economy did. The genuine restrictions are elsewhere and are already in the model --- reserves are finite, extraction is costly, recycling recovers only a fraction of what is fed into it, production requires materials. Accordingly, the material intensity of the final good, $\phi^Y$, and the economy-wide waste-intensity level, $\Omega$, are both \emph{endogenous} objects determined by the accounting, not calibrated parameters; what is calibrated is the vector of \emph{relative} intensities $\omega^i$ across activities. Section~\ref{subsec:ac:balances} makes this precise and Remark~\ref{rem:ac:ledger} explains why the alternative --- treating the balance as a constraint carrying its own shadow price --- is not available.
+
+\smalltitle{Generality.} This section and Section~\ref{sec:ad} are stated under the \emph{general} accounting, in which extraction and exploration displace mass that never passed through the final good --- overburden and gangue --- at the nature-attributable intensities $\omega^{N,S}$ and $\omega^{D,S}$. This is the more general of the two settings catalogued in Section~\ref{sec:baseline}, and it is carried through every first-order condition, co-state condition and policy instrument below. The restriction $\omega^{N,S}=\omega^{D,S}=0$, which buys a closed-form ledger and makes the relative intensities allocation-irrelevant, is displayed at each point where it simplifies something --- always marked \textbf{(B1)} and set off from the general statement --- but it is not imposed here. Section~\ref{sec:aq} imposes it once and for all, for the reasons given there.
+
+All variables are functions of time $t$; the time argument is suppressed unless it is needed. A dot denotes a time derivative.
+
+\subsection{Notation}
+\label{subsec:ac:notation}
+
+Table~\ref{tab:ac:notation} collects the symbols used throughout this document. The same symbols are used in the decentralized model and, with a time subscript, in the quantitative model.
+
+\begin{table}[H]
+\centering
+\caption{Notation used throughout this document.}
+\label{tab:ac:notation}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.75}
+\begin{tabular}{@{}ll@{\hspace{1.5em}}ll@{}}
+\toprule
+\multicolumn{2}{@{}l}{\textbf{Stocks (state variables)}} & \multicolumn{2}{l@{}}{\textbf{Flows (controls and outcomes)}} \\
+\midrule
+$K$   & total man-made capital                & $C$   & consumption of final goods \\
+$S$   & known reserves of natural resource    & $Y$   & output of final goods \\
+$X$   & accumulated discoveries               & $I$   & net investment, $I=\dot K$ \\
+$P$   & stock of pollution                    & $N$   & extraction of virgin materials \\
+$\Phi$ & material embodied in capital stock   & $D$   & new reserves discovered \\
+\multicolumn{2}{@{}l}{\textbf{Allocation of capital}}    & $R$   & total raw material input, $R=N+R^R$ \\
+$K^Y$ & capital in final goods production     & $R^R$ & recycled materials \\
+$K^R$ & capital in recycling                  & $W$   & total waste generated \\
+      &                                       & $W^i$ & waste generated by activity $i$ \\
+\multicolumn{2}{@{}l}{\textbf{Technology and taste functions}} & $\varpi$ & fraction of waste treated \\
+$u(C)$        & utility of consumption        & $a$   & recycling rate \\
+$v(P)$        & disutility of pollution       & $C^i$ & final-good cost of activity $i\in\{N,D,W\}$ \\
+$F(K^Y,R,P)$  & final goods technology        & $\Xi$ & flow of waste reaching the environment \\
+$a(\cdot)$    & recycling rate function       & \multicolumn{2}{l@{}}{\textbf{Shadow prices (units of the final good)}} \\
+$C^N(N,S)$    & extraction cost               & $\lambda^K$ & marginal utility value of capital \\
+$C^D(D,X)$    & discovery cost                & $\zeta$ & marginal utility value of the final good \\
+$c^c$         & unit collection cost          & $p^S$ & marginal value of reserves \\
+$c^T(\varpi)$ & unit treatment cost           & $p^X$ & marginal cost of accumulated discoveries \\
+$\theta(P)$   & natural absorption rate       & $p^P$ & marginal cost of the pollution stock \\
+                                             && $p^W$ & marginal cost of waste generation \\
+\multicolumn{2}{@{}l}{\textbf{Derived accounting objects}} & $p^\Phi$ & liability of embodied capital material \\
+$\Omega$   & economy-wide waste-intensity level & $B$ & social value of recycled material \\
+$\phi^Y$   & material intensity of the final good & $q$ & social price of capital, $q=\lambda^K/\zeta$ \\
+$\phi^K$   & average intensity of capital stock, $\Phi/K$ & $r$ & rate of return on capital \\
+$\mathcal D$ & final-good-denominated waste base & $\iota$ & goods rate of interest \\
+$\mathcal N$ & nature-attributable waste base    & $\pi$ & dilution credit, $\pi=p^W\Omega\kappa$ \\
+$\mathcal M$ & nature-attributable waste flow, $\Omega\mathcal N$ & & \\
+$\kappa$   & overburden ratio, $\mathcal N/\mathcal D$ & & \\
+\midrule
+\multicolumn{4}{@{}l@{}}{\textbf{Parameters:} $\rho$ (rate of time preference), $\delta$ (depreciation), $d^W$ (pollution potency of treated waste),}\\
+\multicolumn{4}{@{}l@{}}{$\omega^Y,\omega^C$ (relative waste intensity of output net of depreciation, and of consumption),}\\
+\multicolumn{4}{@{}l@{}}{$\omega^{N,Y},\omega^{N,S}$ (relative waste intensity of extraction, final-good- and nature-attributable),}\\
+\multicolumn{4}{@{}l@{}}{$\omega^{D,Y},\omega^{D,S}$ (same, for exploration), $\omega^W$ (relative waste intensity of treatment),}\\
+\multicolumn{4}{@{}l@{}}{$\phi^I(t)$ (material intensity of \emph{newly produced} capital),}\\
+\multicolumn{4}{@{}l@{}}{$\varepsilon\equiv a'\tfrac{K^R/(\varpi W)}{a}$ (elasticity of the recycling rate).}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Note what is \emph{absent} relative to a formulation in which the materials balance is imposed as a constraint: there is no multiplier $p^M$ on a materials balance, no composite $MSC^W$, and no waste-adjustment factor $\Lambda$ applied to marginal products. Section~\ref{subsec:ac:foc} shows why none of the three is needed.
+
+\subsection{Tastes and technologies}
+\label{subsec:ac:primitives}
+
+\smalltitle{Preferences.} A representative family dynasty with an infinite horizon derives utility from consumption and disutility from the stock of pollution. Lifetime utility at time zero is
+\begin{align}
+U_0 &= \int_0^{\infty}\left[u(C)-v(P)\right]e^{-\rho t}\,dt,
+&&
+u'>0,\quad u''<0,\quad v'>0,\quad v''>0,\quad \rho>0.
+\label{eq:ac:utility}
+\end{align}
+
+\smalltitle{Final goods.} Output is produced from capital and raw materials, and is reduced by pollution:
+\begin{align}
+Y &= F\left(K^Y,R,P\right),
+&&
+F_K>0,\ F_{KK}<0,\ F_R>0,\ F_{RR}<0,\ F_P<0.
+\label{eq:ac:output}
+\end{align}
+
+\smalltitle{Materials and recycling.} Raw material input is the sum of virgin and recycled materials,
+\begin{align}
+R &= N + R^R,
+\label{eq:ac:materials}
+\end{align}
+and recycled materials are produced from the treated share $\varpi W$ of waste using capital $K^R$:
+\begin{align}
+R^R &= a\!\left(x\right)\varpi W,
+\qquad
+x\equiv\frac{K^R}{\varpi W},
+&&
+a(0)=0,\quad a'>0,\quad a''<0,\quad
+\varepsilon\equiv \frac{a'x}{a}<1,\quad
+\lim_{x\to\infty}a=1.
+\label{eq:ac:recycling}
+\end{align}
+
+\smalltitle{Allocation of capital.} The total capital stock is split between the two uses,
+\begin{align}
+K &= K^Y + K^R.
+\label{eq:ac:capital-allocation}
+\end{align}
+
+\smalltitle{Extraction and exploration.} Virgin materials are extracted from a stock $S$ of known reserves, which is augmented by exploration:
+\begin{align}
+C^N &= C^N(N,S),
+&&
+C^N_N>0,\quad C^N_{NN}\ge 0,\quad C^N_S<0,
+\label{eq:ac:extraction-cost}
+\\
+C^D &= C^D(D,X),
+&&
+C^D_D>0,\quad C^D_{DD}\ge 0,\quad C^D_X>0.
+\label{eq:ac:discovery-cost}
+\end{align}
+
+\smalltitle{Waste collection and treatment.} All generated waste must be collected; the treated share $\varpi$ carries an increasing marginal treatment cost:
+\begin{align}
+C^W &= \left[c^c+c^T(\varpi)\right]W,
+&&
+c^T(0)=\left.\frac{dc^T}{d\varpi}\right|_{\varpi=0}=0,\quad
+\frac{dc^T}{d\varpi}>0,\quad \frac{d^2c^T}{d\varpi^2}>0 \ \ \text{for }\varpi>0.
+\label{eq:ac:waste-cost}
+\end{align}
+
+\smalltitle{Accumulation.} The aggregate resource constraint, the definition of investment, and the laws of motion of the three remaining stocks are
+\begin{align}
+Y &= C+I+\delta K+C^N+C^D+C^W,
+&&
+\dot K = I,
+\label{eq:ac:resource-constraint}
+\\
+\dot S &= D-N,
+&&
+\dot X = D,
+\label{eq:ac:reserves-motion}
+\\
+\dot P &= \Xi-\theta(P)P,
+&&
+0<d^W<1,\quad \theta'(P)<0,
+\label{eq:ac:pollution-motion}
+\end{align}
+where the flow of waste that actually reaches the environment is
+\begin{align}
+\Xi &\equiv \left[1-\varpi+d^W\varpi\left(1-a\right)\right]W
+\;=\; W\left(1-\varpi+d^W\varpi\right)-d^WR^R,
+\label{eq:ac:Xi}
+\end{align}
+the second equality using $a\varpi W=R^R$ from~\eqref{eq:ac:recycling}. Writing $\Xi$ this way is not cosmetic: it is linear in $W$ and $R^R$ separately, so every derivative of the pollution flow below is immediate, and no derivative of $a(\cdot)$ with respect to $\varpi$ or $W$ ever needs to be taken. $W$ here is the total physical waste flow, whose determination --- the point of this section --- is worked out next.
+
+\subsection{Materials accounting, process by process}
+\label{subsec:ac:accounting}
+
+Every process below is described by a mass balance: what enters equals what leaves, distributed across waste and embodied material. The final good $Y$ is abstract in the sense that it is a composite of many different physical activities, but it is produced from physical raw material and is itself spent on physical or quasi-physical activities (consumption, capital formation, extraction effort, and so on). Tracking the materials balance principle correctly requires following the mass embodied in $Y$ through each of those uses. $\Omega$ converts a flow of the final good into common waste units, and the relative intensities $\omega^i$ record how material-intensive the bundle drawn for purpose $i$ is compared with the bundle drawn for any other purpose.
+
+Three modeling choices discipline the accounting throughout, stated here and motivated as each process is introduced below:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.4em]
+\item Newly formed capital is embodied at the \emph{current} material intensity $\phi^I(t)$, not at the intensity of the capital it augments or replaces. The existing stock's average intensity $\phi^K(t)\equiv\Phi(t)/K(t)$ is therefore a genuine state variable, evolving as capital of one vintage is diluted or replaced by capital of another; Section~\ref{subsec:ac:embodied-stock} makes this precise. The case of a single constant intensity, $\phi^I(t)\equiv\phi^K(t)$ for all $t$, is nested as the special case in which the stock's composition has already converged.
+\item Investment generates no waste of its own: all materials drawn for capital formation are embodied in the new capital, and waste associated with capital arises only through depreciation.
+\item Waste generated by an activity that spends the final good is scaled by that activity's final-good \emph{cost}, not by the physical quantity it produces, whenever the two are measured in different units. This applies to extraction (scaled by $C^N$, not $N$), exploration (scaled by $C^D$, not $D$), and waste treatment (scaled by $C^W$, not $W$). Consumption needs no such correction, since $C$ is already measured in final-good units. Extraction and exploration additionally generate waste that is proportional to the physical flow itself ($N$, $D$) rather than to the resources spent obtaining it --- displaced material from the earth, brought up alongside the useful material, rather than a byproduct of processing the final good.
+\end{enumerate}
+
+\smalltitle{Production.} Production uses raw material $R=N+R^R$ and capital $K^Y$, which depreciates at rate $\delta$. Depreciation releases the capital's embodied material, $\phi^K\delta K^Y$, directly as waste; it is not a fresh draw on $R$:
+\begin{align}
+R+\phi^K\delta K^Y &= W^Y+M^Y, &
+W^Y &= \Omega\omega^YY+\phi^K\delta K^Y, &
+M^Y &= \phi^YY,
+\label{eq:ac:production}
+\end{align}
+where $\phi^Y$ is the material intensity of the final good. The $\phi^K\delta K^Y$ terms cancel on both sides, leaving
+\begin{align}
+R &= \Omega\omega^YY+\phi^YY.
+\label{eq:ac:production-reduced}
+\end{align}
+Producing output therefore requires no \emph{additional} raw material to cover capital depreciation: depreciation is a pure pass-through of previously embodied mass from the capital stock into the waste stream, and $\Omega\omega^Y$ measures the waste generated by production net of that pass-through.
+
+\smalltitle{Extraction and exploration.} Extraction uses the final good, through the cost function $C^N(N,S)$, to pull $N$ tonnes from the reserve $S$. Two physically distinct sources of waste are at play: the embodied material of the final good spent on extraction effort itself (machinery, energy, and so on, all ultimately final-good expenditure), and displaced material from the earth --- overburden and gangue brought up alongside the ore --- proportional to the tonnage extracted rather than to the effort expended, and never part of $Y$ to begin with:
+\begin{align}
+W^N &= \Omega\omega^{N,Y}C^N(N,S)+\Omega\omega^{N,S}N.
+\label{eq:ac:extraction}
+\end{align}
+The same logic applies to exploration, which spends $C^D(D,X)$ of the final good to add $D$ to the stock of discoveries:
+\begin{align}
+W^D &= \Omega\omega^{D,Y}C^D(D,X)+\Omega\omega^{D,S}D.
+\label{eq:ac:exploration}
+\end{align}
+Only the final-good-attributable components, $\Omega\omega^{N,Y}C^N$ and $\Omega\omega^{D,Y}C^D$, are backed by embodied material drawn from $Y$; the nature-attributable components, $\Omega\omega^{N,S}N$ and $\Omega\omega^{D,S}D$, are additional mass that never passed through $Y$ and so never draws on $R$. This distinction turns out to be the \emph{only} channel through which the level $\Omega$ affects the allocation; see Remark~\ref{rem:ac:nature}.
+
+\smalltitle{Waste collection and treatment, and consumption.} Both activities draw the final good and return its entire embodied content as waste, since neither stores materials durably: consumption goods are used up, and treating waste is itself an activity that consumes final good and leaves nothing durable behind. Consumption is already measured in final-good units, so $\Omega\omega^CC$ needs no further translation. Waste collection and treatment is not: the physical quantity it processes is $W$, a tonnage, while the final-good resources it uses are $C^W=\left[c^c+c^T(\varpi)\right]W$ from~\eqref{eq:ac:waste-cost}. As with extraction and exploration, it is the final-good expenditure that carries embodied material, so treatment waste is scaled by $C^W$ rather than by $W$ itself:
+\begin{align}
+W^W &= \Omega\omega^WC^W, & W^C &= \Omega\omega^CC.
+\label{eq:ac:wc}
+\end{align}
+
+\smalltitle{Investment.} Gross resources devoted to capital formation are
+\begin{align}
+G &\equiv I+\delta K,
+\label{eq:ac:gross-formation}
+\end{align}
+net accumulation plus replacement of depreciated capital, matching the $I$ and $\delta K$ terms in~\eqref{eq:ac:resource-constraint}. Under modeling choice~(2), none of this is wasted directly; under choice~(1), it is embodied at the \emph{current} intensity $\phi^I(t)$, since gross investment --- replacement no less than net accumulation --- is manufactured with today's technology, not the technology of whatever capital happens to be currently installed:
+\begin{align}
+W^I &= 0, & M^I &= \phi^IG.
+\label{eq:ac:investment}
+\end{align}
+
+\smalltitle{Recycling.} Recycling uses capital $K^R$ and waste materials only, drawing no final good directly; its own depreciation releases waste in the same way as $K^Y$'s:
+\begin{align}
+W^{R,\text{waste}} &= \phi^K\delta K^R, & R^R &= a\!\left(x\right)\varpi W.
+\label{eq:ac:recycling-mass}
+\end{align}
+
+\subsection{The embodied-material stock}
+\label{subsec:ac:embodied-stock}
+
+Because gross investment is embodied at the current intensity $\phi^I(t)$ while depreciation releases material at the stock's average intensity $\phi^K(t)$, the total mass of material currently embodied in the capital stock, $\Phi\equiv\phi^KK$, is itself a state variable:
+\begin{align}
+\dot\Phi &= \phi^I(t)\left(I+\delta K\right)-\delta\Phi,
+&
+\Phi(0) \text{ given},
+\label{eq:ac:Phi-motion}
+\end{align}
+structurally identical to $K$'s own law of motion $\dot K=I$, with gross investment $I+\delta K$ replacing $I$ and the flow intensity $\phi^I(t)$ replacing the constant $1$. Equivalently, in ratio form,
+\begin{align}
+\dot\phi^K &= \left[\phi^I(t)-\phi^K\right]\frac{I+\delta K}{K},
+\label{eq:ac:phiK-motion}
+\end{align}
+so $\phi^K(t)$ is an investment-weighted moving average of past values of $\phi^I$: it drifts toward the current vintage's intensity at a rate set by the gross investment rate, and is stationary exactly when $\phi^I(t)=\phi^K(t)$ --- the constant-intensity case of modeling choice~(1) is the special case in which the stock's composition has already converged.
+
+$\Phi$ enters the rest of the accounting only through the depreciation pass-through terms already given in~\eqref{eq:ac:production} and~\eqref{eq:ac:recycling-mass}, $\phi^K\delta K^Y$ and $\phi^K\delta K^R$, which sum to $\phi^K\delta K=\delta\Phi$ under the maintained assumption that $K^Y$ and $K^R$ are drawn from the same, well-mixed stock and so share the same average intensity $\phi^K(t)$; see Remark~\ref{rem:ac:Phi-pools}. $\phi^I(t)$ itself is treated as a primitive of the model, on par with the $\omega^i$'s; Remark~\ref{rem:ac:phiI} discusses the two natural ways of specifying it.
+
+\subsection{The materials ledger}
+\label{subsec:ac:balances}
+
+\smalltitle{Three relations.} Write the final-good-denominated waste base and the nature-attributable waste base as
+\begin{align}
+\mathcal D &\equiv \omega^YY+\omega^{N,Y}C^N(N,S)+\omega^{D,Y}C^D(D,X)+\omega^WC^W+\omega^CC,
+&
+\mathcal N &\equiv \omega^{N,S}N+\omega^{D,S}D.
+\label{eq:ac:base}
+\end{align}
+$\mathcal D$ collects every flow that is measured in final-good units and therefore carries embodied material drawn through $R$; $\mathcal N$ collects the two physical flows that do not. Summing the process balances~\eqref{eq:ac:production}--\eqref{eq:ac:recycling-mass}, and using $\delta K^Y+\delta K^R=\delta K$ together with $\phi^K\delta K=\delta\Phi$, gives total waste generation:
+\begin{align}
+W &= \Omega\,\mathcal D+\Omega\,\mathcal N+\delta\Phi.
+\label{eq:ac:waste-generation}
+\end{align}
+Conservation of the material embodied in $Y$ requires that every unit of it end up either as waste from one of the implicit downstream processes or as newly embodied capital, embodied at the current vintage's intensity:
+\begin{align}
+\phi^YY &= \Omega\left[\omega^{N,Y}C^N(N,S)+\omega^{D,Y}C^D(D,X)+\omega^WC^W+\omega^CC\right]+\phi^IG.
+\label{eq:ac:consistency}
+\end{align}
+Substituting~\eqref{eq:ac:consistency} into the production balance~\eqref{eq:ac:production-reduced} eliminates $\phi^Y$ and gives the aggregate materials balance:
+\begin{align}
+N+R^R &= \Omega\,\mathcal D+\phi^IG.
+\label{eq:ac:materials-balance}
+\end{align}
+The left-hand side nets out recycled material: a unit of $R^R$ substitutes one-for-one for a unit of virgin extraction $N$, since both enter production only through $R=N+R^R$. The right-hand side uses the \emph{gross} capital-formation flow $I+\delta K$ valued at the \emph{current} intensity $\phi^I$, because replacing depreciated capital draws fresh raw material just as any other use of $Y$ does, and the replacement units are built with today's technology. The nature-attributable waste terms do \emph{not} appear here, precisely because that waste was never backed by material drawn from $R$.
+
+\smalltitle{What is endogenous.} Relations~\eqref{eq:ac:consistency} and~\eqref{eq:ac:materials-balance} are two equations in the two accounting objects $\phi^Y$ and $\Omega$, both of which are outcomes rather than parameters:
+\begin{align}
+\Omega &= \frac{N+R^R-\phi^IG}{\mathcal D},
+&
+\phi^Y &= \Omega\,\frac{\mathcal D-\omega^YY}{Y}+\phi^I\frac{G}{Y}.
+\label{eq:ac:Omega}
+\end{align}
+$\phi^Y$ is the composition-weighted average material intensity of the $Y$ bundle: the final good is a composite of physically heterogeneous goods, the bundle drawn for consumption is not the same bundle as the one drawn for mining equipment, and $\phi^Y$ moves as the composition of the bundle moves. Treating it as a fixed parameter would tie $R/Y$ to a constant through~\eqref{eq:ac:production-reduced}, contradicting the substitutability of capital for materials in~\eqref{eq:ac:output} and defeating the purpose of having $R$ as an input at all. Neither~\eqref{eq:ac:consistency} nor~\eqref{eq:ac:materials-balance} therefore restricts the allocation: given any feasible path, the two determine $\Omega$ and $\phi^Y$ pointwise. Remark~\ref{rem:ac:ledger} discusses why this is the right reading and what it rules out.
+
+\smalltitle{The ledger.} Substituting~\eqref{eq:ac:materials-balance} into~\eqref{eq:ac:waste-generation} cancels $\Omega$ and every $\omega^i$ from the first term, leaving
+\begin{align}
+\boxed{\;W \;=\; N+R^R-\phi^IG+\delta\Phi+\Omega\,\mathcal N \;=\; R-\dot\Phi+\mathcal M\;}
+&&
+\mathcal M &\equiv \Omega\,\mathcal N,
+\label{eq:ac:ledger}
+\end{align}
+using~\eqref{eq:ac:Phi-motion} for the second equality. \emph{Waste generated equals the material entering production, less the net accumulation of material embodied in the capital stock, plus the mass displaced from nature that never entered production at all.} That is the entire physical content of the materials balance principle for this economy, and it is what the planner's problem below is constrained by. Note that $\phi^K$ appears nowhere in it.
+
+The first two terms are the accounted flow: mass conservation pins waste down exactly, because every gram of it passed through $R$ on its way in. The third term is the unaccounted one, and it does not cancel, because that mass was never backed by $R$. It is the \emph{only} channel through which the level $\Omega$ --- and hence the calibration of the relative intensities $\omega^i$ --- touches the allocation.
+
+\smalltitle{Solving the ledger.} Two things in~\eqref{eq:ac:ledger} depend on $W$ itself: recycled material, $R^R=a\varpi W$, and the waste base, through $C^W=\left[c^c+c^T(\varpi)\right]W$ inside $\mathcal D$. Split the base into the part free of $W$ and the part proportional to it,
+\begin{align}
+\mathcal D &= \mathcal D^0+\omega^Wc^WW,
+&
+\mathcal D^0 &\equiv \omega^YY+\omega^{N,Y}C^N+\omega^{D,Y}C^D+\omega^CC,
+&
+c^W &\equiv c^c+c^T(\varpi),
+\label{eq:ac:base-split}
+\end{align}
+and note that $\mathcal N$ does not depend on $W$ at all. Substituting $\Omega=\left(R-\phi^IG\right)/\mathcal D$ from~\eqref{eq:ac:Omega} into~\eqref{eq:ac:ledger} and clearing the denominator turns the ledger into a \emph{quadratic} in $W$:
+\begin{align}
+\left(1-a\varpi\right)\omega^Wc^W\,W^2
++\Big[\left(1-a\varpi\right)\mathcal D^0-\left(N-\dot\Phi\right)\omega^Wc^W-a\varpi\,\mathcal N\Big]W
+-\Big[\left(N-\dot\Phi\right)\mathcal D^0+\left(N-\phi^IG\right)\mathcal N\Big] &= 0.
+\label{eq:ac:ledger-quadratic}
+\end{align}
+The leading coefficient is positive whenever $a\varpi<1$, and the constant term is negative whenever $N>\dot\Phi$ and $N>\phi^IG$ --- the latter being the feasibility restriction $\Omega\ge0$ of Remark~\ref{rem:ac:ledger} evaluated at $W=0$. A quadratic with a positive leading coefficient and a negative constant term has exactly one positive root, so \eqref{eq:ac:ledger-quadratic} determines $W$ uniquely and in closed form. Conservation of mass still fixes the waste flow pointwise; it simply no longer does so by a one-line division.
+
+\smalltitle{(B1) The baseline restriction.} Setting the nature-attributable intensities to zero, $\mathcal N=0$, the constant term becomes $-\left(N-\dot\Phi\right)\mathcal D^0$ and the quadratic factors, with $W=\left(N-\dot\Phi\right)/\left(1-a\varpi\right)$ dividing out exactly and $\mathcal D^0$ dropping out entirely:
+\begin{align}
+W &= \frac{N-\dot\Phi}{1-a\varpi},
+&
+R &= \frac{N-a\varpi\dot\Phi}{1-a\varpi},
+&
+a\varpi&<1
+&&\textbf{(B1)}.
+\label{eq:ac:ledger-solved}
+\end{align}
+The factor $\left(1-a\varpi\right)^{-1}$ is the \emph{circularity multiplier}: the number of times a tonne of virgin material passes through production before it finally leaves the economy. When the capital stock is stationary in material terms ($\dot\Phi=0$), \eqref{eq:ac:ledger-solved} reads $N=W\left(1-a\varpi\right)$ --- virgin extraction equals waste not recycled --- and $N\to0$ as $a\varpi\to1$. A fully circular economy is one that extracts nothing.
+
+That $\mathcal D^0$ vanishes from~\eqref{eq:ac:ledger-solved} is the precise sense in which the relative intensities are allocation-irrelevant under \textbf{(B1)}: the waste base is what $\Omega$ is measured \emph{against}, and with no unaccounted mass flow there is nothing for $\Omega$ to be applied \emph{to}.
+
+\subsection{The planner's problem}
+\label{subsec:ac:problem}
+
+\begin{problem}[First best]\label{prob:ac:planner}
+The planner chooses the controls $\left\{C,I,K^R,\varpi,N,D,W\right\}$ to maximize~\eqref{eq:ac:utility} subject to the state equations $\dot K=I$, \eqref{eq:ac:Phi-motion}, \eqref{eq:ac:reserves-motion} and~\eqref{eq:ac:pollution-motion}, the static resource constraint obtained by substituting~\eqref{eq:ac:output}--\eqref{eq:ac:waste-cost} into~\eqref{eq:ac:resource-constraint} with $\dot K$ replaced by $I$,
+\begin{align}
+I &= F\!\left(K-K^R,\ N+a\!\left(x\right)\varpi W,\ P\right)-\delta K-C-C^N(N,S)-C^D(D,X)-\left[c^c+c^T(\varpi)\right]W,
+\label{eq:ac:capital-constraint}
+\end{align}
+and the materials ledger~\eqref{eq:ac:ledger}, given the predetermined initial stocks $K(0),\Phi(0),S(0),X(0),P(0)$ and the non-negativity restrictions $K^R\ge 0$, $\varpi\in[0,1]$, $W\ge 0$.
+\end{problem}
+
+$W$ is listed as a control for convenience only: the ledger pins it down through~\eqref{eq:ac:ledger-quadratic}, and the first-order condition for $W$ therefore determines the associated multiplier rather than a behavioral margin. The level $\Omega$ is \emph{not} a free control either; it is the ratio~\eqref{eq:ac:Omega}, and it enters the problem only through the product $\Omega\mathcal N$ in the ledger. Under \textbf{(B1)} it drops out of Problem~\ref{prob:ac:planner} altogether and is recovered from~\eqref{eq:ac:Omega} after the allocation is known.
+
+\smalltitle{Hamiltonian and multipliers.} Let $\lambda^K,\lambda^\Phi,\lambda^S,\lambda^X,\lambda^P$ denote the current-value co-state variables of the five stocks, $\zeta$ the multiplier on~\eqref{eq:ac:capital-constraint}, and $\eta$ the multiplier on the ledger~\eqref{eq:ac:ledger}, all in units of utility. The current-value Hamiltonian is
+\begin{align}
+\mathcal H =\;& u(C)-v(P)+\lambda^KI+\lambda^\Phi\left[\phi^IG-\delta\Phi\right]+\lambda^S\left(D-N\right)+\lambda^XD+\lambda^P\left[\Xi-\theta(P)P\right]
+\notag \\
+&+\zeta\Big[F\!\left(K-K^R,N+R^R,P\right)-\delta K-C-C^N(N,S)-C^D(D,X)-\left(c^c+c^T(\varpi)\right)W-I\Big]
+\notag \\
+&+\eta\Big[N+R^R-\phi^IG+\delta\Phi-W+\Omega\,\mathcal N\Big],
+\qquad
+\Omega=\frac{N+R^R-\phi^IG}{\mathcal D}.
+\label{eq:ac:hamiltonian}
+\end{align}
+All prices below are expressed in units of the final good by normalizing with $\zeta$, with the sign chosen so that the price of every \emph{bad} is positive:
+\begin{align}
+p^S &\equiv \frac{\lambda^S}{\zeta},
+&
+p^X &\equiv -\frac{\lambda^X}{\zeta},
+&
+p^P &\equiv -\frac{\lambda^P}{\zeta},
+&
+p^\Phi &\equiv -\frac{\lambda^\Phi}{\zeta},
+&
+p^W &\equiv -\frac{\eta}{\zeta}.
+\label{eq:ac:normalizations}
+\end{align}
+$p^S,p^X,p^P$ and $p^\Phi$ are shown to be positive in Section~\ref{subsec:ac:costates}. The sign of $p^W$ is \emph{not} assumed: it is an outcome, discussed in Remark~\ref{rem:ac:pW-sign}.
+
+\smalltitle{Derivatives.} With $z\equiv\varpi W$ so that $R^R=a(K^R/z)z$,
+\begin{align}
+\frac{\partial R^R}{\partial K^R}&=a'(x),
+&
+\frac{\partial R^R}{\partial\varpi}&=a\left(1-\varepsilon\right)W,
+&
+\frac{\partial R^R}{\partial W}&=a\left(1-\varepsilon\right)\varpi,
+\label{eq:ac:RR-derivatives}
+\end{align}
+and, from the linear form of $\Xi$ in~\eqref{eq:ac:Xi},
+\begin{align}
+\frac{\partial\Xi}{\partial K^R}&=-d^Wa'(x),
+&
+\frac{\partial\Xi}{\partial\varpi}&=-\left(1-d^W\right)W-d^Wa\left(1-\varepsilon\right)W,
+&
+\frac{\partial\Xi}{\partial W}&=\left(1-\varpi+d^W\varpi\right)-d^Wa\left(1-\varepsilon\right)\varpi.
+\label{eq:ac:Xi-derivatives}
+\end{align}
+
+\smalltitle{How the nature-attributable term enters.} The ledger bracket in~\eqref{eq:ac:hamiltonian} differs from its \textbf{(B1)} counterpart only by $\Omega\mathcal N$, and because $\Omega$ is the ratio~\eqref{eq:ac:Omega} its derivative decomposes into three pieces. For any control $\upsilon$,
+\begin{align}
+\frac{\partial\left(\Omega\mathcal N\right)}{\partial\upsilon}
+&= \underbrace{\kappa\,\frac{\partial\left(R-\phi^IG\right)}{\partial\upsilon}}_{\text{scale}}
++\underbrace{\Omega\,\frac{\partial\mathcal N}{\partial\upsilon}}_{\text{displacement}}
+-\underbrace{\Omega\kappa\,\frac{\partial\mathcal D}{\partial\upsilon}}_{\text{dilution}},
+&
+\kappa &\equiv \frac{\mathcal N}{\mathcal D}.
+\label{eq:ac:OmegaN-derivative}
+\end{align}
+Multiplying by $\eta=-\zeta p^W$ and dividing by $\zeta$, every first-order condition of Section~\ref{subsec:ac:foc} therefore carries, relative to its \textbf{(B1)} form, the three extra terms
+\begin{align}
+-\,p^W\kappa\,\frac{\partial\left(R-\phi^IG\right)}{\partial\upsilon}
+\;-\;p^W\Omega\,\frac{\partial\mathcal N}{\partial\upsilon}
+\;+\;\pi\,\frac{\partial\mathcal D}{\partial\upsilon},
+&&
+\pi &\equiv p^W\Omega\kappa.
+\label{eq:ac:extra-terms}
+\end{align}
+The three have distinct readings. The \emph{scale} term says that a control which draws more mass into production raises nature-attributable waste in proportion, so the ledger price is effectively $p^W(1+\kappa)$ rather than $p^W$ wherever mass enters. The \emph{displacement} term is the direct one: extracting a tonne displaces $\Omega\omega^{N,S}$ tonnes of overburden. The \emph{dilution} term is the awkward one --- spending more final good on any activity in $\mathcal D$ enlarges the base against which $\Omega$ is measured, lowering $\Omega$ and hence lowering $\mathcal M$ --- and $\pi$ is the resulting credit per unit of final good added to the base. Remark~\ref{rem:ac:dilution} argues that this channel is an artifact of the specification rather than economics, and says what to do about it.
+
+The derivatives needed are collected once here. Writing $c^W\equiv c^c+c^T(\varpi)$,
+\begin{align}
+\frac{\partial\mathcal D}{\partial C}&=\omega^C,
+&
+\frac{\partial\mathcal D}{\partial N}&=\omega^YF_R+\omega^{N,Y}C^N_N,
+&
+\frac{\partial\mathcal D}{\partial D}&=\omega^{D,Y}C^D_D,
+&
+\frac{\partial\mathcal D}{\partial K^R}&=\omega^Y\left[F_Ra'-F_K\right],
+\label{eq:ac:D-derivatives-a}
+\\
+\frac{\partial\mathcal D}{\partial\varpi}&=\left[\omega^YF_Ra\left(1-\varepsilon\right)+\omega^W\frac{dc^T}{d\varpi}\right]W,
+&
+\frac{\partial\mathcal D}{\partial W}&=\omega^YF_Ra\left(1-\varepsilon\right)\varpi+\omega^Wc^W,
+&
+\frac{\partial\mathcal D}{\partial I}&=0,
+\label{eq:ac:D-derivatives-b}
+\end{align}
+with $\partial\mathcal N/\partial N=\omega^{N,S}$, $\partial\mathcal N/\partial D=\omega^{D,S}$ and $\partial\mathcal N/\partial\upsilon=0$ for every other control, and with $\partial\left(R-\phi^IG\right)/\partial\upsilon$ equal to $1$, $-\phi^I$, $a'$, $a(1-\varepsilon)W$ and $a(1-\varepsilon)\varpi$ for $\upsilon=N,I,K^R,\varpi,W$ respectively and zero for $C$ and $D$.
+
+\subsection{First-order conditions}
+\label{subsec:ac:foc}
+
+Each condition is stated in general form first, with its \textbf{(B1)} collapse displayed alongside. Throughout, $\kappa=\mathcal N/\mathcal D$ and $\pi=p^W\Omega\kappa$, and both vanish under \textbf{(B1)}.
+
+\smalltitle{Optimal saving.} $\partial\mathcal H/\partial C=u'(C)-\zeta+\eta\left(-\Omega\kappa\,\omega^C\right)=0$:
+\begin{align}
+u'(C) &= \zeta\left[1-\pi\,\omega^C\right]
+&&\xrightarrow{\ \textbf{(B1)}\ }
+&
+u'(C) &= \zeta.
+\label{eq:ac:foc-saving}
+\end{align}
+Under \textbf{(B1)} there is no wedge between the marginal utility of consumption and the marginal utility value of the final good: consumption generates no waste \emph{at the margin}, because by~\eqref{eq:ac:ledger} $W$ then does not depend on $C$, and the mass embodied in consumption goods was already counted when it entered the economy as $R$. In general a wedge survives, but it is a \emph{dilution} wedge and not a waste-generation one: more consumption enlarges $\mathcal D$, which lowers $\Omega$, which lowers the overburden displaced per tonne extracted. With $p^W>0$ this makes $u'(C)<\zeta$ --- consumption is favoured at the margin. See Remark~\ref{rem:ac:dilution}.
+
+\smalltitle{Optimal investment.} $\partial\mathcal H/\partial I=\lambda^K+\lambda^\Phi\phi^I-\zeta-\eta\phi^I\left(1+\kappa\right)=0$, i.e.
+\begin{align}
+q &\equiv \frac{\lambda^K}{\zeta}=1-\phi^I\left[p^W\left(1+\kappa\right)-p^\Phi\right]
+&&\xrightarrow{\ \textbf{(B1)}\ }
+&
+q &= 1-\phi^I\left(p^W-p^\Phi\right)\;<\;1.
+\label{eq:ac:foc-investment}
+\end{align}
+$\zeta$ is the marginal utility value of a unit of the \emph{final good} and $\lambda^K$ that of a unit of \emph{capital}; they differ by the factor $q$, the social price of capital in units of the final good. That price is strictly \emph{below} one: a unit of new capital removes $\phi^I$ tonnes of material from today's waste stream and stores them, and although the stored mass is released later as the capital depreciates --- the liability $p^\Phi$ --- the release is spread over time and discounted, so $p^\Phi<p^W$ always (Section~\ref{subsec:ac:costates}). \textbf{Capital is a temporary materials sink, and the sink is socially valuable.} The general form says the sink is worth \emph{more} than under \textbf{(B1)}, by the factor $\left(1+\kappa\right)$ on $p^W$: material stored in capital is material not drawn through production, and each tonne drawn through production drags $\kappa$ tonnes of overburden with it.
+
+\smalltitle{Optimal extraction.} $\partial\mathcal H/\partial N=0$ gives, using~\eqref{eq:ac:extra-terms},
+\begin{align}
+F_R-C^N_N-p^W\left(1+\kappa\right)-p^W\Omega\,\omega^{N,S}+\pi\left[\omega^YF_R+\omega^{N,Y}C^N_N\right] &= p^S
+\label{eq:ac:foc-extraction}
+\\
+\xrightarrow{\ \textbf{(B1)}\ }\qquad
+F_R-C^N_N-p^W &= p^S.
+\notag
+\end{align}
+A marginal tonne of virgin material is productive ($F_R$), costs $C^N_N$ to extract, depletes the reserve ($p^S$), and --- by the ledger --- adds one tonne to the waste stream, plus $\kappa$ tonnes through the scale channel and $\Omega\omega^{N,S}$ tonnes of displaced overburden, less whatever its own extraction cost dilutes away.
+
+\smalltitle{Optimal exploration.} $\partial\mathcal H/\partial D=0$:
+\begin{align}
+C^D_D\left[1-\pi\,\omega^{D,Y}\right]+p^X+p^W\Omega\,\omega^{D,S} &= p^S
+&&\xrightarrow{\ \textbf{(B1)}\ }
+&
+C^D_D+p^X &= p^S.
+\label{eq:ac:foc-exploration}
+\end{align}
+Exploration draws no material through production, so it carries no scale term; it enters the general ledger only by displacing mass directly ($\omega^{D,S}$) and by diluting the base ($\omega^{D,Y}$).
+
+\smalltitle{Optimal investment in recycling.} Using~\eqref{eq:ac:RR-derivatives}, \eqref{eq:ac:Xi-derivatives} and~\eqref{eq:ac:extra-terms}, $\partial\mathcal H/\partial K^R=0$ collects into a form identical to the \textbf{(B1)} one once two objects are defined --- the social value of a marginal unit of recycled material and the social opportunity cost of a unit of capital moved into recycling:
+\begin{align}
+B &\equiv F_R\left[1+\pi\,\omega^Y\right]-p^W\left(1+\kappa\right)+d^Wp^P,
+&
+\widehat F_K &\equiv F_K\left[1+\pi\,\omega^Y\right],
+\label{eq:ac:B}
+\end{align}
+both of which collapse to $B=F_R-p^W+d^Wp^P$ and $\widehat F_K=F_K$ under \textbf{(B1)}. Imposing $K^R\ge0$, the condition takes complementary-slackness form:
+\begin{subequations}\label{eq:ac:foc-recycling}
+\begin{align}
+K^R&=0
+&&\text{if}\quad a'(0)\,B\le \widehat F_K,
+\label{eq:ac:foc-recycling-a}
+\\
+a'(x)\,B&=\widehat F_K
+&&\text{if}\quad a'(0)\,B> \widehat F_K.
+\label{eq:ac:foc-recycling-b}
+\end{align}
+\end{subequations}
+The factor $\left[1+\pi\omega^Y\right]$ appears on both sides because moving capital into recycling changes output, and output is itself in the waste base $\mathcal D$: the forgone $F_K$ shrinks the base and so raises $\Omega$, while the recycled material recovered enlarges it again through $F_Ra'$. It is common to $B$ and $\widehat F_K$ and therefore cancels from the ratio, which is why the closed forms of Section~\ref{subsec:aq:recycling-properties} survive intact.
+
+\smalltitle{Optimal waste treatment.} Dividing $\partial\mathcal H/\partial\varpi=0$ by $\zeta W$:
+\begin{align}
+a\left(1-\varepsilon\right)B+p^P\left(1-d^W\right) &= \frac{dc^T}{d\varpi}\left[1-\pi\,\omega^W\right]
+&&\xrightarrow{\ \textbf{(B1)}\ }
+&
+a\left(1-\varepsilon\right)B+p^P\left(1-d^W\right) &= \frac{dc^T}{d\varpi}.
+\label{eq:ac:foc-treatment}
+\end{align}
+Treating a marginal tonne yields $a(1-\varepsilon)$ tonnes of recycled material, worth $B$ each, and reduces the flow reaching the environment by $\left(1-d^W\right)$; in general the marginal treatment cost is credited by $\pi\omega^W$ for the base it adds. Condition~\eqref{eq:ac:foc-treatment} is stated as an interior condition; see Remark~\ref{rem:ac:varpi} for the bounds on $\varpi$.
+
+\smalltitle{The multiplier on the ledger.} Dividing $\partial\mathcal H/\partial W=0$ by $\zeta$:
+\begin{align}
+\varpi\,a\left(1-\varepsilon\right)B+p^W &= \left[c^c+c^T(\varpi)\right]\left[1-\pi\,\omega^W\right]+p^P\left(1-\varpi+d^W\varpi\right).
+\label{eq:ac:foc-waste}
+\end{align}
+This is not a behavioral margin --- $W$ is pinned by~\eqref{eq:ac:ledger-quadratic} --- but the equation that determines $p^W$, which is what keeps the system square.
+
+\subsection{Two reductions}
+\label{subsec:ac:reductions}
+
+The first-order conditions simplify considerably once the extraction condition is used to eliminate $F_R$, and the resulting forms are both more interpretable and better conditioned numerically.
+
+\smalltitle{The value of recycled material.} Substituting the extraction condition~\eqref{eq:ac:foc-extraction} into~\eqref{eq:ac:B}, the terms in $F_R$ --- including the whole dilution factor $\left[1+\pi\omega^Y\right]$ --- cancel identically, leaving
+\begin{align}
+\boxed{\;B \;=\; \bar B+p^W\Upsilon\;}
+&&
+\bar B &\equiv p^S+C^N_N+d^Wp^P,
+&
+\Upsilon &\equiv \Omega\left[\omega^{N,S}-\kappa\,\omega^{N,Y}C^N_N\right],
+\label{eq:ac:B-reduced}
+\end{align}
+and under \textbf{(B1)}, where $\Upsilon=0$,
+\begin{align}
+B &= p^S+C^N_N+d^Wp^P
+&&\textbf{(B1)}.
+\label{eq:ac:B-reduced-B1}
+\end{align}
+\emph{The marginal social value of recycled material is the extraction cost it saves, plus the reserve rent it saves, plus the pollution it avoids --- and, in general, whatever the tonne of virgin extraction it displaces would have dragged out of the ground alongside it.} That the ledger price $p^W$ enters only through $\Upsilon$ is the sharpest available check on the accounting: a unit of recycled material displaces a unit of virgin extraction one for one, so the two change total \emph{accounted} waste identically at the margin and $p^W$ can survive only on the \emph{unaccounted} channel. Note that $\Upsilon$ involves only the two extraction intensities: if extraction generates no waste of its own, $\omega^{N,S}=\omega^{N,Y}=0$, then $p^W$ cancels from $B$ exactly even when exploration displaces mass ($\omega^{D,S}>0$) and $\kappa\neq0$.
+
+In particular, under \textbf{(B1)} the switch point in~\eqref{eq:ac:foc-recycling-a} is a comparison of $a'(0)\left[p^S+C^N_N+d^Wp^P\right]$ with $F_K$: the date at which the economy turns circular depends on reserve scarcity, extraction cost and pollution damage, and on none of the waste-intensity parameters. In general the waste-intensity parameters re-enter it, through $\Upsilon$ and through the common factor $\left[1+\pi\omega^Y\right]$ --- which cancels from the comparison, since it multiplies both sides.
+
+\smalltitle{The ledger price.} Rearranging~\eqref{eq:ac:foc-waste} before substituting shows that $p^W$ carries the marginal circularity multiplier $\left[1-\varpi a(1-\varepsilon)\right]^{-1}$ --- the counterpart of $\left(1-a\varpi\right)^{-1}$ in~\eqref{eq:ac:ledger-solved}, reduced by the dilution of a fixed $K^R$ over a larger flow of waste. Substituting~\eqref{eq:ac:B-reduced} makes the multiplier cancel against the extraction margin. Because $B$ and $\pi$ are both linear in $p^W$, what remains is linear in $p^W$ and solves explicitly:
+\begin{align}
+\boxed{\;
+p^W = \frac{c^c+c^T(\varpi)+p^P\left(1-\varpi+d^W\varpi\right)-\varpi\,a\left(1-\varepsilon\right)\bar B}
+{1+\Omega\kappa\,\omega^W\left[c^c+c^T(\varpi)\right]+\varpi\,a\left(1-\varepsilon\right)\Upsilon}\;}
+\label{eq:ac:pW-explicit}
+\end{align}
+The numerator is exactly the \textbf{(B1)} ledger price, and the denominator is unity under \textbf{(B1)}:
+\begin{align}
+p^W &= c^c+c^T(\varpi)+p^P\left(1-\varpi+d^W\varpi\right)-\varpi\,a\left(1-\varepsilon\right)\left[p^S+C^N_N+d^Wp^P\right]
+&&\textbf{(B1)}.
+\label{eq:ac:pW-explicit-B1}
+\end{align}
+Collection and treatment cost, plus pollution damage, less the recycling value of the tonne. In the linear stage ($a=0,\varpi=0$) this is simply $p^W=c^c+p^P$ in both cases. The general accounting therefore rescales the ledger price but does not change its composition --- a fact worth exploiting numerically, since it means the \textbf{(B1)} solver can be reused with a single correction factor rather than rewritten.
+
+\subsection{Co-state conditions}
+\label{subsec:ac:costates}
+
+\smalltitle{Capital, and the price of capital.} $\Phi$'s law of motion and the ledger both contain $\phi^I\delta K$, so $K$ enters through them as well as through production:
+\begin{align}
+\frac{\partial\mathcal H}{\partial K} &= \lambda^\Phi\phi^I\delta+\zeta\left(F_K-\delta\right)-\eta\left[\phi^I\delta\left(1+\kappa\right)+\Omega\kappa\,\omega^YF_K\right]
+= \zeta\left[\widehat F_K-\delta q\right],
+\label{eq:ac:H-K}
+\end{align}
+using~\eqref{eq:ac:foc-investment} and the definition of $\widehat F_K=F_K\left[1+\pi\omega^Y\right]$ from~\eqref{eq:ac:B}. \textbf{Depreciation is valued at $q$, not at $1$}, because replacing worn capital draws fresh material through the ledger and re-embodies it in the stock. Hence $\rho\lambda^K-\dot\lambda^K=\zeta\left[\widehat F_K-\delta q\right]=\lambda^Kr$ with
+\begin{align}
+r &\equiv \frac{\widehat F_K}{q}-\delta
+\ \ \xrightarrow{\ \textbf{(B1)}\ }\ \ \frac{F_K}{q}-\delta,
+&
+\lambda^K(t) &= \lambda^K(0)\exp\left(-\int_0^t\left[r(u)-\rho\right]du\right).
+\label{eq:ac:r}
+\end{align}
+A unit of capital earns the marginal product $\widehat F_K$ --- its marginal product in production, plus the dilution credit that output carries in the general accounting --- on the $q$ units of final good it costs, net of depreciation: the effective return is $r$.
+
+\smalltitle{The goods rate of interest.} From $\lambda^K=\zeta q$ and~\eqref{eq:ac:r},
+\begin{align}
+\frac{\dot\zeta}{\zeta} &= \rho-\iota,
+&
+\iota &\equiv r+\frac{\dot q}{q}=\frac{\widehat F_K}{q}-\delta+\frac{\dot q}{q}.
+\label{eq:ac:iota}
+\end{align}
+$\iota$ is the rate at which the planner trades \emph{goods} across time: the return on capital plus the capital gain or loss on the materials capital embodies. It, not $r$, is the discount rate for every price normalized by $\zeta$. The two coincide only when $q$ is constant, and both reduce to $F_K-\delta$ when newly formed capital embodies no materials ($\phi^I=0$).
+
+\smalltitle{The three resource and environment stocks.} With $\partial\mathcal H/\partial S=-\zeta C^N_S$, $\partial\mathcal H/\partial X=-\zeta C^D_X$ and $\partial\mathcal H/\partial P=-v'(P)+\zeta F_P+\zeta p^P\widehat\theta$, the normalized co-state equations are $\dot p^S=\iota p^S+C^N_S$, $\dot p^X=\iota p^X-C^D_X$ and $\dot p^P=\left(\iota+\widehat\theta\right)p^P-MSC^P$, which integrate to
+\begin{align}
+p^S(t) &= \int_t^{\infty}\left(-C^N_S(z)\right)\exp\left(-\int_t^{z}\iota(u)\,du\right)dz\;>\;0,
+\label{eq:ac:pS}
+\\
+p^X(t) &= \int_t^{\infty}C^D_X(z)\exp\left(-\int_t^{z}\iota(u)\,du\right)dz\;>\;0,
+\label{eq:ac:pX}
+\\
+p^P(t) &= \int_t^{\infty}MSC^P(z)\exp\left(-\int_t^{z}\left[\iota(u)+\widehat\theta(u)\right]du\right)dz\;>\;0,
+\label{eq:ac:pP}
+\end{align}
+where
+\begin{align}
+MSC^P &\equiv \frac{v'(P)}{\zeta}-F_P\;>\;0,
+&
+\widehat\theta &\equiv \frac{d\left[\theta(P)P\right]}{dP}=\theta\left(1-\varepsilon^P\right),
+&
+\varepsilon^P &\equiv -\theta'(P)\frac{P}{\theta}.
+\label{eq:ac:MSCP}
+\end{align}
+
+\smalltitle{Embodied capital material.} $\Phi$ enters only through the depreciation pass-through $\delta\Phi$ in the ledger~\eqref{eq:ac:ledger} and through its own decay in~\eqref{eq:ac:Phi-motion}:
+\begin{align}
+\frac{\partial\mathcal H}{\partial\Phi} &= -\lambda^\Phi\delta+\eta\delta=\zeta\delta\left(p^\Phi-p^W\right),
+\label{eq:ac:H-Phi}
+\end{align}
+so $\dot p^\Phi=\left(\iota+\delta\right)p^\Phi-\delta p^W$, which integrates to
+\begin{align}
+p^\Phi(t) &= \int_t^{\infty}\delta\,p^W(z)\exp\left(-\int_t^{z}\left[\iota(u)+\delta(u)\right]du\right)dz.
+\label{eq:ac:pPhi}
+\end{align}
+$p^\Phi$ is the \emph{liability} attached to a unit of material already embodied in the capital stock: the present value of the waste it will generate as it depreciates, discounted at the goods rate of interest plus its own decay rate. Structurally this is~\eqref{eq:ac:pP} with $\delta$ in place of $\widehat\theta$ and $\delta p^W$ in place of $MSC^P$.
+
+Comparing~\eqref{eq:ac:pPhi} with $p^W$ itself establishes the claim used in~\eqref{eq:ac:foc-investment}. Were $p^W$ constant, \eqref{eq:ac:pPhi} would give $p^\Phi=\delta p^W/\left(\iota+\delta\right)<p^W$; the same comparison holds for any positive path of $p^W$, since $\int_t^\infty\delta e^{-\int_t^z(\iota+\delta)}dz<1$ whenever $\iota>0$. Hence
+\begin{align}
+q &= 1-\phi^Ip^W\left[\kappa+\frac{\iota}{\iota+\delta}\right]
+\ \ \xrightarrow{\ \textbf{(B1)}\ }\ \
+1-\phi^Ip^W\,\frac{\iota}{\iota+\delta}\;<\;1
+&&\text{(constant-}p^W\text{ case)},
+\label{eq:ac:q-explicit}
+\end{align}
+so the materials value of capital is the value of \emph{deferring} a tonne of waste by embodying it in a stock that decays at rate $\delta$ --- worth the fraction $\iota/(\iota+\delta)$ of the tonne --- plus, in general, the value of the $\kappa$ tonnes of overburden that the deferred tonne does not drag out of the ground in the meantime. Since $\kappa\ge0$, $q$ is unambiguously further below one under the general accounting than under \textbf{(B1)}. If $p^W<0$ (Remark~\ref{rem:ac:pW-sign}) both $p^\Phi$ and $q-1$ change sign together.
+
+\smalltitle{Transversality.} All five stocks require a terminal condition:
+\begin{align}
+\lim_{t\to\infty}\lambda^KK &= \lim_{t\to\infty}\lambda^\Phi\Phi = \lim_{t\to\infty}\lambda^SS = \lim_{t\to\infty}\lambda^XX = \lim_{t\to\infty}\lambda^PP = 0.
+\label{eq:ac:transversality}
+\end{align}
+
+\smalltitle{Keynes--Ramsey rule.} Differentiating~\eqref{eq:ac:foc-saving} and using~\eqref{eq:ac:iota}:
+\begin{align}
+\frac{\dot C}{C} &= \frac{1}{\sigma}\left[\iota-\rho\right],
+&
+\sigma&\equiv-\frac{u''C}{u'}>0.
+\label{eq:ac:keynes-ramsey}
+\end{align}
+The textbook rule, with the goods rate of interest $\iota$ in place of the net marginal product of capital. All of the model's materials machinery enters consumption growth through $\iota$ and through nothing else.
+
+\subsection{The system: unknowns, equations, and stages}
+\label{subsec:ac:system}
+
+\smalltitle{Counting.} Given the states $\left(K,\Phi,S,X,P\right)$, the conditions above form a system of ten equations --- \eqref{eq:ac:foc-investment}, \eqref{eq:ac:foc-extraction}, \eqref{eq:ac:foc-exploration}, \eqref{eq:ac:foc-recycling}, \eqref{eq:ac:foc-treatment}, \eqref{eq:ac:pW-explicit}, \eqref{eq:ac:ledger-quadratic}, \eqref{eq:ac:Omega}, \eqref{eq:ac:capital-constraint} and the Keynes--Ramsey rule~\eqref{eq:ac:keynes-ramsey} --- in the ten unknowns
+\begin{align*}
+C,\quad I,\quad x,\quad \varpi,\quad N,\quad D,\quad W,\quad p^W,\quad q,\quad \Omega,
+\end{align*}
+with $p^S,p^X,p^P,p^\Phi$ supplied by~\eqref{eq:ac:pS}--\eqref{eq:ac:pPhi} and the five transversality conditions~\eqref{eq:ac:transversality} pinning down the initial values of the forward-looking variables. The instantaneous rates of change of the five stocks then follow from~\eqref{eq:ac:Phi-motion}, \eqref{eq:ac:reserves-motion}, \eqref{eq:ac:pollution-motion} and $\dot K=I$. Neither $\phi^Y$ nor $\phi^K$ is among the unknowns: the first is read off~\eqref{eq:ac:Omega} afterwards and the second off the state $\Phi$.
+
+Under \textbf{(B1)} the system is \emph{nine} equations in nine unknowns. $\Omega$ leaves the allocation entirely --- \eqref{eq:ac:Omega} is no longer part of the simultaneous block but a post-processing step --- and \eqref{eq:ac:ledger-quadratic} is replaced by the closed form~\eqref{eq:ac:ledger-solved}. This is the single largest structural difference between the two settings, and the reason Section~\ref{sec:aq} adopts \textbf{(B1)}: it is the difference between solving for $W$ and reading it off.
+
+It is worth recording which conditions are \emph{static} (they hold pointwise in $t$ given the stocks and the shadow prices) and which are \emph{intertemporal}: \eqref{eq:ac:foc-saving}, \eqref{eq:ac:foc-investment}, \eqref{eq:ac:foc-extraction}, \eqref{eq:ac:foc-exploration}, \eqref{eq:ac:foc-recycling}, \eqref{eq:ac:foc-treatment}, \eqref{eq:ac:pW-explicit}, \eqref{eq:ac:Omega} and~\eqref{eq:ac:ledger-quadratic} are static; \eqref{eq:ac:r}, \eqref{eq:ac:pS}--\eqref{eq:ac:pPhi} and~\eqref{eq:ac:keynes-ramsey} are intertemporal.
+
+\smalltitle{Regimes.} The complementary-slackness structure of~\eqref{eq:ac:foc-recycling}, together with $c^T(0)=dc^T/d\varpi|_{\varpi=0}=0$, generates three regimes along the optimal path:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \emph{Linear stage:} $K^R=0$, $a=0$ and, if in addition $p^P=0$, condition~\eqref{eq:ac:foc-treatment} gives $dc^T/d\varpi=0$ and hence $\varpi=0$. Then $R^R=0$, $R=N$, and $p^W=c^c+p^P$ under \textbf{(B1)}, where in addition $W=N-\dot\Phi$; in general $W=N-\dot\Phi+\mathcal M$ and $p^W$ carries the denominator of~\eqref{eq:ac:pW-explicit}, which reduces to $1+\Omega\kappa\,\omega^Wc^c$ since $\varpi=0$.
+\item \emph{Semi-linear stage:} $K^R=0$ but $\varpi>0$, sustained by $p^P>0$ through the term $p^P(1-d^W)$ in~\eqref{eq:ac:foc-treatment}. Waste is treated but not recycled.
+\item \emph{Circular stage:} $K^R>0$ and $\varpi>0$, with~\eqref{eq:ac:foc-recycling-b} holding with equality.
+\end{enumerate}
+Regime~(ii) precedes~(iii) because $a''<0$ makes the marginal product of recycling capital low when the supply $\varpi W$ of recyclable material is small; and treatment is a precondition for recycling, so~(iii) cannot be reached without passing through a period with $\varpi>0$. The transition dates between regimes are outcomes of the model rather than parameters.
+
+\subsection{Technical remarks}
+\label{subsec:ac:remarks}
+
+\begin{remark}[Why the materials balance is a ledger and not a constraint]\label{rem:ac:ledger}
+Conservation of mass does not restrict what an economy can do; it records what the mass flows are given what the economy did. Nothing is gained by relaxing it, and no planner could. Attaching a multiplier to~\eqref{eq:ac:materials-balance} and treating it as a constraint would price a scarcity that the model already prices elsewhere --- reserves are finite ($p^S$), extraction is costly ($C^N_N$), and recycling recovers only $a(\cdot)$ of what is fed in.
+
+The alternative reading, in which $\Omega$ and $\phi^Y$ are fixed parameters and~\eqref{eq:ac:materials-balance} restricts the allocation, is not available for a more elementary reason: with both fixed, \eqref{eq:ac:production-reduced} ties $R/Y$ to the constant $\Omega\omega^Y+\phi^Y$, contradicting the substitutability of capital for materials in~\eqref{eq:ac:output} and removing the mechanism the model is built to study. What \emph{is} restricted, and genuinely so, is that $\Omega\ge0$ in~\eqref{eq:ac:Omega}, i.e.\ $\phi^I(I+\delta K)\le N+R^R$: the economy cannot embody more mass in new capital than entered it. Equivalently $W\ge\delta\Phi$ in~\eqref{eq:ac:ledger}. This is generically slack --- it binds only in an implausibly fast accumulation --- but it is an inequality with a complementary-slackness multiplier, not an equality constraint with a multiplier that is nonzero by construction, and it should be monitored rather than imposed.
+\end{remark}
+
+\begin{remark}[The sign of $p^W$ is an outcome]\label{rem:ac:pW-sign}
+Unlike $p^S,p^X,p^P$ and $p^\Phi$, the ledger price $p^W$ is not signed by the structure of the problem. From~\eqref{eq:ac:pW-explicit} --- whose denominator is positive in any sensible configuration, so the sign is carried by the numerator in the general case exactly as in \textbf{(B1)} --- $p^W<0$ whenever
+\[
+\varpi\,a(1-\varepsilon)\left[p^S+C^N_N+d^Wp^P\right]>c^c+c^T(\varpi)+p^P\left(1-\varpi+d^W\varpi\right),
+\]
+which is not exotic: it requires only that the recycling value of a marginal tonne exceed the cost of collecting, treating and disposing of it, and $p^S$ grows without bound as reserves are depleted. In that regime waste is a resource rather than a nuisance, $q>1$ by~\eqref{eq:ac:foc-investment}, and the Pigouvian tax on extraction implied by Section~\ref{sec:ad} turns into a subsidy --- extraction stocks the recycling loop, and that benefit is external to the extractor. This is a genuine feature of the accounting rather than a pathology, but it should be verified numerically and the complementarity solver must tolerate it.
+\end{remark}
+
+\begin{remark}[Bounds on the treatment share]\label{rem:ac:varpi}
+Condition~\eqref{eq:ac:foc-treatment} is a necessary condition for an interior $\varpi\in(0,1)$ only. The assumption $dc^T/d\varpi|_{\varpi=0}=0$ in~\eqref{eq:ac:waste-cost} makes the lower bound non-binding: whenever the left side of~\eqref{eq:ac:foc-treatment} is strictly positive an interior solution exists, and when it is zero we get $\varpi=0$ as the solution of~\eqref{eq:ac:foc-treatment} itself. The upper bound is a genuine restriction: either $c^T$ must satisfy an Inada-type condition $\lim_{\varpi\to 1}dc^T/d\varpi=\infty$, or the constraint $\varpi\le 1$ must be imposed explicitly and~\eqref{eq:ac:foc-treatment} replaced by the corresponding complementary-slackness pair. The functional form adopted in the quantitative model does \emph{not} satisfy the Inada condition, so the bound is imposed there explicitly.
+\end{remark}
+
+\begin{remark}[The nature-attributable terms are what make $\Omega$ matter]\label{rem:ac:nature}
+The economics behind \textbf{(B1)} is exact, and worth isolating from the algebra. Mass conservation pins waste down only when every gram of waste passed through $R$ on its way in. Overburden is a mass source outside the accounted flow, so it needs an intensity of its own, and that intensity has real allocative bite. This is why $\Omega$ is a pure reporting object under \textbf{(B1)} --- it multiplies nothing that the planner cares about --- and why it is not one in general.
+
+What the restriction buys is visible in three places. The ledger becomes a division rather than a quadratic root, \eqref{eq:ac:ledger-solved} against~\eqref{eq:ac:ledger-quadratic}. The system loses an unknown and an equation, Section~\ref{subsec:ac:system}. And the relative intensities $\omega^i$ leave the allocation entirely, so their calibration becomes a reporting choice rather than a determinant of the transition date. What it costs is the physical content: overburden and gangue displaced by extraction, and any analogous byproduct of exploration, are no longer distinguished from waste generated by the final-good expenditure on those activities. Section~\ref{sec:aq} imposes the restriction and Remark~\ref{rem:aq:scope} records the consequences for the calibration exercise specifically.
+\end{remark}
+
+\begin{remark}[The dilution channel is an artifact, and what to do about it]\label{rem:ac:dilution}
+The general accounting carries one channel that should be regarded with suspicion rather than defended. Because the nature-attributable flow is written $\mathcal M=\Omega\mathcal N$ --- overburden scaled by the economy-wide intensity level --- and because $\Omega=\left(R-\phi^IG\right)/\mathcal D$ is a \emph{residual ratio}, any activity that enlarges the base $\mathcal D$ mechanically lowers $\Omega$ and hence lowers overburden. This is the dilution term in~\eqref{eq:ac:OmegaN-derivative}, and it is what puts a wedge into the consumption condition~\eqref{eq:ac:foc-saving} and the factor $\left[1-\pi\omega^W\right]$ into~\eqref{eq:ac:foc-treatment}.
+
+Read literally, it says that consuming more reduces mining overburden. That is not economics; it is an accounting identity being asked to carry a behavioral interpretation it was not built for. $\Omega$ is a \emph{measured} intensity --- waste per unit of final-good activity --- and the fact that a ratio falls when its denominator rises does not mean the numerator responded.
+
+The clean fix is to scale the nature-attributable flow by an \emph{absolute} intensity rather than by $\Omega$: replace~\eqref{eq:ac:extraction} and~\eqref{eq:ac:exploration}'s second terms by $\bar\omega^{N,S}N$ and $\bar\omega^{D,S}D$ with $\bar\omega^{i,S}$ calibrated parameters in tonnes per tonne. Overburden per tonne of ore is exactly the sort of quantity material-flow accounts report directly, so this is if anything the better-identified specification. It also simplifies the theory considerably: $\mathcal M=\bar\omega^{N,S}N+\bar\omega^{D,S}D$ is then linear in the controls, the dilution term vanishes, $\pi\equiv0$, the ledger stays linear in $W$ rather than quadratic, and the only surviving general terms are the displacement ones --- $-p^W\bar\omega^{N,S}$ in~\eqref{eq:ac:foc-extraction} and $-p^W\bar\omega^{D,S}$ in~\eqref{eq:ac:foc-exploration}. Every dilution factor in Sections~\ref{subsec:ac:foc}--\ref{subsec:ac:costates} reduces to unity, and $B$ reduces to $\bar B+p^W\bar\omega^{N,S}$.
+
+This document retains the $\Omega$-scaled form for continuity with the process-level accounting of Section~\ref{subsec:ac:accounting}, in which every intensity is relative and the level is derived. But the absolute specification is the one we would adopt if the general case were to be taken to data, and the choice should be settled before the nature-attributable terms are calibrated rather than after.
+\end{remark}
+
+\begin{remark}[Capital depreciation competes for recycling capacity]\label{rem:ac:depreciation}
+Because depreciated capital enters $W$ on exactly the same footing as any other waste --- through the $\delta\Phi$ term in~\eqref{eq:ac:ledger}, equivalently through $-\dot\Phi$ --- replacing worn capital draws fresh raw material and the scrap it sheds competes for treatment share $\varpi$ and recycling capital $K^R$ on the same terms as waste from consumption or extraction. This is also what makes depreciation cost $q$ rather than $1$ in~\eqref{eq:ac:H-K}. An alternative, more restrictive assumption --- that depreciated capital material is costlessly and immediately re-embodied in new capital, bypassing $W$, $\varpi$ and $a(\cdot)$ entirely --- would leave capital replacement with no associated raw-material draw or waste at all, and would make $q\equiv1$. Whether that bypass is a reasonable simplification (capital scrap is disproportionately easy to recycle in practice) or a substantive mischaracterization is a modeling choice; this document adopts the process-level treatment, in which it is not assumed away.
+\end{remark}
+
+\begin{remark}[Why waste treatment needs only one channel]\label{rem:ac:units}
+Extraction and exploration each split into a final-good-attributable component and a nature-attributable component, because tonnage extracted or discovered ($N$, $D$) and final-good expenditure on the activity ($C^N$, $C^D$) are physically distinct quantities that need not move together. Waste collection and treatment has no such second channel: there is no physical analogue of overburden for the act of treating waste, since the tonnage it processes, $W$, is by definition already accounted for elsewhere in the balance, and the only additional resource the activity draws on is the final good spent operating it, $C^W$. Hence $W^W=\Omega\omega^WC^W$ needs no further split.
+\end{remark}
+
+\begin{remark}[Interpretation of $\omega^{D,S}$]\label{rem:ac:dexploration}
+The nature-attributable waste term for extraction, $\Omega\omega^{N,S}N$, has a direct physical reading: overburden and gangue displaced alongside the ore. The analogous term for exploration, $\Omega\omega^{D,S}D$, is less obviously a physical extraction from nature, since $D$ is new discoveries rather than a mined flow; it is retained for symmetry with $N$, but its calibration --- possibly at $\omega^{D,S}=0$ --- should be revisited once the two are compared against data.
+\end{remark}
+
+\begin{remark}[Instantaneous recirculation]\label{rem:ac:recirculation}
+The circularity multiplier $\left(1-a\varpi\right)^{-1}$ in~\eqref{eq:ac:ledger-solved} has material passing through production, waste collection, treatment and recycling and back into production an unbounded number of times \emph{within the instant}. In continuous time this is innocuous --- it is the standard reading of a stock-flow identity with feedback --- but it becomes a substantive assumption once the model is discretized in Section~\ref{sec:aq}, where it means that a tonne extracted at the start of period $t$ can be recycled and re-used within period $t$. The natural alternative is a one-period lag on recycled input, $R^R_t=a_{t-1}\varpi_{t-1}W_{t-1}$, which removes the multiplier at the cost of an extra state. This document adopts the contemporaneous version throughout.
+\end{remark}
+
+\begin{remark}[One embodied-material stock, not two]\label{rem:ac:Phi-pools}
+Equation~\eqref{eq:ac:pPhi} rests on the well-mixed assumption of Section~\ref{subsec:ac:embodied-stock}: $K^Y$ and $K^R$ are drawn from the same pool and share the average intensity $\phi^K(t)$, so that $\phi^K\delta K^Y+\phi^K\delta K^R=\delta\Phi$ and a single state $\Phi$ suffices. If that is relaxed --- recycling capital tracked as its own vintage pool with its own average intensity --- the co-state derivation would need to be redone with two embodied-material stocks and two liabilities, and the allocation of gross investment between the two pools would become a further margin. Nothing else in Sections~\ref{sec:ac}--\ref{sec:aq} depends on the assumption.
+\end{remark}
+
+\begin{remark}[Closing $\phi^I(t)$: two natural choices]\label{rem:ac:phiI}
+$\phi^I(t)$ is left as a primitive process throughout Sections~\ref{sec:ac}--\ref{sec:ad}; nothing in the planner's problem, the decentralized economy, or the shadow-price system above depends on how it is closed. Two specifications are natural. \emph{(a) Exogenous:} $\phi^I(t)$ follows a prescribed calibrated path, independent of the allocation --- the direct generalization of treating $\phi^K$ as a constant, now allowing it to trend over time (e.g.\ a materials-saving or materials-worsening technology specific to capital-goods production). \emph{(b) Materials-linked:} $\phi^I(t)=\varsigma\,\Omega(t)$ for a constant $\varsigma$, tying the intensity of newly produced capital to the same economy-wide waste-intensity level $\Omega$ that governs every other final-good-denominated activity in Section~\ref{subsec:ac:accounting} --- capital-goods production is then simply $\varsigma$ times as material-intensive, per unit of final good, as activity in general; since $\Omega$ and $\phi^I$ share units, this is a dimensionally natural restriction, and $\varsigma=1$ is its most parsimonious case. Note that under rule~(b), and only under rule~(b), $\Omega$ re-enters the allocation even with $\omega^{N,S}=\omega^{D,S}=0$, since it then feeds~\eqref{eq:ac:ledger} through $\phi^I$. Both are pure closing rules: neither adds a control variable or a first-order condition to the system above, and both are stated explicitly in the quantitative implementation (Section~\ref{subsec:aq:phiI}).
+\end{remark}

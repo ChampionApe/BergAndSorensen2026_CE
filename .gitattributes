@@ -1,0 +1,17 @@
+# Line endings are LF in the repository AND in the working copy, on every machine.
+#
+# This is not a preference. Without `eol=lf`, git on Windows checks these files out as CRLF, and a
+# comparison against anything that is LF -- the old BergAndSorensen2026_circular repository, a zip
+# downloaded from Overleaf, a co-author's clone on a Mac -- shows every line of every file as changed.
+# That happened once already: two copies of the paper looked hundreds of lines apart and were 29.
+* text=auto eol=lf
+
+# Binaries: never touched, never diffed as text.
+*.pdf   binary
+*.docx  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.eps   binary
+*.xlsx  binary
+*.jld2  binary

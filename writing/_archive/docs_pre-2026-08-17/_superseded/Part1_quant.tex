@@ -1,0 +1,597 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Alternative Part I, Section 3: Quantitative      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Quantitative Model in Discrete Time}
+\label{sec:aq}
+
+This section states the discrete-time version of the decentralized model of Section~\ref{sec:ad} with explicit functional forms, and reduces it to the system that is actually solved. It also presents a number of restricted variants that are useful for setting up, testing and debugging the numerical implementation. The numerical algorithms themselves are described in Part~\ref{part:num}.
+
+Two features drive most of the results: \emph{technical progress}, which enters every technology and cost function at a sector-specific rate, and a \emph{minimum materials requirement} $\bar R$ in the production function, which bounds the substitutability of man-made for natural capital. A third feature is specific to this document: because the materials balance is a ledger rather than a constraint (Section~\ref{subsec:ac:balances}), the waste-intensity \emph{level} $\Omega_t$ is neither a calibrated parameter nor an equilibrium unknown but a derived reporting object, and total waste $W_t$ is pinned down by conservation of mass alone.
+
+\smalltitle{One restriction, imposed here and nowhere else.} Sections~\ref{sec:ac} and~\ref{sec:ad} are stated under the general accounting. This section imposes
+\begin{align}
+\omega^{N,S} &= \omega^{D,S} = 0
+&&\textbf{(B1)}
+\label{eq:aq:B1}
+\end{align}
+throughout, and it is the \emph{only} departure from the general theory made in the quantitative model. Section~\ref{subsec:aq:B1} states precisely what \textbf{(B1)} buys and Remark~\ref{rem:aq:scope} what it costs. Everything else in this section is the general model: no other simplification is made silently, and every remaining modelling choice is a switch catalogued in Section~\ref{sec:baseline} with its alternative stated.
+
+Note on notation: $\phi$ without a superscript is the curvature of the disutility of pollution in~\eqref{eq:aq:utility}; $\phi^I_t$, $\phi^K_t$ and $\phi^Y_t$ are the material intensities of Section~\ref{sec:ac} and are unrelated to it.
+
+\subsection{Timing and states}
+\label{subsec:aq:timing}
+
+At the beginning of period $t$ the five stocks $\left(K_t,\Phi_t,S_t,X_t,P_t\right)$ are predetermined. Within the period the flows $\left(C_t,Y_t,N_t,D_t,W_t,W^R_t,\varpi_t,K^R_t\right)$ are chosen. Writing gross capital formation as
+\begin{align}
+G_t &\equiv I_t+\delta K_t = K_{t+1}-\left(1-\delta\right)K_t,
+&
+I_t &\equiv K_{t+1}-K_t,
+\label{eq:aq:gross-investment}
+\end{align}
+the stocks are carried forward according to
+\begin{align}
+G_t &= Y_t-C_t-C^N_t-C^D_t-\left[c^c_t+c^T_t(\varpi_t)\right]W_t,
+\label{eq:aq:K-motion}
+\\
+\Phi_{t+1} &= (1-\delta)\Phi_t+\phi^I_tG_t,
+\qquad\qquad
+\Delta\Phi_t \equiv \Phi_{t+1}-\Phi_t = \phi^I_tG_t-\delta\Phi_t,
+\label{eq:aq:Phi-motion-discrete}
+\\
+S_{t+1} &= S_t+D_t-N_t,
+\qquad\qquad
+X_{t+1} = X_t+D_t,
+\label{eq:aq:SX-motion}
+\\
+P_{t+1} &= \left[1-\theta(P_t)\right]P_t+\Xi_t,
+\qquad
+\Xi_t = W_t\left(1-\varpi_t+d^W\varpi_t\right)-d^WR^R_t.
+\label{eq:aq:P-motion}
+\end{align}
+The average intensity of the capital stock is the derived ratio $\phi^K_t\equiv\Phi_t/K_t$; \eqref{eq:aq:Phi-motion-discrete} is the discrete-time counterpart of~\eqref{eq:ac:Phi-motion}, and $\phi^I_t$ is specified in Section~\ref{subsec:aq:phiI}. Since $P_t$ is predetermined, the productivity feedback from pollution operates with a one-period lag; this is what keeps the within-period system block-recursive in $P$.
+
+\subsection{Functional forms}
+\label{subsec:aq:functional-forms}
+
+\smalltitle{Preferences.} Utility is CRRA in consumption with a separable, convex disutility of pollution whose weight grows over time as the marginal willingness to pay for environmental quality rises with income:
+\begin{align}
+U_0 &= \sum_{t=0}^{\infty}\beta^t\left[\frac{C_t^{1-\sigma}}{1-\sigma}-\frac{\psi_t}{1+\phi}P_t^{1+\phi}\right],
+&
+\psi_t &= \bar\psi\left(1+g^\psi\right)^t,
+&
+\beta&=\frac{1}{1+\rho}\in(0,1),
+\quad \sigma,\phi,\bar\psi>0,\ g^\psi\ge 0.
+\label{eq:aq:utility}
+\end{align}
+
+\smalltitle{Final goods and recycling.}
+\begin{align}
+Y_t &= A_t\left(K^Y_t\right)^{\alpha}\left(R_t-\bar R\right)^{1-\alpha},
+&&
+0<\alpha<1,\quad R_t\ge\bar R,\quad \bar R\ge 0,
+\label{eq:aq:production}
+\\
+A_t &= \bar A\left(1+g^A\right)^tP_t^{-\gamma},
+&&
+\gamma>0,
+\label{eq:aq:productivity}
+\\
+K^Y_t &= K_t-K^R_t,
+&&
+R_t = N_t+a_tW^R_t,
+\label{eq:aq:definitions}
+\\
+a_t &= a^m_t\frac{x_t}{1+x_t},
+&&
+x_t\equiv\frac{K^R_t}{W^R_t},
+\label{eq:aq:recycling-rate}
+\\
+a^m_t &= 1-\frac{b}{\left(1+g^R\right)^t},
+&&
+0<b<1,\quad g^R\ge 0.
+\label{eq:aq:recycling-frontier}
+\end{align}
+$\bar R$ is the minimum materials input required by the laws of physics; $\bar R=0$ returns the standard Cobb--Douglas case. The maximum feasible recycling rate $a^m_t$ rises towards but never reaches unity, which is what keeps the circularity multiplier $\left(1-a_t\varpi_t\right)^{-1}$ of~\eqref{eq:ac:ledger-solved} finite.
+
+\smalltitle{Extraction, exploration and waste costs.}
+\begin{align}
+C^N_t &= \frac{c^N_t}{1+\varepsilon^S}N_tS_t^{-\left(1+\varepsilon^S\right)},
+&
+c^N_t &= \frac{c^N}{\left(1+g^N\right)^t},
+&
+\varepsilon^S&>0,\ g^N\ge 0,
+\label{eq:aq:extraction-cost}
+\\
+C^D_t &= \frac{c^D_t}{1+\varepsilon^X}D_tX_t^{1+\varepsilon^X},
+&
+c^D_t &= \frac{c^D}{\left(1+g^D\right)^t},
+&
+\varepsilon^X&>0,\ g^D\ge 0,
+\label{eq:aq:discovery-cost}
+\\
+c^c_t &= \frac{\bar c^c}{\left(1+g^c\right)^t},
+&
+c^T_t(\varpi) &= \frac{\bar c^T}{\left(\varepsilon^T+1\right)\left(1+g^T\right)^t}\varpi^{\varepsilon^T+1},
+&
+\varepsilon^T&>0,\ g^c,g^T\ge 0.
+\label{eq:aq:waste-cost}
+\end{align}
+
+\smalltitle{Waste intensities and absorption.} The relative intensities are calibrated technological parameters; the level $\Omega_t$ is derived in Section~\ref{subsec:aq:materials} and is deliberately absent from this block:
+\begin{align}
+\omega^i_t &= \frac{\omega^i}{\left(1+g^i_\omega\right)^t},\quad i\in\{Y,N,D,C,W\},
+&
+\theta(P_t) &= \bar\theta P_t^{-\varepsilon^P},
+\quad 0<\varepsilon^P<1.
+\label{eq:aq:intensities}
+\end{align}
+$\omega^N_t,\omega^D_t$ here are what Section~\ref{sec:ac} calls $\omega^{N,Y}_t,\omega^{D,Y}_t$; the nature-attributable components are set to zero throughout this document.
+
+\smalltitle{Derivatives.} Collecting the derivatives that appear in the equilibrium conditions,
+\begin{align}
+F_{K,t} &= \alpha\frac{Y_t}{K^Y_t},
+&
+F_{R,t} &= (1-\alpha)\frac{Y_t}{R_t-\bar R},
+&
+F_{P,t} &= -\gamma\frac{Y_t}{P_t},
+\label{eq:aq:F-derivatives}
+\\
+C^N_{N,t} &= \frac{c^N_t}{1+\varepsilon^S}S_t^{-\left(1+\varepsilon^S\right)},
+&
+C^N_{S,t} &= -c^N_tN_tS_t^{-\left(2+\varepsilon^S\right)},
+&
+&
+\label{eq:aq:CN-derivatives}
+\\
+C^D_{D,t} &= \frac{c^D_t}{1+\varepsilon^X}X_t^{1+\varepsilon^X},
+&
+C^D_{X,t} &= c^D_tD_tX_t^{\varepsilon^X},
+&
+\frac{dc^T_t}{d\varpi} &= \frac{\bar c^T}{\left(1+g^T\right)^t}\varpi_t^{\varepsilon^T},
+\label{eq:aq:CD-derivatives}
+\\
+\widehat\theta_t &\equiv \frac{d\left[\theta(P_t)P_t\right]}{dP_t}=\bar\theta P_t^{-\varepsilon^P}\left(1-\varepsilon^P\right)>0.
+\label{eq:aq:theta-hat}
+\end{align}
+$C^N_t$ and $C^D_t$ are \emph{linear} in the flows $N_t$ and $D_t$, so $C^N_{NN}=C^D_{DD}=0$; this is the boundary case of the assumptions~\eqref{eq:ac:extraction-cost}--\eqref{eq:ac:discovery-cost} and has a consequence for the exploration margin recorded in Remark~\ref{rem:aq:linear-costs}.
+
+\subsection{Properties of the recycling technology}
+\label{subsec:aq:recycling-properties}
+
+Writing the recycling block in terms of the capital intensity $x_t$ rather than in terms of $K^R_t$ and $W^R_t$ separately (Remark~\ref{rem:ad:argument}) makes the whole block closed-form. From~\eqref{eq:aq:recycling-rate},
+\begin{align}
+\varepsilon_t &\equiv a'_t\frac{x_t}{a_t}=\frac{1}{1+x_t}\in(0,1),
+&
+a_t &= a^m_t\left(1-\varepsilon_t\right),
+&
+a'_t &= a^m_t\varepsilon_t^2=\frac{a^m_t}{\left(1+x_t\right)^2},
+&
+a_t\left(1-\varepsilon_t\right) &= a^m_t\frac{x_t^2}{\left(1+x_t\right)^2}.
+\label{eq:aq:recycling-algebra}
+\end{align}
+In particular $a'_t(0)=a^m_t$, and the ratio $a_t(1-\varepsilon_t)/a'_t=x_t^2$ exactly --- the identity that collapses the recycling block below. All the assumptions in~\eqref{eq:ac:recycling} hold: $a_t(0)=0$, $a'_t>0$, $a''_t<0$, $\varepsilon_t<1$, and $a_t\to a^m_t<1$ as $x_t\to\infty$.
+
+\subsection{The baseline restriction \textbf{(B1)}}
+\label{subsec:aq:B1}
+
+Before stating the equilibrium system it is worth setting out exactly what~\eqref{eq:aq:B1} does, since every simplification in the rest of this section descends from it. Under \textbf{(B1)} the nature-attributable base $\mathcal N_t$ is identically zero, hence so are $\kappa_t=\mathcal N_t/\mathcal D_t$ and the dilution credit $\pi_t=p^W_t\Omega_t\kappa_t$, and with them:
+
+\begin{enumerate}[label=(\arabic*),leftmargin=2.4em,itemsep=0.25em]
+\item \emph{The ledger becomes a division.} The quadratic~\eqref{eq:ac:ledger-quadratic} factors, and $W_t$ is given in closed form by~\eqref{eq:aq:waste} below. This is the substantive gain: $W_t$ is read off rather than solved for.
+\item \emph{$\Omega_t$ leaves the equilibrium system.} It becomes a post-processing step, computed from~\eqref{eq:aq:Omega} once the allocation is known --- except under closing rule~(b) of Section~\ref{subsec:aq:phiI}, which reintroduces it by a different route. The period's unknown count falls by one.
+\item \emph{The relative intensities $\omega^i$ leave the allocation.} They determine the reported $\Omega_t$ and $\phi^Y_t$ and nothing else, again except under rule~(b). This is what makes their calibration a reporting choice; see Section~\ref{subsec:aq:calibration}.
+\item \emph{Three instruments vanish.} $\tau^Y_t=\tau^C_t=\tau^D_t=0$ in Proposition~\ref{prop:ad:implementation}, and the remaining four take the simple forms~\eqref{eq:ad:implement}. The seven-instrument general menu collapses to four.
+\item \emph{Every dilution factor becomes unity.} $B_t$ reduces to~\eqref{eq:ac:B-reduced-B1}, $p^W_t$ to~\eqref{eq:ac:pW-explicit-B1}, $\widehat F_{K,t}$ to $F_{K,t}$, and the marginal products in the recycling and extraction blocks lose their $\left[1+\pi_t\omega^Y\right]$ factors. This is what preserves the closed forms of Section~\ref{subsec:aq:system}.
+\end{enumerate}
+
+Point~(1) is the one that matters for the numerical strategy of Part~\ref{part:num}; points~(3) and~(5) are the ones that matter for how the results should be interpreted. Nothing in Part~\ref{part:num} depends on \textbf{(B1)} beyond point~(1).
+
+\subsection{Materials, waste, and the derived $\Omega_t$}
+\label{subsec:aq:materials}
+
+Under \textbf{(B1)} the materials ledger~\eqref{eq:ac:ledger} in discrete time reads $W_t=N_t+R^R_t-\Delta\Phi_t$, and since $R^R_t=a_t\varpi_tW_t$ it solves explicitly:
+\begin{align}
+\boxed{\;W_t = \frac{N_t-\Delta\Phi_t}{1-a_t\varpi_t}
+= \frac{N_t-\phi^I_tG_t+\delta\Phi_t}{1-a_t\varpi_t}\;}
+\label{eq:aq:waste}
+\end{align}
+The numerator is the direct implication of conservation of mass: material extracted this period, less what stayed behind in the capital stock net of what the stock released through depreciation. The denominator is the circularity multiplier. Both objects in the numerator are unambiguous, and neither $\Omega_t$ nor any $\omega^i_t$ appears.
+
+The level $\Omega_t$ and the material intensity $\phi^Y_t$ of the final good are recovered afterwards from~\eqref{eq:ac:Omega}:
+\begin{align}
+\Omega_t &= \frac{N_t+R^R_t-\phi^I_tG_t}{\mathcal D_t},
+&
+\mathcal D_t &\equiv \omega^Y_tY_t+\omega^N_tC^N_t+\omega^D_tC^D_t+\omega^C_tC_t+\omega^W_tC^W_t,
+&
+C^W_t &\equiv \left[c^c_t+c^T_t(\varpi_t)\right]W_t.
+\label{eq:aq:Omega}
+\end{align}
+$\Omega_t$ is not among the period's unknowns (Section~\ref{subsec:aq:system}) and plays no role in determining the allocation. It matters for two things only: translating the allocation into the tax rates of Section~\ref{subsec:aq:optimal-policy} in interpretable units, and reporting the implied path of the economy's waste intensity as a check on the calibration. Under closing rule~(b) of Section~\ref{subsec:aq:phiI} it acquires a third role, feeding back into $\phi^I_t$. $\phi^K_t=\Phi_t/K_t$ is likewise a reporting object: it is predetermined, but it enters~\eqref{eq:aq:waste} only through $\delta\Phi_t$ and feeds back into none of the period's other equilibrium conditions.
+
+\subsection{Closing $\phi^I_t$}
+\label{subsec:aq:phiI}
+
+$\phi^I_t$ has been left unspecified up to this point, exactly as in Sections~\ref{sec:ac}--\ref{sec:ad} (Remark~\ref{rem:ac:phiI}): neither closing rule below adds a control variable or a first-order condition.
+
+\smalltitle{Neither rule is the baseline.} Unlike \textbf{(B1)}, which is a restriction of the general model and is imposed here once and for all, the two rules below are a genuine \emph{fork}: neither nests the other, neither is more general, and this document takes no position on which is right. Both are carried through the quantitative exercise and results are reported under both --- Section~\ref{subsec:aq:scenarios} makes the comparison an experiment in its own right. The distinction matters because the two rules disagree about something substantive: under~(a) the relative intensities $\omega^i$ do not touch the allocation, and under~(b) they do. Reporting only one rule would therefore not be a simplification but a hidden answer to an open question.
+
+\smalltitle{(a) Exogenous.} $\phi^I_t$ follows a prescribed path, independent of the allocation, in the same family as the other technology parameters:
+\begin{align}
+\phi^I_t &= \frac{\bar\phi^I}{\left(1+g^\phi\right)^t},
+&
+g^\phi \gtrless 0,
+\label{eq:aq:phiI-exogenous}
+\end{align}
+with $g^\phi>0$ a materials-saving trend in capital-goods production and $g^\phi<0$ the reverse. $g^\phi=0$ recovers a constant flow intensity, though not a constant $\phi^K_t$: the stock still converges toward it via~\eqref{eq:aq:Phi-motion-discrete} unless $\Phi_0=\bar\phi^IK_0$ exactly. Under this rule $\Omega_t$ is a pure reporting device, computed after the fact.
+
+\smalltitle{(b) Materials-linked.} $\phi^I_t=\varsigma\,\Omega_t$ for a constant $\varsigma$ ties new capital's intensity to the same economy-wide level $\Omega_t$ that governs every other final-good-denominated activity. Substituting into~\eqref{eq:aq:Omega} and solving --- the self-reference is purely contemporaneous, so this remains closed-form:
+\begin{align}
+\Omega_t &= \frac{N_t+R^R_t}{\mathcal D_t+\varsigma G_t},
+&
+\phi^I_t &= \varsigma\,\Omega_t.
+\label{eq:aq:phiI-linked}
+\end{align}
+Unlike under rule~(a), $\Omega_t$ here is not a pure reporting device: it feeds into~\eqref{eq:aq:phiI-linked} first, which then feeds into~\eqref{eq:aq:Phi-motion-discrete} and~\eqref{eq:aq:waste}, so the relative intensities $\omega^i$ become allocation-relevant. It remains fully closed-form given the period's other flows, so it adds no residual unknown to the count in Section~\ref{subsec:aq:system}, but it does add a dependence that rule~(a) does not have.
+
+Either rule leaves $\Phi_t$ predetermined at the start of period $t$, so the recycling block, the extraction and exploration blocks, and the Euler equation are unaffected by the choice between them; only~\eqref{eq:aq:Phi-motion-discrete}, \eqref{eq:aq:waste}, and the level of $\tau^K_t$ depend on $\phi^I_t$ directly.
+
+\subsection{The equilibrium system}
+\label{subsec:aq:system}
+
+We state the market-economy conditions of Definition~\ref{def:ad:equilibrium} in discrete time. Write $Q_t\equiv1+\tau^K_t$ for the price of capital in units of the final good.
+
+\smalltitle{The goods rate of interest.} A unit of the final good at $t$ buys $1/Q_t$ units of capital, which yields the marginal product $F_{K,t+1}$ at $t+1$ and leaves $\left(1-\delta\right)$ units worth $Q_{t+1}$ each. Hence the discrete-time counterpart of~\eqref{eq:ad:iotam} is
+\begin{align}
+\boxed{\;1+\iota_{t+1} = \frac{F_{K,t+1}+\left(1-\delta\right)Q_{t+1}}{Q_t}\;}
+\label{eq:aq:iota}
+\end{align}
+Depreciation is valued at $Q_{t+1}$, not at $1$, because replacing worn capital draws material on exactly the same terms as new accumulation does (Remark~\ref{rem:ad:q}). With $\tau^K\equiv0$ this collapses to the familiar $1+\iota_{t+1}=1-\delta+F_{K,t+1}$.
+
+\smalltitle{Euler equation.}
+\begin{align}
+C_t^{-\sigma} &= \beta\left(1+\iota_{t+1}\right)C_{t+1}^{-\sigma}.
+\label{eq:aq:euler}
+\end{align}
+
+\smalltitle{Recycling block.} With $Z_t\equiv F_{R,t}+s^R_t$ the private marginal value of a unit of recycled material and $\nu_t\equiv P^W_t$ the private marginal cost of a unit of recyclable waste input, the two firm conditions~\eqref{eq:ad:foc-recycling-b} and~\eqref{eq:ad:foc-waste-use} are
+\begin{subequations}\label{eq:aq:recycling-block}
+\begin{align}
+a'_t\,Z_t &= F_{K,t}
+&&\text{(capital in recycling)},
+\label{eq:aq:recycling-capital}
+\\
+a_t\left(1-\varepsilon_t\right)Z_t &= \nu_t
+&&\text{(waste input)}.
+\label{eq:aq:recycling-input}
+\end{align}
+\end{subequations}
+By~\eqref{eq:aq:recycling-algebra} the ratio of~\eqref{eq:aq:recycling-input} to~\eqref{eq:aq:recycling-capital} is exactly $x_t^2$, so the block collapses to two closed-form statements:
+\begin{align}
+x_t &= \sqrt{\frac{\nu_t}{F_{K,t}}},
+&
+\sqrt{F_{K,t}}+\sqrt{\nu_t} &= \sqrt{a^m_tZ_t}.
+\label{eq:aq:recycling-closed-form}
+\end{align}
+
+\smalltitle{Waste treatment.} From~\eqref{eq:ad:foc-treatment} and~\eqref{eq:aq:CD-derivatives}, the treatment share is closed-form in the price of waste,
+\begin{align}
+\varpi_t &= \min\left\{1,\ \left[\frac{\left(P^W_t+\tau^W_t\right)\left(1+g^T\right)^t}{\bar c^T}\right]^{1/\varepsilon^T}\right\},
+\label{eq:aq:treatment}
+\end{align}
+where the upper bound is imposed explicitly because $c^T_t$ does not satisfy an Inada condition at $\varpi=1$ (Remark~\ref{rem:ac:varpi}). The zero-profit condition determining the collection subsidy is
+\begin{align}
+s^W_t &= c^c_t+c^T_t(\varpi_t)+\tau^W_t\left(1-\varpi_t\right)-P^W_t\varpi_t.
+\label{eq:aq:zero-profit}
+\end{align}
+
+\smalltitle{Extraction and exploration.} Let
+\begin{align}
+\xi_t &\equiv P^S_t+C^N_{N,t}+\tau^N_t
+\label{eq:aq:xi}
+\end{align}
+denote the full private marginal cost of a unit of virgin material. The extraction condition $F_{R,t}=\xi_t$ together with the production function~\eqref{eq:aq:production} gives a closed form for the materials input net of the physical floor,
+\begin{align}
+R_t-\bar R &= \left[\frac{\left(1-\alpha\right)A_t\left(K^Y_t\right)^{\alpha}}{\xi_t}\right]^{1/\alpha},
+&
+Y_t &= A_t\left(K^Y_t\right)^{\alpha}\left(R_t-\bar R\right)^{1-\alpha},
+&
+N_t &= R_t-a_tW^R_t.
+\label{eq:aq:materials-closed-form}
+\end{align}
+The exploration condition $C^D_{D,t}+P^X_t=P^S_t$ contains no period-$t$ flow, so it inverts into a closed form for the \emph{state} of accumulated discoveries,
+\begin{align}
+X_t &= \left[\frac{\left(1+\varepsilon^X\right)\left(P^S_t-P^X_t\right)}{c^D_t}\right]^{1/\left(1+\varepsilon^X\right)}
+\qquad\text{if}\quad P^S_t>P^X_t,
+\label{eq:aq:exploration-closed-form}
+\end{align}
+with $D_{t-1}=X_t-X_{t-1}$, and $D_{t-1}=0$ otherwise. See Remark~\ref{rem:aq:linear-costs}.
+
+\smalltitle{Shadow prices.} The discrete-time counterparts of~\eqref{eq:ad:PS-PX} are the backward recursions
+\begin{align}
+P^S_t &= \frac{P^S_{t+1}-C^N_{S,t+1}}{1+\iota_{t+1}},
+&
+P^X_t &= \frac{P^X_{t+1}+C^D_{X,t+1}}{1+\iota_{t+1}}.
+\label{eq:aq:PS-PX}
+\end{align}
+
+\smalltitle{Materials and waste.} Market clearing and the ledger:
+\begin{align}
+W^R_t &= \varpi_tW_t,
+\qquad K^R_t = x_tW^R_t,
+\qquad
+W_t = \frac{N_t-\Delta\Phi_t}{1-a_t\varpi_t}\quad\text{from~\eqref{eq:aq:waste}}.
+\label{eq:aq:clearing}
+\end{align}
+
+\smalltitle{Summary of the system.} Given policy paths and the initial stocks, equations~\eqref{eq:aq:K-motion}--\eqref{eq:aq:P-motion}, \eqref{eq:aq:euler}, \eqref{eq:aq:recycling-closed-form}, \eqref{eq:aq:treatment}, \eqref{eq:aq:materials-closed-form}, \eqref{eq:aq:exploration-closed-form}, \eqref{eq:aq:PS-PX} and~\eqref{eq:aq:clearing} determine the path of the economy. After the closed-form substitutions the residual unknowns per period are
+\begin{align*}
+\left\{C_t,\ P^W_t,\ x_t,\ W_t,\ D_t,\ P^S_t,\ P^X_t\right\},
+\end{align*}
+seven per period, of which $C_t$, $P^S_t$ and $P^X_t$ are forward-looking and the rest are static given the states. $\Omega_t$ and $\phi^Y_t$ are computed afterwards from~\eqref{eq:aq:Omega} wherever they are needed, not solved for jointly; $\phi^K_t=\Phi_t/K_t$ is simply read off the predetermined state $\Phi_t$. The system is a two-point boundary value problem: the stocks are pinned down at $t=0$ and the three forward-looking variables at the terminal date. Variant~\ref{var:aq:finite} states the terminal conditions used in place of the transversality conditions; Part~\ref{part:num} describes how the system is stacked and solved.
+
+\subsection{Regimes and corner conditions}
+\label{subsec:aq:regimes}
+
+The model is a complementarity problem, not a smooth system, because of three inequality restrictions:
+\begin{align}
+K^R_t\ge 0 \quad\perp\quad
+&a^m_t\left[F_{R,t}+s^R_t\right]\le F_{K,t},
+\label{eq:aq:corner-KR}
+\\
+W^R_t\ge 0,\ P^W_t\ge 0 \quad\perp\quad
+&\text{eq.~\eqref{eq:aq:recycling-input}},
+\label{eq:aq:corner-WR}
+\\
+\varpi_t\in[0,1] \quad\perp\quad
+&\text{eq.~\eqref{eq:aq:treatment}}.
+\label{eq:aq:corner-varpi}
+\end{align}
+They generate the three regimes of Section~\ref{subsec:ac:system}:
+\begin{enumerate}[label=(\roman*),leftmargin=2.4em]
+\item \emph{Linear stage.} $K^R_t=W^R_t=0$, $P^W_t=0$, $a_t=0$, $R_t=N_t$, and $W_t=N_t-\Delta\Phi_t$. If in addition $\tau^W_t=0$ then~\eqref{eq:aq:treatment} gives $\varpi_t=0$ and $s^W_t=c^c_t$: all waste is collected and deposited untreated. The whole recycling block drops out and the model reduces to Variant~\ref{var:aq:linear} below.
+\item \emph{Semi-linear stage.} $K^R_t=0$ but $\varpi_t>0$, which under laissez-faire requires $P^W_t>0$ and is therefore impossible; under regulation it is sustained by $\tau^W_t>0$ alone.
+\item \emph{Circular stage.} $K^R_t>0$, $P^W_t>0$, and~\eqref{eq:aq:recycling-closed-form} holds with equality.
+\end{enumerate}
+The date at which~\eqref{eq:aq:corner-KR} first fails --- the \emph{transition date} to the circular economy --- is the central object of the quantitative exercise. Under optimal policy $F_{R,t}+s^R_t=B_t=P^S_t+C^N_{N,t}+d^Wp^P_t$ by~\eqref{eq:ac:B-reduced-B1}, so the transition condition reads
+\begin{align}
+a^m_t\left[P^S_t+C^N_{N,t}+d^Wp^P_t\right] &> F_{K,t},
+\label{eq:aq:transition}
+\end{align}
+a comparison of the resource rent, extraction cost and pollution damage that a marginal unit of recycling capital saves against the marginal product it forgoes in production. No waste-intensity parameter enters it.
+
+\subsection{Optimal policy}
+\label{subsec:aq:optimal-policy}
+
+Implementing the Pigouvian instruments of Proposition~\ref{prop:ad:implementation} requires the planner's shadow prices $p^P_t$, $p^W_t$ and $p^\Phi_t$, computed alongside the market allocation, plus $\Omega_t$ if the rates are to be reported in interpretable units. Throughout, $B_t\equiv P^S_t+C^N_{N,t}+d^Wp^P_t$ and the social return replaces the private one in~\eqref{eq:aq:iota} via $Q_t=q_t$.
+
+\smalltitle{Pollution.}
+\begin{align}
+p^P_t &= \frac{MSC^P_{t+1}+\left(1-\widehat\theta_{t+1}\right)p^P_{t+1}}{1+\iota_{t+1}},
+&
+MSC^P_t &= \frac{\psi_tP_t^{\phi}}{\zeta_t}+\gamma\frac{Y_t}{P_t},
+&
+\zeta_t &= C_t^{-\sigma}.
+\label{eq:aq:pP}
+\end{align}
+$p^P_t$ is the present value at $t$ of a unit of $P_{t+1}$, matching the one-period lag in~\eqref{eq:aq:P-motion}.
+
+\smalltitle{Waste.} The ledger price is explicit, from~\eqref{eq:ac:pW-explicit-B1}:
+\begin{align}
+p^W_t &= c^c_t+c^T_t(\varpi_t)+p^P_t\left(1-\varpi_t+d^W\varpi_t\right)-\varpi_t\,a_t\left(1-\varepsilon_t\right)B_t.
+\label{eq:aq:pW}
+\end{align}
+No simultaneous solve is required: given $p^P_t$, $P^S_t$ and the period's allocation, \eqref{eq:aq:pW} returns $p^W_t$ directly. Its sign is not restricted (Remark~\ref{rem:aq:pW-sign}).
+
+\smalltitle{Embodied capital material.} $p^\Phi_t$ is the present value at $t$ of the waste liability attached to one unit of $\Phi_{t+1}$: that unit releases $\delta$ as waste at $t+1$ and leaves $\left(1-\delta\right)$ units of $\Phi_{t+2}$ behind. Hence
+\begin{align}
+p^\Phi_t &= \frac{\delta\,p^W_{t+1}+\left(1-\delta\right)p^\Phi_{t+1}}{1+\iota_{t+1}},
+&
+q_t &= 1-\phi^I_t\left(p^W_t-p^\Phi_t\right).
+\label{eq:aq:pPhi-discrete}
+\end{align}
+Because $\delta+\left(1-\delta\right)<1+\iota_{t+1}$ whenever $\iota_{t+1}>0$, a constant $p^W$ gives $p^\Phi_t<p^W_t$ and hence $q_t<1$; the general statement is~\eqref{eq:ac:q-explicit}.
+
+\smalltitle{Instrument levels.} The discrete-time counterparts of~\eqref{eq:ad:implement} are
+\begin{align}
+\tau^N_t &= p^W_t,
+&
+s^R_t &= d^Wp^P_t-p^W_t,
+&
+\tau^W_t &= p^P_t\left(1-d^W\right),
+&
+\tau^K_t &= -\phi^I_t\left(p^W_t-p^\Phi_t\right).
+\label{eq:aq:instruments}
+\end{align}
+Under these, $Q_t=q_t$ exactly, so the market's Euler equation~\eqref{eq:aq:euler} reduces to the planner's own saving condition; this is what makes the capital-formation margin, and not only the waste- and pollution-related margins, decentralize correctly.
+
+\smalltitle{Practical consequence.} Under optimal policy the market and planner allocations coincide, so in practice one solves the \emph{planner} system --- which is square and has no market price $P^W_t$, the shadow price $\nu_t=dc^T_t/d\varpi-p^P_t\left(1-d^W\right)$ taking its place in~\eqref{eq:aq:recycling-closed-form} --- and then reads off the instruments from~\eqref{eq:aq:instruments}. Solving the market system with the instruments imposed is then a validation exercise: the two allocations must agree.
+
+Three further checks are informative, and are more useful than a residual test on the materials balance, which now holds by construction:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.4em]
+\item $F_{R,t}-C^N_{N,t}-p^W_t=P^S_t$ and $B_t=F_{R,t}-p^W_t+d^Wp^P_t$ must agree with $B_t=P^S_t+C^N_{N,t}+d^Wp^P_t$ to machine precision. This is the cancellation of Section~\ref{subsec:ac:reductions} and is the sharpest available test of the accounting.
+\item $P^W_t=a_t\left(1-\varepsilon_t\right)B_t$ must be strictly positive throughout the circular stage.
+\item $\Omega_t$ from~\eqref{eq:aq:Omega} must stay positive and must not drift to implausible values. A negative $\Omega_t$ means $\phi^I_tG_t>N_t+R^R_t$ --- more mass embodied in new capital than entered the economy --- which is the genuine feasibility restriction identified in Remark~\ref{rem:ac:ledger} and signals a calibration inconsistency in $\bar\phi^I$ or $\varsigma$, not a coding error.
+\end{enumerate}
+
+\subsection{Variants}
+\label{subsec:aq:variants}
+
+The following restricted versions of the model are useful for building up and testing the implementation. Each is obtained by a parameter restriction on the full model, so the same code path can serve all of them.
+
+\begin{enumerate}[label=\textbf{V\arabic*.},leftmargin=3.2em,itemsep=0.4em]
+
+\item\label{var:aq:linear} \emph{Linear-economy restriction.} Impose $K^R_t=W^R_t=\varpi_t=0$ for all $t$. Then $a_t=0$, $R_t=N_t$, $K^Y_t=K_t$, $C^W_t=c^c_tW_t$, $W_t=N_t-\Delta\Phi_t$ with no circularity multiplier, and $P_{t+1}=\left[1-\theta(P_t)\right]P_t+W_t$. This restriction leaves $\Phi_t$'s own law of motion~\eqref{eq:aq:Phi-motion-discrete} untouched; combine with Variant~\ref{var:aq:constant-phi} to drop it as well. The entire recycling block, the price $P^W_t$ and the treatment margin disappear; the remaining unknowns are $\left\{C_t,N_t,D_t,W_t,P^S_t,P^X_t\right\}$, and $p^W_t=c^c_t+p^P_t$ in closed form. This variant is the natural starting point: it is a standard Ramsey model with exhaustible resources plus a pollution stock, and it produces the initial conditions from which the full model departs.
+
+\item\label{var:aq:no-feedback} \emph{No productivity feedback from pollution.} Set $\gamma=0$, so $A_t=\bar A\left(1+g^A\right)^t$. Under exogenous policy the pollution stock then influences nothing: \eqref{eq:aq:P-motion} becomes a pure forward recursion that can be run \emph{after} the allocation is solved. Under optimal policy the decomposition breaks, because $p^P_t$ still feeds back through $\tau^W_t$, $s^R_t$ and $p^W_t$, but the second term of $MSC^P_t$ in~\eqref{eq:aq:pP} drops.
+
+\item\label{var:aq:no-resource} \emph{Exogenous resource base.} Fix $S_t=\bar S$ and $X_t=\bar X$, or equivalently set $\varepsilon^S=\varepsilon^X=0$ and drop~\eqref{eq:aq:SX-motion}. Extraction cost becomes a constant marginal cost $c^N_t/\left(1+\varepsilon^S\right)$, exploration disappears, and $P^S_t=P^X_t=0$. Note this makes $B_t=C^N_{N,t}+d^Wp^P_t$, so the transition date~\eqref{eq:aq:transition} is driven by pollution and extraction cost alone.
+
+\item\label{var:aq:no-floor} \emph{No materials floor.} Set $\bar R=0$. Then $F_{R,t}=(1-\alpha)Y_t/R_t$ and the extraction condition becomes the constant-share relation $\xi_tR_t=(1-\alpha)Y_t$.
+
+\item\label{var:aq:no-progress} \emph{No technical progress.} Set $g^A=g^R=g^N=g^D=g^c=g^T=g^\psi=g^i_\omega=0$ for $i\in\{Y,N,D,C,W\}$, and, under closing rule~(a) of Section~\ref{subsec:aq:phiI}, $g^\phi=0$ as well (under rule~(b) there is no separate growth rate to zero out, since $\phi^I_t=\varsigma\Omega_t$ inherits whatever path $\Omega_t$ takes). Note that this list has no $g^\Omega$: there is no such parameter in this document, since $\Omega_t$ is derived rather than calibrated. Its path under this restriction is still generally non-constant, because it depends on the allocation; the same is true of $\phi^K_t$, which continues to evolve via~\eqref{eq:aq:Phi-motion-discrete} even with $g^\phi=0$, converging to $\bar\phi^I$ only asymptotically.
+
+\item\label{var:aq:finite} \emph{Finite horizon.} Truncate at $T$ and replace the transversality conditions~\eqref{eq:ac:transversality} by terminal conditions. Treating period-$T$ values as constant thereafter gives the perpetuity terminal values
+\begin{align}
+P^S_T &= \frac{-C^N_{S,T}}{\iota_T},
+&
+P^X_T &= \frac{C^D_{X,T}}{\iota_T},
+&
+p^P_T &= \frac{MSC^P_T}{\iota_T+\widehat\theta_T},
+&
+p^\Phi_T &= \frac{\delta\,p^W_T}{\iota_T+\delta},
+&
+K_{T+1} &= K_T,
+\label{eq:aq:terminal}
+\end{align}
+where the last condition imposes zero net investment in the terminal period; $\Phi_{T+1}=\Phi_T$ closes $\Phi$'s own path alongside it, which by~\eqref{eq:aq:Phi-motion-discrete} requires $\phi^I_T\delta K_T=\delta\Phi_T$, i.e.\ $\phi^K_T=\phi^I_T$ --- the vintage composition has converged. All quantitative results are computed on the finite-horizon version, with $T$ chosen large enough that the objects of interest are insensitive to it. That insensitivity should be reported.
+
+\item\label{var:aq:constant-phi} \emph{Constant material intensity.} Impose $\phi^I_t\equiv\phi^K_t\equiv\bar\phi^K$ for all $t$ (equivalently, set $g^\phi=0$ in closing rule~(a) and $\Phi_0=\bar\phi^KK_0$, so~\eqref{eq:aq:Phi-motion-discrete} holds with $\Phi_t\equiv\bar\phi^KK_t$ identically). $\Phi_t$ then drops out as an independent state, $\Delta\Phi_t=\bar\phi^KI_t$, and~\eqref{eq:aq:waste} becomes $W_t=\left(N_t-\bar\phi^KI_t\right)/\left(1-a_t\varpi_t\right)$: only \emph{net} investment stores material, since replacement returns exactly what it draws. The liability $p^\Phi_t$ and the instrument $\tau^K_t=-\bar\phi^K\left(p^W_t-p^\Phi_t\right)$ survive unchanged --- capital still defers waste. Useful as a baseline against which to measure how much the vintage-composition channel actually moves the results.
+
+\end{enumerate}
+
+\subsection{Scenarios}
+\label{subsec:aq:scenarios}
+
+The scenarios combine a \emph{policy} configuration (Section~\ref{subsec:ad:implementation}) with a \emph{technical progress} configuration.
+
+\smalltitle{Benchmark: optimal policy and neutral technical progress.}
+\begin{align}
+g^A=g^R=g^N=g^D=g^c=g^T=g^\psi>0,
+\qquad
+g^Y_\omega=g^N_\omega=g^D_\omega=g^C_\omega=g^W_\omega=0,
+\qquad
+g^\phi=0\ \text{(rule~(a))}.
+\label{eq:aq:benchmark}
+\end{align}
+All sectors and the marginal disutility weight $\psi_t$ grow at a common rate, so no sector is favoured by assumption and the transition to the circular economy is driven by capital accumulation, resource depletion and pollution accumulation alone. Under closing rule~(a), $g^\phi=0$ means new-vintage capital carries a constant intensity $\bar\phi^I$, the same neutrality the $g^i_\omega=0$ restrictions impose elsewhere; under rule~(b) there is no separate choice to make. There is no growth rate for $\Omega$ to hold at zero: under this benchmark $\Omega_t$'s path is an \emph{output} of the model, worth reporting alongside the transition dates as a check that it stays within a plausible range. $\phi^K_t$'s path is worth reporting for the same reason.
+
+\smalltitle{Experiments.} Departures from~\eqref{eq:aq:benchmark} of interest:
+\begin{enumerate}[label=(\alph*),leftmargin=2.4em]
+\item \emph{Sector-specific technical progress under optimal policy.} Vary each of $g^R$, $g^N$, $g^D$, $g^c$, $g^T$ and (under closing rule~(a)) $g^\phi$ one at a time around the benchmark and record the effect on the date of first waste treatment and the date of first recycling. Note that the relative intensities' growth rates $g^i_\omega$ are \emph{not} in this list under rule~(a): by~\eqref{eq:aq:waste} they do not touch the allocation, and varying them moves only the reported $\Omega_t$. Under rule~(b) they do matter, through $\phi^I_t=\varsigma\Omega_t$, which makes the comparison between the two closing rules an experiment in its own right. $g^\phi$ is the natural way to isolate the vintage-composition channel: a strongly positive $g^\phi$ (materials-saving capital-goods technology) shrinks the sink term $\Delta\Phi_t$ in~\eqref{eq:aq:waste} and should, other things equal, raise waste and bring the transition forward.
+\item \emph{Laissez-faire with neutral progress.} All four instruments zero, with $s^W_t=c^c_t+c^T_t(\varpi_t)-P^W_t\varpi_t$ from~\eqref{eq:aq:zero-profit}. This answers whether an unregulated market economy reaches the circular stage at all, and if so how late.
+\item \emph{Partial regulation with neutral progress.} $\tau^W_t=s^R_t=0$, with $\tau^N_t$ and $\tau^K_t$ at their Pigouvian levels. This isolates the contribution of the waste-treatment and recycling instruments specifically. The complementary experiment --- $\tau^K_t=0$ with the other three at their Pigouvian levels --- isolates the capital-formation channel, and is the natural way to quantify how much the materials-sink property of capital is worth.
+\end{enumerate}
+Scenarios (b) and (c) require the welfare measure of Section~\ref{subsec:aq:welfare} to be comparable across policies, and (a) requires the optimal-policy block of Section~\ref{subsec:aq:optimal-policy} to be re-solved for each parameterization.
+
+\subsection{Calibration}
+\label{subsec:aq:calibration}
+
+\smalltitle{Initial condition.} The economy is assumed to start in an early linear stage in which the environment absorbs all waste generated, so the pollution stock is initially stationary. With $t=0$ the first period,
+\begin{align}
+P_1 &= \left[1-\theta(P_0)\right]P_0+W_0 = P_0
+&&\Longleftrightarrow&&
+\bar\theta P_0^{1-\varepsilon^P} = W_0.
+\label{eq:aq:calibration-pollution}
+\end{align}
+Equation~\eqref{eq:aq:calibration-pollution} is one restriction linking $\bar\theta$, $\varepsilon^P$, $P_0$ and the initial waste flow $W_0$; given data on two of them it determines a third. $W_0=N_0-\Delta\Phi_0$ from~\eqref{eq:aq:waste} in the linear stage, not a separately calibrated quantity; it requires $\Phi_0$ as an additional initial condition alongside $K_0,S_0,X_0,P_0$.
+
+\smalltitle{Initial regime.} The assumption that period $0$ lies in the linear stage is itself a restriction on the calibration and must be checked rather than imposed:
+\begin{align}
+a^m_0\left[F_{R,0}+s^R_0\right] &\le F_{K,0},
+&&\text{with }a^m_0=1-b.
+\label{eq:aq:calibration-linear}
+\end{align}
+Since $a^m_0=1-b$, the parameter $b$ controls how far the initial economy is from the recycling threshold and therefore, jointly with $g^R$, the transition date.
+
+\smalltitle{Parameters set directly.} $\alpha$ from the capital income share; $\delta$ and $\beta$ (equivalently $\rho$) from conventional values given the length of a period; $\sigma$ from the intertemporal elasticity of substitution; $\varepsilon^S$, $\varepsilon^X$, $\varepsilon^T$, $\varepsilon^P$, $\gamma$ and $d^W$ from the relevant empirical literatures; the growth rates $g^\cdot$ from the scenario definitions. There is no single material intensity $\phi^K$ to set directly: under closing rule~(a), $\bar\phi^I$ and $g^\phi$ are set from material-flow accounts for capital-goods production specifically, if available; under rule~(b), only $\varsigma$ needs setting.
+
+The \emph{relative} waste intensities $\omega^Y,\omega^N,\omega^D,\omega^C,\omega^W$ occupy an unusual position and should be described as such. Under closing rule~(a) they do not enter the allocation at all (Section~\ref{subsec:aq:materials}); they are recovered-quantity parameters that determine the reported $\Omega_t$ and $\phi^Y_t$, and hence what the model says about material intensities in the data, but they cannot be identified from --- and do not affect --- the transition dates. They should therefore be set from material-flow accounts and then \emph{checked} against the implied $\Omega_t$, rather than calibrated to match a model outcome. Under rule~(b) they do affect the allocation, through $\phi^I_t=\varsigma\Omega_t$, and the distinction between the two rules is worth reporting.
+
+\smalltitle{Parameters solved for.} The scale constants $c^N$, $c^D$, $\bar c^c$ and $\bar c^T$ are set so that the model reproduces realistic shares of the mining and waste industries in output in the base year. The preference parameters $\bar\psi$ and $\phi$ govern the marginal willingness to pay for environmental quality and are the natural targets for a stated- or revealed-preference estimate of the marginal damage of pollution in the base year. The initial stocks $K_0$, $\Phi_0$, $S_0$, $X_0$ and $P_0$ are data, subject to~\eqref{eq:aq:calibration-pollution}; $\Phi_0$ is most naturally reported as $\phi^K_0=\Phi_0/K_0$, an initial average material intensity of the capital stock.
+
+\smalltitle{Nested structure.} Any target that involves an equilibrium object --- the industry shares, the base-year marginal damage --- cannot be evaluated without solving the model, so the final stage of the calibration is a nested fixed-point problem: an outer loop over $\left(c^N,c^D,\bar c^c,\bar c^T,\bar\psi,b\right)$ around an inner solve of the equilibrium system. Part~\ref{part:num} describes the loop.
+
+\subsection{Welfare measurement}
+\label{subsec:aq:welfare}
+
+Split lifetime utility~\eqref{eq:aq:utility} into its consumption and pollution components,
+\begin{align}
+U_0 = U^C_0-U^P_0,
+\qquad
+U^C_0 = \sum_{t=0}^{\infty}\beta^t\frac{C_t^{1-\sigma}}{1-\sigma},
+\qquad
+U^P_0 = \sum_{t=0}^{\infty}\beta^t\frac{\psi_t}{1+\phi}P_t^{1+\phi}.
+\label{eq:aq:welfare-split}
+\end{align}
+
+\smalltitle{The household's lifetime budget constraint.} Let $\Delta_t\equiv\prod_{i=1}^{t}\left(1+\iota_i\right)^{-1}$ with $\Delta_0=1$ be the goods discount factor implied by~\eqref{eq:aq:iota}. Discounting the household budget~\eqref{eq:ad:budget} in the form $C_t=\Pi^H_t+T_t-Q_tK_{t+1}+Q_t\left(1-\delta\right)K_t$ and telescoping the capital terms using $\Delta_tQ_t=\Delta_{t+1}\left[F_{K,t+1}+\left(1-\delta\right)Q_{t+1}\right]$ gives
+\begin{align}
+\sum_{t=0}^{\infty}\Delta_tC_t &= H_0+A_0,
+\label{eq:aq:lifetime-budget}
+\end{align}
+where
+\begin{align}
+A_0 &\equiv \left[F_{K,0}+\left(1-\delta\right)Q_0\right]K_0,
+\label{eq:aq:A0}
+\\
+H_0 &\equiv \sum_{t=0}^{\infty}\Delta_t\left[\Pi^H_t+T_t-F_{K,t}K_t\right]
+= \sum_{t=0}^{\infty}\Delta_t\left[Y_t-F_{K,t}K_t-C^N_t-C^D_t-\left(c^c_t+c^T_t\right)W_t+\tau^K_tG_t\right].
+\label{eq:aq:H0}
+\end{align}
+$A_0$ is the value at $t=0$ of the predetermined capital stock --- its current marginal product plus its resale value --- and $H_0$ is the present value of pure profits, including resource rents and the transfer of the capital-formation subsidy. Writing initial wealth this way resolves the boundary problem that arises if one instead discounts $K_0$ back one period: no lagged instrument $\tau^K_{-1}$ appears anywhere.
+
+\smalltitle{Consumption growth and the closed form.} Iterating~\eqref{eq:aq:euler} forward,
+\begin{align}
+w_t &\equiv \frac{C_t}{C_0}=\left[\beta^t\prod_{i=1}^{t}\left(1+\iota_i\right)\right]^{1/\sigma},
+\label{eq:aq:weights}
+\end{align}
+so that with the intertemporal price index $P^u_0$ and the utility index $Z_0$,
+\begin{align}
+P^u_0 &\equiv \sum_{t=0}^{\infty}\Delta_tw_t,
+&
+Z_0 &\equiv \sum_{t=0}^{\infty}\beta^tw_t^{1-\sigma},
+&
+C_0 &= \frac{H_0+A_0}{P^u_0},
+\label{eq:aq:indices}
+\end{align}
+lifetime consumption utility admits the closed form
+\begin{align}
+U^C_0 &= \frac{Z_0}{1-\sigma}\left(\frac{H_0+A_0}{P^u_0}\right)^{1-\sigma}.
+\label{eq:aq:UC}
+\end{align}
+Every occurrence of the discount factor $\prod\left(1+r_i\right)^{-1}$ in a specification without a capital-formation instrument is replaced here, term by term, by $\prod\left(1+\iota_i\right)^{-1}$ with $\iota$ from~\eqref{eq:aq:iota}, since that is the rate at which the household actually trades resources across periods once capital is priced at $Q$ rather than at $1$. With $\tau^K\equiv0$ everything reduces to the familiar expressions.
+
+\smalltitle{Compensating variation.} Let starred objects denote values along the first-best path and unstarred objects values along the actual path. The welfare cost of deviating from the optimum is $\Delta W_0$ defined by
+\begin{align}
+\frac{Z_0}{1-\sigma}\left(\frac{H_0+A_0+\Delta W_0}{P^u_0}\right)^{1-\sigma}
+&= U^{C*}_0+U^P_0-U^{P*}_0,
+\notag \\
+\Longleftrightarrow\qquad
+\Delta W_0 &= P^u_0\left[\left(\frac{1-\sigma}{Z_0}\right)\left(U^{C*}_0+U^P_0-U^{P*}_0\right)\right]^{1/\left(1-\sigma\right)}-\left(H_0+A_0\right).
+\label{eq:aq:compensating-variation}
+\end{align}
+$Z_0$, $P^u_0$, $H_0$, $A_0$ and $U^P_0$ are evaluated on the \emph{actual} path, so~\eqref{eq:aq:compensating-variation} requires both paths to be solved and stored.
+
+\subsection{Technical remarks}
+\label{subsec:aq:remarks}
+
+\begin{remark}[What is given up by \textbf{(B1)}]\label{rem:aq:scope}
+Setting $\omega^{N,S}=\omega^{D,S}=0$ is what makes the ledger collapse to the closed form~\eqref{eq:aq:waste}, and with it what makes $\Omega_t$ allocation-irrelevant under closing rule~(a). Section~\ref{subsec:aq:B1} lists the five things it buys; this remark records what it costs, now that Sections~\ref{sec:ac}--\ref{sec:ad} state the general case explicitly and the comparison can be made precisely rather than by assertion.
+
+The first cost is physical: overburden and gangue displaced by extraction, and any analogous byproduct of exploration, are no longer distinguished from waste generated by the final-good expenditure on those activities. Empirically this is not a small omission --- displaced material typically dominates ore tonnage by an order of magnitude --- and the model has nothing to say about it under \textbf{(B1)}.
+
+The second is structural and is the more important. With either intensity positive, $\Omega_t$ re-enters the first-order conditions, $\left(W_t,\Omega_t\right)$ must be solved jointly with the rest of the period's block rather than in two clean steps, and the extraction margin acquires both a displacement term and a scale term. The relative-intensity calibration, currently a reporting choice, would become a determinant of the transition date. Three points are worth stating precisely, because an earlier version of this remark understated the change:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.4em,itemsep=0.2em]
+\item The extra term in the extraction condition is not merely $-\Omega_t\omega^{N,S}p^W_t$. Because $\Omega_t$ is itself endogenous, the general condition~\eqref{eq:ac:foc-extraction} also carries the scale term $-p^W_t\kappa_t$ and the dilution terms in $\pi_t$. The same is true of every other margin.
+\item The ledger is a \emph{quadratic} in $W_t$, \eqref{eq:ac:ledger-quadratic}, not an implicit equation requiring iteration --- so the cost is one closed form replaced by another, not a loss of closed form. The unique positive root is what the solver would take.
+\item The instrument set grows from four to seven, and $p^W_t$ no longer cancels from $B_t$. The latter is the more consequential: it means the transition date~\eqref{eq:aq:transition} stops being independent of the waste-intensity parameters, which is one of the cleanest results the \textbf{(B1)} model delivers.
+\end{enumerate}
+Reintroducing the split is therefore cheaper computationally than it first appears and more expensive interpretively. It changes the character of the calibration exercise, not only its cost --- and, before it is attempted, the specification question raised in Remark~\ref{rem:ac:dilution} should be settled, since the absolute-intensity alternative removes most of the added complexity while keeping all of the added physical content.
+\end{remark}
+
+\begin{remark}[The sign of $p^W_t$ and what the solver must tolerate]\label{rem:aq:pW-sign}
+By~\eqref{eq:aq:pW}, $p^W_t<0$ whenever $\varpi_ta_t(1-\varepsilon_t)B_t$ exceeds $c^c_t+c^T_t+p^P_t\left(1-\varpi_t+d^W\varpi_t\right)$, and $B_t$ contains $P^S_t$, which grows without bound as reserves deplete. Three consequences for the implementation. First, $\tau^N_t=p^W_t$ turns into an extraction \emph{subsidy}, correcting the fact that extraction stocks the recycling loop --- a benefit external to the extractor. Second, $q_t>1$ and $\tau^K_t>0$: when waste is a resource, storing material in capital is socially costly rather than valuable, and the two flip together, which is a useful internal check. Third, no bound on $p^W_t$, $\tau^N_t$ or $\tau^K_t$ should be imposed in the solver, and the complementarity conditions of Section~\ref{subsec:aq:regimes} should be verified to behave sensibly through the sign change. Whether the regime is actually reached in the calibrated model is an empirical question worth reporting either way.
+\end{remark}
+
+\begin{remark}[Linear cost functions and the exploration margin]\label{rem:aq:linear-costs}
+Because~\eqref{eq:aq:extraction-cost} and~\eqref{eq:aq:discovery-cost} are linear in $N_t$ and $D_t$, marginal extraction and discovery costs are independent of the current flow. For extraction this is harmless: the condition $F_{R,t}=\xi_t$ still pins down $N_t$, because $F_{R,t}$ is decreasing in $R_t$. For exploration it is not: $C^D_{D,t}$ depends only on the state $X_t$, so the exploration condition determines $X_t$, as in~\eqref{eq:aq:exploration-closed-form}, and hence $D_{t-1}$; the exploration margin is intertemporal rather than static. $D_t$ should be recovered from the path of $X$, not solved for directly, and the model has a bang-bang flavour on this margin --- $D_{t-1}$ jumps whenever $P^S_t-P^X_t$ moves. If that turns out to be quantitatively unattractive, the fix is to make $C^D$ strictly convex in $D$, e.g.\ $C^D_t=\frac{c^D_t}{1+\varepsilon^X}\frac{D_t^{1+\varepsilon^D}}{1+\varepsilon^D}X_t^{1+\varepsilon^X}$ with $\varepsilon^D>0$, at the cost of losing~\eqref{eq:aq:exploration-closed-form}.
+\end{remark}
+
+\begin{remark}[Scaling and numerical conditioning]\label{rem:aq:scaling}
+With $g^A>0$ the model has no stationary steady state, and $Y_t$, $K_t$ and $C_t$ grow without bound while $S_t$ falls towards zero. Five practical points. First, the equilibrium system should be solved in detrended or log variables; the natural deflator is $\left(1+g^A\right)^{t/(1-\alpha)}$ for the goods block, but the resource and pollution blocks do not share it, so the blocks should be scaled separately. Second, $P^S_t$ and $P^X_t$ grow at rates unrelated to output and are the most likely source of ill-conditioning. Third, $\varpi_t$, $x_t$, $a_t$ and $q_t$ are bounded objects and should be solved for directly rather than recovered from ratios of unbounded ones. Fourth, $\Phi_t$ inherits $K_t$'s unbounded growth and should be scaled the same way, but the derived ratio $\phi^K_t=\Phi_t/K_t$ is bounded and, under either closing rule for $\phi^I_t$, should converge to a well-behaved path rather than drift --- persistent divergence between $\phi^K_t$ and $\phi^I_t$ is economically meaningful (a capital stock that never catches up to the current vintage) but should be checked against the calibrated $g^\phi$ or $\varsigma$ before being read as a result. Fifth, $\Omega_t$ from~\eqref{eq:aq:Omega} is a ratio of two growing objects; under closing rule~(a) an $\Omega_t$ that drifts towards zero, explodes, or turns negative is a diagnostic about the calibration of the $\omega^i$'s and $\bar\phi^I$, and cannot be a coding error in the allocation block, since the allocation block never sees it.
+\end{remark}
+
+\begin{remark}[The circularity multiplier and the period length]\label{rem:aq:period}
+The factor $\left(1-a_t\varpi_t\right)^{-1}$ in~\eqref{eq:aq:waste} has material extracted at the start of period $t$ being recycled and re-used within period $t$ (Remark~\ref{rem:ac:recirculation}). This is exact in continuous time but becomes a substantive assumption once the period length is fixed, and it is not innocuous quantitatively: as $a_t\varpi_t\to1$ the multiplier diverges, so $R_t$ and $W_t$ both become large relative to $N_t$ late in the transition. The alternative --- lagging recycled input, $R^R_t=a_{t-1}\varpi_{t-1}W_{t-1}$ --- removes the multiplier at the cost of an extra state and destroys the closed form~\eqref{eq:aq:materials-closed-form}, since $R_t$ would then be predetermined. Reporting $R_t/N_t$ and $W_t/N_t$ alongside the transition dates makes the size of the effect visible, and the sensitivity of the results to the period length is worth checking directly.
+\end{remark}

@@ -1,0 +1,383 @@
+\section{Collapse: derivations and proofs}\label{sec:app:collapse}
+
+This appendix proves the results of Section~\ref{sec:sp:longrun:collapse}: the scope
+distinction between damped and catastrophic collapse (\ref{sec:app:collapse:scope}), the
+common necessary conditions, Lemma~\ref{lem:sp:lr:collapse} (\ref{sec:app:collapse:lemma}),
+the Cobb--Douglas lead case, Proposition~\ref{prop:sp:wh:collapse}
+(\ref{sec:app:collapse:cd}), and the two structural results that shape the selection map's
+collapse cells: hard essentiality forces finite-time shutdown
+(\ref{sec:app:collapse:floor}), and growth capacity precludes damped collapse
+(\ref{sec:app:collapse:growthcell}). Notation as in Appendix~\ref{sec:app:longrun},
+including its stationary technology ($g_A=g_B=0$ in~\eqref{eq:sp:setup:tfp});
+throughout, $g_C<0$ denotes the asymptotic rate of consumption on a collapse path and
+$\left|g_C\right|=-g_C$.
+
+\subsection{Damped and catastrophic collapse}\label{sec:app:collapse:scope}
+
+With $\eta>1$, $u\left(C\right)=C^{1-\eta}/\left(1-\eta\right)\to-\infty$ as $C\to0$. Along
+$C\sim\bar Ce^{g_Ct}$,
+\begin{align}
+u\left(C_t\right)e^{-\rho t}\sim-\frac{\bar C^{1-\eta}}{\eta-1}\,
+e^{\left[\left(\eta-1\right)\left|g_C\right|-\rho\right]t},
+\label{eq:app:col:value}
+\end{align}
+so lifetime utility is finite if and only if
+\begin{align}
+\left(\eta-1\right)\left|g_C\right|<\rho .
+\label{eq:app:col:damping}
+\end{align}
+We call a collapse path \emph{damped} when~\eqref{eq:app:col:damping} holds and
+\emph{catastrophic} when $U_0=-\infty$. The same quantity governs everything else that must
+converge on a collapse path. Since $\lambda\approx u'\left(C\right)\left(1+\zeta\Omega^C\right)^{-1}
+\sim e^{\eta\left|g_C\right|t}$ (up to the convergent wedge),
+$r\equiv\rho-\dot\lambda/\lambda\to\rho-\eta\left|g_C\right|$, and for any price whose
+dividend dies at the common rate $g_C$, the forward integral behind it converges exactly when
+$r-g_C=\rho-\left(\eta-1\right)\left|g_C\right|>0$, which is~\eqref{eq:app:col:damping}
+again; likewise every transversality product of the form $e^{-\rho t}\lambda\,pZ$ with $p$
+decaying at $g_C$ and $Z$ bounded, or $p$ bounded and $Z$ decaying at $g_C$, dies at the rate
+$\rho-\left(\eta-1\right)\left|g_C\right|$. \emph{Finite value, convergent price integrals and
+transversality are one condition on a collapse path.}
+
+\smalltitle{Scope.} If some feasible path is damped, no catastrophic path is optimal, and the
+optimum (if regular) is a damped collapse; this is the case the analysis characterises. If
+\emph{every} feasible path is catastrophic --- which
+\ref{sec:app:collapse:floor} shows is the generic situation under hard essentiality --- the
+discounted criterion assigns $-\infty$ to all of them and loses its selection power;
+overtaking-type criteria are not developed here (gap~(xiv) of~\ref{sec:app:longrun:gaps}).
+
+\subsection{Proof of Lemma~\ref{lem:sp:lr:collapse}}\label{sec:app:collapse:lemma}
+
+\emph{(i) The depreciation floor.} The domain restriction $G=I+\delta K\ge0$ of
+Problem~\ref{prob:sp} gives $\dot K\ge-\delta K$ pointwise, so $K_t\ge K_0e^{-\delta t}$ and
+any exponential rate of $K$ satisfies $g_K\ge-\delta$. Equality is the corner $G=0$: zero
+gross investment, the capital stock run down at exactly its depreciation rate, and the goods
+constraint then reads $C=Y-C^N-C^D-c^WW$ (consumption is net output; nothing is replaced).
+
+\emph{(ii) The damped price system.} The consumption condition~\eqref{eq:sp:sum:C} with
+$\zeta\Omega^C$ convergent to a limit above $-1$ gives $\lambda\sim e^{\eta\left|g_C\right|t}$
+and hence $r\to\rho+\eta g_C<\rho$ as in~\ref{sec:app:collapse:scope}. With $q$ convergent
+(all normalised prices converge on a regular path, and $q$ is bounded away from zero at any
+interior investment margin), the capital costate~\eqref{eq:sp:sum:K} forces its stationary
+version in the limit,
+\begin{align}
+F_K\,w_Y\;\to\;\left(\rho+\eta g_C+\delta\right)\bar q .
+\label{eq:app:col:FK}
+\end{align}
+Positivity of the right side follows from (i) and damping jointly: $g_C\ge-\delta$ gives
+$\rho+\eta g_C+\delta\ge\rho-\left(\eta-1\right)\delta$, and
+$\left|g_C\right|<\rho/\left(\eta-1\right)$ gives
+$\rho+\eta g_C+\delta>\delta-\rho/\left(\eta-1\right)$; whichever bound binds, the two
+cannot be negative together, and on the interior of the speed window the limit is strictly
+positive.\footnote{If $g_C<-\delta$ (consumption dying faster than capital, a mismatched-rate
+profile), only the damping bound is available; the profile is not excluded here and is left
+open in gap~(xiii).} Convergence of the remaining forward integrals and the transversality
+checks are the computation of~\ref{sec:app:collapse:scope}.
+
+\emph{(iii) The economy dies whole.} The claim is for the collapse cells: regime (E) with
+asymptotically essential materials (either branch), or the bounded branch generally.
+
+\emph{Step 1: no material growth without virgin inflow.} Suppose, for contradiction, a
+regular path with $K\to\infty$ at $g_K>0$, $R$ of the order of $K$ (so $\Omega\to\bar\Omega>0$),
+and $N/R\to0$ --- the loop as its own source. The stream form~\eqref{eq:sp:ledger-streams}
+and $R=N+a\varpi W\le N+W$ give
+\begin{align}
+R\;\le\;N+\bar\Omega\mathcal D+\delta M^K+\mathcal N,
+\qquad
+M^K\sim\frac{\bar\Omega\phi^IG}{g_K+\delta} ,
+\label{eq:app:col:massbalance}
+\end{align}
+the second from~\eqref{eq:sp:setup:Phi-motion} along the exponential path. Dividing by
+$\mathcal D+\phi^IG$ and using $\Omega=R/\left(\mathcal D+\phi^IG\right)\to\bar\Omega$:
+\begin{align}
+\bar\Omega\;\le\;o\!\left(1\right)+\bar\Omega\left[1-\frac{\phi^IG}{\mathcal D+\phi^IG}\cdot
+\frac{g_K}{g_K+\delta}\right],
+\label{eq:app:col:massbalance2}
+\end{align}
+so $\bar\Omega\cdot\frac{\phi^IG}{\mathcal D+\phi^IG}\cdot\frac{g_K}{g_K+\delta}\le o(1)$:
+with $g_K>0$ and $\phi^I>0$ this forces $\bar\Omega=0$, a contradiction. Economically:
+recycling is a return flow, not a source --- the loop gives back at most what investment
+stored, discounted by depreciation and the loop losses, so a growing material side must be
+fed from outside. (With $\phi^I=0$ the same conclusion is immediate: $M^K\equiv M^K_0e^{-\delta t}$
+and the inflow $N\to0$ cannot cover $R$ of the order of $K$.)
+
+\emph{Step 2: $K$ is bounded.} On the bounded branch, unbounded $K$ with bounded $R$ is
+excluded by Lemma~\ref{lem:sp:lr:common}(i) ($r\to A_\infty-\delta$ applies to any regular
+path, and consumption cannot then vanish faster than the Euler rate; for kernels with
+$A_\infty=0$ the maintenance bill argument of~\ref{sec:app:longrun:feas} applies directly),
+and unbounded $K$ with $R$ of its order by Step 1, since regime (E) forces $N\to0$
+(Step 2 of~\ref{sec:app:longrun:classification}). On the growth branch the collapse cells
+carry essential materials; \ref{sec:app:collapse:growthcell} below shows $K\to\infty$ is
+inconsistent with $C\to0$ there.
+
+\emph{Step 3: everything vanishes.} With $K$ bounded and $N\to0$, $R$ bounded away from zero
+would require $a\varpi\to1$ by Lemma~\ref{lem:sp:lr:common}(iii), hence $K^R\to\infty$ ---
+impossible with $K$ bounded. So $R\to0$; essentiality gives $Y\to0$; if $K\to\bar K>0$ then
+$\dot K=Y-C-\delta K-\text{bills}\to-\delta\bar K\ne0$, contradicting convergence, so
+$K\to0$; $M^K\le\Phi^KK\to0$ with $\Phi^K$ bounded (an investment-weighted average of the
+convergent $\Phi^I$); $-\dot M^K\le\delta M^K\to0$, so the
+ledger~\eqref{eq:sp:setup:ledger} gives $W\to0$; and $N\le R\to0$, $D\to0$ (convergent with
+finite integral under (E)).
+
+\emph{(iv) The environment recovers and is priced away.} $\Xi\le\left(1+d^W\right)W\to0$, and
+with $\theta\!\left(P\right)P$ increasing near zero and $\theta\!\left(0\right)>0$, $P\to0$.
+The marginal damage in goods units is
+$\mathcal V=v'\!\left(P\right)/\lambda-F_Pw_Y$: the first term dies because $v'\!\left(P\right)$
+is bounded near zero while $\lambda\to\infty$ --- \emph{no} condition on $v'\!\left(0\right)$
+or on damage exponents is needed, in contrast to both growth configurations --- and the
+second converges to $-F_P$ evaluated at the dying limit, which is zero for the workhorse
+($F_P=-\Gamma'\mathcal F$ with $\mathcal F\to0$). Hence $p^P\to\bar{\mathcal V}/\left(\bar r
++\theta_0\right)$, equal to zero for the workhorse.
+
+\emph{(v) Scarcity dies in value.} The rent's dividend
+$\left|C^N_S\right|w_N\approx\left|C^N_{NS}\right|Nw_N$ dies at the rate of $N$, so
+by~\eqref{eq:sp:sum:S} $p^S\sim\left|C^N_S\right|w_N/\left(r-g_N\right)\to0$ under damping.
+Once exploration is at its corner the dividend of $X$ is zero, and the transversality
+condition (with $X$ bounded and $e^{-\rho t}\lambda$ dying at rate
+$\rho-\eta\left|g_C\right|$, of either sign) selects $p^X=0$: worthless deposits behind a
+dead margin. \hfill$\qed$
+
+\subsection{The Cobb--Douglas lead case: proof of Proposition~\ref{prop:sp:wh:collapse}}
+\label{sec:app:collapse:cd}
+
+Setting: the workhorse at $\varsigma=1$,
+$F=\left[1-\Gamma\!\left(P\right)\right]b_0\big(K^Y\big)^{1-\beta}R^{\beta}$ with
+$\underline R=0$, $\delta>0$, regime (E) ($\kappa_{\mathrm E}$), and a regular damped collapse
+with exponential rates. By Lemma~\ref{lem:sp:lr:collapse}(iii) all quantities die and all
+normalised prices converge; the congestion term $c_\mu N^\mu\to0$ is inert. We look for the
+\emph{self-similar} profile, $g_C=g_K\equiv g$; mismatched-rate profiles are not excluded
+(gap~(xiii)).
+
+\smalltitle{Balanced decay.} By~\eqref{eq:app:col:FK}, $F_K$ converges to a positive
+constant. For Cobb--Douglas $F_K=\left(1-\beta\right)Y/K^Y$ and
+$F_K\propto\left(R/K^Y\right)^\beta$ (with $\Gamma\to0$ by
+Lemma~\ref{lem:sp:lr:collapse}(iv)), so $R/K^Y$ converges to a positive constant: $g_R=g_K$.
+Then $Y\propto K^Y\left(R/K^Y\right)^\beta$ gives $g_Y=g_K$, and $F_R=\beta Y/R$ converges:
+\emph{the entire material price block is bounded on the way down}, an SS-like price system on
+a dying path. From $M^K\sim\bar\Omega\phi^IK$ (the intensity ratio converges),
+$g_{M^K}=g$; from the ledger, $g_W=g$; and $N$, when interior, inherits $g$ from the ledger
+ratios below.
+
+\smalltitle{The ratio system.} Write hatted ratios per unit of capital,
+$\hat Z\equiv Z/K$, and let $k_R\equiv K^R/K$, $s_N\equiv N/R$. The asymptotic system
+collects (all objects at their limits):
+\begin{align}
+&\text{Euler + capital:}
+&
+\eta g+\rho+\delta&=F_K\bar w_Y/\bar q,
+&
+F_K&=\left(1-\beta\right)\hat Y/\left(1-k_R\right),
+\label{eq:app:col:euler}
+\\
+&\text{goods:}
+&
+g&=\hat Y-\hat C-\delta-c_N\bar S^{-\chi}\hat N-c^W\hat W,
+\label{eq:app:col:goods}
+\\
+&\text{materials:}
+&
+\Psi&=F_R\bar w_Y+\zeta,
+&
+F_R&=\beta\hat Y/\hat R,
+\label{eq:app:col:psi}
+\\
+&\text{extraction:}
+&
+\Psi&=c_N\bar S^{-\chi}\bar w_N+\bar p^W\!\left(1+\Omega^{N,S}\right),
+\label{eq:app:col:Nmargin}
+\\
+&\text{ledger:}
+&
+\hat W\left(1-\bar a\bar\varpi\right)&=\left(1+\Omega^{N,S}\right)s_N\hat R
++\left|g\right|\bar\Omega\phi^I,
+&
+\hat R&=s_N\hat R+\bar a\bar\varpi\hat W,
+\label{eq:app:col:ledger}
+\end{align}
+together with the waste, treatment and recycling-capital conditions
+\eqref{eq:sp:sum:W}--\eqref{eq:sp:sum:KR} at their limits (with $p^P\to0$), the price block
+$\zeta=\bar\sigma\left(\bar p^W-\bar p^M\right)$,
+$\bar p^M=\delta\bar p^W\!/\left(\bar r+\delta\right)$,
+$\bar q=1-\bar\Omega\phi^I\left(1-\bar\sigma\right)\left(\bar p^W-\bar p^M\right)$ with
+$\bar r=\rho+\eta g$, the intensity condition defining $\bar\Omega$, the storage share
+$\bar\sigma=\bar\Omega\phi^I\left(g+\delta\right)/\hat R$, and $\bar x=k_R/\left(\bar\varpi\hat W\right)$.
+Here $g+\delta>0$ is the interior of the speed window
+(Lemma~\ref{lem:sp:lr:collapse}(i)); the second term of~\eqref{eq:app:col:ledger} is the
+\emph{release from the dying capital stock}, $-\dot M^K=\left|g\right|M^K>0$.
+
+\smalltitle{Count and the role of $\bar S$.} The system determines the ratios, the prices and
+the rate $g$ \emph{given} the stranded reserve $\bar S$, which enters only through the
+per-tonne cost $c_N\bar S^{-\chi}$ in~\eqref{eq:app:col:goods}
+and~\eqref{eq:app:col:Nmargin}. $\bar S$ itself is tied to history: $S$ is monotone once
+exploration stops, $\bar S=S_{T}-\int_T^\infty N\,dt$, so the pair (overall scale of the
+dying variables, $\bar S$) plays the role initial conditions play on the sustained paths, and
+the transition selects the member of the family. As on the BCP and MEG we take the closed
+count as evidence of existence without proving it; the count also requires the level
+feasibility $\hat Y\ge\hat C+\text{bills}/K$ --- output on the way down must still cover the
+mandatory collection bill of the leaking stock, $c^c\hat W>0$.
+
+\smalltitle{Comparative statics of the speed.} In the wedge-light benchmark ($\phi^I$ small,
+so $\zeta,\ \bar q-1,\ \bar w_j-1\approx0$), the chain is monotone: a larger $\bar S$ lowers
+the per-tonne cost $c_N\bar S^{-\chi}$, hence lowers $\Psi$
+by~\eqref{eq:app:col:Nmargin}, hence lowers $F_R$ and raises $\hat R$
+by~\eqref{eq:app:col:psi}, hence raises $\hat Y$ and $F_K$, hence raises $g$
+by~\eqref{eq:app:col:euler}: \emph{the more affordable the ore the dying economy still holds,
+the slower it dies}. The same chain read at fixed $\bar S$ shows the recycling parameters
+acting through $\hat R$: cheaper recycling (larger $\psi/x_a$, lower $c_T$) supports a larger
+material input at given $\Psi$ and likewise slows the descent.
+
+\smalltitle{The corner variant (run-down collapse).} If the interior
+system~\eqref{eq:app:col:euler}--\eqref{eq:app:col:ledger} returns $g<-\delta$, the domain
+$G\ge0$ binds instead: $G=0$, $g=-\delta$, $I=-\delta K$, $C=Y-C^N-c^WW$, and
+$\sigma=\Phi^IG/R=0$ so $\zeta=0$ and all wedges vanish. The capital costate still requires
+$F_K\bar w_Y=\left(\bar r+\delta\right)\bar q$ with $\bar r=\rho-\eta\delta$, so the corner
+variant exists only if
+\begin{align}
+\left(\eta-1\right)\delta<\rho ,
+\label{eq:app:col:cornercond}
+\end{align}
+which is also exactly the damping condition~\eqref{eq:app:col:damping} at $g=-\delta$: the
+fastest feasible collapse is damped precisely when it can satisfy the capital margin. When
+$\left(\eta-1\right)\delta\ge\rho$ and the interior system has no root inside the damped
+window $\left|g\right|<\rho/\left(\eta-1\right)$ --- a poor terminal margin, $F_K$ too small
+--- no damped regular collapse exists at all and the path is catastrophic
+(\ref{sec:app:collapse:scope}; gap~(xiv)).
+
+\smalltitle{Stranding.} $\int^\infty N\,dt<\infty$ along any exponential $N$, so
+$\bar S>0$ unless levels conspire: exhaustion never completes. Two sub-variants, exactly as
+for the recycling corners of the stationary state:
+\begin{itemize}
+    \item \emph{Extractive descent} ($N$ interior forever): the
+    margin~\eqref{eq:sp:sum:N} holds along the path and converges
+    to~\eqref{eq:app:col:Nmargin} with equality; $s_N\in\left(0,1\right)$; the rent dies with
+    the economy, $p^S\sim\left|C^N_S\right|\bar w_N/\left(\bar r-g\right)\sim e^{gt}$, with
+    $\bar r-g=\rho-\left(\eta-1\right)\left|g\right|>0$ under damping --- Hotelling on the way
+    down.
+    \item \emph{Closed-loop descent} ($N=0$ from a finite date): the corner
+    inequality~\eqref{eq:sp:sum:N-corner} holds at the frozen $\bar S$ (the remaining ore too
+    expensive for the shrinking economy), $s_N=0$, and the
+    ledger~\eqref{eq:app:col:ledger} reduces to
+    \begin{align}
+    \frac{1-\bar a\bar\varpi}{\bar a\bar\varpi}\,\hat R=\left|g\right|\bar\Omega\phi^I :
+    \label{eq:app:col:closedloop}
+    \end{align}
+    the loop's leak exactly equals the release from the dying capital stock --- the economy
+    lives on its own carcass, with the circularity gap pinned by the decay rate. Here
+    $p^S=0$ (zero dividend behind a dead margin, as for $p^X$ in
+    Lemma~\ref{lem:sp:lr:collapse}(v)): the stranded stock is worthless.
+\end{itemize}
+Which sub-variant obtains, and the date of the switch, are level questions tied to $\bar S$
+and the transition (gap~(xiii)).
+
+\smalltitle{Exploration.} $p^S\to0$ and $p^X\to0$ against
+$C^D_D\left(0,X\right)w_D=\kappa_{\mathrm E}\!\left(X\right)\bar w_D$ bounded away from zero
+(for $X$ bounded away from $\bar X_{\max}$): the corner
+condition~\eqref{eq:sp:sum:D-corner} holds strictly from a finite date, $D=0$ thereafter, and
+$X\to\bar X<\bar X_{\max}$: the economy stops prospecting before the map is full, and the
+undiscovered endowment is stranded along with the reserve.\footnote{Under $\Omega^{D,S}>0$
+and $\bar p^W<0$ the credit term works the other way; the overburden artefact of
+Remark~\ref{rem:sp:lr:overburden} is bounded here (all prices converge) and cannot reverse
+the corner for small $\Omega^{D,S}$.}
+
+\smalltitle{Pollution.} $\Xi=\left[1-\bar\varpi+d^W\bar\varpi\left(1-\bar a\right)\right]W
+\sim e^{gt}$, so $P\to0$ at rate $\min\left(\left|g\right|,\theta_0\right)$ and $p^P\to0$ by
+Lemma~\ref{lem:sp:lr:collapse}(iv); the treatment margin settles at the interior
+SS-like level $\bar\alpha\bar V=c^{T\prime}\!\left(\bar\varpi\right)\bar w_W$ and recycling
+at $a'\!\left(\bar x\right)\bar V=F_K\bar w_Y$ when active
+(corners as in Proposition~\ref{prop:sp:lr:sss}(iii)--(iv)). No damage-rate condition
+appears anywhere: collapse is the one configuration class that never interrogates the damage
+tails. \hfill$\qed$
+
+\smalltitle{The classic benchmark.} At $\delta=0$ the lead case degenerates in an
+instructive way: Cobb--Douglas is then \emph{not} asymptotically essential
+(\ref{sec:app:workhorse:essentiality}), $K\to\bar K>0$ is affordable (no maintenance),
+$F_K=\left(1-\beta\right)Y/K\to0$, so $r\to0$ and $g_C=-\rho/\eta$ --- the classic
+declining-consumption optimum of the exhaustible-resource literature, recovered as the
+$\delta\to0$ boundary of the collapse family. Positive depreciation changes the endgame
+qualitatively: balanced decay ($K$ dies too), the depreciation floor $g\ge-\delta$, and a
+descent priced off the stranded margin $c_N\bar S^{-\chi}$ rather than off exhaustion.
+
+\subsection{Hard essentiality: finite-time shutdown}\label{sec:app:collapse:floor}
+
+Call essentiality \emph{hard} if there is $\underline R>0$ with $F\left(K,R,P\right)=0$ for
+$R<\underline R$ (the workhorse floor), and \emph{soft} if $F>0$ at every $R>0$ while no
+feasible path sustains output with $R\to0$ (the workhorse at $\varsigma\le1$,
+$\underline R=0$, $\delta>0$).
+
+\begin{lemma}[Shutdown under hard essentiality]\label{lem:app:col:shutdown}
+Under hard essentiality, every collapse path is catastrophic: production halts at a finite
+date, $C=0$ thereafter, and $U_0=-\infty$.
+\end{lemma}
+
+\emph{Proof.} On a collapse path $K\to0$ (Lemma~\ref{lem:sp:lr:collapse}(iii); on the growth
+branch via~\ref{sec:app:collapse:growthcell}). Sustaining $R\ge\underline R$ requires
+throughput $W\ge R-N\ge\underline R-N$ through the loop with yield $a\!\left(x\right)\varpi<1$
+at bounded $x=K^R/\left(\varpi W\right)$, financed by inflows that all die: $N\to0$ under (E)
+(or by $R\to0$'s revival logic failing at levels on the bounded branch), and
+$-\dot M^K\le\delta M^K\to0$. So the ledger~\eqref{eq:sp:setup:ledger-collected} fails at
+$W\ge\underline R$ from some finite date: $R$ crosses the floor, $Y=0$, and the goods
+constraint forces $C=0$ (output can no longer cover any consumption; the remaining stocks pay
+only the mandatory collection bill while they last). With $\eta>1$,
+$u\left(0\right)=-\infty$ on a set of positive measure: $U_0=-\infty$.
+\hfill$\qed$
+
+Damped collapse therefore requires soft essentiality; the floor buys the closed DC exit and
+the anchored BCP at the price of a catastrophic endgame in every cell whose exit is collapse.
+This asymmetry is recorded in the selection maps of
+Sections~\ref{sec:sp:longrun:selection} and~\ref{sec:sp:longrun:workhorse}.
+
+\subsection{Growth capacity precludes damped collapse}
+\label{sec:app:collapse:growthcell}
+
+Throughout this subsection $\varsigma>1$ and $b_K^{\varsigma/\left(\varsigma-1\right)}-\delta>\rho$
+(the growth threshold passed), with regime (E).
+
+\smalltitle{The kernel bound.} From $\mathcal F\ge b_K^{1/\nu}K^Y$ at every
+$\left(K^Y,\tilde R\right)$,
+\begin{align}
+F_K=\left[1-\Gamma\right]b_K\left(\mathcal F/K^Y\right)^{1/\varsigma}
+\;\ge\;\left[1-\Gamma\!\left(P\right)\right]A_\infty
+\qquad\text{at every point of the domain},
+\label{eq:app:col:kernelbound}
+\end{align}
+not only in the limit: the CES technology above unit elasticity never lets the marginal
+product of capital fall below its $AK$ backbone. On any regular collapse $W\to0$, $P\to0$
+(Lemma~\ref{lem:sp:lr:collapse}(iv)), so $\Gamma\to0$ and the bound tends to
+$A_\infty>\rho+\delta$.
+
+\begin{lemma}[No damped collapse past the growth threshold]\label{lem:app:col:nogrowthcollapse}
+In the growth-(E) cells, under $\phi^I=0$ (immaterial capital) no regular collapse path
+exists. Under $\phi^I>0$ a regular collapse requires the material wedges to choke the return:
+\begin{align}
+\frac{\bar w_Y}{\bar q}
+=\frac{1-\bar\sigma\bar\pi\,\omega^Y}{1-\phi^I\left(1-\bar\sigma\right)\bar\pi}
+\;<\;\frac{\rho+\delta}{A_\infty}\;<\;1,
+\qquad
+\bar\pi\equiv\left(\bar p^W-\bar p^M\right)\bar\Omega>0,
+\label{eq:app:col:wedgechoke}
+\end{align}
+a level condition on bounded prices whose scale is capped by the collection and treatment
+cost parameters through the waste condition~\eqref{eq:sp:sum:W}.
+\end{lemma}
+
+\emph{Proof.} With $\phi^I=0$: $\zeta\equiv0$, $q\equiv1$, all wedges are unity, and the
+capital costate gives $r=F_K-\delta\ge\left[1-\Gamma\right]A_\infty-\delta\to A_\infty-\delta>\rho$
+by~\eqref{eq:app:col:kernelbound}; the Euler equation then forces $\dot C/C\to$ a positive
+constant, contradicting $C\to0$. With $\phi^I>0$ the same computation runs through
+$r=F_K\bar w_Y/\bar q-\delta$, and $r<\rho$ requires the displayed inequality; the waste
+price is bounded on a collapse (all quantities die and $p^P\to0$, so~\eqref{eq:sp:sum:W}
+bounds $\bar p^W$ by cost-scale objects), so the condition is a genuine parameter
+restriction, not a free divergence. \hfill$\qed$
+
+\smalltitle{The growth-(E)-essential cell is empty of damped regular paths.} Combine the
+pieces: sustained consumption in the cell requires the BCP
+(Theorem~\ref{thm:sp:lr:classification}), hence the matching conditions of
+Proposition~\ref{prop:sp:lr:bcp}; when they fail, no regular sustained path exists. Collapse
+in the cell: essentiality past the growth threshold requires the floor
+(hard essentiality --- the workhorse's only route to essential materials with
+$A_\infty>0$), so by Lemma~\ref{lem:app:col:shutdown} every collapse path is catastrophic.
+Hence \emph{no damped regular path of any kind exists in the cell}: the (E)-column twin of
+gap~(xii), recorded as gap~(xiv). What the optimum does --- non-regular descent, or a ranking
+of catastrophic paths by an overtaking criterion --- is open. The wedge-choked collapse
+of Lemma~\ref{lem:app:col:nogrowthcollapse} is the one candidate this argument does not
+close for inessential materials ($\underline R=0$), where it would compete with the DC exit;
+whether it is ever selected is likewise open.

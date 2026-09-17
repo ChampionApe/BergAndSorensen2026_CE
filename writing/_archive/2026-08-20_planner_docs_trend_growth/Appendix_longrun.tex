@@ -1,0 +1,632 @@
+\section{The long run: derivations and proofs}\label{sec:app:longrun}
+
+This appendix proves the results of Section~\ref{sec:sp:longrun}: Lemma~\ref{lem:sp:lr:common}
+(\ref{sec:app:longrun:common}), the classification theorem,
+Theorem~\ref{thm:sp:lr:classification} (\ref{sec:app:longrun:classification}), the stationary
+state, Proposition~\ref{prop:sp:lr:sss} (\ref{sec:app:longrun:sss}), the balanced circular
+path, Proposition~\ref{prop:sp:lr:bcp}
+(\ref{sec:app:longrun:feas}--\ref{sec:app:longrun:pollution}), materially expanding growth,
+Proposition~\ref{prop:sp:lr:meg} (\ref{sec:app:longrun:meg}), and dematerialised consumption,
+Proposition~\ref{prop:sp:lr:dc} (\ref{sec:app:longrun:dc}). Remaining gaps are collected
+in~\ref{sec:app:longrun:gaps}. Technology is stationary ($g_A=g_B=0$
+in~\eqref{eq:sp:setup:tfp}, so $A=B=1$) everywhere except~\ref{sec:app:longrun:trend}, which
+derives the trending system --- Lemma~\ref{lem:sp:lr:branches},
+Lemma~\ref{lem:sp:lr:affluence} and Proposition~\ref{prop:sp:lr:trend} --- at the rate
+level.
+
+Throughout we use the growth notation $g_Z$ of~\eqref{eq:sp:lr:gZ} and the exponential
+benchmark $N_t\sim\bar Ne^{g_Nt}$ with $g_N<0$, so that under exhaustion with $D$ of smaller
+order $S_t\sim N_t/\left|g_N\right|$, and the wedge shorthand $w_j\equiv1\pm\zeta\Omega^j$ with
+the sign as it appears in the relevant condition.
+
+\subsection{Proof of Lemma~\ref{lem:sp:lr:common}}\label{sec:app:longrun:common}
+
+\emph{(i).} With $q\to1$ (shown in~\ref{sec:app:longrun:prices}; in a bounded limit $q$ is
+constant by~\eqref{eq:sp:sum:I}) the asymptotic return on capital is $F_Kw_Y-\delta$. Since
+$F_{KK}<0$, $F_K>A_\infty$ at every finite $K$ for the relevant $R$. If $A_\infty-\delta>\rho$,
+the return exceeds the discount rate at every finite stock, so no interior stationary $K$
+exists --- the stationary version of~\eqref{eq:sp:sum:K} would require
+$F_Kw_Y=\left(\rho+\delta\right)q$ --- and $K$ is unbounded. The consumption
+rule~\eqref{eq:sp:sum:Cgrowth} with convergent $\zeta\Omega^C$ then delivers
+$\eta\dot C/C\to r-\rho$ with $r\to A_\infty-\delta$ for $R$ bounded (on MEG,
+$F_K\ge F_K\left(K,\bar R,\cdot\right)$ for any fixed $\bar R$ when $F_{KR}\ge0$, so the
+limiting return is no smaller), giving~\eqref{eq:sp:lr:gC}. With
+$C,Y,K,G,\mathcal D\sim e^{g_Ct}$ and $R$ bounded,
+$\Omega=R/\left(\mathcal D+\phi^IG\right)\sim e^{-g_Ct}$ and
+$\sigma\to\bar\sigma\in\left(0,1\right)$. Conversely, if $A_\infty-\delta<\rho$ and $K$ were
+unbounded, $r\to A_\infty-\delta<\rho$ makes consumption decline exponentially, contradicting
+$\liminf C>0$; so $K$ is bounded, the stationary~\eqref{eq:sp:sum:K} holds at an interior
+stock, and $r\to\rho$.
+
+\emph{(ii).} If $\Xi$ does not converge, neither do $P$ and the flow utility. If $C$ is bounded
+and $P\to\infty$, flow utility tends to $-\infty$ and the path cannot be optimal; if
+$C\to\infty$, the same follows from damage dominance
+(Assumption~\ref{ass:sp:lr:regular}(iii)). Stationarity of $P$ requires
+$\theta\left(\bar P\right)\bar P=\bar\Xi$; local stability requires $\theta(P)P$ increasing at
+$\bar P$; convergence of $p^P$ in~\eqref{eq:sp:sum:P} requires $\rho+\theta+\theta'\bar P>0$.
+
+\emph{(iii).} $R=N+a\varpi W$ with $R$ bounded away from zero and $a\varpi<1$ requires $W$
+bounded away from zero. The ledger~\eqref{eq:sp:setup:ledger-collected} is
+$W\left(1-a\varpi\right)=N-\dot M^K+\Omega^{N,S}N+\Omega^{D,S}D$; non-negativity of $W$ bounds
+$\dot M^K$ by the inflow, and in any limit in which the right side converges, $\dot M^K$
+converges to zero (in the stationary state exactly; on the BCP because $M^K$ is bounded,
+established in~\ref{sec:app:longrun:feas}). Equation~\eqref{eq:sp:lr:ratelock} follows. If the
+inflow vanishes, $a\varpi\to1$; since $a<1$ everywhere and $\varpi\le1$, both $a\to1$ and
+$\varpi\to1$, hence $x\to\infty$ and $K^R=x\varpi W\to\infty$. \hfill$\qed$
+
+\subsection{Proof of Theorem~\ref{thm:sp:lr:classification}}
+\label{sec:app:longrun:classification}
+
+In the regular class every variable converges in the extended sense, so $R$ tends to a point of
+$\left[0,\infty\right]$ and the four definitions partition the possibilities, with
+$N\le R$ convergent as well. The proof allocates the cells.
+
+\smalltitle{Step 1: the branch.} Lemma~\ref{lem:sp:lr:common}(i): the growth threshold decides
+whether the economy is bounded or grows; there is no third case once the knife-edge is set
+aside (Assumption~\ref{ass:sp:lr:regular}(i)).
+
+\smalltitle{Step 2: regime (E) kills extraction.} Under (E), cumulative virgin input is finite:
+$\int_0^\infty N\,dt=S_0-\lim S+\int_0^\infty D\,dt\le S_0+\bar X_{\max}$. A convergent $N$
+with finite integral has $N\to0$. Hence any configuration with permanent extraction --- the SS,
+and any MEG path with unbounded virgin inflow --- requires regime (I).
+
+\smalltitle{Step 3: the bounded branch ($A_\infty-\delta<\rho$).} $K,C,Y$ converge to positive
+constants (Lemma~\ref{lem:sp:lr:common}(i)).
+
+\emph{No MEG.} With $K$ bounded, saturation (Assumption~\ref{ass:sp:lr:F}(iii)) gives
+$Y=F\left(\bar K,R,P\right)=o\left(R\right)$ as $R\to\infty$. Every tonne of $R$ is either
+recycled --- passing through $W\ge a\varpi W=R-N$ and paying at least the collection cost
+$c^c>0$ --- or virgin, paying extraction and exploration bills that are bounded below per tonne
+unless both $C^N_N$ and $C^D_D$ become asymptotically free, a degenerate case we set aside
+(\ref{sec:app:longrun:gaps}). Total material costs therefore grow at least linearly in $R$
+against output $o\left(R\right)$: the goods constraint~\eqref{eq:sp:goods} fails.
+
+\emph{No BCP (circularity without growth).} If $R$ is bounded away from zero and $N\to0$,
+Lemma~\ref{lem:sp:lr:common}(iii) forces $a\varpi\to1$ and $K^R\to\infty$. This is killed twice
+over: maintenance of the unbounded $K^R$ is unaffordable in a bounded economy
+(\ref{sec:app:longrun:feas}), and the wedge argument of~\ref{sec:app:longrun:prices} breaks the
+consumption condition~\eqref{eq:sp:sum:C}.
+
+\emph{The SS cell.} Bounded with $\bar N>0$ requires regime (I) by Step 2. $S$ converges;
+$S\to0$ with $\bar N>0$ contradicts reserve depletion
+(Assumption~\ref{ass:sp:lr:regular}(ii)): $C^N_N\to\infty$ against a bounded $\Psi$, so the
+extraction margin~\eqref{eq:sp:sum:N} could not stay interior. Hence $\bar S>0$, and
+$\dot S\to0$ gives $\bar D=\bar N$, with $X$ growing linearly at rate $\bar N$
+($g_X=0$, divergent). $\bar a\bar\varpi<1$: otherwise $K^R\to\infty$ as above. $\bar P>0$:
+$\bar\Xi=\left[1-\bar\varpi+d^W\bar\varpi\left(1-\bar a\right)\right]\bar W>0$ since
+$\bar W>0$ and $\bar a\bar\varpi<1$. Prices converge to the stationary levels of the costate
+equations (\ref{sec:app:longrun:sss}). This is the SS structure of the theorem.
+
+\emph{The (E) sub-column.} Bounded with regime (E) forces $N\to0$ (Step 2) and excludes $R$
+bounded away from zero (no BCP above), so $R\to0$: collapse under essentiality --- by
+Definition~\ref{def:sp:lr:essential} no such path sustains output, hence not consumption ---
+and DC without it, with placement proved in~\ref{sec:app:longrun:dc}.
+
+\emph{The (I) sub-column with $R\to0$.} Excluded by viability
+(Assumption~\ref{ass:sp:lr:regular}(iv)): a virgin tonne is available at bounded cost (directly
+while $S$ is bounded away from zero, through the bounded-cost discovery margin otherwise), the
+corner condition~\eqref{eq:sp:sum:N-corner} fails at the candidate limit, and extraction
+revives.
+
+\smalltitle{Step 4: the growth branch ($A_\infty-\delta>\rho$).} $K\to\infty$ and $C$ grows at
+$g_C$ (Lemma~\ref{lem:sp:lr:common}(i)).
+
+\emph{Under (I), the material side cannot stay bounded.} Suppose $R$ bounded. Marginal
+indispensability (Assumption~\ref{ass:sp:lr:F}(i)) gives $F_R\to\infty$, so
+$\Psi=F_Rw_Y+\zeta\to\infty$ unless $\zeta$ diverges to $-\infty$, which
+\eqref{eq:sp:sum:Omega} ties to $p^W\to-\infty$. The scarcity block stays bounded under (I):
+$C^N_N$ is bounded at bounded $\left(N,S\right)$ away from the depletion corner, and $p^S$ is
+bounded by the exploration margin~\eqref{eq:sp:sum:D} with $C^D_D$ bounded. Meanwhile the waste
+condition~\eqref{eq:sp:sum:W} sends its right side down as $\Psi$ rises, so $p^W$ cannot
+diverge to $+\infty$. The extraction condition~\eqref{eq:sp:sum:N} therefore fails towards more
+extraction --- and the corner inequality~\eqref{eq:sp:sum:N-corner} fails likewise --- so $N$,
+and with it $R$, expands off the candidate path. The same revival argument excludes $R\to0$:
+reserves are replenishable at bounded cost forever. Hence growth with regime (I) is MEG.
+
+\emph{Under (E).} $N\to0$ by Step 2, so $R$ bounded away from zero is the BCP. Its remaining
+structure is forced as follows:
+\begin{itemize}
+    \item \emph{No stranded reserves.} Suppose $N\to0$ with $S\to\bar S>0$ and $R$ bounded away
+    from zero. Lemma~\ref{lem:sp:lr:common}(iii) forces $a\varpi\to1$, so the price system
+    of~\ref{sec:app:longrun:prices} applies and $p^W\to-\infty$. But the scarcity block is
+    bounded: $C^N_N\left(0,\bar S\right)<\infty$ and $p^S\to0$ (its dividend is
+    $\left|C^N_S\right|\approx\left|C^N_{NS}\right|N\to0$). Then the extraction
+    condition~\eqref{eq:sp:sum:N} cannot hold --- its right side tends to $-\infty$ against
+    $\Psi\to+\infty$ --- and the corner inequality~\eqref{eq:sp:sum:N-corner} fails for the
+    same reason. Extraction revives; optimality selects exact exhaustion. (Transversality does
+    not discriminate here: $e^{-\rho t}\lambda p^SS\to0$ on and off the exhaustion path.)
+    Exploration only adds to a stock that would be stranded, so maintained or growing reserves
+    under vanishing extraction are excluded a fortiori.
+    \item \emph{No terminal extraction corner.} With $N=D=0$ from a finite date the ledger
+    reads $W\left(1-a\varpi\right)=-\dot M^K$: positive throughput must be financed by running
+    down $M^K\ge0$, so the corner is transient unless $a\varpi=1$ at finite $x$, excluded by
+    $\lim_{x\to\infty}a=1$. And while circularity deepens, the corner
+    inequality~\eqref{eq:sp:sum:N-corner} fails against $p^W\to-\infty$ as above --- its
+    right side stays bounded because $S$ is frozen at a \emph{positive} level the moment
+    extraction stops: finite-time exhaustion, which would lock the corner behind the
+    depletion barrier $C^N_N\left(0,0\right)=\infty$, is excluded by the cumulative clause
+    of Assumption~\ref{ass:sp:lr:regular}(ii) (see gap~(xv)). Hence $N>0$
+    at every date, dying only asymptotically.
+    \item \emph{No terminal exploration corner.} Proved
+    in~\ref{sec:app:longrun:exploration}: $D>0$ at every date, dying asymptotically against the
+    regime-(E) blow-up, with $X\to\bar X_{\max}$.
+\end{itemize}
+Two exits remain in the cell: $R\to\infty$ --- unbounded throughput on a finite cumulative
+virgin inflow --- is excluded by the level-matching argument of~\ref{sec:app:longrun:matching},
+which pins a bounded stationary throughput $\bar W$ (see the caveat
+in~\ref{sec:app:longrun:gaps}); and $R\to0$ is DC, placed in~\ref{sec:app:longrun:dc}.
+\hfill$\qed$
+
+\subsection{BCP feasibility: Proposition~\ref{prop:sp:lr:bcp}(i)--(ii) and growth necessity}
+\label{sec:app:longrun:feas}
+
+\smalltitle{Implied recycling capital.} Inverting the tail~\eqref{eq:sp:lr:tails} against the
+rate lock~\eqref{eq:sp:lr:ratelock}: with $1-a\sim c_1N$,
+$c_1\equiv\left(1+\Omega^{N,S}\right)/\bar W$, the power tail gives
+$x\sim\left(c_1N/\gamma_a\right)^{-1/\psi}\sim e^{\left|g_N\right|t/\psi}$; the exponential
+tail gives $x\sim\left|g_N\right|t$ and $K^R$ linear in $t$.
+
+\smalltitle{Part (i): dematerialising capital.} The binding constraint is
+$\dot M^K\le\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D\to0$.
+
+\emph{Case $\delta=0$.} By~\eqref{eq:sp:setup:Phi-motion}, $\dot M^K=\Phi^IG=\sigma R$ with
+$\sigma=\phi^IG/\left(\mathcal D+\phi^IG\right)$ under the baseline: for small $G$,
+$\sigma R\approx\phi^I\left(R/\mathcal D\right)G$ is of the order of $G$, so the ledger requires
+$G\lesssim N$ eventually and $\int^\infty G\,dt<\infty$: the capital stock is bounded,
+contradicting $K^R\to\infty$. (Void if $\phi^I=0$, immaterial capital, not our baseline.)
+
+\emph{Case $\Phi^I=\bar\Phi^I$ constant (or exogenous, bounded away from zero).} Then
+$\frac{d}{dt}\left(M^K-\bar\Phi^IK\right)=-\delta\left(M^K-\bar\Phi^IK\right)$, so
+$M^K\to\bar\Phi^IK$ and $\dot M^K\to\bar\Phi^I\dot K>0$ permanently along any path with growing
+capital, violating the constraint for any $\delta$.
+
+\emph{Baseline with $\delta>0$.} $\dot M^K=\sigma R-\delta M^K$ with $\sigma\to\bar\sigma$, so
+$M^K\to\bar\sigma\bar R/\delta$ bounded even as $K\to\infty$ (the dilution $\Omega\to0$ at
+work), and $\dot M^K\to0$ as required; that the approach respects the inequality at every date
+is a transition-path condition we do not characterise.
+
+\smalltitle{Growth necessity (used in the classification proof).} Maintenance forces unbounded
+output: $\delta K\ge\delta K^R\to\infty$ inside~\eqref{eq:sp:goods} requires
+$\sup_{K^Y}\left[F-\delta K^Y\right]=\infty$, i.e.\ $A_\infty\ge\delta$; willingness to hold
+the unbounded stock (Lemma~\ref{lem:sp:lr:common}(i)) sharpens this to $A_\infty-\delta>\rho$.
+A second, independent argument runs through the wedges (\ref{sec:app:longrun:prices}).
+
+\smalltitle{Part (ii).} $c^WW\to\left[c^c+c^T(1)\right]\bar W$ must be finite. \hfill$\qed$
+
+\subsection{BCP prices and rate pinning: Proposition~\ref{prop:sp:lr:bcp}(iii)}
+\label{sec:app:longrun:prices}
+
+\smalltitle{The waste-margin identity.} At $\varpi=1$ the pollution bracket
+in~\eqref{eq:sp:sum:W} is $d^W\left(1-\alpha\right)$, so
+\begin{align}
+p^W\left(1-\alpha\right)=c^Ww_W+p^Pd^W\left(1-\alpha\right)-\alpha\Psi ,
+\label{eq:app:lr:wasteFOC}
+\end{align}
+and substituting into $V\equiv\Psi-p^W+d^Wp^P$ the $p^P$ terms cancel identically:
+\begin{align}
+V=\frac{\Psi-c^Ww_W}{1-\alpha}.
+\label{eq:app:lr:Videntity}
+\end{align}
+From $\alpha=a-a'x$: the power tail has $a'=\gamma_a\psi x^{-\psi-1}$,
+$1-\alpha=\gamma_a\left(1+\psi\right)x^{-\psi}$,
+$\left(1-\alpha\right)/a'=\left(1+\psi\right)x/\psi$; the exponential tail has $a'=1-a=e^{-x}$,
+$1-\alpha=\left(1+x\right)e^{-x}$, $\left(1-\alpha\right)/a'=1+x$. Combining
+\eqref{eq:app:lr:Videntity} with the capital margin $a'V=F_Kw_Y$
+in~\eqref{eq:sp:sum:recycling-virgin-KR}:
+\begin{align}
+\Psi-c^Ww_W=\frac{1-\alpha}{a'}F_Kw_Y\;\approx\;\frac{\psi+1}{\psi}\,x_t\,F_Kw_Y
+\;\longrightarrow\;\infty\ \text{like }x_t .
+\label{eq:app:lr:identity}
+\end{align}
+
+\smalltitle{The waste price.} From~\eqref{eq:app:lr:wasteFOC},
+$p^W=d^Wp^P+\left[c^Ww_W-\alpha\Psi\right]/\left(1-\alpha\right)$; with $\Psi$ of order $x_t$
+and $1-\alpha$ of order $N_t$ ($x_tN_t$ for the exponential tail),
+\begin{align}
+p^W\sim-\frac{\Psi}{1-\alpha}\sim-P_0e^{g_{p^S}t},
+\qquad
+g_{p^S}=\left|g_N\right|\frac{\psi+1}{\psi}
+\quad\left(\text{exponential tail: }g_{p^S}=\left|g_N\right|\right).
+\label{eq:app:lr:pW}
+\end{align}
+$-p^W$ is the marginal circularity multiplier times the per-pass surplus of a tonne of waste.
+
+\smalltitle{$\zeta$ and the wedges.} For $p^W\sim-P_0e^{g_{p^S}s}$, the forward
+solution~\eqref{eq:sp:sum:M} gives
+\begin{align}
+p^M=\frac{\delta}{r+\delta-g_{p^S}}\,p^W\left(1+o(1)\right),
+\qquad
+p^W-p^M=p^W\frac{r-g_{p^S}}{r+\delta-g_{p^S}}\left(1+o(1)\right),
+\label{eq:app:lr:pM}
+\end{align}
+(convergence needs $r+\delta>g_{p^S}$), so $\zeta=\sigma\left(p^W-p^M\right)$ diverges with
+$p^W$ at rate $g_{p^S}$. Every wedge is
+$\zeta\Omega^j=\zeta\Omega\omega^j\sim e^{\left(g_{p^S}-g_C\right)t}$: bounded because
+$g_C\ge g_{p^S}$ (i.e.\ $e_R\le1$), converging to zero when strict (then $w_j\to1$,
+$u'/\lambda\to1$, and $q=1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)\to1$ since
+$\Phi^I\left(p^W-p^M\right)\sim e^{\left(g_{p^S}-g_C\right)t}$). In a \emph{bounded} economy
+$\Omega$ is bounded away from zero, $\zeta\Omega^C\to-\infty$, and~\eqref{eq:sp:sum:C} fails
+--- the second growth-necessity argument used in the classification proof (circularity without
+growth).
+
+\smalltitle{Rate pinning.} $\Psi=F_Rw_Y+\zeta$: along the growth path $F_R\sim e^{e_Rg_Ct}$
+and $\zeta\sim-Ze^{g_{p^S}t}$, while by~\eqref{eq:app:lr:identity} their sum grows only like
+$x_t$. The two leading exponentials must cancel: equal rates,
+\begin{align}
+e_Rg_C=g_{p^S}
+\qquad\Longrightarrow\qquad
+g_N=-\frac{\psi}{\psi+1}\,e_Rg_C,
+\label{eq:app:lr:gpin}
+\end{align}
+and equal leading coefficients (one level condition among the constants of the path). This
+proves part (iii); $r>g_{p^S}$ is required in~\eqref{eq:app:lr:pM} and
+in~\ref{sec:app:longrun:matching} below. \hfill$\qed$
+
+\subsection{BCP extraction matching: Proposition~\ref{prop:sp:lr:bcp}(iv)}
+\label{sec:app:longrun:matching}
+
+The interior extraction margin~\eqref{eq:sp:sum:N} makes the scarcity block cancel the
+diverging waste charge:
+\begin{align}
+C^N_Nw_N+p^S=-p^W\left(1+\Omega^{N,S}\right)+O\left(x_t\right)
+\sim P_0\left(1+\Omega^{N,S}\right)e^{g_{p^S}t}.
+\label{eq:app:lr:scarcity}
+\end{align}
+Along the path
+$C^N_N\left(0,S_t\right)\sim\kappa\left(\left|g_N\right|/\bar N\right)^\chi
+e^{\chi\left|g_N\right|t}$. The rent moves at the same rate: $C^N\left(0,S\right)=0$ implies
+$C^N_S\left(0,S\right)=0$, so
+$\left|C^N_S\right|\approx\left|C^N_{NS}\right|N\sim\chi\left|g_N\right|C^N_N$,
+and~\eqref{eq:sp:sum:S} makes $p^S$ of order $C^N_N$, finite iff $r>\chi\left|g_N\right|$.
+Matching rates in~\eqref{eq:app:lr:scarcity}: $\chi\left|g_N\right|=g_{p^S}$, i.e.\
+$\chi=\left(\psi+1\right)/\psi$. Matching levels adds one equation, which together with
+exhaustion (pinning $\bar N$) determines the stationary throughput $\bar W$; we take the closed
+count of level conditions as evidence of existence without proving it. The same level condition
+is what excludes unbounded throughput under regime (E) in the classification proof: the system
+has no degree of freedom left with which to let $\bar W$ diverge.
+
+\smalltitle{Mismatches.} If $\chi<\left(\psi+1\right)/\psi$ the block diverges too slowly, the
+right side of~\eqref{eq:sp:sum:N} falls below $\Psi$, and extraction expands off the path. If
+$\chi>\left(\psi+1\right)/\psi$ it diverges too fast and pushes $N$ to its corner, which cannot
+be sustained either (the terminal-corner step of~\ref{sec:app:longrun:classification}).
+Hyperbolic profiles $N\sim t^{-\phi}$, $\phi=\chi/\left(\chi-1\right)$, reconcile the second
+case only when $g_C=0$, i.e.\ on the knife-edge $A_\infty-\delta=\rho$: any $g_C>0$ makes $F_R$
+and $\zeta$ exponential while the hyperbolic path needs $\Psi$ logarithmic. \hfill$\qed$
+
+\subsection{BCP treatment margin (part of Proposition~\ref{prop:sp:lr:bcp})}
+\label{sec:app:longrun:treatment}
+
+With $\alpha\to1$ and $V\to\infty$ the gain $\alpha V+p^P\left(1-d^W\right)$ diverges. If
+$c^{T\prime}(1)<\infty$ the upper branch~\eqref{eq:sp:sum:varpi-upper} binds at a finite date:
+full treatment arrives in finite time. If $c^{T\prime}\sim\left(1-\varpi\right)^{-\nu}$, the
+interior branch gives $1-\varpi\sim V^{-1/\nu}$, compatible with the rate
+lock~\eqref{eq:sp:lr:ratelock} iff $\nu\le\left(\psi+1\right)/\psi$; since $c^T(1)<\infty$
+already requires $\nu<1$, Proposition~\ref{prop:sp:lr:bcp}(ii) is the binding condition.
+\hfill$\qed$
+
+\subsection{BCP exploration margin: Proposition~\ref{prop:sp:lr:bcp}(v) and the
+exploration-corner step}\label{sec:app:longrun:exploration}
+
+Suppose $D=0$ on $\left[t_D,\infty\right)$ with $\bar X=X\left(t_D\right)$ and
+$C^D_D\left(0,\bar X\right)<\infty$. The corner condition~\eqref{eq:sp:sum:D-corner} requires
+$p^S+p^X\le C^D_D\left(0,\bar X\right)w_D+p^W\Omega^{D,S}$ for all $t\ge t_D$. But
+$p^S\sim e^{g_{p^S}t}\to\infty$ by~\eqref{eq:app:lr:scarcity}, $p^X$ is a discounted forward
+integral of the bounded flow $C^D_Xw_D$~\eqref{eq:sp:sum:X} and stays bounded, and the
+$p^W\Omega^{D,S}$ term (a credit once $p^W<0$) lowers the right side further. The inequality
+fails at a finite date. Hence on the BCP the discovery margin~\eqref{eq:sp:sum:D} holds with
+equality asymptotically, $D\to0$ never reached, which requires regime (E) of
+Assumption~\ref{ass:sp:lr:discovery} with the blow-up rate-matched to $p^S$; the exact matching
+exponent is not derived here. \hfill$\qed$
+
+\subsection{BCP pollution: Proposition~\ref{prop:sp:lr:bcp}(vi)}
+\label{sec:app:longrun:pollution}
+
+$p^P$ cancels from~\eqref{eq:app:lr:Videntity} but survives inside
+$p^W$~\eqref{eq:app:lr:wasteFOC} and hence in~\eqref{eq:sp:sum:N}. Along the growth path
+$\lambda\approx u'(C)\to0$, so $\mathcal V=v'(P)/\lambda-F_Pw_Y$ carries the factor
+$1/u'(C)\sim e^{\eta g_Ct}$. If $v'(0)>0$ then $\mathcal V\gtrsim e^{\eta g_Ct}$ with
+$\eta g_C\ge g_C>g_{p^S}$ for $\eta\ge1$ and $e_R<1$: $p^P$ outruns the material prices, the
+$d^Wp^P$ term flips $p^W$ to $+\infty$, and the right side of~\eqref{eq:sp:sum:N} exceeds
+$\Psi$ permanently --- extraction is forced to its corner and the BCP structure collapses. With
+$v'(0)=0$ and $v$ smooth, $v'\left(P_t\right)\sim v''(0)P_t$ with $P_t$ decaying at rate
+$\min\left(\left|g_N\right|,\theta(0)\right)$ (the emission flow is
+$\Xi\sim d^W\left(1-a\right)W\sim N$), giving the stated rate condition, alongside
+$\left|F_P\right|$ growing slower than $e^{g_{p^S}t}$. \hfill$\qed$
+
+\subsection{The stationary state: Proposition~\ref{prop:sp:lr:sss}}
+\label{sec:app:longrun:sss}
+
+With all controls constant and $\zeta\Omega^C$ constant, \eqref{eq:sp:sum:Cgrowth} gives
+$r=\rho$, and the costate equations~\eqref{eq:sp:sum:K}--\eqref{eq:sp:sum:M} collapse to
+levels:
+\begin{align}
+p^M=\frac{\delta p^W}{\rho+\delta},
+\quad
+p^W-p^M=\frac{\rho\,p^W}{\rho+\delta},
+\quad
+\zeta=\sigma\frac{\rho\,p^W}{\rho+\delta},
+\quad
+p^S=\frac{\left|C^N_S\right|w_N}{\rho},
+\quad
+p^X=-\frac{C^D_Xw_D}{\rho}\;(\to0),
+\label{eq:app:lr:ssslevels}
+\end{align}
+and $p^P=\mathcal V/\left(\rho+\theta+\theta'\bar P\right)$.
+
+\emph{(i).} Combining $q=F_Kw_Y/\left(\rho+\delta\right)$ from the
+stationary~\eqref{eq:sp:sum:K} with
+$q=1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right)$ from~\eqref{eq:sp:sum:I} and the middle
+identity in~\eqref{eq:app:lr:ssslevels} yields
+$F_Kw_Y=\rho+\delta-\Phi^I\left(1-\sigma\right)\rho\,p^W$.
+
+\emph{(ii).} Substituting the stationary rent and $p^X$ into the exploration
+margin~\eqref{eq:sp:sum:D} gives~\eqref{eq:sp:lr:inventory} (with the $p^X$ term vanishing
+under regime (I); if $C^D_X\to c>0$ it appears as $+c\,w_D/\rho$ on the right).
+
+\emph{(iii).} At $\varpi=0$ the gain in~\eqref{eq:sp:sum:varpi-lower} is
+$\mathcal G^\varpi=\alpha V+p^P\left(1-d^W\right)\ge p^P\left(1-d^W\right)>0$ since $p^P>0$
+unconditionally and $\alpha V\ge0$ at any candidate optimum, while
+$c^{T\prime}(0)=0$: the lower corner never binds.
+
+\emph{(iv).} Direct from the Kuhn--Tucker system~\eqref{eq:sp:sum:KR}; at $\bar K^R=0$, $x=0$
+gives $\alpha=0$ and the treatment margin reduces as stated.
+
+\emph{Closure.} The stationary system has 17 unknowns
+($\bar C,\bar N,\bar\varpi,\bar x,\bar W,\bar\Omega,\bar K,\bar S,\bar P,\bar\lambda$;
+$p^W,\zeta,p^S,p^X,p^P,p^M,q$) against 17 equations (eight first-order conditions, five
+stationary costates, three static constraints, pollution stationarity), with $\bar D=\bar N$,
+$I=0$, $\bar M^K=\sigma\bar R/\delta$ built in. Existence additionally requires $\bar C>0$ in
+the goods constraint; uniqueness is open (the sign of $p^W$ is not determined a priori, and
+regimes of either sign are conceivable). \hfill$\qed$
+
+\subsection{Materially expanding growth: Proposition~\ref{prop:sp:lr:meg}}
+\label{sec:app:longrun:meg}
+
+\emph{(i).} First, $W\to\infty$. From $R=N+a\varpi W\le N+W$, $R\to\infty$ requires
+$W\to\infty$ or $N\to\infty$; and if $N\to\infty$ with $W$ bounded, the
+ledger~\eqref{eq:sp:setup:ledger-collected} makes
+$\dot M^K=\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D-W\left(1-a\varpi\right)\to\infty$, so
+$M^K\to\infty$, and the stream form~\eqref{eq:sp:ledger-streams} gives
+$W\ge\delta M^K\to\infty$ (here $\delta>0$ is used) --- a contradiction. Next, by
+Lemma~\ref{lem:sp:lr:common}(ii),
+$\Xi=\left(1-\varpi\right)W+d^W\varpi\left(1-a\right)W$ converges, and both terms are
+non-negative, so each is bounded. The first, with $W\to\infty$, gives $\varpi\to1$; with
+$\varpi$ thus bounded away from zero and $d^W>0$, the second gives $\left(1-a\right)W$
+bounded, hence $a\to1$, with $x\to\infty$ fast enough that
+$\left(1-a\left(x\right)\right)W$ stays bounded. Using
+$1-a\varpi=\left(1-\varpi\right)+\varpi\left(1-a\right)$, $W\left(1-a\varpi\right)$ is
+bounded. (If $d^W=0$ the argument only forces $\left(1-\varpi\right)W$ bounded --- treated
+waste emits nothing --- and the recycling margin is disciplined by prices alone.)
+
+\emph{(ii).} Immediate from the ledger~\eqref{eq:sp:setup:ledger-collected} rearranged,
+$\dot M^K=\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D-W\left(1-a\varpi\right)$, with the last
+term bounded by (i): an unbounded virgin inflow must be matched by unbounded net storage. On
+the growth path $\dot M^K=\sigma R-\delta M^K$, so a constant asymptotic storage share
+$\bar\sigma>0$ of the growing $R$ delivers it.
+
+\emph{(iii).} From (i), $a\to1$ requires $x\to\infty$, and with $W\to\infty$ also
+$K^R=x\varpi W\to\infty$, so $K\ge K^R\to\infty$. A bounded economy admits no MEG
+(\ref{sec:app:longrun:classification}, Step 3), so $A_\infty-\delta>\rho$, and when
+$F_{KR}\ge0$ the limiting return is at least $A_\infty-\delta$, giving
+$g_C\ge\left(A_\infty-\delta-\rho\right)/\eta$ by the Euler equation with convergent
+$\zeta\Omega^C$ --- reading $A_\infty$ at the path's limiting pollution stock and presuming
+$w_Y\to1$ (or $\zeta\le0$), both parts of the open price system
+(\ref{sec:app:longrun:gaps}). \hfill$\qed$
+
+\medskip
+Under the workhorse family the configuration closes entirely --- rates, prices, and
+FOC-consistency, with every hedge above resolved --- in Appendix~\ref{sec:app:workhorse:meg}.
+
+\subsection{Dematerialised consumption: Proposition~\ref{prop:sp:lr:dc}}
+\label{sec:app:longrun:dc}
+
+\emph{(i).} Immediate from Definition~\ref{def:sp:lr:essential}: sustained consumption
+requires $\liminf Y>0$ through the goods constraint, which no feasible dematerialising path
+delivers under essentiality.
+
+\emph{(ii).} Suppose $R\to0$ with $S\to\bar S>0$ (dematerialisation before exhaustion). The
+deep-circularity price system of~\ref{sec:app:longrun:prices} does not apply --- $W\to0$ and no
+rate lock forces $a\varpi\to1$ --- but the conclusion needs only
+Assumption~\ref{ass:sp:lr:F}(i): on the growth branch, $K\to\infty$ with $R\to0$ gives
+$F_R\to\infty$, hence $\Psi=F_Rw_Y+\zeta\to\infty$ with the remaining prices bounded (given
+tame damages), while the right side of~\eqref{eq:sp:sum:N-corner} stays bounded at
+$C^N_N\left(0,\bar S\right)<\infty$; on the bounded branch the same failure of the corner is
+the viability condition (Assumption~\ref{ass:sp:lr:regular}(iv)). Either way the corner fails,
+extraction revives and feeds $R$: material input cannot be abandoned while reserves remain
+available at bounded cost. Dematerialisation is therefore possible only after asymptotic
+exhaustion, when the recycled tonne's supply cost (the diverging capital margin) is what
+$F_R$'s divergence must be weighed against --- the same comparison as the matching condition
+in~\ref{sec:app:longrun:matching}. Stranding is excluded as
+in~\ref{sec:app:longrun:classification}, so exhaustion is exact, and the exploration margin
+dies against the diverging discovery cost as in~\ref{sec:app:longrun:exploration},
+$X\to\bar X_{\max}$.
+
+\emph{(iii).} Under regime (I) the argument in (ii) applies at every date: replacement through
+discovery stays available at bounded cost, so a virgin tonne is always on offer, the corner
+conditions~\eqref{eq:sp:sum:N-corner} and~\eqref{eq:sp:sum:D-corner} cannot jointly hold
+against a diverging (growth branch) or viable (bounded branch) material value, and extraction
+revives. Hence DC requires regime (E). \hfill$\qed$
+
+\subsection{The trending system}\label{sec:app:longrun:trend}
+
+This subsection derives the trending results of the main text at the rate level: the growth
+structure (Lemma~\ref{lem:sp:lr:branches}), the material-price pace, the affluence lemma
+(Lemma~\ref{lem:sp:lr:affluence}), and the cell arguments behind
+Proposition~\ref{prop:sp:lr:trend}. The workhorse rate systems are
+in~\ref{sec:app:workhorse:trend}. Throughout, ``wedges behave'' means $\zeta\Omega^j$
+converge, $w_Y\to1$ and $q\to1$; this is maintained as part of regularity on trending paths
+and is itself a gap-level assumption (gap~(xvi)).
+
+\smalltitle{Intensive form.} Under Assumption~\ref{ass:sp:lr:F}(iv) write $m=BR$,
+$k=K^Y/m$, so $Y=A\,m\,f\left(k\right)$, $F_K=Af'\left(k\right)$,
+$F_R=AB\left[f\left(k\right)-kf'\left(k\right)\right]$, with $f$ read at the path's limiting
+pollution stock. The capital margin with behaved wedges gives $r\to Af'\left(k\right)-\delta$.
+
+\smalltitle{Explosion (Lemma~\ref{lem:sp:lr:branches}(i)).} $F_{11}<0$ gives
+$F_1>A_\infty$ at every finite $K$ for the relevant $m$, so with $A_\infty>0$ and $g_A>0$,
+$F_K\ge A\,A_\infty\to\infty$ and $r\to\infty$. The consumption
+rule~\eqref{eq:sp:sum:Cgrowth} then forces $\dot C/C\to\infty$: no finite $g_C$ exists, so
+neither a sustained-consumption nor a collapse path lies in the regular exponential class.
+Two caveats survive: diverging wedges ($w_Y\to0$) or damage saturation
+($\Gamma\left(P\right)\to1$ on a path with $P\to\infty$, disciplined but not excluded by
+damage dominance) could choke the return at bounded values; both are recorded in gap~(xvii).
+
+\smalltitle{The trend-paced branch (Lemma~\ref{lem:sp:lr:branches}(iii)).} On a regular path
+with finite $g_C$, the Euler equation pins $r\to\rho+\eta g_C$, hence
+$Af'\left(k\right)\to\rho+\delta+\eta g_C$. Two cases. \emph{(a) $g_A=0$:} $k\to k^*$ with
+$f'\left(k^*\right)=\rho+\delta+\eta g_C$, a level condition solvable exactly when the
+demanded return lies in the range of $f'$. For a CES kernel above unit elasticity that range
+is $\left(A_\infty,\infty\right)$, and solvability is precisely the reversed effective
+threshold $A_\infty-\delta<\rho+\eta\left(g_B+g_R\right)$; when it fails, $k\to\infty$ and
+the economy is on the endogenous branch (item (ii) of the lemma, which is the stationary
+Step 4 verbatim since $A=1$). Below unit elasticity the range is
+$\left(0,f'\left(0\right)\right)$ and solvability is a viability condition on the kernel
+($f'\left(0\right)>\rho+\delta+\eta g_C$; workhorse: $b_K^{\varsigma/\left(\varsigma-1\right)}$
+exceeds the demanded return). With $k$ settled, $g_K=g_m=g_B+g_R$ and
+$g_Y=g_m$, so $g_C=g_B+g_R$. \emph{(b) $g_A>0$ (requires $A_\infty=0$):}
+$f'\left(k\right)\sim e^{-g_At}$ forces $k\to\infty$ along the tail
+$f'\sim\mathrm{const}\cdot k^{-\epsilon_\infty}$, so $g_k=g_A/\epsilon_\infty$ and
+$g_K=g_A/\epsilon_\infty+g_m$. Output:
+$g_Y=g_A+g_m+\beta_\infty g_k=\gamma_Ag_A+g_m$. The capital-output ratio moves at
+$g_K-g_Y=g_A\left(1-\beta_\infty-\epsilon_\infty\right)/\epsilon_\infty\le0$ by the
+consistency condition, so the investment share is bounded (vanishing when strict, settling
+in the Cobb--Douglas case) and consumption absorbs output: $g_C=g_Y=\gamma_Ag_A+g_B+g_R$,
+provided the material bills ($C^N$, $C^D$, $C^W$) are subdominant --- checked configuration
+by configuration in~\ref{sec:app:workhorse:trend}. Transversality on capital holds
+throughout: the exponent of $e^{-\rho t}\lambda qK$ is
+$-\rho-\eta g_C+g_K\le-\rho-\left(\eta-1\right)g_C<0$ for $g_C\ge0$, and on the collapse
+side it is exactly the damping condition~\eqref{eq:sp:lr:damping}.
+
+\smalltitle{The material-price pace.} $F_R=AB\left(f-kf'\right)$. On the trend-paced branch
+the asymptotic material share $F_RR/Y\to1-\beta_\infty>0$ is bounded away from zero, so
+$F_R\sim Y/R$ and $\pi\equiv g_{F_R}=g_C-g_R$; with $R$ settled, $\pi=g_C=\gamma_Ag_A+g_B$.
+On the endogenous branch (CES above unit elasticity) the share dies and the direct
+computation gives
+$\pi=\left(g_C-g_R\right)/\varsigma+\left(1-1/\varsigma\right)g_B$, the
+generalisation of $e_Rg_C$; the stationary case is $g_B=0$, $g_R=0$. In every case
+$\pi\le g_C-g_R$, with equality on the trend-paced branch --- the fact the affluence lemma
+uses.
+
+\smalltitle{Affluence prices pollution (Lemma~\ref{lem:sp:lr:affluence}).} Suppose a regular
+sustained path has $g_C>0$ and $P\to\bar P>0$. With behaved wedges $\lambda$ dies at rate
+$\eta g_C$, so $\mathcal V\ge v'\left(\bar P\right)/\lambda$ diverges at $\eta g_C$; the
+discount in the $p^P$ integral converges to $\rho+\eta g_C+\theta+\theta'\bar P$, which
+exceeds the growth of $\mathcal V$ by $\rho+\theta+\theta'\bar P>0$, so $p^P$ diverges at
+$\eta g_C$, and via the waste condition~\eqref{eq:sp:sum:W} (whose $p^P$ coefficient is
+bounded below by $d^W\left(1-\alpha\right)>0$) so does $p^W$. Every delivered-material value
+grows at most at $\pi\le g_C<\eta g_C$; since
+$\zeta=\sigma\left(p^W-p^M\right)$ with $\sigma<1$, the net $p^W$ coefficient on the
+extraction margin is $\sigma-\left(1+\Omega^{N,S}\right)<0$, so the treatment
+gain~\eqref{eq:sp:sum:gains} diverges (corner $\varpi=1$, reachable since
+$c^T\left(1\right)<\infty$) while the extraction margin diverges negatively (corner $N=0$)
+in finite time; exploration follows (its product is worthless with extraction shut). All
+inflows to the loop then die, the ledger runs the loop on the bounded storage release
+$\delta M^K$, cumulative emissions are finite, and the sink drains $P\to0$ ---
+contradicting $\bar P>0$. The same divergence argument on the congestion side rules out
+$\bar P>0$ with $R\to\infty$. Hence $P\to0$ on every regular trending sustained path, and
+the rate at which $v'\left(P\right)/\lambda$ and $\left|F_P\right|$ must die transfers the
+$\beta_v,\beta_F$ conditions to every cell with the cell's own rates.
+
+\smalltitle{Regime (I): the SS cell empties into MEG
+(Proposition~\ref{prop:sp:lr:trend}(i)--(ii)).} Consider a trending (I)-path with $R$
+bounded. By the affluence lemma $P\to0$, so the pollution charges are bounded; under the
+backstop the virgin supply cost is bounded ($C^N_N$ at bounded $N$ with $S$ a produced
+inventory, $p^S$ pinned by replacement cost $\bar\kappa$); but the delivered value grows at
+$\pi>0$. The extraction condition~\eqref{eq:sp:sum:N} cannot hold with both sides settling:
+the margin is strictly profitable from a finite date, extraction expands, and $R$ bounded
+fails. $N\to0$ fails the same way (the revival argument of the stationary Theorem, now with
+a diverging left side). Hence $R\to\infty$: MEG, disciplined --- as in the stationary
+(I)-growth cell --- only by congestion, with the parametric system
+in~\ref{sec:app:workhorse:trend}.
+
+\smalltitle{Regime (E).} Cumulative virgin input is bounded by $S_0+\bar X_{\max}$
+regardless of trends, so $N\to0$ in the regular class: the column winds down exactly as at
+stationary technology, and the exits (BCP / DC / collapse, floor variants included) are as
+in the main text, with the BCP rate system run at the pace $\pi$
+(\ref{sec:app:workhorse:trend}) and DC/collapse split by the sign of
+$\gamma_Ag_A+g_B+g_R$.
+
+\subsection{Remaining gaps}\label{sec:app:longrun:gaps}
+
+(i) Existence of the BCP is established at the level of rates and the count of level
+conditions, not as a fixed-point theorem; existence of the stationary state likewise (the
+substantive condition being $\bar C>0$), and uniqueness of neither is established. (ii) The
+matching exponent for the discovery-cost blow-up (\ref{sec:app:longrun:exploration}) is not
+derived. (iii) Profiles outside the exponential class: subexponential \emph{sustained growth}
+is confined to the knife-edge $A_\infty-\delta=\rho$ (Remark~\ref{rem:sp:lr:exponential}), but
+slowly varying corrections ($t^\beta e^{gt}$) to the exponential rates are unexplored, and
+nothing is said when $F_K$ has no limit (failure of Assumption~\ref{ass:sp:lr:F}(ii)).
+(iv) The transition-path condition
+$\dot M^K\le\left(1+\Omega^{N,S}\right)N+\Omega^{D,S}D$ on the BCP is assumed, not
+characterised. (v) The pollution rate condition should be sharpened once functional forms for
+$v$, $\theta$, $F$ are fixed. (vi) Uniqueness and comparative statics of the stationary state,
+and the local (saddle-path) dynamics around it, are left to the quantitative part. (vii) MEG is
+placed and constrained (Proposition~\ref{prop:sp:lr:meg}) but, in the general family, not
+characterised: the joint rates of the material block and the supporting price system are open,
+as is FOC-consistency of the configuration itself, and the growth bound of
+Proposition~\ref{prop:sp:lr:meg}(iii) borrows from that open price system (it presumes the
+material wedges vanish, or $\zeta\le0$, and reads $A_\infty$ at the path's limiting pollution
+stock). Under the workhorse family all of this closes
+(Appendix~\ref{sec:app:workhorse:meg}, Proposition~\ref{prop:sp:wh:meg}), with existence
+again established at the level of rates and the count of level conditions, not as a fixed
+point. What remains open in general: a characterisation free of the workhorse's parametric
+tails, and, relatedly, the exclusion of unbounded throughput under regime (E), which rests on
+the level-matching argument of~\ref{sec:app:longrun:matching} rather than a direct proof. (viii) DC is placed (Proposition~\ref{prop:sp:lr:dc}) but the profile of the phase-out
+path --- the decay rates of $R$, $W$, $K^R$ and the associated price asymptotics --- is not
+derived. (ix) The degenerate configurations excluded by saturation and viability
+(Assumptions~\ref{ass:sp:lr:F}(iii) and~\ref{ass:sp:lr:regular}(iv)) --- asymptotically free
+virgin tonnes, economies for which materials are never worth their supply cost --- are set
+aside rather than characterised. (x) The regular class itself (extended-sense convergence) is
+an assumption: cycles and other non-convergent optimal paths are excluded by scope, not by
+proof. (xi) Under a material floor ($\underline R>0$ in the workhorse family,
+Appendix~\ref{sec:app:workhorse}), the BCP rate system is pinned only to an interval,
+$g_{p^S}\in\left[g_C/\varsigma,\,g_C\right]$; which point the optimum selects --- by level
+conditions, transversality, or the transition --- is not derived. (xii) When the workhorse's
+MEG conditions fail --- congestion below the threshold $\mu\le\left(\psi+1\right)/\psi$, or
+the damage rate conditions of Proposition~\ref{prop:sp:wh:meg} violated --- the growth-(I)
+cell admits no regular exponential sustained-consumption limit at all
+(Appendix~\ref{sec:app:workhorse:meg}); what the optimum then does --- non-regular paths,
+slowly varying rates, or no sustained consumption --- is not derived. Relatedly, the MEG
+analysis scopes out exploration overburden ($\Omega^{D,S}=0$): with $\Omega^{D,S}>0$ and a
+bounded discovery cost the overburden artefact of Remark~\ref{rem:sp:lr:overburden} is
+binding, and only resolving the stock-flow caveat of
+Section~\ref{sec:sp:setup:materialaccounting} would discipline it.
+(xiii) The collapse analysis (Section~\ref{sec:sp:longrun:collapse},
+Appendix~\ref{sec:app:collapse}) characterises the self-similar profile ($g_C=g_K$) only:
+mismatched-rate profiles (consumption dying faster than capital) are not excluded; the
+selection between the interior and corner speeds, and between the extractive and closed-loop
+sub-variants, is a level-and-transition question tied to the stranded reserve $\bar S$; and
+existence is again by rate-and-count. (xiv) When no damped regular path exists --- the
+growth-(E)-essential cell with failed matching (the (E)-column twin of gap~(xii)), any
+collapse cell under hard essentiality, or a damped window
+$\left|g_C\right|<\rho/\left(\eta-1\right)$ that the level system cannot reach --- every
+path has $U_0=-\infty$ and the discounted criterion cannot rank them; overtaking-type
+criteria are not developed. The wedge-choked collapse of
+Lemma~\ref{lem:app:col:nogrowthcollapse} (material wedges pushing the return below the
+threshold at bounded prices, $\phi^I>0$) is not resolved. (xv) If the cumulative clause of
+Assumption~\ref{ass:sp:lr:regular}(ii) fails (workhorse: $\chi<1$), exhaustion can complete
+in finite time at finite cost and the extraction corner locks behind the depletion barrier:
+an \emph{exhaustion-locked} circular variant --- the loop financed by storage release, deep
+circularity without a live extraction margin --- then evades the per-date interiority of
+Theorem~\ref{thm:sp:lr:classification}(ii) and, with the floor anchoring throughput, appears
+constructible at the level of rates on the growth branch even where the matching conditions
+fail; whether it exists as an optimum is not derived. (xvi) The trending system
+(\ref{sec:app:longrun:trend}, \ref{sec:app:workhorse:trend}) is established at
+rate-and-count only: no level system is closed, existence and uniqueness are not
+established in any trending cell, and the wedge dynamics along trending paths --- the
+convergence of $\zeta\Omega^j$, $w_Y\to1$, $q\to1$, and the subdominance of the material
+bills in the goods constraint --- are maintained as regularity rather than derived.
+Relatedly, exhaustiveness of the four configurations under trends leans on extended-sense
+regularity of the detrended system, and the trend-regular kernel
+(Assumption~\ref{ass:sp:lr:F}(iv)) adds constant returns that the stationary analysis never
+needed. (xvii) The explosive cell ($g_A>0$ with $A_\infty>0$) is excluded by scope, not
+resolved: super-exponential paths are unclassified, the damage-choked
+($\Gamma\to1$) and wedge-choked variants of the diverging return are open, and nothing is
+said about what the optimum in that cell does. (xviii) The floor-anchored trending BCP ---
+the candidate that rescues the growth-(E)-essential cell and the floor-collapse cells ---
+is rate-consistent only: its matching analogues, the level system, and its optimality
+against catastrophic alternatives are not derived. (xix) Trending DC and trending collapse
+are placed by the rate race $\gamma_Ag_A+g_B+g_R\gtrless0$ but not profiled: $g_R$ itself
+is not pinned (the trending twin of gap~(viii)), the collapse profiles of
+Appendix~\ref{sec:app:collapse} are stationary-derived with no trending counterpart, and
+whether any cell optimally collapses at a positive trend vector is open.

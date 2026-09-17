@@ -1,0 +1,328 @@
+\section{A comprehensive description of the social planner problem}\label{sec:app:sp}
+
+This appendix carries the full characterisation of Problem~\ref{prob:sp}. Section~\ref{sec:sp:opt} states the conditions compactly; what follows derives each of them, decomposes it into the separate margins it balances, and checks the units. The units are worth taking seriously in this model, because two distinct quantities are being traded off throughout --- final goods and tonnes of material --- and most of the conditions below mix them.
+
+\subsection{Units}\label{sec:app:sp:units}
+
+Everything in the model is measured in one of two units, the final good and the tonne, or in a ratio of the two. Collecting them once:
+\begin{itemize}
+\item \emph{Final goods.} Output $Y$, consumption $C$, investment $I$, the capital stock $K$, gross formation $G$, the cost flows $C^N$, $C^D$, $C^W$, and the waste base $\mathcal D$.
+\item \emph{Tonnes.} Raw material $R$ and its components $N$ and $R^R$, waste $W$, treated waste $T=\varpi W$, the reserve $S$, cumulative discoveries $X$, the discovery flow $D$, embodied material $M^K$, the pollution stock $P$, the emission flow $\Xi$, and the nature-attributable base $\mathcal N$.
+\item \emph{Tonnes per final good.} The material intensities $\Omega$, $\Omega^j=\Omega\omega^j$, $\Phi^I=\Omega\phi^I$, $\Phi^K$ and $\Phi^Y$; also $a'\left(x\right)$, the marginal product of recycling capital.
+\item \emph{Final goods per tonne.} The marginal product of materials $F_R$, the marginal costs $C^N_N$, $C^D_D$, $c^W$ and $c^{T\prime}$, the recycling capital ratio $x=K^R/T$, and every shadow price carried below: $p^S$, $p^X$, $p^W$, $p^M$, $p^P$, $\zeta$ and $\Psi$.
+\item \emph{Dimensionless.} The relative intensities $\omega^j$, the durables coefficient $\phi^I$, the recycling functions $a$, $\alpha$ and $\varepsilon$, the leakage rate $d^W$, the treatment share $\varpi$, the storage share $\sigma$, the marginal product of capital $F_K$, the shadow price of capital $q$, and the nature-attributable intensities $\Omega^{N,S}$ and $\Omega^{D,S}$.
+\end{itemize}
+Two of these deserve emphasis. The intensities $\Omega^j$ convert a \emph{final-good} flow into tonnes and so carry units, whereas $\Omega^{N,S}$ and $\Omega^{D,S}$ convert a tonnage into a tonnage and are pure numbers; the two families are not comparable, and the difference is exactly the distinction of Section~\ref{sec:sp:setup:materialaccounting} between mass drawn through $R$ and mass displaced from nature. And $\lambda$, the multiplier on the goods constraint, is measured in utils per final good, which is why dividing by it puts every shadow price into final-good units as in~\eqref{eq:sp:costates-def}.
+
+A useful consequence: any product of a shadow price with an intensity, such as $\zeta\Omega^C$ or $\Phi^Ip^W$, is dimensionless and can be read directly as a proportional wedge.
+
+\subsection{First-order conditions for the controls}\label{sec:app:sp:foc}
+
+Each condition below is obtained by differentiating the Lagrangian~\eqref{eq:sp:lagrangian}, and each is presented the same way: what the control moves, the condition itself with its terms marked, and then the terms one at a time.
+
+\smalltitle{Material intensity.}
+Differentiation of~\eqref{eq:sp:lagrangian} with respect to $\Omega$ gives
+\begin{align*}
+    \frac{\partial \mathcal{L}}{\partial \Omega} = \lambda \phi^IG\left(p^W-p^M\right) - \lambda \zeta \left(\mathcal{D}+\phi^IG\right),
+\end{align*}
+so that the optimum is characterised by
+\begin{align}
+    \underbrace{\phi^IG}_{\text{(a)}}\underbrace{\left(p^W-p^M\right)}_{\text{(b)}}
+    &= \underbrace{\zeta}_{\text{(c)}}\underbrace{\left(\mathcal D+\phi^IG\right)}_{\text{(d)}}
+    \;=\;\zeta\,\frac{R}{\Omega}.
+\label{eq:sp:foc:Omega}
+\end{align}
+Each piece has a direct reading.
+
+Term (a) is the tonnage that a marginal rise in $\Omega$ diverts into new capital: with $\Phi^I=\Omega\phi^I$ and gross formation $G$, a perturbation $d\Omega$ raises embodied investment by $\phi^IG\,d\Omega$ tonnes. This is the only \emph{physical} margin that $\Omega$ moves. It is worth being clear about what it does not move: given $R$, the ledger~\eqref{eq:sp:ledger} states that every tonne entering production becomes waste except what is stored in the capital stock, so $\Omega$ shifts the split between the two and never the total.
+
+Term (b) prices that shift, in final goods per tonne. The diverted tonne leaves the current waste flow, saving $p^W$, and enters the embodied stock $M^K$, incurring $p^M$. It is a postponement, not a disposal, which is why the two shadow prices enter as a difference.
+
+Term (d) is the embodied-material requirement of the entire use structure, $\mathcal D+\phi^IG=R/\Omega$ by the intensity condition~\eqref{eq:sp:intensity}: the perturbation $d\Omega$ raises the material that the final-good system must carry by $\left(\mathcal D+\phi^IG\right)d\Omega$ tonnes. Since $R$ is held fixed along the perturbation, the increase has to be paid for, and term (c) is the price. Thus $\zeta$ is the shadow value, in final goods per tonne, of one tonne of embodied material in the final-good system --- what it would be worth to have that tonne appear without drawing it through $R$.
+
+Both sides are in final goods per unit of $\Omega$: (a) and (d) are in final goods, (b) and (c) in final goods per tonne.
+
+\smalltitle{Consumption.} A marginal unit of consumption is one final good. It raises felicity by $u'\left(C\right)$ utils, absorbs one unit of the goods constraint, and adds $\omega^C$ to the waste base $\mathcal D$, hence $\Omega^C$ tonnes to the embodied material the system must carry. Differentiating and dividing by $\lambda$ to put the condition in final goods,
+\begin{align}
+\underbrace{\frac{u'\left(C\right)}{\lambda}}_{\text{(a)}} &= \underbrace{1}_{\text{(b)}}+\underbrace{\zeta\Omega^C}_{\text{(c)}} .
+\label{eq:sp:foc:C}
+\end{align}
+Term (a) is the marginal utility of consumption converted into final goods by the goods multiplier, and is dimensionless. Term (b) is the direct resource cost, one good for one good. Term (c) is the material wedge: $\Omega^C$ tonnes per good times $\zeta$ goods per tonne, again dimensionless, and readable directly as a proportional tax.
+
+The condition says that $\lambda$ is \emph{not} the marginal utility of consumption in this model, as it would be without the materials accounting. A unit consumed also carries embodied material away from the storage margin, and $\zeta\Omega^C$ is what that costs. Because every shadow price in~\eqref{eq:sp:costates-def} is normalised by $\lambda$ rather than by $u'\left(C\right)$, the distinction matters for reading all of them. The wedge is a tax when $\zeta>0$ and a subsidy when $\zeta<0$; by~\eqref{eq:sp:zeta-explicit} its sign is that of $p^W-p^M$, never that of $p^W$ alone.
+
+\smalltitle{Investment.} A marginal unit of investment is one final good. It absorbs one unit of the goods constraint, adds one unit to $K$, and --- since $G=I+\delta K$ --- raises embodied investment $\Omega\phi^IG$ by $\Phi^I$ tonnes, which appears in three places at once: the ledger, the law of motion for $M^K$, and the right-hand side of the intensity condition. It does \emph{not} enter $\mathcal D$, because the material embodied in capital is carried by the separate term $\phi^IG$ in~\eqref{eq:sp:setup:ybalance_OmegaPhi}. Hence $\partial\mathcal L/\partial I=\lambda\left[-1+q+\Omega\phi^I\left(p^W-p^M-\zeta\right)\right]$ and
+\begin{align}
+\underbrace{q}_{\text{(a)}} &= \underbrace{1}_{\text{(b)}}-\underbrace{\Phi^I}_{\text{(c)}}\Big[\underbrace{\left(p^W-p^M\right)}_{\text{(d)}}-\underbrace{\zeta}_{\text{(e)}}\Big]
+\;=\;1-\Phi^I\left(1-\sigma\right)\left(p^W-p^M\right).
+\label{eq:sp:foc:I}
+\end{align}
+Term (a) is the shadow price of installed capital, dimensionless because $K$ is measured in final goods. Term (b) is the resource cost of the unit. Term (c) is the tonnage stored per good invested. Terms (d) and (e) are both in final goods per tonne, so the product with (c) is dimensionless and comparable with (a) and (b).
+
+Terms (d) and (e) pull in opposite directions and it is worth separating them. Term (d) is the gross storage benefit already met in~\eqref{eq:sp:foc:Omega}: the tonne avoids today's waste flow and joins the embodied stock instead. Term (e) is the claw-back. Embodying material in capital also \emph{consumes} embodied material, which must be drawn through $R$ and is therefore charged at $\zeta$; by~\eqref{eq:sp:zeta-explicit} this recovers exactly the fraction $\sigma$ of the gross benefit, leaving a net storage premium of $\left(1-\sigma\right)\left(p^W-p^M\right)$ per tonne.
+
+The reading is that $q$ departs from unity by precisely the value of the material a unit of gross investment stores. When $p^W>p^M$ the departure is downward: the planner is willing to invest even where the capital services alone would not justify it, because investing also holds mass out of the current waste flow.
+
+\smalltitle{The value of raw material.} The four remaining conditions all price a tonne delivered to production, and the same combination recurs in each. Let
+\begin{align}
+\Psi &\equiv \underbrace{F_R\left(1-\zeta\Omega^Y\right)}_{\text{output, net of its own material}}+\underbrace{\zeta}_{\text{relaxation of the intensity condition}}
+\label{eq:sp:Psi}
+\end{align}
+be the \emph{gross material value}, in final goods per tonne. The first term is the output gained from one more tonne of $R$, scaled down because that extra output itself requires $\Omega^Y$ tonnes per good of embodied material, charged at $\zeta$; the factor $1-\zeta\Omega^Y$ is dimensionless. The second term is the direct effect of the tonne on the intensity condition~\eqref{eq:sp:intensity}, where $R$ appears on the left-hand side.
+
+What $\Psi$ deliberately omits is the ledger. The tonne will eventually leave the economy as waste, and that consequence is priced by $p^W$, which appears separately in each condition below. Keeping the two apart is what makes the conditions readable: $\Psi$ is what a tonne is worth on its way in, $p^W$ what it costs on its way out.
+
+\smalltitle{Extraction.} A marginal tonne extracted adds one tonne to $R$, costs $C^N_N$ final goods of extraction effort, draws the reserve down by one tonne, and displaces $\Omega^{N,S}$ tonnes of overburden that never pass through $R$. Collecting the five terms of $\partial\mathcal L/\partial N$,
+\begin{align}
+\underbrace{\Psi}_{\text{(a)}} &= \underbrace{C^N_N\left(1+\zeta\Omega^N\right)}_{\text{(b)}}
++\underbrace{p^S}_{\text{(c)}}
++\underbrace{p^W\left(1+\Omega^{N,S}\right)}_{\text{(d)}} .
+\label{eq:sp:foc:N}
+\end{align}
+Every term is in final goods per tonne.
+
+Term (a) is the value of the tonne delivered, from~\eqref{eq:sp:Psi}. Term (b) is the extraction effort, grossed up because the effort is itself final-good expenditure and therefore carries $\Omega^N$ tonnes per good of embodied material; the factor $1+\zeta\Omega^N$ is the same kind of dimensionless wedge as in~\eqref{eq:sp:foc:C}. Term (c) is the in-situ rent: extracting now forecloses extracting later, priced by the reserve costate. Term (d) charges the tonne twice over. The $1$ is the ledger: every tonne entering production must eventually leave as waste. The $\Omega^{N,S}$ is the displaced mass, which becomes waste without ever having been material input; it is dimensionless, so the product with $p^W$ is again final goods per tonne.
+
+\smalltitle{Exploration.} A marginal tonne of discovery costs $C^D_D$ final goods, raises both $S$ and $X$ by one tonne, and displaces $\Omega^{D,S}$ tonnes. It adds nothing to $R$. Hence
+\begin{align}
+\underbrace{p^S}_{\text{(a)}}+\underbrace{p^X}_{\text{(b)}} &= \underbrace{C^D_D\left(1+\zeta\Omega^D\right)}_{\text{(c)}}+\underbrace{p^W\Omega^{D,S}}_{\text{(d)}} .
+\label{eq:sp:foc:D}
+\end{align}
+Term (a) is the rent created by the discovery and term (b) the shadow cost of having used up an easy deposit, with $p^X<0$; their sum is the net value of a discovery. Term (c) is the grossed-up effort, exactly as in~\eqref{eq:sp:foc:N}. Term (d) is the waste from displaced mass alone.
+
+The comparison with~\eqref{eq:sp:foc:N} is the informative one. Both activities move tonnes and both are grossed up for the embodied material in their effort, but the unit charge $p^W$ present in extraction is absent here, because exploration adds nothing to $R$ and therefore generates no waste beyond what it displaces. Discovery is not a substitute for extraction in the materials ledger; it only relaxes the constraint that makes extraction expensive.
+
+\smalltitle{Waste.} This is the condition that determines $p^W$. A marginal tonne of waste raises treated waste by $\varpi$ tonnes and hence secondary material by $\alpha\varpi$ tonnes, absorbs $c^W$ final goods of collection and treatment, and adds $1-\varpi\left(1-d^W\right)-d^W\alpha\varpi$ tonnes to the emission flow $\Xi$. Using the linearity of $\Xi$ in $W$ and $R^R$ from~\eqref{eq:sp:setup:Xi},
+\begin{align}
+\underbrace{p^W}_{\text{(a)}}\underbrace{\left(1-\alpha\varpi\right)}_{\text{(b)}} &=
+\underbrace{c^W\left(1+\zeta\Omega^W\right)}_{\text{(c)}}
++\underbrace{p^P\left[1-\varpi\left(1-d^W\right)-d^W\alpha\varpi\right]}_{\text{(d)}}
+-\underbrace{\alpha\varpi\,\Psi}_{\text{(e)}} .
+\label{eq:sp:foc:W}
+\end{align}
+Term (b) is dimensionless and strictly positive, since $\alpha<a<1$ and $\varpi\le1$; it is the net tonnage by which the ledger's left side exceeds its right when $W$ rises by one, the recycled part $\alpha\varpi$ returning to $R$ rather than leaving. Terms (c), (d) and (e) are all in final goods per tonne.
+
+Term (c) is the real resources absorbed in collecting and treating the tonne, grossed up for their own embodied material. Term (d) is the pollution damage, the bracket being the fraction of the tonne that reaches the environment: it equals $1$ at $\varpi=0$ and $d^W\left(1-\alpha\right)>0$ at $\varpi=1$, so a tonne of waste always adds something to $\Xi$ however thoroughly it is processed. Term (e) is the offsetting feedstock value, $\alpha\varpi$ tonnes of secondary material at $\Psi$ each.
+
+The sign of $p^W$ therefore follows from a comparison, not an assumption. Waste is a cost when the resources absorbed in handling it plus the damage from what escapes exceed what it is worth as feedstock, and a resource when they do not. Since collection is paid on every tonne while recovery $\alpha\varpi$ is bounded below one, $p^W>0$ is the normal case; $p^W<0$ requires a high treatment share, a high marginal yield, scarce material so that $\Psi$ is large, and cheap collection.
+
+\smalltitle{Treatment share.} The treatment share is dimensionless, so a perturbation $d\varpi$ routes a further $W\,d\varpi$ tonnes to treatment, of which $\alpha W\,d\varpi$ becomes secondary material, at marginal cost $c^{T\prime}\left(\varpi\right)W\,d\varpi$ final goods. Dividing $\partial\mathcal L/\partial\varpi$ through by $\lambda W$ to state the condition per tonne of waste, the marginal gain is
+\begin{align}
+\mathcal G^\varpi \;\equiv\;
+\underbrace{\alpha}_{\text{(a)}}\Big[\underbrace{\Psi}_{\text{(b)}}-\underbrace{p^W}_{\text{(c)}}\Big]
++\underbrace{p^P\left[\left(1-d^W\right)+d^W\alpha\right]}_{\text{(d)}} ,
+\label{eq:sp:foc:varpi-gain}
+\end{align}
+to be set against the marginal cost $\underbrace{c^{T\prime}\left(\varpi\right)\left(1+\zeta\Omega^W\right)}_{\text{(e)}}$. All terms are in final goods per tonne of waste.
+
+Term (a) is the marginal recycling yield $\alpha=a-a'x$, dimensionless: the tonnes of secondary material obtained from one more tonne of treated waste, holding recycling capital fixed. It is the marginal and not the average yield $a$ that appears, because treating more waste with a given $K^R$ dilutes the capital across a larger throughput.
+
+Term (b) values that material as in~\eqref{eq:sp:Psi}. Term (c) is the part worth dwelling on, and it is a direct consequence of the ledger. Recycling a tonne does not remove it from the economy; it returns it to $R$, from which it must leave as waste all over again. Recycling therefore \emph{raises} total waste generation even as it lowers extraction --- this is the circularity multiplier of~\eqref{eq:sp:setup:ledger-collected} seen from the margin --- so the material recovered is worth $\Psi-p^W$, not $\Psi$.
+
+Term (d) collects two distinct pollution gains. The treated tonne no longer joins the untreated stream, worth $1-d^W$ per tonne; and the fraction recovered as material does not leak either, worth a further $d^W\alpha$. Term (e) is the marginal treatment cost, rising in $\varpi$ by assumption~\eqref{eq:sp:setup:waste-cost} and grossed up for its own embodied material; its convexity is what makes the interior branch below a single well-defined root rather than a set.
+
+\smalltitle{Treatment share: the bounds.} Because $\varpi$ is bounded on both sides, this margin is
+not an equality in general. Attach multipliers $\lambda\nu^0\ge0$ to $\varpi\ge0$ and
+$\lambda\nu^1\ge0$ to $\varpi\le1$. Then $\partial\mathcal L/\partial\varpi=0$ reads
+\begin{align}
+\mathcal G^\varpi-c^{T\prime}\left(\varpi\right)\left(1+\zeta\Omega^W\right)
+&= \nu^1-\nu^0,
+&
+\nu^0\varpi &= 0,
+&
+\nu^1\left(1-\varpi\right) &= 0,
+\label{eq:sp:foc:varpi-kkt}
+\end{align}
+which is~\eqref{eq:sp:sum:varpi} of the main text once the two complementary-slackness conditions are
+resolved into branches: $\nu^0>0$ gives $\varpi=0$ and
+$\mathcal G^\varpi\le c^{T\prime}\left(0\right)\left(1+\zeta\Omega^W\right)$; $\nu^1>0$ gives
+$\varpi=1$ and $\mathcal G^\varpi\ge c^{T\prime}\left(1\right)\left(1+\zeta\Omega^W\right)$;
+$\nu^0=\nu^1=0$ gives the interior equality, which by convexity of $c^T$ has a root in
+$\left(0,1\right)$ exactly when $\mathcal G^\varpi$ lies strictly between the two bounding marginal
+costs.
+
+Two features of the branch structure are worth marking. First,
+$c^{T\prime}\left(0\right)=0$ by~\eqref{eq:sp:setup:waste-cost}, so the lower branch collapses to the
+requirement $\mathcal G^\varpi\le0$: the first tonne of treatment is free at the margin, and the only
+way not to treat it is for treatment to be worthless. At $\varpi=0$ the
+ratio $x=K^R/\varpi W$ is undefined and $\alpha$ is not pinned down there; the lower branch is
+nonetheless well posed, because $\mathcal G^\varpi\ge p^P\left(1-d^W\right)>0$ for \emph{every}
+$\alpha\in\left[0,1\right]$ whenever $\Psi>p^W$, and~(ii) of the proposition supplies that inequality.
+The upper branch carries no such degeneracy: $c^{T\prime}\left(1\right)$ is a finite number
+under~\eqref{eq:sp:setup:waste-cost}, so $\varpi=1$ is a genuine possibility, ruled neither in nor out
+by the assumptions made so far, and $\nu^1>0$ is a case the numerical implementation has to test for.
+
+\smalltitle{Recycling capital.} A marginal unit of recycling capital is one final good moved out of final-goods production. It costs $F_K$ of output and yields $a'$ tonnes of secondary material. Writing the marginal gain per tonne recovered as
+\begin{align}
+\mathcal G^K \;\equiv\; \underbrace{\Psi-p^W}_{\text{(b)}}+\underbrace{d^Wp^P}_{\text{(c)}},
+&&\text{the interior condition is}
+&&
+\underbrace{a'}_{\text{(a)}}\,\mathcal G^K &= \underbrace{F_K\left(1-\zeta\Omega^Y\right)}_{\text{(d)}} .
+\label{eq:sp:foc:KR}
+\end{align}
+Every term is dimensionless: (a) is tonnes per final good, $\mathcal G^K$ is final goods per tonne, and (d) is a marginal product of capital adjusted by a dimensionless factor.
+
+Term (a) is the marginal product of recycling capital, $\mathcal R_{K^R}=a'$. Term (b) values the tonne recovered exactly as in~\eqref{eq:sp:foc:varpi-gain}, net of the waste it will regenerate. Term (c) is the pollution gain, and the contrast with term (d) of~\eqref{eq:sp:foc:varpi-gain} is instructive: recycling capital improves the yield on waste that is \emph{already} being treated, so it cannot claim the $\left(1-d^W\right)$ diversion from the untreated stream and collects only the $d^W$ leakage avoided on the extra material recovered. Term (d) is the opportunity cost, itself net of embodied material, because output forgone also releases the material that output would have required.
+
+\smalltitle{Recycling capital: the bound.} Attaching a multiplier $\lambda\nu^K\ge0$ to $K^R\ge0$,
+$\partial\mathcal L/\partial K^R=0$ reads
+\begin{align}
+a'\!\left(x\right)\mathcal G^K-F_K\left(1-\zeta\Omega^Y\right) &= -\nu^K,
+&
+\nu^KK^R &= 0 .
+\label{eq:sp:foc:KR-kkt}
+\end{align}
+Only the lower bound is attached. The upper bound $K^R\le K$ implied by $K^Y\ge0$ is
+slack at any candidate optimum under the Inada condition on $K^Y$, since $F_K\to\infty$ as
+$K^Y\to0$ makes the right-hand side of~\eqref{eq:sp:foc:KR} unboundedly large against a finite left-hand
+side.
+
+Resolving~\eqref{eq:sp:foc:KR-kkt} into branches gives~\eqref{eq:sp:sum:KR} of the main text. What
+makes the resolution clean --- and this is the difference from the treatment margin --- is that
+$a'$ is strictly decreasing with a finite value at the origin. The marginal gain
+$a'\!\left(x\right)\mathcal G^K$ is therefore maximised at $x=0$ and falls monotonically thereafter,
+so the single number $a'\!\left(0^+\right)\mathcal G^K$ decides between the two branches: if it does
+not clear $F_K\left(1-\zeta\Omega^Y\right)$ no positive $x$ will either and the corner is optimal,
+and if it does clear it there is exactly one interior root. Note that the comparison is between
+endogenous objects evaluated at the candidate allocation, with $F_K$ read at $K^Y=K$ in the corner
+branch, so the branching inequality is not a restriction on primitives.
+
+Read together, \eqref{eq:sp:foc:varpi-kkt} and~\eqref{eq:sp:foc:KR-kkt} show how the two arguments of the recycling technology are priced separately: the treatment margin by the marginal yield $\alpha=a-a'x$, the capital margin by $a'$. The constant-returns form~\eqref{eq:sp:setup:recycling-crs} guarantees that the two exhaust the product, $\mathcal R=\alpha T+a'K^R$.
+
+\smalltitle{The avoided cost of virgin material.} Both recycling conditions are stated above in terms
+of $\Psi-p^W$, the value of a recovered tonne net of the waste it will regenerate. That form is the
+right one for deriving them, but it is not the clearest one for reading them, because $\Psi$ and
+$p^W$ are both endogenous prices whose signs and magnitudes are themselves outcomes. Whenever
+extraction is interior, $N>0$, the pair can be eliminated. Solving the extraction
+condition~\eqref{eq:sp:foc:N} for $\Psi$ and substituting, the unit charge $p^W$ cancels save for the
+overburden term:
+\begin{align}
+\Psi-p^W &= \underbrace{C^N_N\left(1+\zeta\Omega^N\right)}_{\text{extraction effort}}
++\underbrace{p^S}_{\text{in-situ rent}}
++\underbrace{\Omega^{N,S}p^W}_{\text{overburden}} ,
+&&\text{hence}
+&
+V &\equiv \Psi-p^W+d^Wp^P ,
+\label{eq:sp:virgin-value}
+\end{align}
+where we name the combination
+\begin{align}
+V &= C^N_N\left(1+\zeta\Omega^N\right)+p^S+\Omega^{N,S}p^W+d^Wp^P
+\label{eq:sp:V}
+\end{align}
+the \emph{virgin displacement value}, in final goods per tonne. In these terms the two marginal gains
+of~\eqref{eq:sp:foc:varpi-gain} and~\eqref{eq:sp:foc:KR} become
+\begin{align}
+\mathcal G^K &= V,
+&
+\mathcal G^\varpi &= \alpha V+p^P\left(1-d^W\right),
+\label{eq:sp:foc:recycling-virgin}
+\end{align}
+so that the Kuhn--Tucker systems~\eqref{eq:sp:foc:varpi-kkt} and~\eqref{eq:sp:foc:KR-kkt} take the
+form reported at~\eqref{eq:sp:sum:recycling-virgin} of the main text, with interior conditions
+$\alpha V+p^P\left(1-d^W\right)=c^{T\prime}\left(\varpi\right)\left(1+\zeta\Omega^W\right)$ and
+$a'V=F_K\left(1-\zeta\Omega^Y\right)$.
+The first of~\eqref{eq:sp:foc:recycling-virgin} is immediate. The second is the substitution
+of~\eqref{eq:sp:virgin-value} into~\eqref{eq:sp:foc:varpi-gain}, and it simplifies more than one might
+expect: the leakage term $\alpha d^Wp^P$ that term (d) of~\eqref{eq:sp:foc:varpi-gain} carried separately
+is precisely the $d^Wp^P$ inside $V$ applied to the $\alpha$ tonnes recovered, so the two coincide
+and $V$ absorbs it. What remains outside is $p^P\left(1-d^W\right)$: the diversion of the
+\emph{whole} tonne from the untreated stream, which is a pollution gain and not a materials gain, and
+is therefore the one part of the treatment motive that $V$ cannot price.
+
+The reading is the one the ledger has been pointing at throughout: \emph{recycling is paid the cost
+of the virgin tonne it displaces, and nothing else.} Every component of $V$ is a cost avoided at the
+mine --- the extraction effort together with the embodied material that effort carries, the in-situ
+rent on the reserve left in the ground, the disposal of the overburden that would have come up
+alongside the ore, and the leakage $d^W$ that tonne would have suffered. What is conspicuously
+absent is $p^W$ itself. It cancels because the recovered tonne and the virgin tonne it replaces face
+exactly the same charge on the way out: recycling changes the \emph{route} a tonne takes into
+production, never the fact that it must eventually leave. This is the same principle noted after
+\eqref{eq:sp:foc:D}, seen from the other side.
+
+
+\smalltitle{Signs.} It is convenient to rearrange~\eqref{eq:sp:foc:Omega}. Define the \emph{storage share} $\sigma$, the dimensionless fraction of the material entering production that is embodied in new capital rather than diffused as waste:
+\begin{align}
+\sigma &\equiv \frac{\Phi^IG}{R} \;=\; \frac{\phi^IG}{\mathcal D+\phi^IG}\;\in\left[0,1\right],
+&&\text{so that}
+&
+\zeta &= \sigma\left(p^W-p^M\right).
+\label{eq:sp:zeta-explicit}
+\end{align}
+Two things follow at once. First, $\zeta>0$ if and only if $p^W>p^M$: embodied material is valuable exactly when storing a tonne is worth more than releasing it. Second, $\zeta\to0$ as $\phi^I\to0$. With nowhere to store material, embodied material has no shadow price of its own --- conditional on $R$, the cost of the mass that eventually becomes waste is carried in full by $p^W$ through the ledger, and all that $\Omega$ prices is the timing of its release --- and the composition of final-good uses loses any allocative role.
+
+What does \emph{not} follow is an unconditional sign for either price. The sign of $p^W$ is an outcome of~\eqref{eq:sp:foc:W}, as set out above. Nor does $p^M$ simply inherit whichever sign $p^W$ currently has: the costate equation~\eqref{eq:sp:costate:M} below makes it a \emph{forward} average of $p^W$, not a function of its current value, so the three signs need not move together along a transition.
+
+\subsection{Costate equations}\label{sec:app:sp:costates}
+
+Each state carries the current-value costate named in~\eqref{eq:sp:costates-def}, obeying $\dot\mu=\rho\mu-\partial\mathcal L/\partial Z$ for state $Z$, together with the transversality condition $\lim_{t\to\infty}e^{-\rho t}\mu Z=0$. Throughout, $r\equiv\rho-\dot\lambda/\lambda$ denotes the social discount rate implied by the goods multiplier.
+
+\smalltitle{Capital.} A marginal unit of the capital stock is one final good. It raises output by $F_K$, depreciates at rate $\delta$, and --- through $G=I+\delta K$ --- requires replacement investment of $\delta$ final goods, which embodies a further $\Phi^I\delta$ tonnes. Collecting,
+\begin{align*}
+\frac{\partial\mathcal L}{\partial K} &= \lambda\Big[\underbrace{F_K\left(1-\zeta\Omega^Y\right)}_{\text{output, net of its material}}-\underbrace{\delta}_{\text{replacement}}+\underbrace{\Phi^I\delta\left(p^W-p^M-\zeta\right)}_{\text{material stored by replacement}}\Big],
+\end{align*}
+so that the costate condition for $\mu^K=\lambda q$ reads $rq=F_K\left(1-\zeta\Omega^Y\right)-\delta+\Phi^I\delta\left(p^W-p^M-\zeta\right)+\dot q$. The third term equals $\delta\left(1-q\right)$ by the investment condition~\eqref{eq:sp:foc:I}, so the entire materials block collapses into $q$ and
+\begin{align}
+\underbrace{r}_{\text{(a)}} &= \underbrace{\frac{F_K\left(1-\zeta\Omega^Y\right)}{q}}_{\text{(b)}}-\underbrace{\delta}_{\text{(c)}}+\underbrace{\frac{\dot q}{q}}_{\text{(d)}} .
+\label{eq:sp:costate:K}
+\end{align}
+All four terms are rates, with units of inverse time. This is the usual arbitrage condition with two modifications, both confined to places where they can be read off. In term (b) the marginal product is net of the embodied material the extra output requires, and it is divided by the installed value $q$ rather than by unity. Terms (c) and (d) are unchanged from the standard model.
+
+That the storage motive appears nowhere else is not a coincidence. Depreciation destroys capital and releases its embodied material at the same rate $\delta$, so the material liability of a unit of capital scales exactly with the premium at which it was installed, and the two cancel in the return.
+
+\smalltitle{Reserves.} A marginal tonne of known reserves enters only through the extraction cost, lowering it by $\left|C^N_S\right|$ final goods per tonne extracted, since $C^N_S<0$. Hence $\partial\mathcal L/\partial S=-\lambda C^N_S\left(1+\zeta\Omega^N\right)$ and
+\begin{align}
+\underbrace{rp^S}_{\text{(a)}} &= \underbrace{\dot p^S}_{\text{(b)}} - \underbrace{C^N_S\left(1+\zeta\Omega^N\right)}_{\text{(c)}} .
+\label{eq:sp:costate:S}
+\end{align}
+Term (a) is the required return on a tonne held in the ground, in final goods per tonne per unit time. Term (b) is the capital gain on the rent and term (c), positive because $C^N_S<0$, is the dividend the stock pays while held: a larger reserve makes the extraction still to come cheaper. This is Hotelling's rule with a stock effect --- the rent need not grow at the rate of interest, because holding reserves yields a flow benefit as well as a capital gain --- and the dividend is grossed up by $1+\zeta\Omega^N$ for the embodied material carried by extraction effort.
+
+\smalltitle{Discoveries.} A marginal tonne of cumulative discovery raises the cost of further exploration by $C^D_X>0$, and does nothing else. So
+\begin{align}
+rp^X &= \dot p^X - C^D_X\left(1+\zeta\Omega^D\right),
+&&\text{hence}
+&
+p^X(t) &= -\int_t^\infty C^D_X\left(1+\zeta\Omega^D\right)e^{-\int_t^s r\,d\tau}\,ds\;<\;0 .
+\label{eq:sp:costate:X}
+\end{align}
+$X$ is a pure liability: it accumulates the loss of the easy deposits, and its shadow price is the discounted stream of the extra exploration costs that loss imposes. It is what stops exploration from being a costless substitute for extraction in~\eqref{eq:sp:foc:D}.
+
+\smalltitle{Pollution.} A marginal tonne of the pollution stock lowers felicity by $v'\left(P\right)$ utils, lowers output by $\left|F_P\right|$, and decays. With $\mu^P=-\lambda p^P$,
+\begin{align}
+\dot p^P-\underbrace{\left[r+\theta\left(P\right)+\theta'\left(P\right)P\right]}_{\text{(a)}}p^P &= -\underbrace{\mathcal V}_{\text{(b)}},
+&
+\mathcal V &\equiv \underbrace{\frac{v'\left(P\right)}{\lambda}}_{\text{utility damage}}-\underbrace{F_P\left(1-\zeta\Omega^Y\right)}_{\text{output damage}}\;>\;0,
+\label{eq:sp:costate:P}
+\end{align}
+so that $p^P(t)=\int_t^\infty\mathcal V\,e^{-\int_t^s\left[r+\theta+\theta'P\right]d\tau}\,ds>0$. The shadow cost of pollution is unambiguously positive: it is the discounted stream of marginal damages, both channels being costs. Term (b) is in final goods per tonne, the utility damage converted by $\lambda$ and the output damage scaled by $1-\zeta\Omega^Y$ for the same reason as everywhere else --- output lost to pollution also releases the embodied material it would have carried.
+
+Term (a) is the effective discount rate, and it is worth marking that the decay entering it is the \emph{marginal} rate $\theta+\theta'P=\tfrac{d}{dP}\left[\theta\left(P\right)P\right]$ rather than the average rate $\theta$. Since $\theta'<0$ by~\eqref{eq:sp:setup:pollution-motion}, the marginal rate is the smaller of the two, so damages are discounted less heavily than the average decay rate would suggest. If decay saturates strongly enough that $r+\theta+\theta'P\le0$, the integral need not converge; that configuration is this model's version of a tipping point, and ruling it out is a restriction on $\theta\left(\cdot\right)$ rather than something the optimality conditions deliver.
+
+\smalltitle{Embodied materials.} A marginal tonne of material embodied in the capital stock is released at rate $\delta$, at which point it becomes waste. It enters the Lagrangian~\eqref{eq:sp:lagrangian} in two places only, through $-\lambda p^W\delta M^K$ in the ledger term and through $+\lambda p^M\delta M^K$ in its own law of motion, so
+\begin{align*}
+\frac{\partial\mathcal L}{\partial M^K} &= \lambda\delta\left(p^M-p^W\right).
+\end{align*}
+The current-value costate is $\mu^M=-\lambda p^M$, and the costate condition reduces to
+\begin{align}
+\dot p^M-\left(r+\delta\right)p^M &= -\delta p^W,
+&&\text{equivalently}
+&
+p^M(t) &= \int_t^\infty \delta\,p^W(s)\,e^{-\int_t^s\left(r+\delta\right)d\tau}\,ds .
+\label{eq:sp:costate:M}
+\end{align}
+The interpretation is exactly the postponement reading of term (b) of~\eqref{eq:sp:foc:Omega}: the tonne is released at rate $\delta$, each release costing $p^W$, and the stream is discounted at $r+\delta$. The effective rate exceeds $r$ because the liability itself runs off.
+
+In particular $p^M$ is a forward-weighted average of future values of $p^W$. It therefore shares the sign of $p^W$ whenever $p^W$ does not change sign over $\left[t,\infty\right)$, but not otherwise. With $p^W$ constant,
+\begin{align}
+p^M &= \frac{\delta}{r+\delta}\,p^W,
+&
+p^W-p^M &= \frac{r}{r+\delta}\,p^W .
+\label{eq:sp:costate:M-steady}
+\end{align}
+
+\smalltitle{Consumption growth.} The rate $r$ is defined from the goods multiplier, but by~\eqref{eq:sp:foc:C} that multiplier is tied to marginal utility only up to the consumption wedge, $u'\left(C\right)=\lambda\left(1+\zeta\Omega^C\right)$. Differentiating logarithmically and writing $\eta\equiv-u''C/u'$ for the elasticity of marginal utility,
+\begin{align}
+\eta\,\frac{\dot C}{C} &= r-\rho-\frac{d}{dt}\ln\left(1+\zeta\Omega^C\right).
+\label{eq:sp:keynes-ramsey}
+\end{align}
+This is the Keynes--Ramsey rule with one extra term. A consumption wedge that is constant over time drops out and affects only the level of consumption; it is a wedge that is \emph{changing} that tilts the path. A rising $\zeta\Omega^C$ --- material becoming scarcer relative to the storage margin --- depresses consumption growth below what the return on capital alone would justify, and a falling one raises it.

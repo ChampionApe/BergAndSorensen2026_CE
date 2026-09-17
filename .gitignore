@@ -1,0 +1,45 @@
+# Machine-specific Claude Code permissions. .claude/settings.json IS committed and shared.
+.claude/settings.local.json
+
+# Overleaf working area: the export zips and the clone of each Overleaf project. Never committed --
+# the clone is a second git repository, and committing it would nest one repo inside another.
+writing/exports/
+
+# Material that is not ours to redistribute: co-authors' Word drafts and conversion scratch, kept
+# beside the paper so they are findable, kept out of the history so the repo stays shareable.
+writing/paper/localfiles/
+
+# LaTeX compile artefacts
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# The compiled document, not a figure. `writing/*/main.pdf` rather than `*.pdf`, so that a figure
+# committed under a project's Figs/ is kept -- the pipeline's outputs are sources here, not artefacts.
+writing/*/main.pdf
+
+# Julia: the Manifest IS committed, so a result can be reproduced on another machine. The model
+# depends only on the standard library today, which is exactly when committing it costs nothing.
+
+# Solved model output: regenerable from model/scripts/, and large. The summary csv that a table or a
+# figure is built from IS committed when that pipeline exists -- decide per file, not by accident.
+results/**/*.jld2
+results/**/*.pkl
+
+# Python (none in the repo today; the Overleaf script is stdlib-only and runs on any interpreter)
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+.DS_Store

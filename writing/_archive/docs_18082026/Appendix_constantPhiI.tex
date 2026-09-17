@@ -1,0 +1,102 @@
+\section{The model with constant embodied materials intensity in investment goods}\label{sec:app:constantPhiI}
+
+This is the special case $\Phi^I\!\left(t\right)=\bar\Phi^I$ of
+Appendix~\ref{sec:app:exogenousPhiI}, so everything established there applies:
+Proposition~\ref{prop:app:exo:zeta} gives $\zeta=0$ wherever $R>\bar\Phi^IG$, the material wedges
+vanish, $\Psi=F_R$, and the policy collapses to the two rates
+of~\eqref{eq:app:exo:policy}. What constancy adds is a reduction in the dimension of the problem, and
+that is the only thing recorded here.
+
+\subsection{The embodied stock ceases to be a state}\label{sec:app:const:state}
+
+\begin{lemma}[$M^K$ is redundant]\label{lem:app:const:state}
+Let $Z\equiv M^K-\bar\Phi^IK$. Then $\dot Z=-\delta Z$ along any feasible path,
+so $Z\left(t\right)=Z_0e^{-\delta t}$. If the initial data satisfy $M^K_0=\bar\Phi^IK_0$, then
+$M^K\left(t\right)=\bar\Phi^IK\left(t\right)$ and $\Phi^K\left(t\right)=\bar\Phi^I$ at every date, and
+the ledger~\eqref{eq:app:exo:ledger} reads
+\begin{align}
+W &= R-\bar\Phi^II+\mathcal N .
+\label{eq:app:const:ledger}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Differentiating $Z$ and using $\dot M^K=\bar\Phi^I\left(I+\delta K\right)-\delta M^K$
+from~\eqref{eq:sp:setup:Phi-motion} together with $\dot K=I$,
+\begin{align*}
+\dot Z &= \bar\Phi^II+\bar\Phi^I\delta K-\delta M^K-\bar\Phi^II \;=\; -\delta\left(M^K-\bar\Phi^IK\right).
+\end{align*}
+With $Z_0=0$ the stock is $M^K=\bar\Phi^IK$ throughout, so $\dot M^K=\bar\Phi^II$ and the ledger
+follows.
+\end{proof}
+
+The economics of~\eqref{eq:app:const:ledger} is that replacement investment embodies exactly what
+depreciation releases, so only \emph{net} capital formation holds material back from the waste flow.
+The planner therefore carries four states $\left(K,S,X,P\right)$ rather than five, and two static
+prices $\left(\lambda,p^W\right)$ rather than three. Nothing is lost under inconsistent initial data
+either: $Z$ is an exogenous exponential, so~\eqref{eq:app:const:ledger} picks up the known forcing term
+$+\delta Z_0e^{-\delta t}$ and the problem stays four-dimensional.
+
+\subsection{The capital margin}\label{sec:app:const:capital}
+
+Eliminating $M^K$ changes what the costate on capital prices, and this is the one place where the
+conditions have to be restated rather than read off. With $\bar\Phi^II$ replacing
+$\Phi^IG-\delta M^K$ in the ledger term of~\eqref{eq:sp:lagrangian}, differentiation with respect to
+$I$ and to $K$ gives
+\begin{align}
+q &= 1-\bar\Phi^Ip^W,
+&
+\dot q &= \left(r+\delta\right)q-\Big[F_K-\delta\bar\Phi^Ip^W\Big],
+\label{eq:app:const:capital}
+\end{align}
+equivalently $r=\left(F_K-\delta\bar\Phi^Ip^W\right)/q-\delta+\dot q/q$. A unit of capital now carries
+its material with it, so its dividend is the marginal product net of the waste that its depreciation
+generates, and its price is unity less the material liability it brings. The contrast with the baseline
+is worth marking: there the materials block collapsed entirely into $q$ and the return
+was $F_K\left(1-\zeta\Omega^Y\right)/q$, because the liability was carried by the separate price $p^M$;
+here it is charged directly and appears in the dividend.
+
+The two accounts agree, as they must. Writing $q^{\text{(A)}}$ for the price in
+Appendix~\ref{sec:app:exogenousPhiI} with $\Phi^I$ held constant, the definitions differ by the value
+of the material that a unit of capital carries,
+\begin{align}
+q &= q^{\text{(A)}}-\bar\Phi^Ip^M
+\;=\;1-\bar\Phi^I\left(p^W-p^M\right)-\bar\Phi^Ip^M ,
+\label{eq:app:const:reconciliation}
+\end{align}
+and substituting $\dot p^M=\left(r+\delta\right)p^M-\delta p^W$
+from~\eqref{eq:app:exo:costate-M} into $\dot q=\dot q^{\text{(A)}}-\bar\Phi^I\dot p^M$
+returns~\eqref{eq:app:const:capital}. The allocation is the same; what differs is whether the material
+liability is priced inside $q$ or alongside it. The price $p^M$ remains available as a derived object
+through~\eqref{eq:app:const:reconciliation}, but nothing requires it.
+
+Every remaining condition is~\eqref{eq:app:exo:C}--\eqref{eq:app:exo:costate-M} with $\Phi^I=\bar\Phi^I$
+and the investment condition~\eqref{eq:app:exo:I} replaced by~\eqref{eq:app:const:capital}. In particular the
+recycling block, the phase structure of Proposition~\ref{prop:sp:phases} and the
+threshold~\eqref{eq:sp:phases:threshold} are untouched.
+
+\subsection{Implementation}\label{sec:app:const:market}
+
+The policy is~\eqref{eq:app:exo:policy} with $s^I=\bar\Phi^Ip^W$, and it simplifies on the household's
+side in the same way the planner's problem does. The household pays $\tau^{\circ}\delta M^K$ on the
+material its capital releases and receives $s^I$ on gross investment, so with
+$M^K=\bar\Phi^IK$ and $\tau^{\circ}=p^W$ its net material payment is
+\begin{align}
+p^W\bar\Phi^I\delta K-p^W\bar\Phi^I\left(I+\delta K\right) &= -\,p^W\bar\Phi^II :
+\label{eq:app:const:hh}
+\end{align}
+the two instruments collapse into a single subsidy at rate $\bar\Phi^Ip^W$ per unit of \emph{net}
+investment. The household no longer carries $M^K$ as a private state, and the deposit--refund of
+Section~\ref{sec:mkt:implementation:reading} reduces to the statement that material locked into the
+capital stock is charged only to the extent that the stock is growing.
+
+\begin{remark}[When the reduction is legitimate]\label{rem:app:const:legit}
+Constancy of $\Phi^I$ is a strong assumption in a model whose point is that material intensities move,
+and it removes by construction the channel that~\eqref{eq:sp:setup:phiK-motion} exists to describe:
+$\Phi^K$ can no longer drift, so the composition of the capital stock carries no information. It is
+nonetheless the right variant for two purposes. It is the cheapest version to solve, hence the natural
+first implementation and the natural test case for the corner-detection routine of
+Section~\ref{sec:qmkt:solution}, which is where the paper's headline number lives. And it isolates the
+material-storage motive in its purest form: a single parameter $\bar\Phi^I$, a single price $p^W$, and
+a subsidy on net investment.
+\end{remark}
