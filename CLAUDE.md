@@ -59,8 +59,9 @@ These fail silently rather than loudly, which is why they are here rather than i
   Unicode operator in Julia source, and the corruption survives a passing test suite. That includes the
   byte-order mark, and operators with an ASCII spelling — `div(a, b)`, never `a ÷ b`. It is also why the
   symbol table in `model/SYMBOLS.md` exists: the document's symbols and the source's identifiers are
-  related by a lookup, not by a search. Check with `grep -P '[\x80-\xFF]' model/src/*.jl`, which should
-  return nothing.
+  related by a lookup, not by a search. Check with `LC_ALL=C grep -P '[\x80-\xFF]' model/src/*.jl`, which should
+  return nothing; without `LC_ALL=C` a UTF-8 locale matches characters, not bytes, and misses a
+  byte-order mark.
 - **A symbol clash is broken once, in `model/SYMBOLS.md`, and never a second way in a
   second file.** Three are broken today: `mu`, `beta` and `sigma` each name a second object in the
   quantitative specialisation.

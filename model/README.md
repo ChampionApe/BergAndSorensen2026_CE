@@ -205,6 +205,7 @@ the quantitative specialisation forces the source to break. Read it before touch
   and why it is load-bearing rather than decorative. The rule covers the
   byte-order mark, which is invisible in an editor, and operators that have an
   ASCII spelling: `div(a, b)`, never `a ÷ b`. Checked with
-  `grep -P '[\x80-\xFF]' src/*.jl`, which should return nothing.
+  `LC_ALL=C grep -P '[\x80-\xFF]' src/*.jl`, which should return nothing (without `LC_ALL=C` a
+  UTF-8 locale matches characters, not bytes, and misses a byte-order mark).
 - `recycling_yield`, not `yield` — the latter collides with `Base.yield`.
 - `code_style.md` at the repository root is the full guide.
