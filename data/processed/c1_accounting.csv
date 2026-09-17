@@ -1,0 +1,32 @@
+name,value,unit,note
+sigma_1900,0.16385741093557335,share,"NAS_gross / R, Haas et al. (2020)"
+sigma_1950,0.25758070443187103,share,"NAS_gross / R, Haas et al. (2020)"
+sigma_2000,0.4776248208158092,share,"NAS_gross / R, Haas et al. (2020)"
+sigma_2015,0.5193593250007861,share,"NAS_gross / R, Haas et al. (2020)"
+sigma_cumulative_1900_2015,0.3992467429654635,share,sum NAS_gross / sum R over 1900-2015
+D_over_G_cumulative,6.938503053854396,ratio,"sum (omY Y + omC C) / sum G over 1900-2015, pre-1950 split at the PIM share"
+phiI_1900,2.0428667204163204,ratio,year-by-year value of the same formula
+phiI_1950,2.955995540718625,ratio,year-by-year value of the same formula
+phiI_2000,6.476093109934613,ratio,year-by-year value of the same formula
+phiI_2015,6.907278841606034,ratio,year-by-year value of the same formula
+phiI,4.6111689164725345,ratio,cumulative 1900-2015; the calibrated point
+dpostar_processing_waste_2015,9.446594364,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+dpostar_emissions_2015,14.52915877,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+dpostar_dissipative_use_2015,6.123675782,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+dpostar_excrements_2015,7.677329152,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+dpostar_eol_waste_2015,10.52371851,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+dpostar_water_vapor_2015,9.319453652,Gt/yr,"Krausmann et al. (2018), DPO* by type"
+omC_over_omY_excluding_emissions_2015,2.0028120833956926,ratio,"(excrements + dissipative use)/C over processing waste/Y, emissions unattributed"
+N_share_biomass_2000_2015,0.27154925900333876,share,Krausmann et al. (2018)
+eea_unused_per_used_biomass,0.62,t/t,"EEA (2001) Table 3, EU-15 domestic extraction, 1995"
+N_share_fossil_2000_2015,0.17317730000661333,share,Krausmann et al. (2018)
+eea_unused_per_used_fossil,3.44,t/t,"EEA (2001) Table 3, EU-15 domestic extraction, 1995"
+N_share_metals_2000_2015,0.06384759368293311,share,Krausmann et al. (2018)
+eea_unused_per_used_metals,0.94,t/t,"EEA (2001) Table 3, EU-15 domestic extraction, 1995"
+N_share_non_metallic_minerals_2000_2015,0.4914258473071147,share,Krausmann et al. (2018)
+eea_unused_per_used_non_metallic_minerals,0.22,t/t,"EEA (2001) Table 3, EU-15 domestic extraction, 1995"
+eea_unused_per_used_total_domestic,0.92,t/t,"EEA (2001) Table 3, EU-15 domestic total"
+OmNS,0.9322208770743422,t/t,EU ratios at the 2000-2015 world composition
+OmNS_low,0.7638603364922721,t/t,biomass erosion excluded from unused extraction
+OmNS_high,1.5955973754400172,t/t,"metals at the EEA total ratio, which is dominated by imported ores"
+OmDS,0.009322208770743422,t/t,judgement: one hundredth of OmNS

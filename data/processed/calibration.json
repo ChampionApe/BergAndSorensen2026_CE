@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "base_year": 1900,
+    "units": {
+      "goods": "trillions of 2011 international dollars",
+      "material": "gigatonnes",
+      "pollution": "gigatonnes of material (decision D4)",
+      "period": "1 year",
+      "prices": "trillion dollars per gigatonne (= 1000 US$/t)"
+    },
+    "built_by": "data/build/c1_accounting.py ... c6_states.py",
+    "date": "2026-09-17"
+  },
+  "params": {
+    "omY": {
+      "value": 1.0,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "omN": {
+      "value": 1.0,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "omD": {
+      "value": 1.0,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "omW": {
+      "value": 1.0,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "omC": {
+      "value": 1.0,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "phiI": {
+      "value": 4.6111689164725345,
+      "low": 2.0428667204163204,
+      "high": 6.907278841606034,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "OmNS": {
+      "value": 0.9322208770743422,
+      "low": 0.7638603364922721,
+      "high": 1.5955973754400172,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    },
+    "OmDS": {
+      "value": 0.009322208770743422,
+      "low": 0.0,
+      "high": 0.09322208770743423,
+      "source": "quant_data.tex, Accounting; notes/data/calibration.md"
+    }
+  },
+  "states": {},
+  "cases": {}
+}

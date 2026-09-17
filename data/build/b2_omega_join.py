@@ -38,6 +38,19 @@ WEIGHTS = {
     "phiI": 1.0,   # durables coefficient on gross capital formation   -> C1
 }
 
+# C1 has run when data/processed/c1_weights.json exists; its weights replace the
+# placeholders and the output's method column says so.  Written by
+# data/build/c1_accounting.py.
+C1_WEIGHTS = "data/processed/c1_weights.json"
+if os.path.exists(C1_WEIGHTS):
+    import json
+    with open(C1_WEIGHTS, encoding="utf-8") as _f:
+        _w = json.load(_f)
+    WEIGHTS = {k: float(_w[k]) for k in WEIGHTS}
+    WEIGHTS_ARE_PLACEHOLDERS = False
+else:
+    WEIGHTS_ARE_PLACEHOLDERS = True
+
 B1 = "data/interim/b1_material_block.csv"
 B2 = "data/interim/b2_macro_block.csv"
 OUT = "data/interim/b2_omega.csv"
@@ -86,7 +99,8 @@ def main():
     add("Y", Y, U_GDP, "aggregated")
     add("activity_aggregate", activity, U_GDP, "reconstructed")
     add("Omega_observed", R / Y, U_INT, "aggregated")
-    add("Omega_model", R / activity, U_INT, "reconstructed")
+    add("Omega_model", R / activity, U_INT,
+        "placeholder_weights" if WEIGHTS_ARE_PLACEHOLDERS else "reconstructed")
 
     out = pd.DataFrame(rows, columns=["year", "series", "value", "unit", "source", "method"])
     out = out.sort_values(["series", "year"]).reset_index(drop=True)
@@ -95,7 +109,8 @@ def main():
 
     y0, y1 = years[0], years[-1]
     w = ", ".join(f"{k}={v}" for k, v in WEIGHTS.items())
-    print(f"b2_omega_join: {len(out)} rows, {y0}-{y1}; PLACEHOLDER weights ({w}); "
+    tag = "PLACEHOLDER" if WEIGHTS_ARE_PLACEHOLDERS else "C1"
+    print(f"b2_omega_join: {len(out)} rows, {y0}-{y1}; {tag} weights ({w}); "
           f"R/Y {R.loc[y0] / Y.loc[y0]:.3f} -> {R.loc[y1] / Y.loc[y1]:.3f}, "
           f"R/(D+phiI G) {R.loc[y0] / activity.loc[y0]:.3f} -> {R.loc[y1] / activity.loc[y1]:.3f} "
           f"{U_INT} -> {OUT}")

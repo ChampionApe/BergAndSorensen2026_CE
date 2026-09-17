@@ -1,120 +1,120 @@
 year,series,value,unit,source,method
-1900,Omega_model,1.0791650577250675,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1901,Omega_model,1.0580555040676494,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1902,Omega_model,1.0522691462486178,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1903,Omega_model,1.0445097676410586,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1904,Omega_model,1.0480182992989544,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1905,Omega_model,1.0386119926019721,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1906,Omega_model,0.9982863737033785,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1907,Omega_model,1.0135557835936118,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1908,Omega_model,1.040157487884673,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1909,Omega_model,0.9974510464494968,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1910,Omega_model,1.004829107155365,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1911,Omega_model,0.9868720040883526,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1912,Omega_model,0.9788329659662965,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1913,Omega_model,0.982440907647962,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1914,Omega_model,1.0179889215369466,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1915,Omega_model,1.0157585692313116,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1916,Omega_model,0.9764689183001158,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1917,Omega_model,1.015534356700246,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1918,Omega_model,1.0253530248321547,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1919,Omega_model,1.002674757031949,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1920,Omega_model,1.0419367675332831,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1921,Omega_model,1.0159781910894508,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1922,Omega_model,0.9839271689062863,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1923,Omega_model,0.9788739921314408,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1924,Omega_model,0.9476366930276131,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1925,Omega_model,0.9327342605094139,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1926,Omega_model,0.918232931878981,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1927,Omega_model,0.9199829472712224,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1928,Omega_model,0.9180771421714867,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1929,Omega_model,0.8962282677090647,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1930,Omega_model,0.930183832589703,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1931,Omega_model,0.9547483035754382,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1932,Omega_model,0.987526886585855,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1933,Omega_model,0.9878862362270749,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1934,Omega_model,0.9725756472693162,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1935,Omega_model,0.938725549479216,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1936,Omega_model,0.9175463820666308,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1937,Omega_model,0.9066246717704876,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1938,Omega_model,0.8963184678469202,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1939,Omega_model,0.8699294832217166,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1940,Omega_model,0.8675025072660186,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1941,Omega_model,0.8398747332617893,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1942,Omega_model,0.8156904523778237,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1943,Omega_model,0.797723512589472,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1944,Omega_model,0.7844326725411072,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1945,Omega_model,0.8172547947679358,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1946,Omega_model,0.9076295096066544,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1947,Omega_model,0.9517824970989462,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1948,Omega_model,0.9378796901622231,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1949,Omega_model,0.9297513862279102,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1950,Omega_model,0.9117887157069005,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1951,Omega_model,0.8923153643050858,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1952,Omega_model,0.8751951635942804,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1953,Omega_model,0.8511093692071343,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1954,Omega_model,0.8554811497576303,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1955,Omega_model,0.8323583282963177,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1956,Omega_model,0.8276139163932067,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1957,Omega_model,0.8228479123430207,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1958,Omega_model,0.8230712074920268,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1959,Omega_model,0.820103279143346,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1960,Omega_model,0.8150022241509692,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1961,Omega_model,0.8074724597239092,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1962,Omega_model,0.7984280864416449,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1963,Omega_model,0.7970420854822112,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1964,Omega_model,0.7844162192836257,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1965,Omega_model,0.7619844228956327,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1966,Omega_model,0.7623984237089789,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1967,Omega_model,0.7483523043291784,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1968,Omega_model,0.7433391683040548,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1969,Omega_model,0.7230901647931149,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1970,Omega_model,0.7240051301064173,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1971,Omega_model,0.7130834672314156,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1972,Omega_model,0.7160031533625434,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1973,Omega_model,0.6978907915727657,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1974,Omega_model,0.6942974530288983,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1975,Omega_model,0.6811752300443147,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1976,Omega_model,0.6662028161054464,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1977,Omega_model,0.6537628468505473,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1978,Omega_model,0.645715008724004,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1979,Omega_model,0.6379271199650237,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1980,Omega_model,0.6260795493036106,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1981,Omega_model,0.6113418689374565,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1982,Omega_model,0.6077195120023805,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1983,Omega_model,0.5935034292419481,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1984,Omega_model,0.5934576478357098,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1985,Omega_model,0.581680288753814,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1986,Omega_model,0.5759986184602564,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1987,Omega_model,0.5699519036878753,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1988,Omega_model,0.5694309778277735,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1989,Omega_model,0.557434356891614,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1990,Omega_model,0.5539134197129862,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1991,Omega_model,0.5574806804506819,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1992,Omega_model,0.5476775981548857,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1993,Omega_model,0.5499828415283015,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1994,Omega_model,0.5466364436790666,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1995,Omega_model,0.5570754696801956,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1996,Omega_model,0.5429624672207859,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1997,Omega_model,0.5290600756826394,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1998,Omega_model,0.5292762087930717,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1999,Omega_model,0.518600536748752,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2000,Omega_model,0.5025322518810144,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2001,Omega_model,0.49245836725539555,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2002,Omega_model,0.48171572433262416,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2003,Omega_model,0.4845224864244663,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2004,Omega_model,0.48086939951672575,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2005,Omega_model,0.4761256832983386,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2006,Omega_model,0.4735576381825693,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2007,Omega_model,0.4671221320057071,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2008,Omega_model,0.46100699617240515,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2009,Omega_model,0.469359272964681,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2010,Omega_model,0.4632660591580174,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2011,Omega_model,0.4707551570128601,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2012,Omega_model,0.46528057724684885,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2013,Omega_model,0.4663603775445473,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2014,Omega_model,0.45857505217468164,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2015,Omega_model,0.44333559616814566,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1900,Omega_model,0.7823867029746053,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1901,Omega_model,0.767082432354401,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1902,Omega_model,0.7628873656369826,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1903,Omega_model,0.7572618734081129,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1904,Omega_model,0.7598055329683008,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1905,Omega_model,0.7529860300283763,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1906,Omega_model,0.7237502539164343,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1907,Omega_model,0.7348204634037313,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1908,Omega_model,0.754106502703098,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1909,Omega_model,0.7231446478218049,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1910,Omega_model,0.7284936873859466,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1911,Omega_model,0.7154749201797588,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1912,Omega_model,0.7096466768666724,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1913,Omega_model,0.7122624079604808,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1914,Omega_model,0.7380344556975783,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1915,Omega_model,0.7364174667352447,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1916,Omega_model,0.7079327597545699,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1917,Omega_model,0.7362549143048353,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1918,Omega_model,0.7433733762419925,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1919,Omega_model,0.7269317994448511,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1920,Omega_model,0.7553964673178531,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1921,Omega_model,0.7365766909616599,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1922,Omega_model,0.7133399364046563,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1923,Omega_model,0.7096764205336425,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1924,Omega_model,0.6870296092041548,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1925,Omega_model,0.6762254556034127,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1926,Omega_model,0.6657120993612891,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1927,Omega_model,0.6669808476061376,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1928,Omega_model,0.6655991529730314,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1929,Omega_model,0.6497588802251387,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1930,Omega_model,0.6743764141829247,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1931,Omega_model,0.6921854743700281,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1932,Omega_model,0.7159497051576348,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1933,Omega_model,0.7162102309956395,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1934,Omega_model,0.7051101669882743,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1935,Omega_model,0.6805690958928167,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1936,Omega_model,0.6652143558138423,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1937,Omega_model,0.6572961964476963,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1938,Omega_model,0.6498242746594373,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1939,Omega_model,0.6306924555480177,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1940,Omega_model,0.628932915890405,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1941,Omega_model,0.6089029836210418,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1942,Omega_model,0.5913695584520459,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1943,Omega_model,0.5783436596954786,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1944,Omega_model,0.5687078987423547,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1945,Omega_model,0.5925036951405552,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1946,Omega_model,0.6580246964635512,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1947,Omega_model,0.6900352865612283,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1948,Omega_model,0.6799558541301548,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1949,Omega_model,0.674062893761934,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1950,Omega_model,0.661040090192684,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1951,Omega_model,0.6325313203174342,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1952,Omega_model,0.630649106093094,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1953,Omega_model,0.6123904900212951,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1954,Omega_model,0.6133006594612231,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1955,Omega_model,0.5880729115657688,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1956,Omega_model,0.5808697789546392,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1957,Omega_model,0.5760794457834866,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1958,Omega_model,0.5785511596755379,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1959,Omega_model,0.5671377152909841,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1960,Omega_model,0.5631864004137174,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1961,Omega_model,0.5627965243113652,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1962,Omega_model,0.5602068732805557,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1963,Omega_model,0.5567433712966718,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1964,Omega_model,0.5411057988686405,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1965,Omega_model,0.5230417025747334,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1966,Omega_model,0.5222537558596942,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1967,Omega_model,0.518372898568242,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1968,Omega_model,0.5133203611507434,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1969,Omega_model,0.4954585422176852,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1970,Omega_model,0.49084552895837563,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1971,Omega_model,0.4850083569245167,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1972,Omega_model,0.4878699430961767,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1973,Omega_model,0.4689945205211847,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1974,Omega_model,0.46552848393690793,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1975,Omega_model,0.46531462896999515,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1976,Omega_model,0.45009579342092093,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1977,Omega_model,0.4396977773584853,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1978,Omega_model,0.4320651076620472,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1979,Omega_model,0.4265306257159926,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1980,Omega_model,0.42071175183652243,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1981,Omega_model,0.41283798308754804,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1982,Omega_model,0.4171292883563024,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1983,Omega_model,0.41107905550975693,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1984,Omega_model,0.40753797512294604,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1985,Omega_model,0.39944513805975695,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1986,Omega_model,0.39750572690417363,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1987,Omega_model,0.3919471848529766,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1988,Omega_model,0.38799561115758824,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1989,Omega_model,0.37931456292556504,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1990,Omega_model,0.37760919875366766,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1991,Omega_model,0.3818076284714678,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1992,Omega_model,0.3744540152257992,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1993,Omega_model,0.3785073257320862,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1994,Omega_model,0.37578818066386976,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1995,Omega_model,0.3823301479419871,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1996,Omega_model,0.373280532798488,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1997,Omega_model,0.3638735906526317,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1998,Omega_model,0.3670913504391021,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1999,Omega_model,0.3606563894157626,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2000,Omega_model,0.3473480396290338,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2001,Omega_model,0.3421319517304242,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2002,Omega_model,0.3357827959425194,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2003,Omega_model,0.33470423941937605,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2004,Omega_model,0.32719509427167387,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2005,Omega_model,0.32223292150612765,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2006,Omega_model,0.31796391708606353,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2007,Omega_model,0.3111926855825747,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2008,Omega_model,0.3066484326819805,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2009,Omega_model,0.3183625735040239,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2010,Omega_model,0.3090911264361051,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2011,Omega_model,0.31328661333145835,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2012,Omega_model,0.30982288164697236,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2013,Omega_model,0.31187969499370544,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2014,Omega_model,0.3063900659678715,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2015,Omega_model,0.297840158368437,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
 1900,Omega_observed,2.158330115450135,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
 1901,Omega_observed,2.1161110081352987,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
 1902,Omega_observed,2.1045382924972356,Gt per trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
@@ -463,119 +463,119 @@ year,series,value,unit,source,method
 2013,Y,100.19147922903622,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
 2014,Y,103.7204667686151,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
 2015,Y,107.16860971835898,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,aggregated
-1900,activity_aggregate,7.007416465041408,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1901,activity_aggregate,7.264586629387786,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1902,activity_aggregate,7.403197004086095,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1903,activity_aggregate,7.643761928652124,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1904,activity_aggregate,7.706568867549981,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1905,activity_aggregate,7.966019873574383,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1906,activity_aggregate,8.457580939103051,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1907,activity_aggregate,8.588127114363262,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1908,activity_aggregate,8.386509908937164,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1909,activity_aggregate,8.930013544730883,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1910,activity_aggregate,9.027279225299628,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1911,activity_aggregate,9.306324321647047,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1912,activity_aggregate,9.59568204951876,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1913,activity_aggregate,9.811356746205412,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1914,activity_aggregate,9.284968478566054,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1915,activity_aggregate,9.339738292515069,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1916,activity_aggregate,9.965298417219314,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1917,activity_aggregate,9.713686905731853,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1918,activity_aggregate,9.669972196769068,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1919,activity_aggregate,9.632712619185092,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1920,activity_aggregate,9.649896868313386,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1921,activity_aggregate,9.64839143986797,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1922,activity_aggregate,10.312952930529827,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1923,activity_aggregate,10.751031802453769,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1924,activity_aggregate,11.295667473365864,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1925,activity_aggregate,11.689654665461873,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1926,activity_aggregate,12.053395196088099,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1927,activity_aggregate,12.365967732058486,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1928,activity_aggregate,12.726328576665079,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1929,activity_aggregate,13.223820601301627,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1930,activity_aggregate,12.583482995412332,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1931,activity_aggregate,11.96022640442193,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1932,activity_aggregate,11.257298784475683,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1933,activity_aggregate,11.42584349905395,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1934,activity_aggregate,11.993624663285365,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1935,activity_aggregate,12.687007855072432,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1936,activity_aggregate,13.365833814719815,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1937,activity_aggregate,14.060703659327624,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1938,activity_aggregate,14.035029480334751,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1939,activity_aggregate,14.895513843272534,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1940,activity_aggregate,15.293780350921303,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1941,activity_aggregate,16.08467454132735,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1942,activity_aggregate,16.58001022394667,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1943,activity_aggregate,17.113216627758412,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1944,activity_aggregate,17.31105844432862,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1945,activity_aggregate,15.999197402950498,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1946,activity_aggregate,14.85949912078654,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1947,activity_aggregate,14.84374768716856,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1948,activity_aggregate,15.557914840309794,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1949,activity_aggregate,15.886339131931491,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1950,activity_aggregate,16.92310437077196,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1951,activity_aggregate,18.018860319099808,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1952,activity_aggregate,18.87451520202614,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1953,activity_aggregate,19.91851188971484,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1954,activity_aggregate,20.451689432264953,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1955,activity_aggregate,21.809407947123326,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1956,activity_aggregate,22.839983578791305,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1957,activity_aggregate,23.658057507332895,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1958,activity_aggregate,24.2835119951558,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1959,activity_aggregate,25.354591828629328,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1960,activity_aggregate,26.66665252679624,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1961,activity_aggregate,27.607680288715017,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1962,activity_aggregate,28.993338164202857,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1963,activity_aggregate,30.318580662374984,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1964,activity_aggregate,32.558669176071085,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1965,activity_aggregate,34.2830139371209,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1966,activity_aggregate,36.058929170207605,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1967,activity_aggregate,37.4470912401617,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1968,activity_aggregate,39.49361718282518,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1969,activity_aggregate,41.709505699927576,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1970,activity_aggregate,43.865215879522815,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1971,activity_aggregate,45.6932903191624,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1972,activity_aggregate,47.86432083302168,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1973,activity_aggregate,51.06147976203018,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1974,activity_aggregate,52.266922616075874,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1975,activity_aggregate,53.10606423202826,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1976,activity_aggregate,55.6062950267333,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1977,activity_aggregate,57.87389589706894,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1978,activity_aggregate,60.497116765481536,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1979,activity_aggregate,62.702002294859454,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1980,activity_aggregate,64.07379836095959,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1981,activity_aggregate,65.23920867602197,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1982,activity_aggregate,66.06815555042229,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1983,activity_aggregate,67.93995035799878,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1984,activity_aggregate,71.04143362842197,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1985,activity_aggregate,73.46733237523652,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1986,activity_aggregate,76.09669251841159,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1987,activity_aggregate,78.97266946343831,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1988,activity_aggregate,82.30386530564712,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1989,activity_aggregate,84.91286199857137,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1990,activity_aggregate,86.23511713211546,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1991,activity_aggregate,87.65745953831866,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1992,activity_aggregate,89.70287893007139,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1993,activity_aggregate,92.02173556790072,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1994,activity_aggregate,95.27324753447351,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1995,activity_aggregate,99.0082186560167,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1996,activity_aggregate,103.2510532393828,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1997,activity_aggregate,107.415154803874,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1998,activity_aggregate,110.03407442553151,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-1999,activity_aggregate,114.14116647680554,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2000,activity_aggregate,119.99998400954028,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2001,activity_aggregate,123.52662839100843,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2002,activity_aggregate,127.75659537637402,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2003,activity_aggregate,133.00004607741974,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2004,activity_aggregate,140.44160020968647,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2005,activity_aggregate,147.71212668637278,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2006,activity_aggregate,156.17308945503183,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2007,activity_aggregate,164.8143990297154,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2008,activity_aggregate,169.89189977652694,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2009,activity_aggregate,170.04991043610636,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2010,activity_aggregate,180.06852641355718,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2011,activity_aggregate,187.59252149326437,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2012,activity_aggregate,193.94286439798117,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2013,activity_aggregate,200.38295845807244,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2014,activity_aggregate,207.4409335372302,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
-2015,activity_aggregate,214.33721943671793,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1900,activity_aggregate,9.66550040440226,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1901,activity_aggregate,10.020221483118027,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1902,activity_aggregate,10.211410152920163,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1903,activity_aggregate,10.543227219492104,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1904,activity_aggregate,10.629858361846068,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1905,activity_aggregate,10.987725461106109,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1906,activity_aggregate,11.665747625388544,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1907,activity_aggregate,11.845813148262142,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1908,activity_aggregate,11.567717620430702,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1909,activity_aggregate,12.317385438486848,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1910,activity_aggregate,12.451546363495622,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1911,activity_aggregate,12.836440069335396,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1912,activity_aggregate,13.235558239307679,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1913,activity_aggregate,13.533043607623352,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1914,activity_aggregate,12.806983434216669,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1915,activity_aggregate,12.882528774145328,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1916,activity_aggregate,13.745379108283574,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1917,activity_aggregate,13.398325215002528,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1918,activity_aggregate,13.33802845095746,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1919,activity_aggregate,13.286635407030015,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1920,activity_aggregate,13.310338060886465,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1921,activity_aggregate,13.30826158672219,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1922,activity_aggregate,14.224907455964727,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1923,activity_aggregate,14.829160326457696,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1924,activity_aggregate,15.58038958815702,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1925,activity_aggregate,16.123825729498275,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1926,activity_aggregate,16.62554191311667,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1927,activity_aggregate,17.056680833986984,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1928,activity_aggregate,17.553735334265667,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1929,activity_aggregate,18.239938215070616,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1930,activity_aggregate,17.356704940788497,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1931,activity_aggregate,16.497031926872875,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1932,activity_aggregate,15.527466719959513,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1933,activity_aggregate,15.759944554699779,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1934,activity_aggregate,16.543098959731747,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1935,activity_aggregate,17.49949930414656,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1936,activity_aggregate,18.43582050329649,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1937,activity_aggregate,19.39427142419862,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1938,activity_aggregate,19.358858403055052,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1939,activity_aggregate,20.545745467560046,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1940,activity_aggregate,21.095084173193307,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1941,activity_aggregate,22.185983815785605,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1942,activity_aggregate,22.86921240146431,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1943,activity_aggregate,23.604676996352183,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1944,activity_aggregate,23.877565038272735,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1945,activity_aggregate,22.068083114482885,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1946,activity_aggregate,20.49606948262474,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1947,activity_aggregate,20.47434314614053,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1948,activity_aggregate,21.459411315263058,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1949,activity_aggregate,21.912414949244486,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1950,activity_aggregate,23.342450524448953,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1951,activity_aggregate,25.419303983130895,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1952,activity_aggregate,26.193463624067274,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1953,activity_aggregate,27.68304270925319,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1954,activity_aggregate,28.527663422651536,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1955,activity_aggregate,30.86903338510565,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1956,activity_aggregate,32.54204116801906,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1957,activity_aggregate,33.79218504059675,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1958,activity_aggregate,34.54674527177356,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1959,activity_aggregate,36.66372970686923,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1960,activity_aggregate,38.59003183321656,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1961,activity_aggregate,39.61012647915143,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1962,activity_aggregate,41.32240537221463,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1963,activity_aggregate,43.40453071532502,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1964,activity_aggregate,47.19880702331932,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1965,activity_aggregate,49.94462671218356,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1966,activity_aggregate,52.63968033077324,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1967,activity_aggregate,54.06072944284294,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1968,activity_aggregate,57.19070345113171,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1969,activity_aggregate,60.87236525381974,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1970,activity_aggregate,64.70190611167445,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1971,activity_aggregate,67.18055354058778,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1972,activity_aggregate,70.24618986057101,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1973,activity_aggregate,75.9824155096719,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1974,activity_aggregate,77.95181713288707,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1975,activity_aggregate,77.74209807259818,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1976,activity_aggregate,82.30485794688636,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1977,activity_aggregate,86.04956606171902,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1978,activity_aggregate,90.4120596346674,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1979,activity_aggregate,93.77827834251163,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1980,activity_aggregate,95.35102032421418,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1981,activity_aggregate,96.60801911131844,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1982,activity_aggregate,96.25530589859709,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1983,activity_aggregate,98.08963258903601,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1984,activity_aggregate,103.45068355232698,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1985,activity_aggregate,106.98465205403733,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1986,activity_aggregate,110.266561695516,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1987,activity_aggregate,114.83849110150885,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1988,activity_aggregate,120.79098101180521,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1989,activity_aggregate,124.78652613527122,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1990,activity_aggregate,126.4979475808812,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1991,activity_aggregate,127.98942856546884,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1992,activity_aggregate,131.19970752717182,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1993,activity_aggregate,133.71042558321017,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1994,activity_aggregate,138.5882576668469,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1995,activity_aggregate,144.2602687935793,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1996,activity_aggregate,150.1858299164619,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1997,activity_aggregate,156.1780557585211,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1998,activity_aggregate,158.64829743424136,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+1999,activity_aggregate,164.12760715508045,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2000,activity_aggregate,173.61221400415633,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2001,activity_aggregate,177.801931162311,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2002,activity_aggregate,183.2802681485059,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2003,activity_aggregate,192.5327062835807,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2004,activity_aggregate,206.40305781579258,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2005,activity_aggregate,218.25683397362798,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2006,activity_aggregate,232.59544689148487,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2007,activity_aggregate,247.3980174562014,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2008,activity_aggregate,255.41090722360104,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2009,activity_aggregate,250.70315725724333,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2010,activity_aggregate,269.8868698427174,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2011,activity_aggregate,281.88292493866487,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2012,activity_aggregate,291.25624105072234,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2013,activity_aggregate,299.6369230189419,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2014,activity_aggregate,310.47754965389504,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
+2015,activity_aggregate,319.04132565781595,trillion 2011 intl USD,krausmann+maddison2023+pwt1001,reconstructed
