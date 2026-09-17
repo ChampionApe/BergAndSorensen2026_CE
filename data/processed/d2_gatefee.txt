@@ -1,0 +1,42 @@
+==============================================================================
+D2 on C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\data\processed\calibration.json, T = 400
+  abar grid [1.0, 0.85, 0.708]
+  xi grid   [0.9073, 2.722, 8.166]
+  floors    [0.0, 9.502]
+==============================================================================
+
+------------------------------------------------------------------------------
+E4 on the baseline
+------------------------------------------------------------------------------
+E4 planner corner         sign change at 139, tauW: 0.0002 -> -5.0988
+E4 property rights only   sign change at 0, tauW: -0.0 -> -3.8487
+
+E4: 2 settings in 5.9 min; table C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\GateFee.tex
+  summary: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\gatefee\gatefee_summary.csv
+  paths:   C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\gatefee\gatefee_paths.csv
+
+== planner corner (1,1,1,1): T reached 400, converged true, |F| = 1.16e-10, solve_long
+   tauW: t = 0 (1900) 0.000151672; minimum -5.10884 at t = 399 (year 2299); T = 400 -5.09879
+   sign change at t = 139 (year 2039): tauW = -0.000126573, previous 1.13689e-05
+   t =   0 (year 1900): tauW =  0.000151672  Wst =      16.39  R =      5.74  a = 0.3863  varpi = 0.0000
+   t =  50 (year 1950): tauW =  0.000543201  Wst =      526.6  R =     17.12  a = 0.4435  varpi = 0.0000
+   t = 100 (year 2000): tauW =    0.0018646  Wst =       1470  R =     42.77  a = 0.6585  varpi = 0.0000
+   t = 115 (year 2015): tauW =   0.00181393  Wst =       1898  R =     59.13  a = 0.6874  varpi = 0.2514
+   t = 139 (year 2039): tauW = -0.000126573  Wst =       2782  R =     99.49  a = 0.7364  varpi = 0.5726
+   t = 150 (year 2050): tauW =  -0.00208688  Wst =       3329  R =     126.9  a = 0.7566  varpi = 0.7118
+   t = 200 (year 2100): tauW =   -0.0312389  Wst =       8172  R =     364.4  a = 0.8485  varpi = 1.0000
+   t = 300 (year 2200): tauW =    -0.413009  Wst =  3.578e+04  R =      1461  a = 0.9711  varpi = 1.0000
+   t = 400 (year 2300): tauW =     -5.09879  Wst =  6.401e+04  R =      2451  a = 0.9980  varpi = 1.0000
+
+== property rights only (1,0,0,0): T reached 400, converged true, |F| = 1.16e-10, continuation
+   tauW: t = 0 (1900) -1.92713e-09; minimum -3.84872 at t = 400 (year 2300); T = 400 -3.84872
+   sign change at t = 0 (year 1900): tauW = -1.92713e-09, previous NaN
+   t =   0 (year 1900): tauW = -1.92713e-09  Wst =      16.39  R =      5.76  a = 0.3849  varpi = 0.0000
+   t =  50 (year 1950): tauW = -4.51847e-07  Wst =      530.2  R =     17.28  a = 0.4405  varpi = 0.0000
+   t = 100 (year 2000): tauW = -0.000119631  Wst =       1494  R =     43.55  a = 0.6529  varpi = 0.0000
+   t = 115 (year 2015): tauW = -0.000612065  Wst =       1953  R =     58.28  a = 0.6926  varpi = 0.1288
+   t = 139 (year 2039): tauW =  -0.00328098  Wst =       2861  R =     96.49  a = 0.7390  varpi = 0.4382
+   t = 150 (year 2050): tauW =   -0.0054103  Wst =       3407  R =     121.2  a = 0.7594  varpi = 0.5552
+   t = 200 (year 2100): tauW =   -0.0280981  Wst =       7812  R =       342  a = 0.8361  varpi = 1.0000
+   t = 300 (year 2200): tauW =    -0.319927  Wst =  3.314e+04  R =      1353  a = 0.9608  varpi = 1.0000
+   t = 400 (year 2300): tauW =     -3.84872  Wst =  6.059e+04  R =      2361  a = 0.9967  varpi = 1.0000

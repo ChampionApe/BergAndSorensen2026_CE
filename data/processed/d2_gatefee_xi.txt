@@ -1,0 +1,22 @@
+==============================================================================
+D2 on C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\data\processed\calibration.json, T = 400
+  abar grid [1.0, 0.85, 0.708]
+  xi grid   [0.9073, 2.722, 8.166]
+  floors    [0.0, 9.502]
+==============================================================================
+
+------------------------------------------------------------------------------
+E4 at xi = 0.9073349579841098 -> C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\gatefee\xi0p9073
+------------------------------------------------------------------------------
+E4 planner corner         sign change at 193, tauW: 0.0002 -> -5.4909
+E4 property rights only   sign change at 0, tauW: -0.0 -> -4.2641
+   xi = 0.9073  planner corner         sign change 193, tauW_0 = 0.000151663, tauW_T = -5.49094, min -5.50118, T = 400, solve_long
+   xi = 0.9073  property rights only   sign change 0, tauW_0 = -8.04487e-12, tauW_T = -4.26414, min -4.26414, T = 400, continuation
+
+------------------------------------------------------------------------------
+E4 at xi = 8.166014621856988 -> C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\gatefee\xi8p166
+------------------------------------------------------------------------------
+E4 planner corner         sign change at 79, tauW: 0.0002 -> -4.8964
+E4 property rights only   sign change at 0, tauW: -0.0 -> -3.6468
+   xi = 8.166  planner corner         sign change 79, tauW_0 = 0.000151427, tauW_T = -4.89642, min -4.9063, T = 400, solve_long
+   xi = 8.166  property rights only   sign change 0, tauW_0 = -2.31839e-07, tauW_T = -3.6468, min -3.6468, T = 400, continuation

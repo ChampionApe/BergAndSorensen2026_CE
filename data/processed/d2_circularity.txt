@@ -1,0 +1,39 @@
+==============================================================================
+D2 on C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\data\processed\calibration.json, T = 400
+  abar grid [1.0, 0.85, 0.708]
+  xi grid   [0.9073, 2.722, 8.166]
+  floors    [0.0, 9.502]
+==============================================================================
+
+------------------------------------------------------------------------------
+E2 at Rbar = 0.0 -> C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\circularity\Rbar0
+------------------------------------------------------------------------------
+E2 abar = 1, xi = 0.907  C   CE =      0.0  Xi avoided = 16767.344
+E2 abar = 1, xi = 2.72  C   CE =   0.0001  Xi avoided = 22311.548
+E2 abar = 1, xi = 8.17  C   CE =   0.0004  Xi avoided = 25146.329
+E2 abar = 0.85, xi = 0.907  B   CE =      0.0  Xi avoided = 12146.464
+E2 abar = 0.85, xi = 2.72  B   CE =      0.0  Xi avoided = 16991.235
+E2 abar = 0.85, xi = 8.17  B   CE =   0.0002  Xi avoided = 19489.671
+E2 abar = 0.708, xi = 0.907  B   CE =      0.0  Xi avoided =  8702.81
+E2 abar = 0.708, xi = 2.72  B   CE =      0.0  Xi avoided = 13237.993
+E2 abar = 0.708, xi = 8.17  B   CE =   0.0001  Xi avoided = 15719.989
+E2 Rbar = 0: 9 rows, stopped on budget: false
+
+------------------------------------------------------------------------------
+E2 at Rbar = 9.502 -> C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\circularity\Rbar9p502
+------------------------------------------------------------------------------
+E2 abar = 1, xi = 0.907  C   CE =      0.0  Xi avoided = 17266.86
+E2 abar = 1, xi = 2.72  C   CE =   0.0001  Xi avoided = 23084.754
+E2 abar = 1, xi = 8.17  C   CE =    0.001  Xi avoided = 26231.07
+E2 abar = 0.85, xi = 0.907  A   CE =      0.0  Xi avoided = 12609.872
+E2 abar = 0.85, xi = 2.72  A   CE =      0.0  Xi avoided = 17714.068
+E2 abar = 0.85, xi = 8.17  A   CE =   0.0003  Xi avoided = 20469.793
+E2 abar = 0.708, xi = 0.907  A   CE =      0.0  Xi avoided = 9115.059
+E2 abar = 0.708, xi = 2.72  A   CE =      0.0  Xi avoided = 13895.79
+E2 abar = 0.708, xi = 8.17  A   CE =   0.0001  Xi avoided = 16605.655
+E2 Rbar = 9.502: 9 rows, stopped on budget: false
+
+E2: 18 of 18 grid points in 16.0 min; table C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\Circularity.tex
+  rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\circularity\circularity_Rbar0.csv
+  rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\circularity\circularity_Rbar9p502.csv
+  stacked: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\circularity\circularity.csv
