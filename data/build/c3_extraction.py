@@ -34,8 +34,9 @@ bottom, the metals-only price channel.
 chi_N.  For a cost sc (kap N + N^(1+chi)/(1+chi)) the ratio of production cost to
 production value at the margin is (kap + N/(1+chi))/(kap + N), so chi_N is the value
 share over the cost share less one, an upper reading because the Hotelling rent is
-also in the value.  kap_N is a tenth of 1900 extraction: the choke price is a tenth
-of the 1900 marginal cost.  Sref = S0.
+also in the value.  kap_N is a tenth of 1900 extraction, a judgement and not
+a reading: at that value the choke price kap_N is 0.22 of the 1900 marginal cost
+kap_N + N_1900^chi_N, not a tenth of it.  Sref = S0.
 
 c_N(t).  The implied series c_N,t = MC_2015 (p_t/p_2015) (S_t/S0)^mu_N / (kap_N +
 N_t^chi_N), with MC_2015 from the extraction cost share of GDP, falls by a factor of
