@@ -72,6 +72,14 @@ anything: the formatting of a column is not worth eighteen cold solves.  The
 consumption equivalents are printed to four decimals of a percent because on
 this calibration they are hundredths of a percent, and two decimals would round
 every row to zero.
+
+Three columns of the first version are in the CSV and not here.  `Era ends' and
+the shutdown date go for `duration_note`'s reason: the first is empty in every
+row, no path reaching the floor within the horizon, and the second is the last
+date the shutdown branch solves rather than an optimum.  The Hotelling
+deviation goes because the rule it measures is about the relaxed problem, and
+`hotelling_deviation` reports it only where exploration has ceased and the
+reserve carries no stock effect, which no cell of this calibration reaches.
 """
 function write_circularity_table(rows; stopped::Bool = false, asked::Int = 0)
     texrows = String[]
@@ -79,36 +87,30 @@ function write_circularity_table(rows; stopped::Bool = false, asked::Int = 0)
         push!(texrows, join((tex_num(row.Rbar; digits = 1), tex_num(row.abar; digits = 3),
                              tex_num(row.xi; digits = 2), row.state,
                              tex_num(100 * row.ce_gain; digits = 4),
-                             tex_date(row.era_length), tex_date(row.era_length_shutdown),
                              tex_num(row.cum_Xi; digits = 1),
                              tex_num(row.Xi_avoided; digits = 1),
                              tex_num(row.Minf; digits = 1),
-                             tex_num(row.survival_ratio; digits = 1),
-                             tex_num(row.hotelling_max_dev; digits = 4)), " & "))
+                             tex_num(row.survival_ratio; digits = 1)), " & "))
     end
     return write_table(joinpath(TABLE_ROOT, "Circularity.tex");
         caption = "What circularity buys, by floor, ceiling and tail rate",
-        label = "tab:q:res:circularity", colspec = "rrrcrrrrrrrr",
+        label = "tab:q:res:circularity", colspec = "rrrcrrrrr",
         header = "\$\\bar R\$ & \$\\bar a\$ & \$\\xi\$ & State & CE gain (\\%) & " *
-                 "Era ends & \$T^{\\dagger}\$ & \$\\sum\\Xi\$ & \$\\Xi\$ avoided & " *
-                 "\$\\mathcal M_\\infty\$ & \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & " *
-                 "Hotelling dev.",
+                 "\$\\sum\\Xi\$ & \$\\Xi\$ avoided & " *
+                 "\$\\mathcal M_\\infty\$ & \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$",
         rows = texrows,
         notes = vcat(["The no-recycling counterfactual sets \$\\bar a = " *
                       string(ABAR_NORECYCLING) * "\$, so the recycling margin is at its " *
                       "corner rather than absent from the problem, and is solved at the " *
                       "same \$\\xi\$ and the same floor. The consumption-equivalent gain " *
                       "is the proportional consumption supplement that would make the " *
-                      "counterfactual as good as the cell. `Era ends' is the first date at " *
-                      "which material input reaches the floor and \$T^{\\dagger}\$ the " *
-                      "optimal shutdown date, searched only in the collapse cells; a dash " *
-                      "is an event that does not occur within the horizon reached. " *
+                      "counterfactual as good as the cell. " *
                       "Emissions are cumulative over the horizon, in gigatonnes of " *
                       "material. The survival ratio is infinite without a floor, and under " *
                       "a hard ceiling it is reported but is not what decides the state: " *
                       "the loop cannot close, so a floor puts the cell in state A whatever " *
-                      "the ratio. The Hotelling deviation is the largest relative gap " *
-                      "between \$\\Psi_{t+1}/\\Psi_t\$ and \$1+r_{t+1}\$ along the path."],
+                      "the ratio."],
+                     duration_note(p, s0, [(r.abar, r.Rbar) for r in rows if r.state == "A"]),
                      stopped ? ["The run stopped on its time budget after " *
                                 "$(length(rows)) of $asked grid points."] : String[]))
 end
@@ -160,21 +162,6 @@ end
 # ---------------------------------------------------------------------------
 # E4
 # ---------------------------------------------------------------------------
-
-"Read a CSV written by `open_csv` back as a column dictionary of strings."
-function read_csv(path::AbstractString)
-    lines = readlines(path)
-    cols = split(lines[1], ',')
-    out = Dict{String,Vector{String}}(c => String[] for c in cols)
-    for ln in lines[2:end]
-        isempty(strip(ln)) && continue
-        f = split(ln, ',')
-        for (i, c) in enumerate(cols)
-            push!(out[c], String(f[i]))
-        end
-    end
-    return out
-end
 
 function run_gatefee()
     t0 = time()
@@ -245,7 +232,7 @@ function run_gatefee_xi()
 end
 
 """
-Rebuild `Tables/Circularity.tex` from the stacked CSV of an earlier run, solving
+Rebuild the two tables the note inputs from the CSVs of an earlier run, solving
 nothing.  The CSV is the record; the table is a rendering of it, and a change to
 a column's format should not cost eighteen cold solves.
 """
@@ -256,12 +243,23 @@ function rebuild_table()
     num(col, i) = parse(Float64, c[col][i])
     rows = [(; Rbar = num("Rbar", i), abar = num("abar", i), xi = num("xi", i),
               state = c["state"][i], ce_gain = num("ce_gain", i),
-              era_length = parse(Int, c["era_length"][i]),
-              era_length_shutdown = parse(Int, c["era_length_shutdown"][i]),
               cum_Xi = num("cum_Xi", i), Xi_avoided = num("Xi_avoided", i),
-              Minf = num("Minf", i), survival_ratio = num("survival_ratio", i),
-              hotelling_max_dev = num("hotelling_max_dev", i)) for i in 1:n]
+              Minf = num("Minf", i), survival_ratio = num("survival_ratio", i))
+            for i in 1:n]
     println("rebuilt ", write_circularity_table(rows), " from ", path, ", ", n, " rows")
+
+    gpath = joinpath(OUTPUT_ROOT, "gatefee", "gatefee_summary.csv")
+    if isfile(gpath)
+        g = read_csv(gpath)
+        m = length(g["setting"])
+        gnum(col, i) = parse(Float64, g[col][i])
+        grows = [(; setting = g["setting"][i], phiW = gnum("phiW", i),
+                   phiz = gnum("phiz", i), phiP = gnum("phiP", i), phiX = gnum("phiX", i),
+                   tauW_0 = gnum("tauW_0", i), tauW_end = gnum("tauW_end", i),
+                   sign_change = parse(Int, g["sign_change"][i]),
+                   T_reached = parse(Int, g["T_reached"][i])) for i in 1:m]
+        println("rebuilt ", write_gatefee_table(grows), " from ", gpath, ", ", m, " rows")
+    end
 end
 
 "circularity" in ONLY && run_circularity()

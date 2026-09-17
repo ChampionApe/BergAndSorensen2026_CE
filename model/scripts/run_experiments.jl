@@ -45,6 +45,12 @@ const TABLE_ROOT = normpath(joinpath(@__DIR__, "..", "..", "writing", "quant", "
 # recycling.  0.01 keeps the margin alive and puts it at its corner.
 const ABAR_NORECYCLING = 0.01
 
+# Below this in magnitude a table cell is zero rather than a small number.  The
+# solver returns |F| ~ 1e-11, so a price of 1e-9 is a rounding of zero and its
+# sign is noise; printing it as `-0.0`, or reading a sign change off it, states
+# something the path does not say.
+const ZERO_TOL = 1e-6
+
 # ---------------------------------------------------------------------------
 # the hours budget
 # ---------------------------------------------------------------------------
@@ -118,6 +124,55 @@ end
 
 close_csv(f::CsvFile) = close(f.io)
 
+"""
+    split_csv(line) -> Vector{String}
+
+One line of a CSV written by `open_csv`, with the quoting `csv_quote` applies: a
+case name of the form `abar 1, Rbar 0` and a corner label of the form `(1,1,1,1)`
+both carry commas and are written quoted, and splitting on the comma shifts
+every later column by one.
+"""
+function split_csv(line::AbstractString)
+    out, buf, inq = String[], IOBuffer(), false
+    i = firstindex(line)
+    while i <= lastindex(line)
+        c = line[i]
+        if inq && c == '"' && i < lastindex(line) && line[nextind(line, i)] == '"'
+            print(buf, '"')
+            i = nextind(line, i)
+        elseif c == '"'
+            inq = !inq
+        elseif c == ',' && !inq
+            push!(out, String(take!(buf)))
+        else
+            print(buf, c)
+        end
+        i = nextind(line, i)
+    end
+    push!(out, String(take!(buf)))
+    return out
+end
+
+"""
+    read_csv(path) -> Dict{String,Vector{String}}
+
+A CSV written by `open_csv` read back as a column dictionary of strings.  The
+CSV is the record of a run and the table is a rendering of it, so a driver
+rebuilds a table from this rather than from a solve.
+"""
+function read_csv(path::AbstractString)
+    lines = filter(!isempty, strip.(readlines(path)))
+    cols = split_csv(lines[1])
+    out = Dict{String,Vector{String}}(c => String[] for c in cols)
+    for ln in lines[2:end]
+        f = split_csv(ln)
+        for (i, c) in enumerate(cols)
+            push!(out[c], f[i])
+        end
+    end
+    return out
+end
+
 # ---------------------------------------------------------------------------
 # generated tex
 # ---------------------------------------------------------------------------
@@ -146,14 +201,36 @@ end
 """
 A number for a table cell.  An infinite survival ratio is the floorless case and
 prints as such; not-a-number is a quantity the row does not have and prints as a
-dash, and the two must not be confused in a table about survival.
+dash, and the two must not be confused in a table about survival.  A magnitude
+below `ZERO_TOL` is printed as zero: a shadow price the solver returns as
+`-1.9e-9` is zero, and printing it as `-0.0` reads as a sign.
 """
 function tex_num(v; digits::Int = 3)
     v === nothing && return "--"
     x = float(v)
     isnan(x) && return "--"
     isinf(x) && return x > 0 ? "\$\\infty\$" : "\$-\\infty\$"
+    abs(x) < ZERO_TOL && (x = 0.0)
     return string(round(x; digits = digits))
+end
+
+"""
+A number for a table cell in scientific notation, `m x 10^e`.  For a column
+whose entries run over orders of magnitude and would round to a row of zeros in
+fixed point, where the alternative is a scale factor in the header, which a
+reader then has to carry to every other table.
+"""
+function tex_sci(v; digits::Int = 2)
+    v === nothing && return "--"
+    x = float(v)
+    isnan(x) && return "--"
+    isinf(x) && return x > 0 ? "\$\\infty\$" : "\$-\\infty\$"
+    abs(x) < ZERO_TOL && return "0"
+    e = floor(Int, log10(abs(x)))
+    m = round(x / 10.0^e; digits = digits)
+    # rounding the mantissa up to ten is a carry into the exponent
+    abs(m) >= 10 && (m /= 10; e += 1)
+    return string("\$", m, "\\times10^{", e, "}\$")
 end
 
 "A date column: `-1` means the event did not occur within the horizon."
@@ -199,6 +276,39 @@ function write_table(path::AbstractString; caption::AbstractString,
         println(io, "\\end{table}")
     end
     return path
+end
+
+"""
+    duration_note(p, s0, cells) -> Vector{String}
+
+The sentence a table of collapse cells carries in place of a shutdown date.
+`cells` is the `(abar, Rbar)` pairs of the rows classified as collapse, which
+the caller filters: an unsolved row has no state and a floorless or
+soft-ceilinged row is not bounded by the lemma.  The bound is
+`throughput_duration`, which needs no solved path.  Empty when the table has no
+collapse cell.
+
+What a collapse cell can claim is the state, which follows from the lemma, and
+the length of the era it bounds.  What it cannot claim is the date the shutdown
+search returns: the objective is monotone in the date on this model, so the
+search returns the last date its branch solves, which is a property of the
+branch and not of the economy.
+"""
+function duration_note(p::Params, s0::AbstractVector, cells)
+    ds = filter(isfinite, [throughput_duration(with(p; abar = float(ab), Rbar = float(rb)), s0)
+                           for (ab, rb) in cells])
+    isempty(ds) && return String[]
+    lo, hi = minimum(ds), maximum(ds)
+    span = isapprox(lo, hi; rtol = 5e-2) ? "about " * tex_sci(lo; digits = 1) * " periods" :
+           "between " * tex_sci(lo; digits = 1) * " and " * tex_sci(hi; digits = 1) * " periods"
+    return ["Where a floor meets a hard ceiling the loop cannot close and the material era " *
+            "has bounded duration, by the theory note's Lemma on finite cumulative " *
+            "throughput: cumulative handling cannot exceed the material budget over " *
+            "\$1-\\bar a\$, which at \$\\bar R\$ a period is " * span * " in the collapse " *
+            "cells of this table. That bound, and not a computed date, is what those cells " *
+            "say about the length of the era; no shutdown date is reported, because the " *
+            "search's objective is monotone in the date and it returns the last date its " *
+            "branch solves."]
 end
 
 "The sentence a truncated run adds to its table note."
@@ -335,17 +445,36 @@ function consumption_equivalent(p::Params, target::Real, cf)
 end
 
 """
-    hotelling_deviation(p, mo, x) -> (max, mean)
+    hotelling_deviation(p, mo, x) -> (max, mean, reason)
 
-`Psi_{t+1}/Psi_t` against `1 + r_{t+1}`, relative.  `Psi` is the planner's
+`Psi_{t+1}/Psi_t` against `1 + r_{t+1}`, relative, where the theory's rule
+applies, and `(NaN, NaN, reason)` where it does not.  `Psi` is the planner's
 shorthand of `planner_prices` -- the marginal social value of a tonne of
 material input -- and `1 + r_{t+1} = Lam_t / (beta Lam_{t+1})` is read off the
-path's own marginal utility rather than assumed.  On a collapse path the theory
-says the material price path is a Hotelling path, and this is that statement
-measured.
+path's own marginal utility rather than assumed.
+
+The rule of the theory note's Appendix on the relaxed problem is about the
+multiplier on the cumulative throughput bound with the period cap dropped, not
+about `Psi` on the full problem.  `Psi` carries `p^S`, which carries the stock
+effect's dividend `-C^N_S > 0` and, while discovery is interior, is pinned by
+the discovery margin instead.  So the comparison is a measurement of the rule
+only where exploration has ceased and the reserve carries no stock effect, and
+anywhere else it must fail, by a gap that says nothing about the model: on the
+calibrated baseline it fails by 7 percent in every cell with `D` still at
+131 Gt/yr at 2100.  The two conditions are therefore tested rather than
+assumed, and the reason is carried to the row.
 """
 function hotelling_deviation(p::Params, mo::Model, x::AbstractVector)
     sol = unpack(mo, x)
+    if p.mu_N > 0
+        return (NaN, NaN, "the reserve carries a stock effect (mu_N > 0), so Psi " *
+                          "carries its dividend and the rule is not about Psi")
+    end
+    D = series(sol, :D)
+    if any(d -> d > ZERO_TOL, D)
+        return (NaN, NaN, "exploration has not ceased (D > 0 somewhere on the path), " *
+                          "so p^S is pinned by the discovery margin")
+    end
     Lam = pseries(sol, :Lam)
     bet = discount(p)
     Psi = [CircularEconomy.planner_prices(p, sol.blocks[t], view(sol.costates, t, :)).Psi
@@ -357,8 +486,9 @@ function hotelling_deviation(p::Params, mo::Model, x::AbstractVector)
         Rf > 0 || continue
         push!(devs, abs(Psi[t+1] / Psi[t] - Rf) / Rf)
     end
-    isempty(devs) && return (NaN, NaN)
-    return (maximum(devs), sum(devs) / length(devs))
+    isempty(devs) && return (NaN, NaN, "no period of the path carries a positive Psi " *
+                                       "and a positive marginal utility")
+    return (maximum(devs), sum(devs) / length(devs), "")
 end
 
 """
@@ -462,11 +592,53 @@ function taxonomy_cases(cases)
 end
 
 """
+    write_taxonomy_table(p, s0, rows; texdir, extra) -> path
+
+E1's table, from the rows of a run or the rows of its CSV.  Split out of the run
+so that a driver can rebuild it without solving anything: the rows are the
+record and the table is a rendering of them.
+
+Two columns of the harness's first version are not here.  The shutdown date
+\$T^\\dagger\$ is dropped for `duration_note`'s reason.  The survival ratio is
+printed only under a soft ceiling: under a hard one it is reported by the
+classifier but does not decide the state, the loop being unable to close, and a
+number in that cell reads as the number the state was read off.
+"""
+function write_taxonomy_table(p::Params, s0::AbstractVector, rows;
+                              texdir::AbstractString = TABLE_ROOT,
+                              extra::Vector{String} = String[])
+    texrows = [join((tex_escape(String(r.case)), r.state, tex_num(r.Minf; digits = 2),
+                     tex_num(r.residence; digits = 1),
+                     r.abar < 1 ? "--" : tex_num(r.survival_ratio; digits = 2),
+                     tex_date(r.gatefee_sign_change), string(r.T_reached)), " & ")
+               for r in rows]
+    return write_table(joinpath(texdir, "Taxonomy.tex");
+        caption = "Where the economy lands in the taxonomy",
+        label = "tab:q:res:taxonomy", colspec = "lcrrrrr",
+        header = "Case & State & \$\\mathcal M_\\infty\$ & \$\\mathcal T\$ & " *
+                 "\$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & " *
+                 "Gate fee \$<0\$ & \$T\$ reached",
+        rows = texrows,
+        notes = vcat(["States are those of the theory note's taxonomy: A collapse, " *
+                      "B balanced dematerialization, C perpetual circular growth. " *
+                      "\$\\mathcal T\$ is the residence time \$1/\\mu+\\sigma_\\infty/\\delta\$. " *
+                      "The survival ratio is infinite without a floor and is reported only " *
+                      "under a soft ceiling \$\\bar a = 1\$; under a hard ceiling the state " *
+                      "is the ceiling's, the loop being unable to close whatever the ratio, " *
+                      "and the cell carries a dash. Dates are periods since the base year; " *
+                      "a dash in a date column is an event that does not occur within the " *
+                      "horizon reached."],
+                     duration_note(p, s0, [(r.abar, r.Rbar) for r in rows if r.state == "A"]),
+                     extra))
+end
+
+"""
     experiment_taxonomy(p, s0; cases, T, hours, ...) -> NamedTuple
 
 E1.  One row per case: the long-run state, the retained endowment, the residence
-time, the survival ratio, the shutdown date where the state is collapse, the
-date the gate fee changes sign, and the horizon diagnostics.
+time, the survival ratio, the date the gate fee changes sign, and the horizon
+diagnostics.  The shutdown date is in the CSV and not in the table
+(`duration_note`).
 """
 function experiment_taxonomy(p::Params, s0::AbstractVector;
                              cases = [(; name = "baseline")],
@@ -480,7 +652,6 @@ function experiment_taxonomy(p::Params, s0::AbstractVector;
     b = Budget(hours)
     csv = open_csv(joinpath(outdir, "taxonomy", "taxonomy.csv"), TAXONOMY_COLS)
     rows = NamedTuple[]
-    texrows = String[]
     prev = nothing
     try
         for (i, c) in enumerate(cases)
@@ -498,30 +669,12 @@ function experiment_taxonomy(p::Params, s0::AbstractVector;
             r.ok && (prev = r)
             verbose && @printf("E1 %-28s %-3s  T = %3d  surv = %7s  %s\n", nm, f.state,
                                r.mo.T, tex_num(f.survival_ratio), r.method)
-            push!(texrows, join((tex_escape(nm), f.state, tex_num(f.Minf; digits = 2),
-                                 tex_num(f.residence; digits = 1),
-                                 tex_num(f.survival_ratio; digits = 2),
-                                 tex_date(f.shutdown), tex_date(f.gatefee_sign_change),
-                                 string(r.mo.T)), " & "))
         end
     finally
         close_csv(csv)
     end
-    tex = write_table(joinpath(texdir, "Taxonomy.tex");
-        caption = "Where the economy lands in the taxonomy",
-        label = "tab:q:res:taxonomy", colspec = "lcrrrrrr",
-        header = "Case & State & \$\\mathcal M_\\infty\$ & \$\\mathcal T\$ & " *
-                 "\$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & \$T^{\\dagger}\$ & " *
-                 "Gate fee \$<0\$ & \$T\$ reached",
-        rows = texrows,
-        notes = vcat(["States are those of the theory note's taxonomy: A collapse, " *
-                      "B balanced dematerialization, C perpetual circular growth. " *
-                      "\$\\mathcal T\$ is the residence time \$1/\\mu+\\sigma_\\infty/\\delta\$ " *
-                      "and the survival ratio is infinite without a floor. " *
-                      "\$T^{\\dagger}\$ is the optimal shutdown date, searched only where the " *
-                      "state is collapse. Dates are periods since the base year; a dash is an " *
-                      "event that does not occur within the horizon reached."],
-                     budget_note(b, length(rows), length(cases))))
+    tex = write_taxonomy_table(p, s0, rows; texdir = texdir,
+                               extra = budget_note(b, length(rows), length(cases)))
     return (; rows, csv = csv.path, tex, stopped = b.stopped)
 end
 
@@ -534,7 +687,7 @@ const CIRCULARITY_COLS = (:abar, :xi, :T_reached, :converged, :resid, :method,
                           :era_length, :era_length_shutdown, :shutdown_status,
                           :cum_Xi, :cum_Xi_norecycling, :Xi_avoided, :Minf,
                           :survival_ratio, :hotelling_max_dev, :hotelling_mean_dev,
-                          :seconds)
+                          :hotelling_status, :seconds)
 
 "Cumulative emissions along a solved path."
 cumulative_Xi(mo, x) = sum(b.Xi for b in unpack(mo, x).blocks)
@@ -544,8 +697,10 @@ cumulative_Xi(mo, x) = sum(b.Xi for b in unpack(mo, x).blocks)
 
 E2.  For each ceiling and tail rate: the welfare gain over the no-recycling
 counterfactual in consumption equivalents, the length of the material era where
-it ends, and cumulative emissions.  Where the cell collapses, the era length is
-also taken from the shutdown-date search, and the Hotelling check is reported.
+it ends, and cumulative emissions.  The era length, the shutdown date and the
+Hotelling check are in the CSV and not in the table: the first two for
+`duration_note`'s reason, the third because it is reported only where the rule
+applies (`hotelling_deviation`).
 """
 function experiment_circularity(p::Params, s0::AbstractVector;
                                 abar_grid = [1.0, 0.85], xi_grid = [1.5, 3.0, 6.0],
@@ -588,7 +743,8 @@ function experiment_circularity(p::Params, s0::AbstractVector;
             elseif r.ok && shutdown_search
                 estat = "not a collapse path"
             end
-            hmax, hmean = r.ok ? hotelling_deviation(pc, r.mo, r.x) : (NaN, NaN)
+            hmax, hmean, hwhy = r.ok ? hotelling_deviation(pc, r.mo, r.x) :
+                                       (NaN, NaN, "not solved")
             Xi = r.ok ? cumulative_Xi(r.mo, r.x) : NaN
             mg = r.ok ? classify_longrun(r.mo, r.x)[2] : nothing
             row = (; abar = ab, xi = xi, T_reached = r.mo.T, converged = r.ok,
@@ -601,7 +757,7 @@ function experiment_circularity(p::Params, s0::AbstractVector;
                     Minf = mg === nothing ? NaN : mg.Minf,
                     survival_ratio = mg === nothing ? NaN : mg.survival_ratio,
                     hotelling_max_dev = hmax, hotelling_mean_dev = hmean,
-                    seconds = r.seconds)
+                    hotelling_status = hwhy, seconds = r.seconds)
             write_row!(csv, row)
             push!(rows, row)
             verbose && @printf("E2 abar = %.3g, xi = %.3g  %-2s  CE = %8s  Xi avoided = %8s\n",
@@ -613,25 +769,22 @@ function experiment_circularity(p::Params, s0::AbstractVector;
     end
     texrows = [join((tex_num(r.abar; digits = 2), tex_num(r.xi; digits = 2), r.state,
                      tex_num(100 * r.ce_gain; digits = 2),
-                     tex_date(r.era_length), tex_date(r.era_length_shutdown),
-                     tex_num(r.cum_Xi; digits = 2), tex_num(r.Xi_avoided; digits = 2),
-                     tex_num(r.hotelling_max_dev; digits = 4)), " & ") for r in rows]
+                     tex_num(r.cum_Xi; digits = 2), tex_num(r.Xi_avoided; digits = 2)),
+                    " & ") for r in rows]
     tex = write_table(joinpath(texdir, "Circularity.tex");
         caption = "What circularity buys, by ceiling and tail rate",
-        label = "tab:q:res:circularity", colspec = "rrcrrrrrr",
-        header = "\$\\bar a\$ & \$\\xi\$ & State & CE gain (\\%) & Era ends & " *
-                 "\$T^{\\dagger}\$ & \$\\sum\\Xi\$ & \$\\Xi\$ avoided & Hotelling dev.",
+        label = "tab:q:res:circularity", colspec = "rrcrrr",
+        header = "\$\\bar a\$ & \$\\xi\$ & State & CE gain (\\%) & " *
+                 "\$\\sum\\Xi\$ & \$\\Xi\$ avoided",
         rows = texrows,
         notes = vcat(["The no-recycling counterfactual sets \$\\bar a = " *
                       string(ABAR_NORECYCLING) * "\$, so the recycling margin is at its " *
                       "corner rather than absent from the problem, and is solved at the " *
                       "same \$\\xi\$. The consumption-equivalent gain is the proportional " *
                       "consumption supplement that would make the counterfactual as good " *
-                      "as the cell. `Era ends' is the first date at which material input " *
-                      "reaches the floor; \$T^{\\dagger}\$ is the optimal shutdown date, " *
-                      "searched only in the collapse cells. The Hotelling deviation is the " *
-                      "largest relative gap between \$\\Psi_{t+1}/\\Psi_t\$ and \$1+r_{t+1}\$ " *
-                      "along the path."],
+                      "as the cell. Emissions are cumulative over the horizon, in " *
+                      "gigatonnes of material."],
+                     duration_note(p, s0, [(r.abar, p.Rbar) for r in rows if r.state == "A"]),
                      budget_note(b, length(rows), length(grid))))
     return (; rows, csv = csv.path, tex, stopped = b.stopped)
 end
@@ -771,6 +924,55 @@ const GATEFEE_COLS = (:setting, :phiW, :phiz, :phiP, :phiX, :T_reached, :converg
                       :tauW_min, :seconds)
 
 """
+    write_gatefee_table(rows; texdir, extra) -> path
+
+E4's table, from the rows of a run or the rows of its summary CSV, split out so
+that a driver can rebuild it without solving anything.
+
+Two readings of a fee that is numerically zero.  At `phiW = 0` there is no fee
+at all, `tauW = -phiW pW` being identically zero, and the row says so rather
+than printing a zero and a date.  At `phiW = 1` a fee that starts within
+`ZERO_TOL` of zero relative to its terminal value is negative throughout to the
+precision of the solve, and the date `first_date` reads off its sign is the
+base year only because the base year's value is rounding noise; the date column
+carries a dash and the note says which rows.
+"""
+function write_gatefee_table(rows; texdir::AbstractString = TABLE_ROOT,
+                             extra::Vector{String} = String[])
+    nofee = [r.setting for r in rows if r.phiW == 0]
+    # a fee that is zero at the base year to the precision of the terminal value
+    numzero = [r.setting for r in rows
+               if r.phiW != 0 && isfinite(r.tauW_0) && isfinite(r.tauW_end) &&
+                  abs(r.tauW_0) <= ZERO_TOL * max(abs(r.tauW_end), 1.0)]
+    texrows = String[]
+    for r in rows
+        dials = @sprintf("(%g,%g,%g,%g)", r.phiW, r.phiz, r.phiP, r.phiX)
+        cells = r.phiW == 0 ? ["no fee", "no fee", "no fee"] :
+                [tex_num(r.tauW_0; digits = 4), tex_num(r.tauW_end; digits = 4),
+                 r.setting in numzero ? "--" : tex_date(r.sign_change)]
+        push!(texrows, join(vcat(tex_escape(r.setting), dials, cells,
+                                 string(r.T_reached)), " & "))
+    end
+    notes = ["The gate fee is \$\\tau^{\\mathcal W} = -\\phi^W p^{\\mathcal W}\$, a " *
+             "price and not a tax rate: at \$\\phi^W = 1\$ it is the market in which " *
+             "the waste stock is priced at all, and at \$\\phi^W = 0\$ there is no fee. " *
+             "The sign change is the first date at which the fee turns negative, so that " *
+             "holding waste is worth paying for. The per-period paths are in the run's CSV."]
+    isempty(numzero) ||
+        push!(notes, "The fee is negative throughout in " *
+                     join(["`" * tex_escape(n) * "'" for n in numzero], ", ") *
+                     ", and numerically zero at the base year: its value there is below " *
+                     "the precision of the solve relative to its terminal value, so no " *
+                     "date is reported rather than the base year.")
+    return write_table(joinpath(texdir, "GateFee.tex");
+        caption = "The gate fee and the date waste becomes a resource",
+        label = "tab:q:res:gatefee", colspec = "llrrrr",
+        header = "Setting & \$(\\phi^W,\\phi^z,\\phi^P,\\phi^X)\$ & \$\\tau^{\\mathcal W}_0\$ & " *
+                 "\$\\tau^{\\mathcal W}_T\$ & Sign change & \$T\$ reached",
+        rows = texrows, notes = vcat(notes, extra))
+end
+
+"""
     experiment_gatefee(p, s0; ...) -> NamedTuple
 
 E4.  The gate fee path under `phiW = 1`, at the planner corner and with the
@@ -825,22 +1027,8 @@ function experiment_gatefee(p::Params, s0::AbstractVector;
         close_csv(pcsv)
         close_csv(scsv)
     end
-    texrows = [join((tex_escape(r.setting),
-                     @sprintf("(%g,%g,%g,%g)", r.phiW, r.phiz, r.phiP, r.phiX),
-                     tex_num(r.tauW_0; digits = 4), tex_num(r.tauW_end; digits = 4),
-                     tex_date(r.sign_change), string(r.T_reached)), " & ") for r in rows]
-    tex = write_table(joinpath(texdir, "GateFee.tex");
-        caption = "The gate fee and the date waste becomes a resource",
-        label = "tab:q:res:gatefee", colspec = "llrrrr",
-        header = "Setting & \$(\\phi^W,\\phi^z,\\phi^P,\\phi^X)\$ & \$\\tau^{\\mathcal W}_0\$ & " *
-                 "\$\\tau^{\\mathcal W}_T\$ & Sign change & \$T\$ reached",
-        rows = texrows,
-        notes = vcat(["The gate fee is \$\\tau^{\\mathcal W} = -\\phi^W p^{\\mathcal W}\$, a " *
-                      "price and not a tax rate: at \$\\phi^W = 1\$ it is the market in which " *
-                      "the waste stock is priced at all. The sign change is the first date " *
-                      "at which it turns negative, so that holding waste is worth paying for. " *
-                      "The per-period paths are in the run's CSV."],
-                     budget_note(b, length(rows), length(settings))))
+    tex = write_gatefee_table(rows; texdir = texdir,
+                              extra = budget_note(b, length(rows), length(settings)))
     return (; rows, csv = scsv.path, paths = pcsv.path, tex, stopped = b.stopped)
 end
 
@@ -904,7 +1092,11 @@ function experiment_surface(p::Params, s0::AbstractVector;
             if i === nothing
                 push!(cells, "--", "--")
             else
-                push!(cells, rows[i].state, tex_num(rows[i].survival_ratio; digits = 2))
+                # The ratio is reported only under a soft ceiling: under a hard
+                # one the state is the ceiling's and the ratio decides nothing,
+                # so a number there reads as the reason for the state.
+                push!(cells, rows[i].state,
+                      float(ab) < 1 ? "--" : tex_num(rows[i].survival_ratio; digits = 2))
             end
         end
         push!(texrows, join(vcat(tex_num(rb; digits = 3), cells), " & "))
@@ -919,10 +1111,14 @@ function experiment_surface(p::Params, s0::AbstractVector;
         colspec = "r" * repeat("cr", length(abar_cases)),
         header = head * " \\\\\n" * sub,
         rows = texrows,
-        notes = vcat(["Each cell is one solved path. The survival ratio is " *
-                      "\$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ of the theory note's " *
-                      "survival condition, infinite at \$\\bar R = 0\$, and the state is " *
-                      "the taxonomy's. A dash is a grid point the run did not reach."],
+        notes = vcat(["Each cell is one solved path and the state is the taxonomy's. " *
+                      "The survival ratio is \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ " *
+                      "of the theory note's survival condition, infinite at \$\\bar R = 0\$, " *
+                      "and is reported only under a soft ceiling \$\\bar a = 1\$: under a " *
+                      "hard ceiling the state is the ceiling's, the loop being unable to " *
+                      "close whatever the ratio. A dash in a state column is a grid point " *
+                      "the run did not reach."],
+                     duration_note(p, s0, [(r.abar, r.Rbar) for r in rows if r.state == "A"]),
                      budget_note(b, length(rows), npoints)))
     return (; rows, csv = csv.path, tex, stopped = b.stopped)
 end

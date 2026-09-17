@@ -427,66 +427,19 @@ end
 # ---------------------------------------------------------------------------
 
 """
-    split_csv(line) -> Vector{String}
-
-One CSV line into fields, honouring the quoting `csv_field` writes.  A plain
-`split(ln, ',')` is what D2's driver uses and is wrong here: the surface's first
-column is a case name of the form `abar 1, Rbar 0`, which is quoted and carries
-a comma, and splitting on the comma shifts every later column by one.
-"""
-function split_csv(line::AbstractString)
-    out, buf, inq = String[], IOBuffer(), false
-    i = firstindex(line)
-    while i <= lastindex(line)
-        c = line[i]
-        if inq
-            if c == '"'
-                if i < lastindex(line) && line[nextind(line, i)] == '"'
-                    print(buf, '"'); i = nextind(line, i)
-                else
-                    inq = false
-                end
-            else
-                print(buf, c)
-            end
-        elseif c == '"'
-            inq = true
-        elseif c == ','
-            push!(out, String(take!(buf)))
-        else
-            print(buf, c)
-        end
-        i = nextind(line, i)
-    end
-    push!(out, String(take!(buf)))
-    return out
-end
-
-"Read a CSV written by `open_csv` back as a column dictionary of strings."
-function read_csv(path::AbstractString)
-    lines = readlines(path)
-    cols = split_csv(lines[1])
-    out = Dict{String,Vector{String}}(c => String[] for c in cols)
-    for ln in lines[2:end]
-        isempty(strip(ln)) && continue
-        f = split_csv(ln)
-        for (i, c) in enumerate(cols)
-            push!(out[c], f[i])
-        end
-    end
-    return out
-end
-
-"""
     write_surface_table() -> path
 
 The note's table, rebuilt from `surface.csv` and `edge.csv`: one row per floor,
-three columns per ceiling -- state, survival ratio, shutdown date -- and the
-solvability edge as the last row of each ceiling's column group.  The harness
-writes a two-column version of the same table from the rows of its own run; this
-one adds the shutdown date, which is the column D1 and D2 both had to report in
-prose, and the edge, which is the result of the experiment rather than a note on
-it.
+two columns per ceiling -- state and survival ratio -- and the solvability edge
+as the last row of each ceiling's column group.  What this adds to the harness's
+own version of the table is the edge, which is the result of the experiment
+rather than a note on it.
+
+The shutdown date the search returns is not a column here.  It is the last date
+its branch solves rather than an optimum, the objective being monotone in the
+date, so the collapse cells carry the duration bound of `duration_note` instead.
+The survival ratio is printed only under a soft ceiling, for the reason the note
+gives.
 """
 function write_surface_table()
     c = read_csv(joinpath(D4_OUT, "surface.csv"))
@@ -500,10 +453,11 @@ function write_surface_table()
         for ab in abars
             i = findfirst(k -> num("Rbar", k) == rb && num("abar", k) == ab, 1:n)
             if i === nothing
-                append!(cells, ["--", "--", "--"])
+                append!(cells, ["--", "--"])
             else
-                append!(cells, [c["state"][i], tex_num(num("survival_ratio", i); digits = 1),
-                                tex_date(parse(Int, c["shutdown"][i]))])
+                append!(cells, [c["state"][i],
+                                ab < 1 ? "--" :
+                                tex_num(num("survival_ratio", i); digits = 1)])
             end
         end
         push!(texrows, join(vcat(tex_num(rb; digits = 3), cells), " & "))
@@ -519,7 +473,7 @@ function write_surface_table()
         for ab in abars
             idx = [k for k in 1:m if parse(Float64, e["abar"][k]) == ab]
             if isempty(idx)
-                append!(cells, ["--", "--", "--"])
+                append!(cells, ["--", "--"])
             else
                 okk = [k for k in idx if e["converged"][k] == "true"]
                 hi = [k for k in idx if e["converged"][k] == "false"]
@@ -529,35 +483,29 @@ function write_surface_table()
                 push!(edge, @sprintf("at \\(\\bar a = %g\\) between %s and %s\\,Gt", ab,
                                      tex_num(lo; digits = 2), tex_num(hs; digits = 2)))
                 append!(cells, [best === nothing ? "--" : e["state"][okk[best]],
-                                best === nothing ? "--" :
-                                tex_num(parse(Float64, e["survival_ratio"][okk[best]]); digits = 1),
-                                best === nothing ? "--" : tex_date(-1)])
+                                (best === nothing || ab < 1) ? "--" :
+                                tex_num(parse(Float64, e["survival_ratio"][okk[best]]); digits = 1)])
             end
         end
         push!(texrows, "\\addlinespace\n" * join(vcat("edge", cells), " & "))
     end
 
-    head = "\$\\bar R\$" * join([@sprintf(" & \\multicolumn{3}{c}{\$\\bar a = %g\$}", ab)
+    head = "\$\\bar R\$" * join([@sprintf(" & \\multicolumn{2}{c}{\$\\bar a = %g\$}", ab)
                                  for ab in abars])
-    sub = join(fill(" & State & \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & \$T^{\\dagger}\$",
+    sub = join(fill(" & State & \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$",
                     length(abars)))
-    notes = ["Each cell is one solved path at \$T = " * string(T_REQ) * "\$ from the " *
+    notes = vcat(
+            ["Each cell is one solved path at \$T = " * string(T_REQ) * "\$ from the " *
              "calibrated baseline, the floor and the ceiling overridden. The survival " *
              "ratio is \$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ of the theory note's " *
              "survival condition, infinite at \$\\bar R = 0\$, with \$\\mathcal M_\\infty\$ " *
              "read at the horizon reached and therefore comparable across cells rather " *
-             "than a limit; under a hard ceiling it is reported but does not decide the " *
-             "state, the loop being unable to close.",
-             "\$T^{\\dagger}\$ is the shutdown date the search returns, and is searched only " *
-             "where the state is collapse. It is not an interior optimum on this " *
-             "calibration: on a ten-period grid the objective rises monotonically in the " *
-             "date and the shutdown branch converges on no date after 280, so the entry is " *
-             "the last date that solves. The last eighty periods of it are worth \$3\\times " *
-             "10^{-4}\$ of the objective, so the date is better read as \`not before 200' " *
-             "than as a date. A dash at \$\\bar R = 23.756\$ is the search converging on no " *
-             "date at the default length of its floor homotopy; at four times the length " *
-             "that cell returns 280 like the others.",
-             "The floor enters the technology as \$R-\\bar R\$ and 9.5\\,Gt is already " *
+             "than a limit. It is reported only under a soft ceiling \$\\bar a = 1\$: under " *
+             "a hard ceiling the state is the ceiling's, the loop being unable to close " *
+             "whatever the ratio, and the cell carries a dash."],
+            duration_note(p, s0, [(num("abar", i), num("Rbar", i))
+                                  for i in 1:n if c["state"][i] == "A"]),
+            ["The floor enters the technology as \$R-\\bar R\$ and 9.5\\,Gt is already " *
              "1.66 times this calibration's own 1900 material input, so the rows are a grid " *
              "of different economies rather than a perturbation of the baseline.",
              "The last row is the largest floor that solves at all, found by bisecting " *
@@ -569,11 +517,11 @@ function write_surface_table()
              "solved path, 2.5 to 2.9\\,Gt above the floor, so the edge asks the 1900 economy " *
              "for about six times the material input it would otherwise choose, and what then " *
              "fails is the recycling margins' corner conditions on a path that is feasible " *
-             "throughout."]
+             "throughout."])
     return write_table(joinpath(D4_TEX, "Surface.tex");
         caption = "The surface over the floor and the ceiling",
         label = "tab:q:res:surface",
-        colspec = "r" * repeat("ccr", length(abars)),
+        colspec = "r" * repeat("cr", length(abars)),
         header = head * " \\\\\n" * sub,
         rows = texrows, notes = notes)
 end

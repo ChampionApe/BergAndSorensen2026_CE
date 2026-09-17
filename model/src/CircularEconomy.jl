@@ -71,7 +71,8 @@ export initial_guess, simulate_quantities, solve_path, newton!, jacobian,
        continuate, solve_with_shutdown, extend_horizon, solve_long
 
 # diagnostics
-export unpack, series, pseries, check_path, welfare, compare_residuals
+export unpack, series, pseries, check_path, welfare, compare_residuals,
+       material_budget, throughput_duration
 
 # sufficiency
 export convexity_report, wellposed_report, tvc_report, perturbation_test, deviation_profile,

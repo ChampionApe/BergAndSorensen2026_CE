@@ -119,7 +119,14 @@ end
     @test tex_num(NaN) == "--"
     @test tex_num(Inf) == "\$\\infty\$"          # a floorless survival ratio
     @test tex_num(1.23456; digits = 2) == "1.23"
+    # a price the solver returns as numerically zero is zero, not a sign
+    @test tex_num(-1.9e-9; digits = 4) == "0.0"
+    @test tex_sci(3.666e-4) == "\$3.67\\times10^{-4}\$"
+    @test tex_sci(9.99e-5; digits = 1) == "\$1.0\\times10^{-4}\$"   # the mantissa carries
+    @test tex_sci(0.0) == "0" && tex_sci(NaN) == "--"
     @test tex_date(-1) == "--" && tex_date(7) == "7"
+    # a quoted field carries commas: `abar 1, Rbar 0` is one column, not two
+    @test split_csv("a,\"b,c\",d") == ["a", "b,c", "d"]
     @test first_date(<(0), [1.0, 2.0, -1.0]) == 2      # dates count from zero
     @test first_date(<(0), [1.0, 2.0]) == -1
     @test csv_quote("a,b") == "\"a,b\"" && csv_quote("ab") == "ab"
@@ -181,6 +188,11 @@ end
                                     hours = 0.5, shutdown_search = false, common...)
         @test header(r2.csv) == string.(collect(CIRCULARITY_COLS))
         @test ndata(r2.csv) == 1
+        # The Hotelling rule is about the relaxed problem: it is measured only
+        # where exploration has ceased and the reserve carries no stock effect,
+        # and reported as missing with a reason anywhere else.
+        @test isnan(r2.rows[1].hotelling_max_dev) &&
+              occursin("stock effect", r2.rows[1].hotelling_status)
         # recycling is worth something against the no-recycling counterfactual
         @test r2.rows[1].ce_gain > 0
         @test r2.rows[1].cum_Xi < r2.rows[1].cum_Xi_norecycling

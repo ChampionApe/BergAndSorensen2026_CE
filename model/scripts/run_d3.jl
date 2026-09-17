@@ -253,34 +253,6 @@ function write_panelled_table(path::AbstractString; caption::AbstractString,
     return path
 end
 
-"""
-    split_csv(line) -> Vector{String}
-
-One line of the harness's CSV, with the quoting `csv_quote` applies: a label
-such as `(1,1,1,1)` carries commas and is written quoted, so splitting on commas
-is not enough.
-"""
-function split_csv(line::AbstractString)
-    out, buf, inq = String[], IOBuffer(), false
-    i = firstindex(line)
-    while i <= lastindex(line)
-        c = line[i]
-        if inq && c == '"' && i < lastindex(line) && line[nextind(line, i)] == '"'
-            print(buf, '"')
-            i = nextind(line, i)
-        elseif c == '"'
-            inq = !inq
-        elseif c == ',' && !inq
-            push!(out, String(take!(buf)))
-        else
-            print(buf, c)
-        end
-        i = nextind(line, i)
-    end
-    push!(out, String(take!(buf)))
-    return out
-end
-
 "The columns of one run's CSV that the note's table uses, read back."
 function read_rows(path::AbstractString)
     lines = filter(!isempty, strip.(readlines(path)))
@@ -300,10 +272,12 @@ end
 "One corner's row of the combined table."
 function corner_row(r)
     # The costs are of order 1e-4 percent on this calibration, so the harness's
-    # three digits round every one of them to zero; the column is reported in
-    # units of 1e-5 percent instead of being printed as a row of zeros.
+    # three digits round every one of them to zero.  The column is in percent,
+    # the unit of every other consumption equivalent in the note, written in
+    # scientific notation: a scale factor in the header is one column of digits
+    # that the reader has to carry to every table it is compared with.
     return join((tex_escape(r.label), r.state,
-                 tex_num(1e7 * r.ce_vs_planner; digits = 2),
+                 tex_sci(100 * r.ce_vs_planner; digits = 2),
                  tex_num(r.survival_ratio; digits = 2),
                  tex_num(r.Minf; digits = 1),
                  tex_num(r.cum_leak; digits = 1),
@@ -430,7 +404,7 @@ end
 tex = write_panelled_table(joinpath(TABLE_ROOT, "Instruments.tex");
     caption = "The cost of the three market failures, at the corners of the policy space",
     label = "tab:q:res:instruments", colspec = "lcrrrrr",
-    header = "\$(\\phi^W,\\phi^z,\\phi^P,\\phi^X)\$ & State & CE cost (\$10^{-5}\$\\%) & " *
+    header = "\$(\\phi^W,\\phi^z,\\phi^P,\\phi^X)\$ & State & CE cost (\\%) & " *
              "\$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & \$\\mathcal M_\\infty\$ & " *
              "\$\\sum\\Xi\$ & Gate fee \$<0\$",
     body = body,
@@ -439,10 +413,12 @@ tex = write_panelled_table(joinpath(TABLE_ROOT, "Instruments.tex");
              "material-content charge, \$\\phi^P\$ the emission tax, \$\\phi^X\$ the discovery " *
              "tax. The consumption-equivalent cost is the proportional consumption supplement " *
              "that would make the corner as good as the planner corner \$(1,1,1,1)\$, which is " *
-             "therefore zero by construction, in units of \$10^{-5}\$ percent of consumption; " *
-             "the planner corner is the maximum of the problem, so a negative entry would be a " *
-             "horizon diagnostic and not a result, and entries below \$0.1\$ are at the " *
-             "precision of the comparison itself. " *
+             "therefore zero by construction; it is in percent of consumption, written in " *
+             "scientific notation because on this calibration every corner costs a " *
+             "ten-thousandth of a percent or less. " *
+             "The planner corner is the maximum of the problem, so a negative entry would be a " *
+             "horizon diagnostic and not a result, and entries below \$10^{-6}\$ percent are " *
+             "at the precision of the comparison itself. " *
              "\$\\mathcal M_\\infty\$ is the retained endowment at the horizon reached and " *
              "\$\\sum\\Xi\$ cumulative leakage to the environment, both in gigatonnes; the " *
              "survival ratio is infinite without a floor. Dates are periods since 1900; a " *

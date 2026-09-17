@@ -3,21 +3,28 @@ Task D1 of `notes/plan_calibration_experiments.md`: E1 on the calibrated
 baseline and on the metals bound, through the harness of `run_experiments.jl`.
 
     julia --project=. scripts/run_d1.jl [T]
+    julia --project=. scripts/run_d1.jl --only=table   # rebuild the table from the CSV
 
 The baseline's rows go where `run_experiments.jl --only=taxonomy` would put
 them, `output/taxonomy/` and `writing/quant/Tables/Taxonomy.tex`; the metals
-bound's go under `output/metals/` and `writing/quant/Tables/metals/`, so the two
-do not overwrite each other.  Beyond the harness's own columns, the run prints
-the diagnostics the task asks for row by row: the reserve relative to its
-initial level at the horizon reached and the date it falls to two percent, the
-market-planner gap, the transversality and well-posedness reports in full, and
-the movement of the 1900-2000 window between the horizon reached and half of it.
+bound's stay under `output/metals/`, rows and table both.  The metals table is
+not a note input: at `mu_N = 0` the bound's reserve goes negative and its rows
+are infeasible (`model/README.md`, *Known limitations*), and a second table
+under the baseline's own label is a duplicate label in the note.  What the bound
+says is said in prose until its `mu_N` is refitted.
+
+Beyond the harness's own columns, the run prints the diagnostics the task asks
+for row by row: the reserve relative to its initial level at the horizon reached
+and the date it falls to two percent, the market-planner gap, the transversality
+and well-posedness reports in full, and the movement of the 1900-2000 window
+between the horizon reached and half of it.
 =#
 
 include(joinpath(@__DIR__, "run_experiments.jl"))
 using Printf
 
-const T_REQ = length(ARGS) >= 1 ? parse(Int, ARGS[1]) : 400
+const HORIZONS = filter(a -> !startswith(a, "--"), ARGS)
+const T_REQ = isempty(HORIZONS) ? 400 : parse(Int, first(HORIZONS))
 const DATA = normpath(joinpath(@__DIR__, "..", "..", "data", "processed"))
 
 function full_diagnostics(p, s0, rows)
@@ -50,10 +57,36 @@ function full_diagnostics(p, s0, rows)
     end
 end
 
+"""
+Rebuild `Tables/Taxonomy.tex` from the baseline's CSV, solving nothing.  The CSV
+is the record; the table is a rendering of it, and a change to a column should
+not cost eight cold solves at `T = 400`.
+"""
+function rebuild_table()
+    path = joinpath(OUTPUT_ROOT, "taxonomy", "taxonomy.csv")
+    c = read_csv(path)
+    n = length(c["case"])
+    num(col, i) = parse(Float64, c[col][i])
+    d = read_calibration(joinpath(DATA, "calibration.json"))
+    rows = [(; case = c["case"][i], abar = num("abar", i), Rbar = num("Rbar", i),
+              state = c["state"][i], Minf = num("Minf", i),
+              residence = num("residence", i),
+              survival_ratio = num("survival_ratio", i),
+              gatefee_sign_change = parse(Int, c["gatefee_sign_change"][i]),
+              T_reached = parse(Int, c["T_reached"][i])) for i in 1:n]
+    tex = write_taxonomy_table(calibrated_params(d), calibrated_states(d), rows)
+    println("rebuilt ", tex, " from ", path, ", ", n, " rows")
+end
+
+if "--only=table" in ARGS
+    rebuild_table()
+    exit()
+end
+
 for (label, file, outdir, texdir) in (
         ("baseline", "calibration.json", OUTPUT_ROOT, TABLE_ROOT),
         ("metals bound", "calibration_metals.json", joinpath(OUTPUT_ROOT, "metals"),
-         joinpath(TABLE_ROOT, "metals")))
+         joinpath(OUTPUT_ROOT, "metals", "Tables")))
     println("\n", repeat("=", 78), "\n", label, ": ", file, "\n", repeat("=", 78))
     d = read_calibration(joinpath(DATA, file))
     p, s0, cases = calibrated_params(d), calibrated_states(d), calibration_cases(d)

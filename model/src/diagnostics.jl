@@ -39,6 +39,34 @@ series(sol, f::Symbol) = [getfield(b, f) for b in sol.blocks]
 pseries(sol, f::Symbol) = [getfield(pr, f) for pr in sol.prices]
 
 """
+    material_budget(p, s0) -> Float64
+
+The material budget `B` of the cumulated-leakage bound: everything that can ever
+reach the environment, the reserve and the room below the discovery ceiling with
+their displaced mass, plus the two stocks the economy starts with.  It is a
+function of the parameters and the initial states alone, so a table can quote a
+bound built on it without solving anything.
+"""
+function material_budget(p::Params, s0::AbstractVector)
+    budget_N = s0[IS] + (p.Xmax - s0[IX])
+    return (1 + p.OmNS) * budget_N + p.OmDS * (p.Xmax - s0[IX]) + s0[IMK] + s0[IWS]
+end
+
+"""
+    throughput_duration(p, s0) -> Float64
+
+The bound of the theory note's Lemma on finite cumulative throughput under a
+hard ceiling, in periods: cumulative handling cannot exceed
+`material_budget / (1 - abar)`, and a floor draws at least `Rbar` a period from
+it.  `Inf` without a floor or under a soft ceiling, where the lemma says
+nothing.  This is what a collapse cell can claim about the length of its
+material era; the shutdown-date search cannot, its objective being monotone in
+the date up to the last one its branch solves.
+"""
+throughput_duration(p::Params, s0::AbstractVector) =
+    (p.abar < 1 && p.Rbar > 0) ? material_budget(p, s0) / ((1 - p.abar) * p.Rbar) : Inf
+
+"""
     check_path(mo, x; verbose = true) -> NamedTuple
 
 Runs the five accounting checks numbered in the body and returns their worst
@@ -67,7 +95,7 @@ function check_path(mo::Model, x::AbstractVector; verbose::Bool = true)
     cumN = sum(b.N for b in B)
     budget_N = S[1, IS] + (p.Xmax - S[1, IX])
     cum_leak = sum((1 - b.a * b.vw) * b.H for b in B)
-    Bud = (1 + p.OmNS) * budget_N + p.OmDS * (p.Xmax - S[1, IX]) + S[1, IMK] + S[1, IWS]
+    Bud = material_budget(p, view(S, 1, :))
 
     # (3) throughput bound under a hard ceiling
     cumH = sum(b.H for b in B)

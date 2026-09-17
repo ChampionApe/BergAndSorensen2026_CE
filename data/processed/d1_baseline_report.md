@@ -5,7 +5,9 @@ Task D1 of `notes/plan_calibration_experiments.md`: E1 (`experiment_taxonomy`) o
 `model/scripts/run_d1.jl`, which wraps the harness and prints the full diagnostics per row
 (`d1_taxonomy.txt`); `scripts/run_sufficiency.jl --calibration=` on the baseline
 (`d1_sufficiency.txt`). The rows are `model/output/taxonomy/taxonomy.csv` (gitignored); the
-generated tables are `writing/quant/Tables/Taxonomy.tex` and `Tables/metals/Taxonomy.tex`.
+generated table is `writing/quant/Tables/Taxonomy.tex`; the metals bound's table stays under
+`model/output/metals/` (E1b, review finding R23: its rows are infeasible and it duplicated the
+baseline table's label).
 Dates are periods from 1900. Charges at the D0b level (`c4_handling_level.json`).
 
 ## The baseline, `abar = 1, Rbar = 0`
