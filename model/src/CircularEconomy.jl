@@ -68,7 +68,7 @@ export initial_guess, simulate_quantities, solve_path, newton!, jacobian,
 export unpack, series, pseries, check_path, welfare, compare_residuals
 
 # sufficiency
-export convexity_report, tvc_report, perturbation_test, deviation_profile,
+export convexity_report, wellposed_report, tvc_report, perturbation_test, deviation_profile,
        absorbing_shutdown,
        simulate_from_controls, test_value
 

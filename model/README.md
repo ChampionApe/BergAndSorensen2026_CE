@@ -89,9 +89,16 @@ The model is not globally concave, so the solver returns a point satisfying the
   fail. On the illustrative calibration four fail: multiplicative damages, the
   extraction and exploration cost functions (because they have a finite choke),
   and the intensity condition (because `phiI > 0`).
+- `wellposed_report(p; g, nu)` — Assumption "well-posedness and regularity" of
+  the theory note as four inequalities with their margins, at one cell's growth
+  rate and material decay rate. `check_params` warns on the two that are
+  conditions on primitives; `tvc_report` evaluates all four at the path's own
+  rates. The illustrative set passes all four on the circular path and fails
+  `e^(g+nu) < 1+r` at its own balanced-dematerialization rates.
 - `tvc_report(mo, x)` — the six boundary terms. Five vanish for free, because
   mass conservation bounds their states; only the capital term is a genuine
-  condition, and it holds iff `beta * e^((1-eta)g) < 1`.
+  condition, and it holds iff `beta * e^((1-eta)g) < 1`, which is condition (i)
+  above and is read off that report rather than tested twice.
 - `deviation_profile(mo, x; control, window, grid)` — the value profile along
   one deviation direction. This is the diagnostic that matters: a profile
   single-peaked at zero is consistent with local optimality, a second peak is a

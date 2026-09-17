@@ -174,17 +174,22 @@ function check_params(p::Params)
                  "two roots. Use psi_a <= 1 for a globally concave yield function.")
     end
 
-    # Assumption "bounded accumulation and finite values": ln(1+rho) > (1-eta)g
+    # Assumption "well-posedness and regularity" (i), ln(1+rho) > (1-eta)g, at
+    # the circular rate g = (gA + gamma gB)/(1 - beta_K).  That is the only
+    # growth rate the primitives fix on their own; the conditions of (ii), which
+    # need the cell's material decay rate nu, are `wellposed_report` in
+    # sufficiency.jl and are evaluated on a path, not here.
     g = cbgp_growth(p)
     if log(1 + p.rho) <= (1 - p.eta) * g
         push!(w, "utility diverges on the circular path: need log(1+rho) > (1-eta)*g " *
-                 "(g = $(round(g, digits=5)))")
+                 "at the C-cell rate g = $(round(g, digits=5))")
     end
     # no-tipping (workhorse eq. notipping), only binds when thetaP > 0
     if p.thetaP > 0 && p.rho + p.theta_min < (p.theta0 - p.theta_min) / MathConstants.e
         push!(w, "tipping condition may fail: need rho + theta_min >= (theta0 - theta_min)/e")
     end
-    # Post-shutdown cake-eating.  The two conditions of the workhorse --- a
+    # Assumption "well-posedness and regularity" (iii): post-shutdown
+    # cake-eating.  The two conditions of the workhorse --- a
     # positive consumption rate, gamma_C < 1 - delta, and a finite value,
     # beta * gamma_C^(1-eta) < 1 --- are algebraically the same restriction,
     # (1-delta)^(1-eta) < 1 + rho.  It binds only on collapse paths, where it

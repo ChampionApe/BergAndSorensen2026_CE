@@ -4,6 +4,8 @@ Sufficiency checks.
 Implements the verification protocol of `writing/docs/Appendix_sufficiency.tex`:
 
   * `convexity_report`   -- conditions (C1)-(C5) on the primitives, one line each;
+  * `wellposed_report`   -- the long-run assumption (i)-(iii) of the theory note,
+    evaluated at a cell's growth and material decay rates;
   * `tvc_report`         -- the six boundary terms of the sufficiency inequality;
   * `perturbation_test`  -- a random search over feasible deviations;
   * `deviation_profile`  -- the value profile along one deviation direction,
@@ -107,6 +109,74 @@ function convexity_report(p::Params; Pmax = nothing, verbose::Bool = true)
 end
 
 # ---------------------------------------------------------------------------
+# the long-run assumptions
+# ---------------------------------------------------------------------------
+
+"""
+    wellposed_report(p; g = cbgp_growth(p), nu = 0.0, verbose = true) -> Vector{NamedTuple}
+
+Assumption "well-posedness and regularity" of
+`writing/docs/theory_planner_longrun.tex`, evaluated at the growth rate `g` and
+material decay rate `nu` of one cell of the classification (`nu = 0` on the
+circular path C, `nu > 0` on a balanced dematerialization path B).  One row per
+inequality, with the margin by which it holds or fails:
+
+    (i)    ln(1+rho) > (1-eta) g          lifetime utility converges
+    (ii)   e^(g+nu) < 1+r                 a rent growing with the material value
+           (1-delta) e^(g+nu) < 1+r       is a convergent sum, and the prices of
+           (1-mu) e^(g+nu) < 1+r          embodied material and of the stockpile
+                                          are finite and of the right sign
+    (iii)  (1-delta)^(1-eta) < 1+rho      collapse paths can be ranked
+
+with `1+r = (1+rho) e^(eta g)`, the Euler equation on a balanced path.  The last
+two rows of (ii) are consequences of the first and are reported separately
+because they are the ones a calibration breaks first: (ii) at `nu = 0` is (i)
+restated, so on a circular path only `delta` and `mu` can pull them apart.
+
+Only (i) and (iii) are conditions on primitives, which is why `check_params`
+carries those two -- (i) at the circular rate, the one growth rate the
+primitives fix -- and the rest need a cell and live here.  `margin = rhs - lhs`,
+positive when the condition holds.
+"""
+function wellposed_report(p::Params; g::Real = cbgp_growth(p), nu::Real = 0.0,
+                          verbose::Bool = true)
+    Rf = interest_factor(p, exp(g))          # 1 + r = (1+rho) e^{eta g}
+    Gn = exp(g + nu)
+    rows = (("(i) well-posedness", (1 - p.eta) * g, log(1 + p.rho),
+             "utility converges at g = $(round(g, digits = 5)); vacuous for eta >= 1"),
+            ("(ii) regularity", Gn, Rf,
+             "e^(g+nu) < 1+r at nu = $(round(nu, digits = 5)): the reserve rent sums"),
+            ("(ii) embodied M", (1 - p.delta) * Gn, Rf,
+             "Delta_M in (0,1): embodied material carries a finite price"),
+            ("(ii) stockpile", (1 - p.mu_h) * Gn, Rf,
+             p.mu_h >= 1 ? "vacuous at the buffer corner mu_h = 1" :
+                           "the stockpile multiplier is finite"),
+            ("(iii) cake-eating", (1 - p.delta)^(1 - p.eta), 1 + p.rho,
+             "a path on which production has ceased has a finite value"))
+    out = [(name = n, holds = rhs > lhs, lhs = lhs, rhs = rhs,
+            margin = rhs - lhs, detail = d) for (n, lhs, rhs, d) in rows]
+
+    verbose && print_wellposed(out)
+    return out
+end
+
+"Prints the table of a `wellposed_report`; shared with `tvc_report`."
+function print_wellposed(out)
+    @printf("%-20s %-6s %12s %12s %12s  %s\n",
+            "condition", "", "lhs", "rhs", "margin", "reading")
+    for r in out
+        @printf("%-20s %-6s %12.6f %12.6f %12.6f  %s\n",
+                r.name, r.holds ? "ok" : "FAILS", r.lhs, r.rhs, r.margin, r.detail)
+    end
+    n = count(r -> !r.holds, out)
+    println(n == 0 ?
+        "All four long-run conditions hold at this (g, nu)." :
+        "$n condition(s) fail at this (g, nu): the cell they describe is not " *
+        "well posed here.")
+    return nothing
+end
+
+# ---------------------------------------------------------------------------
 # transversality
 # ---------------------------------------------------------------------------
 
@@ -117,7 +187,15 @@ The six boundary terms `beta^t * Lambda_t * m_t * x_{t+1}` of the sufficiency
 inequality, evaluated at the end of the path, with their per-period decay factor
 over the last `window` periods.  Proposition "transversality" says five of them
 vanish for free because mass conservation bounds the states; only the capital
-term is a genuine condition.
+term is a genuine condition, and it is condition (i) of the long-run
+assumptions, so it is read off `wellposed_report` rather than tested twice.
+
+The report is evaluated at the path's own rates: `g = log(Gam)` from the
+terminal closure, and `nu` measured on the solved path's material input `R` over
+the last `window` periods.  A measured `nu < 0` is a path whose material input is
+still rising, not a dematerialization rate; the conditions are then evaluated at
+`nu = 0`, which is the binding case, and the measured value is returned as
+`nu_path`.
 """
 function tvc_report(mo::Model, x::AbstractVector; verbose::Bool = true, window::Int = 20)
     p, T = mo.p, mo.T
@@ -140,6 +218,14 @@ function tvc_report(mo::Model, x::AbstractVector; verbose::Bool = true, window::
                         (abs(endv[i]) / abs(prev[i]))^(1 / max(window, 1)) : NaN, 6)
     asym = bet * mo.Gam^(1 - p.eta)
 
+    # the cell's rates: g from the terminal closure, nu from the path's own R
+    gpath = log(mo.Gam)
+    i0 = max(T + 1 - window, 1)
+    span = (T + 1) - i0
+    R1, R0 = sol.blocks[T+1].R, sol.blocks[i0].R
+    nu_path = (span > 0 && R1 > 0 && R0 > 0) ? -log(R1 / R0) / span : 0.0
+    wp = wellposed_report(p; g = gpath, nu = max(nu_path, 0.0), verbose = false)
+
     if verbose
         @printf("%-4s %16s %14s\n", "state", "boundary term", "decay/period")
         for i in 1:6
@@ -150,7 +236,7 @@ function tvc_report(mo::Model, x::AbstractVector; verbose::Bool = true, window::
         println("feasible path by the material budget and the discovery ceiling, so only")
         println("the capital term is a genuine transversality condition. Asymptotically")
         @printf("it decays at beta * e^((1-eta) g) = %.5f", asym)
-        println(asym < 1 ? " < 1: the condition holds." : " >= 1: THE CONDITION FAILS.")
+        println(", which is condition (i) below.")
         if any(r -> isfinite(r) && r > 1, ratio)
             println()
             println("Some measured decay factors exceed one. That is a statement about the")
@@ -158,9 +244,13 @@ function tvc_report(mo::Model, x::AbstractVector; verbose::Bool = true, window::
             println("T, so the boundary terms have not yet begun to fall at their asymptotic")
             println("rate. Lengthen the horizon to see them turn.")
         end
+        println()
+        @printf("Long-run assumptions at g = %.5f, nu = %.5f (measured %.5f):\n",
+                gpath, max(nu_path, 0.0), nu_path)
+        print_wellposed(wp)
     end
     return (; terms = endv, decay = ratio, names, capital_tvc_factor = asym,
-            asymptotic_ok = asym < 1)
+            asymptotic_ok = wp[1].holds, wellposed = wp, g = gpath, nu_path)
 end
 
 # ---------------------------------------------------------------------------

@@ -403,11 +403,71 @@ end
     r = tvc_report(mo, x; verbose = false)
     @test r.asymptotic_ok                       # beta e^{(1-eta)g} < 1
     @test all(isfinite, r.terms)
+    # the capital condition is condition (i) of the long-run assumptions, read
+    # off the report rather than transcribed a second time
+    @test r.asymptotic_ok == (r.capital_tvc_factor < 1)
+    @test length(r.wellposed) == 5
+    @test all(x -> x.holds, r.wellposed)
+    @test isapprox(r.g, cbgp_growth(P); rtol = 1e-12)
+    # nu is measured on the path's own material input; the baseline is still
+    # converging from below at T = 60, so the measured rate is not positive and
+    # the conditions are evaluated at the binding value nu = 0
+    @test r.nu_path <= 0
     # violating Assumption "bounded values" makes the capital condition fail
     bad = baseline_params(eta = 0.5, rho = 0.005)
     mob = Model(bad; T = 10, s0 = S0)
     @test tvc_report(mob, initial_guess(mob; Rtarget = 0.6, warn = false);
                      verbose = false).asymptotic_ok == false
+end
+
+@testset "the long-run assumptions" begin
+    # Assumption "well-posedness and regularity" of the theory note: (i) makes
+    # lifetime utility converge, (ii) makes the balanced price blocks finite and
+    # of the right sign, (iii) makes collapse paths rankable.  (i) and (iii) are
+    # conditions on primitives and check_params carries them; the rows of (ii)
+    # need the cell's material decay rate nu and only exist here.
+    byname(r) = Dict(x.name => x for x in r)
+
+    # the illustrative baseline satisfies all of them on the circular path
+    base = wellposed_report(P; verbose = false)
+    @test length(base) == 5
+    @test all(x -> x.holds, base)
+
+    # but not at the balanced-dematerialization rates of the same parameters:
+    # nu = 3.1% per period is fast enough that the reserve rent does not sum.
+    # That is a property of the illustrative numbers, not of the model, and it
+    # is why the report is evaluated at a cell rather than at primitives.
+    gb, nu = bdp_rates(P)
+    bd = byname(wellposed_report(P; g = gb, nu = nu, verbose = false))
+    @test !bd["(ii) regularity"].holds
+
+    # (i) fails when a patient planner meets a low eta, and check_params says so
+    # at the circular rate, the one growth rate the primitives fix
+    slow = baseline_params(eta = 0.5, rho = 0.005)
+    @test !byname(wellposed_report(slow; verbose = false))["(i) well-posedness"].holds
+    @test any(occursin.("log(1+rho) > (1-eta)*g", check_params(slow)))
+
+    # (ii) and its two consequences fail in turn as nu rises: the parent first,
+    # then the rows carrying the survival factors 1-delta and 1-mu
+    mild = byname(wellposed_report(P; nu = 0.03, verbose = false))
+    @test !mild["(ii) regularity"].holds
+    @test mild["(ii) embodied M"].holds
+    @test mild["(ii) stockpile"].holds
+    fast = byname(wellposed_report(P; nu = 0.5, verbose = false))
+    @test !fast["(ii) regularity"].holds
+    @test !fast["(ii) embodied M"].holds
+    @test !fast["(ii) stockpile"].holds
+    # at the buffer corner the stockpile row is vacuous: 1 - mu = 0 < 1 + r
+    @test byname(wellposed_report(baseline_params(mu_h = 1.0); nu = 0.5,
+                                  verbose = false))["(ii) stockpile"].holds
+
+    # (iii) fails at eta = 2 with delta = 0.05 unless rho rises with it, which
+    # is why the illustrative set holds eta = 1.1
+    hi = baseline_params(eta = 2.0)
+    @test !byname(wellposed_report(hi; verbose = false))["(iii) cake-eating"].holds
+    @test any(occursin.("cake-eating", check_params(hi)))
+    @test all(x -> x.holds,
+              wellposed_report(baseline_params(eta = 2.0, rho = 0.06); verbose = false))
 end
 
 @testset "feasible-direction tests" begin
