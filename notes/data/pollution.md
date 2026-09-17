@@ -200,3 +200,16 @@ match to `Xi` than the fossil share is. What is missing is everything else.
 The reason to hold (A) open is that it is the version in which the paper's own mechanism, recycling
 diverting material from the environment, prices the whole outflow rather than its fossil quarter.
 The reason it is a variant is that steps 1 and 2 are research projects, not calibration steps.
+
+## Phase C: the choices this note left open (2026-09-17)
+
+Ruling 7 of the phase C brief: `P` is in gigatonnes of material and `kappa` is the DICE marginal
+loss per GtCO2 times the GtCO2 per Gt of `Xi` at the 2000-2015 composition of the outflow
+(`data/build/c5_preferences_damages.py`). The anchor chosen is the 3 degree reference stock, where
+DICE's function is calibrated, with the marginal match; the today's-stock anchor is in the
+appendix table as the alternative. `theta` is the driven rate with the pulse rate as the range,
+`theta_0 = theta_min`, `theta_P = 0`, `psi = 0` and `varphi` not written, all as recommended
+above. `P_0` is the impulse-response excess stock converted at the 1900 composition. The
+fossil-share gap of the first section is closed by the bridge itself: the outflow's fossil share
+enters `kappa`, and land-use CO2 stays outside. The pollution price at 1900 is a quarter of a
+dollar per tonne, several orders above the solver tolerance, so it is a number and not noise.

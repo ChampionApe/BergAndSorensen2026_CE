@@ -1,0 +1,37 @@
+calibration file: ../data/processed/calibration_metals.json
+
+== calibrated_params: loads; 57 parameters carry a source
+states [K S X P MK W] = [10.629329276886386, 732.0504454589368, 732.0504454589368, 78.95603800157946, 35.60524415, 16.392178305765608]
+cases: (abar = [0.7080114566856305], Rbar_grid = [0.0, 9.502, 23.756, 47.512], xi_range = [0.9073349579841098, 8.166014621856988], muN_range = [0.0, 1.8444157389557352])
+
+== check_params
+no warnings: every maintained restriction holds
+
+== derived rates
+beta_K = 0.3123, gamma_R = 0.1011
+C-cell growth g = 0.02524 per year; interest factor 1+r = 1.07500
+bdp_rates: no balanced-dematerialization solution in the exponential family ((mu_N - 1)(1 - beta_K) + gamma_R <= 0)
+
+== convexity_report
+C1 technology    ok     CES is concave and homogeneous of degree one, raised to mu_F = 0.41331498193120875 in (0,1)
+C1 damages       FAILS  multiplicative damages exp(-kappa*P), kappa = 6.777414247768164e-6, are convex in P and break joint concavity; the violation is proportional to kappa^2 * F and vanishes as P -> 0
+C2 recycling     ok     a is concave, so the perspective R(T,KR) = T a(KR/T) is concave
+C2 treatment     ok     cT is convex, so its perspective H cT(T/H) is jointly convex in (T,W)
+C3 extraction    FAILS  N^(1+chi_N) S^(-mu_N) needs chi_N >= mu_N (chi_N = 0.4818217283581927, mu_N = 0.0, satisfied); the linear term kap_N = 0.7281262027100001 is never jointly convex for mu_N > 0 -- and it is exactly what gives extraction a finite choke, hence the possibility of stranding
+C3 exploration   FAILS  as extraction: needs chi_D >= mu_D (chi_D = 1.0, mu_D = 6.909143918120026) and kap_D = 0 (kap_D = 0.7281262027100001)
+C4 decay         ok     constant decay: (1 - theta) P is linear
+C5 intensity     FAILS  phi_I = 4.6111689164725345 > 0, so the intensity condition m (D + phi_I G) = R phi_I G is bilinear. Sufficiency is then conditional on the intensity path; the unverified deviations are those that change it
+
+4 condition(s) fail. Sufficiency is conditional -- see the appendix, and run deviation_profile / perturbation_test on the computed path.
+
+== wellposed_report at the C-cell rate (nu = 0)
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== the pollution price scale at 1900 (rough)
+Y(1900) at R = 7.562 Gt: 3.5018 trillion; damage share kappa*P0 = 5.35e-04; kappa*Y0/(r+theta) = 2.548e-04 trillion/Gt (= 0.25 US dollars per tonne)

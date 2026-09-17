@@ -236,3 +236,15 @@ category error the model does not require.
 | West (2011) | paywalled four-page commentary | the strongest published statement of the technology-not-depletion reading of falling grades cannot be cited |
 | S&P Global, *World Exploration Trends* | commercial | none material: MinEx's series is built partly from the same data and is public |
 | A global ore-grade time series | the three papers publish theirs as figures only | the `mu_N` grade channel rests on one printed regression (Mudd, gold) and a set of cross-sectional averages, not on a panel. This is the thinnest point in the block |
+
+## 6. Phase C: how the range became a set of numbers (2026-09-17)
+
+`data/build/c3_extraction.py` and `notes/data/calibration.md` record the choices; in short: the
+one reserve is the exhaustible reserve divided by the exhaustible share of cumulative extraction
+(ruling 6), so its relative depletion tracks fossil fuels and ores; `mu_N` is the price channel
+with `c_N(t)` absorbing the flow-scale effect, the identifying assumption section 1 says has to be
+stated, at 1.84 on the mass-weighted aggregate and zero on metals; `chi_N` is read off the rent
+share; `Xmax` is the central URR with the low and high as the range and the conventional-plus-coal
+variant recorded; `mu_D` is the MinEx cost-per-discovery elasticity against the contained-metal
+resource, large because the room shrank little. The reserve-concept problem of section 2 is not
+resolved by any of this; it is carried into the range of `S0`.

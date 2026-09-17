@@ -166,3 +166,15 @@ database, <https://zenodo.org/records/12794253>. It was not used: it is country-
 the B1 sources already deliver the global aggregates at the resolution the model needs. It is the
 place to go if the block ever needs a disposal split by treatment route, which none of the four
 sources here provides.
+
+## Phase C: what the calibration took from this block (2026-09-17)
+
+Ruling 1 of the phase C brief makes Krausmann et al. (2018) and Haas et al. (2020) the baseline
+series throughout; the IRP series enters only as the alternative measurement of metal-ore
+extraction, and the metals-only bound (`data/processed/calibration_metals.json`) carries the gap
+of about half as the low end of its reserve. `Xi`'s counterpart is `DPO` excluding balancing
+oxygen and water (ruling 2). The waste stock of D3 is the cumulative disposal of the three
+non-biomass categories; `notes/data/waste_stock.md` is the decision record. The accounting block
+(`data/build/c1_accounting.py`) reads `phiI` off gross additions to stock and holds the relative
+intensities at one; the EEA (2001) TMR ratios stand in for the unused extraction this block could
+not obtain (`notes/data/calibration.md`).

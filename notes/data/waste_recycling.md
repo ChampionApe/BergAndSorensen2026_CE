@@ -223,3 +223,15 @@ and the recovery cost together. It is paywalled and recorded as MANUAL in
   counterpart for the split of controlled MSW into landfilling, waste-to-energy and recycling, so
   those five rows are carried with `method = transcribed_figure` and should be refused by C4 unless
   it decides otherwise; the two totals they contain agree with the prose on pages 21 and 22.
+
+## Phase C: what was taken (2026-09-17)
+
+Ruling 8 of the phase C brief fixes the mappings this note proposed: `c^c` at the low-income
+collection midpoint, `c_T` at the high-income sanitary-landfill midpoint, no deflation (price base
+unknown, recorded as such), `chi_T` at the midpoint of [0.5, 3], `d^W = 0.15` in [0.05, 0.30],
+`abar` in {1, 0.71} with [0.53, 0.89] as the sensitivity ends, and `xi` through a point on the
+yield function as the note recommends, with the EPA capital outlay supplying the slope
+(`data/build/c4_waste.py`). The scale problem of the first section is now measurable: the C8 smoke
+test (`data/processed/c8_smoke.txt`) finds that at municipal charges applied to the whole handled
+flow the planner treats nothing, and at a tenth of them the treated share is interior. The level
+of the charges is the open item this note hands to phase D.

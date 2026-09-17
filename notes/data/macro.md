@@ -154,3 +154,17 @@ of 1.0 in a marked block at the top of the script, and are the business of phase
 estimates, and a number read off `Omega_model` before C1 has run has no source. The observed
 intensity is the fact; the model intensity is a fact conditional on weights, and the two are kept
 apart for that reason.
+
+## Phase C: the choice between the two shares (2026-09-17)
+
+Ruling 5 of the phase C brief resolves the two pre-1950 investment shares this note left side by
+side: the perpetual-inventory share (0.175) is used for both `K` and `G` before 1950, so the
+reconstructed capital stock and the reconstructed gross formation rest on one share. The cost is a
+pre-1950 consumption share above the 1950 split; the alternative, the 1950 split for `G` with the
+PIM share for `K`, is what `b2_macro_block.csv` still carries and what `b2_omega_join.py` uses.
+The split is applied in `data/build/c_common.py` (`macro_series`) and flows into
+`data/processed/series.csv` and the accounting weights of C1. `b2_omega.csv` is rebuilt with the
+C1 weights, which `b2_omega_join.py` now reads from `data/processed/c1_weights.json` when it
+exists. Phase C also aggregated two PWT rates this block did not extract, the internal rate of
+return and the labour share (`c_common.py`, `pwt_world`), for the preference and production
+blocks.
