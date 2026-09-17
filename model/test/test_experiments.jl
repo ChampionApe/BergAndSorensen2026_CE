@@ -272,3 +272,26 @@ end
     @test ok2 && nrm2 < 1e-9
     @test all(b -> abs(b.vw) < 1e-9, unpack(mo2, x2).blocks)
 end
+
+@testset "the full-treatment corner" begin
+    # The same set with the material price a century higher: the path leaves
+    # the no-treatment corner and reaches varpi = 1, where it stays.  The exact
+    # pass used to stall at |F| ~ 1e-8 on any path that reached full treatment,
+    # because `period_block` and `handling_cost` clamped varpi into its box and
+    # a forward difference at exactly varpi = 1 then saw a zero derivative of
+    # T = varpi H where the one-sided derivative is a H.  Both corners have to
+    # hold in the same solve to the same tolerance.
+    fixture = joinpath(@__DIR__, "fixtures", "calibration_notreatment.json")
+    p = calibrated_params(fixture; check = false)
+    s0 = calibrated_states(fixture)
+    mo = Model(p; T = 200, s0 = s0)
+    x, ok, nrm = solve_path(mo, initial_guess(mo; Rtarget = 7.562, warn = false))
+    @test ok
+    @test nrm < 1e-9
+    vw = series(unpack(mo, x), :vw)
+    @test all(v -> -1e-9 <= v <= 1 + 1e-9, vw)
+    @test count(v -> abs(v) < 1e-9, vw) > 20          # the lower corner, held
+    @test count(v -> abs(v - 1) < 1e-9, vw) > 20      # the upper corner, held
+    @test count(v -> 1e-6 < v < 1 - 1e-6, vw) > 20    # and the switch between them
+    @test compare_residuals(mo, x) < 1e-10
+end

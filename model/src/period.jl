@@ -38,8 +38,15 @@ function period_block(p::Params, t::Int, s::AbstractVector, c::AbstractVector)
     # including T = 0, where it selects the intensity at which the marginal
     # treated tonne would be recycled -- exactly the alpha the treatment
     # margin needs to decide that no tonne is worth treating.
+    # The treated share is not clamped into its box here.  The min-map keeps it
+    # there at a solution, and a clamp puts a kink into every smooth row that
+    # carries T = varpi H at exactly varpi = 1: a forward difference there sees
+    # a zero derivative where the one-sided derivative is a H, the Newton model
+    # gets the coupling wrong, and the exact pass stalls at |F| ~ 1e-8 on any
+    # path that reaches full treatment.  `handling_cost` extends its power
+    # smoothly below zero for the same reason.
     H = p.mu_h * max(Wst, zero(Wst))
-    Ttr = clamp(vw, zero(vw), one(vw)) * H
+    Ttr = vw * H
     KR = x * Ttr
     a, ap, alpha = recycling_yield(p, x)
     RR = a * Ttr

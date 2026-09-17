@@ -180,13 +180,19 @@ end
 Average handling cost per handled tonne and the marginal cost of raising the
 treated share.  Collection is charged per *treated* tonne, so dumping is free
 and the lower corner is a genuine choke at `cc`.
+
+Defined on the whole real line, not clamped into `[0, 1]`: the power is
+continued as an odd function below zero, which keeps `mcW` continuous at the
+lower corner, and runs on above one.  A clamp would put a kink at the box
+edges into the goods constraint and the treatment margin, where a forward
+difference then returns the wrong one-sided derivative (`period.jl`).
 """
-function handling_cost(p::Params, t, w0)
-    w = clamp(w0, zero(w0), one(w0))
+function handling_cost(p::Params, t, w)
     cc = cc_t(p, t)
     cT = cT_t(p, t)
-    cW = cc * w + cT * w^(1 + p.chi_T) / (1 + p.chi_T)
-    mcW = cc + cT * w^p.chi_T
+    aw = abs(w)
+    cW = cc * w + sign(w) * cT * aw^(1 + p.chi_T) / (1 + p.chi_T)
+    mcW = cc + cT * aw^p.chi_T
     return (cW, mcW)
 end
 
