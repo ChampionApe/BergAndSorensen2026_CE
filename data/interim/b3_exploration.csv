@@ -1,0 +1,87 @@
+year,series,commodity,value,unit,source,method
+1990,average_discovery_cost,all_metals,65.0,2023_usd_million_per_discovery (period 1975-2005),schodde2023_minex_imarc:slide13,transcribed
+2015,average_discovery_cost,all_metals,218.0,2023_usd_million_per_discovery (period 2011-2020),schodde2023_minex_imarc:slide13,transcribed
+2017,bang_per_buck_decade,all_metals,0.69,"ratio [slide 30, value created divided by exploration spend, world, 2012 to 2021]",schodde2023_minex_imarc,transcribed
+2017,discoveries_decade,all_metals,737.0,"deposits [slide 14, world, 2012 to 2021, including 126 in Australia]",schodde2023_minex_imarc,transcribed
+2017,discoveries_per_year,all_metals,50.0,"deposits_per_year [slide 29, current world rate, deposits at least Moderate in size]",schodde2023_minex_imarc,transcribed
+2017,discovery_value_decade,all_metals,135.0,"june_2023_usd_billion [slide 30, world, 2012 to 2021, notional valuation by deposit tier]",schodde2023_minex_imarc,transcribed
+2017,exploration_spend_decade,all_metals,196.0,"june_2023_usd_billion [slide 30, world, 2012 to 2021]",schodde2023_minex_imarc,transcribed
+2006,regional_bang_per_buck,africa,2.33,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,africa,1.19,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,australia,1.96,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,australia,1.19,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,canada,0.9,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,canada,0.78,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,eastern_europe,1.7,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,eastern_europe,1.46,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,fsu,0.75,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,latin_america,1.19,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,latin_america,0.42,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,pacific_se_asia,1.28,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,pacific_se_asia,0.63,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,united_states,1.03,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,united_states,0.54,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_bang_per_buck,western_europe,0.77,ratio (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_bang_per_buck,western_europe,0.7,ratio (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,africa,46.6,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,africa,26.7,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,australia,42.2,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,australia,29.1,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,canada,24.4,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,canada,20.1,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,eastern_europe,4.1,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,eastern_europe,3.2,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,fsu,7.8,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,fsu,3.1,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,latin_america,38.1,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,latin_america,16.7,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,pacific_se_asia,9.6,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,pacific_se_asia,5.2,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,united_states,12.6,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,united_states,7.3,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_cost_per_discovery,western_europe,2.6,june_2023_usd_million_per_discovery (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_cost_per_discovery,western_europe,3.4,june_2023_usd_million_per_discovery (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,africa,324.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,africa,194.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,australia,294.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,australia,153.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,canada,124.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,canada,110.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,eastern_europe,23.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,eastern_europe,8.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,fsu,73.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,fsu,38.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,latin_america,253.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,latin_america,102.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,pacific_se_asia,73.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,pacific_se_asia,20.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,united_states,36.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,united_states,41.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_discoveries,western_europe,42.0,deposits (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_discoveries,western_europe,30.0,deposits (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,africa,20.0,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,africa,22.5,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,australia,21.6,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,australia,24.4,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,canada,27.1,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,canada,25.7,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,eastern_europe,2.4,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,eastern_europe,2.2,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,fsu,10.5,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,fsu,11.0,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,latin_america,32.0,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,latin_america,40.2,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,pacific_se_asia,7.5,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,pacific_se_asia,8.2,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,united_states,12.2,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,united_states,13.4,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+2006,regional_exploration_spend,western_europe,3.4,june_2023_usd_billion (period 2002-2011),schodde2023_minex_imarc:slide22,transcribed
+2016,regional_exploration_spend,western_europe,4.8,june_2023_usd_billion (period 2012-2021),schodde2023_minex_imarc:slide22,transcribed
+1981,world_exploration_spend,all_metals,9.4,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+1988,world_exploration_spend,all_metals,9.7,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+1997,world_exploration_spend,all_metals,10.0,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+2002,world_exploration_spend,all_metals,3.8,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+2008,world_exploration_spend,all_metals,28.2,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+2012,world_exploration_spend,all_metals,42.1,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+2016,world_exploration_spend,all_metals,13.3,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed
+2022,world_exploration_spend,all_metals,16.1,june_2023_usd_billion,schodde2023_minex_imarc:slide4,transcribed

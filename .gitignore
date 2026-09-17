@@ -72,3 +72,16 @@ data/raw/piketty_zucman2014/
 data/raw/gcb/essd-18-3211-2026.pdf
 data/raw/joos2013/
 data/raw/ipcc_ar6_wg1/
+
+# B3: the resource-side literature and the 17 MB Mineral Commodity Summaries report. They are
+# sources to be transcribed from, not data to be read by a script: every number taken from them is
+# a literal in data/build/b3_usgs_mcs.py, b3_oregrades.py, b3_urr.py or b3_exploration.py with its
+# page or slide. Mudd (2010) is Elsevier's and the MinEx presentations are MinEx's, so neither is
+# ours to redistribute. data/sources/B3_resources.md carries the download command for each.
+# The Jacks workbook and the USGS Data Series 140 workbooks, which ARE read by a script, are
+# committed.
+data/raw/usgs_mcs/
+data/raw/oregrades/
+data/raw/urr/
+data/raw/minex/
+data/raw/ipcc2006/

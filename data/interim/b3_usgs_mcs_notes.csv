@@ -1,0 +1,49 @@
+commodity,page,unit,note
+bauxite,51,thousand_t_dry_gross_weight,bauxite mine production and reserves; the first two numbers on the printed line are alumina refinery production
+chromium,67,thousand_t_chromium_content,production is chromium content; the two reserve columns are ore and Cr2O3 content and are recorded as separate commodities
+chromium_ore,67,thousand_t_chromite_ore,"reserves reported as '>1,200,000' ore"
+chromium_cr2o3,67,thousand_t_cr2o3_content,"reserves reported as '>540,000' Cr2O3 content"
+cobalt,71,t_cobalt_content,
+copper,73,thousand_t_copper_content,"mine production; refinery production 27,600/29,000"
+gold,91,t_gold_content,
+iron_ore_usable,109,thousand_t_usable_ore,"reserves column is crude ore in MILLION tonnes, i.e. 200,000 Mt; production is thousand tonnes of usable ore"
+iron_ore_iron_content,109,thousand_t_iron_content,"reserves column is iron content in MILLION tonnes, i.e. 87,000 Mt"
+lead,115,thousand_t_lead_content,
+lithium,119,t_lithium_content,production excludes US output
+manganese,125,thousand_t_manganese_content,reserves are gross weight of manganese ore
+molybdenum,131,t_molybdenum_content,"reserve column sub-header reads 'thousand metric tons'; the printed 17,000 is thousand tonnes, converted here to tonnes"
+nickel,133,t_nickel_content,"reserves reported as '>140,000,000'"
+phosphate_rock,143,thousand_t_marketable_rock,
+platinum_group_metals,145,kg_pgm_content,"mine production; reserves reported as '>76,000,000' kg"
+potash,147,thousand_t_k2o_equivalent,"the K2O reserve column, reported as '>5,900,000'; the other reserve column, '>10,000,000', is recoverable ore"
+potash_ore,147,thousand_t_recoverable_ore,"reserves reported as '>10,000,000' recoverable ore"
+rare_earths,153,t_reo_equivalent,"reserves reported as '>75,000,000'"
+silver,173,t_silver_content,
+soda_ash_natural,175,thousand_t_gross_weight,"natural soda ash only; synthetic production was 52,200/52,000 with no reserve concept"
+tin,195,t_tin_content,"reserves reported as '>6,000,000'"
+titanium_ilmenite_rutile,199,thousand_t_gross_weight,"ilmenite plus rutile; reserves reported as '>540,000'"
+tungsten,201,t_tungsten_content,"reserves reported as '>4,700,000'"
+vanadium,203,t_vanadium_content,"reserve column sub-header reads 'thousand metric tons'; the printed 21,000 is thousand tonnes, converted here to tonnes"
+zinc,213,thousand_t_zinc_content,
+cement,63,thousand_t_gross_weight,no world reserve figure; the report refers to the Lime and Crushed Stone chapters for raw-material resources
+gypsum,95,thousand_t_gross_weight,world reserves printed as 'Large'
+lime,117,thousand_t_gross_weight,no world reserve column
+salt,161,thousand_t_gross_weight,no world reserve column
+sulfur,183,thousand_t_sulfur_content,no world reserve column
+sand_and_gravel_construction,163,million_t_gross_weight,world total printed as NA for both production and reserves
+stone_crushed,177,million_t_gross_weight,world total printed as NA for both production and reserves
+copper (resources),73,t_copper_content,"USGS global assessment as of 2015: identified resources 1.5 billion t unextracted, 2.1 billion t including past production of 600 million t; undiscovered 3.5 billion t (Hammarstrom and others, 2019, USGS SIR 2018-5160)"
+nickel (resources),133,t_nickel_content,'more than 350 million tons'
+zinc (resources),213,t_zinc_content,identified world resources
+lead (resources),115,t_lead_content,'more than 2 billion tons'
+bauxite (resources),51,t_gross_weight,resources reported as a range 55-75 billion t; the low end is recorded here and the high end in b3_urr.py
+chromium (resources),67,t_shipping_grade_chromite,'greater than 12 billion tons'
+iron_ore (resources),109,t_gross_weight,'greater than 900 billion tons of iron ore containing more than 260 billion tons of iron'
+manganese_us (resources),125,share,South Africa an estimated 70% of world resources; no world tonnage given
+molybdenum (resources),131,t_molybdenum_content,5.4 million t United States plus about 20 million t rest of world
+titanium (resources),199,t_gross_weight,"anatase, ilmenite and rutile, 'more than 2 billion tons'"
+lithium (resources),119,t_lithium_content,measured and indicated resources about 150 million t
+platinum_group_metals (resources),145,kg_pgm_content,'more than 100 million kilograms'
+vanadium (resources),203,t_vanadium_content,'exceed 63 million tons'
+sulfur (resources),183,t_sulfur_content,"elemental sulfur in evaporite and volcanic deposits and sulfur in gas, petroleum, tar sands and metal sulfides, about 5 billion t; a further 600 billion t is contained in coal, oil shale and organic-rich shale"
+soda_ash (resources),175,t_gross_weight,about 47 billion t recoverable from the Green River Basin trona deposit

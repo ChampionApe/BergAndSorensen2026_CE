@@ -1,0 +1,118 @@
+year,series,commodity,value,unit,source,method
+2016,average_ore_grade,copper,1.48,"percent [p10, 25 copper mines analysed, about 32 percent of 2009 world production]",calvo2016_resources_5_36,transcribed
+1990,average_ore_grade,copper,1.67,"percent [p10, quoting Cox and Singer for about 1990]",calvo2016_resources_5_36,transcribed
+2016,average_ore_grade,gold,5.26,"g_per_t [p10, mines analysed]",calvo2016_resources_5_36,transcribed
+2016,average_ore_grade,lead,3.4,"percent [p10, mines analysed]",calvo2016_resources_5_36,transcribed
+2016,average_ore_grade,zinc,9.6,"percent [p10, mines analysed]",calvo2016_resources_5_36,transcribed
+2016,average_total_energy_per_tonne_metal,copper,28.2,"GJ_per_t [p9, sample average over the mines of Table 1]",calvo2016_resources_5_36,transcribed
+2016,average_total_energy_per_tonne_metal,gold,145888.0,GJ_per_t [p9],calvo2016_resources_5_36,transcribed
+2016,average_total_energy_per_tonne_metal,zinc,11.03,GJ_per_t [p9],calvo2016_resources_5_36,transcribed
+2013,ore_grade_change_2003_2013,copper,-25.0,"percent [p10, combined weighted average decline across the mines analysed, 2003 to 2013]",calvo2016_resources_5_36,transcribed
+2013,ore_grade_change_2003_2013,copper_el_soldado,-72.9,"percent [p10, El Soldado oxide ore 1.7 percent in 2003 to 0.46 percent in 2012]",calvo2016_resources_5_36,transcribed
+2000,diesel_per_tonne_rock,agnew[au][OC+UG],0.6,L_per_t_rock (period 1991-2009),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,aguablanca[ni_cu][OC],0.5,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2006,diesel_per_tonne_rock,chuquicamata[cu_mo][OC],1.2,L_per_t_rock (period 2000-2013),calvo2016_resources_5_36:table1,transcribed
+2008,diesel_per_tonne_rock,collahuasi[cu_mo][OC],1.4,L_per_t_rock (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2007,diesel_per_tonne_rock,division_andina[cu_mo_ag][OC+UG],1.9,L_per_t_rock (period 2001-2013),calvo2016_resources_5_36:table1,transcribed
+2008,diesel_per_tonne_rock,el_soldado[cu][OC+UG],0.4,L_per_t_rock (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,el_tesoro[cu][OC],0.3,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2007,diesel_per_tonne_rock,escondida[cu][OC],0.7,L_per_t_rock (period 2001-2014),calvo2016_resources_5_36:table1,transcribed
+2001,diesel_per_tonne_rock,granny_smith[au][OC+UG],2.5,L_per_t_rock (period 1989-2013),calvo2016_resources_5_36:table1,transcribed
+2008,diesel_per_tonne_rock,los_bronces[cu_mo][OC],0.9,L_per_t_rock (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,los_pelambres[cu_mo][OC],0.4,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2008,diesel_per_tonne_rock,mantoverde[cu][OC],0.7,L_per_t_rock (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,michilla[cu][OC+UG],0.5,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2008,diesel_per_tonne_rock,mount_isa_cu[cu_ag][UG],1.1,L_per_t_rock (period 2005-2012),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,neves_corvo[zn_cu_pb_ag][UG],0.6,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2002,diesel_per_tonne_rock,olympic_dam[cu_u_ag_au][UG],2.8,L_per_t_rock (period 1991-2014),calvo2016_resources_5_36:table1,transcribed
+2011,diesel_per_tonne_rock,prominent_hill[cu_ag][OC],0.5,L_per_t_rock (period 2009-2014),calvo2016_resources_5_36:table1,transcribed
+2012,diesel_per_tonne_rock,radomiro_tomic[cu][OC],1.5,L_per_t_rock (period 2011-2013),calvo2016_resources_5_36:table1,transcribed
+2007,diesel_per_tonne_rock,salvador[cu_mo_ag_au][OC+UG],0.8,L_per_t_rock (period 2001-2013),calvo2016_resources_5_36:table1,transcribed
+2011,diesel_per_tonne_rock,sepon[cu_au][OC],2.3,L_per_t_rock (period 2008-2014),calvo2016_resources_5_36:table1,transcribed
+2000,diesel_per_tonne_rock,st_ives[au][OC+UG],1.5,L_per_t_rock (period 1991-2009),calvo2016_resources_5_36:table1,transcribed
+2010,diesel_per_tonne_rock,zinkgruvan[zn_pb_cu_ag][UG],1.0,L_per_t_rock (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2000,electricity_per_tonne_ore,agnew[au][OC+UG],43.0,kWh_per_t_ore (period 1991-2009),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,aguablanca[ni_cu][OC],44.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2005,electricity_per_tonne_ore,bingham_canyon[cu_au][OC],112.0,kWh_per_t_ore (period 2003-2007),calvo2016_resources_5_36:table1,transcribed
+2006,electricity_per_tonne_ore,cadia_valley[cu_au][OC],53.0,kWh_per_t_ore (period 2004-2009),calvo2016_resources_5_36:table1,transcribed
+2011,electricity_per_tonne_ore,century[zn_pb_ag][OC],120.0,kWh_per_t_ore (period 2009-2014),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,cerro_lindo[zn_pb_cu][UG],29.0,kWh_per_t_ore (period 2008-2013),calvo2016_resources_5_36:table1,transcribed
+2006,electricity_per_tonne_ore,chuquicamata[cu_mo][OC],46.0,kWh_per_t_ore (period 2000-2013),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,collahuasi[cu_mo][OC],20.0,kWh_per_t_ore (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2000,electricity_per_tonne_ore,darlot[au][UG],80.0,kWh_per_t_ore (period 1993-2007),calvo2016_resources_5_36:table1,transcribed
+2007,electricity_per_tonne_ore,division_andina[cu_mo_ag][OC+UG],25.0,kWh_per_t_ore (period 2001-2013),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,el_porvenir[zn_pb_cu][UG],53.0,kWh_per_t_ore (period 2008-2013),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,el_soldado[cu][OC+UG],28.0,kWh_per_t_ore (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2007,electricity_per_tonne_ore,el_teniente[cu_mo_ag_au][UG],39.0,kWh_per_t_ore (period 2001-2013),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,el_tesoro[cu][OC],31.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2002,electricity_per_tonne_ore,ernest_henry[cu_au][OC],49.0,kWh_per_t_ore (period 1998-2007),calvo2016_resources_5_36:table1,transcribed
+2007,electricity_per_tonne_ore,escondida[cu][OC],31.0,kWh_per_t_ore (period 2001-2014),calvo2016_resources_5_36:table1,transcribed
+2011,electricity_per_tonne_ore,golden_grove[zn_cu_ag_au][UG],55.0,kWh_per_t_ore (period 2009-2014),calvo2016_resources_5_36:table1,transcribed
+2001,electricity_per_tonne_ore,granny_smith[au][OC+UG],199.0,kWh_per_t_ore (period 1989-2013),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,los_bronces[cu_mo][OC],20.0,kWh_per_t_ore (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,los_pelambres[cu_mo][OC],27.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,mantos_blancos[cu][OC],15.0,kWh_per_t_ore (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,mantoverde[cu][OC],12.0,kWh_per_t_ore (period 2002-2014),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,mcarthur_river[zn_pb_ag][OC+UG],60.0,kWh_per_t_ore (period 2006-2010),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,michilla[cu][OC+UG],34.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2008,electricity_per_tonne_ore,mount_isa_cu[cu_ag][UG],81.0,kWh_per_t_ore (period 2005-2012),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,neves_corvo[zn_cu_pb_ag][UG],71.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2002,electricity_per_tonne_ore,olympic_dam[cu_u_ag_au][UG],107.0,kWh_per_t_ore (period 1991-2014),calvo2016_resources_5_36:table1,transcribed
+2011,electricity_per_tonne_ore,prominent_hill[cu_ag][OC],64.0,kWh_per_t_ore (period 2009-2014),calvo2016_resources_5_36:table1,transcribed
+2012,electricity_per_tonne_ore,radomiro_tomic[cu][OC],13.0,kWh_per_t_ore (period 2011-2013),calvo2016_resources_5_36:table1,transcribed
+2011,electricity_per_tonne_ore,rosebery[zn_pb_cu_ag_au][UG],62.0,kWh_per_t_ore (period 2009-2014),calvo2016_resources_5_36:table1,transcribed
+2007,electricity_per_tonne_ore,salvador[cu_mo_ag_au][OC+UG],34.0,kWh_per_t_ore (period 2001-2013),calvo2016_resources_5_36:table1,transcribed
+2011,electricity_per_tonne_ore,sepon[cu_au][OC],100.0,kWh_per_t_ore (period 2008-2014),calvo2016_resources_5_36:table1,transcribed
+2000,electricity_per_tonne_ore,st_ives[au][OC+UG],31.0,kWh_per_t_ore (period 1991-2009),calvo2016_resources_5_36:table1,transcribed
+2007,electricity_per_tonne_ore,telfer[cu_au][OC+UG],124.0,kWh_per_t_ore (period 2005-2009),calvo2016_resources_5_36:table1,transcribed
+2010,electricity_per_tonne_ore,zinkgruvan[zn_pb_cu_ag][UG],75.0,kWh_per_t_ore (period 2007-2014),calvo2016_resources_5_36:table1,transcribed
+2008,average_ore_grade,copper_australia,0.95,"percent [p112, Australia's average 2008 copper ore grade]",mudd2010_resources_policy_35_98,transcribed
+2010,cyanide_intensity,gold,198.0,"kg_CN_per_kg_Au [Table 3, standard deviation 204]",mudd2010_resources_policy_35_98,transcribed
+2010,energy_grade_elasticity,gold,-0.2848,"dimensionless [Figure 8, p107, fitted power regression of unit energy consumption (GJ/kg Au) on ore grade (g/t Au): y = 167487 x^-0.2848, R2 = 0.1962]",mudd2010_resources_policy_35_98,transcribed
+2010,energy_grade_regression_constant,gold,167487.0,"GJ_per_kg_Au_at_1_g_per_t [Figure 8, p107]",mudd2010_resources_policy_35_98,transcribed
+2010,energy_intensity,gold,149.0,"GJ_per_kg_Au [Table 3, weighted average, standard deviation 105]",mudd2010_resources_policy_35_98,transcribed
+2010,energy_intensity,uranium,273.0,"GJ_per_t_U3O8 [Table 3, weighted average excluding Olympic Dam, standard deviation 124]",mudd2010_resources_policy_35_98,transcribed
+2010,greenhouse_intensity,gold,13.9,"t_CO2e_per_kg_Au [Table 3, standard deviation 12.9]",mudd2010_resources_policy_35_98,transcribed
+2010,greenhouse_intensity,uranium,26.4,"t_CO2e_per_t_U3O8 [Table 3, standard deviation 17.6]",mudd2010_resources_policy_35_98,transcribed
+2010,water_intensity,gold,634.9,"kL_per_kg_Au [Table 3, standard deviation 1208]",mudd2010_resources_policy_35_98,transcribed
+2010,water_intensity,uranium,1753.0,"kL_per_t_U3O8 [Table 3, standard deviation 2798]",mudd2010_resources_policy_35_98,transcribed
+2008,cumulative_production_australia,bauxite,1480.0,Mt (since 1927),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,black_coal_raw,8947.0,Mt (since 1829),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,brown_coal_raw,2193.0,Mt (since 1889),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,copper,20473.0,kt (since 1842),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,gold,11777.0,t (since 1851),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,ilmenite,47050.0,kt_concentrate (since 1934),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,iron_ore,5298.0,Mt (since 1889),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,lead,37945.0,kt (since 1850),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,manganese_ore,81599.0,kt (since 1946),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,nickel,4467.7,kt (since 1967),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,rutile,12531.0,kt_concentrate (since 1934),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,silver,78435.0,t (since 1870),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,tin,814.7,kt (since 1870),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,uranium,184714.0,t_u3o8 (since 1906),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,zinc,48465.0,kt (since 1883),mudd2010_resources_policy_35_98:table1,transcribed
+2008,cumulative_production_australia,zircon,19901.0,kt_concentrate (since 1934),mudd2010_resources_policy_35_98:table1,transcribed
+2008,economic_resources_australia,bauxite,6200.0,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,black_coal,39200.0,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,brown_coal,37200.0,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,copper,77.8,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,gold,6255.0,t,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,iron_ore,24000.0,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,lead,28.8,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,manganese_ore,181.0,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,nickel,26.4,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,silver,63.4,kt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,uranium,1371.0,kt_u3o8,mudd2010_resources_policy_35_98:table2,transcribed
+2008,economic_resources_australia,zinc,57.6,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,bauxite,64.63,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,black_coal,430.5,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,brown_coal,66.03,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,copper,886.0,kt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,gold,214.0,t,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,iron_ore,341.7,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,lead,645.0,kt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,manganese_ore,4.84,Mt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,nickel,200.0,kt,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,silver,1926.0,t,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,uranium,9989.0,t_u3o8,mudd2010_resources_policy_35_98:table2,transcribed
+2008,production_australia,zinc,1519.0,kt,mudd2010_resources_policy_35_98:table2,transcribed
