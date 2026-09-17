@@ -7,6 +7,21 @@ full session history to that date is archived in
 reserved with the earlier `2026-08-20_planner_docs_trend_growth/` archive as the basis
 for a later, more purely theoretical paper. New entries below this line.
 
+## 2026-09-17 (evening) - The technical note split in two; data documentation rule
+
+- **`writing/quant/` is now the quantitative note**, its own Overleaf project (`quant` in
+  `overleaf.py`), holding `quant_model`, `quant_solution`, `quant_calibration`. The theory note keeps
+  everything else, including the workhorse appendix: 71 references out of it and 23 into it from the
+  ALMOST DONE planner part made moving it a bad trade. Commit `f7aeb5d`; both projects pushed.
+- **Cross-document references name their target** through `\theory{Section}{...}` and
+  `\quant{Section}{...}`, defined in each `Packages.tex`; 43 rewritten. The equations the quantitative
+  note leans on are named, not yet restated: TODO 10, waiting on the cut of the docs.
+- **Where data documentation goes** is now `docs_style.md` §5: reader-facing facts in the quantitative
+  note's data appendix (tables `%% GENERATED` by the pipeline), decisions and alternatives in
+  `notes/data/` one file per decision area, transformations in the pipeline script, provenance in
+  `data/SOURCES.md`. TODO 11.
+- Next: RKB's suggestions on the current state of the docs, in a fresh session.
+
 ## 2026-09-17 (later) - Both Overleaf projects connected and pushed
 
 - **`docs` and `paper` both pushed**; a dry-run pull each way now reports 23 and 10 files unchanged,
