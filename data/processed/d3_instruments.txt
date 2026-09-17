@@ -1,0 +1,268 @@
+
+==============================================================================
+E3 at Rbar = 0 (Rbar0), T = 400, budget 6 h
+==============================================================================
+E3 corner   (1,1,1,1)          C   CE =       0.0
+E3 corner   (0,1,1,1)          C   CE =       0.0
+E3 corner   (1,0,1,1)          C   CE =       0.0
+E3 corner   (1,1,0,1)          C   CE =     0.001
+E3 corner   (1,1,1,0)          C   CE =       0.0
+E3 corner   (0,0,1,1)          C   CE =       0.0
+E3 corner   (0,1,0,1)          C   CE =     0.001
+E3 corner   (0,1,1,0)          C   CE =       0.0
+E3 corner   (1,0,0,1)          C   CE =     0.001
+E3 corner   (1,0,1,0)          C   CE =       0.0
+E3 corner   (1,1,0,0)          C   CE =     0.001
+E3 corner   (0,0,0,1)          C   CE =     0.001
+E3 corner   (0,0,1,0)          C   CE =       0.0
+E3 corner   (0,1,0,0)          C   CE =     0.001
+E3 corner   (1,0,0,0)          C   CE =     0.001
+E3 corner   (0,0,0,0)          C   CE =     0.001
+E3 phiW     phiW = 1.00        C   CE =       0.0
+E3 phiW     phiW = 0.75        C   CE =       0.0
+E3 phiW     phiW = 0.50        C   CE =       0.0
+E3 phiW     phiW = 0.25        C   CE =       0.0
+E3 phiW     phiW = 0.00        C   CE =       0.0
+E3 phiz     phiz = 1.00        C   CE =       0.0
+E3 phiz     phiz = 0.75        C   CE =       0.0
+E3 phiz     phiz = 0.50        C   CE =       0.0
+E3 phiz     phiz = 0.25        C   CE =       0.0
+E3 phiz     phiz = 0.00        C   CE =       0.0
+E3 phiP     phiP = 1.00        C   CE =       0.0
+E3 phiP     phiP = 0.75        C   CE =       0.0
+E3 phiP     phiP = 0.50        C   CE =       0.0
+E3 phiP     phiP = 0.25        C   CE =       0.0
+E3 phiP     phiP = 0.00        C   CE =     0.001
+E3 phiX     phiX = 1.00        C   CE =       0.0
+E3 phiX     phiX = 0.75        C   CE =       0.0
+E3 phiX     phiX = 0.50        C   CE =       0.0
+E3 phiX     phiX = 0.25        C   CE =       0.0
+E3 phiX     phiX = 0.00        C   CE =       0.0
+
+rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\instruments\instruments_Rbar0.csv
+table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\instruments\Instruments_Rbar0.tex
+wall clock 443.4 s, stopped on budget: false
+corner   (1,1,1,1)          conv=true T=400 |F|=1.2e-10 solve_long     state=C  CE=  0.00000% Minf=86010 Tres=42.86 surv=$\infty$ gate<0 139 leak=13450 223s
+corner   (0,1,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00037% Minf=76332 Tres=42.77 surv=$\infty$ gate<0 -1 leak=12910 6s
+corner   (1,0,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00008% Minf=81287 Tres=42.75 surv=$\infty$ gate<0 139 leak=13526 7s
+corner   (1,1,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00078% Minf=84497 Tres=42.86 surv=$\infty$ gate<0 0 leak=15215 6s
+corner   (1,1,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00001% Minf=88619 Tres=42.86 surv=$\infty$ gate<0 139 leak=13889 5s
+corner   (0,0,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00037% Minf=76332 Tres=42.77 surv=$\infty$ gate<0 -1 leak=12910 6s
+corner   (0,1,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00078% Minf=74976 Tres=42.77 surv=$\infty$ gate<0 -1 leak=14551 7s
+corner   (0,1,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00038% Minf=79100 Tres=42.76 surv=$\infty$ gate<0 -1 leak=13265 6s
+corner   (1,0,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00082% Minf=79619 Tres=42.76 surv=$\infty$ gate<0 0 leak=15507 7s
+corner   (1,0,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00008% Minf=84011 Tres=42.75 surv=$\infty$ gate<0 140 leak=13933 7s
+corner   (1,1,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00085% Minf=86984 Tres=42.86 surv=$\infty$ gate<0 0 leak=15767 6s
+corner   (0,0,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00078% Minf=74976 Tres=42.77 surv=$\infty$ gate<0 -1 leak=14551 6s
+corner   (0,0,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00038% Minf=79100 Tres=42.76 surv=$\infty$ gate<0 -1 leak=13265 6s
+corner   (0,1,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00082% Minf=77638 Tres=42.76 surv=$\infty$ gate<0 -1 leak=15005 5s
+corner   (1,0,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00087% Minf=82209 Tres=42.75 surv=$\infty$ gate<0 0 leak=16038 7s
+corner   (0,0,0,0)          conv=true T=400 |F|=8.7e-11 continuation   state=C  CE=  0.00082% Minf=77638 Tres=42.76 surv=$\infty$ gate<0 -1 leak=15005 6s
+phiW     phiW = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=86010 Tres=42.86 surv=$\infty$ gate<0 139 leak=13450 7s
+phiW     phiW = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00002% Minf=83570 Tres=42.81 surv=$\infty$ gate<0 139 leak=13347 5s
+phiW     phiW = 0.50        conv=true T=400 |F|=8.7e-11 continuation   state=C  CE=  0.00009% Minf=81168 Tres=42.78 surv=$\infty$ gate<0 139 leak=13221 6s
+phiW     phiW = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00021% Minf=78767 Tres=42.77 surv=$\infty$ gate<0 139 leak=13075 6s
+phiW     phiW = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00037% Minf=76332 Tres=42.77 surv=$\infty$ gate<0 -1 leak=12910 6s
+phiz     phiz = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=86010 Tres=42.86 surv=$\infty$ gate<0 139 leak=13450 6s
+phiz     phiz = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=84677 Tres=42.8 surv=$\infty$ gate<0 139 leak=13473 6s
+phiz     phiz = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00002% Minf=83457 Tres=42.77 surv=$\infty$ gate<0 139 leak=13493 6s
+phiz     phiz = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00004% Minf=82332 Tres=42.76 surv=$\infty$ gate<0 139 leak=13511 7s
+phiz     phiz = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00008% Minf=81287 Tres=42.75 surv=$\infty$ gate<0 139 leak=13526 8s
+phiP     phiP = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=86010 Tres=42.86 surv=$\infty$ gate<0 139 leak=13450 6s
+phiP     phiP = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00005% Minf=85695 Tres=42.86 surv=$\infty$ gate<0 133 leak=13818 6s
+phiP     phiP = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00019% Minf=85345 Tres=42.86 surv=$\infty$ gate<0 125 leak=14226 6s
+phiP     phiP = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00044% Minf=84952 Tres=42.86 surv=$\infty$ gate<0 115 leak=14685 6s
+phiP     phiP = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00078% Minf=84497 Tres=42.86 surv=$\infty$ gate<0 0 leak=15215 6s
+phiX     phiX = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=86010 Tres=42.86 surv=$\infty$ gate<0 139 leak=13450 7s
+phiX     phiX = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=86594 Tres=42.86 surv=$\infty$ gate<0 139 leak=13545 5s
+phiX     phiX = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=87220 Tres=42.86 surv=$\infty$ gate<0 139 leak=13649 5s
+phiX     phiX = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=87894 Tres=42.86 surv=$\infty$ gate<0 139 leak=13763 5s
+phiX     phiX = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00001% Minf=88619 Tres=42.86 surv=$\infty$ gate<0 139 leak=13889 5s
+
+-- summary at Rbar = 0.0 --
+   planner corner state: C
+   corners differing from it: none
+   ordering violations (CE < 0): none
+   points that did not converge: none
+
+planner corner re-solved: solve_long, |F| = 1.164e-10, T = 400
+   enters its final state C at t = 0; survival margin crossed at t = 0
+   planner t =   0  state C  survival Inf
+   planner t =  25  state C  survival Inf
+   planner t =  50  state C  survival Inf
+   planner t =  75  state C  survival Inf
+   planner t = 100  state C  survival Inf
+   planner t = 125  state C  survival Inf
+   planner t = 150  state C  survival Inf
+   planner t = 175  state C  survival Inf
+   planner t = 200  state C  survival Inf
+   planner t = 225  state C  survival Inf
+   planner t = 250  state C  survival Inf
+   planner t = 275  state C  survival Inf
+   planner t = 300  state C  survival Inf
+   planner t = 325  state C  survival Inf
+   planner t = 350  state C  survival Inf
+   planner t = 375  state C  survival Inf
+   planner t = 400  state C  survival Inf
+
+-- laissez-faire (0,0,0,0) --
+   continuation, |F| = 8.731e-11, T = 400, Gam = 1.025564, tail factor = 0.954014 (tail summed)
+   welfare -35.763766 = Uc -35.763766 - Vp 0.000000; planner -35.763645 = Uc -35.763645 - Vp 0.000000; CE 0.000824%
+   terminal C = 128499 (planner 127566), C_T/C_T^planner = 1.007313
+   ledger 1.25e-12, cumulative N / bound 0.5389, leakage / budget 0.0868, periods below floor 0
+   state at T: C (planner C); leaves the planner's state at t = never
+   enters its final state at t = 0 (planner t = 0)
+   dates at which the two classifications differ: none
+      t =   0  state C (planner C)  survival Inf
+      t =  25  state C (planner C)  survival Inf
+      t =  50  state C (planner C)  survival Inf
+      t =  75  state C (planner C)  survival Inf
+      t = 100  state C (planner C)  survival Inf
+      t = 125  state C (planner C)  survival Inf
+      t = 150  state C (planner C)  survival Inf
+      t = 175  state C (planner C)  survival Inf
+      t = 200  state C (planner C)  survival Inf
+      t = 225  state C (planner C)  survival Inf
+      t = 250  state C (planner C)  survival Inf
+      t = 275  state C (planner C)  survival Inf
+      t = 300  state C (planner C)  survival Inf
+      t = 325  state C (planner C)  survival Inf
+      t = 350  state C (planner C)  survival Inf
+      t = 375  state C (planner C)  survival Inf
+      t = 400  state C (planner C)  survival Inf
+
+==============================================================================
+E3 at Rbar = 23.756 (Rbar23p756), T = 400, budget 6 h
+==============================================================================
+E3 corner   (1,1,1,1)          C   CE =       0.0
+E3 corner   (0,1,1,1)          C   CE =       0.0
+E3 corner   (1,0,1,1)          C   CE =       0.0
+E3 corner   (1,1,0,1)          C   CE =     0.001
+E3 corner   (1,1,1,0)          C   CE =       0.0
+E3 corner   (0,0,1,1)          C   CE =       0.0
+E3 corner   (0,1,0,1)          C   CE =     0.001
+E3 corner   (0,1,1,0)          C   CE =       0.0
+E3 corner   (1,0,0,1)          C   CE =     0.001
+E3 corner   (1,0,1,0)          C   CE =       0.0
+E3 corner   (1,1,0,0)          C   CE =     0.001
+E3 corner   (0,0,0,1)          C   CE =     0.001
+E3 corner   (0,0,1,0)          C   CE =       0.0
+E3 corner   (0,1,0,0)          C   CE =     0.001
+E3 corner   (1,0,0,0)          C   CE =     0.001
+E3 corner   (0,0,0,0)          C   CE =     0.001
+E3 phiW     phiW = 1.00        C   CE =       0.0
+E3 phiW     phiW = 0.75        C   CE =       0.0
+E3 phiW     phiW = 0.50        C   CE =       0.0
+E3 phiW     phiW = 0.25        C   CE =       0.0
+E3 phiW     phiW = 0.00        C   CE =       0.0
+E3 phiz     phiz = 1.00        C   CE =       0.0
+E3 phiz     phiz = 0.75        C   CE =       0.0
+E3 phiz     phiz = 0.50        C   CE =       0.0
+E3 phiz     phiz = 0.25        C   CE =       0.0
+E3 phiz     phiz = 0.00        C   CE =       0.0
+E3 phiP     phiP = 1.00        C   CE =       0.0
+E3 phiP     phiP = 0.75        C   CE =       0.0
+E3 phiP     phiP = 0.50        C   CE =       0.0
+E3 phiP     phiP = 0.25        C   CE =       0.0
+E3 phiP     phiP = 0.00        C   CE =     0.001
+E3 phiX     phiX = 1.00        C   CE =       0.0
+E3 phiX     phiX = 0.75        C   CE =       0.0
+E3 phiX     phiX = 0.50        C   CE =       0.0
+E3 phiX     phiX = 0.25        C   CE =       0.0
+E3 phiX     phiX = 0.00        C   CE =       0.0
+
+rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\instruments\instruments_Rbar23p756.csv
+table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\instruments\Instruments_Rbar23p756.tex
+wall clock 445.5 s, stopped on budget: false
+corner   (1,1,1,1)          conv=true T=400 |F|=1.2e-10 floor homotopy state=C  CE=  0.00000% Minf=84467 Tres=42.86 surv=82.955 gate<0 117 leak=15390 227s
+corner   (0,1,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00014% Minf=74972 Tres=42.77 surv=73.787 gate<0 -1 leak=14767 6s
+corner   (1,0,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00009% Minf=79834 Tres=42.76 surv=78.596 gate<0 118 leak=15436 7s
+corner   (1,1,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00070% Minf=83168 Tres=42.86 surv=81.676 gate<0 0 leak=16912 6s
+corner   (1,1,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00004% Minf=87049 Tres=42.86 surv=85.496 gate<0 118 leak=15816 6s
+corner   (0,0,1,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00014% Minf=74972 Tres=42.77 surv=73.787 gate<0 -1 leak=14767 6s
+corner   (0,1,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00067% Minf=73793 Tres=42.77 surv=72.624 gate<0 -1 leak=16199 7s
+corner   (0,1,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00020% Minf=77701 Tres=42.76 surv=76.484 gate<0 -1 leak=15112 6s
+corner   (1,0,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00073% Minf=78388 Tres=42.76 surv=77.169 gate<0 0 leak=17162 7s
+corner   (1,0,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00014% Minf=82522 Tres=42.75 surv=81.259 gate<0 119 leak=15831 7s
+corner   (1,1,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00083% Minf=85643 Tres=42.86 surv=84.112 gate<0 0 leak=17437 6s
+corner   (0,0,0,1)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00067% Minf=73793 Tres=42.77 surv=72.624 gate<0 -1 leak=16199 7s
+corner   (0,0,1,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00020% Minf=77701 Tres=42.76 surv=76.484 gate<0 -1 leak=15112 6s
+corner   (0,1,0,0)          conv=true T=400 |F|=1.5e-10 continuation   state=C  CE=  0.00078% Minf=76428 Tres=42.77 surv=75.228 gate<0 -1 leak=16632 6s
+corner   (1,0,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00085% Minf=80957 Tres=42.75 surv=79.714 gate<0 0 leak=17667 7s
+corner   (0,0,0,0)          conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00078% Minf=76428 Tres=42.77 surv=75.228 gate<0 -1 leak=16632 6s
+phiW     phiW = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=84467 Tres=42.86 surv=82.955 gate<0 117 leak=15390 6s
+phiW     phiW = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00001% Minf=82072 Tres=42.81 surv=80.7 gate<0 117 leak=15266 5s
+phiW     phiW = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00004% Minf=79714 Tres=42.78 surv=78.434 gate<0 117 leak=15119 6s
+phiW     phiW = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00008% Minf=77360 Tres=42.77 surv=76.138 gate<0 117 leak=14952 7s
+phiW     phiW = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00014% Minf=74972 Tres=42.77 surv=73.787 gate<0 -1 leak=14767 6s
+phiz     phiz = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=84467 Tres=42.86 surv=82.955 gate<0 117 leak=15390 6s
+phiz     phiz = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00001% Minf=83159 Tres=42.8 surv=81.784 gate<0 118 leak=15405 6s
+phiz     phiz = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00002% Minf=81962 Tres=42.77 surv=80.665 gate<0 118 leak=15417 6s
+phiz     phiz = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00005% Minf=80858 Tres=42.76 surv=79.602 gate<0 118 leak=15427 7s
+phiz     phiz = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00009% Minf=79834 Tres=42.76 surv=78.596 gate<0 118 leak=15436 7s
+phiP     phiP = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=84467 Tres=42.86 surv=82.955 gate<0 117 leak=15390 6s
+phiP     phiP = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00004% Minf=84189 Tres=42.86 surv=82.681 gate<0 110 leak=15716 7s
+phiP     phiP = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00017% Minf=83885 Tres=42.86 surv=82.381 gate<0 102 leak=16073 6s
+phiP     phiP = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00039% Minf=83548 Tres=42.86 surv=82.05 gate<0 92 leak=16467 7s
+phiP     phiP = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00070% Minf=83168 Tres=42.86 surv=81.676 gate<0 0 leak=16912 6s
+phiX     phiX = 1.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=84467 Tres=42.86 surv=82.955 gate<0 117 leak=15390 6s
+phiX     phiX = 0.75        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00000% Minf=85043 Tres=42.86 surv=83.522 gate<0 118 leak=15483 5s
+phiX     phiX = 0.50        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00001% Minf=85663 Tres=42.86 surv=84.132 gate<0 118 leak=15584 5s
+phiX     phiX = 0.25        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00002% Minf=86330 Tres=42.86 surv=84.789 gate<0 118 leak=15694 5s
+phiX     phiX = 0.00        conv=true T=400 |F|=1.2e-10 continuation   state=C  CE=  0.00004% Minf=87049 Tres=42.86 surv=85.496 gate<0 118 leak=15816 5s
+
+-- summary at Rbar = 23.756 --
+   planner corner state: C
+   corners differing from it: none
+   ordering violations (CE < 0): none
+   points that did not converge: none
+
+planner corner re-solved: floor homotopy, |F| = 1.164e-10, T = 400
+   enters its final state C at t = 21; survival margin crossed at t = 21
+   planner t =   0  state A  survival 0.0720324
+   planner t =  25  state C  survival 1.13226
+   planner t =  50  state C  survival 1.73748
+   planner t =  75  state C  survival 2.29213
+   planner t = 100  state C  survival 2.88262
+   planner t = 125  state C  survival 3.71592
+   planner t = 150  state C  survival 5.10816
+   planner t = 175  state C  survival 7.57155
+   planner t = 200  state C  survival 11.7397
+   planner t = 225  state C  survival 18.1514
+   planner t = 250  state C  survival 27.1143
+   planner t = 275  state C  survival 38.2568
+   planner t = 300  state C  survival 50.5932
+   planner t = 325  state C  survival 63.0815
+   planner t = 350  state C  survival 75.0194
+   planner t = 375  state C  survival 85.5157
+   planner t = 400  state C  survival 82.9546
+
+-- laissez-faire (0,0,0,0) --
+   continuation, |F| = 1.164e-10, T = 400, Gam = 1.025564, tail factor = 0.954014 (tail summed)
+   welfare -49.477316 = Uc -49.477316 - Vp 0.000000; planner -49.477158 = Uc -49.477158 - Vp 0.000000; CE 0.000777%
+   terminal C = 127993 (planner 126992), C_T/C_T^planner = 1.007887
+   ledger 1.24e-12, cumulative N / bound 0.5413, leakage / budget 0.0962, periods below floor 0
+   state at T: C (planner C); leaves the planner's state at t = never
+   survival ratio: min 0.0720581 at t = 0, 75.2277 at T; planner min 0.0720324, 82.9546 at T
+   survival margin crossed at t = 21 (planner t = 21)
+   enters its final state at t = 21 (planner t = 21)
+   dates at which the two classifications differ: none
+      t =   0  state A (planner A)  survival 0.0720581
+      t =  25  state C (planner C)  survival 1.13262
+      t =  50  state C (planner C)  survival 1.73929
+      t =  75  state C (planner C)  survival 2.30274
+      t = 100  state C (planner C)  survival 2.92074
+      t = 125  state C (planner C)  survival 3.75049
+      t = 150  state C (planner C)  survival 5.06901
+      t = 175  state C (planner C)  survival 7.21055
+      t = 200  state C (planner C)  survival 10.6796
+      t = 225  state C (planner C)  survival 15.8904
+      t = 250  state C (planner C)  survival 23.1447
+      t = 275  state C (planner C)  survival 32.3643
+      t = 300  state C (planner C)  survival 43.0151
+      t = 325  state C (planner C)  survival 54.3593
+      t = 350  state C (planner C)  survival 65.7195
+      t = 375  state C (planner C)  survival 75.9455
+      t = 400  state C (planner C)  survival 75.2277
+
+combined table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\Instruments.tex
