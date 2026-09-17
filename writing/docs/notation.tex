@@ -44,7 +44,8 @@ comparable, and that is the distinction of Section~\ref{sec:sp:setup:materialacc
 \item \textbf{A bar is a bound, and it is the same kind of object in every case.} $\bar R$ the material
 floor, $\bar a$ the yield ceiling, $\bar X_{\max}$ the exhaustion point of discovery.
 
-\item \textbf{A per-period rate lies in $(0,1)$}: $\delta$, $\mu$, $\theta$, $d^W$. A growth rate, an
+\item \textbf{A per-period rate lies in $(0,1)$}: $\delta$, $\theta$, $d^W$, with the handling share
+$\mu$ in $(0,1]$, its upper corner the one-period buffer $\mathcal W_{t+1}=W_t$. A growth rate, an
 elasticity and a discount rate do not, and never take those letters.
 
 \item \textbf{One symbol, one meaning --- \emph{in this document}.} The paper states the same model in
@@ -89,6 +90,8 @@ $a(x)$ & recycling yield, $x=K^R/T$ & dimensionless & \eqref{eq:sp:setup:recycli
 $\bar a$ & yield ceiling; $\bar a<1$ hard (H), $\bar a=1$ soft (S) & dimensionless & \eqref{eq:sp:setup:recycling}\\
 $\varepsilon$ & elasticity of the yield function, $a'x/a$ & dimensionless & \eqref{eq:sp:setup:recycling-crs}\\
 $\alpha$ & marginal recycling yield, $a-a'x=a(1-\varepsilon)$ & dimensionless & \eqref{eq:sp:setup:recycling-derivatives}\\
+$\epsilon_a$ & tail elasticity of the yield function, $xa'/(1-a)$ & dimensionless & \eqref{eq:app:wh:cbgp:elasticity}\\
+$L$ & per-period leakage rate, $1-a(x)$ & dimensionless & \eqref{eq:app:pf:leakage}\\
 $\bar R$ & material floor & tonnes & \eqref{eq:sp:setup:output}\\
 $C^N$, $C^D$ & extraction and exploration cost & final goods & \eqref{eq:sp:setup:extraction-cost}\\
 $C^W$, $c^W$ & waste cost, total and per handled tonne & final goods & \eqref{eq:sp:setup:waste-cost}\\
@@ -111,12 +114,18 @@ $\zeta$ & multiplier on the intensity condition & final goods/tonne & \eqref{eq:
 $\Psi$ & value of a tonne entering production & final goods/tonne & \eqref{eq:sp:Psi}\\
 $h$ & handling dividend of a stockpiled tonne & final goods/tonne & \S\ref{sec:app:sp}\\
 $\mathcal G^{\varpi}$, $\mathcal G^{K}$ & gains from treatment and from recycling capital & final goods/tonne & \eqref{eq:sp:sum:gains}\\
+$\Theta_{\mathcal W}$ & stockpile multiplier on a closed loop, $p^{\mathcal W}=\Theta_{\mathcal W}\Psi$ & dimensionless & \eqref{eq:app:wh:cbgp:multipliers}\\
 \multicolumn{4}{l}{\textit{Preferences and rates}}\\
 $\rho$, $\beta$ & time preference, discount factor $1/(1+\rho)$ & rate & \eqref{eq:sp:setup:utility}\\
 $\delta$ & depreciation & rate & \eqref{eq:sp:setup:resource-constraint}\\
-$\mu$ & handling share of the waste stock & rate & \eqref{eq:sp:setup:wastestock}\\
+$\mu$ & handling share of the waste stock, $\mu\in\left(0,1\right]$ & rate & \eqref{eq:sp:setup:wastestock}\\
 $\theta(P)$ & decay of the pollution stock & rate & \eqref{eq:sp:setup:pollution-motion}\\
 $d^W$ & leakage of the treated stream & rate & \eqref{eq:sp:setup:Xi}\\
+\multicolumn{4}{l}{\textit{The long run}}\\
+$\mathcal B$ & material budget: all mass that can ever enter circulation & tonnes & \eqref{eq:sp:lr:budget}\\
+$\mathcal M_\infty$ & retained material endowment, $\lim_t\left(M^K_t+\mathcal W_t\right)\le\mathcal B$ & tonnes & \eqref{eq:sp:lr:little}\\
+$\mathcal T$ & mean residence time of a tonne per pass, $1/\mu+\sigma_\infty/\delta$ & periods & \eqref{eq:sp:lr:little}\\
+A, B, C & long-run states: collapse, dematerialization, circular growth & --- & Definitions~\ref{def:lr:collapse}--\ref{def:lr:circular}\\
 \hline
 \end{tabular}
 \end{center}
