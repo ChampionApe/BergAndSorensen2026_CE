@@ -84,6 +84,17 @@ having been told to:
   -- and returns its margins with the state. The baseline is `:C` (`M_inf =
   45.2`, residence time 57 periods at `T = 60`). Diagnostic only: it names the
   state, it does not verify convergence to it;
+- the shutdown handover prices every stock handed over: `q`, `pW`, `pP` and
+  `pM` at `T` are the exact derivatives of `V_stop` per unit of income, and
+  its legacy recursion carries the `delta M^K` inflow — the material the eaten
+  capital keeps releasing — that the theory note's eq. (app:wh:Vstop) records
+  as omitted. Measured on `baseline_params(Rbar = 0.35)` over the dates
+  `10:10:200`: the inflow raises the legacy term by 40–56%, moves `V_stop` by
+  0.05–0.5% of its value and the search's objective by under 0.05%, and leaves
+  the best date where it was (the last of the grid; the objective is monotone
+  there, and on the `abar = 0.7` variant too). Small, but exact, tested and
+  free, so it is the default rather than a recorded approximation; `pM` at
+  the handover is about 0.8 of the gate fee;
 - the stationary benchmark of Appendix D is a return point: with the trends
   off, the linear aggregate and the terminal closure at `Gam = 1`, a path
   started 3% away from the closed-form dematerialized rest point returns to
@@ -152,8 +163,6 @@ is verification, not proof.
   start from the previous date rarely takes, and the table records the route
   and, for a skipped date, why. The test suite covers the search
   (`test/test_shutdown.jl`).
-- `p^M = 0` is imposed at the shutdown handover: `V_stop` ignores the material
-  released by the capital stock as it is eaten.
 - The terminal closure assumes a common growth factor `Gam` for every costate
   from `T` onward.
 - **There is a horizon wall, and it is the model's, not the solver's.** On a

@@ -312,10 +312,12 @@ end
     @test isapprox(K1, gC * K; rtol = 1e-12)
     C1 = s_stop * K1
     @test isapprox(uprime(p, C0), discount(p) * (1 - p.delta) * uprime(p, C1); rtol = 1e-10)
-    # more capital, and less waste in the ground, are both better
-    @test value_stop(p, 6.0, 10.0, 0.5) > value_stop(p, 5.0, 10.0, 0.5)
-    @test value_stop(p, 5.0, 10.0, 0.5) > value_stop(p, 5.0, 20.0, 0.5)
-    @test value_stop(p, 5.0, 10.0, 0.5) > value_stop(p, 5.0, 10.0, 1.5)
+    # more capital, and less waste in the ground, in the air or embodied in
+    # the capital being eaten, are all better
+    @test value_stop(p, 6.0, 10.0, 0.5, 2.0) > value_stop(p, 5.0, 10.0, 0.5, 2.0)
+    @test value_stop(p, 5.0, 10.0, 0.5, 2.0) > value_stop(p, 5.0, 20.0, 0.5, 2.0)
+    @test value_stop(p, 5.0, 10.0, 0.5, 2.0) > value_stop(p, 5.0, 10.0, 1.5, 2.0)
+    @test value_stop(p, 5.0, 10.0, 0.5, 2.0) > value_stop(p, 5.0, 10.0, 0.5, 4.0)
 end
 
 @testset "a solved path" begin

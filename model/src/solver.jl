@@ -188,8 +188,8 @@ function solve_with_shutdown(p::Params, s0::AbstractVector, dates;
         bet = discount(p)
         U = sum(bet^t * (util(p, sol.blocks[t+1].C) - disutil(p, sol.blocks[t+1].Pst))
                 for t in 0:Td)
-        Kn, _, _, Pn, _, Wn = successor_state(p, sol.blocks[end])
-        V = U + bet^(Td + 1) * value_stop(p, Kn, Wn, Pn)
+        Kn, _, _, Pn, MKn, Wn = successor_state(p, sol.blocks[end])
+        V = U + bet^(Td + 1) * value_stop(p, Kn, Wn, Pn, MKn)
         push!(table, (; Td, ok = true, value = V, resid = nrm, route, reason))
         prev = (; mo, x)
         if best === nothing || V > best.value

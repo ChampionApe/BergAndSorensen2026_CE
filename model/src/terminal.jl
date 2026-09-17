@@ -59,10 +59,11 @@ dated `T` price the stocks handed over, so they equal the derivatives of
 `V_stop` divided by the marginal value of income.
 
 Reserves and cumulative discoveries are worthless after a shutdown, `pS = pX = 0`.
-`pM = 0` is a simplification: `V_stop` as implemented ignores the material
-released by the capital stock as it is eaten, so the embodied-material liability
-is not priced at the handover.  It is small relative to the stockpile term and
-is recorded as a known approximation rather than hidden.
+The embodied material is not: the capital being eaten releases it into the
+stockpile, so `pM` at the handover is the derivative of `V_stop` in `MK`, from
+the same recursion that prices the stockpile and the pollution stock.  Its
+sign convention is that of the costate table, a liability entering with a
+minus, like `pP`.
 
 The derivatives of `V_stop` are exact, not finite differences.  This is
 load-bearing: the Jacobian of the stacked system is itself a finite difference
@@ -74,16 +75,16 @@ terminal Jacobian rows were wrong by O(1) and Newton stalled at |F| ~ 1e-3 to
 """
 function terminal_shutdown!(r, mo::Model, b, pr, m::AbstractVector, which::Symbol)
     p = mo.p
-    Kn, _, _, Pn, _, Wn = successor_state(p, b)
+    Kn, _, _, Pn, MKn, Wn = successor_state(p, b)
     Lam = which === :market ? pr.Lam : pr.lam
 
-    _, V_K, V_W, V_P = value_stop_gradient(p, Kn, Wn, Pn)
+    _, V_K, V_W, V_P, V_MK = value_stop_gradient(p, Kn, Wn, Pn, MKn)
 
     r[IQ]  = m[IQ]  - V_K / Lam
     r[IPS] = m[IPS]
     r[IPX] = m[IPX]
     r[IPP] = m[IPP] + V_P / Lam
-    r[IPM] = m[IPM]
+    r[IPM] = m[IPM] + V_MK / Lam
     r[IPW] = m[IPW] - V_W / Lam
     return r
 end
@@ -105,60 +106,75 @@ function cake_policy(p::Params)
 end
 
 """
-    legacy_emissions(p, Wst, P0; horizon = 2000) -> (; value, dW, dP)
+    legacy_emissions(p, Wst, P0, MK; horizon = 2000) -> (; value, dW, dP, dMK)
 
 Discounted disutility of the legacy emission stream after a shutdown, with its
-derivatives in the two initial stocks: the stockpile drains geometrically at
-factor `1 - mu`, passes to the environment untreated, and the pollution stock
-decays back to zero.  Evaluated by direct recursion, which is one dimensional
-and cheap.  The derivatives ride along as the sensitivities of `P_j` to `Wst`
-and `P0`, so they are exact wherever the value is; see `terminal_shutdown!`
-for why a finite difference of the value will not do.
+derivatives in the three initial stocks.  The aftermath of
+`writing/docs/Appendix_proofs.tex` eq. (app:wh:Vstop) with the inflow that
+equation records as omitted: the capital being eaten keeps releasing its
+embodied material,
+
+    W_{j+1} = (1 - mu) W_j + delta MK_j,     MK_{j+1} = (1 - delta) MK_j,
+
+the stockpile passes to the environment untreated, `Xi_j = mu W_j`, and the
+pollution stock decays.  Scrapping releases nothing beyond depreciation: with
+`R = 0` the intensity `Omega` is zero, so the model's own transition for `MK`
+reduces to the decay above.  Evaluated by direct recursion, which is cheap.
+The derivatives ride along as the sensitivities of `P_j` to the initial
+stocks, so they are exact wherever the value is; see `terminal_shutdown!` for
+why a finite difference of the value will not do.
 """
-function legacy_emissions(p::Params, Wst, P0; horizon::Int = 2000)
+function legacy_emissions(p::Params, Wst, P0, MK; horizon::Int = 2000)
     bet = discount(p)
     Pst, Wt, df = P0, Wst, 1.0
-    acc, gW, gP = 0.0, 0.0, 0.0
-    dP_dW, dP_dP, dW_dW = 0.0, 1.0, 1.0     # sensitivities of (P_j, W_j)
+    acc, gW, gP, gM = 0.0, 0.0, 0.0, 0.0
+    dP_dW, dP_dP, dP_dM = 0.0, 1.0, 0.0     # sensitivities of P_j
+    dW_dW, dW_dM, dM_dM = 1.0, 0.0, 1.0     # ... of W_j and MK_j
+    Mt = MK
     for _ in 0:horizon
         vp = vprime(p, Pst)
         acc += df * disutil(p, Pst)
         gW += df * vp * dP_dW
         gP += df * vp * dP_dP
+        gM += df * vp * dP_dM
         th, ret = decay(p, Pst)              # ret = d(P - theta(P) P)/dP
         Xi = p.mu_h * Wt
         Pst = Pst + Xi - th * Pst
         dP_dW = ret * dP_dW + p.mu_h * dW_dW
         dP_dP = ret * dP_dP
-        Wt *= (1 - p.mu_h)
+        dP_dM = ret * dP_dM + p.mu_h * dW_dM
+        Wt = (1 - p.mu_h) * Wt + p.delta * Mt
         dW_dW *= (1 - p.mu_h)
+        dW_dM = (1 - p.mu_h) * dW_dM + p.delta * dM_dM
+        Mt *= (1 - p.delta)
+        dM_dM *= (1 - p.delta)
         df *= bet
         df < 1e-16 && break
     end
-    return (; value = acc, dW = gW, dP = gP)
+    return (; value = acc, dW = gW, dP = gP, dMK = gM)
 end
 
 "The value alone of `legacy_emissions`."
-legacy_emissions_value(p::Params, Wst, P0; kwargs...) =
-    legacy_emissions(p, Wst, P0; kwargs...).value
+legacy_emissions_value(p::Params, Wst, P0, MK; kwargs...) =
+    legacy_emissions(p, Wst, P0, MK; kwargs...).value
 
 """
-    value_stop_gradient(p, K, Wst, P) -> (V, V_K, V_W, V_P)
+    value_stop_gradient(p, K, Wst, P, MK) -> (V, V_K, V_W, V_P, V_MK)
 
-`V_stop` of `writing/docs/Appendix_proofs.tex` eq. (app:wh:Vstop) with its
-exact partial derivatives: the closed-form cake-eating value of the capital
-stock, less the discounted disutility of the legacy emission stream.  Assumes
-`varpi = 0` after the shutdown, which is optimal where the collection charge
-exceeds the diversion gain; where it is not, this is a lower bound on the value
-of stopping.  Returns `-Inf` (and `NaN` derivatives) where the cake-eating
-problem has no interior solution, `check_params`' condition
-`(1-delta)^(1-eta) < 1+rho`.
+`V_stop` of `writing/docs/Appendix_proofs.tex` eq. (app:wh:Vstop), with the
+`delta MK` inflow of `legacy_emissions`, and its exact partial derivatives: the
+closed-form cake-eating value of the capital stock, less the discounted
+disutility of the legacy emission stream.  Assumes `varpi = 0` after the
+shutdown, which is optimal where the collection charge exceeds the diversion
+gain; where it is not, this is a lower bound on the value of stopping.  Returns
+`-Inf` (and `NaN` derivatives) where the cake-eating problem has no interior
+solution, `check_params`' condition `(1-delta)^(1-eta) < 1+rho`.
 """
-function value_stop_gradient(p::Params, K, Wst, Pst)
+function value_stop_gradient(p::Params, K, Wst, Pst, MK)
     s_stop, gC = cake_policy(p)
     bet = discount(p)
     den = 1 - bet * gC^(1 - p.eta)
-    (s_stop > 0 && K > 0 && den > 0) || return (-Inf, NaN, NaN, NaN)
+    (s_stop > 0 && K > 0 && den > 0) || return (-Inf, NaN, NaN, NaN, NaN)
     # Eq (eq:app:wh:Vstop), first term.  At eta = 1 the geometric sum of the
     # log terms is written out; its derivative in K is the same expression
     # s (sK)^(-eta) / den because den = 1 - bet there.
@@ -166,13 +182,13 @@ function value_stop_gradient(p::Params, K, Wst, Pst)
         (log(s_stop * K) + bet * log(gC) / (1 - bet)) / (1 - bet) :
         (s_stop * K)^(1 - p.eta) / ((1 - p.eta) * den)
     V_K = s_stop * (s_stop * K)^(-p.eta) / den
-    leg = legacy_emissions(p, Wst, Pst)
-    return (cake - leg.value, V_K, -leg.dW, -leg.dP)
+    leg = legacy_emissions(p, Wst, Pst, MK)
+    return (cake - leg.value, V_K, -leg.dW, -leg.dP, -leg.dMK)
 end
 
 """
-    value_stop(p, K, Wst, P) -> Float64
+    value_stop(p, K, Wst, P, MK) -> Float64
 
 The value alone of `value_stop_gradient`.
 """
-value_stop(p::Params, K, Wst, Pst) = value_stop_gradient(p, K, Wst, Pst)[1]
+value_stop(p::Params, K, Wst, Pst, MK) = value_stop_gradient(p, K, Wst, Pst, MK)[1]
