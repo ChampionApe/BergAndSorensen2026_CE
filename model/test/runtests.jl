@@ -225,6 +225,45 @@ end
     end
 end
 
+@testset "long-run classifier" begin
+    # The taxonomy of Section "Taxonomy".  A hard ceiling decides from the
+    # parameters alone: with a floor the material era has bounded duration,
+    # without one the material block decays exponentially.
+    sA, mA = classify_longrun(baseline_params(abar = 0.7, Rbar = 0.35))
+    @test sA == :A
+    @test mA.floor && mA.hard_ceiling && !mA.closes
+    sB, mB = classify_longrun(baseline_params(abar = 0.7))
+    @test sB == :B
+    @test !mB.floor && mB.hard_ceiling
+    # the soft ceiling without a floor needs only the closure criterion
+    @test classify_longrun(baseline_params())[1] == :C
+    # with a floor it needs a path, and the parameter method says so
+    @test_throws ErrorException classify_longrun(baseline_params(Rbar = 0.35))
+
+    # the illustrative baseline converges to the CBGP (README, "What is
+    # verified"), which is state C
+    mo = Model(P; T = 60, s0 = S0)
+    x, ok, _ = solve_path(mo, initial_guess(mo; Rtarget = 0.6, warn = false))
+    @test ok
+    s, m = classify_longrun(mo, x)
+    @test s == :C
+    @test m.closes && !m.floor && !m.hard_ceiling
+    @test isfinite(m.leak_sum)
+    @test m.Minf > 0
+    @test isapprox(m.residence, 1 / P.mu_h + m.sigma / P.delta; rtol = 1e-12)
+    @test m.survival_ratio == Inf
+    # the survival condition, read against the same path's retained endowment:
+    # a floor below the path's own turnover flow M_inf / T is cleared, one
+    # above it is not, and the margin reported is the ratio of the two
+    Rflow = m.Minf / m.residence
+    sC, mC = classify_longrun(with(P; Rbar = 0.5 * Rflow); Minf = m.Minf, sigma = m.sigma, A = m.A)
+    @test sC == :C
+    @test isapprox(mC.survival_ratio, 2.0; rtol = 1e-10)
+    sA2, mA2 = classify_longrun(with(P; Rbar = 2.0 * Rflow); Minf = m.Minf, sigma = m.sigma, A = m.A)
+    @test sA2 == :A
+    @test isapprox(mA2.survival_ratio, 0.5; rtol = 1e-10)
+end
+
 @testset "the shutdown state" begin
     p = baseline_params()
     s_stop, gC = cake_policy(p)

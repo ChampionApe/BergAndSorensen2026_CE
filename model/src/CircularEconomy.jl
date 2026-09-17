@@ -20,7 +20,8 @@ Layout
   `period.jl`      within-period definitions, accounting, price block
   `residuals.jl`   the stacked residual system, market and planner forms
   `terminal.jl`    terminal closure and the value of the shutdown state
-  `longrun.jl`     analytic rest point, circular growth path, closure criterion
+  `longrun.jl`     analytic rest point, circular growth path, closure criterion,
+                   long-run classifier
   `solver.jl`      Newton with a structured sparse finite-difference Jacobian
   `guess.jl`       starting values
   `diagnostics.jl` verification checks, welfare, series accessors
@@ -55,7 +56,8 @@ export Model, nvar, period_block, price_block, effective_survival,
        residual_market!, residual_planner!, mcp
 
 # long run
-export restpoint_B1, cbgp, survival_ratio, closure_check, invert_aprime
+export restpoint_B1, cbgp, survival_ratio, closure_check, invert_aprime,
+       classify_longrun
 
 # terminal / shutdown
 export cake_policy, value_stop, legacy_emissions_value, successor_state

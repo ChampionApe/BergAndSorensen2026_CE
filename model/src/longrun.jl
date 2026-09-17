@@ -10,6 +10,8 @@ solved path is required to converge to them.
   * `cbgp`          -- the circular balanced growth path (workhorse eqs.
     cbgp:multipliers, cbgp:solution, cbgp:little).
   * `closure_check` -- the tail criterion of Proposition "closure criterion".
+  * `classify_longrun` -- the long-run state, A, B or C, of the theory note's
+    taxonomy, read off the parameters and a solved path.  Diagnostic only.
 """
 
 # ---------------------------------------------------------------------------
@@ -283,3 +285,81 @@ function closure_check(p::Params; g::Real = cbgp_growth(p), A::Real = 1.0,
                                     "the tail may not be summable")
 end
 
+
+# ---------------------------------------------------------------------------
+# the long-run classifier
+# ---------------------------------------------------------------------------
+
+"""
+    classify_longrun(p; Minf, sigma, A) -> (state, margins)
+    classify_longrun(mo, x)             -> (state, margins)
+
+The taxonomy of Section "Taxonomy" of the theory note, read off the parameters
+and, where the cell needs it, a solved path.  `state` is `:A` (collapse), `:B`
+(balanced dematerialization) or `:C` (perpetual circular growth); `margins` is
+the NamedTuple of everything the decision was made on, so that it can be
+inspected rather than trusted.
+
+The floor (`Rbar > 0`) and the ceiling (`abar < 1` hard, `abar == 1` soft) are
+primitives.  A hard ceiling decides by itself: with a floor the material era
+has bounded duration (Lemma "finite cumulative throughput"), state A; without
+one the material block decays exponentially, state B.  A soft ceiling needs the
+closure criterion of `closure_check` for the parameters' yield tail, and with a
+floor also the survival condition `M_inf > Rbar * T` of eq. (sp:lr:little),
+Little's law against the retained endowment.  The path method supplies `Minf`
+as `M^K + W` at the end of the solved path, `sigma` as the terminal storage
+share -- the path's own estimate of `sigma_inf` in `T = 1/mu + sigma/delta` --
+and `A` as the terminal `a'(x_T)`, so that the criterion continues the path's
+recycling margin rather than an arbitrary scale.  The parameter method errors
+when the cell needs a path it was not given.
+
+Diagnostic only: it reads the taxonomy off a path and does not verify that the
+path converges to the state it names, which is what the CBGP comparison in the
+test suite does.
+"""
+function classify_longrun(p::Params; Minf::Union{Nothing,Real} = nothing,
+                          sigma::Union{Nothing,Real} = nothing,
+                          A::Union{Nothing,Real} = nothing)
+    floor = p.Rbar > 0
+    hard = p.abar < 1
+    g = cbgp_growth(p)
+    # Eq (sp:lr:little): T = 1/mu + sigma/delta and R_inf = M_inf / T.  The
+    # survival margin is M_inf / (Rbar T), infinite without a floor and NaN
+    # when the path quantities it needs were not supplied.
+    Tres = sigma === nothing ? NaN : 1 / p.mu_h + sigma / p.delta
+    ratio = Minf === nothing ? NaN : floor ? Minf / (p.Rbar * Tres) : Inf
+    if hard
+        # Lemma "finite cumulative throughput under the hard ceiling": the loop
+        # can never close, whatever the tail
+        closure = (; closes = false, leak_sum = Inf, A = NaN,
+                     closure_reason = "hard ceiling: the loop cannot close")
+    else
+        cl = A === nothing ? closure_check(p; g = g) : closure_check(p; g = g, A = A)
+        closure = (; closes = cl.closes, leak_sum = cl.leak_sum,
+                     A = A === nothing ? 1.0 : float(A), closure_reason = cl.reason)
+    end
+    margins = (; floor, hard_ceiling = hard, Rbar = p.Rbar, abar = p.abar, g, closure...,
+                 Minf = Minf === nothing ? NaN : float(Minf),
+                 sigma = sigma === nothing ? NaN : float(sigma),
+                 residence = Tres, survival_ratio = ratio)
+    state = if hard
+        floor ? :A : :B
+    elseif !floor
+        closure.closes ? :C : :B
+    else
+        isfinite(ratio) ||
+            error("classify_longrun: the soft-ceiling cell with a floor is decided by " *
+                  "the survival condition M_inf > Rbar * T, which needs the path's " *
+                  "retained endowment `Minf` and terminal storage share `sigma`; pass " *
+                  "both or call classify_longrun(mo, x)")
+        (closure.closes && ratio > 1) ? :C : :A
+    end
+    return (state, margins)
+end
+
+function classify_longrun(mo::Model, x::AbstractVector)
+    sol = unpack(mo, x)
+    b = sol.blocks[end]
+    Minf = sol.states[end, IMK] + sol.states[end, IWS]
+    return classify_longrun(mo.p; Minf = Minf, sigma = b.sigma, A = b.ap)
+end
