@@ -3305,7 +3305,7 @@ year,series,value,unit,source,method
 ,damage_tcre_best,0.00045,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate)",published
 ,damage_tcre_low,0.00027,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate)",published
 ,damage_tcre_high,0.00063,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate)",published
-,fossil_share_of_cumulative_co2,0.641025641,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
+,fossil_share_of_cumulative_co2,0.641025641,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
 ,implied_temperature_at_latest_fossil_cumulative_tcre_best,0.832105736,degC,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate)",derived
 ,kappa_reference_stock_at_latest_cumulative_fossil_co2,1849.12386,GtCO2,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3 with IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate); arithmetic in this script",proposal_phaseC
 ,kappa_level_at_latest_cumulative_fossil_co2_tcre_best,1.29130434e-06,per GtCO2,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3 with IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate); arithmetic in this script",proposal_phaseC

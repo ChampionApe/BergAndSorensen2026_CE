@@ -1117,13 +1117,13 @@ year,series,value,unit,source,method
 2022,co2_other_carbonates,0.427326576,GtCO2,GCP fossil CO2 dataset 2025v15 (Andrew and Peters 2025); GCB 2025,observed
 2023,co2_other_carbonates,0.424955158,GtCO2,GCP fossil CO2 dataset 2025v15 (Andrew and Peters 2025); GCB 2025,observed
 2024,co2_other_carbonates,0.424375559,GtCO2,GCP fossil CO2 dataset 2025v15 (Andrew and Peters 2025); GCB 2025,observed
-,cum_fossil_co2_1750_2024,1833.33333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_fossil_co2_1750_2024_sd,91.6666667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_landuse_co2_1750_2024,1026.66667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_landuse_co2_1750_2024_sd,238.333333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_total_anthropogenic_co2_1750_2024,2860,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_total_anthropogenic_co2_1750_2024_sd,256.666667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_atmospheric_growth_1750_2024,1136.66667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cum_atmospheric_growth_1750_2024_sd,18.3333333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,fossil_share_of_cumulative_co2_1750_2024,0.641025641,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
-,cumulative_airborne_fraction_1750_2024,0.397435897,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8 and Section 3.9.1",published
+,cum_fossil_co2_1750_2024,1833.33333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_fossil_co2_1750_2024_sd,91.6666667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_landuse_co2_1750_2024,1026.66667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_landuse_co2_1750_2024_sd,238.333333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_total_anthropogenic_co2_1750_2024,2860,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_total_anthropogenic_co2_1750_2024_sd,256.666667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_atmospheric_growth_1750_2024,1136.66667,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cum_atmospheric_growth_1750_2024_sd,18.3333333,GtCO2,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,fossil_share_of_cumulative_co2_1750_2024,0.641025641,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
+,cumulative_airborne_fraction_1750_2024,0.397435897,fraction,"Friedlingstein et al. 2026 ESSD 18:3211-3288 (Global Carbon Budget 2025), Table 8",published
