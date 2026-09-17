@@ -1,0 +1,152 @@
+\section{The stationary benchmark}\label{sec:app:stat}
+
+This appendix carries the regime of asymptotically stationary technology, a benchmark outside the classification of Section~\ref{sec:sp:longrun}, which is stated for trending technology alone. We keep it for two reasons: the terminal closure and the verification of \quant{Section}{Terminal conditions} and \quant{Section}{Verification} use its closed-form rest point, and it is what makes Proposition~\ref{prop:lr:growth} a comparison, since ``a closed loop needs a growing economy'' says something only against an economy that does not grow.
+
+\subsection{Hypotheses}\label{sec:app:stat:scope}
+
+Two local hypotheses replace regime (T) of Assumption~\ref{ass:lr:tech} and the explicit conditions of Assumption~\ref{ass:lr:wellposed} throughout this appendix.
+
+\begin{assumption}[stationary technology]\label{ass:stat:tech}
+Every primitive converges to a limit function (uniformly on compact sets): $F\left(\cdot,t\right)\to F^\infty$, $a\left(\cdot,t\right)\to a^\infty$, $C^N\left(\cdot,t\right)\to C^{N\infty}$, $C^D\left(\cdot,t\right)\to C^{D\infty}$, $c^c(t)\to c^{c\infty}$, $c^T\left(\cdot,t\right)\to c^{T\infty}$, and each limit inherits the properties assumed in Section~\ref{sec:sp:setup:primitives}, with the yield ceiling in either case (H) or (S).
+\end{assumption}
+
+\begin{assumption}[no accumulation-driven growth]\label{ass:stat:bounded}
+Accumulation alone cannot sustain growth: $\lim_{K\to\infty}F^\infty_K\left(K,R,0\right)<\delta$ uniformly for $R$ in compact sets.
+\end{assumption}
+
+Assumption~\ref{ass:stat:tech} is the reading of $F_t\ge0$, $a_t\ge0$, $C^N_t\le0$ in which improvements eventually peter out: since the trends are monotone, boundedness is all that needs to be added. Assumption~\ref{ass:stat:bounded} rules out explosive accumulation, so that ``sustained consumption'' means a level, not a rate. Assumption~\ref{ass:lr:convergence} is read in this appendix in its stationary form, states and controls converge to a rest point of the limit system, and Assumption~\ref{ass:lr:theta} is maintained as it stands. Discounted values are finite along the candidate paths considered: lifetime utility converges, and every costate admits its forward (fundamental) representation.
+
+\subsection{No stationary survival with a floor}\label{sec:app:stat:floor}
+
+With $\bar R>0$ the hard reading of the floor does two things at once: it makes materials essential in level by construction and it pre-empts marginal essentiality as the shutdown occurs at a strictly positive flow, before any Inada divergence at the threshold can be reached along an optimal path. Neither essentiality notion classifies anything here.
+
+\begin{proposition}[no productive rest point]\label{prop:lr:norest}
+Let $\bar R>0$. At any rest point of the limit system, $D=N=W=H=R=0$, $\mathcal W=0$, $M^K=0$, $P=0$, and $Y=C=0$. Consumption can be positive in the long run only if it grows, there is no stationary survival.
+\end{proposition}
+
+The proof runs the rest-point conditions through the stocks one at a time. $\Delta X=0$ forces $D=0$; $\Delta S=0$ then forces $N=0$, so $\mathcal N=0$. With $\Delta M^K=\Delta\mathcal W=0$ the collected ledger gives $\left(1-a\varpi\right)H=0$; under the hard ceiling this forces $H=0$ directly, and under the soft ceiling $a\varpi=1$ requires $x=\infty$, unavailable at any rest point with finite capital, so $H=0$ again. Then $\mathcal W=H/\mu=0$, $W=\Delta\mathcal W+H=0$, $R=N+a\varpi H=0<\bar R$, hence $Y=0$ and, with gross investment non-negative, $C=0$. Finally $\Xi=0$ and the regeneration floor give $P=0$. Under Assumption~\ref{ass:lr:convergence} in its stationary reading, this makes \emph{collapse the only possible long run with a floor}, whatever the ceiling: it is the floor's version of the survival dichotomy of Proposition~\ref{prop:lr:dichotomy}, with the dichotomy's benign branch deleted.
+
+The rest point is not the only stationary configuration that Proposition~\ref{prop:lr:growth} leaves to be checked: production could in principle run at or above the floor forever on a closed loop, with recycling capital growing without bound. The next result closes that door, and it is the result this appendix exists to state.
+
+\begin{proposition}[a closed loop is infeasible in a stationary economy]\label{prop:stat:noloop}
+Under Assumptions~\ref{ass:stat:tech} and \ref{ass:stat:bounded}, no feasible path holds $R_t\ge\bar R>0$ for all $t\ge T_0$. Perpetual circularity requires trending technology with $g>0$.
+\end{proposition}
+
+The proof chains Proposition~\ref{prop:lr:growth} to the hypothesis. On such a path $a\varpi\to1$ and $x=K^R/\left(\varpi H\right)\to\infty$, while $\varpi H\ge a\varpi H\ge\bar R-N$ is bounded below by the survival bound~\eqref{eq:sp:lr:survival}, so $K^R\to\infty$: recycling capital, and with it total capital and output, grow without bound. Maintaining an unbounded capital stock requires unboundedly growing replacement output, which Assumption~\ref{ass:stat:bounded} rules out. Neither a bounded nor a shrinking economy can maintain the diverging recycling capital a closed loop requires, and this is the comparison the stationary benchmark supplies: \emph{a closed material loop is not a low-tech steady state but a capital-intensive frontier that only a growing economy can afford.} With a floor, the stationary benchmark therefore has a single long-run state, collapse, whatever the ceiling. Without a floor, the soft ceiling adds nothing to the hard one, and the survival dichotomy of Section~\ref{sec:sp:longrun:restpoints} is the whole of its classification.
+
+\subsection{The floorless benchmark: stationary technology}\label{sec:sp:longrun:restpoints}
+
+The case $\bar R=0$ is the natural benchmark: its states isolate what the floor itself is doing, and they are the limits the economy approaches when $\bar R$ is small. With $\bar R=0$ the specification is the standard $Y=\mathcal F\left(K^Y,R,P,t\right)$, dematerialized production exists whenever $\mathcal F\left(K,0,P\right)>0$, and essentiality is a genuine parameter again.
+
+\begin{lemma}[material autarky at rest]\label{lem:lr:autarky}
+At any rest point of the limit system, $D=N=W=H=R^R=R=\Xi=0$, $\mathcal W=0$, $\Omega=0$, $M^K=0$ and $P=0$. Consumption at a rest point with capital $K$ is
+\begin{align}
+C &= F^\infty\left(K,0,0\right)-\delta K .
+\label{eq:sp:lr:restC}
+\end{align}
+\end{lemma}
+
+The proof is that of Proposition~\ref{prop:lr:norest} without the floor's last step, plus the intensity condition~\eqref{eq:sp:intensity} giving $\Omega=0$ (whenever $\mathcal D+\phi^IG>0$) and $\Delta M^K=-\delta M^K=0$ giving $M^K=0$. Every rest point is a point on the dematerialized technology, and the entire materials block --- the budget, the recycling technology, the handling share, the waste parameters --- drops out of the long-run state. Whether a good rest point exists is then a property of the dematerialized technology alone.
+
+\begin{definition}[asymptotic essentiality]\label{def:lr:essentiality}
+Let $\bar C\equiv\sup_{K\ge0}\left[F^\infty\left(K,0,0\right)-\delta K\right]$. Materials are \emph{asymptotically inessential in level} if $\bar C>0$, and \emph{asymptotically essential} if $F^\infty\left(K,0,P\right)=0$ for all $K,P$. Materials are \emph{asymptotically essential at the margin} if $F^\infty_R\left(K,R,0\right)\to\infty$ as $R\to0$ for relevant $K$, and \emph{inessential at the margin} if this limit is finite (a finite choke value).
+\end{definition}
+
+The level notion decides survival; the marginal notion decides how the material era ends. The two are independent, and the workhorse of Appendix~\ref{sec:app:workhorse:forms} spans the combinations with one substitution parameter. Note the contrast with Section~\ref{sec:app:stat:floor}: both notions matter \emph{only} when $\bar R=0$.
+
+\begin{proposition}[survival dichotomy, stationary technology, $\bar R=0$]\label{prop:lr:dichotomy}
+Under Assumptions~\ref{ass:stat:tech}, \ref{ass:stat:bounded}, \ref{ass:lr:convergence} and \ref{ass:lr:theta}, with $\bar R=0$:
+\begin{enumerate}
+    \item If materials are asymptotically inessential in level, there is a rest point with positive consumption, the \emph{dematerialized rest point}. The best such rest point satisfies the modified golden rule of the dematerialized technology,
+    \begin{align}
+    F^\infty_K\left(K^*,0,0\right) &= \rho+\delta,
+    &
+    C^* &= F^\infty\left(K^*,0,0\right)-\delta K^*>0,
+    \label{eq:sp:lr:mgr}
+    \end{align}
+    with limit prices $r=\rho$, $q=1$, $u'\left(C^*\right)=\lambda^*$, $p^{S*}=p^{X*}=0$,
+    \begin{align}
+    p^{P*} &= \frac{v'\left(0\right)/\lambda^*-F^\infty_P\left(K^*,0,0\right)}{\rho+\theta\left(0\right)},
+    &
+    p^{M*} &= \frac{\delta}{\rho+\delta}\,p^{W*},
+    &
+    \zeta^* &= \sigma^*\frac{\rho}{\rho+\delta}\,p^{W*},
+    \label{eq:sp:lr:restprices}
+    \end{align}
+    where $\sigma^*$ is the limit of the storage share in the form~\eqref{eq:sp:zeta-explicit}, and $p^{W*}=-p^{\mathcal W*}=-\mu h^*/\left(\rho+\mu\right)$ is determined by the rest-point form of the waste margin, \eqref{eq:sp:sum:W-limit}. Because $\Omega=0$, every material wedge $\zeta\Omega^j$ vanishes and the rest-point allocation is that of a standard Ramsey model.
+    \item If materials are asymptotically essential in level, every rest point has $C=0$, and under Assumption~\ref{ass:lr:convergence} consumption converges to zero on every optimal path: \emph{exhaustion collapse}. Recycling and the material budget determine the value and duration of the decline, not its occurrence.
+\end{enumerate}
+\end{proposition}
+
+Part (i) collects the limits of the optimality conditions of Section~\ref{sec:sp:opt:foc}. Two of the prices deserve a word. The resource rents die: $p^{S*}=p^{X*}=0$, because the dividends both stocks pay are proportional to activity that has ceased. And $p^{W*}$ need not vanish even though the stockpile empties: the per-tonne margins remain well defined in the limit, and at a rest point the asset price of a stockpiled tonne is its handling dividend, discounted for the geometric wait until handling, $p^{\mathcal W*}=\mu h^*/\left(\rho+\mu\right)$, which is exactly the rest-point waste margin~\eqref{eq:sp:sum:W-limit}. Section~\ref{sec:app:workhorse:restpoint} solves the rest-point block $\left(p^{W*},x^*,\varpi^*\right)$ explicitly for the workhorse, including the corner in which the last waste is treated only for the diversion motive --- and, with the collection charge on the treated tonne, the further corner in which even that is not worth paying for and handling ends untreated.
+
+\smalltitle{How the material era ends ($\bar R=0$).} The marginal notion of essentiality splits case (i) into two economically distinct endings, and governs the terminal behaviour of the recycling block in all cases.
+
+\emph{Ending by choice (finite choke value).} If $F^\infty_R\left(K^*,0,0\right)<\infty$, the value of a marginal tonne at the rest point is finite, and the extraction corner~\eqref{eq:sp:sum:N-corner} can hold with a positive reserve. Extraction ceases in finite time, when the choke condition first binds, and reserves are \emph{stranded}: $S_\infty>0$ generically. The material era ends the way the stone age is said to have ended --- not for lack of stones. The recycling margins wind down with it: the virgin displacement value $V$ stays bounded, and if the marginal product of the first unit of recycling capital falls short, recycling hits its corner and treatment survives, if at all, on the diversion motive alone.
+
+\emph{Ending by exhaustion (infinite marginal value).} If instead $F^\infty_R\to\infty$ as $R\to0$, no finite choke exists: extraction continues forever at vanishing rates, the interior condition~\eqref{eq:sp:sum:N} requires marginal extraction cost to diverge with $\Psi$, and reserves are squeezed to zero, $S\to0$. The same divergence drives the recycling block to its technological limit: $V\to\infty$ forces $x\to\infty$, the yield climbs to its ceiling, and the treatment share is pushed into its upper branch. \emph{Maximal circularity is the shadow of maximal scarcity}: the economy becomes as circular as technology allows precisely because the alternative to a recycled tonne is becoming infinitely expensive. Consumption still converges to the same $C^*$ of~\eqref{eq:sp:lr:mgr} in the level-inessential case --- the squeeze concerns the vanishing material margin, not the goods block.
+
+Case (ii) inherits the exhaustion ending with nothing to converge to: the classical exhaustible-resource collapse, with two twists --- the ceiling $\bar X_{\max}$ makes exploration a temporary reprieve rather than an escape, and recycling multiplies the budget by at most $\left(1-\bar a\right)^{-1}$ without changing the verdict.
+
+\subsection{The dematerialized rest point: the choke case $\varsigma=\infty$}\label{sec:app:workhorse:restpoint}
+
+With the workhorse forms of Appendix~\ref{sec:app:workhorse:forms} and the linear aggregate $\varsigma=\infty$, the rest point of Section~\ref{sec:sp:longrun:restpoints} is available in closed form; this is the cleanest concrete instance of Proposition~\ref{prop:lr:dichotomy}(i).
+
+\smalltitle{Goods block.} The modified golden rule $F^\infty_K\left(K^*,0,0\right)=\rho+\delta$ with $F^\infty\left(K,0,0\right)=A_\infty\left(\beta K\right)^{\mu_F}$ gives
+\begin{align}
+K^* &= \left[\frac{\mu_F A_\infty\beta^{\mu_F}}{\rho+\delta}\right]^{\frac{1}{1-\mu_F}},
+&
+Y^* &= \frac{\left(\rho+\delta\right)K^*}{\mu_F},
+&
+C^* &= \frac{\rho+\delta\left(1-\mu_F\right)}{\mu_F}\,K^*,
+&
+\lambda^* &= \left(C^*\right)^{-\eta},
+\label{eq:app:wh:mgr}
+\end{align}
+with $C^*>0$ automatic. The marginal value of a tonne at the rest point is finite,
+\begin{align}
+F^\infty_R\left(K^*,0,0\right) &= \frac{\left(\rho+\delta\right)\left(1-\beta\right)B_\infty}{\beta},
+&
+\Psi^* &= F^\infty_R\left(K^*,0,0\right)+\zeta^*,
+\label{eq:app:wh:FRstar}
+\end{align}
+which is what makes the choke ending possible.
+
+\smalltitle{Pollution and storage prices.} With $v'\left(0\right)=0$ and $F_P=-\kappa F$,
+\begin{align}
+p^{P*} &= \frac{\kappa Y^*}{\rho+\theta_0},
+&
+p^{M*} &= \frac{\delta}{\rho+\delta}\,p^{W*},
+&
+\zeta^* &= \sigma^*\frac{\rho}{\rho+\delta}\,p^{W*},
+&
+\sigma^* &= \frac{\phi^I\delta K^*}{\omega^YY^*+\omega^CC^*+\phi^I\delta K^*},
+\label{eq:app:wh:restprices}
+\end{align}
+and $p^{S*}=p^{X*}=0$ as in Proposition~\ref{prop:lr:dichotomy}.
+
+\smalltitle{The recycling block at rest.} The remaining unknowns $\left(p^{W*},x^*,\varpi^*\right)$ solve~\eqref{eq:app:wh:xstar}, \eqref{eq:app:wh:varpistar} and the rest-point form of the waste margin~\eqref{eq:sp:sum:W-limit} (where $\Omega^j=0$, $\tilde F_K=\rho+\delta$, $r=\rho$):
+\begin{align}
+p^{W*}\left(1-\alpha^*\varpi^*+\frac{\rho}{\mu}\right) &= c^{c}_\infty\varpi^*+c_{T\infty}\frac{\left(\varpi^*\right)^{1+\chi_T}}{1+\chi_T}+p^{P*}\left[1-\varpi^*\left(1-d^W\right)-d^W\alpha^*\varpi^*\right]-\alpha^*\varpi^*\Psi^* ,
+\label{eq:app:wh:pWstar}
+\end{align}
+a three-equation system that is scalar enough to solve numerically without ceremony; the $\rho/\mu$ term is the discount for the geometric wait until a stockpiled tonne is handled. Two corners deserve display because they are fully closed form. If recycling capital is at its corner, $\bar a\xi\,\mathcal G^{K*}\le\rho+\delta$, then $\alpha^*=0$ and the block collapses to
+\begin{align}
+\varpi^* &= \min\left\{1,\left[\frac{p^{P*}\left(1-d^W\right)-c^c_\infty}{c_{T\infty}}\right]^{1/\chi_T}\right\},
+&
+p^{W*} &= \frac{\mu}{\rho+\mu}\left\{c^c_\infty\varpi^*+c_{T\infty}\frac{\left(\varpi^*\right)^{1+\chi_T}}{1+\chi_T}+p^{P*}\left[1-\varpi^*\left(1-d^W\right)\right]\right\}>0,
+\label{eq:app:wh:corner}
+\end{align}
+provided $p^{P*}\left(1-d^W\right)>c^c_\infty$: \emph{treatment without recycling}, sustained by the diversion motive alone. This is the configuration the economy retires into when materials have become worthless at the margin but waste still pollutes. If instead $p^{P*}\left(1-d^W\right)\le c^c_\infty$, then $\varpi^*=0$ as well and $p^{W*}=\frac{\mu}{\rho+\mu}\,p^{P*}$: nothing is processed, the residual waste stream passes to the environment in full, and the waste price is the pollution price, discounted for the wait until the tonne actually drains.
+
+\smalltitle{Stranded reserves.} Extraction ends when the choke condition first binds; with $p^{S}\to0$ the terminal reserve satisfies
+\begin{align}
+c_{N\infty}\kappa_N\left(\frac{S_{\mathrm{ref}}}{S_\infty}\right)^{\mu_N} &= \Psi^*-p^{W*}\left(1+\Omega^{N,S}\right),
+&&\text{i.e.}
+&
+S_\infty &= S_{\mathrm{ref}}\left[\frac{c_{N\infty}\kappa_N}{\Psi^*-p^{W*}\left(1+\Omega^{N,S}\right)}\right]^{1/\mu_N},
+\label{eq:app:wh:stranded}
+\end{align}
+provided $\Psi^*>p^{W*}\left(1+\Omega^{N,S}\right)$ and $S_0>S_\infty$; a larger choke value strands less. Exploration ceases strictly earlier: its terminal net value is $-p^{W*}\Omega^{D,S}<0$ when $p^{W*}>0$, so the corner~\eqref{eq:sp:sum:D-corner} binds while extraction is still running, and $X_\infty<\bar X_{\max}$ is determined along the transition rather than by any rest-point condition.
+
+\smalltitle{The squeeze case $1<\varsigma<\infty$.} With marginal essentiality the rest point is approached but never attained: $F_R\sim\left(1-\beta\right)$-terms of order $Z^{-1/\varsigma}$ diverge as $R\to0$, extraction remains interior with $S\to0$ tracking $\Psi$ through~\eqref{eq:app:wh:mc}, and by~\eqref{eq:app:wh:xstar} the yield climbs to $\bar a$ as $\mathcal G^K\to\infty$. The goods block still converges to~\eqref{eq:app:wh:mgr} with $\beta^{\mu_F}$ replaced by $\beta^{\mu_F\varsigma/\left(\varsigma-1\right)}$. The decay rates of $\left(R,N,S\right)$ in this case are governed by the same rate-matching logic as the balanced dematerialization construction of Appendix~\ref{sec:app:proofs:bdp}, with $g=0$; we have not completed that algebra.
