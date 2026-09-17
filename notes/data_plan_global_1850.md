@@ -272,8 +272,9 @@ discarded durables. Two readings give calibrations that differ by orders of magn
 
 - **Narrow (pipeline) reading.** `𝒲` is waste after discard and before handling. Empirically this
   is small — most discarded material is collected within months — so `μ` is near 1 and `𝒲` is
-  roughly one year's waste flow. The theory explicitly maintains `μ < 1` and warns that `μ = 1`
-  degenerates, so the narrow reading sits uncomfortably close to a corner the theory avoids.
+  roughly one year's waste flow. Since 2026-09-17 the theory admits `μ = 1` as the one-period
+  buffer and every result holds there, so the narrow reading is a legitimate corner; what it loses
+  is the stockpile as a stock distinct from the flow, and with it the "last mine" content.
 - **Broad (landfill-as-reserve) reading.** `𝒲` includes accumulated landfilled and stockpiled
   material, i.e. everything ever discarded and not recovered. Then `𝒲` is enormous — a century of
   outflows — and `μ` is small, a few percent per year at most, since only a tiny fraction of the
