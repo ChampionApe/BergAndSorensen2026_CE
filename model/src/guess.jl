@@ -34,13 +34,20 @@ function simulate_quantities(mo::Model; Rtarget::Real, gR::Real = 0.0,
     S = Matrix{Float64}(undef, T + 1, NS)
     C = Matrix{Float64}(undef, T + 1, NC)
     S[1, :] .= mo.s0
+    xcap = p.tail === :exp ? log(10.0) / p.xi : 9.0^(1 / p.psi_a) / p.xi   # a(xcap) = 0.9 abar
     for t in 0:T
         K, Sr, X, Pst, MK, Wst = S[t+1, :]
-        KR = share_KR * K
         vw = varpi0
         H = p.mu_h * Wst
         Ttr = vw * H
-        a, _, _ = recycling_yield(p, KR / max(Ttr, EPS_T))
+        # The control is the intensity x = KR/T.  A fixed share of the capital
+        # stock is the guess for KR, and x follows from it, capped where the
+        # yield reaches nine tenths of its ceiling: beyond that a' is flat, and
+        # a guess that starts there (a small treated flow puts KR/T in the
+        # hundreds) gives Newton no gradient to work with.
+        xR = Ttr > 0 ? min(share_KR * K / Ttr, xcap) : 0.0
+        KR = xR * Ttr
+        a, _, _ = recycling_yield(p, xR)
         RR = a * Ttr
         # Extraction is capped at a fixed share of the remaining reserve and
         # discovery at a share of the remaining room below the ceiling, so that
@@ -61,7 +68,7 @@ function simulate_quantities(mo::Model; Rtarget::Real, gR::Real = 0.0,
         Cc = max(cshare * avail, 1e-4 * max(Y, 1.0))
         I = avail - Cc - p.delta * K          # residual; may be negative
         I = max(I, -0.5 * K)                  # never scrap more than half of K
-        C[t+1, :] .= (Cc, I, N, D, vw, KR)
+        C[t+1, :] .= (Cc, I, N, D, vw, xR)
 
         if t < T
             b = period_block(p, t, view(S, t+1, :), view(C, t+1, :))

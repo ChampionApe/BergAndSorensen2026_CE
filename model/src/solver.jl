@@ -264,7 +264,7 @@ function extend_horizon(mo::Model, x::AbstractVector, Tnew::Int;
         (abs(b) > 1e-14 && a * b > 0) ? clamp((a / b)^(1 / span), clampfac[1], clampfac[2]) : 1.0
     end
     gm = [gfac(sol.costates, j) for j in 1:NM]
-    gN, gD, gKR = gfac(sol.controls, IN), gfac(sol.controls, ID), gfac(sol.controls, IKR)
+    gN, gD, gX = gfac(sol.controls, IN), gfac(sol.controls, ID), gfac(sol.controls, IXR)
 
     C = Matrix{Float64}(undef, Tnew + 1, NC)
     C[1:mo.T+1, :] .= sol.controls
@@ -280,7 +280,11 @@ function extend_horizon(mo::Model, x::AbstractVector, Tnew::Int;
             C[t+1, IN]  = min(C[t, IN] * gN, depletion * max(S[t+1, IS], 0.0))
             C[t+1, ID]  = min(C[t, ID] * gD, depletion * max(p.Xmax - S[t+1, IX], 0.0))
             C[t+1, IVW] = clamp(C[t, IVW], 0.0, 1.0)
-            C[t+1, IKR] = clamp(C[t, IKR] * gKR, 0.0, 0.9 * max(S[t+1, IK], 0.0))
+            # the intensity is extrapolated; the capital it implies, x T, is
+            # kept below the capital stock so that KY stays positive
+            Ttr = C[t+1, IVW] * p.mu_h * max(S[t+1, IWS], 0.0)
+            xcap = Ttr > 0 ? 0.9 * max(S[t+1, IK], 0.0) / Ttr : Inf
+            C[t+1, IXR] = clamp(C[t, IXR] * gX, 0.0, xcap)
             b0 = period_block(p, t, view(S, t+1, :), view(C, t+1, :))
             Cres = b0.Y - b0.I - p.delta * b0.K - b0.CN - b0.CD - b0.CW
             C[t+1, IC] = max(Cres, 1e-6 * max(b0.Y, 1.0))

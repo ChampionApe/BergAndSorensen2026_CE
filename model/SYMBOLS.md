@@ -8,7 +8,8 @@ needs a symbol not on this list adds a row here in the same change.
 | document | source | |
 |---|---|---|
 | $K,S,X,P,M^K,\mathcal W$ | `K, S, X, P, MK, Wst` | the six states, in layout order |
-| $C,I,N,D,\varpi,K^R$ | `C, I, N, D, vw, KR` | the six controls |
+| $C,I,N,D,\varpi,x$ | `C, I, N, D, vw, x` | the six controls as the solver carries them: the sixth unknown is the intensity, and `KR` is derived in the block |
+| $x=K^R/T$ | `x` (slot `IXR`) | recycling capital per treated tonne; the unknown in place of $K^R$, because at the no-treatment corner $K^R$ and $T$ vanish together and $x$ is what stays determined (`period.jl`) |
 | $q,p^S,p^X,p^P,p^M,p^{\mathcal W}$ | `q, pS, pX, pP, pM, pWst` | the six costates |
 | $\rho,\eta$ | `rho, eta` | time preference, elasticity of marginal utility |
 | $\delta$ | `delta` | depreciation |

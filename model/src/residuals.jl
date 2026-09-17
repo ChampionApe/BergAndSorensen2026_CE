@@ -88,8 +88,11 @@ function control_residuals_market!(r, p::Params, b, pr, m, e)
     gV = b.alpha * pr.pR + pr.tauP * ((1 - p.dW) + p.dW * b.alpha) -
          grossup(pr.zz, b.Omega, p.omW) * b.mcW
     r[5] = mcp(b.vw, gV, 0.0, 1.0, e)
+    # The recycling-capital margin, in the intensity x = KR/T (period.jl says
+    # why): the complementarity is on x >= 0, which coincides with KR >= 0
+    # whenever T > 0 and stays well posed at the no-treatment corner.
     gK = b.ap * (pr.pR + p.dW * pr.tauP) - pr.rK
-    r[6] = mcp(b.KR, gK, 0.0, Inf, e)
+    r[6] = mcp(b.x, gK, 0.0, Inf, e)
     return r
 end
 
@@ -186,7 +189,7 @@ function control_residuals_planner!(r, p::Params, b, sp, m, e)
     Gv = b.alpha * (sp.Psi - sp.pW) + m[IPP] * ((1 - p.dW) + p.dW * b.alpha)
     r[5] = mcp(b.vw, Gv - grossup(sp.zeta, b.Omega, p.omW) * b.mcW, 0.0, 1.0, e)
     GK = sp.Psi - sp.pW + p.dW * m[IPP]
-    r[6] = mcp(b.KR, b.ap * GK - sp.FKt, 0.0, Inf, e)
+    r[6] = mcp(b.x, b.ap * GK - sp.FKt, 0.0, Inf, e)
     return r
 end
 

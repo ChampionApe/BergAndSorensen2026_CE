@@ -572,7 +572,7 @@ end
 
     # and the profile is single-peaked at zero in each direction the appendix
     # names as a place concavity could fail
-    for ctrl in (IN, II, IKR)
+    for ctrl in (IN, II, IXR)
         pr = deviation_profile(mo, x; control = ctrl, window = 0:40,
                                grid = -0.5:0.1:0.5, verbose = false)
         @test pr.best_gain <= 1e-8 * max(abs(pr.V0), 1.0)

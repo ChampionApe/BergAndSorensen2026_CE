@@ -232,3 +232,43 @@ end
         @test d == 20 || d == -1
     end
 end
+
+@testset "the no-treatment corner" begin
+    # The calibrated set as phase C left it, at municipal handling charges on
+    # the whole handled flow: no tonne is worth treating, so varpi = 0 and
+    # KR = 0 in every period.  That is a legitimate solution -- the lower
+    # corner of the treatment margin -- and the solver must reach it to
+    # tolerance.  Written in KR the recycling-capital row is a 0/0 there
+    # (KR and T vanish together at a fixed ratio) and Newton stalled at
+    # |F| ~ 1e-4 on the last smoothing steps (data/processed/c8_smoke.txt);
+    # written in the intensity x = KR/T it converges.  The fixture is frozen
+    # because task D0b refits the charges and the live file no longer sits at
+    # this corner.
+    fixture = joinpath(@__DIR__, "fixtures", "calibration_notreatment.json")
+    p = calibrated_params(fixture; check = false)
+    s0 = calibrated_states(fixture)
+    mo = Model(p; T = 40, s0 = s0)
+    x, ok, nrm = solve_path(mo, initial_guess(mo; Rtarget = 7.562, warn = false))
+    @test ok
+    @test nrm < 1e-9
+    sol = unpack(mo, x)
+    @test all(b -> abs(b.vw) < 1e-9 && abs(b.KR) < 1e-9, sol.blocks)
+    for t in (1, 21, 41)
+        b = sol.blocks[t]; pr = sol.prices[t]
+        # the intensity is interior and on its margin, a'(x)(pR + dW tauP) = rK,
+        # even though no capital is employed ...
+        @test b.x > 0
+        @test abs(b.ap * (pr.pR + p.dW * pr.tauP) - pr.rK) < 1e-9
+        # ... and at that intensity the marginal treated tonne does not pay,
+        # which is what puts the treatment margin at its corner
+        gV = b.alpha * pr.pR + pr.tauP * ((1 - p.dW) + p.dW * b.alpha) -
+             (1 + pr.zz * b.Omega * p.omW) * b.mcW
+        @test gV < 0
+    end
+    @test compare_residuals(mo, x) < 1e-10
+    @test check_path(mo, x; verbose = false).ledger_rel_error < 1e-7
+    # and solve_long, the route the harness takes, reaches the same corner
+    mo2, x2, ok2, nrm2 = solve_long(p, s0, 60; start_T = 60, guess_kwargs = (; Rtarget = 7.562))
+    @test ok2 && nrm2 < 1e-9
+    @test all(b -> abs(b.vw) < 1e-9, unpack(mo2, x2).blocks)
+end

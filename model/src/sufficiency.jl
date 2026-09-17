@@ -412,7 +412,7 @@ function deviation_profile(mo::Model, x::AbstractVector;
 
     if verbose
         nm = control == IN ? "N (extraction)" : control == II ? "I (investment)" :
-             control == IVW ? "varpi (treatment)" : control == IKR ? "KR (recycling capital)" :
+             control == IVW ? "varpi (treatment)" : control == IXR ? "x (recycling capital per treated tonne)" :
              "control $control"
         @printf("deviation profile in %s over %d periods\n", nm, length(win))
         @printf("%8s %16s\n", "eps", "value gain")
@@ -432,7 +432,7 @@ end
 """
     perturbation_test(mo, x; ndraws, scales, seed, verbose) -> NamedTuple
 
-Random search over feasible deviations: perturbs `(I, N, D, varpi, KR)` over a
+Random search over feasible deviations: perturbs `(I, N, D, varpi, x)` over a
 random window of dates at a random scale, with consumption absorbing the goods
 constraint.  Returns the best gain found, which should be non-positive up to
 numerical error.
@@ -469,7 +469,7 @@ function perturbation_test(mo::Model, x::AbstractVector;
             ctrl[r, IN]   = max(0.0, ctrl[r, IN] * (1 + sc * randn(rng)))
             ctrl[r, ID]   = max(0.0, ctrl[r, ID] * (1 + sc * randn(rng)))
             ctrl[r, IVW]  = clamp(ctrl[r, IVW] + sc * randn(rng), 0.0, 1.0)
-            ctrl[r, IKR]  = max(0.0, ctrl[r, IKR] * (1 + sc * randn(rng)))
+            ctrl[r, IXR]  = max(0.0, ctrl[r, IXR] * (1 + sc * randn(rng)))
         end
         _, blocks, ok = simulate_from_controls(mo, ctrl)
         ok || continue

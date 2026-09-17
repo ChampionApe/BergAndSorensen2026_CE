@@ -87,7 +87,7 @@ export read_calibration, calibrated_params, calibrated_states, calibration_cases
 
 # index constants, exported because scripts index the packed vectors
 export NS, NC, NM, IK, IS, IX, IP, IMK, IWS,
-       IC, II, IN, ID, IVW, IKR, IQ, IPS, IPX, IPP, IPM, IPW
+       IC, II, IN, ID, IVW, IXR, IQ, IPS, IPX, IPP, IPM, IPW
 
 end # module
 

@@ -11,14 +11,12 @@ point.
 
 # state / control / costate layout ------------------------------------------
 const NS = 6   # states:   K, S, X, P, MK, Wst
-const NC = 6   # controls: C, I, N, D, varpi, KR
+const NC = 6   # controls: C, I, N, D, varpi, x  (x = KR/T, the recycling intensity)
 const NM = 6   # costates: q, pS, pX, pP, pM, pWst
 
 const IK, IS, IX, IP, IMK, IWS = 1, 2, 3, 4, 5, 6
-const IC, II, IN, ID, IVW, IKR = 1, 2, 3, 4, 5, 6
+const IC, II, IN, ID, IVW, IXR = 1, 2, 3, 4, 5, 6
 const IQ, IPS, IPX, IPP, IPM, IPW = 1, 2, 3, 4, 5, 6
-
-const EPS_T = 1e-10   # floor on treated tonnage before x = KR/T is formed
 
 """
     period_block(p, t, s, c) -> NamedTuple
@@ -29,12 +27,20 @@ technology is undefined) or a non-positive activity aggregate.
 """
 function period_block(p::Params, t::Int, s::AbstractVector, c::AbstractVector)
     K, S, X, Pst, MK, Wst = s[IK], s[IS], s[IX], s[IP], s[IMK], s[IWS]
-    C, I, N, D, vw, KR = c[IC], c[II], c[IN], c[ID], c[IVW], c[IKR]
+    C, I, N, D, vw, x = c[IC], c[II], c[IN], c[ID], c[IVW], c[IXR]
 
     # --- recycling block ---------------------------------------------------
+    # The solver's unknown is the intensity x = KR/T, not the capital KR.  At
+    # the no-treatment corner T and KR vanish together at a fixed ratio, so
+    # KR is a 0/0 there: written in KR, the Kuhn--Tucker row of the recycling
+    # capital has a Jacobian scaling as 1/T and Newton stalls short of the
+    # corner.  Written in x the row is a'(x)(Psi - pW) = F_K at every T,
+    # including T = 0, where it selects the intensity at which the marginal
+    # treated tonne would be recycled -- exactly the alpha the treatment
+    # margin needs to decide that no tonne is worth treating.
     H = p.mu_h * max(Wst, zero(Wst))
     Ttr = clamp(vw, zero(vw), one(vw)) * H
-    x = KR / max(Ttr, EPS_T)
+    KR = x * Ttr
     a, ap, alpha = recycling_yield(p, x)
     RR = a * Ttr
     R = N + RR

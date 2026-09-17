@@ -64,7 +64,16 @@ structured finite differences: perturbing every third block at once never mixes
 two entries of a row, so one Jacobian costs `3 x 18` residual evaluations
 whatever the horizon. Corner conditions enter through the min-map of the
 complementarity problem, smoothed along a homotopy that finishes at zero so the
-returned solution satisfies the exact Kuhn–Tucker conditions.
+returned solution satisfies the exact Kuhn–Tucker conditions. The
+recycling-capital margin is solved in the intensity `x = K^R/T` rather than in
+`K^R`: at the no-treatment corner `K^R` and `T` vanish together at a fixed
+ratio, the Kuhn–Tucker row written in `K^R` has a Jacobian scaling as `1/T`,
+and Newton stalled there at `|F| ~ 1e-4`; in `x` the row `a'(x)(Psi - pW) = F_K`
+is well posed at every `T`, including `T = 0`, where it selects the intensity
+at which the marginal treated tonne would be recycled -- exactly the `alpha`
+the treatment margin needs to decide that no tonne is worth treating. The
+sixth control of the packed vector is therefore `x` (slot `IXR`), and `K^R = xT`
+is derived in the period block.
 
 A 200-period planner path (3612 unknowns) solves in about 2.5 s.
 
@@ -78,6 +87,10 @@ having been told to:
 - cumulative extraction respects the discovery bound, and cumulative leakage the
   material budget;
 - the planner and market transcriptions agree at the planner corner (~1e-16);
+- the no-treatment corner is reached to tolerance: on the phase C calibration
+  at municipal handling charges (`test/fixtures/calibration_notreatment.json`)
+  the solved path has `varpi = 0` and `K^R = 0` in every period with the
+  intensity interior on its margin and the marginal treated tonne not paying;
 - the solved path converges to the independently computed circular balanced
   growth path — on the baseline, Little's law predicts `R_inf = 2.74` against a
   path value of `2.82` still converging at `T = 200`;
