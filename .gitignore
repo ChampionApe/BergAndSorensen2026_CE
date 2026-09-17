@@ -36,6 +36,11 @@ writing/*/main.pdf
 results/**/*.jld2
 results/**/*.pkl
 
+# The experiment output of model/scripts/run_experiments.jl: one CSV per experiment, rewritten by
+# every run and regenerable from the calibration file. What survives a run is the generated table
+# under writing/quant/Tables/, which IS committed.
+model/output/
+
 # Python (none in the repo today; the Overleaf script is stdlib-only and runs on any interpreter)
 __pycache__/
 *.pyc
