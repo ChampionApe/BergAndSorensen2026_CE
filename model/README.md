@@ -5,7 +5,7 @@ Julia implementation of the quantitative model documented in
 Standard-library dependencies only (`LinearAlgebra`, `SparseArrays`, `Printf`).
 
 ```
-julia --project=. test/runtests.jl           # 742 tests, ~11 s
+julia --project=. test/runtests.jl           # 825 tests, ~14 s
 julia --project=. scripts/run_baseline.jl    # baseline path + policy dials, ~30 s
 julia --project=. scripts/run_sufficiency.jl # convexity, transversality, deviations
 ```
@@ -40,7 +40,7 @@ duplication is worth its cost.
 | `src/period.jl` | within-period definitions, accounting, price block |
 | `src/residuals.jl` | the stacked system, both transcriptions |
 | `src/terminal.jl` | terminal closure, `V_stop`, the shutdown state |
-| `src/longrun.jl` | rest point, circular growth path, closure criterion |
+| `src/longrun.jl` | stationary rest point, circular growth path, closure criterion, long-run classifier |
 | `src/solver.jl` | Newton, continuation in parameters and horizon, shutdown-date search |
 | `src/guess.jl` | starting values |
 | `src/diagnostics.jl` | verification checks, welfare, series accessors |
@@ -77,7 +77,17 @@ having been told to:
   path value of `2.82` still converging at `T = 200`;
 - the closure criterion reproduces the analytic tail results: recycling
   intensity grows at exactly `g/(1+psi)` on a power tail and linearly in time on
-  an exponential one.
+  an exponential one;
+- `classify_longrun` reads the taxonomy of the theory note's Section 3 off a
+  path -- floor and ceiling from the parameters, closure from the tail
+  criterion, survival from Little's law against the path's retained endowment
+  -- and returns its margins with the state. The baseline is `:C` (`M_inf =
+  45.2`, residence time 57 periods at `T = 60`). Diagnostic only: it names the
+  state, it does not verify convergence to it;
+- the stationary benchmark of Appendix D is a return point: with the trends
+  off, the linear aggregate and the terminal closure at `Gam = 1`, a path
+  started 3% away from the closed-form dematerialized rest point returns to
+  it, goods block and prices within 1e-3 at `T = 60`.
 
 ## Sufficiency
 

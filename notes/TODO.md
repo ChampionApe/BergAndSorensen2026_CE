@@ -24,8 +24,8 @@ leaves a gap; a new one takes the next free number.
    of the surrounding text may go.
 11. **`notes/data/` and the data appendix of the quantitative note exist as a rule, not as files.**
    `docs_style.md` §5 says what goes where; the first file lands with the first decision under 5.
-4. **The two appendix stubs**, `Appendix_exogenousPhiI.tex` and `Appendix_constantPhiI.tex`. Both are
-   three lines. Either write them or drop them from `main.tex`.
+4. *(closed 2026-09-17 — both stubs dropped from `main.tex` and deleted, plan 2B of
+   `notes/plan_longrun_restructure.md`.)*
 
 ## Calibration and data
 

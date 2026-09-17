@@ -26,6 +26,8 @@ needs a symbol not on this list adds a row here in the same change.
 | $\phi^I$ | `phiI` | durables coefficient |
 | $\Omega^{N,S},\Omega^{D,S}$ | `OmNS, OmDS` | nature-attributable intensities |
 | $\bar X_{\max}$ | `Xmax` | exhaustion point of discovery |
+| $\mathcal M_\infty$ | `Minf` | retained material endowment, `M^K + W` in the limit |
+| $\mathcal T$ | `residence` (`Tres` locally) | residence time $1/\mu+\sigma_\infty/\delta$ of Little's law |
 | — | `phiW, phiz, phiP, phiX` | the four policy dials; no document symbol |
 
 **Three clashes are broken here and nowhere else.** The document's $\mu$, $\beta$ and
