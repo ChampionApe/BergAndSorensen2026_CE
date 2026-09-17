@@ -642,5 +642,7 @@ end
     @test series(sols, :a)[end] > series(solh, :a)[end]
 end
 
+include("test_experiments.jl")   # the calibration interface and the experiment harness
+
 end # testset
 

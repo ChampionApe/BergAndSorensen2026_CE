@@ -25,6 +25,8 @@ Layout
   `solver.jl`      Newton with a structured sparse finite-difference Jacobian
   `guess.jl`       starting values
   `diagnostics.jl` verification checks, welfare, series accessors
+  `json.jl`        minimal JSON reader, for the calibration file only
+  `calibration.jl` the illustrative set, and the calibrated set read from JSON
 """
 module CircularEconomy
 
@@ -40,6 +42,7 @@ include("solver.jl")
 include("guess.jl")
 include("diagnostics.jl")
 include("sufficiency.jl")
+include("json.jl")         # defines the reader calibration.jl uses
 include("calibration.jl")
 
 # parameters and derived quantities
@@ -76,6 +79,10 @@ export convexity_report, wellposed_report, tvc_report, perturbation_test, deviat
 
 # illustrative parameter sets (not calibrated)
 export baseline_params, baseline_states
+
+# the calibrated set, read from the pipeline's JSON
+export read_calibration, calibrated_params, calibrated_states, calibration_cases,
+       calibration_meta, calibration_sources, calibration_bounds
 
 # index constants, exported because scripts index the packed vectors
 export NS, NC, NM, IK, IS, IX, IP, IMK, IWS,
