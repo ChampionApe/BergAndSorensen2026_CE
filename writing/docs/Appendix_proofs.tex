@@ -1,0 +1,399 @@
+\section{The three long-run states}\label{sec:app:proofs}
+
+This appendix carries the arguments behind the taxonomy of Section~\ref{sec:sp:longrun:taxonomy}, one subsection per state. Each subsection has two parts. \emph{General primitives} states what follows from Sections~\ref{sec:sp:setup} and~\ref{sec:sp:opt} and the assumptions of Section~\ref{sec:sp:longrun:scope} alone, for any yield function, technology and cost functions with the properties of Section~\ref{sec:sp:setup:primitives}. The \emph{workhorse construction} states what is shown for the explicit forms of Appendix~\ref{sec:app:workhorse}, in the Cobb--Douglas case $\varsigma=1$ with output elasticities $\beta_K\equiv\mu_F\beta$ and $\gamma\equiv\mu_F\left(1-\beta\right)$; a rate table derived there is a property of those forms and is not a theorem about the model. The constructions are candidate paths verified against the necessary conditions of Section~\ref{sec:sp:opt:foc}, and Appendix~\ref{sec:app:suff} says what turns them into optima. Throughout, $\tilde F_K\equiv F_K\left(1-\zeta\Omega^Y\right)$ is the material-adjusted marginal product of capital, the right-hand side of the recycling-capital margin~\eqref{eq:sp:sum:KR-interior}, and $\mathcal M_\infty$ and $\mathcal T$ are the retained material endowment and the residence time of~\eqref{eq:sp:lr:little}.
+
+\subsection{Collapse (A)}\label{sec:app:proofs:collapse}
+
+\subsubsection{General primitives}\label{sec:app:proofs:collapse:general}
+
+Let $\mathcal O\equiv\left\{t:R_t\ge\bar R\right\}$ be the operating set of Definition~\ref{def:lr:collapse}. Idle periods have $R_t=0$, because the region $0<R<\bar R$ produces nothing and is never operated (Section~\ref{sec:sp:opt:foc}).
+
+\begin{proposition}[finite operating time]\label{prop:app:pf:finite}
+Let $\bar R>0$.
+\begin{enumerate}
+\item Under the hard ceiling, $\#\mathcal O\le\bar{\mathcal R}/\bar R$ on every feasible path, with $\bar{\mathcal R}$ from~\eqref{eq:sp:lr:throughput}.
+\item Under the soft ceiling, on every feasible path along which the variables converge in the sense of Assumption~\ref{ass:lr:convergence} and $\mathcal O$ is infinite: $\mathcal O$ is cofinite; the loop closes, $\sum_t\left(1-a_t\right)<\infty$ with $a\varpi\to1$ and $x\to\infty$; and the retained endowment satisfies $\mathcal M_\infty\ge\bar R\,\mathcal T$.
+\end{enumerate}
+Consequently a path is in state A whenever the ceiling is hard, and, under the soft ceiling, whenever $\mathcal M_\infty<\bar R\,\mathcal T$ or the leakage rate $1-a\left(x_t\right)$ along the recycling-capital margin is not summable; every path is in state A when $\mu\mathcal B<\bar R$.
+\end{proposition}
+
+Part 1 is the duration bound~\eqref{eq:sp:lr:duration}, which uses no optimality and holds whatever the trend. For part 2, Assumption~\ref{ass:lr:convergence} makes $R_t$ converge, and since $R_t\in\left\{0\right\}\cup\left[\bar R,\infty\right)$ takes values at or above $\bar R$ infinitely often, its limit is at least $\bar R$ and $R_t\ge\bar R$ from some date $T_0$ on: an infinite operating set is cofinite, so a shutdown followed by a restart happens at most finitely often. Proposition~\ref{prop:lr:growth} then applies from $T_0$: $\sum_t\left(1-a_t\varpi_t\right)<\infty$, hence $a_t\to1$ and $\varpi_t\to1$ since both are bounded by one, $\sum_t\left(1-a_t\right)\le\sum_t\left(1-a_t\varpi_t\right)<\infty$, and the stockpile carries the floor. Both anthropogenic stocks converge under Assumption~\ref{ass:lr:convergence}, so Lemma~\ref{lem:app:pf:little} applies and gives $R_\infty=\mathcal M_\infty/\mathcal T$ with $R_\infty=\lim_tR_t\ge\bar R$. The consequences are the contrapositive, with Proposition~\ref{prop:app:pf:closure} supplying the form the leakage rate takes along the recycling-capital margin, and the last clause follows from $\mathcal M_\infty\le\mathcal B$ and $\mathcal T\ge1/\mu$.
+
+Two remarks. The knife-edge $\mathcal M_\infty=\bar R\,\mathcal T$, perpetual operation at exactly the floor, pays for $\bar R$ tonnes per period to run the technology at zero effective input; we do not classify it. And the proposition says when the operating time is finite, not when it ends: the last operating date is a discrete comparison between operating and not operating, which the workhorse construction makes computable. After the last operating period, consumption is financed from the capital stock alone and converges to zero, as Definition~\ref{def:lr:collapse} records; that the aftermath has an interior solution and a finite value is condition (iii) of Assumption~\ref{ass:lr:wellposed}, derived below for CRRA utility.
+
+\subsubsection{The shutdown and its aftermath}\label{sec:app:workhorse:shutdown}
+
+This part makes state~A explicit for the workhorse forms, beyond the duration bound~\eqref{eq:sp:lr:duration} and Proposition~\ref{prop:app:pf:finite}. Three things can be said exactly.
+
+\smalltitle{Hotelling for the multiplied budget.} Under the hard ceiling, Lemma~\ref{lem:lr:throughput} bounds cumulative material input by $\bar{\mathcal R}=\left(S_0+\bar X_{\max}-X_0\right)+\bar a\mathcal B/\left(1-\bar a\right)$, so the material era is a cake-eating problem in \emph{throughput} rather than in reserves. Consider the relaxed problem that keeps the goods block and the cumulative bound $\sum_{t\le T}R_t\le\bar{\mathcal R}$ but drops the period-by-period cap $R_t\le N_t+\bar a\mu\mathcal W_t$; its value is an upper envelope for the true problem. Its first-order condition in $R_t$, where the floor is slack, is $\beta^t\lambda_t\Psi_t=$ constant, that is
+\begin{align}
+\frac{\Psi_{t+1}}{\Psi_t} &= 1+r_{t+1}
+\qquad\text{while }R_t>\bar R .
+\label{eq:app:wh:hotelling}
+\end{align}
+\emph{The material value rises at the social discount rate --- Hotelling's rule applied not to the reserve but to the recycling-multiplied budget.} This is the sense in which circularity is a transition technology in the collapse cells: it multiplies $\bar{\mathcal R}$ by $\left(1-\bar a\right)^{-1}$ and thereby lowers the level of the whole $\Psi$ path, without touching its slope. With $\Psi\simeq\gamma Y/R^{e}$ the rule implies that $R^{e}_t$ falls whenever $\Psi$ outruns output, which under the maintained assumptions it eventually does.
+
+\smalltitle{The shutdown is forced, and it is discrete.} Since $R_t\ge\bar R$ in every operating period and $\sum_tR_t\le\bar{\mathcal R}$, production runs for at most $\bar{\mathcal R}/\bar R$ periods, so the path~\eqref{eq:app:wh:hotelling} cannot continue indefinitely however slowly $R^e$ declines. With the Cobb--Douglas aggregate the floor is never \emph{reached} --- $Y=0$ at $R=\bar R$ --- so what ends the era is not a boundary being touched but the budget running out underneath it: at the last operating date $T^\dagger$ output is strictly positive and at $T^\dagger+1$ it is zero. Which date that is follows from a scalar comparison. Let $\Lambda^{\mathcal R}\equiv\beta^t\lambda_t\Psi_t$ be the constant of~\eqref{eq:app:wh:hotelling} and $V^{\mathrm{stop}}$ the value of the shutdown state below. The era runs one period longer exactly when
+\begin{align}
+\beta^{T+1}\left[u\!\left(C_{T+1}\right)-u\!\left(C^{\mathrm{stop}}_{T+1}\right)\right]
+&\;\ge\;\Lambda^{\mathcal R}R_{T+1}
++\beta^{T+1}\left[\text{continuation gap}\right],
+\label{eq:app:wh:shutdown}
+\end{align}
+the left-hand side the flow gain from operating and the right-hand side the material it consumes, valued at the common Hotelling price, plus the difference in continuation values. Nothing here is a corner condition on a first-order margin: the comparison is between operating and not operating, which is why Section~\ref{sec:sp:opt:foc} calls it a discrete shutdown and why marginal essentiality decides nothing once $\bar R>0$.
+
+\smalltitle{Life after the shutdown: cake-eating in capital.} What makes~\eqref{eq:app:wh:shutdown} operational is that the shutdown state is available in closed form. After $T^\dagger$, $Y=0$ and the resource constraint~\eqref{eq:sp:setup:resource-constraint} reads $0=C+I+\delta K+C^W$; with $\varpi=0$ the handling cost vanishes and $I$ may be negative, so $C_t=\left(1-\delta\right)K_t-K_{t+1}$. The economy is not immediately destitute: it eats its capital stock. Under CRRA the Euler equation $C_t^{-\eta}=\beta\left(1-\delta\right)C_{t+1}^{-\eta}$ and the transition give the exact policy
+\begin{align}
+C_t &= s^{\mathrm{stop}}K_t,
+&
+K_{t+1} &= \gamma_C K_t,
+&
+\gamma_C &\equiv\left[\frac{1-\delta}{1+\rho}\right]^{1/\eta},
+&
+s^{\mathrm{stop}} &\equiv \left(1-\delta\right)-\gamma_C\;>\;0,
+\label{eq:app:wh:cake}
+\end{align}
+so consumption declines geometrically at factor $\gamma_C$ and the value of stopping is
+\begin{align}
+V^{\mathrm{stop}}\!\left(K,\mathcal W,P\right) &=
+\frac{\left(s^{\mathrm{stop}}K\right)^{1-\eta}}{\left(1-\eta\right)\left[1-\beta\gamma_C^{1-\eta}\right]}
+-\sum_{j=0}^{\infty}\beta^{j}\,v\!\left(P_j\right),
+\qquad
+\begin{aligned}
+\Xi_j &= \mu\left(1-\mu\right)^{j}\mathcal W,\\
+P_{j+1} &= P_j+\Xi_j-\theta\!\left(P_j\right)P_j,
+\end{aligned}
+\label{eq:app:wh:Vstop}
+\end{align}
+with $P_0=P$. Both conditions this construction needs --- a positive consumption rate,
+$\gamma_C<1-\delta$, and a finite value, $\beta\gamma_C^{1-\eta}<1$ --- turn out to be the same
+restriction on primitives,
+\begin{align}
+\left(1-\delta\right)^{1-\eta} &< 1+\rho ,
+\label{eq:app:wh:cake-condition}
+\end{align}
+and it is not innocuous: at $\delta=0.05$ it requires $\rho>2.6\%$ per period when $\eta=1.5$ and
+$\rho>5.3\%$ when $\eta=2$. Where it fails, the post-shutdown problem has \emph{no} interior
+solution --- the household would spread a geometrically shrinking cake over an infinite horizon in a
+way whose present value diverges --- and collapse paths cannot be ranked at all. This is the
+concrete form of the utility-degeneracy caveat recorded in Section~\ref{sec:sp:longrun:scope}, and
+it is a restriction the quantitative calibration has to respect rather than a technicality. The
+first term of~\eqref{eq:app:wh:Vstop} is then a closed-form cake-eating value; the second is the \emph{legacy emission stream} of Section~\ref{sec:sp:longrun:class}, the draining stockpile passing to the environment untreated, and it is a one-dimensional recursion in $P$ that the quantitative implementation evaluates directly. One caveat remains beyond~\eqref{eq:app:wh:cake-condition}. Retaining $\varpi=0$ after the shutdown is optimal only where $c^c$ exceeds the diversion gain $p^P\left(1-d^W\right)$ evaluated in the shutdown state; where it does not, treatment survives the economy that generated the waste, financed out of the capital being eaten, and $V^{\mathrm{stop}}$ acquires an extra margin, so~\eqref{eq:app:wh:Vstop} is then a lower bound on the value of stopping. Note also that $u\left(0\right)=-\infty$ for $\eta\ge1$ is harmless here: consumption never reaches zero in finite time under~\eqref{eq:app:wh:cake}. Subject to these, equation~\eqref{eq:app:wh:Vstop} is what the numerical model uses as the terminal value function on collapse paths. One omission is recorded rather than repaired: the legacy recursion in~\eqref{eq:app:wh:Vstop} drains the stockpile with no inflow, whereas along the aftermath the capital being eaten keeps releasing its embodied material into it, $\mathcal W_{j+1}=\left(1-\mu\right)\mathcal W_j+\delta M^K_j$ with $M^K_{j+1}=\left(1-\delta\right)M^K_j$, so $V^{\mathrm{stop}}$ omits the $\delta M^K$ inflow and understates the legacy damage. The quantitative implementation carries the same omission, and closing it is an open item there.
+
+\subsection{Balanced dematerialization (B)}\label{sec:app:proofs:bdp}
+
+\subsubsection{General primitives}\label{sec:app:proofs:bdp:general}
+
+\begin{lemma}[feasibility of exponential dematerialization]\label{lem:app:pf:bdp}
+Let a path satisfy Definition~\ref{def:lr:bdp} with decay rate $\nu>0$, and write $\nu_e\equiv1-e^{-\nu}$ for the per-period decay share.
+\begin{enumerate}
+\item The path requires $\bar R=0$, and then respects every constraint of Section~\ref{sec:sp:setup:primitives} with room to spare: $\sum_tN_t$, $\sum_tD_t$ and the cumulated leakage $\sum_t\left(1-a_t\varpi_t\right)H_t$ are finite, so the bounds of Lemmas~\ref{lem:lr:stocks} and~\ref{lem:lr:leakage} bind only in the limit; $\Xi\to0$ and, by Assumption~\ref{ass:lr:theta}, $P\to0$.
+\item The stockpile rides along when $\mu>\nu_e$,
+\begin{align}
+\mathcal W_t &= \frac{W_t}{\mu-\nu_e}\left(1+o\left(1\right)\right),
+\label{eq:app:pf:stockpile}
+\end{align}
+so that $\mathcal W$, $H$ and $T$ decay at the rate $\nu$ of the flows. When $\mu\le\nu_e$ the stockpile is the slowest material reservoir, $\mathcal W_t\ge\left(1-\mu\right)^t\mathcal W_0$, and its drainage caps the decay of the whole block: since $R\ge R^R=a\varpi\mu\mathcal W$ with $a\varpi\to\bar a>0$, no path with $\nu>-\ln\left(1-\mu\right)$ exists, and the terminal decay rate of every material flow is the drainage rate $-\ln\left(1-\mu\right)$.
+\end{enumerate}
+\end{lemma}
+
+Part 1: with $\bar R>0$, $R_t\ge\bar R$ in every operating period, so $R$ cannot decay to zero while production continues; with $\bar R=0$, exponentially decaying flows are summable, and $\Xi\le H$ decays with them. Part 2 solves the transition~\eqref{eq:sp:setup:wastestock} with $W_t=W_0e^{-\nu t}$,
+\begin{align}
+\mathcal W_t &= \left(1-\mu\right)^t\mathcal W_0+W_0\left(1-\mu\right)^{t-1}\sum_{s=0}^{t-1}\left(\frac{e^{-\nu}}{1-\mu}\right)^{s},
+\label{eq:app:pf:stockpile-sum}
+\end{align}
+whose second term is dominated by its last summand when $e^{-\nu}>1-\mu$, which gives~\eqref{eq:app:pf:stockpile}, and by its first when $e^{-\nu}<1-\mu$, which gives decay at factor $1-\mu$; at equality the sum grows linearly in $t$ and the stockpile decays at rate $\nu$ up to a polynomial factor. At the buffer corner $\mu=1$ the stockpile is $\mathcal W_{t+1}=W_t$ and always rides along. What the lemma does not deliver is the pair $\left(g,\nu\right)$ itself: the rates are determined by the production side and the extraction margin together, which is a statement about functional forms, and the workhorse construction carries it.
+
+\subsubsection{Balanced dematerialization: rate matching}\label{sec:app:workhorse:bdp}
+
+\emph{This subsection is written for $\bar R=0$ throughout.} A balanced dematerialization path requires the material flow to decay exponentially while effective materials hold up, and with $\bar R>0$ that is not available: $Z=BR^e$ vanishes at the floor whatever $B$ does, so no amount of material-augmenting progress sustains a decaying material flow. The rate matching below is therefore the $\bar R=0$ analysis; what replaces it when $\bar R>0$ --- the perpetual circular growth state --- is characterised in Section~\ref{sec:sp:longrun:class} and constructed in Section~\ref{sec:app:workhorse:cbgp}.
+
+Under Assumption~\ref{ass:lr:tech} with the Cobb--Douglas aggregate ($\varsigma=1$), write $\beta_K\equiv\mu_F\beta$ and $\gamma\equiv\mu_F\left(1-\beta\right)$ for the output elasticities, so $Y=Ae^{-\kappa P}K^{\beta_K}\left(BR\right)^{\gamma}$. Posit the BDP ansatz of Definition~\ref{def:lr:bdp}, with all rates per-period log rates as in Section~\ref{sec:sp:longrun}: goods block at rate $g$, material flows at rate $\nu$ ($R,N,W,T,M^K\propto e^{-\nu t}$), stocks $S$ and $\bar X_{\max}-X$ decaying at rates $\nu_S,\nu_X$, and $\nu_e\equiv1-e^{-\nu}$ the per-period decay share. Collecting growth-rate equations from the structure of Sections~\ref{sec:sp:setup:primitives}--\ref{sec:sp:opt}:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Margin & Rate equation & Source \\
+\midrule
+Production & $g=g_A+\beta_Kg+\gamma\left(g_B-\nu\right)$ & $Y=AK^{\beta_K}\left(BR\right)^{\gamma}$, $P\to0$ \\
+Interest & $\ln\left(1+r\right)\to\ln\left(1+\rho\right)+\eta g$ & Euler equation~\eqref{eq:sp:sum:Cgrowth}, bounded wedge \\
+Material value & $\Psi\sim\gamma Y/R$: rate $g+\nu$ & $F_R=\gamma Y/R$ \\
+Waste price & $p^W\to-\dfrac{\bar a\varpi\,\Psi}{1-\bar a\varpi}\cdot\text{const.}$: rate $g+\nu$ & rest-point waste margin~\eqref{eq:sp:sum:W-limit}, $a\to\bar a$, $\varpi\to1$ \\
+Wedges & $\zeta\Omega^j=O\left(1\right)$ & $\zeta\sim p^W$ up, $\Omega\sim R/Y$ down \\
+Stockpile & $\mathcal W_t=\dfrac{W_t}{\mu-\nu_e}\left(1+o\left(1\right)\right)$: rate $\nu$ (for $\mu>\nu_e$) & $\mathcal W_{t+1}=\left(1-\mu\right)\mathcal W_t+W_t$ \\
+Ledger & $\nu_W=\nu_N=\nu$ & collected ledger~\eqref{eq:sp:setup:ledger-collected} \\
+Extraction & $\mu_N\nu_S=g+\nu$ & $C^N_N\sim c_N\kappa_N\left(S_{\mathrm{ref}}/S\right)^{\mu_N}$ tracks $\Psi$ \\
+Reserve & $\nu_S=\nu$ & $S_t=\sum_{s\ge t} N_s$ \\
+Exploration & $\mu_D\nu_D=g+\nu$, $\nu_X=\nu_D$ & symmetric to extraction, with $\bar X_{\max}-X_t=\sum_{s\ge t}D_s$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The exploration row is stated with a decay rate of its own, and this is not cosmetic. The ledger ties $N$ to $R$, because virgin extraction is what covers leakage, but nothing ties $D$: discovery enters the material accounts only through the displaced mass $\Omega^{D,S}D$ in $\mathcal N$. Imposing $\nu_X=\nu$ alongside $\mu_D\nu_X=g+\nu$ would demand the knife-edge $\mu_D=\mu_N$; the correct statement is $\nu_D=\left(g+\nu\right)/\mu_D=\left(\mu_N/\mu_D\right)\nu$, so exploration decays at its own rate, faster or slower than extraction as $\mu_D\gtrless\mu_N$. Consistency of the ledger row then requires $\nu_D\ge\nu$, i.e.\ $\mu_D\le\mu_N$: with $\mu_D>\mu_N$ the displaced mass from exploration decays more slowly than everything else and eventually becomes the dominant waste source, giving a different BDP with $\nu_W=\nu_D$. We take $\mu_D\le\mu_N$ throughout, and note that the issue is vacuous whenever exploration ceases in finite time, which is the generic case.
+
+The production row alone gives the growth rate reported in the main text,
+\begin{align}
+g &= \frac{g_A+\gamma\left(g_B-\nu\right)}{1-\beta_K},
+\label{eq:app:wh:g}
+\end{align}
+and utility convergence (condition (i) of Assumption~\ref{ass:lr:wellposed}) requires $\ln\left(1+\rho\right)>\left(1-\eta\right)g$; the $p^M$ sum converges provided $\left(1-\delta\right)e^{g+\nu}<1+r$, and the stockpile costate's provided $\left(1-\mu\right)e^{g+\nu}<1+r$, the two inequalities named in condition (ii) of Assumption~\ref{ass:lr:wellposed}, its balanced-growth form being
+\begin{align}
+p^{\mathcal W}_t &= \frac{\mu\,e^{g+\nu}}{1+r-\left(1-\mu\right)e^{g+\nu}}\,h_t
+\label{eq:app:wh:pWbg}
+\end{align}
+rather than the rest-point form $\mu h/\left(r+\mu\right)$ --- the correction factor the waste-price row above absorbs into its constant. If $\mu\le\nu_e$ the stockpile decays at rate $-\ln\left(1-\mu\right)$ rather than $\nu$ and becomes the slowest material reservoir; the table assumes $\mu>\nu_e$.
+
+\smalltitle{Solving the system.} Combining the extraction and reserve rows gives $\mu_N\nu=g+\nu$, so the two rows that matter are
+\begin{align}
+\left(1-\beta_K\right)g &= g_A+\gamma\left(g_B-\nu\right),
+&
+\left(\mu_N-1\right)\nu &= g,
+\label{eq:app:wh:bdp-system}
+\end{align}
+two linear equations in the two unknowns $\left(g,\nu\right)$. It is essential that they be solved jointly: reading the production row as determining $g$ and then asking the extraction row to deliver $\nu$ over-determines a system that is exactly determined, and manufactures a spurious knife-edge at $\mu_N=1$. Substituting,
+\begin{align}
+\boxed{\;
+\nu = \frac{g_A+\gamma g_B}{\left(\mu_N-1\right)\left(1-\beta_K\right)+\gamma},
+\qquad
+g = \left(\mu_N-1\right)\nu = \frac{\left(\mu_N-1\right)\left(g_A+\gamma g_B\right)}{\left(\mu_N-1\right)\left(1-\beta_K\right)+\gamma}\;}
+\label{eq:app:wh:bdp-solution}
+\end{align}
+whenever the denominator is positive, $\Delta\equiv\left(\mu_N-1\right)\left(1-\beta_K\right)+\gamma>0$. The stock-effect elasticity of extraction costs, $\mu_N$, is the parameter that selects the regime, and it does so cleanly:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+& Decay rate $\nu$ & Growth rate $g$ \\
+\midrule
+$\mu_N>1$ (costs rise faster than the stock falls) & $>0$ & $>0$: sustained growth \\
+$\mu_N=1$ (unit elasticity) & $g_B+g_A/\gamma$ & $0$: sustained consumption \emph{level} \\
+$\mu_N<1$, $\gamma>\left(1-\mu_N\right)\left(1-\beta_K\right)$ & $>0$ & $<0$: managed decline \\
+$\mu_N<1$, $\gamma\le\left(1-\mu_N\right)\left(1-\beta_K\right)$ & --- & no exponential BDP \\
+\bottomrule
+\end{tabular}
+\end{center}
+The knife-edge $\mu_N=1$ is the boundary case named in Section~\ref{sec:sp:longrun:sketches}: it is exactly the configuration in which material-augmenting progress sustains a constant consumption level, $g=0$, by offsetting physical decay $\nu=g_B+g_A/\gamma$ with effective abundance. Only the last row is a genuine breakdown. There the material block cannot be squeezed at any constant rate --- extraction costs do not rise fast enough, relative to the output elasticity of materials, to make a geometrically shrinking flow worth its price --- and the path leaves the exponential family: extraction ends in finite time and what follows is carried by recycled material alone, which is to say that the economy transits towards state~C or, under a ceiling that blocks it, collapses.
+
+One economic implication of the table is worth recording separately. Since $p^W<0$ grows in magnitude at rate $g+\nu$, the displaced-mass term $-p^W\Omega^{D,S}$ eventually \emph{subsidises} exploration in~\eqref{eq:sp:sum:D}: on a deep squeeze path, even overburden is future feedstock. The quantitative model will tell us whether this margin is a curiosity or a driver.
+
+\subsection{Perpetual circular growth (C)}\label{sec:app:proofs:circular}
+
+\subsubsection{General primitives}\label{sec:app:proofs:circular:general}
+
+Three results hold for every technology with the properties of Section~\ref{sec:sp:setup:primitives}. Proposition~\ref{prop:lr:growth} is the accounting content of state C: the loop closes and the stockpile carries the floor. Little's law fixes the level of the loop. The closure criterion says which yield tails let the loop close along the recycling-capital margin.
+
+\smalltitle{Little's law.} The level $R_\infty$ of Definition~\ref{def:lr:circular} is not a free parameter; it is fixed by the mass the economy has retained.
+
+\begin{lemma}[Little's law for matter]\label{lem:app:pf:little}
+On any feasible path along which $N\to0$, $a\varpi\to1$, and $R$ and the two anthropogenic stocks converge, the retained material endowment
+\begin{align}
+\mathcal M_\infty \;\equiv\; \lim_{t\to\infty}\left(M^K_t+\mathcal W_t\right)
+&= M^K_0+\mathcal W_0+\sum_{t=0}^\infty\left(N_t+\mathcal N_t\right)-\sum_{t=0}^\infty\left(1-a_t\varpi_t\right)H_t
+\;\le\;\mathcal B
+\label{eq:app:wh:cbgp:retained}
+\end{align}
+and the circulating flow satisfy
+\begin{align}
+\boxed{\;R_\infty \;=\; \frac{\mathcal M_\infty}{\mathcal T},
+\qquad
+\mathcal T \;\equiv\; \frac{1}{\mu}+\frac{\sigma_\infty}{\delta}\;}
+\label{eq:app:wh:cbgp:little}
+\end{align}
+with $\sigma_\infty\equiv\lim_t\Phi^IG_t/R_t$ the asymptotic storage share, which exists. Survival, $R_\infty>\bar R$, therefore reads
+\begin{align}
+\mathcal M_\infty &> \bar R\,\mathcal T,
+&&\text{with the primitive necessary condition}
+&
+\mu\,\mathcal B &> \bar R .
+\label{eq:app:wh:cbgp:survival}
+\end{align}
+\end{lemma}
+
+The first display is the collected ledger~\eqref{eq:sp:setup:ledger-collected} summed over all periods: the budget of~\eqref{eq:sp:lr:budget} less whatever was never extracted and whatever leaked on the way. For the second, a converging stockpile has inflow equal to outflow, so its transition~\eqref{eq:sp:setup:wastestock} gives $W_t\to\mu\mathcal W_\infty$, and $R=N+a\varpi\mu\mathcal W$ with $N\to0$ and $a\varpi\to1$ gives $R_\infty=\mu\mathcal W_\infty$; a converging embodied stock likewise has $\Phi^IG_t\to\delta M^K_\infty$ from~\eqref{eq:sp:setup:Phi-motion}, which is what makes $\sigma_\infty$ exist and equal $\delta M^K_\infty/R_\infty$. Adding the two stocks, $\mathcal M_\infty=R_\infty/\mu+\sigma_\infty R_\infty/\delta$. The primitive condition follows from $\mathcal M_\infty\le\mathcal B$ and $\mathcal T\ge1/\mu$.
+
+The boxed relation is Little's law for matter: \emph{the circulating flow is the retained stock divided by the mean residence time of a tonne per pass through the economy}, $1/\mu$ periods waiting in the stockpile plus $\sigma_\infty/\delta$ periods locked in durables. The survival condition is the exact form of the bound~\eqref{eq:sp:lr:survival}, sharpened by the observation that material parked in the capital stock is material \emph{not} circulating: for given $\mathcal M_\infty$, a more durable economy (small $\delta$, large $\phi^I$) supports a \emph{smaller} sustainable throughput, because a larger fraction of its matter is standing still.
+
+\smalltitle{The closure criterion.} Define the \emph{tail elasticity} of the yield function,
+\begin{align}
+\epsilon_a\left(x\right) &\equiv \frac{x\,a'\left(x\right)}{1-a\left(x\right)},
+&&\text{so that}
+&
+J\left(x\right)&\equiv\frac{1-a\left(x\right)}{a'\left(x\right)}=\frac{x}{\epsilon_a\left(x\right)} .
+\label{eq:app:wh:cbgp:elasticity}
+\end{align}
+The elasticity measures how much yield a proportional increase in recycling intensity buys at the frontier, and it classifies the admissible technologies: $\epsilon_a\to\infty$ for exponential tails, $\epsilon_a\to\psi$ for power tails~\eqref{eq:app:wh:a-power}, $\epsilon_a\to0$ for logarithmic ones. Note also $1-\alpha=\left(1-a\right)+a'x=L\left(1+\epsilon_a\right)$, so $\alpha\to1$ requires $L\epsilon_a\to0$ and not merely $L\to0$.
+
+\begin{proposition}[closure criterion, general form]\label{prop:app:pf:closure}
+Let a path have $R\to R_\infty>0$, $\varpi\to1$ and the recycling-capital margin~\eqref{eq:sp:sum:KR-interior} interior from some date on, and write $\kappa_t\equiv\tilde F_{K,t}/\mathcal G^K_t$ for the material-adjusted marginal product of capital relative to the value of a recovered tonne. Then the margin has the unique solution $x_t=\left(a'\right)^{-1}\!\left(\kappa_t\right)$, $x_t\to\infty$ if and only if $\kappa_t\to0$, and the per-period leakage rate is
+\begin{align}
+L_t \;\equiv\; 1-a\left(x_t\right) \;=\; J\left(x_t\right)\kappa_t
+\;=\; \frac{\tilde F_{K,t}\,K^R_t}{\mathcal G^K_t\,T_t}\cdot\frac{1}{\epsilon_a\left(x_t\right)} .
+\label{eq:app:pf:leakage}
+\end{align}
+The loop closes, that is, the path is consistent with Lemma~\ref{lem:lr:leakage}, if and only if
+\begin{align}
+\sum_t J\!\left(\left(a'\right)^{-1}\!\left(\kappa_t\right)\right) \;<\;\infty .
+\label{eq:app:pf:criterion}
+\end{align}
+\end{proposition}
+
+Uniqueness is $a''<0$. The first equality in~\eqref{eq:app:pf:leakage} is $L=J\cdot a'$ evaluated at the margin $a'\left(x_t\right)=\kappa_t$, and the second substitutes $x_t=K^R_t/T_t$ from~\eqref{eq:sp:setup:recycling-crs}. Since $H_t\to\mu\mathcal W_\infty=R_\infty>0$ and $\varpi_t\to1$, Lemma~\ref{lem:lr:leakage} holds if and only if $\sum_tL_t<\infty$, which is~\eqref{eq:app:pf:criterion}. Read economically, \eqref{eq:app:pf:leakage} says that \emph{the leakage rate is the capital cost of the recycling stock per treated tonne, relative to the value of the material it recovers, deflated by the tail elasticity}: a closed loop is bought either by devoting a large capital stock to recovery or by a technology whose yield responds elastically at the frontier. The proposition is general in the yield function and in the path of $\kappa_t$. What it does not say is how fast $\kappa_t$ falls. On a state-C path $\mathcal G^K$ grows with the goods block while $\tilde F_K$ converges under Assumption~\ref{ass:lr:convergence}, so $\kappa_t\to0$ at the growth rate $g$ and the margin is always satisfiable; the constant in front, and hence the verdict of~\eqref{eq:app:pf:criterion} for a given tail, is where the functional forms enter. The workhorse construction makes it explicit, $\kappa_t=\mathcal Ae^{-gt}$ in~\eqref{eq:app:wh:cbgp:margin}, and evaluates the criterion for three families of tails.
+
+\subsubsection{The circular balanced growth path}\label{sec:app:workhorse:cbgp}
+
+This subsection constructs the state~C configuration of Section~\ref{sec:sp:longrun:class} --- the bottom-right cell of the taxonomy --- for the workhorse forms. It is written for $\bar R>0$, the soft ceiling $\bar a=1$ and trending technology, which is the cell in which state~C is the only survival route; every step below except the survival condition~\eqref{eq:app:wh:cbgp:survival} also applies verbatim at $\bar R=0$, where state~C competes with the balanced dematerialization path of Section~\ref{sec:app:workhorse:bdp}. Throughout, $\beta$ is the CES share of~\eqref{eq:app:wh:F} and the discount factor is written $1/\left(1+\rho\right)$, and we use the Cobb--Douglas case $\varsigma=1$ with elasticities $\beta_K\equiv\mu_F\beta$ and $\gamma\equiv\mu_F\left(1-\beta\right)$, so that $Y=Ae^{-\kappa P}\left(K^Y\right)^{\beta_K}\left(BR^{e}\right)^{\gamma}$ above the floor.
+
+\smalltitle{The ansatz.} A \emph{circular balanced growth path} (CBGP) is a path along which, asymptotically,
+\begin{align}
+R_t\to R_\infty>\bar R,
+\quad
+a_t\varpi_t\to1,\ \varpi_t=1,\ x_t\to\infty,
+\quad
+N_t,D_t\to0\ \text{with }\textstyle\sum_tN_t<\infty,
+\label{eq:app:wh:cbgp:ansatz}
+\end{align}
+while $C,K,Y$ and every final-good flow grow at the common rate $g$ and $P\to0$. Physical material input is asymptotically \emph{constant}, so effective materials $B_tR^e_\infty$ grow at $g_B$ and the production row of the rate table below gives at once
+\begin{align}
+g &= \frac{g_A+\gamma\,g_B}{1-\beta_K},
+&
+1+r &= \left(1+\rho\right)e^{\eta g},
+\label{eq:app:wh:cbgp:g}
+\end{align}
+which is~\eqref{eq:sp:lr:c2-growth} of the main text. Condition (i) of Assumption~\ref{ass:lr:wellposed}, $\ln\left(1+\rho\right)>\left(1-\eta\right)g$, is exactly the statement $e^{g}<1+r$, and every discounted sum below converges under it and under no further condition. Two occurrences of $\varpi=1$ and $\varsigma=1$ are worth checking before proceeding. Full treatment is a corner, not a coincidence: by~\eqref{eq:sp:sum:varpi} the gain $\mathcal G^\varpi$ grows at rate $g$ while $\left[c^c+c_T\right]\left(1+\zeta\Omega^W\right)$ stays bounded, so the upper branch is reached in finite time and holds forever after. And $\varsigma$ plays no role in the classification here, exactly as Section~\ref{sec:app:workhorse:forms} records: with $\bar R>0$ the floor makes materials essential whatever the substitution elasticity, and $\varsigma=1$ is a convenience.
+
+\smalltitle{The normalized price block.} Every shadow price on a CBGP grows at rate $g$, so deflate by the goods-per-tonne scale $Y_t/R^e_\infty$ and write $\hat m\equiv m\,R^e_\infty/Y$ for any price $m$ in final goods per tonne. Three multipliers recur, all finite under $e^{g}<1+r$:
+\begin{align}
+\Theta_{\mathcal W} &\equiv \frac{\mu\,e^{g}}{1+r-e^{g}},
+&
+\Delta_M &\equiv \frac{\delta\,e^{g}}{1+r-\left(1-\delta\right)e^{g}}\in\left(0,1\right),
+&
+\Delta_P &\equiv \frac{e^{g}}{1+r-\left(1-\theta_0\right)e^{g}} .
+\label{eq:app:wh:cbgp:multipliers}
+\end{align}
+$\Theta_{\mathcal W}$ is the stockpile multiplier and is the one that carries the economics. It comes from the net form~\eqref{eq:sp:costate:Wstock-net} of the stockpile costate: as the loop closes, $\alpha\varpi\to1$ and the effective survival factor $1-\mu\left(1-\alpha\varpi\right)$ tends to \emph{one}, so a stockpiled tonne is a perpetuity on the material it will deliver, not an asset that runs off. With the handling dividend dominated by its feedstock term $\mu\alpha\varpi\Psi\to\mu\Psi$, the recursion $\left(1+r\right)p^{\mathcal W}_t=p^{\mathcal W}_{t+1}+\mu\Psi_{t+1}$ gives $p^{\mathcal W}=\Theta_{\mathcal W}\Psi$; $\Delta_M$ and $\Delta_P$ are the analogous multipliers in~\eqref{eq:sp:costate:M} and~\eqref{eq:sp:costate:P}, the latter evaluated at $P\to0$ where the marginal retention factor is $1-\theta_0$. Note $\Theta_{\mathcal W}\to\mu/\rho$ as $g\to0$, not $\mu/\left(\rho+\mu\right)$: the rest-point formula of~\eqref{eq:sp:sum:W-limit} does not apply on a closed loop, precisely because the stock no longer runs off.
+
+The accounting intensities are also asymptotically constant after deflation. Writing $\varsigma_G\equiv G/Y$ for the gross-formation share and $k\equiv K/Y$ for the capital--output ratio, the cost flows $C^N,C^D,C^W$ all vanish relative to $Y$, so
+\begin{align}
+\bar d &\equiv \frac{\mathcal D+\phi^IG}{Y}\;\to\;\omega^Y+\omega^C\left(1-\varsigma_G\right)+\phi^I\varsigma_G,
+&
+\hat\Omega &\equiv \Omega\,\frac{Y}{R^e_\infty}\;\to\;\frac{R_\infty}{\bar d\,R^e_\infty},
+&
+\sigma_\infty &= \frac{\phi^I\varsigma_G}{\bar d},
+\label{eq:app:wh:cbgp:intensities}
+\end{align}
+with $\varsigma_G=\left(e^{g}-1+\delta\right)k$. The material intensity $\Omega$ itself decays at rate $g$ --- the economy dematerialises in the intensity sense while its physical throughput is constant --- and every wedge $\zeta\Omega^j=\hat\zeta\hat\Omega\omega^j$ is a bounded constant.
+
+The five prices now solve a linear block. From~\eqref{eq:sp:Psi} with $F_R=\gamma Y/R^e$, from $p^W=-p^{\mathcal W}$, from~\eqref{eq:sp:zeta-explicit} and from~\eqref{eq:sp:costate:M} and~\eqref{eq:sp:costate:P},
+\begin{align}
+\hat\Psi &= \gamma\left(1-\hat\zeta\hat\Omega\omega^Y\right)+\hat\zeta,
+&
+\hat p^W &= -\Theta_{\mathcal W}\hat\Psi,
+&
+\hat p^M &= \Delta_M\hat p^W,
+&
+\hat\zeta &= \sigma_\infty\left(1-\Delta_M\right)\hat p^W,
+\label{eq:app:wh:cbgp:block}
+\end{align}
+and $\hat p^P=\Delta_P\kappa R^e_\infty\left(1-\hat\zeta\hat\Omega\omega^Y\right)$ from $F_P=-\kappa F$ and $v'\left(0\right)=0$. Defining the \emph{storage wedge}
+\begin{align}
+\Upsilon &\equiv \sigma_\infty\left(1-\Delta_M\right)\Theta_{\mathcal W}\;>\;0,
+&&\text{so that}
+&
+\hat\zeta &= -\Upsilon\hat\Psi,
+\label{eq:app:wh:cbgp:upsilon}
+\end{align}
+the block collapses to a single equation with the closed-form solution
+\begin{align}
+\boxed{\;\hat\Psi = \frac{\gamma}{1+\Upsilon\left(1-\gamma\hat\Omega\omega^Y\right)},
+\qquad
+\hat\zeta = -\Upsilon\hat\Psi,
+\qquad
+\hat p^W = -\Theta_{\mathcal W}\hat\Psi\;}
+\label{eq:app:wh:cbgp:solution}
+\end{align}
+and the remaining goods-block objects follow: $q_\infty=1-\phi^I\left(1-\sigma_\infty\right)\left(1-\Delta_M\right)\hat\Omega\hat p^W>1$ from~\eqref{eq:sp:sum:I}, and $k=\beta_K\left(1-\hat\zeta\hat\Omega\omega^Y\right)/\left[\left(r+\delta\right)q_\infty\right]$ from the capital arbitrage~\eqref{eq:sp:sum:K}. The block is simultaneous only through $\hat\Omega$, $\sigma_\infty$ and $\varsigma_G$, which depend on $k$: it is a scalar fixed point, solved numerically without ceremony exactly as the rest-point block of Appendix~\ref{sec:app:stat} is.
+
+\smalltitle{Signs, and what they mean.} Three readings, all immediate from~\eqref{eq:app:wh:cbgp:solution}.
+
+\emph{Waste is an asset, and a large one.} $p^W=-\Theta_{\mathcal W}\Psi<0$ with $\Theta_{\mathcal W}=\mu e^{g}/\left(1+r-e^{g}\right)$, which is large when the economy is patient: as $\rho\to0$ with $g$ fixed, $\Theta_{\mathcal W}$ diverges. On a closed loop the stockpile is not a store of material worth one delivery but a claim on \emph{every} future delivery, since the tonne returns to it after each pass. This is the precise sense in which waste is the last mine.
+
+\emph{Embodied material carries a negative shadow price.} Since $\Delta_M<1$ whenever $e^{g}<1+r$, $p^W-p^M=\left(1-\Delta_M\right)p^W<0$ and hence $\zeta<0$. The reading is the perturbation of~\eqref{eq:sp:zeta-explicit}: $\zeta$ prices the requirement that the final-good system \emph{carry} embodied material, and on a closed loop carrying material means keeping it out of the recovery loop, where its value is $\Theta_{\mathcal W}\Psi$ per tonne per pass. \emph{At the margin, durability is a liability on a circular growth path.} The statement is a marginal one conditional on $R$ and is not a claim that durables are socially bad --- $q_\infty>1$, so installed capital is worth strictly more than its goods cost, precisely because it holds matter --- but it is the reason~\eqref{eq:app:wh:cbgp:little} penalises long residence: what the economy wants is matter in motion.
+
+\emph{The regularity conditions are inequalities on wedges, and they can fail.} The block is admissible only if $\hat\Psi>0$, i.e.\ $1+\Upsilon\left(1-\gamma\hat\Omega\omega^Y\right)>0$, and if the consumption wedge stays positive, $1+\zeta\Omega^C=1-\Upsilon\hat\Psi\hat\Omega\omega^C>0$, which is what keeps $u'\left(C\right)=\lambda\left(1+\zeta\Omega^C\right)$ meaningful. Both hold for small $\phi^I$ (which sends $\Upsilon\to0$ through $\sigma_\infty$) and both are conditions the quantitative calibration must be checked against rather than assumed.
+
+\smalltitle{Does the loop close? A tail criterion.} The one condition that is genuinely about the recycling technology is whether the capital margin~\eqref{eq:sp:sum:KR-interior} can be met along $x\to\infty$ at a cost the economy can pay, and whether the leakage it leaves is cumulatively finite as Lemma~\ref{lem:lr:leakage} requires. Both questions have the same answer, and it is a statement about the \emph{tail} of $a\left(\cdot\right)$.
+
+Since $\tilde F_K=\left(r+\delta\right)q_\infty$ is constant on a CBGP while $\mathcal G^K=\Theta_{\mathcal G}\Psi_t$ grows at rate $g$, with
+\begin{align}
+\Theta_{\mathcal G} &\equiv \frac{\mathcal G^K}{\Psi} \;=\; 1+\Theta_{\mathcal W}+d^W\frac{\hat p^P}{\hat\Psi},
+\label{eq:app:wh:cbgp:ThetaG}
+\end{align}
+the interior condition $a'\left(x_t\right)\mathcal G^K_t=\tilde F_K$ pins the recycling intensity implicitly by
+\begin{align}
+a'\left(x_t\right) &= \mathcal A\,e^{-gt},
+&
+\mathcal A &\equiv \frac{\left(r+\delta\right)q_\infty R^e_\infty}{\Theta_{\mathcal G}\,\hat\Psi\,Y_0}.
+\label{eq:app:wh:cbgp:margin}
+\end{align}
+There is no degeneracy here, and the apparent one --- that $a'$ and $\left|p^W\right|$ move as $e^{-\xi x}$ and $e^{+\xi x}$ --- is an artefact of reading $\Psi$ as a function of $x$. It is not: at leading order $\Psi_t=\gamma\hat\Psi^{-1}$-scaled output per effective tonne, and output is driven by $A_t$, $B_t$ and $K_t$, none of which the recycling intensity moves once $K^R/K\to0$. Equation~\eqref{eq:app:wh:cbgp:margin} therefore has a unique solution $x_t=\left(a'\right)^{-1}\!\left(\mathcal Ae^{-gt}\right)$ for every large $t$, and $x_t\to\infty$ because $\mathcal Ae^{-gt}\to0$. The margin is \emph{always} satisfiable. What is not automatic is the rest.
+
+Write $L_t\equiv1-a\left(x_t\right)$ for the per-period leakage rate and $s^R_t\equiv K^R_t/K_t$ for the recycling capital share, and recall the tail elasticity $\epsilon_a$ and the function $J$ of~\eqref{eq:app:wh:cbgp:elasticity}.
+
+\begin{proposition}[closure criterion for the workhorse]\label{prop:app:wh:closure}
+Along a CBGP with recycling intensity given by~\eqref{eq:app:wh:cbgp:margin}, the leakage rate satisfies
+\begin{align}
+L_t &= \mathcal A\,J\left(x_t\right)e^{-gt}
+\;=\; \frac{\beta_K\left(1-\hat\zeta\hat\Omega\omega^Y\right)}{\Theta_{\mathcal G}\,\hat\Psi}\cdot\frac{R^{e}_\infty}{R_\infty}\cdot\frac{s^R_t}{\epsilon_a\left(x_t\right)} ,
+\label{eq:app:wh:cbgp:leak}
+\end{align}
+and the path is consistent with Lemma~\ref{lem:lr:leakage} --- the loop closes --- if and only if
+\begin{align}
+\sum_{t}J\left(x_t\right)e^{-gt} <\infty,
+\qquad x_t=\left(a'\right)^{-1}\!\left(\mathcal Ae^{-gt}\right).
+\label{eq:app:wh:cbgp:criterion}
+\end{align}
+\end{proposition}
+
+The first equality is $L=J\cdot a'$ evaluated at~\eqref{eq:app:wh:cbgp:margin}; the second substitutes $x_t=s^R_tK_t/\left(\varpi_tH_t\right)$ with $\varpi H\to R_\infty$ and $\tilde F_Kk=\beta_K\left(1-\zeta\Omega^Y\right)$. Read economically, \eqref{eq:app:wh:cbgp:leak} says: \emph{the leakage rate is the recycling capital share, deflated by the tail elasticity.} A closed loop is bought either by devoting a large share of the capital stock to recovery, or by having a technology whose yield responds elastically at the frontier --- and the criterion~\eqref{eq:app:wh:cbgp:criterion} is whether the product is summable. Three families settle it.
+
+\begin{center}
+\begin{tabular}{lllll}
+\toprule
+Tail of $1-a$ & $\epsilon_a\left(x\right)$ & $x_t$ from~\eqref{eq:app:wh:cbgp:margin} & $L_t$ & Loop closes? \\
+\midrule
+$e^{-\xi x}$ (eq.~\ref{eq:app:wh:a}) & $\xi x\to\infty$ & $\left(g/\xi\right)t+\mathrm{const}$ & $\propto e^{-gt}$ & yes \\
+$\left(\xi x\right)^{-\psi}$ (eq.~\ref{eq:app:wh:a-power}) & $\to\psi$ & $\propto e^{gt/\left(1+\psi\right)}$ & $\propto e^{-\psi gt/\left(1+\psi\right)}$ & yes, any $\psi>0$ \\
+$\left(\ln\xi x\right)^{-\iota}$ & $\iota/\ln\xi x\to0$ & $\propto e^{gt}\left(gt\right)^{-\left(\iota+1\right)}$ & $\propto\left(gt\right)^{-\iota}$ & only if $\iota>1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Three consequences, in increasing order of interest.
+
+\emph{The exponential tail closes the loop for free.} With $a=1-e^{-\xi x}$ the margin reads $\xi e^{-\xi x_t}=\mathcal Ae^{-gt}$, so $x_t$ rises \emph{linearly} in calendar time at rate $g/\xi$ while the capital stock grows exponentially. Recycling capital $K^R_t=x_t\varpi_tH_t\simeq x_tR_\infty$ therefore grows linearly and $s^R_t\propto te^{-gt}\to0$: the sector that saves the economy is asymptotically negligible in it. Leakage falls geometrically at rate $g$, so~\eqref{eq:app:wh:cbgp:criterion} holds with room to spare, and $L_t\epsilon_a\propto te^{-gt}\to0$ gives $\alpha\to1$ as required.
+
+\emph{The power tail closes the loop too, at every exponent.} One might expect a merely polynomial approach to full recovery to be too slow to be worth its capital. It is not: with $1-a\sim\left(\xi x\right)^{-\psi}$ the margin gives $x_t\propto e^{gt/\left(1+\psi\right)}$, so recycling capital grows exponentially but at the strictly slower rate $g/\left(1+\psi\right)$, $s^R_t\to0$ again, and leakage decays geometrically at rate $\psi g/\left(1+\psi\right)$. Every $\psi>0$ works. The reason is~\eqref{eq:app:wh:cbgp:leak}: what has to be paid for is not the level of the yield but its \emph{shortfall}, and the value of closing the shortfall grows at rate $g$ forever while the cost of doing so is a marginal product of capital that does not grow at all. Under the soft ceiling, growth eventually outbids any polynomial resistance --- which is why the ceiling column of the taxonomy is a statement about $\bar a$ and not about the speed at which $\bar a$ is approached.
+
+\emph{The threshold is real but it lies further out.} It is not that no tail fails: a logarithmic approach, $1-a\sim c\left(\ln\xi x\right)^{-\iota}$, has $\epsilon_a\to0$ and forces $x_t$ to grow at the full rate $g$ (so that $s^R_t$ no longer vanishes at an exponential rate), leaving $L_t\sim c\left(gt\right)^{-\iota}$, which is summable only for $\iota>1$. With $\iota\le1$ cumulated leakage diverges, contradicting Lemma~\ref{lem:lr:leakage}: the loop cannot close, state~C is infeasible, and a floor economy with such a technology collapses exactly as under a hard ceiling. The criterion that separates the two is~\eqref{eq:app:wh:cbgp:criterion} and nothing coarser; the parametric families in general use~\eqref{eq:app:wh:a} and~\eqref{eq:app:wh:a-power} both sit comfortably on the survival side of it.
+
+\smalltitle{The resource side, and how the material era ends.} The ansatz requires $N_t\to0$ with $\sum N_t<\infty$ but does not say how. Both endings of the material era named in Section~\ref{sec:sp:opt:foc}, stranding and exhaustion, remain available and the workhorse separates them. Since $\Psi$ grows at rate $g$ and $p^W=-\Theta_{\mathcal W}\Psi$, the interior extraction condition~\eqref{eq:sp:sum:N} reads
+\begin{align}
+\Psi_t\left[1+\Theta_{\mathcal W}\left(1+\Omega^{N,S}\right)\right] &= C^N_N\left(1+\zeta\Omega^N\right)\Big|_t+p^S_t ,
+\label{eq:app:wh:cbgp:extraction}
+\end{align}
+whose left-hand side grows at rate $g$. With $C^N_N\to c_{N\infty}\kappa_N\left(S_{\mathrm{ref}}/S\right)^{\mu_N}$ this can hold forever only if $S_t\to0$ at rate $g/\mu_N$, in which case $N_t$ decays at the same rate, $C^N_t$ grows at rate $g\left(1-1/\mu_N\right)$ and $p^S$ grows at $g$ alongside $\Psi$ --- \emph{asymptotic exhaustion}, with the whole reserve eventually retained inside the loop. Otherwise the corner~\eqref{eq:sp:sum:N-corner} binds in finite time and reserves are \emph{stranded} at $S_\infty>0$, which subtracts $\left(1+\Omega^{N,S}\right)S_\infty$ from $\mathcal M_\infty$ in~\eqref{eq:app:wh:cbgp:retained} and hence from $R_\infty$ in~\eqref{eq:app:wh:cbgp:little}. Note the direction of the effect: on a closed loop, stranding is not a lost option value but a permanently smaller circulating stock, and it lowers the \emph{level} of the growth path forever. Exploration dies in either case, and $p^X\to0$ with it.
+
+\smalltitle{What the planner is choosing.} Along a CBGP the growth \emph{rate}~\eqref{eq:app:wh:cbgp:g} is a technology constant, independent of everything in the material block. What the material block decides is the \emph{level}: through~\eqref{eq:app:wh:cbgp:little}, consumption on the path scales with $\left(R^e_\infty\right)^{\gamma/\left(1-\beta_K\right)}$, so
+\begin{align}
+\frac{\partial\ln C_\infty}{\partial\ln\mathcal M_\infty} &= \frac{\gamma}{1-\beta_K}\cdot\frac{R_\infty}{R_\infty-\bar R} ,
+\label{eq:app:wh:cbgp:level}
+\end{align}
+which is large precisely when the economy is close to its floor. The transition problem is therefore a genuine trade-off with a sharp interpretation: material extracted and consumed early raises consumption during the transition, while material retained and circulated raises consumption at every date thereafter, and the elasticity~\eqref{eq:app:wh:cbgp:level} says the second motive dominates overwhelmingly for an economy near the survival margin~\eqref{eq:app:wh:cbgp:survival}. This is the sense in which, with a floor, the circular economy is not an efficiency margin but the level of the entire future.
+
+\smalltitle{Comparison with the closed loop.} Since the numerator of~\eqref{eq:app:wh:bdp-solution} is the numerator of the circular growth rate~\eqref{eq:app:wh:cbgp:g}, the two rates are directly comparable:
+\begin{align}
+g_{\mathrm{B}} &= \frac{\left(\mu_N-1\right)\left(1-\beta_K\right)}{\left(\mu_N-1\right)\left(1-\beta_K\right)+\gamma}\;g_{\mathrm{C}}
+\;<\;g_{\mathrm{C}}
+\qquad\text{for every }\gamma>0 .
+\label{eq:app:wh:bdp-vs-c}
+\end{align}
+\emph{Balanced dematerialization always grows strictly more slowly than the closed loop}, and by a gap that widens with the output elasticity of materials $\gamma$ and narrows as extraction costs become more stock-elastic. The economics is transparent: on a BDP effective materials grow at $g_B-\nu$, on a CBGP at $g_B$, and the entire difference is the physical decay the squeeze path has to accept. This settles the selection question in the floorless soft-ceiling cell of the taxonomy at the level of rates: wherever the closure criterion~\eqref{eq:app:wh:cbgp:criterion} is met, so that both states are feasible, state~C carries a strictly higher asymptotic growth rate at an asymptotically vanishing capital cost, and under CRRA with $\ln\left(1+\rho\right)>\left(1-\eta\right)g_{\mathrm C}$ a higher growth rate eventually dominates any level advantage the faster rundown could buy. \emph{The planner closes the loop whenever the technology allows it, floor or no floor.} What the floor changes is not the choice but the stakes: without it, choosing B costs growth, and with it, choosing B is not available at all.
+
+\smalltitle{Three traps in the soft-ceiling algebra.} Each is easy to fall into. The exponential tail looks degenerate on the recycling-capital margin, $a'$ and $\left|p^W\right|$ scaling as $e^{-\xi x}$ and $e^{+\xi x}$; it is not, because $\Psi$ is driven by calendar time rather than by the recycling intensity, and the margin then pins $x_t$ uniquely and linearly in $t$. A slow yield tail looks as though it should block the closed loop; power tails do not, at any exponent, and only tails with vanishing elasticity $\epsilon_a$ do. And the BDP rate system looks over-determined; it is exactly determined once $g$ and $\nu$ are solved for jointly.
