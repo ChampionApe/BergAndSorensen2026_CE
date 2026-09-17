@@ -1,0 +1,8 @@
+year,series,value,unit,source,method
+,dice2023_damage_share_at_3C,0.031,fraction of gross output,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3",published
+,dice2023_damage_share_at_4.5C,0.07,fraction of gross output,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3",published
+,dice2023_pi1,0,fraction of gross output per degC,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3",derived
+,dice2023_pi2,0.00344444444,fraction of gross output per degC^2,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3",derived
+,dice2023_pi2_check_residual_at_4.5C,-0.00025,fraction of gross output,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 3.3",derived
+,howard_sterner_damage_share_at_3C,0.09,fraction of gross output,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 4.6",published
+,howard_sterner_pi2,0.01,fraction of gross output per degC^2,"Barrage and Nordhaus 2024 PNAS 121(13) e2312030121, Section 4.6",derived

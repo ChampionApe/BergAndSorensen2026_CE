@@ -662,6 +662,14 @@ from the planner corner, each in consumption equivalents against the planner and
 each classified.  A corner whose state differs from the planner's is the result
 the experiment exists for: a policy failure that moves the economy across the
 survival margin rather than costing a few percent of consumption.
+
+Read the equivalents only at a long horizon.  `welfare` values the tail beyond
+`T` by continuing consumption at the terminal growth factor, and at a short
+horizon that approximation, not the allocation, decides the comparison: at
+`T = 40` on the illustrative set a corner comes out 0.05% *above* the planner,
+and at `T = 150` the same corner costs 0.08% and laissez-faire costs 4.9%.  The
+planner corner is the maximum of the problem, so a negative cost is a horizon
+diagnostic.
 """
 function experiment_instruments(p::Params, s0::AbstractVector;
                                 corners = instrument_corners(), dial_steps::Real = 0.25,

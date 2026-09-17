@@ -1,0 +1,7 @@
+year,series,value,unit,source,method
+,tcre_best,0.00045,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely-range best estimate)",published
+,tcre_low,0.00027,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely range lower bound)",published
+,tcre_high,0.00063,degC per GtCO2,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (likely range upper bound)",published
+,tcre_best_per_1000PgC,1.65,degC per 1000 PgC,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (as reported)",published
+,tcre_low_per_1000PgC,1,degC per 1000 PgC,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (as reported)",published
+,tcre_high_per_1000PgC,2.3,degC per 1000 PgC,"IPCC AR6 WGI Chapter 5, Section 5.5.1.4 (as reported)",published

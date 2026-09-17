@@ -5,10 +5,15 @@ Julia implementation of the quantitative model documented in
 Standard-library dependencies only (`LinearAlgebra`, `SparseArrays`, `Printf`).
 
 ```
-julia --project=. test/runtests.jl           # 825 tests, ~14 s
+julia --project=. test/runtests.jl           # 1205 tests, ~50 s
 julia --project=. scripts/run_baseline.jl    # baseline path + policy dials, ~30 s
 julia --project=. scripts/run_sufficiency.jl # convexity, transversality, deviations
+julia --project=. scripts/run_experiments.jl # E1 to E5; --calibration=, --only=, --hours=, --T=
 ```
+
+`run_experiments.jl` writes one CSV per experiment under `output/` (gitignored, regenerable) and one
+`%% GENERATED` table per experiment under `writing/quant/Tables/`. With no `--calibration` it runs on
+the illustrative set and says so: nothing from such a run is a result.
 
 ## The one idea to hold on to
 
@@ -45,7 +50,8 @@ duplication is worth its cost.
 | `src/guess.jl` | starting values |
 | `src/diagnostics.jl` | verification checks, welfare, series accessors |
 | `src/sufficiency.jl` | convexity conditions, transversality, feasible-direction tests |
-| `src/calibration.jl` | **illustrative** parameter sets — not calibrated |
+| `src/json.jl` | minimal JSON reader, for the calibration file only |
+| `src/calibration.jl` | the **illustrative** parameter set, and the calibrated one read from `data/processed/calibration.json` |
 
 ## Method, in one paragraph
 
@@ -166,14 +172,22 @@ is verification, not proof.
 - The terminal closure assumes a common growth factor `Gam` for every costate
   from `T` onward.
 - **There is a horizon wall, and it is the model's, not the solver's.** On a
-  path that ends the material era by exhaustion, `(S_ref/S)^mu_N` diverges as
-  the reserve empties, and the Newton system inherits that conditioning. Cold
-  solves stall around `T = 220` on the illustrative calibration; `solve_long`
-  reaches `T ≈ 300–325` by adaptive horizon continuation and then reports the
-  longest horizon it reached rather than failing. The window of interest has
-  stopped moving well before that (`Y` and `C` change by ~1e-3 over `t = 0..100`
-  when `T` goes 150 → 300), so nothing is lost here — but a calibration that
-  depletes faster would hit the wall sooner.
+  path that ends the material era by exhaustion the reserve is driven towards
+  zero, the extraction cost carries `(S_ref/S)^mu_N`, which diverges there, and
+  the Newton system inherits that conditioning. Measured on the illustrative set
+  (`notes/plan_calibration_experiments.md`, task A5): a cold solve converges at
+  `T = 220` and fails at `T = 240`; `solve_long` asked for `T = 600` converges at
+  every horizon up to **`T = 323`**, then halves its step to six periods, fails
+  at `329` with `|F| = 4e-3`, and returns the longest horizon it reached rather
+  than failing. At `T = 323` the reserve is `S = 0.34` against `S_0 = 20` and
+  `(S_ref/S)^mu_N = 455`, having roughly doubled every 20 periods: **the wall is
+  at the date the reserve reaches about 2% of its initial level, not at a fixed
+  `T`**, so a calibration that depletes faster hits it sooner. Nothing is lost
+  here, because the window of interest settles long before it — `Y` and `C` over
+  `t = 0..100` move by 5e-4 and 7e-4 between `T = 161` and `T = 323`, inside the
+  1e-3 criterion of `quant_solution.tex` Section *Horizon*. Every experiment row
+  carries `T_reached` beside `T_requested` for exactly this reason; read it
+  before reading the row.
 - The parameters in `src/calibration.jl` are placeholders. See
   `notes/data_plan_global_1850.md` for the calibration plan.
 

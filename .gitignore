@@ -64,3 +64,11 @@ data/raw/pwt1001/*.dta
 # are posted by the authors as the article's supporting data. Readable here, not ours to
 # redistribute. data/sources/B2_macro.md carries the re-download command.
 data/raw/piketty_zucman2014/
+
+# B5: four open-access papers and assessment chapters, 44 MB between them, which are literature
+# rather than data. Each data/build/b5_*.py downloads its own when it is absent, and
+# data/sources/B5_pollution.md carries the commands. The Global Carbon Budget flat CSV, which is the
+# block's actual data, IS committed.
+data/raw/gcb/essd-18-3211-2026.pdf
+data/raw/joos2013/
+data/raw/ipcc_ar6_wg1/
