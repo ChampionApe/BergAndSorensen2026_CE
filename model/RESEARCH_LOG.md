@@ -7,6 +7,23 @@ Session log for work inside `model/`. Cross-cutting work, the theory and the wri
 The history of the implementation up to 2026-09-17 is in the root log, which was the only log until the
 split. Nothing is lost; it simply starts here.
 
+## 2026-09-18 - D4: E5, the surface and the solvability edge
+
+- **The surface** (`scripts/run_d4.jl`, `output/surface/`, `Tables/Surface.tex`,
+  `data/processed/d4_report.md`): 24 cells, 8 floors x 3 ceilings at `T = 400`, all converged. The
+  state is the ceiling's alone -- C everywhere at `abar = 1`, B at `Rbar = 0` and A at every
+  positive floor under a hard ceiling -- and the survival ratio is a hyperbola in the floor,
+  `M_inf` moving under 2 percent across the grid. No survival-margin crossing is reachable.
+- **The solvability edge is 34.61 Gt**, the same under both ceilings, bisected then walked: a step
+  of 0.006 Gt beyond it does not solve. The floor binds in 1900 on every solved path (minimum `R`
+  at `t = 0`, 2.5 Gt of slack), so the grid is bounded by the base year's throughput, not by
+  anything long-run; `Rbar = 47.5` asks 8.3 times 1900 material input. What fails at the edge is
+  the recycling min-maps, on a feasible path.
+- **The shutdown date 280 of D1 and D2 is an artefact**: on a 10-period grid the objective is
+  monotone in the date and the branch converges on no date after 280. And `floor_steps = 6` is too
+  short there -- at 24 the `Rbar = 23.756` cell that D1 called unsolvable converges on nine dates.
+  Both belong in *Known limitations* and TODO 7.
+
 ## 2026-09-17 (overnight) - Code in line with the three-state theory
 
 - **`mu_h` in (0,1]**: one line in `check_params`; nothing in the source divided by `1 - mu_h`. Tested at

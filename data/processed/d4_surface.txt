@@ -1,0 +1,173 @@
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 1 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 1 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 1 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 1 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+
+==============================================================================
+D4 stage 1: E5 over 8 floors x 3 ceilings, T = 400, budget 8 h
+  floors   [0.0, 2.0, 4.0, 6.0, 9.502, 14.0, 19.0, 23.756]
+  ceilings [1.0, 0.85, 0.708]
+==============================================================================
+E5 abar = 1, Rbar = 0  C   surv = $\infty$
+E5 abar = 1, Rbar = 2  C   surv = 1001.936
+E5 abar = 1, Rbar = 4  C   surv =  500.208
+E5 abar = 1, Rbar = 6  C   surv =  332.956
+E5 abar = 1, Rbar = 9.5  C   surv =  209.666
+E5 abar = 1, Rbar = 14  C   surv =  141.799
+E5 abar = 1, Rbar = 19  C   surv =   104.08
+E5 abar = 1, Rbar = 23.8  C   surv =   82.955
+E5 abar = 0.85, Rbar = 0  B   surv = $\infty$
+E5 abar = 0.85, Rbar = 2  A   surv =  686.221
+E5 abar = 0.85, Rbar = 4  A   surv =  342.524
+E5 abar = 0.85, Rbar = 6  A   surv =   227.95
+E5 abar = 0.85, Rbar = 9.5  A   surv =  143.489
+E5 abar = 0.85, Rbar = 14  A   surv =   96.991
+E5 abar = 0.85, Rbar = 19  A   surv =   71.143
+E5 abar = 0.85, Rbar = 23.8  A   surv =   56.661
+E5 abar = 0.708, Rbar = 0  B   surv = $\infty$
+E5 abar = 0.708, Rbar = 2  A   surv =  497.692
+E5 abar = 0.708, Rbar = 4  A   surv =  248.383
+E5 abar = 0.708, Rbar = 6  A   surv =  165.274
+E5 abar = 0.708, Rbar = 9.5  A   surv =  104.006
+E5 abar = 0.708, Rbar = 14  A   surv =   70.273
+E5 abar = 0.708, Rbar = 19  A   surv =   51.518
+E5 abar = 0.708, Rbar = 23.8  A   surv =   41.006
+
+rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\surface\surface.csv
+table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\Surface.tex
+abar 1, Rbar 0             conv=true  T=400/400 solve_long      |F|= 1.2e-10 state=C  Minf=8.601e+04 surv= $\infty$ shutdown   -1 (not a collapse path) gate<0  139 era_end   -1 closes=true  below_floor=0 305s
+abar 1, Rbar 2             conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.588e+04 surv= 1001.936 shutdown   -1 (not a collapse path) gate<0  137 era_end   -1 closes=true  below_floor=0 7s
+abar 1, Rbar 4             conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.575e+04 surv=  500.208 shutdown   -1 (not a collapse path) gate<0  136 era_end   -1 closes=true  below_floor=0 7s
+abar 1, Rbar 6             conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.562e+04 surv=  332.956 shutdown   -1 (not a collapse path) gate<0  134 era_end   -1 closes=true  below_floor=0 7s
+abar 1, Rbar 9.5           conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.539e+04 surv=  209.666 shutdown   -1 (not a collapse path) gate<0  132 era_end   -1 closes=true  below_floor=0 7s
+abar 1, Rbar 14            conv=true  T=400/400 continuation    |F|= 5.8e-11 state=C  Minf=8.509e+04 surv=  141.799 shutdown   -1 (not a collapse path) gate<0  128 era_end   -1 closes=true  below_floor=0 8s
+abar 1, Rbar 19            conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.476e+04 surv=   104.08 shutdown   -1 (not a collapse path) gate<0  123 era_end   -1 closes=true  below_floor=0 7s
+abar 1, Rbar 23.8          conv=true  T=400/400 continuation    |F|= 1.2e-10 state=C  Minf=8.447e+04 surv=   82.955 shutdown   -1 (not a collapse path) gate<0  117 era_end   -1 closes=true  below_floor=0 8s
+abar 0.85, Rbar 0          conv=true  T=400/400 solve_long      |F|= 1.2e-10 state=B  Minf=5.878e+04 surv= $\infty$ shutdown   -1 (not a collapse path) gate<0  155 era_end   -1 closes=false below_floor=0 157s
+abar 0.85, Rbar 2          conv=true  T=400/400 continuation    |F|= 5.8e-11 state=A  Minf=5.868e+04 surv=  686.221 shutdown  280 (ok) gate<0  154 era_end   -1 closes=false below_floor=0 5s
+abar 0.85, Rbar 4          conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=5.858e+04 surv=  342.524 shutdown  280 (ok) gate<0  152 era_end   -1 closes=false below_floor=0 5s
+abar 0.85, Rbar 6          conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=5.848e+04 surv=   227.95 shutdown  280 (ok) gate<0  151 era_end   -1 closes=false below_floor=0 6s
+abar 0.85, Rbar 9.5        conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf= 5.83e+04 surv=  143.489 shutdown  280 (ok) gate<0  149 era_end   -1 closes=false below_floor=0 5s
+abar 0.85, Rbar 14         conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=5.806e+04 surv=   96.991 shutdown  280 (ok) gate<0  146 era_end   -1 closes=false below_floor=0 5s
+abar 0.85, Rbar 19         conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf= 5.78e+04 surv=   71.143 shutdown  280 (ok) gate<0  142 era_end   -1 closes=false below_floor=0 5s
+abar 0.85, Rbar 23.8       conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=5.756e+04 surv=   56.661 shutdown   -1 (no candidate date converged) gate<0  138 era_end   -1 closes=false below_floor=0 6s
+abar 0.708, Rbar 0         conv=true  T=400/400 solve_long      |F|= 1.2e-10 state=B  Minf=4.259e+04 surv= $\infty$ shutdown   -1 (not a collapse path) gate<0  171 era_end   -1 closes=false below_floor=0 102s
+abar 0.708, Rbar 2         conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.251e+04 surv=  497.692 shutdown  280 (ok) gate<0  170 era_end   -1 closes=false below_floor=0 6s
+abar 0.708, Rbar 4         conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.243e+04 surv=  248.383 shutdown  280 (ok) gate<0  169 era_end   -1 closes=false below_floor=0 5s
+abar 0.708, Rbar 6         conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.235e+04 surv=  165.274 shutdown  280 (ok) gate<0  168 era_end   -1 closes=false below_floor=0 5s
+abar 0.708, Rbar 9.5       conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.221e+04 surv=  104.006 shutdown  280 (ok) gate<0  166 era_end   -1 closes=false below_floor=0 5s
+abar 0.708, Rbar 14        conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.202e+04 surv=   70.273 shutdown  280 (ok) gate<0  164 era_end   -1 closes=false below_floor=0 5s
+abar 0.708, Rbar 19        conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.181e+04 surv=   51.518 shutdown  280 (ok) gate<0  161 era_end   -1 closes=false below_floor=0 5s
+abar 0.708, Rbar 23.8      conv=true  T=400/400 continuation    |F|= 1.2e-10 state=A  Minf=4.161e+04 surv=   41.006 shutdown   -1 (no candidate date converged) gate<0  157 era_end   -1 closes=false below_floor=0 5s
+
+stage 1: 24 of 24 cells in 16.5 min; stopped on budget: false
+
+==============================================================================
+D4 stage 2: the solvability edge in Rbar, both ceilings
+==============================================================================
+
+------------------------------------------------------------------------------
+edge at abar = 1: bisection on Rbar in [23.76, 47.51], at most 6 probes
+------------------------------------------------------------------------------
+floorless path: converged, |F| = 1.16e-10, T = 400, 229 s
+  material input without a floor: t = 0 5.74, t = 25 10.1, t = 50 17.12, t = 100 42.77 Gt
+  it first reaches 23.76 Gt at t = 68 (1968)
+  it first reaches 47.51 Gt at t = 106 (2006)
+
+  Rbar =  23.7560 (known solvable): converged, |F| = 1.16e-10, floor homotopy (8 steps), T = 400
+    routes: floor homotopy (8 steps) |F| = 1.2e-10
+    state C, survival 82.95, Minf 8.447e+04, R at t = 0 26.63 (floor 23.76, slack 2.873), periods below the floor 0
+
+  Rbar =  35.6340 (probe 1): NOT SOLVED, |F| = 2.70e+23, cold, floor-scaled guess, T = 150
+    routes: continuation |F| = 6.7e+00; floor homotopy (8 steps) |F| = 9.0e-06; floor homotopy (24 steps) |F| = 6.7e+00; cold solve_long |F| = 1.0e+00; cold, floor-scaled guess |F| = 2.7e+23
+    largest residual rows: costate K (q) at t = 143: 2.70e+23; costate K (q) at t = 142: -1.54e+23; q (investment) at t = 143: 1.44e+23; costate K (q) at t = 148: -1.41e+23
+    the floorless path first reaches this floor at t = 90 (1990)
+    bracket now [23.7560, 35.6340]
+
+  Rbar =  29.6950 (probe 2): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state C, survival 66.12, Minf 8.415e+04, R at t = 0 32.31 (floor 29.7, slack 2.619), periods below the floor 0
+    bracket now [29.6950, 35.6340]
+
+  Rbar =  32.6645 (probe 3): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state C, survival 60.03, Minf 8.405e+04, R at t = 0 35.18 (floor 32.66, slack 2.516), periods below the floor 0
+    bracket now [32.6645, 35.6340]
+
+  Rbar =  34.1493 (probe 4): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state C, survival 57.41, Minf 8.403e+04, R at t = 0 36.62 (floor 34.15, slack 2.47), periods below the floor 0
+    bracket now [34.1493, 35.6340]
+
+  Rbar =  34.8916 (probe 5): NOT SOLVED, |F| = 2.24e+23, cold, floor-scaled guess, T = 150
+    routes: continuation |F| = 2.5e-01; floor homotopy (8 steps) |F| = 5.7e-06; floor homotopy (24 steps) |F| = 1.1e+00; cold solve_long |F| = 1.0e+00; cold, floor-scaled guess |F| = 2.2e+23
+    largest residual rows: costate K (q) at t = 147: -2.24e+23; q (investment) at t = 148: 1.37e+23; costate K (q) at t = 149: 1.30e+23; costate K (q) at t = 143: 1.21e+23
+    the floorless path first reaches this floor at t = 89 (1989)
+    bracket now [34.1493, 34.8916]
+
+  Rbar =  34.5204 (probe 6): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state C, survival 56.8, Minf 8.405e+04, R at t = 0 36.98 (floor 34.52, slack 2.459), periods below the floor 0
+    bracket now [34.5204, 34.8916]
+
+edge at abar = 1: largest floor that solves 34.5204, smallest that does not 34.8916, bracket 0.3712 Gt wide
+
+------------------------------------------------------------------------------
+edge at abar = 0.708: bisection on Rbar in [23.76, 47.51], at most 6 probes
+------------------------------------------------------------------------------
+floorless path: converged, |F| = 1.16e-10, T = 400, 116 s
+  material input without a floor: t = 0 5.739, t = 25 10.1, t = 50 17.11, t = 100 42.37 Gt
+  it first reaches 23.76 Gt at t = 68 (1968)
+  it first reaches 47.51 Gt at t = 107 (2007)
+
+  Rbar =  23.7560 (known solvable): converged, |F| = 1.16e-10, floor homotopy (8 steps), T = 400
+    routes: floor homotopy (8 steps) |F| = 1.2e-10
+    state A, survival 41.01, Minf 4.161e+04, R at t = 0 26.63 (floor 23.76, slack 2.873), periods below the floor 0
+
+  Rbar =  35.6340 (probe 1): NOT SOLVED, |F| = 1.36e+25, cold, floor-scaled guess, T = 150
+    routes: continuation |F| = 1.4e+01; floor homotopy (8 steps) |F| = 3.6e-06; floor homotopy (24 steps) |F| = 1.4e+01; cold solve_long |F| = 1.0e+00; cold, floor-scaled guess |F| = 1.4e+25
+    largest residual rows: q (investment) at t = 4: -1.36e+25; costate K (q) at t = 3: 1.31e+25; costate K (q) at t = 4: -1.26e+25; costate K (q) at t = 146: 2.32e+23
+    the floorless path first reaches this floor at t = 90 (1990)
+    bracket now [23.7560, 35.6340]
+
+  Rbar =  29.6950 (probe 2): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state A, survival 32.62, Minf 4.137e+04, R at t = 0 32.31 (floor 29.7, slack 2.619), periods below the floor 0
+    bracket now [29.6950, 35.6340]
+
+  Rbar =  32.6645 (probe 3): converged, |F| = 5.82e-11, continuation, T = 400
+    routes: continuation |F| = 5.8e-11
+    state A, survival 29.58, Minf 4.127e+04, R at t = 0 35.18 (floor 32.66, slack 2.517), periods below the floor 0
+    bracket now [32.6645, 35.6340]
+
+  Rbar =  34.1493 (probe 4): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state A, survival 28.27, Minf 4.124e+04, R at t = 0 36.62 (floor 34.15, slack 2.472), periods below the floor 0
+    bracket now [34.1493, 35.6340]
+
+  Rbar =  34.8916 (probe 5): NOT SOLVED, |F| = 1.74e+23, cold, floor-scaled guess, T = 150
+    routes: continuation |F| = 4.5e-02; floor homotopy (8 steps) |F| = 4.0e-06; floor homotopy (24 steps) |F| = 2.7e+00; cold solve_long |F| = 1.0e+00; cold, floor-scaled guess |F| = 1.7e+23
+    largest residual rows: costate K (q) at t = 149: 1.74e+23; q (investment) at t = 150: -1.50e+23; q (investment) at t = 147: 1.48e+23; costate K (q) at t = 144: -9.50e+22
+    the floorless path first reaches this floor at t = 89 (1989)
+    bracket now [34.1493, 34.8916]
+
+  Rbar =  34.5204 (probe 6): converged, |F| = 1.16e-10, continuation, T = 400
+    routes: continuation |F| = 1.2e-10
+    state A, survival 27.97, Minf 4.124e+04, R at t = 0 36.98 (floor 34.52, slack 2.461), periods below the floor 0
+    bracket now [34.5204, 34.8916]
+
+edge at abar = 0.708: largest floor that solves 34.5204, smallest that does not 34.8916, bracket 0.3712 Gt wide
+
+stage 2: 14 probes in 9.2 min; rows C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\surface\edge.csv

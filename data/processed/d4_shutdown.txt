@@ -1,0 +1,93 @@
+
+==============================================================================
+D4 stage 3: the shutdown date on a 10-period grid, two collapse cells
+==============================================================================
+
+------------------------------------------------------------------------------
+shutdown search at abar = 0.708, Rbar = 9.502 over 21 dates 200:10:400, floor_steps = 6
+------------------------------------------------------------------------------
+
+9 of 21 dates converged in 2.1 min
+  Td = 200  converged value = -38.74570509     |F| =  5.3e-11  route cold  
+  Td = 210  converged value = -38.74118987     |F| =  3.6e-12  route warm  
+  Td = 220  converged value = -38.73840693     |F| =  3.6e-12  route warm  
+  Td = 230  converged value = -38.73669107     |F| =  3.6e-12  route warm  
+  Td = 240  converged value = -38.73563258     |F| =  3.6e-12  route cold  warm start from T = 230 stalled at |F| = 6.5e+00; 
+  Td = 250  converged value = -38.73497917     |F| =  1.6e-11  route cold  warm start from T = 240 stalled at |F| = 1.2e+01; 
+  Td = 260  converged value = -38.73457548     |F| =  9.1e-12  route cold  warm start from T = 250 stalled at |F| = 1.1e+01; 
+  Td = 270  converged value = -38.73432584     |F| =  1.5e-11  route cold  warm start from T = 260 stalled at |F| = 1.2e+01; 
+  Td = 280  converged value = -38.73417132     |F| =  1.5e-11  route cold  warm start from T = 270 stalled at |F| = 1.2e+01; 
+  Td = 290  skipped   value = --               |F| =  7.2e+00  route cold  warm start from T = 280 stalled at |F| = 1.2e+01; handover to V_stop stalled at |F| = 7.2e+00
+  Td = 300  skipped   value = --               |F| =  9.0e+00  route cold  warm start from T = 280 stalled at |F| = 1.7e+01; handover to V_stop stalled at |F| = 9.0e+00
+  Td = 310  skipped   value = --               |F| =  1.2e+01  route cold  warm start from T = 280 stalled at |F| = 2.2e+01; handover to V_stop stalled at |F| = 1.2e+01
+  Td = 320  skipped   value = --               |F| =  1.3e+01  route cold  warm start from T = 280 stalled at |F| = 3.6e+01; handover to V_stop stalled at |F| = 1.3e+01
+  Td = 330  skipped   value = --               |F| =  1.6e+01  route cold  warm start from T = 280 stalled at |F| = 7.3e+01; handover to V_stop stalled at |F| = 1.6e+01
+  Td = 340  skipped   value = --               |F| =  1.9e+01  route cold  warm start from T = 280 stalled at |F| = 1.5e+02; handover to V_stop stalled at |F| = 1.9e+01
+  Td = 350  skipped   value = --               |F| =  1.8e+01  route cold  warm start from T = 280 stalled at |F| = 3.2e+02; handover to V_stop stalled at |F| = 1.8e+01
+  Td = 360  skipped   value = --               |F| =  1.9e+01  route cold  warm start from T = 280 stalled at |F| = 6.8e+02; handover to V_stop stalled at |F| = 1.9e+01
+  Td = 370  skipped   value = --               |F| =  2.0e+01  route cold  warm start from T = 280 stalled at |F| = 1.6e+03; handover to V_stop stalled at |F| = 2.0e+01
+  Td = 380  skipped   value = --               |F| =  2.1e+01  route cold  warm start from T = 280 stalled at |F| = 3.2e+03; handover to V_stop stalled at |F| = 2.1e+01
+  Td = 390  skipped   value = --               |F| =  2.4e+01  route cold  warm start from T = 280 stalled at |F| = 7.3e+03; handover to V_stop stalled at |F| = 2.4e+01
+  Td = 400  skipped   value = --               |F| =  2.2e+01  route cold  warm start from T = 280 stalled at |F| = 1.8e+04; handover to V_stop stalled at |F| = 2.2e+01
+best Td = 280, value -38.73417132; monotone increasing; spread 1.153e-02 over a level of 38.73 (2.98e-04 relative)
+  the optimum is at the edge of the date grid: it is the grid's, not the model's
+
+------------------------------------------------------------------------------
+shutdown search at abar = 0.708, Rbar = 23.76 over 21 dates 200:10:400, floor_steps = 6
+------------------------------------------------------------------------------
+
+0 of 21 dates converged in 1.7 min
+  Td = 200  skipped   value = --               |F| =  2.2e-06  route cold  floor homotopy stalled at |F| = 2.2e-06
+  Td = 210  skipped   value = --               |F| =  2.3e-06  route cold  floor homotopy stalled at |F| = 2.3e-06
+  Td = 220  skipped   value = --               |F| =  2.0e-06  route cold  floor homotopy stalled at |F| = 2.0e-06
+  Td = 230  skipped   value = --               |F| =  3.2e-06  route cold  floor homotopy stalled at |F| = 3.2e-06
+  Td = 240  skipped   value = --               |F| =  2.3e-06  route cold  floor homotopy stalled at |F| = 2.3e-06
+  Td = 250  skipped   value = --               |F| =  2.0e-06  route cold  floor homotopy stalled at |F| = 2.0e-06
+  Td = 260  skipped   value = --               |F| =  2.3e-06  route cold  floor homotopy stalled at |F| = 2.3e-06
+  Td = 270  skipped   value = --               |F| =  2.0e-06  route cold  floor homotopy stalled at |F| = 2.0e-06
+  Td = 280  skipped   value = --               |F| =  3.2e-06  route cold  floor homotopy stalled at |F| = 3.2e-06
+  Td = 290  skipped   value = --               |F| =  7.2e+00  route cold  handover to V_stop stalled at |F| = 7.2e+00
+  Td = 300  skipped   value = --               |F| =  9.0e+00  route cold  handover to V_stop stalled at |F| = 9.0e+00
+  Td = 310  skipped   value = --               |F| =  1.2e+01  route cold  handover to V_stop stalled at |F| = 1.2e+01
+  Td = 320  skipped   value = --               |F| =  1.3e+01  route cold  handover to V_stop stalled at |F| = 1.3e+01
+  Td = 330  skipped   value = --               |F| =  1.6e+01  route cold  handover to V_stop stalled at |F| = 1.6e+01
+  Td = 340  skipped   value = --               |F| =  1.9e+01  route cold  handover to V_stop stalled at |F| = 1.9e+01
+  Td = 350  skipped   value = --               |F| =  1.8e+01  route cold  handover to V_stop stalled at |F| = 1.8e+01
+  Td = 360  skipped   value = --               |F| =  1.9e+01  route cold  handover to V_stop stalled at |F| = 1.9e+01
+  Td = 370  skipped   value = --               |F| =  2.0e+01  route cold  handover to V_stop stalled at |F| = 2.0e+01
+  Td = 380  skipped   value = --               |F| =  2.1e+01  route cold  handover to V_stop stalled at |F| = 2.1e+01
+  Td = 390  skipped   value = --               |F| =  2.4e+01  route cold  handover to V_stop stalled at |F| = 2.4e+01
+  Td = 400  skipped   value = --               |F| =  2.2e+01  route cold  handover to V_stop stalled at |F| = 2.2e+01
+
+no date converged at Rbar = 23.756; the cell again with floor_steps = 24
+
+------------------------------------------------------------------------------
+shutdown search at abar = 0.708, Rbar = 23.76 over 21 dates 200:10:400, floor_steps = 24
+------------------------------------------------------------------------------
+
+9 of 21 dates converged in 3.7 min
+  Td = 200  converged value = -49.49134964     |F| =  3.6e-12  route cold  
+  Td = 210  converged value = -49.48680296     |F| =  2.4e-11  route warm  
+  Td = 220  converged value = -49.48400332     |F| =  5.5e-12  route warm  
+  Td = 230  converged value = -49.48227847     |F| =  3.6e-12  route warm  
+  Td = 240  converged value = -49.48121507     |F| =  7.3e-12  route cold  warm start from T = 230 stalled at |F| = 6.5e+00; 
+  Td = 250  converged value = -49.48055894     |F| =  7.3e-12  route cold  warm start from T = 240 stalled at |F| = 1.2e+01; 
+  Td = 260  converged value = -49.48015373     |F| =  7.3e-12  route cold  warm start from T = 250 stalled at |F| = 1.1e+01; 
+  Td = 270  converged value = -49.47990322     |F| =  1.5e-11  route cold  warm start from T = 260 stalled at |F| = 1.2e+01; 
+  Td = 280  converged value = -49.4797482      |F| =  1.5e-11  route cold  warm start from T = 270 stalled at |F| = 1.2e+01; 
+  Td = 290  skipped   value = --               |F| =  7.2e+00  route cold  warm start from T = 280 stalled at |F| = 1.2e+01; handover to V_stop stalled at |F| = 7.2e+00
+  Td = 300  skipped   value = --               |F| =  9.0e+00  route cold  warm start from T = 280 stalled at |F| = 1.7e+01; handover to V_stop stalled at |F| = 9.0e+00
+  Td = 310  skipped   value = --               |F| =  1.2e+01  route cold  warm start from T = 280 stalled at |F| = 2.3e+01; handover to V_stop stalled at |F| = 1.2e+01
+  Td = 320  skipped   value = --               |F| =  1.3e+01  route cold  warm start from T = 280 stalled at |F| = 3.7e+01; handover to V_stop stalled at |F| = 1.3e+01
+  Td = 330  skipped   value = --               |F| =  1.6e+01  route cold  warm start from T = 280 stalled at |F| = 6.5e+01; handover to V_stop stalled at |F| = 1.6e+01
+  Td = 340  skipped   value = --               |F| =  1.9e+01  route cold  warm start from T = 280 stalled at |F| = 1.6e+02; handover to V_stop stalled at |F| = 1.9e+01
+  Td = 350  skipped   value = --               |F| =  1.8e+01  route cold  warm start from T = 280 stalled at |F| = 3.2e+02; handover to V_stop stalled at |F| = 1.8e+01
+  Td = 360  skipped   value = --               |F| =  1.9e+01  route cold  warm start from T = 280 stalled at |F| = 7.3e+02; handover to V_stop stalled at |F| = 1.9e+01
+  Td = 370  skipped   value = --               |F| =  2.0e+01  route cold  warm start from T = 280 stalled at |F| = 1.4e+03; handover to V_stop stalled at |F| = 2.0e+01
+  Td = 380  skipped   value = --               |F| =  2.1e+01  route cold  warm start from T = 280 stalled at |F| = 3.4e+03; handover to V_stop stalled at |F| = 2.1e+01
+  Td = 390  skipped   value = --               |F| =  2.4e+01  route cold  warm start from T = 280 stalled at |F| = 7.8e+03; handover to V_stop stalled at |F| = 2.4e+01
+  Td = 400  skipped   value = --               |F| =  2.2e+01  route cold  warm start from T = 280 stalled at |F| = 1.8e+04; handover to V_stop stalled at |F| = 2.2e+01
+best Td = 280, value -49.4797482; monotone increasing; spread 1.160e-02 over a level of 49.48 (2.34e-04 relative)
+  the optimum is at the edge of the date grid: it is the grid's, not the model's
+
+stage 3: 7.6 min; rows C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\surface\shutdown_grid.csv
