@@ -1,20 +1,23 @@
 # Overleaf sync
 
-`writing/overleaf.py` moves a writing project to and from Overleaf. Two are registered:
+`writing/overleaf.py` moves a writing project to and from Overleaf. Three are registered:
 
 - **`paper`** (`writing/paper/`) — the paper, co-authored with Peter Birch Sørensen. This **is** the
   Overleaf project at <https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa>.
-- **`docs`** (`writing/docs/`) — the technical note. This **is** the Overleaf project at
+- **`docs`** (`writing/docs/`) — the theory note. This **is** the Overleaf project at
   <https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc>.
+- **`quant`** (`writing/quant/`) — the quantitative note, split from the theory note 2026-09-17. This
+  **is** the Overleaf project at <https://da.overleaf.com/project/6aabe8521dad1168d7b72885>.
 
 Every command takes the project name. The module's docstring is the full manual
 (`python writing\overleaf.py --help`); it imports only the standard library, so any Python on the
 machine runs it. `/overleaf` in Claude Code drives it with the dry-run discipline below.
 
-## 1. Connecting `docs` to its Overleaf project (once)
+## 1. Connecting a project to its Overleaf project (once)
 
-The project exists; what has not happened is the first push. Do it once, and the day-to-day commands of
-§3 work from then on.
+All three registered projects are connected. The steps remain for the next one: create the empty
+Overleaf project, add its line to `PROJECTS` in `overleaf.py`, then do the first push once, and the
+day-to-day commands of §3 work from then on. `docs` below stands for the project name.
 
 1. Check what is in the Overleaf project now. If it is empty or a stub, step 4 simply fills it. If
    anything has been written there, read it first — the first push overwrites.

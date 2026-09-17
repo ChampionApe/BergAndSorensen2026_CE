@@ -2,7 +2,7 @@
 Terminal conditions, and the value of the shutdown state.
 
 The six terminal conditions all take the single form of
-`writing/docs/quant_solution.tex` eq. (terminal): if from date T onward the
+`writing/quant/quant_solution.tex` eq. (terminal): if from date T onward the
 dividend of a costate and the costate itself grow at a common factor `Gam`
 while the survival factor is constant, then
 

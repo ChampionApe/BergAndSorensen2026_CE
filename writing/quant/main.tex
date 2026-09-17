@@ -7,7 +7,7 @@
 %%                  0: title section                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Technical Note: Theory \\
+\title{Technical Note: The Quantitative Model \\
 \emph{The Environmental Macroeconomics of the Circular Economy}}
 
 \author{Rasmus Kehlet Skjødt Berg
@@ -23,19 +23,12 @@ Peter Birch Sørensen
 %%% Main sections %%%
 %%%%%%%%%%%%%%%%%%%%%
 
-\input{theory_planner}
-\input{theory_market}
+\input{quant_model}
+\input{quant_solution}
+\input{quant_calibration}
 
-
-\begin{appendices}
-\input{notation}
-\input{Appendix_explainFOCs}
-\input{Appendix_workhorse}
-\input{Appendix_sufficiency}
-\input{Appendix_exogenousPhiI}
-\input{Appendix_constantPhiI}
-\input{Appendix_listofextensions}
-\end{appendices}
+% The data appendix goes here when the calibration lands: one subsection per calibration target,
+% with the tables emitted by the data pipeline under a %% GENERATED banner. docs_style.md, section 5.
 
 \printbibliography
 

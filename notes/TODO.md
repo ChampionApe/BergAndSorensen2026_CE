@@ -13,9 +13,17 @@ leaves a gap; a new one takes the next free number.
    `overleaf.py`, and running both against one project is what the sync discipline exists to prevent.
    Overleaf → Menu → GitHub → unlink. Until this is done, a GitHub sync could still overwrite the
    project from the retired `BergAndSorensen2026_circular` repository, which is 2026-08-06 content.
-3. **Decide what `docs` and `paper` each own.** They are two documents of the same model in two time
-   conventions — the technical note is discrete time, the paper continuous. Neither states the relation
-   to the other, and the reader of either would want it in one sentence.
+3. **Decide what the notes and `paper` each own.** They are documents of the same model in two time
+   conventions — the notes are discrete time, the paper continuous. Neither states the relation
+   to the other, and the reader of either would want it in one sentence. The note itself was split
+   2026-09-17 into `writing/docs/` (theory) and `writing/quant/` (quantitative); that half is settled.
+10. **The quantitative note names the theory results it uses but does not yet restate them.** The 43
+   cross-document references were rewritten 2026-09-17 to name their target section (`docs_style.md`
+   §5); the equations it leans on — the collected ledger, the equations of motion, the net waste-stock
+   recursion, the survival condition — are still only named. Waits on the cut of the docs, since much
+   of the surrounding text may go.
+11. **`notes/data/` and the data appendix of the quantitative note exist as a rule, not as files.**
+   `docs_style.md` §5 says what goes where; the first file lands with the first decision under 5.
 4. **The two appendix stubs**, `Appendix_exogenousPhiI.tex` and `Appendix_constantPhiI.tex`. Both are
    three lines. Either write them or drop them from `main.tex`.
 

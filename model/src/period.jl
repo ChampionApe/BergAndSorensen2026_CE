@@ -1,7 +1,7 @@
 """
 The within-period block: definitions and materials accounting.
 
-The ordering below is the acyclic ordering of `writing/docs/quant_model.tex`
+The ordering below is the acyclic ordering of `writing/quant/quant_model.tex`
 eq. (within) and (accounting).  Nothing here depends on a period-t object
 defined later in the list, which is what makes the stacked Jacobian
 block-tridiagonal.  In particular the handled flow is drawn from the
@@ -69,7 +69,7 @@ end
 """
     price_block(p, t, b, m) -> NamedTuple
 
-The period-t price system of `writing/docs/quant_model.tex` eq. (prices),
+The period-t price system of `writing/quant/quant_model.tex` eq. (prices),
 written once for the market economy with the four policy dials.  At
 `(phiW, phiz, phiP, phiX) = (1,1,1,1)` every object below coincides with the
 corresponding planner shadow price: `tauW = pW`, `zz = zeta`, `pR = Psi - pW`,

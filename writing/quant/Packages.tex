@@ -152,8 +152,9 @@
 %Move todo-notes from left margin to right margin
     \reversemarginpar
 
-% Cross-document references. This note and the quantitative note (writing/quant/) are separate Overleaf
-% projects, and a \ref does not resolve across them. A reference into the quantitative note therefore
-% names its target: \quant{Section}{Paths that hit the floor}. docs_style.md, section 5.
-\newcommand{\quantnote}{the quantitative note}
-\newcommand{\quant}[2]{#1~\emph{#2} of \quantnote}
+% Cross-document references. This note and the theory note (writing/docs/) are separate Overleaf
+% projects, and a \ref does not resolve across them. A reference into the theory note therefore names
+% its target: \theory{Section}{The long run} prints "Section The long run of the theory note".
+% docs_style.md, section 5.
+\newcommand{\theorynote}{the theory note}
+\newcommand{\theory}[2]{#1~\emph{#2} of \theorynote}

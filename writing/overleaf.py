@@ -3,7 +3,8 @@ r""" Move tex sources between this folder and Overleaf, by zip or through the pr
 Each project below is one Overleaf project, and each is a self-contained folder under writing/ with its
 own main.tex, preamble and bibliography. Add a project by adding a line to PROJECTS:
 
-    docs    the technical note:         writing/docs/   -- Overleaf 6a74e6678784f21dd0dbe8bc
+    docs    the theory note:            writing/docs/   -- Overleaf 6a74e6678784f21dd0dbe8bc
+    quant   the quantitative note:      writing/quant/  -- Overleaf 6aabe8521dad1168d7b72885
     paper   the paper:                  writing/paper/  -- Overleaf 6a4378918a3c3c23fe9d9afa
 
 Export -- build a zip Overleaf can open (files at the zip root, main.tex among them):
@@ -71,6 +72,11 @@ PROJECTS = {
     # the Julia source implements. This IS the Overleaf project at
     #   https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc
     'docs':  {'root': 'docs',  'main': 'main.tex', 'include': ['.']},
+    # The quantitative note: the computable model, its solution and its calibration, with the data
+    # appendix when it lands. Split from the theory note 2026-09-17; the two refer to each other by
+    # section name (docs_style.md, section 5). This IS the Overleaf project at
+    #   https://da.overleaf.com/project/6aabe8521dad1168d7b72885
+    'quant': {'root': 'quant', 'main': 'main.tex', 'include': ['.']},
     # The paper, co-authored with Peter Birch Soerensen. This IS the Overleaf project at
     #   https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa
     # Its *git* URL (Menu > Git in that project) is a different address; it is remembered under exports/

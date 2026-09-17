@@ -1,6 +1,6 @@
 # Style guide for the paper
 
-How `writing/paper/` is written. `docs_style.md` is the counterpart for `writing/docs/`, and this file
+How `writing/paper/` is written. `docs_style.md` is the counterpart for the two technical notes, `writing/docs/` and `writing/quant/`, and this file
 **does not repeat it**: everything in `docs_style.md` §1–§4 applies here unless a section below says
 otherwise. Read that file first; this one is the list of differences.
 
@@ -20,8 +20,8 @@ follows from that.
   correspondence is stated rather than assumed.
 - **The result comes before the derivation.** A section states what it establishes, then establishes it.
   In the technical note the order is the model's; here it is the reader's.
-- **A long derivation goes to the appendix or to the technical note**, and the paper says which. The
-  online appendix is the paper's own; the technical note is a separate document and is cited as one,
+- **A long derivation goes to the appendix or to a technical note**, and the paper says which. The
+  online appendix is the paper's own; a technical note is a separate document and is cited as one,
   never `\input` across the folder boundary.
 - **Motivation is part of the writing, not a preface to it.** The technical note forbids meta-commentary
   outright. The paper needs to say why a mechanism matters — once, where the mechanism appears, not in a

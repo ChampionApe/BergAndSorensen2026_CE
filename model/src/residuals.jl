@@ -1,5 +1,5 @@
 """
-The stacked residual system of `writing/docs/quant_model.tex`.
+The stacked residual system of `writing/quant/quant_model.tex`.
 
 Two implementations are carried deliberately:
 

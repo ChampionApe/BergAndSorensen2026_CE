@@ -2,8 +2,8 @@
 
 *The Environmental Macroeconomics of the Circular Economy* (2026), by Rasmus K. Berg and Peter Birch
 Sørensen. This file is a map. `CLAUDE.md` holds the conventions and points at the three style guides:
-**`docs_style.md`** for the technical note, **`paper_style.md`** for the paper, **`code_style.md`** for
-`model/src/`.
+**`docs_style.md`** for the two technical notes, **`paper_style.md`** for the paper, **`code_style.md`**
+for `model/src/`.
 
 A Ramsey growth model with exhaustible resources and optimal recycling of polluting waste. Two
 primitives distinguish it from a standard environmental Ramsey problem: an anthropogenic **waste stock**
@@ -11,7 +11,7 @@ with its own transition and handling share, and a **hard material floor** below 
 undefined. The model is carried in three versions — a social planner, its decentralization, and a
 quantitative version with explicit functional forms — and the third is what `model/` implements.
 
-## Two documents
+## Three documents
 
 Each folder under `writing/` is one Overleaf project and is self-contained: its own `main.tex`,
 `Packages.tex`, `References.bib`. `writing/overleaf.py` moves each in both directions and
@@ -20,12 +20,16 @@ Each folder under `writing/` is one Overleaf project and is self-contained: its 
 | | | |
 |---|---|---|
 | `writing/paper/` | the paper, **continuous time** | <https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa> |
-| `writing/docs/` | the technical note, **discrete time** | <https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc> |
+| `writing/docs/` | the theory note, **discrete time** | <https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc> |
+| `writing/quant/` | the quantitative note, **discrete time** | <https://da.overleaf.com/project/6aabe8521dad1168d7b72885> |
 
-The note runs planner → market → quantitative, with the derivations, the workhorse specification, the
-sufficiency protocol and the notation appendix behind them. The two documents are the same model in two
-time conventions, so a symbol does not always mean the same object in both; `writing/docs/notation.tex`
-names the two that differ. The planner part is marked `%% ALMOST DONE` and is edited minimally.
+The theory note runs planner → market, with the derivations, the workhorse specification, the
+sufficiency protocol and the notation appendix behind them; the planner part is marked `%% ALMOST DONE`
+and is edited minimally. The quantitative note is the computable model, its solution, its calibration,
+and the data appendix once the calibration lands. The two notes cite each other by section name, never
+by `\ref` (`docs_style.md` §5). The notes and the paper are the same model in two time conventions, so a
+symbol does not always mean the same object in both; `writing/docs/notation.tex` names the two that
+differ.
 
 ## The model
 
@@ -48,7 +52,11 @@ Sources are **ASCII only**, deliberately, and the symbol table is what makes tha
 ## Layout
 
 **`data/`** — raw and processed inputs, not results. Empty: `notes/data_plan_global_1850.md` is the
-plan, and two decisions come before any downloading.
+plan, and two decisions come before any downloading. When it fills, the pipeline script owns the
+transformations and emits the quantitative note's data-appendix tables as `%% GENERATED` tex,
+`data/SOURCES.md` keeps provenance, and `notes/data/` holds one file per decision area: the
+alternatives, the reason, the date. The rule that splits reader-facing from process is
+`docs_style.md` §5.
 
 **`results/`** — solved output. Empty: nothing is published from the model yet, and every number the
 quantitative part currently states is illustrative, because `model/src/calibration.jl` holds

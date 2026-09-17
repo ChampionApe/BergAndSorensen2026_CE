@@ -1,7 +1,7 @@
 # `model/` — quantitative implementation
 
 Julia implementation of the quantitative model documented in
-`writing/docs/quant_model.tex`, `quant_solution.tex` and `quant_calibration.tex`.
+`writing/quant/quant_model.tex`, `quant_solution.tex` and `quant_calibration.tex`.
 Standard-library dependencies only (`LinearAlgebra`, `SparseArrays`, `Printf`).
 
 ```

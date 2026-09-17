@@ -1,7 +1,7 @@
 # Style guide for code
 
 How `model/src/` is written: the notation it inherits from the documentation, the shape of a file, and
-how much prose belongs in it. `docs_style.md` is the counterpart for `writing/docs/`, and the two are
+how much prose belongs in it. `docs_style.md` is the counterpart for the two technical notes, `writing/docs/` and `writing/quant/`, and the two guides are
 meant to be read side by side, because the source implements the document equation for equation.
 
 ## 1. Notation is inherited, not chosen

@@ -2,7 +2,7 @@
 Post-solution diagnostics.
 
 Everything here is a check the model should pass without having been told to.
-The five items of `writing/docs/quant_solution.tex`, Section "Verification",
+The five items of `writing/quant/quant_solution.tex`, Section "Verification",
 are implemented as `check_path`.
 """
 

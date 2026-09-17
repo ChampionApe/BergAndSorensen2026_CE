@@ -1,7 +1,7 @@
 # Data plan: calibrating the quantitative model to the global economy from ~1850
 
 Working note. Purpose: say exactly which observables the quantitative model of
-`writing/docs/quant_*.tex` needs, where each comes from, what has to be constructed, and in
+`writing/quant/quant_*.tex` needs, where each comes from, what has to be constructed, and in
 what order to do the work. Nothing here is settled; it is a plan with fallbacks.
 
 ## 0. The short version

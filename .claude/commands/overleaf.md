@@ -1,12 +1,14 @@
 ---
-description: Sync a writing project (paper|docs) with Overleaf — pull edits, or push local changes
+description: Sync a writing project (paper|docs|quant) with Overleaf — pull edits, or push local changes
 argument-hint: pull|push [project]
 ---
 
 Sync one writing project with Overleaf using `writing/overleaf.py`. Registered projects: `paper`
-(`writing/paper/` — the Overleaf project at <https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa>)
-and `docs` (`writing/docs/` — the Overleaf project at
-<https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc>). Default is `paper` if none is given;
+(`writing/paper/` — the Overleaf project at <https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa>),
+`docs` (`writing/docs/`, the theory note — the Overleaf project at
+<https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc>) and `quant` (`writing/quant/`, the
+quantitative note — the Overleaf project at <https://da.overleaf.com/project/6aabe8521dad1168d7b72885>).
+Default is `paper` if none is given;
 `notes/overleafSync.md` is the procedure this command follows, and §2 there is a cutover that has not
 necessarily happened yet — check before a first push on `paper`.
 Arguments: $ARGUMENTS

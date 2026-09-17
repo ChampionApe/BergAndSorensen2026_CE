@@ -1,0 +1,6 @@
+\begin{abstract}
+\noindent
+This note documents the quantitative model of the paper \emph{The Environmental Macroeconomics of the Circular Economy}: the workhorse specification of the theory note taken literally and solved as a deterministic perfect-foresight path from a historical initial condition. It states the model in the form the code implements, a single vector of residuals per period in which the social planner and the market economy are the same system evaluated at different points of a four-dimensional policy space; the solution method, a stacked Newton system with a block-tridiagonal Jacobian, continuation in the parameters that make the problem hard, and a discrete search over the shutdown date on paths that reach the material floor; and the calibration, what each parameter block is identified by, the two parameters that history cannot identify, and the experiments the theory calls for.
+
+The theory note is a separate document. It carries the planner's problem, its decentralisation, the derivations, the workhorse specification and the notation, and this note refers to it by section name. Notation follows it throughout, and \texttt{model/SYMBOLS.md} maps each symbol to its identifier in the source.
+\end{abstract}

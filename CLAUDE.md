@@ -12,16 +12,20 @@ Two things distinguish the model from a standard environmental Ramsey problem, a
 below exist to protect one of them: an anthropogenic **waste stock** with its own transition and
 handling share, and a **hard material floor** below which the technology is undefined.
 
-The project has two written outputs, each its own Overleaf project:
+The project has three written outputs, each its own Overleaf project:
 
 | | | |
 |---|---|---|
 | `writing/paper/` | the paper, with Peter Birch Sørensen | <https://da.overleaf.com/project/6a4378918a3c3c23fe9d9afa> |
-| `writing/docs/` | the technical note | <https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc> |
+| `writing/docs/` | the theory note: planner, market, derivations, notation | <https://da.overleaf.com/project/6a74e6678784f21dd0dbe8bc> |
+| `writing/quant/` | the quantitative note: computable model, solution, calibration, data | <https://da.overleaf.com/project/6aabe8521dad1168d7b72885> |
 
-They are the same model in two time conventions — the note is discrete time, the paper continuous — and
-a symbol does not always mean the same object in both. `writing/docs/notation.tex` names the two that
-differ outright.
+The two notes are one document split in two, so the theory, which is nearly frozen, is not re-exported
+every time the calibration moves. They refer to each other by section name through the `\theory` and
+`\quant` macros in their preambles, never by `\ref`, which does not resolve across Overleaf projects
+(`docs_style.md` §5). The notes and the paper are the same model in two time conventions — the notes
+are discrete time, the paper continuous — and a symbol does not always mean the same object in both.
+`writing/docs/notation.tex` names the two that differ outright.
 
 ## Where the conventions live
 
@@ -30,7 +34,7 @@ third place.
 
 | | |
 |---|---|
-| `docs_style.md` | **how `writing/docs/` is written**: prose, LaTeX, what a section must contain |
+| `docs_style.md` | **how `writing/docs/` and `writing/quant/` are written**: prose, LaTeX, what a section must contain, where data documentation goes |
 | `paper_style.md` | **how `writing/paper/` is written**, as the list of differences from `docs_style.md` — it does not repeat it |
 | `code_style.md` | **how `model/src/` is written**: the notation it inherits, the shape of a file, what earns a comment |
 | `writing/docs/notation.tex` | **the notation** and the rules behind it, as an appendix to the note |
@@ -69,7 +73,7 @@ These fail silently rather than loudly, which is why they are here rather than i
 - **Do not hand-edit a file carrying a `%% GENERATED` banner.** Nothing generates one yet; when the
   quantitative results start landing in tex they will, and `overleaf.py` already protects them.
 - **Documentation is part of the work, not a write-up phase.** A change to the model that is not
-  reflected in `writing/docs/` is unfinished.
+  reflected in the notes under `writing/` is unfinished.
 
 ## Working conventions
 
@@ -79,6 +83,10 @@ These fail silently rather than loudly, which is why they are here rather than i
   registered in that file. Write checks straight into the file that will keep them. 742 pass today; a
   red suite is reported as red, with the failing assertion.
 - **Do not compile tex.** Add the file under `writing/` and let the user compile locally.
+- **Data documentation has three homes**, split by one rule: what a reader needs to reproduce or
+  interpret a number goes in the quantitative note's data appendix; why we chose this over that goes
+  in `notes/data/`, one file per decision area; the transformation itself lives in the pipeline
+  script. `docs_style.md` §5 is the rule, and `data/SOURCES.md` keeps provenance.
 - **Logs, at end of session.** After a full working session, *before shutting it down* — not during
   every interaction — append a short entry to the relevant log: the root `RESEARCH_LOG.md` for
   cross-cutting work, the theory and the writing; `model/RESEARCH_LOG.md` for the quantitative

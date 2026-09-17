@@ -142,7 +142,7 @@ candidate is scored by
 
 Returns the best candidate together with the full table, so that a flat or
 multi-peaked objective is visible rather than silently resolved.  This is the
-discrete comparison of `writing/docs/quant_solution.tex`, Section "Paths that
+discrete comparison of `writing/quant/quant_solution.tex`, Section "Paths that
 hit the floor"; it adds a scalar grid search and no dimension to the problem.
 """
 function solve_with_shutdown(p::Params, s0::AbstractVector, dates;
