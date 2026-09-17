@@ -161,6 +161,106 @@
     "Xref": {
       "value": 13503.021414121506,
       "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "abar": {
+      "value": 1.0,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "xi": {
+      "value": 2.7220048739523293,
+      "low": 0.9073349579841098,
+      "high": 8.166014621856988,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "tail": {
+      "value": "exp",
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "psi_a": {
+      "value": 1.0,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "mu_h": {
+      "value": 0.034892902147045414,
+      "low": 0.034892902147045414,
+      "high": 0.045956914105369846,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "cc0": {
+      "value": 0.035,
+      "low": 0.02,
+      "high": 0.05,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "cc_inf": {
+      "value": 0.035,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "gcc": {
+      "value": 0.0,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "cT0": {
+      "value": 0.07,
+      "low": 0.04,
+      "high": 0.1,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "cT_inf": {
+      "value": 0.07,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "gcT": {
+      "value": 0.0,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "chi_T": {
+      "value": 1.75,
+      "low": 0.5,
+      "high": 3.0,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "dW": {
+      "value": 0.15,
+      "low": 0.05,
+      "high": 0.3,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "rho": {
+      "value": 0.03744247253860894,
+      "source": "quant_data.tex, Preferences; notes/data/calibration.md"
+    },
+    "eta": {
+      "value": 1.4087604745534765,
+      "low": 1.4087604745534765,
+      "high": 1.4087604745534765,
+      "source": "quant_data.tex, Preferences; notes/data/calibration.md"
+    },
+    "psi_v": {
+      "value": 0.0,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
+    },
+    "kappa": {
+      "value": 6.777414247768164e-06,
+      "low": 2.3909158057403503e-06,
+      "high": 1.370462948809938e-05,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
+    },
+    "theta0": {
+      "value": 0.0181633121,
+      "low": 0.00652346508,
+      "high": 0.0181633121,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
+    },
+    "theta_min": {
+      "value": 0.0181633121,
+      "low": 0.00652346508,
+      "high": 0.0181633121,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
+    },
+    "thetaP": {
+      "value": 0.0,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
     }
   },
   "states": {
@@ -175,12 +275,34 @@
       "low": 10808.193584516484,
       "high": 16197.849243726525,
       "source": "quant_data.tex, Extraction and exploration; notes/data/resources.md; notes/data/calibration.md"
+    },
+    "W0": {
+      "value": 16.392178305765608,
+      "low": 0.5719706736,
+      "high": 16.392178305765608,
+      "source": "quant_data.tex, Waste handling and recycling; notes/data/waste_stock.md; notes/data/waste_recycling.md"
+    },
+    "P0": {
+      "value": 78.95603800157946,
+      "source": "quant_data.tex, Damages and decay; notes/data/pollution.md"
     }
   },
   "cases": {
     "muN_range": [
       0.0,
       2.2717290107620154
+    ],
+    "abar": [
+      1.0,
+      0.708
+    ],
+    "xi_range": [
+      0.9073349579841098,
+      8.166014621856988
+    ],
+    "abar_H_range": [
+      0.5268637013738345,
+      0.8891592119974265
     ]
   }
 }

@@ -1,0 +1,34 @@
+name,value,unit,note
+Wstock_2015,533.7128656,Gt,"cumulative disposal 1900-2015, fossil, metals, minerals"
+Wstock_2015_biomass_excluded,783.0482883,Gt,the biomass residue not counted
+disposal_outflow_2015,18.622790794,Gt/yr,"Haas et al. (2020), solid and liquid residues"
+recycled_2015,5.90500552731,Gt/yr,"Haas et al. (2020), secondary input, the same categories"
+disposal_outflow_1900,0.5719706736,Gt/yr,
+mu_h,0.034892902147045414,per year,disposal outflow over the stock
+mu_h_including_recovery,0.045956914105369846,per year,handled flow read as disposal plus recovery
+residence_time,28.659123731978706,years,1/mu_h
+treated_share_recycling_only,0.24074749520729147,share,"B1, non-biomass"
+treated_share_msw_unep2020,0.62,share,UNEP (2024)
+treated_share_msw_kaza2016,0.67,share,Kaza et al. (2018)
+cc_usd_low,20.0,US$/t,"Kaza et al. (2018) table 5.2, low income, collection"
+cc_usd_high,50.0,US$/t,
+cT_usd_low,40.0,US$/t,"Kaza et al. (2018) table 5.2, high income, sanitary landfill"
+cT_usd_high,100.0,US$/t,
+cc0,0.035,trillion $/Gt,midpoint; price base not stated
+cT0,0.07,trillion $/Gt,midpoint; price base not stated
+CW_2015_at_msw_share,0.6999408089164074,trillion $,"c^W(varpi) H at the UNEP treated share, chi_T midpoint"
+abar_metals,0.7080114566856305,share,UNEP IRP (2011) mass-weighted end-of-life recycling rate
+abar_metals_low,0.5268637013738345,share,
+abar_metals_high,0.8891592119974265,share,
+yield_observed_2015,0.38830241162466367,share,"RR / (varpi H), non-biomass, UNEP treated share"
+capital_per_added_tonne_packaging,0.6005847953216373,trillion $ per Gt/yr,"US EPA (2024), packaging"
+capital_per_added_tonne_all,0.4610852288298164,trillion $ per Gt/yr,"US EPA (2024), with organics"
+aprime_observed,1.6650438169425514,Gt per trillion $,1 / capital per added tonne
+xi,2.7220048739523293,Gt per trillion $,a' / (abar - a) at abar = 1
+xi_with_organics,3.5455370024237993,Gt per trillion $,the same on the wider programme
+xi_low,0.9073349579841098,Gt per trillion $,an order of magnitude around the point
+xi_high,8.166014621856988,Gt per trillion $,
+x_implied_2015,0.18057177631849064,trillion $/Gt,recycling capital per treated tonne
+KR_implied_2015,2.7459972055685937,trillion $,x times the treated flow
+W0,16.392178305765608,Gt,the stock consistent with the 1900 disposal flow at mu_h
+W0_own_year_only,0.5719706736,Gt,"the 1900 residue alone, the lower end"
