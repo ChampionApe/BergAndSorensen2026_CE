@@ -56,7 +56,7 @@ export Model, nvar, period_block, price_block, effective_survival,
        residual_market!, residual_planner!, mcp
 
 # long run
-export restpoint_B1, cbgp, survival_ratio, closure_check, invert_aprime,
+export restpoint_stationary, cbgp, survival_ratio, closure_check, invert_aprime,
        classify_longrun
 
 # terminal / shutdown

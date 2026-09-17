@@ -2,8 +2,11 @@
 Post-solution diagnostics.
 
 Everything here is a check the model should pass without having been told to.
-The five items of `writing/quant/quant_solution.tex`, Section "Verification",
-are implemented as `check_path`.
+Of the six items of `writing/quant/quant_solution.tex`, Section "Verification",
+`check_path` carries the accounting ones, mass balance and the cumulative
+bounds; planner--market equivalence is `compare_residuals`, the analytic
+long-run blocks are compared in the test suite against `longrun.jl`, horizon
+sensitivity is `solve_long`, and local optimality is `sufficiency.jl`.
 """
 
 """
@@ -38,7 +41,8 @@ pseries(sol, f::Symbol) = [getfield(pr, f) for pr in sol.prices]
 """
     check_path(mo, x; verbose = true) -> NamedTuple
 
-Runs the five verification checks and returns their worst violations.
+Runs the five accounting checks numbered in the body and returns their worst
+violations.
 """
 function check_path(mo::Model, x::AbstractVector; verbose::Bool = true)
     p, T = mo.p, mo.T

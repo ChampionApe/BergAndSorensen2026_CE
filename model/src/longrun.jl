@@ -5,8 +5,10 @@ Three objects, all solved independently of the path solver so that they can be
 used as terminal conditions, as starting points, and above all as checks: a
 solved path is required to converge to them.
 
-  * `restpoint_B1`  -- the dematerialized rest point of the stationary regime
-    (workhorse eqs. mgr, restprices, pWstar), for the choke case `sigma_s = Inf`.
+  * `restpoint_stationary` -- the dematerialized rest point of the stationary
+    benchmark, Appendix D of the theory note (workhorse eqs. mgr, restprices,
+    pWstar), for the choke case `sigma_s = Inf`.  Outside the classification;
+    kept because the terminal closure at `Gam = 1` and the verification use it.
   * `cbgp`          -- the circular balanced growth path (workhorse eqs.
     cbgp:multipliers, cbgp:solution, cbgp:little).
   * `closure_check` -- the tail criterion of Proposition "closure criterion".
@@ -82,19 +84,19 @@ function invert_aprime(p::Params, v)
 end
 
 # ---------------------------------------------------------------------------
-# B1: the dematerialized rest point (choke case)
+# the stationary benchmark: the dematerialized rest point (choke case)
 # ---------------------------------------------------------------------------
 
 """
-    restpoint_B1(p) -> NamedTuple
+    restpoint_stationary(p) -> NamedTuple
 
-Rest point of the stationary regime with the linear aggregate (`sigma_s = Inf`),
+Rest point of the stationary benchmark with the linear aggregate (`sigma_s = Inf`),
 where the marginal value of a tonne is finite and the material era can end by
 choice.  Trends are evaluated at their limits, so run this with `gA = gB = 0`
 and the cost coefficients at `*_inf`.
 """
-function restpoint_B1(p::Params)
-    isinf(p.sigma_s) || @warn "restpoint_B1 is the closed form for sigma_s = Inf; " *
+function restpoint_stationary(p::Params)
+    isinf(p.sigma_s) || @warn "restpoint_stationary is the closed form for sigma_s = Inf; " *
                               "with finite sigma_s > 1 materials stay essential at the margin"
     A, B = p.A0, p.B0
     rd = p.rho + p.delta

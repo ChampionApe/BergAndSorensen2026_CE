@@ -8,8 +8,8 @@ while the survival factor is constant, then
 
     m_T * (1 + r_inf - s_T * Gam) = Gam * div_T,     1 + r_inf = Gam^eta (1+rho).
 
-`Gam = 1` gives the rest-point formulae of the stationary regime; `Gam = e^g`
-gives the circular balanced growth path.  The stockpile row is closed with its
+`Gam = 1` gives the rest-point formulae of the stationary benchmark; `Gam = e^g`
+gives the circular balanced growth path of trending technology.  The stockpile row is closed with its
 *primitive* survival factor `1 - mu`; the substitution `tauW = -pW` inside the
 dividend then makes it algebraically equivalent to closing the net recursion
 with the effective factor `1 - mu(1 - alpha*varpi)`, so no switch between a

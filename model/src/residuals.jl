@@ -27,8 +27,8 @@ const NEND = NC + NM        # 12
     Model(p; T, s0, Gam)
 
 `T` is the index of the terminal period, `s0` the initial state vector, `Gam`
-the terminal growth factor of the costate closure (1 in a stationary regime,
-`exp(g)` on a balanced growth path).
+the terminal growth factor of the costate closure (1 for the stationary
+benchmark, `exp(g)` on a balanced growth path with trending technology).
 """
 struct Model
     p::Params

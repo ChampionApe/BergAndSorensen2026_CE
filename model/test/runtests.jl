@@ -264,6 +264,42 @@ end
     @test isapprox(mA2.survival_ratio, 0.5; rtol = 1e-10)
 end
 
+@testset "the stationary rest point is a return point" begin
+    # Verification item 3 of the quantitative note, the benchmark half: with
+    # the trends off, the linear aggregate and the terminal closure at Gam = 1,
+    # a path started a few percent away from the closed-form dematerialized
+    # rest point of Appendix D returns to it.  At these parameters the closed
+    # form strands the whole reserve, so no tonne is ever extracted and the
+    # material stocks drain towards zero at the handling share.
+    p = baseline_params(gA = 0.0, gB = 0.0, sigma_s = Inf)
+    rp = restpoint_stationary(p)
+    @test rp.all_stranded
+    kick = 0.03
+    mo = Model(p; T = 60, s0 = [(1 + kick) * rp.K, 20.0, 25.0, 0.02, 0.05, 0.05], Gam = 1.0)
+    x, ok, _ = solve_path(mo, initial_guess(mo; Rtarget = 0.0, warn = false))
+    @test ok
+    sol = unpack(mo, x)
+    b = sol.blocks[end]; m = sol.costates[end, :]
+    # the goods block returns: closer at T than the shock, and within tolerance
+    @test abs(b.K / rp.K - 1) < 1e-3 < kick
+    @test isapprox(b.Y, rp.Y; rtol = 1e-3)
+    @test isapprox(b.C, rp.C; rtol = 5e-3)
+    # the reserve is never touched and the material flow has all but vanished
+    @test maximum(series(sol, :N)) < 1e-10
+    @test b.R < 1e-2
+    # the prices return to the closed form.  The rest point reports the
+    # stockpile price in the workhorse's sign, which is the gate fee tauW = -pW.
+    @test isapprox(m[IQ], 1.0; atol = 1e-3)
+    @test isapprox(m[IPP], rp.pP; rtol = 1e-3)
+    @test isapprox(m[IPM], rp.pM; rtol = 1e-3)
+    @test isapprox(pseries(sol, :tauW)[end], rp.pW; rtol = 1e-3)
+    @test abs(m[IPS]) < 1e-8 && abs(m[IPX]) < 1e-8
+    # and so do the recycling margins
+    @test isapprox(b.x, rp.x; rtol = 1e-2)
+    @test isapprox(b.vw, rp.varpi; atol = 1e-9)
+    @test check_path(mo, x; verbose = false).ledger_rel_error < 1e-7
+end
+
 @testset "the shutdown state" begin
     p = baseline_params()
     s_stop, gC = cake_policy(p)
