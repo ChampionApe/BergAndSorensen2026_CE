@@ -53,3 +53,14 @@ Thumbs.db
 # data/build/b1_haas2020.py unpacks the single workbook inside it on first run. The unpacked copy is
 # a duplicate of two megabytes, not a second source.
 data/raw/haas2020/Supporting Material Table S1 RCR.xlsx
+
+# B2: Maddison and PWT each ship the same data twice, as xlsx and as Stata. The pipeline reads the
+# xlsx; the .dta files stay on disk because they were downloaded, and out of the history because
+# they are duplicates of a committed file.
+data/raw/maddison2023/*.dta
+data/raw/pwt1001/*.dta
+
+# B2: the Piketty and Zucman (2014) "Capital is Back" workbooks carry no licence statement -- they
+# are posted by the authors as the article's supporting data. Readable here, not ours to
+# redistribute. data/sources/B2_macro.md carries the re-download command.
+data/raw/piketty_zucman2014/

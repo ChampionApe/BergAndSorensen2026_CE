@@ -1,0 +1,1039 @@
+year,series,value,unit,source,method
+1900,gdp_world,3.5037082325207036,trillion 2011 intl USD,maddison2023,interpolated
+1901,gdp_world,3.6322933146938934,trillion 2011 intl USD,maddison2023,interpolated
+1902,gdp_world,3.7015985020430473,trillion 2011 intl USD,maddison2023,interpolated
+1903,gdp_world,3.821880964326062,trillion 2011 intl USD,maddison2023,interpolated
+1904,gdp_world,3.853284433774991,trillion 2011 intl USD,maddison2023,interpolated
+1905,gdp_world,3.9830099367871905,trillion 2011 intl USD,maddison2023,interpolated
+1906,gdp_world,4.228790469551526,trillion 2011 intl USD,maddison2023,interpolated
+1907,gdp_world,4.294063557181631,trillion 2011 intl USD,maddison2023,interpolated
+1908,gdp_world,4.193254954468582,trillion 2011 intl USD,maddison2023,interpolated
+1909,gdp_world,4.465006772365442,trillion 2011 intl USD,maddison2023,interpolated
+1910,gdp_world,4.513639612649814,trillion 2011 intl USD,maddison2023,interpolated
+1911,gdp_world,4.653162160823523,trillion 2011 intl USD,maddison2023,interpolated
+1912,gdp_world,4.79784102475938,trillion 2011 intl USD,maddison2023,interpolated
+1913,gdp_world,4.905678373102706,trillion 2011 intl USD,maddison2023,interpolated
+1914,gdp_world,4.642484239283027,trillion 2011 intl USD,maddison2023,interpolated
+1915,gdp_world,4.669869146257534,trillion 2011 intl USD,maddison2023,interpolated
+1916,gdp_world,4.982649208609657,trillion 2011 intl USD,maddison2023,interpolated
+1917,gdp_world,4.856843452865927,trillion 2011 intl USD,maddison2023,interpolated
+1918,gdp_world,4.834986098384534,trillion 2011 intl USD,maddison2023,interpolated
+1919,gdp_world,4.816356309592546,trillion 2011 intl USD,maddison2023,interpolated
+1920,gdp_world,4.824948434156693,trillion 2011 intl USD,maddison2023,interpolated
+1921,gdp_world,4.824195719933985,trillion 2011 intl USD,maddison2023,interpolated
+1922,gdp_world,5.156476465264913,trillion 2011 intl USD,maddison2023,interpolated
+1923,gdp_world,5.375515901226884,trillion 2011 intl USD,maddison2023,interpolated
+1924,gdp_world,5.647833736682932,trillion 2011 intl USD,maddison2023,interpolated
+1925,gdp_world,5.844827332730937,trillion 2011 intl USD,maddison2023,interpolated
+1926,gdp_world,6.026697598044049,trillion 2011 intl USD,maddison2023,interpolated
+1927,gdp_world,6.182983866029243,trillion 2011 intl USD,maddison2023,interpolated
+1928,gdp_world,6.363164288332539,trillion 2011 intl USD,maddison2023,interpolated
+1929,gdp_world,6.6119103006508135,trillion 2011 intl USD,maddison2023,interpolated
+1930,gdp_world,6.291741497706167,trillion 2011 intl USD,maddison2023,interpolated
+1931,gdp_world,5.9801132022109655,trillion 2011 intl USD,maddison2023,interpolated
+1932,gdp_world,5.6286493922378416,trillion 2011 intl USD,maddison2023,interpolated
+1933,gdp_world,5.712921749526975,trillion 2011 intl USD,maddison2023,interpolated
+1934,gdp_world,5.9968123316426825,trillion 2011 intl USD,maddison2023,interpolated
+1935,gdp_world,6.343503927536216,trillion 2011 intl USD,maddison2023,interpolated
+1936,gdp_world,6.682916907359908,trillion 2011 intl USD,maddison2023,interpolated
+1937,gdp_world,7.030351829663813,trillion 2011 intl USD,maddison2023,interpolated
+1938,gdp_world,7.0175147401673765,trillion 2011 intl USD,maddison2023,interpolated
+1939,gdp_world,7.447756921636267,trillion 2011 intl USD,maddison2023,interpolated
+1940,gdp_world,7.646890175460651,trillion 2011 intl USD,maddison2023,interpolated
+1941,gdp_world,8.042337270663674,trillion 2011 intl USD,maddison2023,interpolated
+1942,gdp_world,8.290005111973334,trillion 2011 intl USD,maddison2023,interpolated
+1943,gdp_world,8.556608313879206,trillion 2011 intl USD,maddison2023,interpolated
+1944,gdp_world,8.65552922216431,trillion 2011 intl USD,maddison2023,interpolated
+1945,gdp_world,7.999598701475249,trillion 2011 intl USD,maddison2023,interpolated
+1946,gdp_world,7.42974956039327,trillion 2011 intl USD,maddison2023,interpolated
+1947,gdp_world,7.42187384358428,trillion 2011 intl USD,maddison2023,interpolated
+1948,gdp_world,7.778957420154897,trillion 2011 intl USD,maddison2023,interpolated
+1949,gdp_world,7.9431695659657455,trillion 2011 intl USD,maddison2023,interpolated
+1950,gdp_world,8.46155218538598,trillion 2011 intl USD,maddison2023,aggregated
+1951,gdp_world,9.009430159549904,trillion 2011 intl USD,maddison2023,aggregated
+1952,gdp_world,9.43725760101307,trillion 2011 intl USD,maddison2023,aggregated
+1953,gdp_world,9.95925594485742,trillion 2011 intl USD,maddison2023,aggregated
+1954,gdp_world,10.225844716132475,trillion 2011 intl USD,maddison2023,aggregated
+1955,gdp_world,10.904703973561663,trillion 2011 intl USD,maddison2023,aggregated
+1956,gdp_world,11.419991789395652,trillion 2011 intl USD,maddison2023,aggregated
+1957,gdp_world,11.829028753666448,trillion 2011 intl USD,maddison2023,aggregated
+1958,gdp_world,12.141755997577901,trillion 2011 intl USD,maddison2023,aggregated
+1959,gdp_world,12.677295914314662,trillion 2011 intl USD,maddison2023,aggregated
+1960,gdp_world,13.333326263398122,trillion 2011 intl USD,maddison2023,aggregated
+1961,gdp_world,13.803840144357508,trillion 2011 intl USD,maddison2023,aggregated
+1962,gdp_world,14.496669082101427,trillion 2011 intl USD,maddison2023,aggregated
+1963,gdp_world,15.15929033118749,trillion 2011 intl USD,maddison2023,aggregated
+1964,gdp_world,16.279334588035542,trillion 2011 intl USD,maddison2023,aggregated
+1965,gdp_world,17.14150696856045,trillion 2011 intl USD,maddison2023,aggregated
+1966,gdp_world,18.029464585103806,trillion 2011 intl USD,maddison2023,aggregated
+1967,gdp_world,18.72354562008085,trillion 2011 intl USD,maddison2023,aggregated
+1968,gdp_world,19.74680859141259,trillion 2011 intl USD,maddison2023,aggregated
+1969,gdp_world,20.854752849963788,trillion 2011 intl USD,maddison2023,aggregated
+1970,gdp_world,21.932607939761407,trillion 2011 intl USD,maddison2023,aggregated
+1971,gdp_world,22.846645159581197,trillion 2011 intl USD,maddison2023,aggregated
+1972,gdp_world,23.93216041651084,trillion 2011 intl USD,maddison2023,aggregated
+1973,gdp_world,25.530739881015098,trillion 2011 intl USD,maddison2023,aggregated
+1974,gdp_world,26.133461308037933,trillion 2011 intl USD,maddison2023,aggregated
+1975,gdp_world,26.55303211601413,trillion 2011 intl USD,maddison2023,aggregated
+1976,gdp_world,27.803147513366646,trillion 2011 intl USD,maddison2023,aggregated
+1977,gdp_world,28.936947948534467,trillion 2011 intl USD,maddison2023,aggregated
+1978,gdp_world,30.248558382740768,trillion 2011 intl USD,maddison2023,aggregated
+1979,gdp_world,31.351001147429734,trillion 2011 intl USD,maddison2023,aggregated
+1980,gdp_world,32.03689918047979,trillion 2011 intl USD,maddison2023,aggregated
+1981,gdp_world,32.61960433801099,trillion 2011 intl USD,maddison2023,aggregated
+1982,gdp_world,33.034077775211145,trillion 2011 intl USD,maddison2023,aggregated
+1983,gdp_world,33.96997517899939,trillion 2011 intl USD,maddison2023,aggregated
+1984,gdp_world,35.52071681421099,trillion 2011 intl USD,maddison2023,aggregated
+1985,gdp_world,36.73366618761826,trillion 2011 intl USD,maddison2023,aggregated
+1986,gdp_world,38.04834625920579,trillion 2011 intl USD,maddison2023,aggregated
+1987,gdp_world,39.486334731719154,trillion 2011 intl USD,maddison2023,aggregated
+1988,gdp_world,41.15193265282356,trillion 2011 intl USD,maddison2023,aggregated
+1989,gdp_world,42.45643099928568,trillion 2011 intl USD,maddison2023,aggregated
+1990,gdp_world,43.117558566057724,trillion 2011 intl USD,maddison2023,aggregated
+1991,gdp_world,43.82872976915933,trillion 2011 intl USD,maddison2023,aggregated
+1992,gdp_world,44.8514394650357,trillion 2011 intl USD,maddison2023,aggregated
+1993,gdp_world,46.01086778395036,trillion 2011 intl USD,maddison2023,aggregated
+1994,gdp_world,47.63662376723675,trillion 2011 intl USD,maddison2023,aggregated
+1995,gdp_world,49.50410932800835,trillion 2011 intl USD,maddison2023,aggregated
+1996,gdp_world,51.6255266196914,trillion 2011 intl USD,maddison2023,aggregated
+1997,gdp_world,53.707577401937,trillion 2011 intl USD,maddison2023,aggregated
+1998,gdp_world,55.01703721276576,trillion 2011 intl USD,maddison2023,aggregated
+1999,gdp_world,57.070583238402776,trillion 2011 intl USD,maddison2023,aggregated
+2000,gdp_world,59.99999200477015,trillion 2011 intl USD,maddison2023,aggregated
+2001,gdp_world,61.763314195504215,trillion 2011 intl USD,maddison2023,aggregated
+2002,gdp_world,63.878297688187004,trillion 2011 intl USD,maddison2023,aggregated
+2003,gdp_world,66.50002303870988,trillion 2011 intl USD,maddison2023,aggregated
+2004,gdp_world,70.22080010484324,trillion 2011 intl USD,maddison2023,aggregated
+2005,gdp_world,73.85606334318639,trillion 2011 intl USD,maddison2023,aggregated
+2006,gdp_world,78.08654472751593,trillion 2011 intl USD,maddison2023,aggregated
+2007,gdp_world,82.40719951485771,trillion 2011 intl USD,maddison2023,aggregated
+2008,gdp_world,84.94594988826347,trillion 2011 intl USD,maddison2023,aggregated
+2009,gdp_world,85.02495521805317,trillion 2011 intl USD,maddison2023,aggregated
+2010,gdp_world,90.03426320677859,trillion 2011 intl USD,maddison2023,aggregated
+2011,gdp_world,93.79626074663219,trillion 2011 intl USD,maddison2023,aggregated
+2012,gdp_world,96.97143219899058,trillion 2011 intl USD,maddison2023,aggregated
+2013,gdp_world,100.19147922903622,trillion 2011 intl USD,maddison2023,aggregated
+2014,gdp_world,103.7204667686151,trillion 2011 intl USD,maddison2023,aggregated
+2015,gdp_world,107.16860971835898,trillion 2011 intl USD,maddison2023,aggregated
+2016,gdp_world,110.70574993496724,trillion 2011 intl USD,maddison2023,aggregated
+2017,gdp_world,114.84484484884,trillion 2011 intl USD,maddison2023,aggregated
+2018,gdp_world,119.10162570740948,trillion 2011 intl USD,maddison2023,aggregated
+2019,gdp_world,122.49988206978749,trillion 2011 intl USD,maddison2023,aggregated
+2020,gdp_world,118.9318143852967,trillion 2011 intl USD,maddison2023,aggregated
+2021,gdp_world,126.3753984303532,trillion 2011 intl USD,maddison2023,aggregated
+2022,gdp_world,130.50568028988283,trillion 2011 intl USD,maddison2023,aggregated
+1900,gdp_world_country_sum,3.0638308245552857,trillion 2011 intl USD,maddison2023,aggregated
+1901,gdp_world_country_sum,2.383409478959931,trillion 2011 intl USD,maddison2023,aggregated
+1902,gdp_world_country_sum,2.4274370196413018,trillion 2011 intl USD,maddison2023,aggregated
+1903,gdp_world_country_sum,2.5104482139828224,trillion 2011 intl USD,maddison2023,aggregated
+1904,gdp_world_country_sum,2.530930797645001,trillion 2011 intl USD,maddison2023,aggregated
+1905,gdp_world_country_sum,2.6159395340905447,trillion 2011 intl USD,maddison2023,aggregated
+1906,gdp_world_country_sum,2.7869762515688503,trillion 2011 intl USD,maddison2023,aggregated
+1907,gdp_world_country_sum,2.822827774268756,trillion 2011 intl USD,maddison2023,aggregated
+1908,gdp_world_country_sum,2.7603305481963254,trillion 2011 intl USD,maddison2023,aggregated
+1909,gdp_world_country_sum,2.93955912660919,trillion 2011 intl USD,maddison2023,aggregated
+1910,gdp_world_country_sum,3.166254860355937,trillion 2011 intl USD,maddison2023,aggregated
+1911,gdp_world_country_sum,3.4825223247243566,trillion 2011 intl USD,maddison2023,aggregated
+1912,gdp_world_country_sum,3.1791881596667553,trillion 2011 intl USD,maddison2023,aggregated
+1913,gdp_world_country_sum,4.396657850163141,trillion 2011 intl USD,maddison2023,aggregated
+1914,gdp_world_country_sum,3.0920148362343207,trillion 2011 intl USD,maddison2023,aggregated
+1915,gdp_world_country_sum,3.112087731959568,trillion 2011 intl USD,maddison2023,aggregated
+1916,gdp_world_country_sum,3.3348161552410103,trillion 2011 intl USD,maddison2023,aggregated
+1917,gdp_world_country_sum,3.2449414218856627,trillion 2011 intl USD,maddison2023,aggregated
+1918,gdp_world_country_sum,3.2376199419560474,trillion 2011 intl USD,maddison2023,aggregated
+1919,gdp_world_country_sum,3.2336830112296355,trillion 2011 intl USD,maddison2023,aggregated
+1920,gdp_world_country_sum,3.5649857220261665,trillion 2011 intl USD,maddison2023,aggregated
+1921,gdp_world_country_sum,3.494210458682645,trillion 2011 intl USD,maddison2023,aggregated
+1922,gdp_world_country_sum,3.7157976501647187,trillion 2011 intl USD,maddison2023,aggregated
+1923,gdp_world_country_sum,3.902172216269208,trillion 2011 intl USD,maddison2023,aggregated
+1924,gdp_world_country_sum,4.1779784391097685,trillion 2011 intl USD,maddison2023,aggregated
+1925,gdp_world_country_sum,4.3891256720355845,trillion 2011 intl USD,maddison2023,aggregated
+1926,gdp_world_country_sum,4.582082014773711,trillion 2011 intl USD,maddison2023,aggregated
+1927,gdp_world_country_sum,4.698671884768971,trillion 2011 intl USD,maddison2023,aggregated
+1928,gdp_world_country_sum,4.861352558274556,trillion 2011 intl USD,maddison2023,aggregated
+1929,gdp_world_country_sum,5.654440675939672,trillion 2011 intl USD,maddison2023,aggregated
+1930,gdp_world_country_sum,5.458058939984556,trillion 2011 intl USD,maddison2023,aggregated
+1931,gdp_world_country_sum,5.274746126337196,trillion 2011 intl USD,maddison2023,aggregated
+1932,gdp_world_country_sum,5.018502854988797,trillion 2011 intl USD,maddison2023,aggregated
+1933,gdp_world_country_sum,5.04472887411324,trillion 2011 intl USD,maddison2023,aggregated
+1934,gdp_world_country_sum,5.285216561450976,trillion 2011 intl USD,maddison2023,aggregated
+1935,gdp_world_country_sum,5.630779125948901,trillion 2011 intl USD,maddison2023,aggregated
+1936,gdp_world_country_sum,5.983416185986538,trillion 2011 intl USD,maddison2023,aggregated
+1937,gdp_world_country_sum,6.283610123956658,trillion 2011 intl USD,maddison2023,aggregated
+1938,gdp_world_country_sum,6.269649368577917,trillion 2011 intl USD,maddison2023,aggregated
+1939,gdp_world_country_sum,5.9431497407764935,trillion 2011 intl USD,maddison2023,aggregated
+1940,gdp_world_country_sum,6.033654014749514,trillion 2011 intl USD,maddison2023,aggregated
+1941,gdp_world_country_sum,5.616296626636932,trillion 2011 intl USD,maddison2023,aggregated
+1942,gdp_world_country_sum,5.6853754446349,trillion 2011 intl USD,maddison2023,aggregated
+1943,gdp_world_country_sum,5.848654828738916,trillion 2011 intl USD,maddison2023,aggregated
+1944,gdp_world_country_sum,5.92155382778953,trillion 2011 intl USD,maddison2023,aggregated
+1945,gdp_world_country_sum,5.516514526341848,trillion 2011 intl USD,maddison2023,aggregated
+1946,gdp_world_country_sum,5.764995899017727,trillion 2011 intl USD,maddison2023,aggregated
+1947,gdp_world_country_sum,5.916422135694957,trillion 2011 intl USD,maddison2023,aggregated
+1948,gdp_world_country_sum,6.49968483763634,trillion 2011 intl USD,maddison2023,aggregated
+1949,gdp_world_country_sum,6.839178858225641,trillion 2011 intl USD,maddison2023,aggregated
+1950,gdp_world_country_sum,8.429728071151047,trillion 2011 intl USD,maddison2023,aggregated
+1951,gdp_world_country_sum,8.977193987613424,trillion 2011 intl USD,maddison2023,aggregated
+1952,gdp_world_country_sum,9.405143746118508,trillion 2011 intl USD,maddison2023,aggregated
+1953,gdp_world_country_sum,9.927029308058366,trillion 2011 intl USD,maddison2023,aggregated
+1954,gdp_world_country_sum,10.193390834355817,trillion 2011 intl USD,maddison2023,aggregated
+1955,gdp_world_country_sum,10.869667631819013,trillion 2011 intl USD,maddison2023,aggregated
+1956,gdp_world_country_sum,11.382848541588688,trillion 2011 intl USD,maddison2023,aggregated
+1957,gdp_world_country_sum,11.790076765404793,trillion 2011 intl USD,maddison2023,aggregated
+1958,gdp_world_country_sum,12.101245308486913,trillion 2011 intl USD,maddison2023,aggregated
+1959,gdp_world_country_sum,12.634379030110258,trillion 2011 intl USD,maddison2023,aggregated
+1960,gdp_world_country_sum,13.287345604813517,trillion 2011 intl USD,maddison2023,aggregated
+1961,gdp_world_country_sum,13.75566669831639,trillion 2011 intl USD,maddison2023,aggregated
+1962,gdp_world_country_sum,14.44566914117214,trillion 2011 intl USD,maddison2023,aggregated
+1963,gdp_world_country_sum,15.10562364048546,trillion 2011 intl USD,maddison2023,aggregated
+1964,gdp_world_country_sum,16.221214592505206,trillion 2011 intl USD,maddison2023,aggregated
+1965,gdp_world_country_sum,17.079729646843354,trillion 2011 intl USD,maddison2023,aggregated
+1966,gdp_world_country_sum,17.963822590877694,trillion 2011 intl USD,maddison2023,aggregated
+1967,gdp_world_country_sum,18.654594308789566,trillion 2011 intl USD,maddison2023,aggregated
+1968,gdp_world_country_sum,19.673215831286008,trillion 2011 intl USD,maddison2023,aggregated
+1969,gdp_world_country_sum,20.776032523743968,trillion 2011 intl USD,maddison2023,aggregated
+1970,gdp_world_country_sum,21.848705213561463,trillion 2011 intl USD,maddison2023,aggregated
+1971,gdp_world_country_sum,22.75823779155866,trillion 2011 intl USD,maddison2023,aggregated
+1972,gdp_world_country_sum,23.83871835127158,trillion 2011 intl USD,maddison2023,aggregated
+1973,gdp_world_country_sum,25.43042482133254,trillion 2011 intl USD,maddison2023,aggregated
+1974,gdp_world_country_sum,26.03038364874012,trillion 2011 intl USD,maddison2023,aggregated
+1975,gdp_world_country_sum,26.44813416946781,trillion 2011 intl USD,maddison2023,aggregated
+1976,gdp_world_country_sum,27.693298776709437,trillion 2011 intl USD,maddison2023,aggregated
+1977,gdp_world_country_sum,28.822720330706243,trillion 2011 intl USD,maddison2023,aggregated
+1978,gdp_world_country_sum,30.129281552118343,trillion 2011 intl USD,maddison2023,aggregated
+1979,gdp_world_country_sum,31.22755601873806,trillion 2011 intl USD,maddison2023,aggregated
+1980,gdp_world_country_sum,31.910834938938823,trillion 2011 intl USD,maddison2023,aggregated
+1981,gdp_world_country_sum,32.491314264736396,trillion 2011 intl USD,maddison2023,aggregated
+1982,gdp_world_country_sum,32.90419891611434,trillion 2011 intl USD,maddison2023,aggregated
+1983,gdp_world_country_sum,33.83686607315372,trillion 2011 intl USD,maddison2023,aggregated
+1984,gdp_world_country_sum,35.38166846977699,trillion 2011 intl USD,maddison2023,aggregated
+1985,gdp_world_country_sum,36.58997772442775,trillion 2011 intl USD,maddison2023,aggregated
+1986,gdp_world_country_sum,37.89964699282122,trillion 2011 intl USD,maddison2023,aggregated
+1987,gdp_world_country_sum,39.33217690997756,trillion 2011 intl USD,maddison2023,aggregated
+1988,gdp_world_country_sum,40.99140616048414,trillion 2011 intl USD,maddison2023,aggregated
+1989,gdp_world_country_sum,42.290856063523705,trillion 2011 intl USD,maddison2023,aggregated
+1990,gdp_world_country_sum,43.117558566057724,trillion 2011 intl USD,maddison2023,aggregated
+1991,gdp_world_country_sum,43.81286062115859,trillion 2011 intl USD,maddison2023,aggregated
+1992,gdp_world_country_sum,44.83453724198701,trillion 2011 intl USD,maddison2023,aggregated
+1993,gdp_world_country_sum,46.01086778395036,trillion 2011 intl USD,maddison2023,aggregated
+1994,gdp_world_country_sum,47.63662376723675,trillion 2011 intl USD,maddison2023,aggregated
+1995,gdp_world_country_sum,49.50410932800835,trillion 2011 intl USD,maddison2023,aggregated
+1996,gdp_world_country_sum,51.6255266196914,trillion 2011 intl USD,maddison2023,aggregated
+1997,gdp_world_country_sum,53.70757740193701,trillion 2011 intl USD,maddison2023,aggregated
+1998,gdp_world_country_sum,55.01703721276576,trillion 2011 intl USD,maddison2023,aggregated
+1999,gdp_world_country_sum,57.070583238402776,trillion 2011 intl USD,maddison2023,aggregated
+2000,gdp_world_country_sum,59.99999200477016,trillion 2011 intl USD,maddison2023,aggregated
+2001,gdp_world_country_sum,61.763314195504215,trillion 2011 intl USD,maddison2023,aggregated
+2002,gdp_world_country_sum,63.87829768818701,trillion 2011 intl USD,maddison2023,aggregated
+2003,gdp_world_country_sum,66.50002303870988,trillion 2011 intl USD,maddison2023,aggregated
+2004,gdp_world_country_sum,70.22080010484324,trillion 2011 intl USD,maddison2023,aggregated
+2005,gdp_world_country_sum,73.85606334318639,trillion 2011 intl USD,maddison2023,aggregated
+2006,gdp_world_country_sum,78.08654472751593,trillion 2011 intl USD,maddison2023,aggregated
+2007,gdp_world_country_sum,82.40719951485771,trillion 2011 intl USD,maddison2023,aggregated
+2008,gdp_world_country_sum,84.94594988826347,trillion 2011 intl USD,maddison2023,aggregated
+2009,gdp_world_country_sum,85.02495521805317,trillion 2011 intl USD,maddison2023,aggregated
+2010,gdp_world_country_sum,90.03426320677859,trillion 2011 intl USD,maddison2023,aggregated
+2011,gdp_world_country_sum,93.79626074663219,trillion 2011 intl USD,maddison2023,aggregated
+2012,gdp_world_country_sum,96.97143219899058,trillion 2011 intl USD,maddison2023,aggregated
+2013,gdp_world_country_sum,100.19147922903622,trillion 2011 intl USD,maddison2023,aggregated
+2014,gdp_world_country_sum,103.7204667686151,trillion 2011 intl USD,maddison2023,aggregated
+2015,gdp_world_country_sum,107.16860971835898,trillion 2011 intl USD,maddison2023,aggregated
+2016,gdp_world_country_sum,110.70574993496724,trillion 2011 intl USD,maddison2023,aggregated
+2017,gdp_world_country_sum,114.84484484884,trillion 2011 intl USD,maddison2023,aggregated
+2018,gdp_world_country_sum,119.10162570740948,trillion 2011 intl USD,maddison2023,aggregated
+2019,gdp_world_country_sum,122.49988206978749,trillion 2011 intl USD,maddison2023,aggregated
+2020,gdp_world_country_sum,118.9318143852967,trillion 2011 intl USD,maddison2023,aggregated
+2021,gdp_world_country_sum,126.3753984303532,trillion 2011 intl USD,maddison2023,aggregated
+2022,gdp_world_country_sum,130.50568028988283,trillion 2011 intl USD,maddison2023,aggregated
+1900,gdp_world_mpd_benchmark,3.503708232520704,trillion 2011 intl USD,maddison2023,observed
+1920,gdp_world_mpd_benchmark,4.824948434156693,trillion 2011 intl USD,maddison2023,observed
+1940,gdp_world_mpd_benchmark,7.64689017546065,trillion 2011 intl USD,maddison2023,observed
+1950,gdp_world_mpd_benchmark,8.46155218538598,trillion 2011 intl USD,maddison2023,observed
+1960,gdp_world_mpd_benchmark,13.33807737879289,trillion 2011 intl USD,maddison2023,observed
+1970,gdp_world_mpd_benchmark,21.94193383930585,trillion 2011 intl USD,maddison2023,observed
+1980,gdp_world_mpd_benchmark,31.98261652226214,trillion 2011 intl USD,maddison2023,observed
+1990,gdp_world_mpd_benchmark,43.03360380239371,trillion 2011 intl USD,maddison2023,observed
+2000,gdp_world_mpd_benchmark,59.89767289119611,trillion 2011 intl USD,maddison2023,observed
+2010,gdp_world_mpd_benchmark,89.80770551644363,trillion 2011 intl USD,maddison2023,observed
+2015,gdp_world_mpd_benchmark,106.87182912386334,trillion 2011 intl USD,maddison2023,observed
+2016,gdp_world_mpd_benchmark,110.40720412569048,trillion 2011 intl USD,maddison2023,observed
+2017,gdp_world_mpd_benchmark,114.52958704643974,trillion 2011 intl USD,maddison2023,observed
+2018,gdp_world_mpd_benchmark,118.76581935848927,trillion 2011 intl USD,maddison2023,observed
+2019,gdp_world_mpd_benchmark,122.14936880489162,trillion 2011 intl USD,maddison2023,observed
+2020,gdp_world_mpd_benchmark,118.59002203549258,trillion 2011 intl USD,maddison2023,observed
+2021,gdp_world_mpd_benchmark,126.00480030533743,trillion 2011 intl USD,maddison2023,observed
+2022,gdp_world_mpd_benchmark,130.11256230958313,trillion 2011 intl USD,maddison2023,observed
+1900,gdppc_coverage_pop_share,0.9572645313052882,share,maddison2023,aggregated
+1901,gdppc_coverage_pop_share,0.6420491260010333,share,maddison2023,aggregated
+1902,gdppc_coverage_pop_share,0.6420044648295891,share,maddison2023,aggregated
+1903,gdppc_coverage_pop_share,0.6429692300536375,share,maddison2023,aggregated
+1904,gdppc_coverage_pop_share,0.6439510183216196,share,maddison2023,aggregated
+1905,gdppc_coverage_pop_share,0.6449167932841295,share,maddison2023,aggregated
+1906,gdppc_coverage_pop_share,0.6550435073601243,share,maddison2023,aggregated
+1907,gdppc_coverage_pop_share,0.6470069076816635,share,maddison2023,aggregated
+1908,gdppc_coverage_pop_share,0.6480070855016671,share,maddison2023,aggregated
+1909,gdppc_coverage_pop_share,0.6490109337203677,share,maddison2023,aggregated
+1910,gdppc_coverage_pop_share,0.6647795405333127,share,maddison2023,aggregated
+1911,gdppc_coverage_pop_share,0.9837836167110693,share,maddison2023,aggregated
+1912,gdppc_coverage_pop_share,0.6515076448965897,share,maddison2023,aggregated
+1913,gdppc_coverage_pop_share,0.9789940643843049,share,maddison2023,aggregated
+1914,gdppc_coverage_pop_share,0.6502665705893435,share,maddison2023,aggregated
+1915,gdppc_coverage_pop_share,0.6490830327221189,share,maddison2023,aggregated
+1916,gdppc_coverage_pop_share,0.6568889556676508,share,maddison2023,aggregated
+1917,gdppc_coverage_pop_share,0.6462818526918157,share,maddison2023,aggregated
+1918,gdppc_coverage_pop_share,0.6443148584039037,share,maddison2023,aggregated
+1919,gdppc_coverage_pop_share,0.6414822580828715,share,maddison2023,aggregated
+1920,gdppc_coverage_pop_share,0.6929476539902549,share,maddison2023,aggregated
+1921,gdppc_coverage_pop_share,0.6839624351861924,share,maddison2023,aggregated
+1922,gdppc_coverage_pop_share,0.6737360506209216,share,maddison2023,aggregated
+1923,gdppc_coverage_pop_share,0.6776129128039325,share,maddison2023,aggregated
+1924,gdppc_coverage_pop_share,0.6872450422657597,share,maddison2023,aggregated
+1925,gdppc_coverage_pop_share,0.6894694404314523,share,maddison2023,aggregated
+1926,gdppc_coverage_pop_share,0.6986531409575379,share,maddison2023,aggregated
+1927,gdppc_coverage_pop_share,0.6923556700564563,share,maddison2023,aggregated
+1928,gdppc_coverage_pop_share,0.6939173119902541,share,maddison2023,aggregated
+1929,gdppc_coverage_pop_share,0.9887726003755591,share,maddison2023,aggregated
+1930,gdppc_coverage_pop_share,0.9808285452769381,share,maddison2023,aggregated
+1931,gdppc_coverage_pop_share,0.9886579251307833,share,maddison2023,aggregated
+1932,gdppc_coverage_pop_share,0.9804894112278972,share,maddison2023,aggregated
+1933,gdppc_coverage_pop_share,0.9809077351060139,share,maddison2023,aggregated
+1934,gdppc_coverage_pop_share,0.9801685407491545,share,maddison2023,aggregated
+1935,gdppc_coverage_pop_share,0.9800091159894664,share,maddison2023,aggregated
+1936,gdppc_coverage_pop_share,0.9879795884882717,share,maddison2023,aggregated
+1937,gdppc_coverage_pop_share,0.9795827766993572,share,maddison2023,aggregated
+1938,gdppc_coverage_pop_share,0.9883678533448119,share,maddison2023,aggregated
+1939,gdppc_coverage_pop_share,0.6982983293735339,share,maddison2023,aggregated
+1940,gdppc_coverage_pop_share,0.6916723415082464,share,maddison2023,aggregated
+1941,gdppc_coverage_pop_share,0.663877676360513,share,maddison2023,aggregated
+1942,gdppc_coverage_pop_share,0.6240108612616848,share,maddison2023,aggregated
+1943,gdppc_coverage_pop_share,0.6164264634046498,share,maddison2023,aggregated
+1944,gdppc_coverage_pop_share,0.6078440986750349,share,maddison2023,aggregated
+1945,gdppc_coverage_pop_share,0.6098429072308997,share,maddison2023,aggregated
+1946,gdppc_coverage_pop_share,0.6560718270984229,share,maddison2023,aggregated
+1947,gdppc_coverage_pop_share,0.6503368569067384,share,maddison2023,aggregated
+1948,gdppc_coverage_pop_share,0.6724026890530151,share,maddison2023,aggregated
+1949,gdppc_coverage_pop_share,0.7130117707759779,share,maddison2023,aggregated
+1950,gdppc_coverage_pop_share,0.9962389744177319,share,maddison2023,aggregated
+1951,gdppc_coverage_pop_share,0.9964219521805926,share,maddison2023,aggregated
+1952,gdppc_coverage_pop_share,0.9965971200265727,share,maddison2023,aggregated
+1953,gdppc_coverage_pop_share,0.9967641521638274,share,maddison2023,aggregated
+1954,gdppc_coverage_pop_share,0.9968262884213902,share,maddison2023,aggregated
+1955,gdppc_coverage_pop_share,0.9967870432954811,share,maddison2023,aggregated
+1956,gdppc_coverage_pop_share,0.9967475241233137,share,maddison2023,aggregated
+1957,gdppc_coverage_pop_share,0.9967070848272661,share,maddison2023,aggregated
+1958,gdppc_coverage_pop_share,0.9966635230440251,share,maddison2023,aggregated
+1959,gdppc_coverage_pop_share,0.9966146657383027,share,maddison2023,aggregated
+1960,gdppc_coverage_pop_share,0.9965514487775771,share,maddison2023,aggregated
+1961,gdppc_coverage_pop_share,0.9965101417042409,share,maddison2023,aggregated
+1962,gdppc_coverage_pop_share,0.99648195453449,share,maddison2023,aggregated
+1963,gdppc_coverage_pop_share,0.9964598151015276,share,maddison2023,aggregated
+1964,gdppc_coverage_pop_share,0.9964298297810619,share,maddison2023,aggregated
+1965,gdppc_coverage_pop_share,0.9963960390512691,share,maddison2023,aggregated
+1966,gdppc_coverage_pop_share,0.996359182275421,share,maddison2023,aggregated
+1967,gdppc_coverage_pop_share,0.9963174009511675,share,maddison2023,aggregated
+1968,gdppc_coverage_pop_share,0.9962731820797318,share,maddison2023,aggregated
+1969,gdppc_coverage_pop_share,0.9962253052440296,share,maddison2023,aggregated
+1970,gdppc_coverage_pop_share,0.9961745212229032,share,maddison2023,aggregated
+1971,gdppc_coverage_pop_share,0.996130400441508,share,maddison2023,aggregated
+1972,gdppc_coverage_pop_share,0.9960955440874115,share,maddison2023,aggregated
+1973,gdppc_coverage_pop_share,0.9960708126693517,share,maddison2023,aggregated
+1974,gdppc_coverage_pop_share,0.9960557211276828,share,maddison2023,aggregated
+1975,gdppc_coverage_pop_share,0.9960494927250493,share,maddison2023,aggregated
+1976,gdppc_coverage_pop_share,0.9960490539208052,share,maddison2023,aggregated
+1977,gdppc_coverage_pop_share,0.996052534011832,share,maddison2023,aggregated
+1978,gdppc_coverage_pop_share,0.9960567763556467,share,maddison2023,aggregated
+1979,gdppc_coverage_pop_share,0.9960624820843467,share,maddison2023,aggregated
+1980,gdppc_coverage_pop_share,0.9960650298635088,share,maddison2023,aggregated
+1981,gdppc_coverage_pop_share,0.9960670867756326,share,maddison2023,aggregated
+1982,gdppc_coverage_pop_share,0.9960683370675398,share,maddison2023,aggregated
+1983,gdppc_coverage_pop_share,0.9960815659963167,share,maddison2023,aggregated
+1984,gdppc_coverage_pop_share,0.9960854296617583,share,maddison2023,aggregated
+1985,gdppc_coverage_pop_share,0.9960883712925189,share,maddison2023,aggregated
+1986,gdppc_coverage_pop_share,0.9960918336536481,share,maddison2023,aggregated
+1987,gdppc_coverage_pop_share,0.9960959196950292,share,maddison2023,aggregated
+1988,gdppc_coverage_pop_share,0.996099174887029,share,maddison2023,aggregated
+1989,gdppc_coverage_pop_share,0.9961001211862399,share,maddison2023,aggregated
+1990,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1991,gdppc_coverage_pop_share,0.9996379281789749,share,maddison2023,aggregated
+1992,gdppc_coverage_pop_share,0.9996231509345007,share,maddison2023,aggregated
+1993,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1994,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1995,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1996,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1997,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1998,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1999,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2000,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2001,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2002,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2003,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2004,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2005,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2006,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2007,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2008,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2009,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2010,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2011,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2012,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2013,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2014,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2015,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2016,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2017,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2018,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2019,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2020,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2021,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+2022,gdppc_coverage_pop_share,1.0,share,maddison2023,aggregated
+1900,gdppc_world,2265.468725665166,2011 intl USD per person,maddison2023,interpolated
+1901,gdppc_world,2322.436068719506,2011 intl USD per person,maddison2023,interpolated
+1902,gdppc_world,2340.3719578629207,2011 intl USD per person,maddison2023,interpolated
+1903,gdppc_world,2389.4912813791484,2011 intl USD per person,maddison2023,interpolated
+1904,gdppc_world,2382.2760275929154,2011 intl USD per person,maddison2023,interpolated
+1905,gdppc_world,2435.034513122564,2011 intl USD per person,maddison2023,interpolated
+1906,gdppc_world,2556.4812801349,2011 intl USD per person,maddison2023,interpolated
+1907,gdppc_world,2567.010451360402,2011 intl USD per person,maddison2023,interpolated
+1908,gdppc_world,2478.809524246397,2011 intl USD per person,maddison2023,interpolated
+1909,gdppc_world,2610.037385113978,2011 intl USD per person,maddison2023,interpolated
+1910,gdppc_world,2609.060832096854,2011 intl USD per person,maddison2023,interpolated
+1911,gdppc_world,2659.7341611119014,2011 intl USD per person,maddison2023,interpolated
+1912,gdppc_world,2711.8684335683442,2011 intl USD per person,maddison2023,interpolated
+1913,gdppc_world,2741.918567502127,2011 intl USD per person,maddison2023,interpolated
+1914,gdppc_world,2565.8935658570144,2011 intl USD per person,maddison2023,interpolated
+1915,gdppc_world,2552.264206323496,2011 intl USD per person,maddison2023,interpolated
+1916,gdppc_world,2692.8610826925164,2011 intl USD per person,maddison2023,interpolated
+1917,gdppc_world,2595.6161115543787,2011 intl USD per person,maddison2023,interpolated
+1918,gdppc_world,2555.1376674187973,2011 intl USD per person,maddison2023,interpolated
+1919,gdppc_world,2516.925735576096,2011 intl USD per person,maddison2023,interpolated
+1920,gdppc_world,2493.3152209292043,2011 intl USD per person,maddison2023,interpolated
+1921,gdppc_world,2474.736954454099,2011 intl USD per person,maddison2023,interpolated
+1922,gdppc_world,2625.891497440382,2011 intl USD per person,maddison2023,interpolated
+1923,gdppc_world,2717.4621291147514,2011 intl USD per person,maddison2023,interpolated
+1924,gdppc_world,2834.293790669583,2011 intl USD per person,maddison2023,interpolated
+1925,gdppc_world,2911.7511814787017,2011 intl USD per person,maddison2023,interpolated
+1926,gdppc_world,2980.4482634107503,2011 intl USD per person,maddison2023,interpolated
+1927,gdppc_world,3035.427838563061,2011 intl USD per person,maddison2023,interpolated
+1928,gdppc_world,3101.0912697442946,2011 intl USD per person,maddison2023,interpolated
+1929,gdppc_world,3198.8065582602912,2011 intl USD per person,maddison2023,interpolated
+1930,gdppc_world,3021.7011370679406,2011 intl USD per person,maddison2023,interpolated
+1931,gdppc_world,2851.08164897732,2011 intl USD per person,maddison2023,interpolated
+1932,gdppc_world,2663.9376721178373,2011 intl USD per person,maddison2023,interpolated
+1933,gdppc_world,2684.0941785994696,2011 intl USD per person,maddison2023,interpolated
+1934,gdppc_world,2796.9167837678783,2011 intl USD per person,maddison2023,interpolated
+1935,gdppc_world,2937.0268223402168,2011 intl USD per person,maddison2023,interpolated
+1936,gdppc_world,3071.597981069612,2011 intl USD per person,maddison2023,interpolated
+1937,gdppc_world,3207.7091592132774,2011 intl USD per person,maddison2023,interpolated
+1938,gdppc_world,3178.4901557285875,2011 intl USD per person,maddison2023,interpolated
+1939,gdppc_world,3348.7493587573776,2011 intl USD per person,maddison2023,interpolated
+1940,gdppc_world,3413.199042068005,2011 intl USD per person,maddison2023,interpolated
+1941,gdppc_world,3547.9902128076874,2011 intl USD per person,maddison2023,interpolated
+1942,gdppc_world,3614.7502652625526,2011 intl USD per person,maddison2023,interpolated
+1943,gdppc_world,3687.6400329298694,2011 intl USD per person,maddison2023,interpolated
+1944,gdppc_world,3686.9212764079257,2011 intl USD per person,maddison2023,interpolated
+1945,gdppc_world,3367.9203165986273,2011 intl USD per person,maddison2023,interpolated
+1946,gdppc_world,3091.6558942588777,2011 intl USD per person,maddison2023,interpolated
+1947,gdppc_world,3052.4876268974062,2011 intl USD per person,maddison2023,interpolated
+1948,gdppc_world,3162.1692229606974,2011 intl USD per person,maddison2023,interpolated
+1949,gdppc_world,3191.397611713152,2011 intl USD per person,maddison2023,interpolated
+1950,gdppc_world,3360.1641046281056,2011 intl USD per person,maddison2023,aggregated
+1951,gdppc_world,3516.5454277823233,2011 intl USD per person,maddison2023,aggregated
+1952,gdppc_world,3618.4625233308643,2011 intl USD per person,maddison2023,aggregated
+1953,gdppc_world,3749.899557721213,2011 intl USD per person,maddison2023,aggregated
+1954,gdppc_world,3778.1003232428193,2011 intl USD per person,maddison2023,aggregated
+1955,gdppc_world,3953.1018552012615,2011 intl USD per person,maddison2023,aggregated
+1956,gdppc_world,4061.5907935445557,2011 intl USD per person,maddison2023,aggregated
+1957,gdppc_world,4123.21247609338,2011 intl USD per person,maddison2023,aggregated
+1958,gdppc_world,4146.861407614856,2011 intl USD per person,maddison2023,aggregated
+1959,gdppc_world,4247.934693101541,2011 intl USD per person,maddison2023,aggregated
+1960,gdppc_world,4400.905300976744,2011 intl USD per person,maddison2023,aggregated
+1961,gdppc_world,4496.3081987229925,2011 intl USD per person,maddison2023,aggregated
+1962,gdppc_world,4641.421635355472,2011 intl USD per person,maddison2023,aggregated
+1963,gdppc_world,4754.313492383882,2011 intl USD per person,maddison2023,aggregated
+1964,gdppc_world,5003.873915655018,2011 intl USD per person,maddison2023,aggregated
+1965,gdppc_world,5163.600945928733,2011 intl USD per person,maddison2023,aggregated
+1966,gdppc_world,5320.742013951129,2011 intl USD per person,maddison2023,aggregated
+1967,gdppc_world,5415.591524605904,2011 intl USD per person,maddison2023,aggregated
+1968,gdppc_world,5596.407614188775,2011 intl USD per person,maddison2023,aggregated
+1969,gdppc_world,5791.666143306153,2011 intl USD per person,maddison2023,aggregated
+1970,gdppc_world,5966.628232110901,2011 intl USD per person,maddison2023,aggregated
+1971,gdppc_world,6085.727818719445,2011 intl USD per person,maddison2023,aggregated
+1972,gdppc_world,6247.7978897607045,2011 intl USD per person,maddison2023,aggregated
+1973,gdppc_world,6535.608813770291,2011 intl USD per person,maddison2023,aggregated
+1974,gdppc_world,6564.619748937341,2011 intl USD per person,maddison2023,aggregated
+1975,gdppc_world,6550.390067835303,2011 intl USD per person,maddison2023,aggregated
+1976,gdppc_world,6741.667893531879,2011 intl USD per person,maddison2023,aggregated
+1977,gdppc_world,6896.553633292607,2011 intl USD per person,maddison2023,aggregated
+1978,gdppc_world,7087.155711374011,2011 intl USD per person,maddison2023,aggregated
+1979,gdppc_world,7217.325110598267,2011 intl USD per person,maddison2023,aggregated
+1980,gdppc_world,7249.237581424398,2011 intl USD per person,maddison2023,aggregated
+1981,gdppc_world,7258.278544531641,2011 intl USD per person,maddison2023,aggregated
+1982,gdppc_world,7234.784931862864,2011 intl USD per person,maddison2023,aggregated
+1983,gdppc_world,7298.848815357087,2011 intl USD per person,maddison2023,aggregated
+1984,gdppc_world,7503.958145385627,2011 intl USD per person,maddison2023,aggregated
+1985,gdppc_world,7630.4212835491135,2011 intl USD per person,maddison2023,aggregated
+1986,gdppc_world,7770.24958899366,2011 intl USD per person,maddison2023,aggregated
+1987,gdppc_world,7926.259537332932,2011 intl USD per person,maddison2023,aggregated
+1988,gdppc_world,8120.111909526173,2011 intl USD per person,maddison2023,aggregated
+1989,gdppc_world,8236.329690194567,2011 intl USD per person,maddison2023,aggregated
+1990,gdppc_world,8224.066097226454,2011 intl USD per person,maddison2023,aggregated
+1991,gdppc_world,8227.301383597052,2011 intl USD per person,maddison2023,aggregated
+1992,gdppc_world,8286.784586007378,2011 intl USD per person,maddison2023,aggregated
+1993,gdppc_world,8381.7588485913,2011 intl USD per person,maddison2023,aggregated
+1994,gdppc_world,8553.44785768058,2011 intl USD per person,maddison2023,aggregated
+1995,gdppc_world,8761.197052743917,2011 intl USD per person,maddison2023,aggregated
+1996,gdppc_world,9007.114228083728,2011 intl USD per person,maddison2023,aggregated
+1997,gdppc_world,9240.980790314026,2011 intl USD per person,maddison2023,aggregated
+1998,gdppc_world,9339.528511260669,2011 intl USD per person,maddison2023,aggregated
+1999,gdppc_world,9560.735967259072,2011 intl USD per person,maddison2023,aggregated
+2000,gdppc_world,9920.778895106208,2011 intl USD per person,maddison2023,aggregated
+2001,gdppc_world,10082.256903704301,2011 intl USD per person,maddison2023,aggregated
+2002,gdppc_world,10295.43164771832,2011 intl USD per person,maddison2023,aggregated
+2003,gdppc_world,10584.338815999505,2011 intl USD per person,maddison2023,aggregated
+2004,gdppc_world,11038.972956481066,2011 intl USD per person,maddison2023,aggregated
+2005,gdppc_world,11469.107286543664,2011 intl USD per person,maddison2023,aggregated
+2006,gdppc_world,11978.478647604768,2011 intl USD per person,maddison2023,aggregated
+2007,gdppc_world,12486.532956696334,2011 intl USD per person,maddison2023,aggregated
+2008,gdppc_world,12713.39489179007,2011 intl USD per person,maddison2023,aggregated
+2009,gdppc_world,12571.426180186954,2011 intl USD per person,maddison2023,aggregated
+2010,gdppc_world,13154.692285947749,2011 intl USD per person,maddison2023,aggregated
+2011,gdppc_world,13541.803895805171,2011 intl USD per person,maddison2023,aggregated
+2012,gdppc_world,13832.150564252808,2011 intl USD per person,maddison2023,aggregated
+2013,gdppc_world,14124.122332790648,2011 intl USD per person,maddison2023,aggregated
+2014,gdppc_world,14443.112232508485,2011 intl USD per person,maddison2023,aggregated
+2015,gdppc_world,14754.309733316933,2011 intl USD per person,maddison2023,aggregated
+2016,gdppc_world,15069.69323750522,2011 intl USD per person,maddison2023,aggregated
+2017,gdppc_world,15458.766550488472,2011 intl USD per person,maddison2023,aggregated
+2018,gdppc_world,15859.56502165463,2011 intl USD per person,maddison2023,aggregated
+2019,gdppc_world,16137.62408472151,2011 intl USD per person,maddison2023,aggregated
+2020,gdppc_world,15505.747437671876,2011 intl USD per person,maddison2023,aggregated
+2021,gdppc_world,16330.872490376965,2011 intl USD per person,maddison2023,aggregated
+2022,gdppc_world,16727.136570516086,2011 intl USD per person,maddison2023,aggregated
+1900,gdppc_world_mpd_benchmark,2265.4687256651678,2011 intl USD per person,maddison2023,observed
+1920,gdppc_world_mpd_benchmark,2493.3152209292025,2011 intl USD per person,maddison2023,observed
+1940,gdppc_world_mpd_benchmark,3413.1990420680036,2011 intl USD per person,maddison2023,observed
+1950,gdppc_world_mpd_benchmark,3360.164104628106,2011 intl USD per person,maddison2023,observed
+1960,gdppc_world_mpd_benchmark,4403.654387382688,2011 intl USD per person,maddison2023,observed
+1970,gdppc_world_mpd_benchmark,5970.657523424281,2011 intl USD per person,maddison2023,observed
+1980,gdppc_world_mpd_benchmark,7239.194482515457,2011 intl USD per person,maddison2023,observed
+1990,gdppc_world_mpd_benchmark,8210.968782507332,2011 intl USD per person,maddison2023,observed
+2000,gdppc_world_mpd_benchmark,9903.860804476617,2011 intl USD per person,maddison2023,observed
+2010,gdppc_world_mpd_benchmark,13121.590480088274,2011 intl USD per person,maddison2023,observed
+2015,gdppc_world_mpd_benchmark,14713.45082112675,2011 intl USD per person,maddison2023,observed
+2016,gdppc_world_mpd_benchmark,15029.054031630312,2011 intl USD per person,maddison2023,observed
+2017,gdppc_world_mpd_benchmark,15416.331064795231,2011 intl USD per person,maddison2023,observed
+2018,gdppc_world_mpd_benchmark,15814.849069258917,2011 intl USD per person,maddison2023,observed
+2019,gdppc_world_mpd_benchmark,16091.448927570133,2011 intl USD per person,maddison2023,observed
+2020,gdppc_world_mpd_benchmark,15461.186225185687,2011 intl USD per person,maddison2023,observed
+2021,gdppc_world_mpd_benchmark,16282.981913571854,2011 intl USD per person,maddison2023,observed
+2022,gdppc_world_mpd_benchmark,16676.749965655723,2011 intl USD per person,maddison2023,observed
+1900,n_countries_gdppc_and_pop,44.0,count,maddison2023,aggregated
+1901,n_countries_gdppc_and_pop,36.0,count,maddison2023,aggregated
+1902,n_countries_gdppc_and_pop,37.0,count,maddison2023,aggregated
+1903,n_countries_gdppc_and_pop,37.0,count,maddison2023,aggregated
+1904,n_countries_gdppc_and_pop,37.0,count,maddison2023,aggregated
+1905,n_countries_gdppc_and_pop,37.0,count,maddison2023,aggregated
+1906,n_countries_gdppc_and_pop,39.0,count,maddison2023,aggregated
+1907,n_countries_gdppc_and_pop,38.0,count,maddison2023,aggregated
+1908,n_countries_gdppc_and_pop,38.0,count,maddison2023,aggregated
+1909,n_countries_gdppc_and_pop,38.0,count,maddison2023,aggregated
+1910,n_countries_gdppc_and_pop,45.0,count,maddison2023,aggregated
+1911,n_countries_gdppc_and_pop,41.0,count,maddison2023,aggregated
+1912,n_countries_gdppc_and_pop,39.0,count,maddison2023,aggregated
+1913,n_countries_gdppc_and_pop,68.0,count,maddison2023,aggregated
+1914,n_countries_gdppc_and_pop,40.0,count,maddison2023,aggregated
+1915,n_countries_gdppc_and_pop,40.0,count,maddison2023,aggregated
+1916,n_countries_gdppc_and_pop,41.0,count,maddison2023,aggregated
+1917,n_countries_gdppc_and_pop,40.0,count,maddison2023,aggregated
+1918,n_countries_gdppc_and_pop,40.0,count,maddison2023,aggregated
+1919,n_countries_gdppc_and_pop,40.0,count,maddison2023,aggregated
+1920,n_countries_gdppc_and_pop,52.0,count,maddison2023,aggregated
+1921,n_countries_gdppc_and_pop,52.0,count,maddison2023,aggregated
+1922,n_countries_gdppc_and_pop,50.0,count,maddison2023,aggregated
+1923,n_countries_gdppc_and_pop,51.0,count,maddison2023,aggregated
+1924,n_countries_gdppc_and_pop,53.0,count,maddison2023,aggregated
+1925,n_countries_gdppc_and_pop,54.0,count,maddison2023,aggregated
+1926,n_countries_gdppc_and_pop,54.0,count,maddison2023,aggregated
+1927,n_countries_gdppc_and_pop,53.0,count,maddison2023,aggregated
+1928,n_countries_gdppc_and_pop,53.0,count,maddison2023,aggregated
+1929,n_countries_gdppc_and_pop,58.0,count,maddison2023,aggregated
+1930,n_countries_gdppc_and_pop,55.0,count,maddison2023,aggregated
+1931,n_countries_gdppc_and_pop,56.0,count,maddison2023,aggregated
+1932,n_countries_gdppc_and_pop,55.0,count,maddison2023,aggregated
+1933,n_countries_gdppc_and_pop,56.0,count,maddison2023,aggregated
+1934,n_countries_gdppc_and_pop,55.0,count,maddison2023,aggregated
+1935,n_countries_gdppc_and_pop,55.0,count,maddison2023,aggregated
+1936,n_countries_gdppc_and_pop,56.0,count,maddison2023,aggregated
+1937,n_countries_gdppc_and_pop,55.0,count,maddison2023,aggregated
+1938,n_countries_gdppc_and_pop,57.0,count,maddison2023,aggregated
+1939,n_countries_gdppc_and_pop,53.0,count,maddison2023,aggregated
+1940,n_countries_gdppc_and_pop,51.0,count,maddison2023,aggregated
+1941,n_countries_gdppc_and_pop,48.0,count,maddison2023,aggregated
+1942,n_countries_gdppc_and_pop,48.0,count,maddison2023,aggregated
+1943,n_countries_gdppc_and_pop,46.0,count,maddison2023,aggregated
+1944,n_countries_gdppc_and_pop,44.0,count,maddison2023,aggregated
+1945,n_countries_gdppc_and_pop,45.0,count,maddison2023,aggregated
+1946,n_countries_gdppc_and_pop,49.0,count,maddison2023,aggregated
+1947,n_countries_gdppc_and_pop,51.0,count,maddison2023,aggregated
+1948,n_countries_gdppc_and_pop,53.0,count,maddison2023,aggregated
+1949,n_countries_gdppc_and_pop,54.0,count,maddison2023,aggregated
+1950,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1951,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1952,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1953,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1954,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1955,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1956,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1957,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1958,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1959,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1960,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1961,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1962,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1963,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1964,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1965,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1966,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1967,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1968,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1969,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1970,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1971,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1972,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1973,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1974,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1975,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1976,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1977,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1978,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1979,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1980,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1981,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1982,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1983,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1984,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1985,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1986,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1987,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1988,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1989,n_countries_gdppc_and_pop,145.0,count,maddison2023,aggregated
+1990,n_countries_gdppc_and_pop,146.0,count,maddison2023,aggregated
+1991,n_countries_gdppc_and_pop,165.0,count,maddison2023,aggregated
+1992,n_countries_gdppc_and_pop,165.0,count,maddison2023,aggregated
+1993,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1994,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1995,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1996,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1997,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1998,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1999,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2000,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2001,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2002,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2003,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2004,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2005,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2006,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2007,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2008,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2009,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2010,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2011,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2012,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2013,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2014,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2015,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2016,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2017,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2018,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2019,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2020,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2021,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+2022,n_countries_gdppc_and_pop,166.0,count,maddison2023,aggregated
+1900,n_countries_pop,65.0,count,maddison2023,aggregated
+1901,n_countries_pop,53.0,count,maddison2023,aggregated
+1902,n_countries_pop,53.0,count,maddison2023,aggregated
+1903,n_countries_pop,53.0,count,maddison2023,aggregated
+1904,n_countries_pop,53.0,count,maddison2023,aggregated
+1905,n_countries_pop,53.0,count,maddison2023,aggregated
+1906,n_countries_pop,53.0,count,maddison2023,aggregated
+1907,n_countries_pop,53.0,count,maddison2023,aggregated
+1908,n_countries_pop,53.0,count,maddison2023,aggregated
+1909,n_countries_pop,53.0,count,maddison2023,aggregated
+1910,n_countries_pop,61.0,count,maddison2023,aggregated
+1911,n_countries_pop,54.0,count,maddison2023,aggregated
+1912,n_countries_pop,54.0,count,maddison2023,aggregated
+1913,n_countries_pop,87.0,count,maddison2023,aggregated
+1914,n_countries_pop,56.0,count,maddison2023,aggregated
+1915,n_countries_pop,56.0,count,maddison2023,aggregated
+1916,n_countries_pop,56.0,count,maddison2023,aggregated
+1917,n_countries_pop,56.0,count,maddison2023,aggregated
+1918,n_countries_pop,56.0,count,maddison2023,aggregated
+1919,n_countries_pop,56.0,count,maddison2023,aggregated
+1920,n_countries_pop,64.0,count,maddison2023,aggregated
+1921,n_countries_pop,64.0,count,maddison2023,aggregated
+1922,n_countries_pop,64.0,count,maddison2023,aggregated
+1923,n_countries_pop,65.0,count,maddison2023,aggregated
+1924,n_countries_pop,65.0,count,maddison2023,aggregated
+1925,n_countries_pop,65.0,count,maddison2023,aggregated
+1926,n_countries_pop,65.0,count,maddison2023,aggregated
+1927,n_countries_pop,65.0,count,maddison2023,aggregated
+1928,n_countries_pop,65.0,count,maddison2023,aggregated
+1929,n_countries_pop,65.0,count,maddison2023,aggregated
+1930,n_countries_pop,65.0,count,maddison2023,aggregated
+1931,n_countries_pop,65.0,count,maddison2023,aggregated
+1932,n_countries_pop,65.0,count,maddison2023,aggregated
+1933,n_countries_pop,65.0,count,maddison2023,aggregated
+1934,n_countries_pop,65.0,count,maddison2023,aggregated
+1935,n_countries_pop,65.0,count,maddison2023,aggregated
+1936,n_countries_pop,65.0,count,maddison2023,aggregated
+1937,n_countries_pop,65.0,count,maddison2023,aggregated
+1938,n_countries_pop,65.0,count,maddison2023,aggregated
+1939,n_countries_pop,65.0,count,maddison2023,aggregated
+1940,n_countries_pop,65.0,count,maddison2023,aggregated
+1941,n_countries_pop,62.0,count,maddison2023,aggregated
+1942,n_countries_pop,60.0,count,maddison2023,aggregated
+1943,n_countries_pop,60.0,count,maddison2023,aggregated
+1944,n_countries_pop,60.0,count,maddison2023,aggregated
+1945,n_countries_pop,60.0,count,maddison2023,aggregated
+1946,n_countries_pop,63.0,count,maddison2023,aggregated
+1947,n_countries_pop,65.0,count,maddison2023,aggregated
+1948,n_countries_pop,65.0,count,maddison2023,aggregated
+1949,n_countries_pop,65.0,count,maddison2023,aggregated
+1950,n_countries_pop,146.0,count,maddison2023,aggregated
+1951,n_countries_pop,146.0,count,maddison2023,aggregated
+1952,n_countries_pop,146.0,count,maddison2023,aggregated
+1953,n_countries_pop,146.0,count,maddison2023,aggregated
+1954,n_countries_pop,146.0,count,maddison2023,aggregated
+1955,n_countries_pop,146.0,count,maddison2023,aggregated
+1956,n_countries_pop,146.0,count,maddison2023,aggregated
+1957,n_countries_pop,146.0,count,maddison2023,aggregated
+1958,n_countries_pop,146.0,count,maddison2023,aggregated
+1959,n_countries_pop,146.0,count,maddison2023,aggregated
+1960,n_countries_pop,146.0,count,maddison2023,aggregated
+1961,n_countries_pop,146.0,count,maddison2023,aggregated
+1962,n_countries_pop,146.0,count,maddison2023,aggregated
+1963,n_countries_pop,146.0,count,maddison2023,aggregated
+1964,n_countries_pop,146.0,count,maddison2023,aggregated
+1965,n_countries_pop,146.0,count,maddison2023,aggregated
+1966,n_countries_pop,146.0,count,maddison2023,aggregated
+1967,n_countries_pop,146.0,count,maddison2023,aggregated
+1968,n_countries_pop,146.0,count,maddison2023,aggregated
+1969,n_countries_pop,146.0,count,maddison2023,aggregated
+1970,n_countries_pop,146.0,count,maddison2023,aggregated
+1971,n_countries_pop,146.0,count,maddison2023,aggregated
+1972,n_countries_pop,146.0,count,maddison2023,aggregated
+1973,n_countries_pop,146.0,count,maddison2023,aggregated
+1974,n_countries_pop,146.0,count,maddison2023,aggregated
+1975,n_countries_pop,146.0,count,maddison2023,aggregated
+1976,n_countries_pop,146.0,count,maddison2023,aggregated
+1977,n_countries_pop,146.0,count,maddison2023,aggregated
+1978,n_countries_pop,146.0,count,maddison2023,aggregated
+1979,n_countries_pop,146.0,count,maddison2023,aggregated
+1980,n_countries_pop,146.0,count,maddison2023,aggregated
+1981,n_countries_pop,146.0,count,maddison2023,aggregated
+1982,n_countries_pop,146.0,count,maddison2023,aggregated
+1983,n_countries_pop,146.0,count,maddison2023,aggregated
+1984,n_countries_pop,146.0,count,maddison2023,aggregated
+1985,n_countries_pop,146.0,count,maddison2023,aggregated
+1986,n_countries_pop,146.0,count,maddison2023,aggregated
+1987,n_countries_pop,146.0,count,maddison2023,aggregated
+1988,n_countries_pop,146.0,count,maddison2023,aggregated
+1989,n_countries_pop,146.0,count,maddison2023,aggregated
+1990,n_countries_pop,146.0,count,maddison2023,aggregated
+1991,n_countries_pop,166.0,count,maddison2023,aggregated
+1992,n_countries_pop,166.0,count,maddison2023,aggregated
+1993,n_countries_pop,166.0,count,maddison2023,aggregated
+1994,n_countries_pop,166.0,count,maddison2023,aggregated
+1995,n_countries_pop,166.0,count,maddison2023,aggregated
+1996,n_countries_pop,166.0,count,maddison2023,aggregated
+1997,n_countries_pop,166.0,count,maddison2023,aggregated
+1998,n_countries_pop,166.0,count,maddison2023,aggregated
+1999,n_countries_pop,166.0,count,maddison2023,aggregated
+2000,n_countries_pop,166.0,count,maddison2023,aggregated
+2001,n_countries_pop,166.0,count,maddison2023,aggregated
+2002,n_countries_pop,166.0,count,maddison2023,aggregated
+2003,n_countries_pop,166.0,count,maddison2023,aggregated
+2004,n_countries_pop,166.0,count,maddison2023,aggregated
+2005,n_countries_pop,166.0,count,maddison2023,aggregated
+2006,n_countries_pop,166.0,count,maddison2023,aggregated
+2007,n_countries_pop,166.0,count,maddison2023,aggregated
+2008,n_countries_pop,166.0,count,maddison2023,aggregated
+2009,n_countries_pop,166.0,count,maddison2023,aggregated
+2010,n_countries_pop,166.0,count,maddison2023,aggregated
+2011,n_countries_pop,166.0,count,maddison2023,aggregated
+2012,n_countries_pop,166.0,count,maddison2023,aggregated
+2013,n_countries_pop,166.0,count,maddison2023,aggregated
+2014,n_countries_pop,166.0,count,maddison2023,aggregated
+2015,n_countries_pop,166.0,count,maddison2023,aggregated
+2016,n_countries_pop,166.0,count,maddison2023,aggregated
+2017,n_countries_pop,166.0,count,maddison2023,aggregated
+2018,n_countries_pop,166.0,count,maddison2023,aggregated
+2019,n_countries_pop,166.0,count,maddison2023,aggregated
+2020,n_countries_pop,166.0,count,maddison2023,aggregated
+2021,n_countries_pop,166.0,count,maddison2023,aggregated
+2022,n_countries_pop,166.0,count,maddison2023,aggregated
+1900,pop_world,1546.5710000000008,million persons,maddison2023,interpolated
+1901,pop_world,1564.0014223067885,million persons,maddison2023,interpolated
+1902,pop_world,1581.6282918648162,million persons,maddison2023,interpolated
+1903,pop_world,1599.4538227066382,million persons,maddison2023,interpolated
+1904,pop_world,1617.4802538177755,million persons,maddison2023,interpolated
+1905,pop_world,1635.7098494179377,million persons,maddison2023,interpolated
+1906,pop_world,1654.144899245412,million persons,maddison2023,interpolated
+1907,pop_world,1672.7877188446846,million persons,maddison2023,interpolated
+1908,pop_world,1691.6406498572767,million persons,maddison2023,interpolated
+1909,pop_world,1710.7060603158598,million persons,maddison2023,interpolated
+1910,pop_world,1729.9863449417103,million persons,maddison2023,interpolated
+1911,pop_world,1749.4839254454926,million persons,maddison2023,interpolated
+1912,pop_world,1769.2012508314283,million persons,maddison2023,interpolated
+1913,pop_world,1789.1407977049269,million persons,maddison2023,interpolated
+1914,pop_world,1809.3050705836374,million persons,maddison2023,interpolated
+1915,pop_world,1829.6966022120496,million persons,maddison2023,interpolated
+1916,pop_world,1850.3179538796135,million persons,maddison2023,interpolated
+1917,pop_world,1871.1717157424398,million persons,maddison2023,interpolated
+1918,pop_world,1892.2605071486587,million persons,maddison2023,interpolated
+1919,pop_world,1913.586976967414,million persons,maddison2023,interpolated
+1920,pop_world,1935.1538039215673,million persons,maddison2023,interpolated
+1921,pop_world,1949.3771696629276,million persons,maddison2023,interpolated
+1922,pop_world,1963.7050770343135,million persons,maddison2023,interpolated
+1923,pop_world,1978.1382944159107,million persons,maddison2023,interpolated
+1924,pop_world,1992.6775958354935,million persons,maddison2023,interpolated
+1925,pop_world,2007.3237610099309,million persons,maddison2023,interpolated
+1926,pop_world,2022.077575387015,million persons,maddison2023,interpolated
+1927,pop_world,2036.9398301875633,million persons,maddison2023,interpolated
+1928,pop_world,2051.9113224478633,million persons,maddison2023,interpolated
+1929,pop_world,2066.9928550624136,million persons,maddison2023,interpolated
+1930,pop_world,2082.185236826981,million persons,maddison2023,interpolated
+1931,pop_world,2097.489282481975,million persons,maddison2023,interpolated
+1932,pop_world,2112.905812756141,million persons,maddison2023,interpolated
+1933,pop_world,2128.4356544105744,million persons,maddison2023,interpolated
+1934,pop_world,2144.079640283059,million persons,maddison2023,interpolated
+1935,pop_world,2159.838609332728,million persons,maddison2023,interpolated
+1936,pop_world,2175.7134066850567,million persons,maddison2023,interpolated
+1937,pop_world,2191.7048836771964,million persons,maddison2023,interpolated
+1938,pop_world,2207.813897903607,million persons,maddison2023,interpolated
+1939,pop_world,2224.0413132620683,million persons,maddison2023,interpolated
+1940,pop_world,2240.3879999999995,million persons,maddison2023,interpolated
+1941,pop_world,2266.730398982528,million persons,maddison2023,interpolated
+1942,pop_world,2293.3825309149543,million persons,maddison2023,interpolated
+1943,pop_world,2320.3480376258117,million persons,maddison2023,interpolated
+1944,pop_world,2347.6306037641175,million persons,maddison2023,interpolated
+1945,pop_world,2375.233957302857,million persons,maddison2023,interpolated
+1946,pop_world,2403.1618700483828,million persons,maddison2023,interpolated
+1947,pop_world,2431.4181581558064,million persons,maddison2023,interpolated
+1948,pop_world,2460.0066826504503,million persons,maddison2023,interpolated
+1949,pop_world,2488.9313499554282,million persons,maddison2023,interpolated
+1950,pop_world,2518.1961124254326,million persons,maddison2023,aggregated
+1951,pop_world,2562.0115947802833,million persons,maddison2023,aggregated
+1952,pop_world,2608.084936672466,million persons,maddison2023,aggregated
+1953,pop_world,2655.8727218042045,million persons,maddison2023,aggregated
+1954,pop_world,2706.610158873554,million persons,maddison2023,aggregated
+1955,pop_world,2758.5183415433344,million persons,maddison2023,aggregated
+1956,pop_world,2811.7041745186275,million persons,maddison2023,aggregated
+1957,pop_world,2868.8865350141004,million persons,maddison2023,aggregated
+1958,pop_world,2927.9386996831076,million persons,maddison2023,aggregated
+1959,pop_world,2984.3434116117733,million persons,maddison2023,aggregated
+1960,pop_world,3029.6780665648275,million persons,maddison2023,aggregated
+1961,pop_world,3070.038692694146,million persons,maddison2023,aggregated
+1962,pop_world,3123.325183748615,million persons,maddison2023,aggregated
+1963,pop_world,3188.534023991422,million persons,maddison2023,aggregated
+1964,pop_world,3253.3462797902134,million persons,maddison2023,aggregated
+1965,pop_world,3319.6808095861384,million persons,maddison2023,aggregated
+1966,pop_world,3388.5244835833173,million persons,maddison2023,aggregated
+1967,pop_world,3457.3408158665316,million persons,maddison2023,aggregated
+1968,pop_world,3528.4793304454433,million persons,maddison2023,aggregated
+1969,pop_world,3600.8209613510153,million persons,maddison2023,aggregated
+1970,pop_world,3675.8797576369175,million persons,maddison2023,aggregated
+1971,pop_world,3754.1352226279114,million persons,maddison2023,aggregated
+1972,pop_world,3830.495294307201,million persons,maddison2023,aggregated
+1973,pop_world,3906.405754766527,million persons,maddison2023,aggregated
+1974,pop_world,3980.9558371249655,million persons,maddison2023,aggregated
+1975,pop_world,4053.6566282363497,million persons,maddison2023,aggregated
+1976,pop_world,4124.075518469497,million persons,maddison2023,aggregated
+1977,pop_world,4195.856291009392,million persons,maddison2023,aggregated
+1978,pop_world,4268.081528700655,million persons,maddison2023,aggregated
+1979,pop_world,4343.853251309466,million persons,maddison2023,aggregated
+1980,pop_world,4419.347389382276,million persons,maddison2023,aggregated
+1981,pop_world,4494.124073343323,million persons,maddison2023,aggregated
+1982,pop_world,4566.006880138909,million persons,maddison2023,aggregated
+1983,pop_world,4654.155201505904,million persons,maddison2023,aggregated
+1984,pop_world,4733.597406330628,million persons,maddison2023,aggregated
+1985,pop_world,4814.107219324128,million persons,maddison2023,aggregated
+1986,pop_world,4896.6697688965105,million persons,maddison2023,aggregated
+1987,pop_world,4981.711051188429,million persons,maddison2023,aggregated
+1988,pop_world,5067.9021559476105,million persons,maddison2023,aggregated
+1989,pop_world,5154.775560991748,million persons,maddison2023,aggregated
+1990,pop_world,5242.851657113872,million persons,maddison2023,aggregated
+1991,pop_world,5327.230366999999,million persons,maddison2023,aggregated
+1992,pop_world,5412.40562,million persons,maddison2023,aggregated
+1993,pop_world,5489.404863,million persons,maddison2023,aggregated
+1994,pop_world,5569.289082,million persons,maddison2023,aggregated
+1995,pop_world,5650.381909,million persons,maddison2023,aggregated
+1996,pop_world,5731.638937,million persons,maddison2023,aggregated
+1997,pop_world,5811.891467,million persons,maddison2023,aggregated
+1998,pop_world,5890.772446000001,million persons,maddison2023,aggregated
+1999,pop_world,5969.266742,million persons,maddison2023,aggregated
+2000,pop_world,6047.911423,million persons,maddison2023,aggregated
+2001,pop_world,6125.941323,million persons,maddison2023,aggregated
+2002,pop_world,6204.528365,million persons,maddison2023,aggregated
+2003,pop_world,6282.869831999999,million persons,maddison2023,aggregated
+2004,pop_world,6361.1714950000005,million persons,maddison2023,aggregated
+2005,pop_world,6439.565129,million persons,maddison2023,aggregated
+2006,pop_world,6518.903362,million persons,maddison2023,aggregated
+2007,pop_world,6599.686222,million persons,maddison2023,aggregated
+2008,pop_world,6681.6102710000005,million persons,maddison2023,aggregated
+2009,pop_world,6763.349997,million persons,maddison2023,aggregated
+2010,pop_world,6844.269805,million persons,maddison2023,aggregated
+2011,pop_world,6926.42291,million persons,maddison2023,aggregated
+2012,pop_world,7010.5824649999995,million persons,maddison2023,aggregated
+2013,pop_world,7093.642838,million persons,maddison2023,aggregated
+2014,pop_world,7181.310031999999,million persons,maddison2023,aggregated
+2015,pop_world,7263.546154,million persons,maddison2023,aggregated
+2016,pop_world,7346.251061,million persons,maddison2023,aggregated
+2017,pop_world,7429.107909337766,million persons,maddison2023,aggregated
+2018,pop_world,7509.766222767666,million persons,maddison2023,aggregated
+2019,pop_world,7590.949040990843,million persons,maddison2023,aggregated
+2020,pop_world,7670.176162959213,million persons,maddison2023,aggregated
+2021,pop_world,7738.435194128202,million persons,maddison2023,aggregated
+2022,pop_world,7802.033524370055,million persons,maddison2023,aggregated
+1900,pop_world_country_sum,1404.571,million persons,maddison2023,aggregated
+1901,pop_world_country_sum,1204.006,million persons,maddison2023,aggregated
+1902,pop_world_country_sum,1214.828,million persons,maddison2023,aggregated
+1903,pop_world_country_sum,1225.449,million persons,maddison2023,aggregated
+1904,pop_world_country_sum,1236.299,million persons,maddison2023,aggregated
+1905,pop_world_country_sum,1247.195,million persons,maddison2023,aggregated
+1906,pop_world_country_sum,1258.063,million persons,maddison2023,aggregated
+1907,pop_world_country_sum,1269.022,million persons,maddison2023,aggregated
+1908,pop_world_country_sum,1280.361,million persons,maddison2023,aggregated
+1909,pop_world_country_sum,1291.875,million persons,maddison2023,aggregated
+1910,pop_world_country_sum,1391.004,million persons,maddison2023,aggregated
+1911,pop_world_country_sum,1326.498,million persons,maddison2023,aggregated
+1912,pop_world_country_sum,1338.213,million persons,maddison2023,aggregated
+1913,pop_world_country_sum,1699.234,million persons,maddison2023,aggregated
+1914,pop_world_country_sum,1364.179,million persons,maddison2023,aggregated
+1915,pop_world_country_sum,1374.422,million persons,maddison2023,aggregated
+1916,pop_world_country_sum,1384.339,million persons,maddison2023,aggregated
+1917,pop_world_country_sum,1393.799,million persons,maddison2023,aggregated
+1918,pop_world_country_sum,1401.557,million persons,maddison2023,aggregated
+1919,pop_world_country_sum,1405.936,million persons,maddison2023,aggregated
+1920,pop_world_country_sum,1648.416,million persons,maddison2023,aggregated
+1921,pop_world_country_sum,1654.74,million persons,maddison2023,aggregated
+1922,pop_world_country_sum,1668.085,million persons,maddison2023,aggregated
+1923,pop_world_country_sum,1697.416,million persons,maddison2023,aggregated
+1924,pop_world_country_sum,1714.745,million persons,maddison2023,aggregated
+1925,pop_world_country_sum,1732.567,million persons,maddison2023,aggregated
+1926,pop_world_country_sum,1750.74,million persons,maddison2023,aggregated
+1927,pop_world_country_sum,1768.448,million persons,maddison2023,aggregated
+1928,pop_world_country_sum,1786.184,million persons,maddison2023,aggregated
+1929,pop_world_country_sum,1803.178,million persons,maddison2023,aggregated
+1930,pop_world_country_sum,1820.154,million persons,maddison2023,aggregated
+1931,pop_world_country_sum,1839.875,million persons,maddison2023,aggregated
+1932,pop_world_country_sum,1858.478,million persons,maddison2023,aggregated
+1933,pop_world_country_sum,1876.781,million persons,maddison2023,aggregated
+1934,pop_world_country_sum,1894.616,million persons,maddison2023,aggregated
+1935,pop_world_country_sum,1913.122,million persons,maddison2023,aggregated
+1936,pop_world_country_sum,1932.047,million persons,maddison2023,aggregated
+1937,pop_world_country_sum,1952.959,million persons,maddison2023,aggregated
+1938,pop_world_country_sum,1974.7,million persons,maddison2023,aggregated
+1939,pop_world_country_sum,1997.155,million persons,maddison2023,aggregated
+1940,pop_world_country_sum,2016.209,million persons,maddison2023,aggregated
+1941,pop_world_country_sum,1789.417,million persons,maddison2023,aggregated
+1942,pop_world_country_sum,1803.842,million persons,maddison2023,aggregated
+1943,pop_world_country_sum,1819.917,million persons,maddison2023,aggregated
+1944,pop_world_country_sum,1835.52,million persons,maddison2023,aggregated
+1945,pop_world_country_sum,1847.889,million persons,maddison2023,aggregated
+1946,pop_world_country_sum,2062.954,million persons,maddison2023,aggregated
+1947,pop_world_country_sum,2026.825,million persons,maddison2023,aggregated
+1948,pop_world_country_sum,2051.131,million persons,maddison2023,aggregated
+1949,pop_world_country_sum,2077.688,million persons,maddison2023,aggregated
+1950,pop_world_country_sum,2518.1961124254326,million persons,maddison2023,aggregated
+1951,pop_world_country_sum,2562.0115947802833,million persons,maddison2023,aggregated
+1952,pop_world_country_sum,2608.084936672466,million persons,maddison2023,aggregated
+1953,pop_world_country_sum,2655.8727218042045,million persons,maddison2023,aggregated
+1954,pop_world_country_sum,2706.610158873554,million persons,maddison2023,aggregated
+1955,pop_world_country_sum,2758.5183415433344,million persons,maddison2023,aggregated
+1956,pop_world_country_sum,2811.7041745186275,million persons,maddison2023,aggregated
+1957,pop_world_country_sum,2868.8865350141004,million persons,maddison2023,aggregated
+1958,pop_world_country_sum,2927.9386996831076,million persons,maddison2023,aggregated
+1959,pop_world_country_sum,2984.3434116117733,million persons,maddison2023,aggregated
+1960,pop_world_country_sum,3029.6780665648275,million persons,maddison2023,aggregated
+1961,pop_world_country_sum,3070.038692694146,million persons,maddison2023,aggregated
+1962,pop_world_country_sum,3123.325183748615,million persons,maddison2023,aggregated
+1963,pop_world_country_sum,3188.534023991422,million persons,maddison2023,aggregated
+1964,pop_world_country_sum,3253.3462797902134,million persons,maddison2023,aggregated
+1965,pop_world_country_sum,3319.6808095861384,million persons,maddison2023,aggregated
+1966,pop_world_country_sum,3388.5244835833173,million persons,maddison2023,aggregated
+1967,pop_world_country_sum,3457.3408158665316,million persons,maddison2023,aggregated
+1968,pop_world_country_sum,3528.4793304454433,million persons,maddison2023,aggregated
+1969,pop_world_country_sum,3600.8209613510153,million persons,maddison2023,aggregated
+1970,pop_world_country_sum,3675.8797576369175,million persons,maddison2023,aggregated
+1971,pop_world_country_sum,3754.1352226279114,million persons,maddison2023,aggregated
+1972,pop_world_country_sum,3830.495294307201,million persons,maddison2023,aggregated
+1973,pop_world_country_sum,3906.405754766527,million persons,maddison2023,aggregated
+1974,pop_world_country_sum,3980.9558371249655,million persons,maddison2023,aggregated
+1975,pop_world_country_sum,4053.6566282363497,million persons,maddison2023,aggregated
+1976,pop_world_country_sum,4124.075518469497,million persons,maddison2023,aggregated
+1977,pop_world_country_sum,4195.856291009392,million persons,maddison2023,aggregated
+1978,pop_world_country_sum,4268.081528700655,million persons,maddison2023,aggregated
+1979,pop_world_country_sum,4343.853251309466,million persons,maddison2023,aggregated
+1980,pop_world_country_sum,4419.347389382276,million persons,maddison2023,aggregated
+1981,pop_world_country_sum,4494.124073343323,million persons,maddison2023,aggregated
+1982,pop_world_country_sum,4566.006880138909,million persons,maddison2023,aggregated
+1983,pop_world_country_sum,4654.155201505904,million persons,maddison2023,aggregated
+1984,pop_world_country_sum,4733.597406330628,million persons,maddison2023,aggregated
+1985,pop_world_country_sum,4814.107219324128,million persons,maddison2023,aggregated
+1986,pop_world_country_sum,4896.6697688965105,million persons,maddison2023,aggregated
+1987,pop_world_country_sum,4981.711051188429,million persons,maddison2023,aggregated
+1988,pop_world_country_sum,5067.9021559476105,million persons,maddison2023,aggregated
+1989,pop_world_country_sum,5154.775560991748,million persons,maddison2023,aggregated
+1990,pop_world_country_sum,5242.851657113872,million persons,maddison2023,aggregated
+1991,pop_world_country_sum,5327.230366999999,million persons,maddison2023,aggregated
+1992,pop_world_country_sum,5412.40562,million persons,maddison2023,aggregated
+1993,pop_world_country_sum,5489.404863,million persons,maddison2023,aggregated
+1994,pop_world_country_sum,5569.289082,million persons,maddison2023,aggregated
+1995,pop_world_country_sum,5650.381909,million persons,maddison2023,aggregated
+1996,pop_world_country_sum,5731.638937,million persons,maddison2023,aggregated
+1997,pop_world_country_sum,5811.891467,million persons,maddison2023,aggregated
+1998,pop_world_country_sum,5890.772446000001,million persons,maddison2023,aggregated
+1999,pop_world_country_sum,5969.266742,million persons,maddison2023,aggregated
+2000,pop_world_country_sum,6047.911423,million persons,maddison2023,aggregated
+2001,pop_world_country_sum,6125.941323,million persons,maddison2023,aggregated
+2002,pop_world_country_sum,6204.528365,million persons,maddison2023,aggregated
+2003,pop_world_country_sum,6282.869831999999,million persons,maddison2023,aggregated
+2004,pop_world_country_sum,6361.1714950000005,million persons,maddison2023,aggregated
+2005,pop_world_country_sum,6439.565129,million persons,maddison2023,aggregated
+2006,pop_world_country_sum,6518.903362,million persons,maddison2023,aggregated
+2007,pop_world_country_sum,6599.686222,million persons,maddison2023,aggregated
+2008,pop_world_country_sum,6681.6102710000005,million persons,maddison2023,aggregated
+2009,pop_world_country_sum,6763.349997,million persons,maddison2023,aggregated
+2010,pop_world_country_sum,6844.269805,million persons,maddison2023,aggregated
+2011,pop_world_country_sum,6926.42291,million persons,maddison2023,aggregated
+2012,pop_world_country_sum,7010.5824649999995,million persons,maddison2023,aggregated
+2013,pop_world_country_sum,7093.642838,million persons,maddison2023,aggregated
+2014,pop_world_country_sum,7181.310031999999,million persons,maddison2023,aggregated
+2015,pop_world_country_sum,7263.546154,million persons,maddison2023,aggregated
+2016,pop_world_country_sum,7346.251061,million persons,maddison2023,aggregated
+2017,pop_world_country_sum,7429.107909337766,million persons,maddison2023,aggregated
+2018,pop_world_country_sum,7509.766222767666,million persons,maddison2023,aggregated
+2019,pop_world_country_sum,7590.949040990843,million persons,maddison2023,aggregated
+2020,pop_world_country_sum,7670.176162959213,million persons,maddison2023,aggregated
+2021,pop_world_country_sum,7738.435194128202,million persons,maddison2023,aggregated
+2022,pop_world_country_sum,7802.033524370055,million persons,maddison2023,aggregated
+1900,pop_world_mpd_benchmark,1546.571,million persons,maddison2023,observed
+1920,pop_world_mpd_benchmark,1935.1538039215686,million persons,maddison2023,observed
+1940,pop_world_mpd_benchmark,2240.388,million persons,maddison2023,observed
+1950,pop_world_mpd_benchmark,2518.196112425432,million persons,maddison2023,observed
+1960,pop_world_mpd_benchmark,3028.8656205648276,million persons,maddison2023,observed
+1970,pop_world_mpd_benchmark,3674.9610496369173,million persons,maddison2023,observed
+1980,pop_world_mpd_benchmark,4417.980011382275,million persons,maddison2023,observed
+1990,pop_world_mpd_benchmark,5240.989820113871,million persons,maddison2023,observed
+2000,pop_world_mpd_benchmark,6047.9114230000005,million persons,maddison2023,observed
+2010,pop_world_mpd_benchmark,6844.269805000001,million persons,maddison2023,observed
+2015,pop_world_mpd_benchmark,7263.546154,million persons,maddison2023,observed
+2016,pop_world_mpd_benchmark,7346.251060999999,million persons,maddison2023,observed
+2017,pop_world_mpd_benchmark,7429.107909337766,million persons,maddison2023,observed
+2018,pop_world_mpd_benchmark,7509.766222767666,million persons,maddison2023,observed
+2019,pop_world_mpd_benchmark,7590.949040990842,million persons,maddison2023,observed
+2020,pop_world_mpd_benchmark,7670.176162959213,million persons,maddison2023,observed
+2021,pop_world_mpd_benchmark,7738.435194128203,million persons,maddison2023,observed
+2022,pop_world_mpd_benchmark,7802.033524370055,million persons,maddison2023,observed

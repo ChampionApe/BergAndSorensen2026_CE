@@ -1,0 +1,911 @@
+year,series,value,unit,source,method
+1950,capital_output_ratio,3.6044021001024498,ratio,pwt1001,aggregated
+1951,capital_output_ratio,3.516485364445448,ratio,pwt1001,aggregated
+1952,capital_output_ratio,3.282933265075132,ratio,pwt1001,aggregated
+1953,capital_output_ratio,3.2442287052251384,ratio,pwt1001,aggregated
+1954,capital_output_ratio,3.3080557308129834,ratio,pwt1001,aggregated
+1955,capital_output_ratio,3.2548902819984358,ratio,pwt1001,aggregated
+1956,capital_output_ratio,3.2839536187781047,ratio,pwt1001,aggregated
+1957,capital_output_ratio,3.3136539268963605,ratio,pwt1001,aggregated
+1958,capital_output_ratio,3.3732765766040123,ratio,pwt1001,aggregated
+1959,capital_output_ratio,3.349940593386046,ratio,pwt1001,aggregated
+1960,capital_output_ratio,3.345724198207278,ratio,pwt1001,aggregated
+1961,capital_output_ratio,3.4040564871340817,ratio,pwt1001,aggregated
+1962,capital_output_ratio,3.380002399279933,ratio,pwt1001,aggregated
+1963,capital_output_ratio,3.3664035608443146,ratio,pwt1001,aggregated
+1964,capital_output_ratio,3.3333297520638654,ratio,pwt1001,aggregated
+1965,capital_output_ratio,3.3341145463202295,ratio,pwt1001,aggregated
+1966,capital_output_ratio,3.3389968478548857,ratio,pwt1001,aggregated
+1967,capital_output_ratio,3.3707270480944183,ratio,pwt1001,aggregated
+1968,capital_output_ratio,3.36077304783402,ratio,pwt1001,aggregated
+1969,capital_output_ratio,3.340408547484791,ratio,pwt1001,aggregated
+1970,capital_output_ratio,3.2981499415466207,ratio,pwt1001,aggregated
+1971,capital_output_ratio,3.292453344186586,ratio,pwt1001,aggregated
+1972,capital_output_ratio,3.245235774623649,ratio,pwt1001,aggregated
+1973,capital_output_ratio,3.152504806068928,ratio,pwt1001,aggregated
+1974,capital_output_ratio,3.1732550567402162,ratio,pwt1001,aggregated
+1975,capital_output_ratio,3.2456781656249953,ratio,pwt1001,aggregated
+1976,capital_output_ratio,3.2323772046987704,ratio,pwt1001,aggregated
+1977,capital_output_ratio,3.252879110734973,ratio,pwt1001,aggregated
+1978,capital_output_ratio,3.258328595496167,ratio,pwt1001,aggregated
+1979,capital_output_ratio,3.282844630911661,ratio,pwt1001,aggregated
+1980,capital_output_ratio,3.3314686756791354,ratio,pwt1001,aggregated
+1981,capital_output_ratio,3.3902037556146802,ratio,pwt1001,aggregated
+1982,capital_output_ratio,3.4462086550425375,ratio,pwt1001,aggregated
+1983,capital_output_ratio,3.412653719496073,ratio,pwt1001,aggregated
+1984,capital_output_ratio,3.349368772316174,ratio,pwt1001,aggregated
+1985,capital_output_ratio,3.3324732224338085,ratio,pwt1001,aggregated
+1986,capital_output_ratio,3.3324324121311357,ratio,pwt1001,aggregated
+1987,capital_output_ratio,3.3036585371726495,ratio,pwt1001,aggregated
+1988,capital_output_ratio,3.283954988600382,ratio,pwt1001,aggregated
+1989,capital_output_ratio,3.319738755660787,ratio,pwt1001,aggregated
+1990,capital_output_ratio,3.530060745130678,ratio,pwt1001,aggregated
+1991,capital_output_ratio,3.6456791054181026,ratio,pwt1001,aggregated
+1992,capital_output_ratio,3.69998312996213,ratio,pwt1001,aggregated
+1993,capital_output_ratio,3.817375451430208,ratio,pwt1001,aggregated
+1994,capital_output_ratio,3.8746383900152734,ratio,pwt1001,aggregated
+1995,capital_output_ratio,3.8631735137263776,ratio,pwt1001,aggregated
+1996,capital_output_ratio,3.81681675607421,ratio,pwt1001,aggregated
+1997,capital_output_ratio,3.7456890801890457,ratio,pwt1001,aggregated
+1998,capital_output_ratio,3.7226948464162586,ratio,pwt1001,aggregated
+1999,capital_output_ratio,3.6239189664796903,ratio,pwt1001,aggregated
+2000,capital_output_ratio,3.480014001404672,ratio,pwt1001,aggregated
+2001,capital_output_ratio,3.4504820403415613,ratio,pwt1001,aggregated
+2002,capital_output_ratio,3.4027861298715276,ratio,pwt1001,aggregated
+2003,capital_output_ratio,3.4233807748470575,ratio,pwt1001,aggregated
+2004,capital_output_ratio,3.409978055629629,ratio,pwt1001,aggregated
+2005,capital_output_ratio,3.353136463331147,ratio,pwt1001,aggregated
+2006,capital_output_ratio,3.4213349852853785,ratio,pwt1001,aggregated
+2007,capital_output_ratio,3.4890119112317826,ratio,pwt1001,aggregated
+2008,capital_output_ratio,3.6420535634688282,ratio,pwt1001,aggregated
+2009,capital_output_ratio,3.9399801047831198,ratio,pwt1001,aggregated
+2010,capital_output_ratio,3.9212565988623145,ratio,pwt1001,aggregated
+2011,capital_output_ratio,3.9045626644959053,ratio,pwt1001,aggregated
+2012,capital_output_ratio,3.9400617399985123,ratio,pwt1001,aggregated
+2013,capital_output_ratio,4.041496889458462,ratio,pwt1001,aggregated
+2014,capital_output_ratio,4.117899613896476,ratio,pwt1001,aggregated
+2015,capital_output_ratio,4.181752585370999,ratio,pwt1001,aggregated
+2016,capital_output_ratio,4.226023388608406,ratio,pwt1001,aggregated
+2017,capital_output_ratio,4.1623275292016455,ratio,pwt1001,aggregated
+2018,capital_output_ratio,4.202553427246212,ratio,pwt1001,aggregated
+2019,capital_output_ratio,4.283982560257063,ratio,pwt1001,aggregated
+1950,capital_world_pwt,22.46234268585205,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1951,capital_world_pwt,23.715932754089355,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1952,capital_world_pwt,24.99576500415039,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1953,capital_world_pwt,26.251111411010744,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1954,capital_world_pwt,27.386079620117187,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1955,capital_world_pwt,29.01115701647949,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1956,capital_world_pwt,30.398641166625975,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1957,capital_world_pwt,31.775688221679687,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1958,capital_world_pwt,33.1176823392334,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1959,capital_world_pwt,34.742723075195315,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1960,capital_world_pwt,37.47574521636963,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1961,capital_world_pwt,39.301621075531,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1962,capital_world_pwt,41.2503447354126,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1963,capital_world_pwt,43.31435401171875,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1964,capital_world_pwt,45.72118640725708,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1965,capital_world_pwt,48.233260989479064,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1966,capital_world_pwt,50.87240262353516,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1967,capital_world_pwt,53.456614556655886,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1968,capital_world_pwt,56.27577994979858,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1969,capital_world_pwt,59.34948422746277,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1970,capital_world_pwt,64.14457437286568,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1971,capital_world_pwt,67.19799721298217,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1972,capital_world_pwt,69.78370158752632,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1973,capital_world_pwt,72.44940357673644,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1974,capital_world_pwt,75.22832448068047,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1975,capital_world_pwt,78.32688642781258,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1976,capital_world_pwt,81.90696182707596,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1977,capital_world_pwt,85.94509343727874,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1978,capital_world_pwt,90.37769344136048,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1979,capital_world_pwt,95.05103239533615,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1980,capital_world_pwt,98.98109044109727,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1981,capital_world_pwt,101.76247891493988,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1982,capital_world_pwt,103.04434297492217,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1983,capital_world_pwt,103.91379101400757,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1984,capital_world_pwt,105.91560190677643,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1985,capital_world_pwt,109.11793441100312,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1986,capital_world_pwt,112.55827150521088,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1987,capital_world_pwt,116.33413358298492,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1988,capital_world_pwt,121.31082270004272,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1989,capital_world_pwt,127.41740909692383,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1990,capital_world_pwt,155.07603564579773,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1991,capital_world_pwt,162.77631317042542,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1992,capital_world_pwt,171.05220767933656,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1993,capital_world_pwt,179.57225361909485,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1994,capital_world_pwt,188.30285553912353,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1995,capital_world_pwt,196.36949775604248,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1996,capital_world_pwt,203.7817031243286,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1997,capital_world_pwt,207.1766907401123,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1998,capital_world_pwt,209.84695894442748,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1999,capital_world_pwt,212.16747560769653,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2000,capital_world_pwt,215.09064512249756,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2001,capital_world_pwt,217.85323197558594,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2002,capital_world_pwt,221.41519736602783,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2003,capital_world_pwt,230.9874761251831,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2004,capital_world_pwt,244.39189397705078,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2005,capital_world_pwt,259.47767519781496,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2006,capital_world_pwt,281.47963100445554,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2007,capital_world_pwt,304.9094027862549,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2008,capital_world_pwt,331.15755619021604,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2009,capital_world_pwt,356.5968575553894,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2010,capital_world_pwt,383.81852865625,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2011,capital_world_pwt,407.12206234295655,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2012,capital_world_pwt,424.87675189233397,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2013,capital_world_pwt,440.78728386853027,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2014,capital_world_pwt,456.69464667492673,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2015,capital_world_pwt,470.7380247749023,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2016,capital_world_pwt,484.0598702387695,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2017,capital_world_pwt,496.64303075427244,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2018,capital_world_pwt,514.9505376274415,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2019,capital_world_pwt,535.1303815698242,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1950,consumption_share,0.7899160113890175,share,pwt1001,aggregated
+1951,consumption_share,0.7725360218170869,share,pwt1001,aggregated
+1952,consumption_share,0.7852391702096236,share,pwt1001,aggregated
+1953,consumption_share,0.7841060257314351,share,pwt1001,aggregated
+1954,consumption_share,0.7813004373366442,share,pwt1001,aggregated
+1955,consumption_share,0.7699360570897988,share,pwt1001,aggregated
+1956,consumption_share,0.7647388297445037,share,pwt1001,aggregated
+1957,consumption_share,0.7627591483472809,share,pwt1001,aggregated
+1958,consumption_share,0.7659250734648599,share,pwt1001,aggregated
+1959,consumption_share,0.7529669459120573,share,pwt1001,aggregated
+1960,consumption_share,0.7523644163871329,share,pwt1001,aggregated
+1961,consumption_share,0.7592190948102461,share,pwt1001,aggregated
+1962,consumption_share,0.7644873760281221,share,pwt1001,aggregated
+1963,consumption_share,0.7609555944652261,share,pwt1001,aggregated
+1964,consumption_share,0.7509648136837273,share,pwt1001,aggregated
+1965,consumption_share,0.7469888393014007,share,pwt1001,aggregated
+1966,consumption_share,0.7453324746263027,share,pwt1001,aggregated
+1967,consumption_share,0.7542865941011517,share,pwt1001,aggregated
+1968,consumption_share,0.7518255615117607,share,pwt1001,aggregated
+1969,consumption_share,0.7455470643501731,share,pwt1001,aggregated
+1970,consumption_share,0.7369182897599283,share,pwt1001,aggregated
+1971,consumption_share,0.7395580946200315,share,pwt1001,aggregated
+1972,consumption_share,0.7410197526726537,share,pwt1001,aggregated
+1973,consumption_share,0.7296955838593229,share,pwt1001,aggregated
+1974,consumption_share,0.72783451530381,share,pwt1001,aggregated
+1975,consumption_share,0.7430735195302878,share,pwt1001,aggregated
+1976,consumption_share,0.7340829904252052,share,pwt1001,aggregated
+1977,consumption_share,0.7303665751913907,share,pwt1001,aggregated
+1978,consumption_share,0.7261355297290717,share,pwt1001,aggregated
+1979,consumption_share,0.7255079610816718,share,pwt1001,aggregated
+1980,consumption_share,0.7296478086476569,share,pwt1001,aggregated
+1981,consumption_share,0.7336997603325199,share,pwt1001,aggregated
+1982,consumption_share,0.7469466288470284,share,pwt1001,aggregated
+1983,consumption_share,0.7542238674076802,share,pwt1001,aggregated
+1984,consumption_share,0.7473382760692598,share,pwt1001,aggregated
+1985,consumption_share,0.747327950544528,share,pwt1001,aggregated
+1986,consumption_share,0.7513091954782695,share,pwt1001,aggregated
+1987,consumption_share,0.7484721039476488,share,pwt1001,aggregated
+1988,consumption_share,0.7410133811466555,share,pwt1001,aggregated
+1989,consumption_share,0.739927244270747,share,pwt1001,aggregated
+1990,consumption_share,0.7414155906160131,share,pwt1001,aggregated
+1991,consumption_share,0.7451745867131117,share,pwt1001,aggregated
+1992,consumption_share,0.7437931614455299,share,pwt1001,aggregated
+1993,consumption_share,0.7490945928698979,share,pwt1001,aggregated
+1994,consumption_share,0.748203526470396,share,pwt1001,aggregated
+1995,consumption_share,0.7468667442486481,share,pwt1001,aggregated
+1996,consumption_share,0.7482424767354883,share,pwt1001,aggregated
+1997,consumption_share,0.7485763263133064,share,pwt1001,aggregated
+1998,consumption_share,0.7553088024724487,share,pwt1001,aggregated
+1999,consumption_share,0.7574551267740648,share,pwt1001,aggregated
+2000,consumption_share,0.7525628663981115,share,pwt1001,aggregated
+2001,consumption_share,0.7566541975955601,share,pwt1001,aggregated
+2002,consumption_share,0.7592994688885933,share,pwt1001,aggregated
+2003,consumption_share,0.7520947694269792,share,pwt1001,aggregated
+2004,consumption_share,0.7398782500840471,share,pwt1001,aggregated
+2005,consumption_share,0.7354970762479511,share,pwt1001,aggregated
+2006,consumption_share,0.7289830703253285,share,pwt1001,aggregated
+2007,consumption_share,0.722488523151465,share,pwt1001,aggregated
+2008,consumption_share,0.7212132230084433,share,pwt1001,aggregated
+2009,consumption_share,0.7373196175703828,share,pwt1001,aggregated
+2010,consumption_share,0.7237454609758702,share,pwt1001,aggregated
+2011,consumption_share,0.7216224776255066,share,pwt1001,aggregated
+2012,consumption_share,0.7221048745459684,share,pwt1001,aggregated
+2013,consumption_share,0.7256725472047488,share,pwt1001,aggregated
+2014,consumption_share,0.7249071382188074,share,pwt1001,aggregated
+2015,consumption_share,0.7294495169467702,share,pwt1001,aggregated
+2016,consumption_share,0.7324744086474091,share,pwt1001,aggregated
+2017,consumption_share,0.727470535596984,share,pwt1001,aggregated
+2018,consumption_share,0.7263267521139292,share,pwt1001,aggregated
+2019,consumption_share,0.728624255335825,share,pwt1001,aggregated
+1950,depreciation_rate,0.03147712895977801,per year,pwt1001,aggregated
+1951,depreciation_rate,0.03164005394376728,per year,pwt1001,aggregated
+1952,depreciation_rate,0.032007154212413486,per year,pwt1001,aggregated
+1953,depreciation_rate,0.03220227844931236,per year,pwt1001,aggregated
+1954,depreciation_rate,0.03238879031266244,per year,pwt1001,aggregated
+1955,depreciation_rate,0.03267595224614058,per year,pwt1001,aggregated
+1956,depreciation_rate,0.03289202965790572,per year,pwt1001,aggregated
+1957,depreciation_rate,0.03311161084815967,per year,pwt1001,aggregated
+1958,depreciation_rate,0.03327380928664093,per year,pwt1001,aggregated
+1959,depreciation_rate,0.0334213433578902,per year,pwt1001,aggregated
+1960,depreciation_rate,0.03373362304986618,per year,pwt1001,aggregated
+1961,depreciation_rate,0.03386720297307089,per year,pwt1001,aggregated
+1962,depreciation_rate,0.03393626306625822,per year,pwt1001,aggregated
+1963,depreciation_rate,0.03395618124619975,per year,pwt1001,aggregated
+1964,depreciation_rate,0.033986761318570646,per year,pwt1001,aggregated
+1965,depreciation_rate,0.03408514385000962,per year,pwt1001,aggregated
+1966,depreciation_rate,0.03426272920536568,per year,pwt1001,aggregated
+1967,depreciation_rate,0.03441900917469511,per year,pwt1001,aggregated
+1968,depreciation_rate,0.03452148048412616,per year,pwt1001,aggregated
+1969,depreciation_rate,0.03464265566927767,per year,pwt1001,aggregated
+1970,depreciation_rate,0.034890246835182444,per year,pwt1001,aggregated
+1971,depreciation_rate,0.03506367143941879,per year,pwt1001,aggregated
+1972,depreciation_rate,0.035171851299744906,per year,pwt1001,aggregated
+1973,depreciation_rate,0.035326891008804505,per year,pwt1001,aggregated
+1974,depreciation_rate,0.0355412518368582,per year,pwt1001,aggregated
+1975,depreciation_rate,0.03574586635775108,per year,pwt1001,aggregated
+1976,depreciation_rate,0.03590568356046955,per year,pwt1001,aggregated
+1977,depreciation_rate,0.03600250454954756,per year,pwt1001,aggregated
+1978,depreciation_rate,0.03608074949473581,per year,pwt1001,aggregated
+1979,depreciation_rate,0.036145376630005485,per year,pwt1001,aggregated
+1980,depreciation_rate,0.03620248944646676,per year,pwt1001,aggregated
+1981,depreciation_rate,0.03626210950892425,per year,pwt1001,aggregated
+1982,depreciation_rate,0.03631268985729587,per year,pwt1001,aggregated
+1983,depreciation_rate,0.0362881707971401,per year,pwt1001,aggregated
+1984,depreciation_rate,0.036255007746588845,per year,pwt1001,aggregated
+1985,depreciation_rate,0.0362683927930583,per year,pwt1001,aggregated
+1986,depreciation_rate,0.03629660110586635,per year,pwt1001,aggregated
+1987,depreciation_rate,0.03634356784705232,per year,pwt1001,aggregated
+1988,depreciation_rate,0.03646589523756903,per year,pwt1001,aggregated
+1989,depreciation_rate,0.036630469894287046,per year,pwt1001,aggregated
+1990,depreciation_rate,0.03661142832664867,per year,pwt1001,aggregated
+1991,depreciation_rate,0.036891032391993046,per year,pwt1001,aggregated
+1992,depreciation_rate,0.03711946681589278,per year,pwt1001,aggregated
+1993,depreciation_rate,0.0372918048896578,per year,pwt1001,aggregated
+1994,depreciation_rate,0.037403936655598345,per year,pwt1001,aggregated
+1995,depreciation_rate,0.0375793556861945,per year,pwt1001,aggregated
+1996,depreciation_rate,0.03782181697961788,per year,pwt1001,aggregated
+1997,depreciation_rate,0.03808982382316759,per year,pwt1001,aggregated
+1998,depreciation_rate,0.0383627552385521,per year,pwt1001,aggregated
+1999,depreciation_rate,0.03867553982780787,per year,pwt1001,aggregated
+2000,depreciation_rate,0.03905573497121085,per year,pwt1001,aggregated
+2001,depreciation_rate,0.03944484375891547,per year,pwt1001,aggregated
+2002,depreciation_rate,0.039739907073068126,per year,pwt1001,aggregated
+2003,depreciation_rate,0.040001092836094876,per year,pwt1001,aggregated
+2004,depreciation_rate,0.04038215837761802,per year,pwt1001,aggregated
+2005,depreciation_rate,0.04093257601583608,per year,pwt1001,aggregated
+2006,depreciation_rate,0.04156217731043192,per year,pwt1001,aggregated
+2007,depreciation_rate,0.04228806754634457,per year,pwt1001,aggregated
+2008,depreciation_rate,0.04303339257957776,per year,pwt1001,aggregated
+2009,depreciation_rate,0.04365828368346307,per year,pwt1001,aggregated
+2010,depreciation_rate,0.04423887030497626,per year,pwt1001,aggregated
+2011,depreciation_rate,0.04484932540164997,per year,pwt1001,aggregated
+2012,depreciation_rate,0.04524720627672367,per year,pwt1001,aggregated
+2013,depreciation_rate,0.04553610280755647,per year,pwt1001,aggregated
+2014,depreciation_rate,0.04566181576792848,per year,pwt1001,aggregated
+2015,depreciation_rate,0.04571577376068731,per year,pwt1001,aggregated
+2016,depreciation_rate,0.045809038065256935,per year,pwt1001,aggregated
+2017,depreciation_rate,0.04597176843663925,per year,pwt1001,aggregated
+2018,depreciation_rate,0.046233870518413565,per year,pwt1001,aggregated
+2019,depreciation_rate,0.04649182962755133,per year,pwt1001,aggregated
+1950,gdp_world_pwt,6.231919209350586,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1951,gdp_world_pwt,6.744214832763672,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1952,gdp_world_pwt,7.613851085571289,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1953,gdp_world_pwt,8.091634035766601,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1954,gdp_world_pwt,8.278602855758667,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1955,gdp_world_pwt,8.913098293029785,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1956,gdp_world_pwt,9.256720616516112,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1957,gdp_world_pwt,9.58932010484314,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1958,gdp_world_pwt,9.817659947875976,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1959,gdp_world_pwt,10.37114602682495,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1960,gdp_world_pwt,11.201374784187317,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1961,gdp_world_pwt,11.545820873336792,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1962,gdp_world_pwt,12.20453939376831,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1963,gdp_world_pwt,12.86700042150116,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1964,gdp_world_pwt,13.716718827148437,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1965,gdp_world_pwt,14.466587850952148,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1966,gdp_world_pwt,15.23583427645874,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1967,gdp_world_pwt,15.85907544393921,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1968,gdp_world_pwt,16.744891472534178,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1969,gdp_world_pwt,17.767133386169434,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1970,gdp_world_pwt,19.451207039598465,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1971,gdp_world_pwt,20.41230173442459,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1972,gdp_world_pwt,21.506000225954057,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1973,gdp_world_pwt,22.984201544195177,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1974,gdp_world_pwt,23.709795549821855,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1975,gdp_world_pwt,24.135828155542374,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1976,gdp_world_pwt,25.342840689151764,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1977,gdp_world_pwt,26.42438977627182,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1978,gdp_world_pwt,27.74046540673828,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1979,gdp_world_pwt,28.956886667243957,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1980,gdp_world_pwt,29.71400799584198,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1981,gdp_world_pwt,30.01973094299698,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1982,gdp_world_pwt,29.903463004600525,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1983,gdp_world_pwt,30.452078508895873,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1984,gdp_world_pwt,31.624958037902832,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1985,gdp_world_pwt,32.74616493295288,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1986,gdp_world_pwt,33.77894109713745,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1987,gdp_world_pwt,35.21611151002502,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1988,gdp_world_pwt,36.942709782226565,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1989,gdp_world_pwt,38.383900299224855,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1990,gdp_world_pwt,43.93229399673462,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1991,gdp_world_pwt,44.65132179978943,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1992,gdp_world_pwt,46.232923828399656,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1993,gdp_world_pwt,47.04334385702515,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1994,gdp_world_pwt,48.60151085810852,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1995,gdp_world_pwt,50.833925679534914,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1996,gdp_world_pwt,53.39343465565491,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1997,gdp_world_pwt,55.31385325064087,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1998,gdp_world_pwt,56.372743801681516,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1999,gdp_world_pwt,58.54960854957581,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2000,gdp_world_pwt,61.81072443624115,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2001,gdp_world_pwt,63.140652993453976,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2002,gdp_world_pwt,65.07256535373688,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2003,gdp_world_pwt,67.47767557213021,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2004,gdp_world_pwt,71.674359763649,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2005,gdp_world_pwt,77.3936395302658,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2006,gdp_world_pwt,82.28269300511933,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2007,gdp_world_pwt,87.40256533598328,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2008,gdp_world_pwt,90.93766171271515,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2009,gdp_world_pwt,90.5185280705719,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2010,gdp_world_pwt,97.89284449971771,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2011,gdp_world_pwt,104.27996974563598,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2012,gdp_world_pwt,107.84623420244598,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2013,gdp_world_pwt,109.07753109337617,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2014,gdp_world_pwt,110.91604669693756,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2015,gdp_world_pwt,112.58265732486724,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2016,gdp_world_pwt,114.5553140260086,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2017,gdp_world_pwt,119.33229376129151,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2018,gdp_world_pwt,122.54715088066864,trillion 2017 USD at current PPPs,pwt1001,aggregated
+2019,gdp_world_pwt,124.92937443468476,trillion 2017 USD at current PPPs,pwt1001,aggregated
+1950,investment_share,0.21008398861098257,share,pwt1001,aggregated
+1951,investment_share,0.2274639781829131,share,pwt1001,aggregated
+1952,investment_share,0.21476082979037642,share,pwt1001,aggregated
+1953,investment_share,0.21589397426856496,share,pwt1001,aggregated
+1954,investment_share,0.21869956266335577,share,pwt1001,aggregated
+1955,investment_share,0.23006394291020113,share,pwt1001,aggregated
+1956,investment_share,0.23526117025549628,share,pwt1001,aggregated
+1957,investment_share,0.237240851652719,share,pwt1001,aggregated
+1958,investment_share,0.23407492653514017,share,pwt1001,aggregated
+1959,investment_share,0.2470330540879428,share,pwt1001,aggregated
+1960,investment_share,0.24763558361286703,share,pwt1001,aggregated
+1961,investment_share,0.24078090518975392,share,pwt1001,aggregated
+1962,investment_share,0.23551262397187794,share,pwt1001,aggregated
+1963,investment_share,0.2390444055347739,share,pwt1001,aggregated
+1964,investment_share,0.24903518631627275,share,pwt1001,aggregated
+1965,investment_share,0.2530111606985993,share,pwt1001,aggregated
+1966,investment_share,0.25466752537369725,share,pwt1001,aggregated
+1967,investment_share,0.24571340589884821,share,pwt1001,aggregated
+1968,investment_share,0.24817443848823928,share,pwt1001,aggregated
+1969,investment_share,0.25445293564982696,share,pwt1001,aggregated
+1970,investment_share,0.26308171024007154,share,pwt1001,aggregated
+1971,investment_share,0.2604419053799685,share,pwt1001,aggregated
+1972,investment_share,0.25898024732734626,share,pwt1001,aggregated
+1973,investment_share,0.270304416140677,share,pwt1001,aggregated
+1974,investment_share,0.27216548469619,share,pwt1001,aggregated
+1975,investment_share,0.2569264804697122,share,pwt1001,aggregated
+1976,investment_share,0.2659170095747948,share,pwt1001,aggregated
+1977,investment_share,0.26963342480860936,share,pwt1001,aggregated
+1978,investment_share,0.2738644702709283,share,pwt1001,aggregated
+1979,investment_share,0.27449203891832813,share,pwt1001,aggregated
+1980,investment_share,0.2703521913523432,share,pwt1001,aggregated
+1981,investment_share,0.26630023966748007,share,pwt1001,aggregated
+1982,investment_share,0.2530533711529715,share,pwt1001,aggregated
+1983,investment_share,0.24577613259231973,share,pwt1001,aggregated
+1984,investment_share,0.25266172393074005,share,pwt1001,aggregated
+1985,investment_share,0.25267204945547195,share,pwt1001,aggregated
+1986,investment_share,0.24869080452173048,share,pwt1001,aggregated
+1987,investment_share,0.2515278960523511,share,pwt1001,aggregated
+1988,investment_share,0.25898661885334445,share,pwt1001,aggregated
+1989,investment_share,0.26007275572925315,share,pwt1001,aggregated
+1990,investment_share,0.2585844093839868,share,pwt1001,aggregated
+1991,investment_share,0.2548254132868884,share,pwt1001,aggregated
+1992,investment_share,0.2562068385544701,share,pwt1001,aggregated
+1993,investment_share,0.250905407130102,share,pwt1001,aggregated
+1994,investment_share,0.2517964735296041,share,pwt1001,aggregated
+1995,investment_share,0.253133255751352,share,pwt1001,aggregated
+1996,investment_share,0.25175752326451173,share,pwt1001,aggregated
+1997,investment_share,0.2514236736866936,share,pwt1001,aggregated
+1998,investment_share,0.24469119752755134,share,pwt1001,aggregated
+1999,investment_share,0.24254487322593526,share,pwt1001,aggregated
+2000,investment_share,0.24743713360188835,share,pwt1001,aggregated
+2001,investment_share,0.24334580240443993,share,pwt1001,aggregated
+2002,investment_share,0.24070053111140663,share,pwt1001,aggregated
+2003,investment_share,0.24790523057302077,share,pwt1001,aggregated
+2004,investment_share,0.26012174991595294,share,pwt1001,aggregated
+2005,investment_share,0.2645029237520488,share,pwt1001,aggregated
+2006,investment_share,0.27101692967467145,share,pwt1001,aggregated
+2007,investment_share,0.277511476848535,share,pwt1001,aggregated
+2008,investment_share,0.2787867769915567,share,pwt1001,aggregated
+2009,investment_share,0.2626803824296173,share,pwt1001,aggregated
+2010,investment_share,0.2762545390241297,share,pwt1001,aggregated
+2011,investment_share,0.2783775223744934,share,pwt1001,aggregated
+2012,investment_share,0.2778951254540316,share,pwt1001,aggregated
+2013,investment_share,0.27432745279525117,share,pwt1001,aggregated
+2014,investment_share,0.27509286178119263,share,pwt1001,aggregated
+2015,investment_share,0.2705504830532298,share,pwt1001,aggregated
+2016,investment_share,0.26752559135259096,share,pwt1001,aggregated
+2017,investment_share,0.272529464403016,share,pwt1001,aggregated
+2018,investment_share,0.2736732478860708,share,pwt1001,aggregated
+2019,investment_share,0.27137574466417513,share,pwt1001,aggregated
+1950,n_countries_capital,55.0,count,pwt1001,aggregated
+1951,n_countries_capital,60.0,count,pwt1001,aggregated
+1952,n_countries_capital,61.0,count,pwt1001,aggregated
+1953,n_countries_capital,63.0,count,pwt1001,aggregated
+1954,n_countries_capital,67.0,count,pwt1001,aggregated
+1955,n_countries_capital,71.0,count,pwt1001,aggregated
+1956,n_countries_capital,71.0,count,pwt1001,aggregated
+1957,n_countries_capital,71.0,count,pwt1001,aggregated
+1958,n_countries_capital,71.0,count,pwt1001,aggregated
+1959,n_countries_capital,75.0,count,pwt1001,aggregated
+1960,n_countries_capital,110.0,count,pwt1001,aggregated
+1961,n_countries_capital,111.0,count,pwt1001,aggregated
+1962,n_countries_capital,112.0,count,pwt1001,aggregated
+1963,n_countries_capital,112.0,count,pwt1001,aggregated
+1964,n_countries_capital,113.0,count,pwt1001,aggregated
+1965,n_countries_capital,114.0,count,pwt1001,aggregated
+1966,n_countries_capital,114.0,count,pwt1001,aggregated
+1967,n_countries_capital,114.0,count,pwt1001,aggregated
+1968,n_countries_capital,114.0,count,pwt1001,aggregated
+1969,n_countries_capital,114.0,count,pwt1001,aggregated
+1970,n_countries_capital,156.0,count,pwt1001,aggregated
+1971,n_countries_capital,156.0,count,pwt1001,aggregated
+1972,n_countries_capital,156.0,count,pwt1001,aggregated
+1973,n_countries_capital,156.0,count,pwt1001,aggregated
+1974,n_countries_capital,156.0,count,pwt1001,aggregated
+1975,n_countries_capital,156.0,count,pwt1001,aggregated
+1976,n_countries_capital,156.0,count,pwt1001,aggregated
+1977,n_countries_capital,156.0,count,pwt1001,aggregated
+1978,n_countries_capital,156.0,count,pwt1001,aggregated
+1979,n_countries_capital,156.0,count,pwt1001,aggregated
+1980,n_countries_capital,156.0,count,pwt1001,aggregated
+1981,n_countries_capital,156.0,count,pwt1001,aggregated
+1982,n_countries_capital,156.0,count,pwt1001,aggregated
+1983,n_countries_capital,156.0,count,pwt1001,aggregated
+1984,n_countries_capital,156.0,count,pwt1001,aggregated
+1985,n_countries_capital,156.0,count,pwt1001,aggregated
+1986,n_countries_capital,156.0,count,pwt1001,aggregated
+1987,n_countries_capital,156.0,count,pwt1001,aggregated
+1988,n_countries_capital,156.0,count,pwt1001,aggregated
+1989,n_countries_capital,157.0,count,pwt1001,aggregated
+1990,n_countries_capital,180.0,count,pwt1001,aggregated
+1991,n_countries_capital,180.0,count,pwt1001,aggregated
+1992,n_countries_capital,180.0,count,pwt1001,aggregated
+1993,n_countries_capital,180.0,count,pwt1001,aggregated
+1994,n_countries_capital,180.0,count,pwt1001,aggregated
+1995,n_countries_capital,180.0,count,pwt1001,aggregated
+1996,n_countries_capital,180.0,count,pwt1001,aggregated
+1997,n_countries_capital,180.0,count,pwt1001,aggregated
+1998,n_countries_capital,180.0,count,pwt1001,aggregated
+1999,n_countries_capital,179.0,count,pwt1001,aggregated
+2000,n_countries_capital,179.0,count,pwt1001,aggregated
+2001,n_countries_capital,179.0,count,pwt1001,aggregated
+2002,n_countries_capital,180.0,count,pwt1001,aggregated
+2003,n_countries_capital,179.0,count,pwt1001,aggregated
+2004,n_countries_capital,180.0,count,pwt1001,aggregated
+2005,n_countries_capital,180.0,count,pwt1001,aggregated
+2006,n_countries_capital,180.0,count,pwt1001,aggregated
+2007,n_countries_capital,180.0,count,pwt1001,aggregated
+2008,n_countries_capital,180.0,count,pwt1001,aggregated
+2009,n_countries_capital,180.0,count,pwt1001,aggregated
+2010,n_countries_capital,180.0,count,pwt1001,aggregated
+2011,n_countries_capital,180.0,count,pwt1001,aggregated
+2012,n_countries_capital,180.0,count,pwt1001,aggregated
+2013,n_countries_capital,180.0,count,pwt1001,aggregated
+2014,n_countries_capital,180.0,count,pwt1001,aggregated
+2015,n_countries_capital,180.0,count,pwt1001,aggregated
+2016,n_countries_capital,180.0,count,pwt1001,aggregated
+2017,n_countries_capital,180.0,count,pwt1001,aggregated
+2018,n_countries_capital,180.0,count,pwt1001,aggregated
+2019,n_countries_capital,180.0,count,pwt1001,aggregated
+1950,n_countries_use_split,55.0,count,pwt1001,aggregated
+1951,n_countries_use_split,60.0,count,pwt1001,aggregated
+1952,n_countries_use_split,61.0,count,pwt1001,aggregated
+1953,n_countries_use_split,63.0,count,pwt1001,aggregated
+1954,n_countries_use_split,67.0,count,pwt1001,aggregated
+1955,n_countries_use_split,71.0,count,pwt1001,aggregated
+1956,n_countries_use_split,71.0,count,pwt1001,aggregated
+1957,n_countries_use_split,71.0,count,pwt1001,aggregated
+1958,n_countries_use_split,71.0,count,pwt1001,aggregated
+1959,n_countries_use_split,75.0,count,pwt1001,aggregated
+1960,n_countries_use_split,111.0,count,pwt1001,aggregated
+1961,n_countries_use_split,112.0,count,pwt1001,aggregated
+1962,n_countries_use_split,113.0,count,pwt1001,aggregated
+1963,n_countries_use_split,113.0,count,pwt1001,aggregated
+1964,n_countries_use_split,114.0,count,pwt1001,aggregated
+1965,n_countries_use_split,114.0,count,pwt1001,aggregated
+1966,n_countries_use_split,114.0,count,pwt1001,aggregated
+1967,n_countries_use_split,114.0,count,pwt1001,aggregated
+1968,n_countries_use_split,114.0,count,pwt1001,aggregated
+1969,n_countries_use_split,114.0,count,pwt1001,aggregated
+1970,n_countries_use_split,157.0,count,pwt1001,aggregated
+1971,n_countries_use_split,157.0,count,pwt1001,aggregated
+1972,n_countries_use_split,157.0,count,pwt1001,aggregated
+1973,n_countries_use_split,157.0,count,pwt1001,aggregated
+1974,n_countries_use_split,157.0,count,pwt1001,aggregated
+1975,n_countries_use_split,157.0,count,pwt1001,aggregated
+1976,n_countries_use_split,157.0,count,pwt1001,aggregated
+1977,n_countries_use_split,157.0,count,pwt1001,aggregated
+1978,n_countries_use_split,157.0,count,pwt1001,aggregated
+1979,n_countries_use_split,157.0,count,pwt1001,aggregated
+1980,n_countries_use_split,157.0,count,pwt1001,aggregated
+1981,n_countries_use_split,157.0,count,pwt1001,aggregated
+1982,n_countries_use_split,157.0,count,pwt1001,aggregated
+1983,n_countries_use_split,157.0,count,pwt1001,aggregated
+1984,n_countries_use_split,157.0,count,pwt1001,aggregated
+1985,n_countries_use_split,157.0,count,pwt1001,aggregated
+1986,n_countries_use_split,157.0,count,pwt1001,aggregated
+1987,n_countries_use_split,157.0,count,pwt1001,aggregated
+1988,n_countries_use_split,157.0,count,pwt1001,aggregated
+1989,n_countries_use_split,158.0,count,pwt1001,aggregated
+1990,n_countries_use_split,181.0,count,pwt1001,aggregated
+1991,n_countries_use_split,181.0,count,pwt1001,aggregated
+1992,n_countries_use_split,181.0,count,pwt1001,aggregated
+1993,n_countries_use_split,181.0,count,pwt1001,aggregated
+1994,n_countries_use_split,181.0,count,pwt1001,aggregated
+1995,n_countries_use_split,181.0,count,pwt1001,aggregated
+1996,n_countries_use_split,181.0,count,pwt1001,aggregated
+1997,n_countries_use_split,181.0,count,pwt1001,aggregated
+1998,n_countries_use_split,181.0,count,pwt1001,aggregated
+1999,n_countries_use_split,180.0,count,pwt1001,aggregated
+2000,n_countries_use_split,180.0,count,pwt1001,aggregated
+2001,n_countries_use_split,180.0,count,pwt1001,aggregated
+2002,n_countries_use_split,181.0,count,pwt1001,aggregated
+2003,n_countries_use_split,180.0,count,pwt1001,aggregated
+2004,n_countries_use_split,181.0,count,pwt1001,aggregated
+2005,n_countries_use_split,183.0,count,pwt1001,aggregated
+2006,n_countries_use_split,183.0,count,pwt1001,aggregated
+2007,n_countries_use_split,183.0,count,pwt1001,aggregated
+2008,n_countries_use_split,183.0,count,pwt1001,aggregated
+2009,n_countries_use_split,183.0,count,pwt1001,aggregated
+2010,n_countries_use_split,183.0,count,pwt1001,aggregated
+2011,n_countries_use_split,183.0,count,pwt1001,aggregated
+2012,n_countries_use_split,183.0,count,pwt1001,aggregated
+2013,n_countries_use_split,183.0,count,pwt1001,aggregated
+2014,n_countries_use_split,183.0,count,pwt1001,aggregated
+2015,n_countries_use_split,183.0,count,pwt1001,aggregated
+2016,n_countries_use_split,183.0,count,pwt1001,aggregated
+2017,n_countries_use_split,183.0,count,pwt1001,aggregated
+2018,n_countries_use_split,183.0,count,pwt1001,aggregated
+2019,n_countries_use_split,183.0,count,pwt1001,aggregated
+1950,pop_world_pwt,1297.3633557741143,million persons,pwt1001,aggregated
+1951,pop_world_pwt,1345.6489156987568,million persons,pwt1001,aggregated
+1952,pop_world_pwt,1948.8742491143432,million persons,pwt1001,aggregated
+1953,pop_world_pwt,2005.0918968128292,million persons,pwt1001,aggregated
+1954,pop_world_pwt,2048.5913554706117,million persons,pwt1001,aggregated
+1955,pop_world_pwt,2121.7993044700165,million persons,pwt1001,aggregated
+1956,pop_world_pwt,2162.7451342281784,million persons,pwt1001,aggregated
+1957,pop_world_pwt,2206.4322835152643,million persons,pwt1001,aggregated
+1958,pop_world_pwt,2250.117244774711,million persons,pwt1001,aggregated
+1959,pop_world_pwt,2350.7516033136108,million persons,pwt1001,aggregated
+1960,pop_world_pwt,2593.7022877892323,million persons,pwt1001,aggregated
+1961,pop_world_pwt,2628.4968900657473,million persons,pwt1001,aggregated
+1962,pop_world_pwt,2699.071655341718,million persons,pwt1001,aggregated
+1963,pop_world_pwt,2761.115394407688,million persons,pwt1001,aggregated
+1964,pop_world_pwt,2826.0482892964947,million persons,pwt1001,aggregated
+1965,pop_world_pwt,2887.867348539325,million persons,pwt1001,aggregated
+1966,pop_world_pwt,2951.2105613777544,million persons,pwt1001,aggregated
+1967,pop_world_pwt,3014.64949865927,million persons,pwt1001,aggregated
+1968,pop_world_pwt,3080.183272989645,million persons,pwt1001,aggregated
+1969,pop_world_pwt,3148.084064730328,million persons,pwt1001,aggregated
+1970,pop_world_pwt,3365.276098,million persons,pwt1001,aggregated
+1971,pop_world_pwt,3436.787595,million persons,pwt1001,aggregated
+1972,pop_world_pwt,3508.838279,million persons,pwt1001,aggregated
+1973,pop_world_pwt,3581.074468,million persons,pwt1001,aggregated
+1974,pop_world_pwt,3653.007787,million persons,pwt1001,aggregated
+1975,pop_world_pwt,3724.645528,million persons,pwt1001,aggregated
+1976,pop_world_pwt,3795.7311099999997,million persons,pwt1001,aggregated
+1977,pop_world_pwt,3866.3902169999997,million persons,pwt1001,aggregated
+1978,pop_world_pwt,3937.2147969999996,million persons,pwt1001,aggregated
+1979,pop_world_pwt,4009.1077,million persons,pwt1001,aggregated
+1980,pop_world_pwt,4082.7059169999998,million persons,pwt1001,aggregated
+1981,pop_world_pwt,4158.019407,million persons,pwt1001,aggregated
+1982,pop_world_pwt,4234.921987,million persons,pwt1001,aggregated
+1983,pop_world_pwt,4313.688040999999,million persons,pwt1001,aggregated
+1984,pop_world_pwt,4394.647508999999,million persons,pwt1001,aggregated
+1985,pop_world_pwt,4477.919959,million persons,pwt1001,aggregated
+1986,pop_world_pwt,4563.721493999999,million persons,pwt1001,aggregated
+1987,pop_world_pwt,4651.708845,million persons,pwt1001,aggregated
+1988,pop_world_pwt,4740.650178999999,million persons,pwt1001,aggregated
+1989,pop_world_pwt,4840.010922,million persons,pwt1001,aggregated
+1990,pop_world_pwt,5252.7920859999995,million persons,pwt1001,aggregated
+1991,pop_world_pwt,5338.292348,million persons,pwt1001,aggregated
+1992,pop_world_pwt,5421.139751,million persons,pwt1001,aggregated
+1993,pop_world_pwt,5501.921736,million persons,pwt1001,aggregated
+1994,pop_world_pwt,5581.59641,million persons,pwt1001,aggregated
+1995,pop_world_pwt,5660.8921709999995,million persons,pwt1001,aggregated
+1996,pop_world_pwt,5739.962326,million persons,pwt1001,aggregated
+1997,pop_world_pwt,5818.858708999999,million persons,pwt1001,aggregated
+1998,pop_world_pwt,5896.986919,million persons,pwt1001,aggregated
+1999,pop_world_pwt,5971.969016999999,million persons,pwt1001,aggregated
+2000,pop_world_pwt,6049.528587,million persons,pwt1001,aggregated
+2001,pop_world_pwt,6126.700019999999,million persons,pwt1001,aggregated
+2002,pop_world_pwt,6203.64361,million persons,pwt1001,aggregated
+2003,pop_world_pwt,6280.709345,million persons,pwt1001,aggregated
+2004,pop_world_pwt,6358.349507999999,million persons,pwt1001,aggregated
+2005,pop_world_pwt,6437.041707,million persons,pwt1001,aggregated
+2006,pop_world_pwt,6516.5612,million persons,pwt1001,aggregated
+2007,pop_world_pwt,6597.10054,million persons,pwt1001,aggregated
+2008,pop_world_pwt,6678.374638,million persons,pwt1001,aggregated
+2009,pop_world_pwt,6760.174395999999,million persons,pwt1001,aggregated
+2010,pop_world_pwt,6842.260225999999,million persons,pwt1001,aggregated
+2011,pop_world_pwt,6924.529053,million persons,pwt1001,aggregated
+2012,pop_world_pwt,7007.0592129999995,million persons,pwt1001,aggregated
+2013,pop_world_pwt,7089.6385869999995,million persons,pwt1001,aggregated
+2014,pop_world_pwt,7172.2001789999995,million persons,pwt1001,aggregated
+2015,pop_world_pwt,7254.659556,million persons,pwt1001,aggregated
+2016,pop_world_pwt,7336.9560759999995,million persons,pwt1001,aggregated
+2017,pop_world_pwt,7418.960775999999,million persons,pwt1001,aggregated
+2018,pop_world_pwt,7500.383052,million persons,pwt1001,aggregated
+2019,pop_world_pwt,7580.896718999999,million persons,pwt1001,aggregated
+1950,share_government_consumption,0.12039965425037082,share of cgdpo,pwt1001,aggregated
+1951,share_government_consumption,0.13184477103568584,share of cgdpo,pwt1001,aggregated
+1952,share_government_consumption,0.14348266662527193,share of cgdpo,pwt1001,aggregated
+1953,share_government_consumption,0.14452304511038522,share of cgdpo,pwt1001,aggregated
+1954,share_government_consumption,0.13926453828375843,share of cgdpo,pwt1001,aggregated
+1955,share_government_consumption,0.13398340479638154,share of cgdpo,pwt1001,aggregated
+1956,share_government_consumption,0.1320988760851528,share of cgdpo,pwt1001,aggregated
+1957,share_government_consumption,0.1324822331680149,share of cgdpo,pwt1001,aggregated
+1958,share_government_consumption,0.13441213041488062,share of cgdpo,pwt1001,aggregated
+1959,share_government_consumption,0.13049725895359918,share of cgdpo,pwt1001,aggregated
+1960,share_government_consumption,0.13158984467475263,share of cgdpo,pwt1001,aggregated
+1961,share_government_consumption,0.13395579754494089,share of cgdpo,pwt1001,aggregated
+1962,share_government_consumption,0.13540550742141313,share of cgdpo,pwt1001,aggregated
+1963,share_government_consumption,0.137470996787197,share of cgdpo,pwt1001,aggregated
+1964,share_government_consumption,0.1351138869260526,share of cgdpo,pwt1001,aggregated
+1965,share_government_consumption,0.13665968510676077,share of cgdpo,pwt1001,aggregated
+1966,share_government_consumption,0.14037630565964337,share of cgdpo,pwt1001,aggregated
+1967,share_government_consumption,0.14422438813810937,share of cgdpo,pwt1001,aggregated
+1968,share_government_consumption,0.14518570984844759,share of cgdpo,pwt1001,aggregated
+1969,share_government_consumption,0.14534585742878783,share of cgdpo,pwt1001,aggregated
+1970,share_government_consumption,0.1467057105639963,share of cgdpo,pwt1001,aggregated
+1971,share_government_consumption,0.1501738085790144,share of cgdpo,pwt1001,aggregated
+1972,share_government_consumption,0.15036245502228196,share of cgdpo,pwt1001,aggregated
+1973,share_government_consumption,0.14678324396686115,share of cgdpo,pwt1001,aggregated
+1974,share_government_consumption,0.14970334701974516,share of cgdpo,pwt1001,aggregated
+1975,share_government_consumption,0.15877937750365864,share of cgdpo,pwt1001,aggregated
+1976,share_government_consumption,0.15711974004518836,share of cgdpo,pwt1001,aggregated
+1977,share_government_consumption,0.15583115356881377,share of cgdpo,pwt1001,aggregated
+1978,share_government_consumption,0.1554202547651565,share of cgdpo,pwt1001,aggregated
+1979,share_government_consumption,0.15372681199010385,share of cgdpo,pwt1001,aggregated
+1980,share_government_consumption,0.15382316367071028,share of cgdpo,pwt1001,aggregated
+1981,share_government_consumption,0.15827408213337907,share of cgdpo,pwt1001,aggregated
+1982,share_government_consumption,0.1623114324037428,share of cgdpo,pwt1001,aggregated
+1983,share_government_consumption,0.1609720121051382,share of cgdpo,pwt1001,aggregated
+1984,share_government_consumption,0.1585587862405062,share of cgdpo,pwt1001,aggregated
+1985,share_government_consumption,0.15825225327089387,share of cgdpo,pwt1001,aggregated
+1986,share_government_consumption,0.1596900262353796,share of cgdpo,pwt1001,aggregated
+1987,share_government_consumption,0.15757871785726732,share of cgdpo,pwt1001,aggregated
+1988,share_government_consumption,0.15427200464934435,share of cgdpo,pwt1001,aggregated
+1989,share_government_consumption,0.15385920287885227,share of cgdpo,pwt1001,aggregated
+1990,share_government_consumption,0.15935518915818553,share of cgdpo,pwt1001,aggregated
+1991,share_government_consumption,0.16141939770971292,share of cgdpo,pwt1001,aggregated
+1992,share_government_consumption,0.15981172437074004,share of cgdpo,pwt1001,aggregated
+1993,share_government_consumption,0.16071668746858428,share of cgdpo,pwt1001,aggregated
+1994,share_government_consumption,0.15882616762238533,share of cgdpo,pwt1001,aggregated
+1995,share_government_consumption,0.15523652498060814,share of cgdpo,pwt1001,aggregated
+1996,share_government_consumption,0.15313207215010216,share of cgdpo,pwt1001,aggregated
+1997,share_government_consumption,0.15305509093284142,share of cgdpo,pwt1001,aggregated
+1998,share_government_consumption,0.15506348142217485,share of cgdpo,pwt1001,aggregated
+1999,share_government_consumption,0.15583113906141338,share of cgdpo,pwt1001,aggregated
+2000,share_government_consumption,0.1549522722119892,share of cgdpo,pwt1001,aggregated
+2001,share_government_consumption,0.1585215623696195,share of cgdpo,pwt1001,aggregated
+2002,share_government_consumption,0.16084040888798065,share of cgdpo,pwt1001,aggregated
+2003,share_government_consumption,0.15999714870456713,share of cgdpo,pwt1001,aggregated
+2004,share_government_consumption,0.15679503210112056,share of cgdpo,pwt1001,aggregated
+2005,share_government_consumption,0.15537851010519718,share of cgdpo,pwt1001,aggregated
+2006,share_government_consumption,0.15400356305578938,share of cgdpo,pwt1001,aggregated
+2007,share_government_consumption,0.15245056656384787,share of cgdpo,pwt1001,aggregated
+2008,share_government_consumption,0.1549145374085938,share of cgdpo,pwt1001,aggregated
+2009,share_government_consumption,0.16515383328814887,share of cgdpo,pwt1001,aggregated
+2010,share_government_consumption,0.16008377727107675,share of cgdpo,pwt1001,aggregated
+2011,share_government_consumption,0.1604112472581621,share of cgdpo,pwt1001,aggregated
+2012,share_government_consumption,0.16020222555452937,share of cgdpo,pwt1001,aggregated
+2013,share_government_consumption,0.1603680397861717,share of cgdpo,pwt1001,aggregated
+2014,share_government_consumption,0.16005311747429887,share of cgdpo,pwt1001,aggregated
+2015,share_government_consumption,0.16105074195354893,share of cgdpo,pwt1001,aggregated
+2016,share_government_consumption,0.16023227271337076,share of cgdpo,pwt1001,aggregated
+2017,share_government_consumption,0.1584983757388425,share of cgdpo,pwt1001,aggregated
+2018,share_government_consumption,0.15793120165620095,share of cgdpo,pwt1001,aggregated
+2019,share_government_consumption,0.15929303446130832,share of cgdpo,pwt1001,aggregated
+1950,share_gross_capital_formation,0.2121383360838664,share of cgdpo,pwt1001,aggregated
+1951,share_gross_capital_formation,0.23136219441105635,share of cgdpo,pwt1001,aggregated
+1952,share_gross_capital_formation,0.21647760652506573,share of cgdpo,pwt1001,aggregated
+1953,share_gross_capital_formation,0.2178254438454546,share of cgdpo,pwt1001,aggregated
+1954,share_gross_capital_formation,0.22075499974797944,share of cgdpo,pwt1001,aggregated
+1955,share_gross_capital_formation,0.23320596987112063,share of cgdpo,pwt1001,aggregated
+1956,share_gross_capital_formation,0.23821454470093492,share of cgdpo,pwt1001,aggregated
+1957,share_gross_capital_formation,0.2405029442570235,share of cgdpo,pwt1001,aggregated
+1958,share_gross_capital_formation,0.23677875903827375,share of cgdpo,pwt1001,aggregated
+1959,share_gross_capital_formation,0.2500441718453541,share of cgdpo,pwt1001,aggregated
+1960,share_gross_capital_formation,0.2513301965284164,share of cgdpo,pwt1001,aggregated
+1961,share_gross_capital_formation,0.24383617511449146,share of cgdpo,pwt1001,aggregated
+1962,share_gross_capital_formation,0.23759667182780678,share of cgdpo,pwt1001,aggregated
+1963,share_gross_capital_formation,0.24169176541876902,share of cgdpo,pwt1001,aggregated
+1964,share_gross_capital_formation,0.25233716204788453,share of cgdpo,pwt1001,aggregated
+1965,share_gross_capital_formation,0.25637391301126666,share of cgdpo,pwt1001,aggregated
+1966,share_gross_capital_formation,0.25791163417309804,share of cgdpo,pwt1001,aggregated
+1967,share_gross_capital_formation,0.24839524877117114,share of cgdpo,pwt1001,aggregated
+1968,share_gross_capital_formation,0.25079300068145244,share of cgdpo,pwt1001,aggregated
+1969,share_gross_capital_formation,0.2569790663906339,share of cgdpo,pwt1001,aggregated
+1970,share_gross_capital_formation,0.26460779704545584,share of cgdpo,pwt1001,aggregated
+1971,share_gross_capital_formation,0.26175209287759926,share of cgdpo,pwt1001,aggregated
+1972,share_gross_capital_formation,0.25929319548560753,share of cgdpo,pwt1001,aggregated
+1973,share_gross_capital_formation,0.2701135657560719,share of cgdpo,pwt1001,aggregated
+1974,share_gross_capital_formation,0.2726186507243301,share of cgdpo,pwt1001,aggregated
+1975,share_gross_capital_formation,0.2583949734604494,share of cgdpo,pwt1001,aggregated
+1976,share_gross_capital_formation,0.2684632102444207,share of cgdpo,pwt1001,aggregated
+1977,share_gross_capital_formation,0.27311369711549355,share of cgdpo,pwt1001,aggregated
+1978,share_gross_capital_formation,0.2775796872254825,share of cgdpo,pwt1001,aggregated
+1979,share_gross_capital_formation,0.2767032175455522,share of cgdpo,pwt1001,aggregated
+1980,share_gross_capital_formation,0.2725115601326473,share of cgdpo,pwt1001,aggregated
+1981,share_gross_capital_formation,0.2686722780117659,share of cgdpo,pwt1001,aggregated
+1982,share_gross_capital_formation,0.2554672736104865,share of cgdpo,pwt1001,aggregated
+1983,share_gross_capital_formation,0.24738843590756315,share of cgdpo,pwt1001,aggregated
+1984,share_gross_capital_formation,0.25376747314081494,share of cgdpo,pwt1001,aggregated
+1985,share_gross_capital_formation,0.25423808246758867,share of cgdpo,pwt1001,aggregated
+1986,share_gross_capital_formation,0.25105053519849857,share of cgdpo,pwt1001,aggregated
+1987,share_gross_capital_formation,0.25255426820332294,share of cgdpo,pwt1001,aggregated
+1988,share_gross_capital_formation,0.2607940838399013,share of cgdpo,pwt1001,aggregated
+1989,share_gross_capital_formation,0.261566151541806,share of cgdpo,pwt1001,aggregated
+1990,share_gross_capital_formation,0.2599116995836459,share of cgdpo,pwt1001,aggregated
+1991,share_gross_capital_formation,0.2552472574504009,share of cgdpo,pwt1001,aggregated
+1992,share_gross_capital_formation,0.25529880503029795,share of cgdpo,pwt1001,aggregated
+1993,share_gross_capital_formation,0.25104236447200773,share of cgdpo,pwt1001,aggregated
+1994,share_gross_capital_formation,0.2522842421291495,share of cgdpo,pwt1001,aggregated
+1995,share_gross_capital_formation,0.2528016542541733,share of cgdpo,pwt1001,aggregated
+1996,share_gross_capital_formation,0.2510525716626336,share of cgdpo,pwt1001,aggregated
+1997,share_gross_capital_formation,0.2504146412790632,share of cgdpo,pwt1001,aggregated
+1998,share_gross_capital_formation,0.2433404706177303,share of cgdpo,pwt1001,aggregated
+1999,share_gross_capital_formation,0.2412135248721001,share of cgdpo,pwt1001,aggregated
+2000,share_gross_capital_formation,0.24453849227990793,share of cgdpo,pwt1001,aggregated
+2001,share_gross_capital_formation,0.2420240001536628,share of cgdpo,pwt1001,aggregated
+2002,share_gross_capital_formation,0.2390857394661696,share of cgdpo,pwt1001,aggregated
+2003,share_gross_capital_formation,0.24667824563918783,share of cgdpo,pwt1001,aggregated
+2004,share_gross_capital_formation,0.2584649731958847,share of cgdpo,pwt1001,aggregated
+2005,share_gross_capital_formation,0.2614771410849049,share of cgdpo,pwt1001,aggregated
+2006,share_gross_capital_formation,0.26634920402737217,share of cgdpo,pwt1001,aggregated
+2007,share_gross_capital_formation,0.27322351557602076,share of cgdpo,pwt1001,aggregated
+2008,share_gross_capital_formation,0.2755854186783411,share of cgdpo,pwt1001,aggregated
+2009,share_gross_capital_formation,0.261004088477606,share of cgdpo,pwt1001,aggregated
+2010,share_gross_capital_formation,0.27316188843623684,share of cgdpo,pwt1001,aggregated
+2011,share_gross_capital_formation,0.2744463312109693,share of cgdpo,pwt1001,aggregated
+2012,share_gross_capital_formation,0.2745598996013024,share of cgdpo,pwt1001,aggregated
+2013,share_gross_capital_formation,0.2713600646036586,share of cgdpo,pwt1001,aggregated
+2014,share_gross_capital_formation,0.2730100042634747,share of cgdpo,pwt1001,aggregated
+2015,share_gross_capital_formation,0.26935802865817626,share of cgdpo,pwt1001,aggregated
+2016,share_gross_capital_formation,0.2659614290690942,share of cgdpo,pwt1001,aggregated
+2017,share_gross_capital_formation,0.2709359911036803,share of cgdpo,pwt1001,aggregated
+2018,share_gross_capital_formation,0.2713631219670601,share of cgdpo,pwt1001,aggregated
+2019,share_gross_capital_formation,0.2696544344039984,share of cgdpo,pwt1001,aggregated
+1950,share_household_consumption,0.6772407057314012,share of cgdpo,pwt1001,aggregated
+1951,share_household_consumption,0.6539307644887139,share of cgdpo,pwt1001,aggregated
+1952,share_household_consumption,0.6480336274895744,share of cgdpo,pwt1001,aggregated
+1953,share_household_consumption,0.6465978912450591,share of cgdpo,pwt1001,aggregated
+1954,share_household_consumption,0.6493789127908987,share of cgdpo,pwt1001,aggregated
+1955,share_household_consumption,0.646467815247503,share of cgdpo,pwt1001,aggregated
+1956,share_household_consumption,0.642240178442511,share of cgdpo,pwt1001,aggregated
+1957,share_household_consumption,0.6407649527973891,share of cgdpo,pwt1001,aggregated
+1958,share_household_consumption,0.6403602516415228,share of cgdpo,pwt1001,aggregated
+1959,share_household_consumption,0.6316476981762299,share of cgdpo,pwt1001,aggregated
+1960,share_household_consumption,0.6319995146282144,share of cgdpo,pwt1001,aggregated
+1961,share_household_consumption,0.6348970315717368,share of cgdpo,pwt1001,aggregated
+1962,share_household_consumption,0.6358468065112108,share of cgdpo,pwt1001,aggregated
+1963,share_household_consumption,0.6319119997323969,share of cgdpo,pwt1001,aggregated
+1964,share_household_consumption,0.6258080240930243,share of cgdpo,pwt1001,aggregated
+1965,share_household_consumption,0.6202573266909112,share of cgdpo,pwt1001,aggregated
+1966,share_household_consumption,0.6144506643322003,share of cgdpo,pwt1001,aggregated
+1967,share_household_consumption,0.6182948789776831,share of cgdpo,pwt1001,aggregated
+1968,share_household_consumption,0.6145725864093182,share of cgdpo,pwt1001,aggregated
+1969,share_household_consumption,0.6076027696235945,share of cgdpo,pwt1001,aggregated
+1970,share_household_consumption,0.5944873015915817,share of cgdpo,pwt1001,aggregated
+1971,share_household_consumption,0.5931047309821995,share of cgdpo,pwt1001,aggregated
+1972,share_household_consumption,0.591552735697201,share of cgdpo,pwt1001,aggregated
+1973,share_household_consumption,0.5823971330571,share of cgdpo,pwt1001,aggregated
+1974,share_household_consumption,0.5793430408211416,share of cgdpo,pwt1001,aggregated
+1975,share_household_consumption,0.5885412646005175,share of cgdpo,pwt1001,aggregated
+1976,share_household_consumption,0.5839922200753755,share of cgdpo,pwt1001,aggregated
+1977,share_household_consumption,0.5839625709729096,share of cgdpo,pwt1001,aggregated
+1978,share_household_consumption,0.5805659541289956,share of cgdpo,pwt1001,aggregated
+1979,share_household_consumption,0.5776254996372027,share of cgdpo,pwt1001,aggregated
+1980,share_household_consumption,0.5816525196863388,share of cgdpo,pwt1001,aggregated
+1981,share_household_consumption,0.5819610232926159,share of cgdpo,pwt1001,aggregated
+1982,share_household_consumption,0.5917603981143453,share of cgdpo,pwt1001,aggregated
+1983,share_household_consumption,0.5981996003460943,share of cgdpo,pwt1001,aggregated
+1984,share_household_consumption,0.5920501423659335,share of cgdpo,pwt1001,aggregated
+1985,share_household_consumption,0.5937075520591256,share of cgdpo,pwt1001,aggregated
+1986,share_household_consumption,0.5987480510675217,share of cgdpo,pwt1001,aggregated
+1987,share_household_consumption,0.5939475639184794,share of cgdpo,pwt1001,aggregated
+1988,share_household_consumption,0.5919129013696102,share of cgdpo,pwt1001,aggregated
+1989,share_household_consumption,0.5903168687828654,share of cgdpo,pwt1001,aggregated
+1990,share_household_consumption,0.5858660200937053,share of cgdpo,pwt1001,aggregated
+1991,share_household_consumption,0.5849887690696415,share of cgdpo,pwt1001,aggregated
+1992,share_household_consumption,0.5813453281814712,share of cgdpo,pwt1001,aggregated
+1993,share_household_consumption,0.5887868005520753,share of cgdpo,pwt1001,aggregated
+1994,share_household_consumption,0.5908267444615803,share of cgdpo,pwt1001,aggregated
+1995,share_household_consumption,0.5906518328847467,share of cgdpo,pwt1001,aggregated
+1996,share_household_consumption,0.593015234893024,share of cgdpo,pwt1001,aggregated
+1997,share_household_consumption,0.5925169925350745,share of cgdpo,pwt1001,aggregated
+1998,share_household_consumption,0.5960759192285782,share of cgdpo,pwt1001,aggregated
+1999,share_household_consumption,0.597466255484705,share of cgdpo,pwt1001,aggregated
+2000,share_household_consumption,0.5887945778098603,share of cgdpo,pwt1001,aggregated
+2001,share_household_consumption,0.5940226517721082,share of cgdpo,pwt1001,aggregated
+2002,share_household_consumption,0.5933651350602198,share of cgdpo,pwt1001,aggregated
+2003,share_household_consumption,0.5883751944195525,share of cgdpo,pwt1001,aggregated
+2004,share_household_consumption,0.5783707590639005,share of cgdpo,pwt1001,aggregated
+2005,share_household_consumption,0.5717048432489674,share of cgdpo,pwt1001,aggregated
+2006,share_household_consumption,0.5624242289779242,share of cgdpo,pwt1001,aggregated
+2007,share_household_consumption,0.5588744442086303,share of cgdpo,pwt1001,aggregated
+2008,share_household_consumption,0.5580168654504345,share of cgdpo,pwt1001,aggregated
+2009,share_household_consumption,0.5674605816926813,share of cgdpo,pwt1001,aggregated
+2010,share_household_consumption,0.555559402984706,share of cgdpo,pwt1001,aggregated
+2011,share_household_consumption,0.5510206234417412,share of cgdpo,pwt1001,aggregated
+2012,share_household_consumption,0.5532361319302541,share of cgdpo,pwt1001,aggregated
+2013,share_household_consumption,0.557454938862471,share of cgdpo,pwt1001,aggregated
+2014,share_household_consumption,0.5593654076532413,share of cgdpo,pwt1001,aggregated
+2015,share_household_consumption,0.5651837177786248,share of cgdpo,pwt1001,aggregated
+2016,share_household_consumption,0.5679595219312423,share of cgdpo,pwt1001,aggregated
+2017,share_household_consumption,0.564718656931159,share of cgdpo,pwt1001,aggregated
+2018,share_household_consumption,0.5622644935543227,share of cgdpo,pwt1001,aggregated
+2019,share_household_consumption,0.564709627267928,share of cgdpo,pwt1001,aggregated
+1950,share_net_exports_and_residual,-0.009778715121973288,share of cgdpo,pwt1001,aggregated
+1951,share_net_exports_and_residual,-0.017137737994014194,share of cgdpo,pwt1001,aggregated
+1952,share_net_exports_and_residual,-0.007993912215069688,share of cgdpo,pwt1001,aggregated
+1953,share_net_exports_and_residual,-0.008946387753988616,share of cgdpo,pwt1001,aggregated
+1954,share_net_exports_and_residual,-0.009398469331707461,share of cgdpo,pwt1001,aggregated
+1955,share_net_exports_and_residual,-0.013657198051240962,share of cgdpo,pwt1001,aggregated
+1956,share_net_exports_and_residual,-0.012553598216753576,share of cgdpo,pwt1001,aggregated
+1957,share_net_exports_and_residual,-0.013750142472019186,share of cgdpo,pwt1001,aggregated
+1958,share_net_exports_and_residual,-0.011551133597456907,share of cgdpo,pwt1001,aggregated
+1959,share_net_exports_and_residual,-0.012189120491690826,share of cgdpo,pwt1001,aggregated
+1960,share_net_exports_and_residual,-0.014919566332426158,share of cgdpo,pwt1001,aggregated
+1961,share_net_exports_and_residual,-0.01268902151927482,share of cgdpo,pwt1001,aggregated
+1962,share_net_exports_and_residual,-0.008849006581393572,share of cgdpo,pwt1001,aggregated
+1963,share_net_exports_and_residual,-0.011074750043554397,share of cgdpo,pwt1001,aggregated
+1964,share_net_exports_and_residual,-0.013259071773023635,share of cgdpo,pwt1001,aggregated
+1965,share_net_exports_and_residual,-0.01329090030903876,share of cgdpo,pwt1001,aggregated
+1966,share_net_exports_and_residual,-0.012738598866258756,share of cgdpo,pwt1001,aggregated
+1967,share_net_exports_and_residual,-0.010914505023781858,share of cgdpo,pwt1001,aggregated
+1968,share_net_exports_and_residual,-0.010551297298110551,share of cgdpo,pwt1001,aggregated
+1969,share_net_exports_and_residual,-0.00992771441255771,share of cgdpo,pwt1001,aggregated
+1970,share_net_exports_and_residual,-0.005800812106828349,share of cgdpo,pwt1001,aggregated
+1971,share_net_exports_and_residual,-0.005030622521567592,share of cgdpo,pwt1001,aggregated
+1972,share_net_exports_and_residual,-0.0012083843757377196,share of cgdpo,pwt1001,aggregated
+1973,share_net_exports_and_residual,0.0007060322702227369,share of cgdpo,pwt1001,aggregated
+1974,share_net_exports_and_residual,-0.0016650322381718224,share of cgdpo,pwt1001,aggregated
+1975,share_net_exports_and_residual,-0.005715598959629999,share of cgdpo,pwt1001,aggregated
+1976,share_net_exports_and_residual,-0.009575170474480404,share of cgdpo,pwt1001,aggregated
+1977,share_net_exports_and_residual,-0.012907415189280723,share of cgdpo,pwt1001,aggregated
+1978,share_net_exports_and_residual,-0.01356590804383241,share of cgdpo,pwt1001,aggregated
+1979,share_net_exports_and_residual,-0.008055518505870177,share of cgdpo,pwt1001,aggregated
+1980,share_net_exports_and_residual,-0.007987231743115929,share of cgdpo,pwt1001,aggregated
+1981,share_net_exports_and_residual,-0.008907387108461763,share of cgdpo,pwt1001,aggregated
+1982,share_net_exports_and_residual,-0.009539097592247622,share of cgdpo,pwt1001,aggregated
+1983,share_net_exports_and_residual,-0.006560038515154322,share of cgdpo,pwt1001,aggregated
+1984,share_net_exports_and_residual,-0.004376413098717699,share of cgdpo,pwt1001,aggregated
+1985,share_net_exports_and_residual,-0.0061978912656396835,share of cgdpo,pwt1001,aggregated
+1986,share_net_exports_and_residual,-0.009488627579449835,share of cgdpo,pwt1001,aggregated
+1987,share_net_exports_and_residual,-0.0040805551712645724,share of cgdpo,pwt1001,aggregated
+1988,share_net_exports_and_residual,-0.006978994362439614,share of cgdpo,pwt1001,aggregated
+1989,share_net_exports_and_residual,-0.005742239188030541,share of cgdpo,pwt1001,aggregated
+1990,share_net_exports_and_residual,-0.005132895058189848,share of cgdpo,pwt1001,aggregated
+1991,share_net_exports_and_residual,-0.0016554287359247563,share of cgdpo,pwt1001,aggregated
+1992,share_net_exports_and_residual,0.003544134916642748,share of cgdpo,pwt1001,aggregated
+1993,share_net_exports_and_residual,-0.0005458656354824788,share of cgdpo,pwt1001,aggregated
+1994,share_net_exports_and_residual,-0.0019371439140735223,share of cgdpo,pwt1001,aggregated
+1995,share_net_exports_and_residual,0.0013099819242166804,share of cgdpo,pwt1001,aggregated
+1996,share_net_exports_and_residual,0.0028001165238216177,share of cgdpo,pwt1001,aggregated
+1997,share_net_exports_and_residual,0.00401326982182232,share of cgdpo,pwt1001,aggregated
+1998,share_net_exports_and_residual,0.0055201272522789465,share of cgdpo,pwt1001,aggregated
+1999,share_net_exports_and_residual,0.005489080333432687,share of cgdpo,pwt1001,aggregated
+2000,share_net_exports_and_residual,0.011714650427817297,share of cgdpo,pwt1001,aggregated
+2001,share_net_exports_and_residual,0.005431786639114988,share of cgdpo,pwt1001,aggregated
+2002,share_net_exports_and_residual,0.006708714324140789,share of cgdpo,pwt1001,aggregated
+2003,share_net_exports_and_residual,0.004949405614029089,share of cgdpo,pwt1001,aggregated
+2004,share_net_exports_and_residual,0.006369246366752448,share of cgdpo,pwt1001,aggregated
+2005,share_net_exports_and_residual,0.011439515718679027,share of cgdpo,pwt1001,aggregated
+2006,share_net_exports_and_residual,0.017223018510350744,share of cgdpo,pwt1001,aggregated
+2007,share_net_exports_and_residual,0.01545147344801128,share of cgdpo,pwt1001,aggregated
+2008,share_net_exports_and_residual,0.011483180128948226,share of cgdpo,pwt1001,aggregated
+2009,share_net_exports_and_residual,0.006381498579863491,share of cgdpo,pwt1001,aggregated
+2010,share_net_exports_and_residual,0.011194942383028742,share of cgdpo,pwt1001,aggregated
+2011,share_net_exports_and_residual,0.014121787292697158,share of cgdpo,pwt1001,aggregated
+2012,share_net_exports_and_residual,0.012001739703957267,share of cgdpo,pwt1001,aggregated
+2013,share_net_exports_and_residual,0.010816965816708478,share of cgdpo,pwt1001,aggregated
+2014,share_net_exports_and_residual,0.007571461011404977,share of cgdpo,pwt1001,aggregated
+2015,share_net_exports_and_residual,0.004407498874830633,share of cgdpo,pwt1001,aggregated
+2016,share_net_exports_and_residual,0.005846781810600056,share of cgdpo,pwt1001,aggregated
+2017,share_net_exports_and_residual,0.00584698947722508,share of cgdpo,pwt1001,aggregated
+2018,share_net_exports_and_residual,0.00844116942713488,share of cgdpo,pwt1001,aggregated
+2019,share_net_exports_and_residual,0.006342906386194899,share of cgdpo,pwt1001,aggregated
