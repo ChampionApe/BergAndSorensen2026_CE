@@ -1,0 +1,44 @@
+name,value,unit,note
+decade_1950_real_return,0.10594956372945978,per year,"PWT irr, cn-weighted world mean"
+decade_1950_output_growth,0.044920004451011214,per year,"Maddison world GDP, log growth"
+decade_1960_real_return,0.10974160935480781,per year,"PWT irr, cn-weighted world mean"
+decade_1960_output_growth,0.049776920640394275,per year,"Maddison world GDP, log growth"
+decade_1970_real_return,0.09200299915452265,per year,"PWT irr, cn-weighted world mean"
+decade_1970_output_growth,0.0407664324394438,per year,"Maddison world GDP, log growth"
+decade_1980_real_return,0.0795174755373017,per year,"PWT irr, cn-weighted world mean"
+decade_1980_output_growth,0.030323219604739514,per year,"Maddison world GDP, log growth"
+decade_1990_real_return,0.08452825914901421,per year,"PWT irr, cn-weighted world mean"
+decade_1990_output_growth,0.02958104070548715,per year,"Maddison world GDP, log growth"
+decade_2000_real_return,0.08554046906052641,per year,"PWT irr, cn-weighted world mean"
+decade_2000_output_growth,0.03986560000030322,per year,"Maddison world GDP, log growth"
+decade_2010_real_return,0.08764723031329683,per year,"PWT irr, cn-weighted world mean"
+decade_2010_output_growth,0.03651652630871096,per year,"Maddison world GDP, log growth"
+rho_data,0.03744247253860894,per year,intercept of r on g across decades
+eta_data,1.4087604745534765,elasticity,slope of r on g across decades
+euler_regression_r2,0.8252993210470528,,7 decades
+mean_real_return_1950_2019,0.09213296437543418,per year,
+mean_output_growth_1950_2019,0.03873300633405638,per year,
+eta_collapse_bound,1.960834901380672,elasticity,(1-delta)^(1-eta) < 1+rho at the data rho
+eta,1.4087604745534765,elasticity,the data value passes the collapse condition
+rho,0.03744247253860894,per year,
+implied_real_rate_on_C_path,0.07499932456263858,per year,(1+rho) e^(eta g) - 1 at the C-cell rate
+consumption_wealth_ratio_2015,0.17443631636615686,per year,"C/K, B2; r - g on a balanced path"
+kappa_per_GtCO2_marginal_3degC_best,9.59752321e-06,per GtCO2,"B5, DICE-2023 with the AR6 TCRE"
+kappa_per_GtCO2_marginal_3degC_low,3.38578536e-06,per GtCO2,"B5, DICE-2023 with the AR6 TCRE"
+kappa_per_GtCO2_marginal_3degC_high,1.94071802e-05,per GtCO2,"B5, DICE-2023 with the AR6 TCRE"
+kappa_per_GtCO2_marginal_today_anchor,2.58569449e-06,per GtCO2,"the alternative anchor, not used"
+co2_per_tonne_of_fuel_2000_2015,2.7080035280070405,tCO2/t,GCB CO2 over B3 fuel mass
+fossil_share_of_DPO_2000_2015,0.260768803579086,share,Haas et al. (2020)
+GtCO2_per_Gt_of_Xi_2000_2015,0.7061628400863398,GtCO2/Gt,the product
+kappa_best,6.777414247768164e-06,per Gt of P,
+kappa_low,2.3909158057403503e-06,per Gt of P,
+kappa_high,1.370462948809938e-05,per Gt of P,
+co2_per_tonne_of_fuel_1900,2.4600305613676574,tCO2/t,
+fossil_share_of_DPO_1900,0.14178996424220516,share,
+P0_GtCO2,27.5404697,GtCO2,"B5, atmospheric excess stock in 1900"
+P0,78.95603800157946,Gt of material,converted at the 1900 composition
+theta_driven,0.0181633121,per year,"B5, the emissions-driven fit"
+theta_pulse,0.00652346508,per year,"B5, the pulse fit"
+notipping_condition,vacuous at thetaP = 0,,
+damage_share_1900,0.0005349746269168731,share of output,1 - e^(-kappa P0)
+pollution_price_1900_rough,0.0002548884718784631,trillion $/Gt,kappa Y0 / (r + theta): the scale the pollution costate should show at 1900
