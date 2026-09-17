@@ -17,8 +17,8 @@ than in mechanics. `writing/docs/notation.tex` is the authority on symbols for b
 - **No narration of the process.** Never discuss development history or what was tried and abandoned, unless explicitly called for (e.g. a section on a trap to avoid going forward).
 - **"ALMOST DONE":** Sections carrying this remark should only be edited minimally invasive if important things change or if explicitly asked to edit. The remark is a `%%` comment block at the top of
   the file, so it never prints, and it is repeated in every file a marked part `\input`s — a session
-  opens one file at a time and would not see a marker kept only in the wrapper. Marked today: the whole
-  planner part (`theory_planner*.tex`).
+  opens one file at a time and would not see a marker kept only in the wrapper. Marked today:
+  `theory_planner_setup.tex` and `theory_planner_model.tex`.
 
 ## 2. Latex conventions
 
