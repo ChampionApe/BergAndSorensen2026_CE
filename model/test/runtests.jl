@@ -17,8 +17,11 @@ fd(f, x; h = 1e-6) = (f(x + h * max(abs(x), 1)) - f(x - h * max(abs(x), 1))) /
     # the post-shutdown restriction is (1-delta)^(1-eta) < 1+rho and it binds
     @test !isempty(check_params(baseline_params(eta = 2.0)))
     @test isempty(check_params(baseline_params(eta = 2.0, rho = 0.06)))
-    # mu_h = 1 is the degenerate buffer corner the theory excludes
-    @test !isempty(check_params(baseline_params(mu_h = 1.0)))
+    # mu_h = 1 is admissible -- the one-period buffer -- and only mu_h outside
+    # (0,1] is refused
+    @test isempty(check_params(baseline_params(mu_h = 1.0)))
+    @test !isempty(check_params(baseline_params(mu_h = 1.2)))
+    @test !isempty(check_params(baseline_params(mu_h = 0.0)))
 end
 
 @testset "yield function" begin
@@ -260,6 +263,46 @@ end
     # the treatment share sits in its box and the loop is partially closed
     @test all(b -> -1e-9 <= b.vw <= 1 + 1e-9, sol.blocks)
     @test effective_survival(P, sol.blocks[end]) > 1 - P.mu_h
+end
+
+@testset "mu_h = 1 (buffer corner)" begin
+    # The one-period buffer: the stockpile is last period's waste flow and
+    # nothing runs off, W_{t+1} = W_t.  The corner is admissible, not
+    # degenerate -- nothing divides by 1 - mu_h, the stockpile costate
+    # recursion collapses to pW_t = h_{t+1}/(1+r) because the survival term
+    # drops out, and Little's law gives a residence time of 1 + sigma/delta.
+    p1 = baseline_params(mu_h = 1.0)
+    @test isempty(check_params(p1))
+
+    # the two transcriptions still agree at the planner corner, at arbitrary
+    # points of the state and control space
+    Random.seed!(1851)
+    mo = Model(p1; T = 12, s0 = S0)
+    xg = initial_guess(mo; Rtarget = 0.6, warn = false)
+    for _ in 1:20
+        y = xg .* (1 .+ 0.15 .* randn(length(xg)))
+        @test compare_residuals(mo, y) < 1e-10
+    end
+
+    # a horizon solves, and on the solved path the ledger holds period by
+    # period and the stockpile carries exactly one period of waste
+    mo1 = Model(p1; T = 60, s0 = S0)
+    x1, ok, _ = solve_path(mo1, initial_guess(mo1; Rtarget = 0.6, warn = false))
+    @test ok
+    sol = unpack(mo1, x1)
+    @test all(b -> b.feasible, sol.blocks)
+    @test check_path(mo1, x1; verbose = false).ledger_rel_error < 1e-7
+    @test maximum(abs(sol.states[t+2, IWS] - sol.blocks[t+1].W) for t in 0:mo1.T-1) < 1e-8
+    # the effective survival factor is alpha*varpi here, not 1 - mu = 0: at the
+    # corner the stockpile survives only through the material it returns
+    @test isapprox(effective_survival(p1, sol.blocks[end]),
+                   sol.blocks[end].alpha * sol.blocks[end].vw; rtol = 1e-12)
+
+    # the CBGP block is computable at the corner and Little's law reads 1 + sigma/delta
+    c = cbgp(p1; Minf = 30.0)
+    @test isapprox(c.residence, 1 + c.sigma_inf / p1.delta; rtol = 1e-12)
+    @test isapprox(c.Rinf * c.residence, 30.0; rtol = 1e-10)
+    @test c.pW_hat < 0
 end
 
 @testset "policy dials move the allocation the right way" begin

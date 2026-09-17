@@ -146,7 +146,11 @@ function check_params(p::Params)
     p.rho > 0 || push!(w, "rho must be > 0")
     p.eta > 0 || push!(w, "eta must be > 0")
     0 < p.delta < 1 || push!(w, "delta must lie in (0,1)")
-    0 < p.mu_h < 1 || push!(w, "mu_h must lie in (0,1): mu_h = 1 is the degenerate buffer corner")
+    # mu_h = 1 is admissible: it is the one-period buffer, W_{t+1} = W_t, where
+    # the stockpile holds exactly last period's waste flow.  Nothing in the code
+    # divides by 1 - mu_h, the stockpile costate recursion collapses to
+    # pW_t = h_{t+1}/(1+r) and Little's law to a residence time of 1 + sigma/delta.
+    0 < p.mu_h <= 1 || push!(w, "mu_h must lie in (0,1]")
     0 < p.mu_F < 1 || push!(w, "mu_F must lie in (0,1)")
     0 < p.beta_s < 1 || push!(w, "beta_s must lie in (0,1)")
     0 < p.abar <= 1 || push!(w, "abar must lie in (0,1]")
