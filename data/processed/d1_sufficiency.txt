@@ -1,0 +1,183 @@
+calibration file: ../data/processed/calibration.json
+
+Convexity conditions (C1)-(C5)
+------------------------------
+C1 technology    ok     CES is concave and homogeneous of degree one, raised to mu_F = 0.41331498193120875 in (0,1)
+C1 damages       FAILS  multiplicative damages exp(-kappa*P), kappa = 6.777414247768164e-6, are convex in P and break joint concavity; the violation is proportional to kappa^2 * F and vanishes as P -> 0
+C2 recycling     ok     a is concave, so the perspective R(T,KR) = T a(KR/T) is concave
+C2 treatment     ok     cT is convex, so its perspective H cT(T/H) is jointly convex in (T,W)
+C3 extraction    FAILS  N^(1+chi_N) S^(-mu_N) needs chi_N >= mu_N (chi_N = 0.4818217283581927, mu_N = 1.8444157389557352, VIOLATED); the linear term kap_N = 0.7281262027100001 is never jointly convex for mu_N > 0 -- and it is exactly what gives extraction a finite choke, hence the possibility of stranding
+C3 exploration   FAILS  as extraction: needs chi_D >= mu_D (chi_D = 1.0, mu_D = 6.909143918120026) and kap_D = 0 (kap_D = 0.7281262027100001)
+C4 decay         ok     constant decay: (1 - theta) P is linear
+C5 intensity     FAILS  phi_I = 4.6111689164725345 > 0, so the intensity condition m (D + phi_I G) = R phi_I G is bilinear. Sufficiency is then conditional on the intensity path; the unverified deviations are those that change it
+
+4 condition(s) fail. Sufficiency is conditional -- see the appendix, and run deviation_profile / perturbation_test on the computed path.
+
+Solving, by horizon continuation
+--------------------------------
+  horizon 200: converged = true, |F| = 3.64e-12
+  horizon 250: converged = false, |F| = 6.65e-01
+  horizon 225: converged = true, |F| = 5.46e-12
+  horizon 275: converged = false, |F| = 2.51e+00
+  horizon 250: converged = false, |F| = 3.96e-01
+  horizon 237: converged = true, |F| = 3.64e-12
+  horizon 261: converged = false, |F| = 4.45e-01
+  horizon 249: converged = false, |F| = 3.00e-01
+  horizon 243: converged = true, |F| = 3.64e-12
+  horizon 255: converged = false, |F| = 3.62e-01
+  horizon 249: converged = true, |F| = 3.64e-12
+  horizon 261: converged = false, |F| = 3.79e-01
+  horizon 255: converged = true, |F| = 7.28e-12
+  horizon 267: converged = false, |F| = 4.15e-01
+  horizon 261: converged = true, |F| = 3.64e-12
+  horizon 273: converged = false, |F| = 3.74e-01
+  horizon 267: converged = false, |F| = 2.29e-01
+  horizon 264: converged = true, |F| = 7.28e-12
+  horizon 270: converged = false, |F| = 2.49e-01
+  horizon 267: converged = true, |F| = 7.28e-12
+  horizon 273: converged = false, |F| = 2.80e-01
+  horizon 270: converged = true, |F| = 7.28e-12
+  horizon 276: converged = false, |F| = 3.02e-01
+  horizon 273: converged = false, |F| = 6.55e-09
+  horizon 271: converged = true, |F| = 7.28e-12
+  horizon 273: converged = false, |F| = 1.73e-04
+  horizon 272: converged = true, |F| = 3.64e-12
+  horizon 274: converged = false, |F| = 1.74e-04
+  horizon 273: converged = true, |F| = 3.64e-12
+  horizon 275: converged = false, |F| = 2.42e-01
+  horizon 274: converged = true, |F| = 7.28e-12
+  horizon 276: converged = false, |F| = 2.55e-01
+  horizon 275: converged = true, |F| = 7.28e-12
+  horizon 277: converged = false, |F| = 2.59e-01
+  horizon 276: converged = true, |F| = 5.46e-12
+  horizon 278: converged = false, |F| = 2.61e-01
+  horizon 277: converged = true, |F| = 7.28e-12
+  horizon 279: converged = false, |F| = 2.77e-01
+  horizon 278: converged = true, |F| = 3.64e-12
+  horizon 280: converged = false, |F| = 2.85e-01
+  horizon 279: converged = true, |F| = 7.28e-12
+  horizon 281: converged = false, |F| = 2.89e-01
+  horizon 280: converged = true, |F| = 7.28e-12
+  horizon 282: converged = false, |F| = 2.92e-01
+  horizon 281: converged = true, |F| = 7.28e-12
+  horizon 283: converged = false, |F| = 2.89e-01
+  horizon 282: converged = true, |F| = 7.28e-12
+  horizon 284: converged = false, |F| = 2.97e-01
+  horizon 283: converged = true, |F| = 7.28e-12
+  horizon 285: converged = false, |F| = 3.01e-01
+  horizon 284: converged = true, |F| = 7.28e-12
+  horizon 286: converged = false, |F| = 3.05e-01
+  horizon 285: converged = true, |F| = 5.46e-12
+  horizon 287: converged = false, |F| = 3.07e-01
+  horizon 286: converged = true, |F| = 7.28e-12
+  horizon 288: converged = false, |F| = 3.10e-01
+  horizon 287: converged = true, |F| = 7.28e-12
+  horizon 289: converged = false, |F| = 3.12e-01
+  horizon 288: converged = true, |F| = 7.28e-12
+  horizon 290: converged = false, |F| = 3.14e-01
+  horizon 289: converged = true, |F| = 7.28e-12
+  horizon 291: converged = false, |F| = 3.16e-01
+  horizon 290: converged = true, |F| = 7.28e-12
+  horizon 292: converged = false, |F| = 3.19e-01
+  horizon 291: converged = true, |F| = 7.28e-12
+  horizon 293: converged = false, |F| = 3.21e-01
+  horizon 292: converged = true, |F| = 7.28e-12
+  horizon 294: converged = false, |F| = 2.35e-01
+  horizon 293: converged = true, |F| = 7.28e-12
+  horizon 295: converged = false, |F| = 2.37e-01
+  horizon 294: converged = true, |F| = 7.28e-12
+  horizon 296: converged = false, |F| = 2.38e-01
+  horizon 295: converged = true, |F| = 7.28e-12
+  horizon 297: converged = false, |F| = 2.29e-01
+  horizon 296: converged = true, |F| = 7.28e-12
+  horizon 298: converged = false, |F| = 2.32e-01
+  horizon 297: converged = true, |F| = 7.28e-12
+  horizon 299: converged = false, |F| = 2.38e-01
+  horizon 298: converged = true, |F| = 7.28e-12
+  horizon 300: converged = false, |F| = 2.39e-01
+  horizon 299: converged = true, |F| = 7.28e-12
+  horizon 300: converged = true, |F| = 1.46e-11
+132.160616 seconds (8.61 M allocations: 80.316 GiB, 1.95% gc time, 3.47% compilation time)
+reached T = 300, converged = true, |F| = 1.46e-11
+reserve at T = 6663.40266  (the stiff wall is where this reaches zero)
+
+Horizon sensitivity
+-------------------
+T = 150 against T = 300, over t = 0..100:
+  max relative change in Y  3.099e-04
+  max relative change in C  7.122e-04
+
+Transversality
+--------------
+state    boundary term   decay/period
+K        2.791210e-06        0.98575
+S        2.967727e-07        0.95523
+X       -3.689799e-07        0.96245
+P       -3.346643e-08        0.95433
+MK       1.171607e-07        0.97879
+W        7.587072e-07        0.97001
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.01015):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+Feasible-direction test: profiles
+---------------------------------
+Extraction -- probes the non-convexity introduced by the finite choke.
+deviation profile in N (extraction) over 101 periods
+     eps       value gain
+   -0.50      -4.4630e-01
+   -0.38      -2.2500e-01
+   -0.25      -9.1472e-02
+   -0.12      -2.1227e-02
+    0.00      +0.0000e+00
+    0.12      -1.8870e-02
+    0.25      -7.2003e-02
+    0.38      -1.5549e-01
+    0.50      -2.6670e-01
+
+best gain +0.000e+00 at eps = 0.00; interior local maxima: 1
+Single-peaked at zero: consistent with local optimality in this direction.
+
+Investment -- probes the bilinear intensity condition.
+deviation profile in I (investment) over 101 periods
+     eps       value gain
+   -0.40      -6.1605e-02
+   -0.30      -3.2792e-02
+   -0.20      -1.3859e-02
+   -0.10      -3.3084e-03
+    0.00      +0.0000e+00
+    0.10      -3.0464e-03
+    0.20      -1.1741e-02
+    0.30      -2.5512e-02
+    0.40      -4.3890e-02
+
+best gain +0.000e+00 at eps = 0.00; interior local maxima: 1
+Single-peaked at zero: consistent with local optimality in this direction.
+
+Feasible-direction test: random search
+--------------------------------------
+feasible draws          90 / 400
+candidate test value    -35.76362448
+best deviation gain     -2.819e-10  (relative -7.883e-12)
+No feasible deviation improved on the candidate: consistent with
+local optimality over the directions searched.
+
+Is a shutdown absorbing?  (floor 9.502, ceiling 0.708)
+------------------------------------------------------
+terminal state of the growth path  throughput cap 13707.3899 >= floor 9.502: a restart is not excluded, so the operating set may not be a single interval
+a depleted economy                 throughput cap 0.0642 < floor 9.502: permanent
+
+Read together: the conditions that fail are named, the directions in which
+they could bite have been searched, and nothing beat the candidate. That is
+verification, not proof -- the appendix is explicit about the difference.

@@ -257,7 +257,11 @@ at a shorter horizon and compares `Y` and `C` over the first `window` periods.
 """
 function horizon_movement(p::Params, s0::AbstractVector, r; T_short::Int, window::Int = 101)
     T_short < 20 && return (T_short, NaN, NaN)
-    mo2, x2, ok2, _ = solve_long(p, s0, T_short; start_T = min(T_short, 100), step = 50)
+    # solve_case rather than solve_long: with a positive floor the short solve
+    # needs the floor homotopy too, or it fails and the check reports NaN where
+    # nothing about the horizon has been learned.
+    r2 = solve_case(p, s0; T = T_short, start_T = min(T_short, 100), step = 50)
+    mo2, x2, ok2 = r2.mo, r2.x, r2.ok
     ok2 || return (mo2.T, NaN, NaN)
     n = min(window, mo2.T + 1, r.mo.T + 1)
     sa, sb = unpack(mo2, x2), unpack(r.mo, r.x)

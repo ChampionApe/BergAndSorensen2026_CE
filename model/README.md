@@ -200,9 +200,26 @@ is verification, not proof.
   `t = 0..100` move by 5e-4 and 7e-4 between `T = 161` and `T = 323`, inside the
   1e-3 criterion of `quant_solution.tex` Section *Horizon*. Every experiment row
   carries `T_reached` beside `T_requested` for exactly this reason; read it
-  before reading the row.
-- The parameters in `src/calibration.jl` are placeholders. See
-  `notes/data_plan_global_1850.md` for the calibration plan.
+  before reading the row. **On the calibrated baseline the first stop was not
+  the wall**: `solve_long` with `min_step = 5` returned `T = 261` with the
+  reserve at 0.67 of its initial level, because the extrapolated tail of
+  `extend_horizon` cannot follow a circular path growing at three percent a
+  year six periods ahead, while one-period extensions, and a cold solve at
+  `T = 270`, converge. `min_step` is one period now, and a wall is declared
+  only when even that fails.
+- **A calibration with `mu_N = 0` has no scarcity mechanism.** The extraction
+  cost then carries no stock effect, the reserve costate's dividend is zero, the
+  terminal closure gives it `pS_T = 0`, so `pS = 0` throughout, and nothing in
+  the residual system carries `S >= 0`. On the metals bound
+  (`data/processed/calibration_metals.json`, `mu_N` floored at zero) the solved
+  path exhausts the reserve at `t = 60` and drives it negative; its rows are
+  infeasible and `check_path` says so (`cumulative N / bound` above one). A
+  Hotelling rent at `mu_N = 0` needs a terminal condition on the reserve, a
+  complementarity `S_T >= 0`, `pS_T >= 0`, which is a model change and is not
+  made here; the bound's own range puts `mu_N` up to the baseline's value.
+- The parameters in `src/calibration.jl` are the illustrative set; the
+  calibrated one is read from `data/processed/calibration.json`, and
+  `notes/data/calibration.md` records the judgements behind it.
 
 ## Symbols
 

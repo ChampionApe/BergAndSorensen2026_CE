@@ -1,0 +1,429 @@
+
+==============================================================================
+baseline: calibration.json
+==============================================================================
+E1 abar 1, Rbar 0               C    T = 400  surv = $\infty$  solve_long
+E1 abar 1, Rbar 9.5             C    T = 400  surv = 209.666  continuation
+E1 abar 1, Rbar 23.8            C    T = 400  surv =  82.955  continuation
+E1 abar 1, Rbar 47.5            -    T = 150  surv =      --  solve_long
+E1 abar 0.708, Rbar 0           B    T = 400  surv = $\infty$  solve_long
+E1 abar 0.708, Rbar 9.5         A    T = 400  surv = 104.006  continuation
+E1 abar 0.708, Rbar 23.8        A    T = 400  surv =  41.006  continuation
+E1 abar 0.708, Rbar 47.5        -    T = 150  surv =      --  solve_long
+rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\taxonomy\taxonomy.csv
+table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\Taxonomy.tex
+abar 1, Rbar 0         conv=true T=400/400 state=C Minf=8.601e+04 Tres=42.86 surv=$\infty$ closes=true gate<0 at 139 era_end -1 shutdown -1 (not a collapse path) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=8.40e-06 dC=1.82e-05 cumN/bound=0.578 leak/B=0.078 below_floor=0 solve_long 273s
+abar 1, Rbar 9.5       conv=true T=400/400 state=C Minf=8.539e+04 Tres=42.86 surv=209.666 closes=true gate<0 at 132 era_end -1 shutdown -1 (not a collapse path) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=1.22e-05 dC=1.47e-05 cumN/bound=0.578 leak/B=0.082 below_floor=0 continuation 6s
+abar 1, Rbar 23.8      conv=true T=400/400 state=C Minf=8.447e+04 Tres=42.86 surv=82.955 closes=true gate<0 at 117 era_end -1 shutdown -1 (not a collapse path) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=4.14e-06 dC=5.69e-06 cumN/bound=0.580 leak/B=0.089 below_floor=0 continuation 6s
+abar 1, Rbar 47.5      conv=false T=150/400 state=- Minf=NaN Tres=NaN surv=-- closes=false gate<0 at -1 era_end -1 shutdown -1 (not solved) gap=NaN tvc=NaN wp=[not solved] horizon: T_short=-1 dY=NaN dC=NaN cumN/bound=NaN leak/B=NaN below_floor=-1 solve_long 235s
+abar 0.708, Rbar 0     conv=true T=400/400 state=B Minf=4.259e+04 Tres=42.71 surv=$\infty$ closes=false gate<0 at 171 era_end -1 shutdown -1 (not a collapse path) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=2.34e-05 dC=3.00e-06 cumN/bound=0.610 leak/B=0.363 below_floor=0 solve_long 99s
+abar 0.708, Rbar 9.5   conv=true T=400/400 state=A Minf=4.221e+04 Tres=42.71 surv=104.006 closes=false gate<0 at 166 era_end -1 shutdown 280 (ok) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=1.97e-05 dC=4.76e-06 cumN/bound=0.611 leak/B=0.367 below_floor=0 continuation 5s
+abar 0.708, Rbar 23.8  conv=true T=400/400 state=A Minf=4.161e+04 Tres=42.71 surv=41.006 closes=false gate<0 at 157 era_end -1 shutdown -1 (no candidate date converged) gap=2.8e-14 tvc=0.9540 wp=[] horizon: T_short=200 dY=1.10e-05 dC=9.42e-06 cumN/bound=0.614 leak/B=0.372 below_floor=0 continuation 6s
+abar 0.708, Rbar 47.5  conv=false T=150/400 state=- Minf=NaN Tres=NaN surv=-- closes=false gate<0 at -1 era_end -1 shutdown -1 (not solved) gap=NaN tvc=NaN wp=[not solved] horizon: T_short=-1 dY=NaN dC=NaN cumN/bound=NaN leak/B=NaN below_floor=-1 solve_long 104s
+
+== abar 1, Rbar 0: T reached 400, S_T/S_0 = 0.1758, min S = 2360, S at 2% of S0: not within T
+   at T: Y = 2.142e+05 C = 1.276e+05 R = 2451 N = 222.5 RR = 2229 varpi = 1.0000 x = 2.2756 (Sref/S)^muN = 24.7
+   treated share: 1900 0.0000, 2015 0.2514, 2100 1.0000; leaves 0 at t = 103, reaches 1 at t = 172
+   check_path:
+ledger relative error      2.293e-12
+cumulative N / bound       0.5776  (5.147e+04 / 8.912e+04)
+cumulative leakage / B     0.0778
+effective survival factor  0.99949  (1 - mu = 0.96511)
+retained endowment M_inf   8.601e+04
+   classify_longrun: (:C, (floor = false, hard_ceiling = false, Rbar = 0.0, abar = 1.0, g = 0.025243120088972643, closes = true, leak_sum = 0.08189480956469242, A = 0.0055567183779231906, closure_reason = "", Minf = 86010.31711279973, sigma = 0.5329589175701044, residence = 42.85837133560435, survival_ratio = Inf))
+   market-planner gap: 2.842e-14
+   tvc_report:
+state    boundary term   decay/period
+K        2.246447e-08        0.98580
+S        7.477874e-10        0.95443
+X       -4.258389e-09        0.95992
+P       -1.032227e-10        0.95034
+MK       1.331898e-09        0.97027
+W        8.653125e-09        0.96211
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00239):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 1, Rbar 9.5: T reached 400, S_T/S_0 = 0.1748, min S = 2347, S at 2% of S0: not within T
+   at T: Y = 2.139e+05 C = 1.273e+05 R = 2434 N = 221.6 RR = 2213 varpi = 1.0000 x = 2.2781 (Sref/S)^muN = 24.9
+   treated share: 1900 0.0000, 2015 0.3236, 2100 1.0000; leaves 0 at t = 95, reaches 1 at t = 171
+   check_path:
+ledger relative error      1.247e-12
+cumulative N / bound       0.5785  (5.155e+04 / 8.912e+04)
+cumulative leakage / B     0.0823
+effective survival factor  0.99949  (1 - mu = 0.96511)
+retained endowment M_inf   8.539e+04
+   classify_longrun: (:C, (floor = true, hard_ceiling = false, Rbar = 9.502, abar = 1.0, g = 0.025243120088972643, closes = true, leak_sum = 0.08132575074965842, A = 0.005518106656466951, closure_reason = "", Minf = 85387.40858516298, sigma = 0.5330136482925231, residence = 42.859829487543514, survival_ratio = 209.66617310681218))
+   market-planner gap: 2.842e-14
+   tvc_report:
+state    boundary term   decay/period
+K        2.248635e-08        0.98581
+S        7.530201e-10        0.95446
+X       -4.312796e-09        0.95991
+P       -1.023874e-10        0.95032
+MK       1.338340e-09        0.97029
+W        8.695300e-09        0.96211
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00241):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 1, Rbar 23.8: T reached 400, S_T/S_0 = 0.1734, min S = 2328, S at 2% of S0: not within T
+   at T: Y = 2.134e+05 C = 1.27e+05 R = 2409 N = 220.3 RR = 2189 varpi = 1.0000 x = 2.2820 (Sref/S)^muN = 25.3
+   treated share: 1900 0.0000, 2015 0.4203, 2100 1.0000; leaves 0 at t = 80, reaches 1 at t = 168
+   check_path:
+ledger relative error      2.298e-12
+cumulative N / bound       0.5798  (5.168e+04 / 8.912e+04)
+cumulative leakage / B     0.0890
+effective survival factor  0.99950  (1 - mu = 0.96511)
+retained endowment M_inf   8.447e+04
+   classify_longrun: (:C, (floor = true, hard_ceiling = false, Rbar = 23.756, abar = 1.0, g = 0.025243120088972643, closes = true, leak_sum = 0.08047251818763657, A = 0.0054602132065250915, closure_reason = "", Minf = 84466.8760065824, sigma = 0.5330964434610793, residence = 42.8620353406777, survival_ratio = 82.95457172830383))
+   market-planner gap: 2.842e-14
+   tvc_report:
+state    boundary term   decay/period
+K        2.251944e-08        0.98583
+S        7.609657e-10        0.95449
+X       -4.396004e-09        0.95990
+P       -1.007964e-10        0.95031
+MK       1.348257e-09        0.97031
+W        8.760222e-09        0.96212
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00243):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+  abar 1, Rbar 47.5: not converged, |F| = 1.0
+
+== abar 0.708, Rbar 0: T reached 400, S_T/S_0 = 0.1484, min S = 1992, S at 2% of S0: not within T
+   at T: Y = 1.849e+05 C = 1.104e+05 R = 1041 N = 232.2 RR = 809.1 varpi = 1.0000 x = 2.3240 (Sref/S)^muN = 33.8
+   treated share: 1900 0.0000, 2015 0.0000, 2100 1.0000; leaves 0 at t = 128, reaches 1 at t = 184
+   check_path:
+ledger relative error      2.894e-14
+cumulative N / bound       0.6101  (5.437e+04 / 8.912e+04)
+cumulative leakage / B     0.3631
+cumulative H / bound       0.3051
+effective survival factor  0.98949  (1 - mu = 0.96511)
+retained endowment M_inf   4.259e+04
+   classify_longrun: (:B, (floor = false, hard_ceiling = true, Rbar = 0.0, abar = 0.708, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 42586.853925264106, sigma = 0.5272686398306257, residence = 42.706769289194035, survival_ratio = Inf))
+   market-planner gap: 2.842e-14
+   tvc_report:
+state    boundary term   decay/period
+K        2.354937e-08        0.98489
+S        1.320696e-09        0.95600
+X       -1.003496e-08        0.96113
+P       -1.612983e-09        0.96446
+MK       8.719593e-10        0.96648
+W        6.547846e-09        0.96045
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00090):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 0.708, Rbar 9.5: T reached 400, S_T/S_0 = 0.1470, min S = 1975, S at 2% of S0: not within T
+   at T: Y = 1.845e+05 C = 1.101e+05 R = 1033 N = 230.8 RR = 801.9 varpi = 1.0000 x = 2.3289 (Sref/S)^muN = 34.3
+   treated share: 1900 0.0000, 2015 0.0000, 2100 1.0000; leaves 0 at t = 123, reaches 1 at t = 183
+   check_path:
+ledger relative error      1.985e-14
+cumulative N / bound       0.6114  (5.449e+04 / 8.912e+04)
+cumulative leakage / B     0.3667
+cumulative H / bound       0.3050
+effective survival factor  0.98949  (1 - mu = 0.96511)
+retained endowment M_inf   4.221e+04
+   classify_longrun: (:A, (floor = true, hard_ceiling = true, Rbar = 9.502, abar = 0.708, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 42207.83005035488, sigma = 0.5273550861896937, residence = 42.70907241841539, survival_ratio = 104.00587207251046))
+   market-planner gap: 2.842e-14
+   tvc_report:
+state    boundary term   decay/period
+K        2.358907e-08        0.98491
+S        1.336012e-09        0.95600
+X       -1.024801e-08        0.96110
+P       -1.600216e-09        0.96447
+MK       8.823587e-10        0.96651
+W        6.626061e-09        0.96046
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00093):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 0.708, Rbar 23.8: T reached 400, S_T/S_0 = 0.1450, min S = 1947, S at 2% of S0: not within T
+   at T: Y = 1.838e+05 C = 1.096e+05 R = 1019 N = 228.6 RR = 790.5 varpi = 1.0000 x = 2.3367 (Sref/S)^muN = 35.2
+   treated share: 1900 0.0000, 2015 0.0518, 2100 1.0000; leaves 0 at t = 114, reaches 1 at t = 180
+   check_path:
+ledger relative error      2.388e-14
+cumulative N / bound       0.6135  (5.468e+04 / 8.912e+04)
+cumulative leakage / B     0.3722
+cumulative H / bound       0.3049
+effective survival factor  0.98950  (1 - mu = 0.96511)
+retained endowment M_inf   4.161e+04
+   classify_longrun: (:A, (floor = true, hard_ceiling = true, Rbar = 23.756, abar = 0.708, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 41607.9197248223, sigma = 0.5274924640666687, residence = 42.712732480056395, survival_ratio = 41.00580391735393))
+   market-planner gap: 8.882e-16
+   tvc_report:
+state    boundary term   decay/period
+K        2.365185e-08        0.98494
+S        1.360383e-09        0.95601
+X       -1.059146e-08        0.96105
+P       -1.579417e-09        0.96450
+MK       8.987217e-10        0.96656
+W        6.749136e-09        0.96046
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.00097):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+  abar 0.708, Rbar 47.5: not converged, |F| = 1.0
+
+==============================================================================
+metals bound: calibration_metals.json
+==============================================================================
+E1 abar 0.708, Rbar 0           B    T = 400  surv = $\infty$  solve_long
+E1 abar 0.708, Rbar 9.5         A    T = 400  surv = 1300.832  continuation
+E1 abar 0.708, Rbar 23.8        A    T = 400  surv = 520.662  continuation
+E1 abar 0.708, Rbar 47.5        -    T = 150  surv =      --  solve_long
+rows: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\output\metals\taxonomy\taxonomy.csv
+table: C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\writing\quant\Tables\metals\Taxonomy.tex
+abar 0.708, Rbar 0     conv=true T=400/400 state=B Minf=5.274e+05 Tres=42.69 surv=$\infty$ closes=false gate<0 at 230 era_end -1 shutdown -1 (not a collapse path) gap=3.6e-15 tvc=0.9540 wp=[] horizon: T_short=100 dY=NaN dC=NaN cumN/bound=194.924 leak/B=68.022 below_floor=0 solve_long 7s
+abar 0.708, Rbar 9.5   conv=true T=400/400 state=A Minf=5.276e+05 Tres=42.69 surv=1300.832 closes=false gate<0 at 230 era_end -1 shutdown 320 (ok) gap=1.1e-16 tvc=0.9540 wp=[] horizon: T_short=100 dY=1.74e-01 dC=1.91e-01 cumN/bound=195.544 leak/B=68.575 below_floor=0 continuation 8s
+abar 0.708, Rbar 23.8  conv=true T=400/400 state=A Minf=5.28e+05 Tres=42.69 surv=520.662 closes=false gate<0 at 229 era_end -1 shutdown -1 (no candidate date converged) gap=1.1e-16 tvc=0.9540 wp=[] horizon: T_short=100 dY=1.84e-01 dC=2.04e-01 cumN/bound=196.525 leak/B=69.455 below_floor=0 continuation 8s
+abar 0.708, Rbar 47.5  conv=false T=150/400 state=- Minf=NaN Tres=NaN surv=-- closes=false gate<0 at -1 era_end -1 shutdown -1 (not solved) gap=NaN tvc=NaN wp=[not solved] horizon: T_short=-1 dY=NaN dC=NaN cumN/bound=NaN leak/B=NaN below_floor=-1 solve_long 8s
+
+== abar 0.708, Rbar 0: T reached 400, S_T/S_0 = -577.5637, min S = -4.228e+05, S at 2% of S0: t = 59 (year 1959)
+   at T: Y = 2.376e+05 C = 1.387e+05 R = 1.759e+04 N = 7695 RR = 9891 varpi = 1.0000 x = 1.7268 (Sref/S)^muN = 1
+   treated share: 1900 0.0000, 2015 -0.0000, 2100 1.0000; leaves 0 at t = 144, reaches 1 at t = 200
+   check_path:
+ledger relative error      1.601e-13
+cumulative N / bound       194.9244  (4.312e+05 / 2212)
+cumulative leakage / B     68.0216
+cumulative H / bound       59.3207
+effective survival factor  0.98853  (1 - mu = 0.96511)
+retained endowment M_inf   5.274e+05
+   classify_longrun: (:B, (floor = false, hard_ceiling = true, Rbar = 0.0, abar = 0.7080114566856305, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 527382.6916141867, sigma = 0.5264958041893687, residence = 42.686179175649926, survival_ratio = Inf))
+   market-planner gap: 3.553e-15
+   tvc_report:
+state    boundary term   decay/period
+K        2.219818e-08        0.98368
+S       -0.000000e+00            NaN
+X        1.225151e-30        0.94735
+P       -1.147903e-08        0.97558
+MK      -2.438741e-10        0.97794
+W       -1.785340e-09        0.96779
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.01902):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 0.708, Rbar 9.5: T reached 400, S_T/S_0 = -579.4353, min S = -4.242e+05, S at 2% of S0: t = 43 (year 1943)
+   at T: Y = 2.375e+05 C = 1.386e+05 R = 1.759e+04 N = 7696 RR = 9896 varpi = 1.0000 x = 1.7267 (Sref/S)^muN = 1
+   treated share: 1900 0.0000, 2015 0.0000, 2100 1.0000; leaves 0 at t = 143, reaches 1 at t = 200
+   check_path:
+ledger relative error      1.667e-13
+cumulative N / bound       195.5443  (4.326e+05 / 2212)
+cumulative leakage / B     68.5746
+cumulative H / bound       59.5533
+effective survival factor  0.98853  (1 - mu = 0.96511)
+retained endowment M_inf   5.276e+05
+   classify_longrun: (:A, (floor = true, hard_ceiling = true, Rbar = 9.502, abar = 0.7080114566856305, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 527631.6230444459, sigma = 0.5265229820099612, residence = 42.68690325510745, survival_ratio = 1300.8317869413318))
+   market-planner gap: 1.110e-16
+   tvc_report:
+state    boundary term   decay/period
+K        2.220414e-08        0.98368
+S       -0.000000e+00            NaN
+X        1.229703e-30        0.94735
+P       -1.149695e-08        0.97555
+MK      -2.439636e-10        0.97793
+W       -1.785893e-09        0.96778
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.01901):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+
+== abar 0.708, Rbar 23.8: T reached 400, S_T/S_0 = -582.3966, min S = -4.263e+05, S at 2% of S0: t = 26 (year 1926)
+   at T: Y = 2.374e+05 C = 1.386e+05 R = 1.76e+04 N = 7699 RR = 9902 varpi = 1.0000 x = 1.7265 (Sref/S)^muN = 1
+   treated share: 1900 0.0000, 2015 0.0000, 2100 1.0000; leaves 0 at t = 141, reaches 1 at t = 200
+   check_path:
+ledger relative error      1.604e-13
+cumulative N / bound       196.5251  (4.348e+05 / 2212)
+cumulative leakage / B     69.4550
+cumulative H / bound       59.9165
+effective survival factor  0.98853  (1 - mu = 0.96511)
+retained endowment M_inf   5.28e+05
+   classify_longrun: (:A, (floor = true, hard_ceiling = true, Rbar = 23.756, abar = 0.7080114566856305, g = 0.025243120088972643, closes = false, leak_sum = Inf, A = NaN, closure_reason = "hard ceiling: the loop cannot close", Minf = 528001.7186668563, sigma = 0.5265652160046236, residence = 42.68802846556502, survival_ratio = 520.6620477113394))
+   market-planner gap: 2.220e-16
+   tvc_report:
+state    boundary term   decay/period
+K        2.221324e-08        0.98368
+S       -0.000000e+00            NaN
+X        1.236820e-30        0.94734
+P       -1.152416e-08        0.97550
+MK      -2.440968e-10        0.97792
+W       -1.786710e-09        0.96778
+
+Five of these vanish for free: S, X, P, MK and W are bounded on every
+feasible path by the material budget and the discovery ceiling, so only
+the capital term is a genuine transversality condition. Asymptotically
+it decays at beta * e^((1-eta) g) = 0.95401, which is condition (i) below.
+
+Long-run assumptions at g = 0.02524, nu = 0.00000 (measured -0.01900):
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+All four long-run conditions hold at this (g, nu).
+   wellposed_report at the circular rate:
+condition                            lhs          rhs       margin  reading
+(i) well-posedness   ok        -0.010318     0.036759     0.047077  utility converges at g = 0.02524; vacuous for eta >= 1
+(ii) regularity      ok         1.025564     1.074999     0.049435  e^(g+nu) < 1+r at nu = 0.0: the reserve rent sums
+(ii) embodied M      ok         0.987071     1.074999     0.087929  Delta_M in (0,1): embodied material carries a finite price
+(ii) stockpile       ok         0.989780     1.074999     0.085220  the stockpile multiplier is finite
+(iii) cake-eating    ok         1.015761     1.037442     0.021682  a path on which production has ceased has a finite value
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+┌ Warning: starting path is below the material floor in 151 of 151 periods; Newton will have nothing to work with. Raise `Rtarget` or `depletion`, or lower `Rbar`.
+└ @ Main.CircularEconomy C:\Users\sxj477\Documents\GitHub\BergAndSorensen2026_CE\model\src\guess.jl:134
+All four long-run conditions hold at this (g, nu).
+  abar 0.708, Rbar 47.5: not converged, |F| = 1.0

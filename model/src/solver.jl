@@ -322,9 +322,16 @@ end
 Solves at horizon `T` by first solving at `start_T` and then extending the
 horizon in increments of `step`, re-solving at each stage.  Use this rather than
 a cold solve whenever `T` is large.
+
+The step is halved on a failure and the horizon reached is returned once it
+falls below `min_step`.  The default is one period: a solve costs about a
+second, and on the calibrated set a fast-growing circular path that the
+extrapolated tail of `extend_horizon` cannot follow six periods ahead is still
+followed one period ahead, so a wall declared at a larger step is the guess's
+and not the model's.
 """
 function solve_long(p::Params, s0::AbstractVector, T::Int;
-                    start_T::Int = 150, step::Int = 50, min_step::Int = 5,
+                    start_T::Int = 150, step::Int = 50, min_step::Int = 1,
                     Gam = exp(cbgp_growth(p)),
                     guess_kwargs = (; Rtarget = 0.6), verbose::Bool = false, kwargs...)
     mo = Model(p; T = min(start_T, T), s0 = s0, Gam = Gam)

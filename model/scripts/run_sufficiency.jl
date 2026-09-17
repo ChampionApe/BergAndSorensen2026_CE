@@ -1,21 +1,37 @@
 #=
 Sufficiency verification.
 
-Runs the protocol of `writing/docs/Appendix_sufficiency.tex` on the illustrative
-calibration: which convexity conditions hold, whether transversality is
-satisfied, and whether any feasible deviation beats the computed path.
+Runs the protocol of `writing/docs/Appendix_sufficiency.tex`: which convexity
+conditions hold, whether transversality is satisfied, and whether any feasible
+deviation beats the computed path.  On the illustrative calibration by default,
+which is not a result; on the calibrated set with `--calibration=`.
 
     julia --project=. scripts/run_sufficiency.jl
+    julia --project=. scripts/run_sufficiency.jl --calibration=../data/processed/calibration.json
 =#
 
 include(joinpath(@__DIR__, "..", "src", "CircularEconomy.jl"))
 using .CircularEconomy
 using Printf
 
-const S0 = baseline_states()
 rule(s) = (println(); println(s); println(repeat("-", length(s))))
 
-p = baseline_params()
+calfile = let a = filter(s -> startswith(s, "--calibration="), ARGS)
+    isempty(a) ? nothing : a[1][length("--calibration=")+1:end]
+end
+if calfile === nothing
+    @warn "run_sufficiency: no calibration file given, so the illustrative set is used. Nothing from this run is a result."
+    p, S0 = baseline_params(), baseline_states()
+    # the floor and hard-ceiling variant the absorbing-shutdown question is asked on
+    pf = baseline_params(Rbar = 0.35, abar = 0.7)
+else
+    println("calibration file: ", calfile)
+    d = read_calibration(calfile)
+    p, S0 = calibrated_params(d), calibrated_states(d)
+    cs = calibration_cases(d)
+    pf = with(p; Rbar = length(cs.Rbar_grid) >= 2 ? cs.Rbar_grid[2] : p.Rbar,
+                 abar = length(cs.abar) >= 2 ? cs.abar[2] : p.abar)
+end
 
 rule("Convexity conditions (C1)-(C5)")
 convexity_report(p)
@@ -51,10 +67,9 @@ deviation_profile(mo, x; control = II, window = 0:100, grid = -0.4:0.1:0.4)
 rule("Feasible-direction test: random search")
 perturbation_test(mo, x; ndraws = 400)
 
-rule("Is a shutdown absorbing?")
-pf = baseline_params(Rbar = 0.35, abar = 0.7)
+rule("Is a shutdown absorbing?  (floor $(pf.Rbar), ceiling $(pf.abar))")
 for (nm, st) in (("terminal state of the growth path", sol.states[end, :]),
-                 ("a depleted economy", [0.2, 0.01, 25.0, 0.1, 0.05, 0.05]))
+                 ("a depleted economy", S0 .* [0.05, 1e-4, 1.0, 1.0, 0.05, 0.05]))
     r = absorbing_shutdown(pf, st)
     @printf("%-34s %s\n", nm, r.detail)
 end
