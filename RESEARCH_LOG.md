@@ -7,6 +7,24 @@ full session history to that date is archived in
 reserved with the earlier `2026-08-20_planner_docs_trend_growth/` archive as the basis
 for a later, more purely theoretical paper. New entries below this line.
 
+## 2026-09-18 - The calibration: data pipeline, calibrated baseline, experiments, review
+
+- **Branch `calibration`, unmerged, Overleaf untouched.** `notes/plan_calibration_experiments.md` run
+  unattended, phases A to E, one commit per task. The decisions stand as ruled: all four material
+  categories on a mass basis with metals only as a reported bound (D1), base year 1900 observed (D2),
+  the broad waste stock with `mu` set to reproduce the handled flow (D3), CO$_2$ as the indicator with
+  `P` in gigatonnes of material (D4), D5's units, the horizon by continuation (D6), and `S_0` as
+  cumulative extraction plus reserves at the vintage (D7).
+- **The verdict.** The calibrated economy is state C at `T = 400` and settled there, the loop closing
+  with the resource side still alive at the horizon; the welfare value of circularity is under a
+  thousandth of a percent of consumption, which is a statement about the discount rate.
+- **The review's three findings that matter**: `rho` and `kappa` decide every welfare number and both
+  sit at the least defensible end of their ranges (R1); the pollution stock carries overburden the
+  CO$_2$ bridge never priced (R2); and `mu` is the growth rate of the disposal flow in disguise, so
+  what `mu W` reproduces is the whole outflow (R3). Dispositions: `notes/TODO.md` 12 to 23.
+- Read `notes/review_calibration.md`, `data/processed/d1_baseline_report.md` to `d4_report.md`, and
+  `writing/quant/quant_results.tex`.
+
 ## 2026-09-17 (overnight) - Theory note: the long run restructured to three states, regime (T) only
 
 - **Branch `docs-restructure`, unmerged, Overleaf untouched.** Sixteen commits, one per task of

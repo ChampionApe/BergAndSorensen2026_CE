@@ -7,22 +7,26 @@ Session log for work inside `model/`. Cross-cutting work, the theory and the wri
 The history of the implementation up to 2026-09-17 is in the root log, which was the only log until the
 split. Nothing is lost; it simply starts here.
 
-## 2026-09-18 - D4: E5, the surface and the solvability edge
+## 2026-09-18 - The calibration run inside `model/` (phases A, D0 and D, branch `calibration`)
 
-- **The surface** (`scripts/run_d4.jl`, `output/surface/`, `Tables/Surface.tex`,
-  `data/processed/d4_report.md`): 24 cells, 8 floors x 3 ceilings at `T = 400`, all converged. The
-  state is the ceiling's alone -- C everywhere at `abar = 1`, B at `Rbar = 0` and A at every
-  positive floor under a hard ceiling -- and the survival ratio is a hyperbola in the floor,
-  `M_inf` moving under 2 percent across the grid. No survival-margin crossing is reachable.
-- **The solvability edge is 34.61 Gt**, the same under both ceilings, bisected then walked: a step
-  of 0.006 Gt beyond it does not solve. The floor binds in 1900 on every solved path (minimum `R`
-  at `t = 0`, 2.5 Gt of slack), so the grid is bounded by the base year's throughput, not by
-  anything long-run; `Rbar = 47.5` asks 8.3 times 1900 material input. What fails at the edge is
-  the recycling min-maps, on a feasible path.
-- **The shutdown date 280 of D1 and D2 is an artefact**: on a 10-period grid the objective is
-  monotone in the date and the branch converges on no date after 280. And `floor_steps = 6` is too
-  short there -- at 24 the `Rbar = 23.756` cell that D1 called unsolvable converges on nine dates.
-  Both belong in *Known limitations* and TODO 7.
+- **The no-treatment corner** (D0a): the sixth control is the intensity `x = K^R/T`, not `K^R`, whose
+  Kuhn-Tucker row is a 0/0 at the corner with a Jacobian scaling as `1/T` and stalled at
+  `|F| ~ 1e-4`; in `x` it is well posed at `T = 0` and selects the `alpha` the treatment margin
+  needs. Fixture test on the phase C set; `SYMBOLS.md` slot `IXR`.
+- **The handling charges are fitted, not read** (D0b): the Kaza ladder gives `cT/cc = 2` and no level,
+  so `data/build/c4_handling_level.jl` bisects the common factor until the path reproduces the 2015
+  treated share (1.242; `varpi_2015 = 0.252`). The recycled share is reported and missed, 0.22
+  against 0.096, which is `xi` and the stockpile reading rather than the charges (review R4).
+- **The harness and five drivers**: `scripts/run_experiments.jl` carries E1 to E5, and `run_d1.jl` to
+  `run_d4.jl` and `run_e2_sensitivity.jl` run them on the calibrated set, reporting to
+  `data/processed/d*_report.md`. A1 fixed the shutdown branch (exact `V_stop` gradient) and A2 gave
+  the handover its `delta M^K` inflow; A3 is `calibrated_params`.
+- **What D4 left in *Known limitations***: the surface is featureless in `Rbar` and the solvability
+  edge is 34.61 Gt, 6.4 times 1900 material input, because the floor binds in the base year; the cold
+  route is inert at a real floor and `floor_steps = 6` too short at a large one; and the branch's own
+  wall at `Td` about 285 makes the shutdown date 280 a wall, not an optimum. TODO 21 to 23.
+- 825 -> 1234 tests. Two commits are misattributed (review R24): `010c112` "Cal A5" carries B5's
+  nineteen files, and `9d02e25` "Cal B5" is empty and says why.
 
 ## 2026-09-17 (overnight) - Code in line with the three-state theory
 
