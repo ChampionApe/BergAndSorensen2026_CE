@@ -26,7 +26,7 @@ Each folder under `writing/` is one Overleaf project and is self-contained: its 
 The theory note runs planner → market, with the derivations, the workhorse specification, the
 sufficiency protocol and the notation appendix behind them; the planner part is marked `%% ALMOST DONE`
 and is edited minimally. The quantitative note is the computable model, its solution, its calibration,
-and the data appendix once the calibration lands. The two notes cite each other by section name, never
+its results and the data appendix. The two notes cite each other by section name, never
 by `\ref` (`docs_style.md` §5). The notes and the paper are the same model in two time conventions, so a
 symbol does not always mean the same object in both; `writing/docs/notation.tex` names the two that
 differ.
@@ -35,9 +35,10 @@ differ.
 
 ```
 cd model
-julia --project=. test/runtests.jl           # 742 tests, ~15 s
+julia --project=. test/runtests.jl           # 1234 tests, ~35 s
 julia --project=. scripts/run_baseline.jl    # baseline path + policy dials, ~30 s
 julia --project=. scripts/run_sufficiency.jl # convexity, transversality, deviations
+julia --project=. scripts/run_experiments.jl # E1 to E5; the drivers are scripts/run_d1.jl to run_d4.jl
 ```
 
 Julia, standard library only. The planner and the market are **one residual system**, the planner
@@ -58,9 +59,11 @@ as `%% GENERATED` tex, `data/SOURCES.md` keeps provenance, and `notes/data/` hol
 decision area: the alternatives, the reason, the date. The rule that splits reader-facing from
 process is `docs_style.md` §5.
 
-**`results/`** — solved output. Empty: nothing is published from the model yet, and every number the
-quantitative part currently states is illustrative, because `model/src/calibration.jl` holds
-placeholders rather than a calibration.
+**`results/`** — solved output. Empty: the experiment runs write CSV under `model/output/`
+(gitignored, regenerable) and their tables straight into `writing/quant/Tables/` under a
+`%% GENERATED` banner, with the run reports in `data/processed/d1_baseline_report.md` to
+`d4_report.md`. `model/src/calibration.jl` still holds the illustrative set; the calibrated one is
+read from `data/processed/calibration.json`.
 
 **`notes/`** — the live working notes. `TODO.md` is the one open list; `overleafSync.md` is the sync
 procedure; the rest are topic notes on the long run, residence time and the data plan.
@@ -76,8 +79,10 @@ searches.
 
 The theory is settled: the planner problem and its long-run taxonomy, the decentralization and its three
 results, and the sufficiency protocol. The quantitative implementation solves, verifies itself against
-the analytics, and passes 742 tests — but it is **not calibrated**, and the shutdown branch is fragile
-and untested.
+the analytics, and passes 1234 tests. It is **calibrated** as of 2026-09-18, on global data from 1900:
+the pipeline is `data/`, the baseline is state C at the horizon, and the experiments and their
+limitations are written up in `writing/quant/quant_results.tex`. The adversarial review of the whole
+run is `notes/review_calibration.md`.
 
-Next, in order: the two data decisions, then the calibration, then whatever the paper's quantitative
-section is actually going to claim. Open items, with what each waits on: `notes/TODO.md`.
+Next: the review's four refits, the sensitivities it leaves open, and what the paper's quantitative
+section will claim. Open items, with what each waits on: `notes/TODO.md`.
