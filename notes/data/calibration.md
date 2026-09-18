@@ -4,7 +4,7 @@ Decision record for tasks C1 to C8 of `notes/plan_calibration_experiments.md`. W
 is and how it is reproduced is in `writing/quant/quant_data.tex` and its generated tables; the
 transformations are in `data/build/c1_accounting.py` to `c6_states.py`, `c0_series.py`,
 `c_metals.py`, `c7_checks.jl`, `c8_smoke.jl`; provenance for the three downloads phase C added is
-in `data/sources/C_calibration.md`. This file records the judgements the rulings did not cover,
+in `data/SOURCES.md`, block C. This file records the judgements the rulings did not cover,
 why this rather than that, and where the calibration is weak. The five block notes carry the
 decisions that belong to their area; this file points at them rather than repeating them.
 

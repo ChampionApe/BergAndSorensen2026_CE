@@ -1,7 +1,7 @@
 # Core material flows and stocks: the decisions behind the B1 block
 
 Decision record for task B1 of `notes/plan_calibration_experiments.md`. Provenance is in
-`data/sources/B1_material_flows.md`; the transformations are in `data/build/b1_*.py`; the numbers
+`data/SOURCES.md`, block B1; the transformations are in `data/build/b1_*.py`; the numbers
 that go into the calibration are in `data/interim/b1_material_block.csv`. Nothing here repeats any
 of those.
 
@@ -154,7 +154,7 @@ accounts that the published database does not carry.
 
 **2016 to 2020.** Only the IRP database reaches past 2015, and the vintage obtained stops at 2019.
 Everything else in the block ends in 2015. The current IRP vintage runs to 2024 and is recorded as
-MANUAL in `data/sources/B1_material_flows.md`.
+MANUAL in `data/SOURCES.md`, block B1.
 
 **Before 1900.** Out of scope here; task B6 if it runs.
 

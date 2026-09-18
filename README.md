@@ -51,12 +51,12 @@ Sources are **ASCII only**, deliberately, and the symbol table is what makes tha
 
 ## Layout
 
-**`data/`** — raw and processed inputs, not results. Empty: `notes/data_plan_global_1850.md` is the
-plan, and two decisions come before any downloading. When it fills, the pipeline script owns the
-transformations and emits the quantitative note's data-appendix tables as `%% GENERATED` tex,
-`data/SOURCES.md` keeps provenance, and `notes/data/` holds one file per decision area: the
-alternatives, the reason, the date. The rule that splits reader-facing from process is
-`docs_style.md` §5.
+**`data/`** — raw and processed inputs, not results. The pipeline of `notes/data_plan_global_1850.md`
+was built 2026-09-17 and 2026-09-18: `data/README.md` is the layout and the rebuild order, the
+`data/build/` script owns the transformations and emits the quantitative note's data-appendix tables
+as `%% GENERATED` tex, `data/SOURCES.md` keeps provenance, and `notes/data/` holds one file per
+decision area: the alternatives, the reason, the date. The rule that splits reader-facing from
+process is `docs_style.md` §5.
 
 **`results/`** — solved output. Empty: nothing is published from the model yet, and every number the
 quantitative part currently states is illustrative, because `model/src/calibration.jl` holds

@@ -119,7 +119,7 @@ def main():
         ], "Flows from Haas et al.\\ (2020) and Krausmann et al.\\ (2018), block B1; $\\mathcal D$ at the common "
            "intensity $\\omega^j=1$ and the macro aggregates of block B2 with the pre-1950 use split at the "
            "perpetual-inventory investment share. The EEA ratios are hidden flows per tonne of commodity for EU-15 "
-           "domestic extraction in 1995; provenance in \\texttt{data/sources/}."))
+           "domestic extraction in 1995; provenance in \\texttt{data/SOURCES.md}."))
 
     out.append(block_table(
         "Data_production.tex", "Production and trends.", "tab:q:data:production", "c2_production_trends", [

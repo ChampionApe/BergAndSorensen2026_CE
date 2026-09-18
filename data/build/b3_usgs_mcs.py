@@ -3,7 +3,7 @@ production at the latest year.
 
 The 2026 data release (https://doi.org/10.5066/P1WKQ63T) is a bulk CSV set on
 ScienceBase, which refuses automated requests from this machine (HTTP 403,
-Cloudflare); data/sources/B3_resources.md records that as MANUAL.  What is used
+Cloudflare); data/SOURCES.md, block B3, records that as MANUAL.  What is used
 here instead is the published report, data/raw/usgs_mcs/mcs2026.pdf, which
 carries the same numbers.  The "World total (rounded)" line of each commodity's
 "World Mine Production and Reserves" table is transcribed below with the printed

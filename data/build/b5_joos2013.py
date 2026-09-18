@@ -2,7 +2,7 @@
 
 Source: Joos, F. et al., "Carbon dioxide and climate impulse response functions for the
 computation of greenhouse gas metrics: a multi-model analysis", Atmos. Chem. Phys. 13,
-2793-2825, 2013, Table 5, row IRF_CO2. Provenance in data/sources/B5_pollution.md.
+2793-2825, 2013, Table 5, row IRF_CO2. Provenance in data/SOURCES.md, block B5.
 
 The fitted form is Joos et al. equation (11),
 

@@ -1,7 +1,7 @@
 # The resource side: decisions, and what the evidence can and cannot bear
 
 Decision note for block B3 of `notes/plan_calibration_experiments.md`. Written
-2026-09-17. Provenance is in `data/sources/B3_resources.md`; the transformations
+2026-09-17. Provenance is in `data/SOURCES.md`, block B3; the transformations
 are in `data/build/b3_*.py` and are not restated here. What is here is why this
 rather than that, and where the block is thin.
 

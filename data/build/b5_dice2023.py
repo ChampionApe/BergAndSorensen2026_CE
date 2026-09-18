@@ -2,7 +2,7 @@
 
 Source: Barrage, L. and Nordhaus, W., "Policies, projections, and the social cost of
 carbon: Results from the DICE-2023 model", PNAS 121(13) e2312030121, 2024, Section 3.3
-"Damages". Provenance in data/sources/B5_pollution.md.
+"Damages". Provenance in data/SOURCES.md, block B5.
 
 DICE-2023 writes output as Q = [1 - Lambda][1 - Omega] A K^gamma L^(1-gamma), with the
 damage share of gross output

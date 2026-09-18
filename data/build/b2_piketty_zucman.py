@@ -16,7 +16,7 @@ the 1900-1950 path, not a level identity.
 
 Only the United States is covered.  Piketty and Zucman publish the other seven countries as legacy
 .xls workbooks, which pandas cannot open here because `xlrd` is not installed; they are recorded
-as MANUAL in data/sources/B2_macro.md.
+as MANUAL in data/SOURCES.md, block B2.
 
 Run from the repository root.  Idempotent.
 """

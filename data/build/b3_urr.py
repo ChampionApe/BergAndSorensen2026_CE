@@ -12,7 +12,7 @@ is in GJ per tonne, so one EJ is 1/NCV gigatonnes of fuel.
 
 Metals and minerals.  The crustal-abundance route (Rankin, A.J., 2011, Minerals,
 Metals and Sustainability, CSIRO Publishing) could not be obtained -- a
-paywalled book -- and is recorded MANUAL in data/sources/B3_resources.md.  What
+paywalled book -- and is recorded MANUAL in data/SOURCES.md, block B3.  What
 is used instead is the USGS Global Mineral Resource Assessment as the Mineral
 Commodity Summaries 2026 reports it commodity by commodity; those figures are in
 data/interim/b3_usgs_mcs.csv under identified_resources and

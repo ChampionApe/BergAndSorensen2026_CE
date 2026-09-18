@@ -25,7 +25,7 @@ figure.
   West, J., 2011, "Decreasing metal ore grades: are they really being driven by
   the depletion of high-grade deposits?": Journal of Industrial Ecology, v. 15,
   no. 2, pp. 165-168.  Not obtained (paywalled); recorded MANUAL in
-  data/sources/B3_resources.md.  It is a four-page commentary on Mudd and
+  data/SOURCES.md, block B3.  It is a four-page commentary on Mudd and
   carries no tabulated series.
 
 The year column is the midpoint of the reporting period where the source gives a

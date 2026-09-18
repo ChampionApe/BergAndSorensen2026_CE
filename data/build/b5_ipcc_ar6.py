@@ -2,7 +2,7 @@
 
 Source: Canadell, J.G. et al., "Global Carbon and other Biogeochemical Cycles and
 Feedbacks", Chapter 5 of Climate Change 2021: The Physical Science Basis (IPCC AR6 WGI),
-Section 5.5.1.4 "Combined Assessment of TCRE". Provenance in data/sources/B5_pollution.md.
+Section 5.5.1.4 "Combined Assessment of TCRE". Provenance in data/SOURCES.md, block B5.
 
 The assessed sentence is parsed out of the chapter rather than typed in:
 

@@ -2,7 +2,7 @@
 
 Task E1 of `notes/plan_calibration_experiments.md`. Everything phases B to D produced was read:
 `data/processed/` (the two JSONs, `series.csv`, the `c*` and `d*` files), `data/build/`,
-`data/interim/` spot-checked to `data/raw/` and `data/sources/`, `notes/data/`,
+`data/interim/` spot-checked to `data/raw/` and the per-block source lists, `notes/data/`,
 `writing/quant/quant_data.tex` and `Tables/`, `model/scripts/run_d1.jl` to `run_d4.jl`,
 `model/output/`. Nothing was changed. Numbers not in the reports were produced by three scratch
 runs, none committed: a Python pass over `series.csv` (the ledger, the implied $c_N$ path, the
@@ -410,7 +410,7 @@ Line 14. Decision D2 puts it at 1900; E2 owns the sentence.
 ## Traceability: the parameters traced
 
 Each was re-derived from the interim value the script names and compared with `calibration.json`;
-all agree to the digits printed. Sources are those the scripts and `data/sources/` cite.
+all agree to the digits printed. Sources are those the scripts and `data/SOURCES.md` cite.
 
 | parameter | value | traced through | terminal source |
 |---|---|---|---|

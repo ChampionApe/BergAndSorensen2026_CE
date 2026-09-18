@@ -2,7 +2,7 @@
 
 Decision area B2 of `notes/plan_calibration_experiments.md`. Why the world `Y`, `POP`, `C`, `G` and
 `K` of `data/interim/b2_macro_block.csv` are built the way they are. What the scripts do is in the
-scripts; provenance is in `data/sources/B2_macro.md`; the numbers a reader needs go in the
+scripts; provenance is in `data/SOURCES.md`, block B2; the numbers a reader needs go in the
 quantitative note's data appendix, not here (`docs_style.md` §5).
 
 Written 2026-09-17.
@@ -142,7 +142,7 @@ The check that would actually bite — produced capital against produced capital
 countries covering a decent share of 1900 world output — needs the other eight Piketty-Zucman
 workbooks and their land decomposition. Those workbooks are in the legacy `.xls` format, which
 cannot be opened without `xlrd`, which is not installed. It is recorded as MANUAL in
-`data/sources/B2_macro.md`. Until it is done, `K` before 1950 should be read as an
+`data/SOURCES.md`, block B2. Until it is done, `K` before 1950 should be read as an
 order-of-magnitude reconstruction with an anchored endpoint, not as a measurement.
 
 ## The material intensity join

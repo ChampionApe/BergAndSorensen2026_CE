@@ -3,7 +3,7 @@
 Decision area B5 of `notes/plan_calibration_experiments.md`. Why `P`, `theta(P)`, `kappa` and
 `psi` of `data/interim/b5_pollution_block.csv` are built the way they are. What the scripts do is
 in the scripts (`data/build/b5_gcb.py`, `b5_joos2013.py`, `b5_dice2023.py`, `b5_ipcc_ar6.py`,
-`b5_pollution_block.py`); provenance is in `data/sources/B5_pollution.md`; the numbers a reader
+`b5_pollution_block.py`); provenance is in `data/SOURCES.md`, block B5; the numbers a reader
 needs to reproduce a result go in the quantitative note's data appendix, not here
 (`docs_style.md` §5).
 
@@ -172,7 +172,7 @@ respond, which is the channel a non-market damage estimate would speak to.
 A positive `psi` would need a source that splits damages into market and non-market components
 rather than a single output loss. The candidates, none of them downloaded: the mortality and
 morbidity valuations that sit under the OECD welfare-cost estimates in the strategy (A) list of
-`data/sources/B5_pollution.md`, which are willingness-to-pay figures and belong in utility rather
+`data/SOURCES.md`, block B5, which are willingness-to-pay figures and belong in utility rather
 than in output; or an integrated-assessment damage function that carries an explicit non-market
 share. Whichever is used, `varphi` is a curvature that no aggregate study identifies, so it would
 be a range and a sensitivity, not an estimate.

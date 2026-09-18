@@ -9,7 +9,7 @@ kept; notes/data/material_flows.md records the regrouping.
 
 The file is distributed as a BIFF8 workbook, which pandas cannot read without
 xlrd. A converted copy sits beside it in data/raw/ and is what this script
-reads; data/sources/B1_material_flows.md gives the conversion command.
+reads; data/SOURCES.md, block B1, gives the conversion command.
 
 Run from the repository root:  python data/build/b1_krausmann2009.py
 """

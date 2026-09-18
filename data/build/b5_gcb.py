@@ -2,7 +2,7 @@
 
 Source: the Global Carbon Project's fossil CO2 emissions dataset, release 2025v15,
 the dataset behind the Global Carbon Budget 2025 (Friedlingstein et al., 2026).
-Provenance in data/sources/B5_pollution.md.
+Provenance in data/SOURCES.md, block B5.
 
 raw   data/raw/gcb/GCB2025v15_MtCO2_flat.csv      (downloaded if absent)
       data/raw/gcb/essd-18-3211-2026.pdf          (downloaded if absent, 13 MB)

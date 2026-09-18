@@ -1,7 +1,7 @@
 # Waste handling and recycling: the decisions behind the B4 block
 
 Decision record for task B4 of `notes/plan_calibration_experiments.md`. Provenance is in
-`data/sources/B4_waste_recycling.md`; the transformations are in `data/build/b4_*.py`; the numbers
+`data/SOURCES.md`, block B4; the transformations are in `data/build/b4_*.py`; the numbers
 that go into the calibration are in `data/interim/b4_waste_block.csv`. Nothing here repeats any of
 those.
 
@@ -210,7 +210,7 @@ whose perturbation any headline result must survive; this note is the reason.
 One download would change this. **Kinnaman, Shinkuma and Yamamoto (2014)** estimate the average
 social cost of municipal waste management as a function of the recycling rate, which is `c^W(varpi)`
 and the recovery cost together. It is paywalled and recorded as MANUAL in
-`data/sources/B4_waste_recycling.md`. It is the highest-value single download left in this block.
+`data/SOURCES.md`, block B4. It is the highest-value single download left in this block.
 
 ## What is not here
 

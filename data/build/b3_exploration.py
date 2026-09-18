@@ -9,7 +9,7 @@ nothing is read off a chart.  File: data/raw/minex/schodde_imarc_2023.pdf.
 
 S&P Global Market Intelligence, World Exploration Trends, is commercial.  Its
 public summary was not obtained and it is recorded MANUAL in
-data/sources/B3_resources.md.  MinEx's own expenditure series is built partly
+data/SOURCES.md, block B3.  MinEx's own expenditure series is built partly
 from S&P data, which is the closest public substitute.
 
 What this identifies: the model's exploration cost function C^D with C^D_X > 0.
