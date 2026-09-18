@@ -406,7 +406,7 @@ tex = write_panelled_table(joinpath(TABLE_ROOT, "Instruments.tex");
     label = "tab:q:res:instruments", colspec = "lcrrrrr",
     header = "\$(\\phi^W,\\phi^z,\\phi^P,\\phi^X)\$ & State & CE cost (\\%) & " *
              "\$\\mathcal M_\\infty/(\\bar R\\mathcal T)\$ & \$\\mathcal M_\\infty\$ & " *
-             "\$\\sum\\Xi\$ & Gate fee \$<0\$",
+             "\$\\sum(1-a\\varpi)H\$ & Gate fee \$<0\$",
     body = body,
     notes = ["Each dial is at one, the Pigouvian level of the instrument it switches on, " *
              "or at zero: \$\\phi^W\$ property rights over the waste stock, \$\\phi^z\$ the " *
@@ -420,7 +420,10 @@ tex = write_panelled_table(joinpath(TABLE_ROOT, "Instruments.tex");
              "horizon diagnostic and not a result, and entries below \$10^{-6}\$ percent are " *
              "at the precision of the comparison itself. " *
              "\$\\mathcal M_\\infty\$ is the retained endowment at the horizon reached and " *
-             "\$\\sum\\Xi\$ cumulative leakage to the environment, both in gigatonnes; the " *
+             "\$\\sum(1-a\\varpi)H\$ the cumulative leakage from the waste stock, the " *
+             "leakage term of the retained endowment's accounting, which exceeds the " *
+             "cumulative emission \$\\sum\\Xi\$ of the E2 table by the treated residue " *
+             "that is not recovered, both in gigatonnes; the " *
              "survival ratio is infinite without a floor. Dates are periods since 1900; a " *
              "dash is an event that does not occur along the path, and at \$\\phi^W = 0\$ " *
              "there is no gate fee to change sign, \$\\tau^{\\mathcal W}=-\\phi^Wp^{\\mathcal W}\$ " *
